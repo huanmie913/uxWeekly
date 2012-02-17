@@ -13,13 +13,13 @@ mg{
 	left:50%;
 }
 /*iphone*/
-@media screen and ( max-width:720px ){
+@media only screen and ( max-width:480px ){
 	body{
 	  -webkit-text-size-adjust:none;
 	  background: url(../images/bg.png) no-repeat;
+	  max-width:480px;
 	  height:480px;
-	  width:100%;
-	  -weikit-background-size:contain;
+	  -webkit-background-size:contain;
 	}
 	.mod_area{
 		width:300px;
@@ -44,5 +44,10 @@ mg{
 		-weikit-background-size:contain;
 	}
 	.s .is{ margin:4px 0 0 5px}
+}
+
+/*ipad*/
+@media only screen and ( max-width:768px ){
+
 }
 
