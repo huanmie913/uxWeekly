@@ -39,12 +39,12 @@ mg{
 		background-repeat: no-repeat;
 		width:40px;
 		height:40px;
-		margin-left: -15px;
+		margin-left: -20px;
 		-webkit-background-size:contain;
 	}
 	.s{
 		max-width:108px;
-		height: 60px;
+		height: 111px;
 		background: url(../images/pointer.png) no-repeat;
 		position: absolute;
 		-webkit-background-size:contain;
