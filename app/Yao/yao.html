@@ -4,24 +4,17 @@
     <meta charset="utf-8"/>
     <title>摇色子</title>
     <meta content="width=device-width; initial-scale=1; minimum-scale=0.5; maximum-scale=1.0; user-scalable =true;" name="viewport" />
-    <style>
-        *{ margin: 0; padding:0}
-        .mod_yao{ background: url(images/bg.png) no-repeat; width: 605px; height: 798px; padding:162px 0 0 35px; margin: 0 auto; }
-       /* .box{ position: absolute; left: 50%; margin-left:-250px; top: 20px;}*/
-       #mod_area{ /*width: 584px;*/ width:570px; height: 633px;  position: relative;/* overflow:hidden;*/}
-       .control{ margin-top: 30px; position: relative;}
-        #button{ background: url(images/btn.png) no-repeat; width:125px; height: 127px; border: none; text-indent: -999em; overflow: hidden; position: absolute;left:50%; margin-left: -62px;}
-        .s{ width:108px; height: 111px; background: url(images/pointer.png) no-repeat; position: absolute;}
-        .s .is{ margin:8px 0 0 10px}
-    </style>
+    <link href="css/yao.css" rel="stylesheet"/>
 </head>
 <body>
 <!--mod_yao-->
 <div class="mod_yao">
-    <div id="mod_area"></div>
-    <div class="control">
-        <div class="num"></div>
-        <input type="button" value="摇起来" id="button"/>
+    <div class="yao">
+        <div id="mod_area"></div>
+        <div class="control">
+            <div class="num"></div>
+            <input type="button" value="摇起来" id="button"/>
+        </div>
     </div>
 </div>
 <!--/mod_yao-->
