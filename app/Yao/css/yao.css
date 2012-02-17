@@ -21,8 +21,11 @@ mg{
 	  background: url(../images/bg.png) no-repeat;
 	  max-width:480px;
 	  height:400px;
-	  padding:80px 20px 0 20px;
+	  
 	  -webkit-background-size:contain;
+	}
+	.yao{
+		margin:80px 20px 0 20px;
 	}
 	.mod_area{
 		width:100%;
@@ -44,12 +47,12 @@ mg{
 	}
 	.s{
 		width:108px;
-		height: 111px;
+		max-height: 111px;
 		background: url(../images/pointer.png) no-repeat;
 		position: absolute;
 		-webkit-background-size:contain;
 	}
-	.s  .is{ margin:4px 0 0 5px;}
+	.s  .is{ margin:2px 0 0 2px;}
 	.s  img{ -webkit-background-size:contain;width:30px; }
 }
 
