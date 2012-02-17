@@ -1,10 +1,10 @@
 @charset "utf-8";
 *{ margin: 0; padding:0;}
-.mod_yao{  width:100%;}
-.yao{ background: url(../images/bg.png) no-repeat; padding:150px 0 0 20px;/*max-width: 960px;*/ height: 810px; -webkit-background-size:contain}
-#mod_area{ /*width: 584px; width:570px; height: 633px;height: 633px;*/  height:650px;width: 584px; -webkit-background-size:contain;  position: relative;/* overflow:hidden;*/}
+.mod_yao{ width:640px;}
+.yao{ background: url(../images/bg.png) no-repeat; padding:150px 0 0 20px; height: 810px; -webkit-background-size:contain}
+.mod_area{ /*width: 584px; width:570px; height: 633px;height: 633px;*/  height:650px;width: 584px; -webkit-background-size:contain;  position: relative;/* overflow:hidden;*/}
 .control{ margin-top: 30px; position: relative;}
-#button{ background: url(../images/btn.png) no-repeat; width:125px; height: 127px; -webkit-background-size:contain; border: none; text-indent: -999em; overflow: hidden; position: absolute;left:50%; margin-left: -62px;}
+.button{ background: url(../images/btn.png) no-repeat; width:125px; height: 127px; -webkit-background-size:contain; border: none; text-indent: -999em; overflow: hidden; position: absolute;left:50%; margin-left: -62px;}
 .s{ width:108px; height: 111px; background: url(../images/pointer.png) no-repeat;position: absolute;}
 .s .is{ margin:8px 0 0 10px}
-.s img{-webkit-background-size:contain;}
+.s  img{-webkit-background-size:contain;}
