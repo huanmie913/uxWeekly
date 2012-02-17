@@ -16,7 +16,6 @@ mg{
 @media only screen and ( max-width:480px ){
 	body{
 	  -webkit-text-size-adjust:none;
-	  
 	}
 	.mod_yao{
 	  background: url(../images/bg.png) no-repeat;
@@ -37,7 +36,7 @@ mg{
 	.button{
 		background-image: url(../images/btn.png);
 		background-repeat: no-repeat;
-		width:125px;
+		max-width:125px;
 		height:127px;
 		margin-left: -15px;
 		-webkit-background-size:contain;
@@ -50,7 +49,7 @@ mg{
 		-webkit-background-size:contain;
 	}
 	.s  .is{ margin:4px 0 0 5px;}
-	.s img{}
+	.s img{ -webkit-background-size:contain; max-width:86px; }
 }
 
 /*ipad*/
