@@ -17,6 +17,7 @@ mg{
 	  -webkit-text-size-adjust:none;
 	  background: url(../images/bg.png) no-repeat;
 	  height:480px;
+	  -weikit-background-size:contain;
 	}
 	.mod_area{
 		width:300px;
