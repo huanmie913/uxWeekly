@@ -1,5 +1,12 @@
 @charset "utf-8";
 *{ margin: 0; padding:0;}
+@media screen and (max-device-width: 480px){
+body{
+  -webkit-text-size-adjust:none;
+  font-family:Helvetica, Arial, Verdana, sans-serif;
+  padding:5px;
+}
+}
 .mod_yao{ width:100%; -webkit-background-size:contain;}
 .yao{ background: url(../images/bg.png) no-repeat; width:100%;-webkit-background-size:contain}
 /*.mod_area{  height:650px;width: 584px; -webkit-background-size:contain;  position: relative;}
