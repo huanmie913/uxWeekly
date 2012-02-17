@@ -23,6 +23,7 @@ mg{
 		width:300px;
 		height:350px;
 		position:relative;
+		-weikit-background-size:contain;
 	}
 	.control{
 		margin-top:30px;
@@ -30,13 +31,15 @@ mg{
 	.button{
 		background: url(../images/btn.png) no-repeat;
 		height: 31px;
-		 margin-left: -15px;
+		margin-left: -15px;
+		-weikit-background-size:contain;
 	}
 	.s{
 		width:54px;
 		height: 55px;
 		background: url(../images/pointer.png) no-repeat;
 		position: absolute;
+		-weikit-background-size:contain;
 	}
 	.s .is{ margin:4px 0 0 5px}
 }
