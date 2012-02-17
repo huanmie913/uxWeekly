@@ -16,19 +16,19 @@ mg{
 @media only screen and ( max-width:480px ){
 	body{
 	  -webkit-text-size-adjust:none;
-	  -webkit-background-size:contain;
+	  
 	}
 	.mod_yao{
-	  
 	  background: url(../images/bg.png) no-repeat;
 	  max-width:480px;
 	  height:480px;
+	  -webkit-background-size:contain;
 	}
 	.mod_area{
 		width:300px;
 		height:350px;
 		position:relative;
-		background:#f00;
+		/*background:#f00;*/
 		-weikit-background-size:contain;
 	}
 	.control{
