@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*mod_search*/
+.mod_search{ margin-top:8px; display: inline; width: 197px;}
+.mod_search legend{ display:none;}
+.mod_search .m_ipt{ float: left; background:url(../image/g_manage.png) no-repeat 0 -28px; width:141px; height: 20px; padding: 3px; }
+.mod_search .m_ipt input{ border: none; width:141px; padding:2px 0; background: none;}
+.mod_search .btn_sch{ float:left;background:url(../image/g_manage.png) no-repeat -147px -28px; width:50px; height: 26px; border: none; cursor: pointer }

@@ -1,0 +1,73 @@
+
+<!--mod_item-->
+<div class="mod_item">
+    <h2>效果预览</h2>
+    <!--调用说明-->
+    <div class="invoke_desc mt10">
+        <!--mod_search-->
+		<div class="mod_search">
+			<form action="#" id="mod_search">
+				<fieldset>
+					<legend>好友搜索</legend>
+					<div class="m_ipt"><input type="text" id="sch_key" value="搜索好友"/></div>
+					<input type="submit" value="" class="btn_sch" id="btn_sch"/>
+				</fieldset>
+			</form>
+		</div>
+		<!--mod_search-->
+	</div>
+	<!--/f2er_box-->
+	<script>
+		function searchMode( ctg ){
+			var iptId = ctg.iptId || "serarch_key",
+				btnSearchSubmit = ctg.btnSearchSubmit || "searchsubmit" ,
+				formSearchForm = ctg.formSearchForm || "search_form",
+				num = ctg.num || 5;
+			function getid( id ){
+				return typeof id == "string" ? document.getElementById( id ) : id;
+			}
+			function focusBlur(){
+				var _defaultValue = "";
+				getid( iptId ).onfocus = function(){
+					_defaultValue = this.defaultValue;
+					if( this.value == _defaultValue ){
+						this.value = ""
+					}
+				}
+				getid( iptId ).onblur = function(){
+					if( this.value.length == 0 ){
+						this.value = _defaultValue;
+					}
+				}
+			}
+			function getLen(str) {
+				str = str.replace(/(^\s*)|(\s*$)/g, "");
+				var aMatch=str.match(/[^\x00-\x80]/g);
+				return (str.length+(!aMatch?0:aMatch.length));
+			}	
+			function submitForm(){
+				getid(btnSearchSubmit).onclick = function(){
+					var key = getid( iptId ).value;
+					if( getLen( key )  < num  || key == this.defaultValue ){
+						this.focus();
+						alert('关键字的长度不能小于'+( num-1 ));
+						return false;
+					}
+					getid( formSearchForm ).submit();
+				}
+			}
+			function init(){
+				focusBlur();
+				submitForm();
+			}
+			return { init : init }
+		};
+		searchMode({iptId:"sch_key",btnSearchSubmit:"btn_sch",formSearchForm:"mod_search"}).init();
+    </div>
+    <!--/调用说明-->
+	<h2 class="mt50">更新记录</h2>
+	<ol class="mod_history">
+		<li>&middot;11-11-28 <span>by 情封</span></li>
+	</ol>
+</div>
+<!--/mod_item-->
