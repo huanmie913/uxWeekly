@@ -7,7 +7,7 @@ body{
 }
 }
 .mod_yao{ width:100%; -webkit-background-size:contain;}
-.yao{ background: url(../images/bg.png) no-repeat;max-width:640px; height:100%;-webkit-background-size:contain}
+.yao{ background: url(../images/bg.png) no-repeat; height:480px;-webkit-background-size:contain}
 /*.mod_area{  height:650px;width: 584px; -webkit-background-size:contain;  position: relative;}
 .control{ margin-top: 30px; position: relative;}
 .button{ background: url(../images/btn.png) no-repeat; width:125px; height: 127px; -webkit-background-size:contain; border: none; text-indent: -999em; overflow: hidden; position: absolute;left:50%; margin-left: -62px;}
