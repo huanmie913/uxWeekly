@@ -13,7 +13,7 @@ mg{
 	left:50%;
 }
 /*iphone*/
-@media only screen and ( max-width:480px ){
+@media only screen{
 	body{
 	  -webkit-text-size-adjust:none;
 	}
