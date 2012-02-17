@@ -21,12 +21,12 @@ mg{
 	  background: url(../images/bg.png) no-repeat;
 	  max-width:480px;
 	  height:400px;
-	  padding:80px 0 0 20px;
+	  padding:80px 20% 0 20px;
 	  -webkit-background-size:contain;
 	}
 	.mod_area{
-		width:60%;
-		height:300px;
+		width:80%;
+		height:310px;
 		position:relative;
 		background:#f00;
 		-webkit-background-size:contain;
