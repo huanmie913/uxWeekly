@@ -24,7 +24,8 @@ mg{
 	  -webkit-background-size:contain;
 	}
 	.mod_area{
-		width:300px;
+		margin:80px 0 0 20px;
+		width:200px;
 		height:350px;
 		position:relative;
 		/*background:#f00;*/
