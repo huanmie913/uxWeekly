@@ -1,6 +1,6 @@
 @charset "utf-8";
 *{ margin: 0; padding:0;}
-.mod_yao{ width:640px;}
+.mod_yao{ min-width:640px;}
 .yao{ background: url(../images/bg.png) no-repeat; padding:150px 0 0 20px;/*max-width: 960px;*/ height: 810px; -webkit-background-size:contain}
 #mod_area{ /*width: 584px; width:570px; height: 633px;height: 633px;*/  height:650px;width: 584px; -webkit-background-size:contain;  position: relative;/* overflow:hidden;*/}
 .control{ margin-top: 30px; position: relative;}
