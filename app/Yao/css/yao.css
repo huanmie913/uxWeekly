@@ -43,7 +43,7 @@ mg{
 		-webkit-background-size:contain;
 	}
 	.s{
-		width:108px;
+		max-width:108px;
 		height: 55px;
 		background: url(../images/pointer.png) no-repeat;
 		position: absolute;
