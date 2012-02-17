@@ -21,14 +21,14 @@ mg{
 	  background: url(../images/bg.png) no-repeat;
 	  max-width:480px;
 	  height:400px;
-	  padding:80px 20% 0 20px;
+	  padding:80px 20px 0 20px;
 	  -webkit-background-size:contain;
 	}
 	.mod_area{
 		width:100%;
 		height:310px;
 		position:relative;
-		background:#f00;
+		/*background:#f00;*/
 		-webkit-background-size:contain;
 	}
 	.control{
