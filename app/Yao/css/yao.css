@@ -36,8 +36,8 @@ mg{
 	.button{
 		background-image: url(../images/btn.png);
 		background-repeat: no-repeat;
-		max-width:125px;
-		height:127px;
+		width:30px;
+		height:30px;
 		margin-left: -15px;
 		-webkit-background-size:contain;
 	}
@@ -49,7 +49,7 @@ mg{
 		-webkit-background-size:contain;
 	}
 	.s  .is{ margin:4px 0 0 5px;}
-	.s img{ -webkit-background-size:contain; max-width:86px; }
+	.s  img{ -webkit-background-size:contain; max-width:86px; }
 }
 
 /*ipad*/
