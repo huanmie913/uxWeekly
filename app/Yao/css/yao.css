@@ -37,14 +37,14 @@ mg{
 	.button{
 		background-image: url(../images/btn.png);
 		background-repeat: no-repeat;
-		width:30px;
-		height:30px;
+		width:40px;
+		height:40px;
 		margin-left: -15px;
 		-webkit-background-size:contain;
 	}
 	.s{
 		max-width:108px;
-		height: 55px;
+		height: 60px;
 		background: url(../images/pointer.png) no-repeat;
 		position: absolute;
 		-webkit-background-size:contain;
