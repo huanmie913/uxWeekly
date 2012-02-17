@@ -49,7 +49,7 @@ mg{
 		-webkit-background-size:contain;
 	}
 	.s  .is{ margin:4px 0 0 5px;}
-	.s  img{ -webkit-background-size:contain; max-width:86px; }
+	.s  img{ -webkit-background-size:contain;width:40px; }
 }
 
 /*ipad*/
