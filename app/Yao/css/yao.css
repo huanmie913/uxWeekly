@@ -12,11 +12,13 @@ mg{
 	position: absolute;
 	left:50%;
 }
-@media screen and (max-device-width: 480px){
+/*iphone*/
+@media screen and ( max-width:720px ){
 	body{
 	  -webkit-text-size-adjust:none;
 	  background: url(../images/bg.png) no-repeat;
 	  height:480px;
+	  width:100%;
 	  -weikit-background-size:contain;
 	}
 	.mod_area{
