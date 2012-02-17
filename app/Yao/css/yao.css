@@ -33,19 +33,20 @@ mg{
 	}
 	.button{
 		background: url(../images/btn.png) no-repeat;
-		height: 31px;
-		width:30px;
+		width:125px;
+		height:127px;
 		margin-left: -15px;
 		-weikit-background-size:contain;
 	}
 	.s{
-		width:54px;
+		width:108px;
 		height: 55px;
 		background: url(../images/pointer.png) no-repeat;
 		position: absolute;
 		-weikit-background-size:contain;
 	}
-	.s .is{ margin:4px 0 0 5px}
+	.s  .is{ margin:4px 0 0 5px;}
+	.s img{}
 }
 
 /*ipad*/
