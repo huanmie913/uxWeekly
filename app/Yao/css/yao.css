@@ -25,6 +25,7 @@ mg{
 		width:300px;
 		height:350px;
 		position:relative;
+		background:#f00;
 		-weikit-background-size:contain;
 	}
 	.control{
@@ -33,6 +34,7 @@ mg{
 	.button{
 		background: url(../images/btn.png) no-repeat;
 		height: 31px;
+		width:30px;
 		margin-left: -15px;
 		-weikit-background-size:contain;
 	}
