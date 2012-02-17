@@ -28,7 +28,7 @@ mg{
 		width:200px;
 		height:350px;
 		position:relative;
-		/*background:#f00;*/
+		background:#f00;
 		-webkit-background-size:contain;
 	}
 	.control{
