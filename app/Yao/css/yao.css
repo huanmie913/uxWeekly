@@ -28,8 +28,8 @@ body{
 		background:#f00;
 	}
 	.mod_area{
-		
-		height:25%;;
+		width:70%;
+		height:25%;
 		position:absolute;
 		/*background:#f00;*/
 		-webkit-background-size:contain;
