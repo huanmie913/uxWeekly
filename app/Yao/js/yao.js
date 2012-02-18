@@ -30,14 +30,14 @@ var Yao = (function( option ){
 						_yaoBtn : option.yaoBtn //摇起来按钮ID
 					},
 				pointer = [ 1,2,3,4,5,6 ],
-				_container = Q( _opt._area );
+				_container = Q( _opt._area ),
+				_numId = Q( _opt._numId );
 				
 			function Q( id ){
                      return typeof id =="string" ? document.getElementById(id) : id;
 			}
 			
 			function createPointer(){
-				//var _container = Q( _opt._area );
 				if( _container.getElementsByClassName( _opt._class ).length > 0 ){
 					_container.innerHTML = "";
 				}
@@ -55,16 +55,14 @@ var Yao = (function( option ){
 			}
 			
 			function setPos(){
-				var //_container = Q( _opt._area ),
-					_objArray = _container.getElementsByClassName( _opt._class );
+				var _objArray = _container.getElementsByClassName( _opt._class );
 					for ( var i = 0;i< _objArray.length;i++){
 						reSetPos(_objArray[i]);
 					}
 			}
 			
 			function reSetPos(obj){
-				var //_container = Q( _opt._area ),
-					_containerWidth = parseInt( getCss( _container,"width") ),
+				var _containerWidth = parseInt( getCss( _container,"width") ),
 					_containerHeight = parseInt( getCss( _container,"height") ),
 					_dpLeft = Math.floor( Math.random() * _containerWidth ),
 					_dpTop = Math.floor( Math.random() * _containerHeight ),
@@ -101,30 +99,31 @@ var Yao = (function( option ){
 			}
 			
 			function subtraction(){
+				
 				addEvent( Q( _opt._subtraBtn ),"click",function(){
-					if( Q( _opt._numId ).innerHTML <= 1 ){
+					if( _numId.innerHTML <= 1 ){
 						alert('已经达到最小个数了');
 					}else{
-						Q( _opt._numId ).innerHTML--;
+						_numId.innerHTML--;
 					}
-					_opt._num = self.Q( _opt._numId ).innerHTML ;
+					_opt._num = _numId.innerHTML ;
 					navigator.vibrate(1000);
 				})
 			}
 		   function add(){
 				addEvent( Q( _opt._addBtn ),'click',function(){
-					if( Q( _opt._numId ).innerHTML >= _opt._maxNum ){
+					if( _numId.innerHTML >= _opt._maxNum ){
 						alert('已经达到最大个数了');
 					}else{
-						Q( _opt._numId ).innerHTML++;
+						_numId.innerHTML++;
 					}
-						_opt._num = Q( _opt._numId ).innerHTML ;
+						_opt._num = _numId.innerHTML ;
 						navigator.vibrate(1000);
 				})
 			}
 			
 			function init(){
-				Q( _opt._numId ).innerHTML = _opt._num;
+				_numId.innerHTML = _opt._num;
 				subtraction();
 				add();
 				addEvent( Q( _opt._yaoBtn ),'click',function(){
