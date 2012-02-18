@@ -32,11 +32,51 @@ var Yao = (function( option ){
 				pointer = [ 1,2,3,4,5,6 ],
 				_container = Q( _opt._area ),
 				_numId = Q( _opt._numId );
-				
+			
+			/*M*/			
 			function Q( id ){
                      return typeof id =="string" ? document.getElementById(id) : id;
 			}
 			
+			function getCss( obj,property ){
+				if( obj.currentStyle ){
+					return obj.currentStyle[ property ];
+				}else if( window.getComputedStyle ){
+					var prop = property.replace(/([A-Z])/g, "-$1");
+					prop = property.toLowerCase();
+					return document.defaultView.getComputedStyle(obj,null)[ property ];
+				}
+			}
+			
+			function addEvent( target,type,fn){
+				return target.addEventListener( type,fn,false);
+			}
+			
+			/*c*/
+			function subtraction(){
+				addEvent( Q( _opt._subtraBtn ),"click",function(){
+					if( _numId.innerHTML <= 1 ){
+						alert('已经达到最小个数了');
+					}else{
+						_numId.innerHTML--;
+					}
+					_opt._num = _numId.innerHTML ;
+					navigator.vibrate(1000);
+				})
+			}
+		   function add(){
+				addEvent( Q( _opt._addBtn ),'click',function(){
+					if( _numId.innerHTML >= _opt._maxNum ){
+						alert('已经达到最大个数了');
+					}else{
+						_numId.innerHTML++;
+					}
+						_opt._num = _numId.innerHTML ;
+						navigator.vibrate(1000);
+				})
+			}
+			
+			/*V*/
 			function createPointer(){
 				if( _container.getElementsByClassName( _opt._class ).length > 0 ){
 					_container.innerHTML = "";
@@ -82,44 +122,6 @@ var Yao = (function( option ){
 				}else{
 					 obj.style.top = _dpTop+"px";
 				}
-			}
-			
-			function getCss( obj,property ){
-				if( obj.currentStyle ){
-					return obj.currentStyle[ property ];
-				}else if( window.getComputedStyle ){
-					var prop = property.replace(/([A-Z])/g, "-$1");
-					prop = property.toLowerCase();
-					return document.defaultView.getComputedStyle(obj,null)[ property ];
-				}
-			}
-			
-			function addEvent( target,type,fn){
-				return target.addEventListener( type,fn,false);
-			}
-			
-			function subtraction(){
-				
-				addEvent( Q( _opt._subtraBtn ),"click",function(){
-					if( _numId.innerHTML <= 1 ){
-						alert('已经达到最小个数了');
-					}else{
-						_numId.innerHTML--;
-					}
-					_opt._num = _numId.innerHTML ;
-					navigator.vibrate(1000);
-				})
-			}
-		   function add(){
-				addEvent( Q( _opt._addBtn ),'click',function(){
-					if( _numId.innerHTML >= _opt._maxNum ){
-						alert('已经达到最大个数了');
-					}else{
-						_numId.innerHTML++;
-					}
-						_opt._num = _numId.innerHTML ;
-						navigator.vibrate(1000);
-				})
 			}
 			
 			function init(){
