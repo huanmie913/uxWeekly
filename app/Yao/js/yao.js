@@ -2,6 +2,7 @@
  * to: 桌游助手beta
  * author :f2er
  * time : 2012-02-18
+ * update: 新增 设备手机震动
 */
 
  function Yao( ctg ){
@@ -101,6 +102,7 @@
 					self.Q( self.setting._numId ).innerHTML--;
 				}
 				self.setting._num = self.Q( self.setting._numId ).innerHTML ;
+				navigator.vibrate(1000);
 			})
 		},
 		add : function(){
@@ -112,6 +114,7 @@
 					self.Q( self.setting._numId ).innerHTML++;
 				}
 				self.setting._num = self.Q( self.setting._numId ).innerHTML ;
+				navigator.vibrate(1000);
 			})
 		},
 		init : function(){
@@ -121,7 +124,7 @@
 			self.add();
 			self.addEvent( self.Q( self.setting._yaoBtn ),'click',function(){
 				self.createPointer();
-				navigator.mozVibrate(1000);
+				navigator.vibrate(1000);
 			});
 		}
     };
