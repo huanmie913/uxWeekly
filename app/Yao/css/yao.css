@@ -22,6 +22,7 @@ body{
 	}
 	.mod_yao{
 		padding:15% 10% 0 10%;
+		background:#000;
 	}
 	.yao{
 		
@@ -53,7 +54,7 @@ body{
 		-webkit-background-size:contain;
 	}
 	.s  .is{ margin:2px 0 0 2px;}
-	.s  img{ -webkit-background-size:contain;max-width:30px; }
+	.s  img{ }
 
 
 
