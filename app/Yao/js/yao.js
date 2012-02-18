@@ -46,6 +46,7 @@
             }
             _container.appendChild(_dfrag);
 			self.setPos();
+			navigator.vibrate(1000);
         },
 		setPos : function(){
 			var self = this,
