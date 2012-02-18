@@ -1,8 +1,8 @@
 /*
-* 桌游助手
-* f2er
-* 12-02-16
-* */
+ * to: 桌游助手beta
+ * author :f2er
+ * time : 2012-02-18
+*/
 
  function Yao( ctg ){
         this.setting = {
