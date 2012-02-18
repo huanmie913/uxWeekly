@@ -16,6 +16,13 @@ body{
 	-webkit-text-size-adjust:none;
 	}
 	
+	
+	
+
+
+
+/*iphone*/
+@media only screen and ( max-width:640px;){
 	#mod_QF{
 		max-width:640px;
 		min-height:480px;
@@ -27,7 +34,6 @@ body{
 	}
 	.mod_yao{
 		padding:28% 10% 0 10%;
-	
 	}
 	.mod_area{
 		min-width:260px;
@@ -35,7 +41,6 @@ body{
 		width:70%;
 		height:60%;
 		position:relative;
-		background:#f00;
 		-webkit-background-size:contain;
 	}
 	.control{
@@ -59,53 +64,7 @@ body{
 	}
 	.s .is{ margin:2px 0 0 2px;}
 	.s img{ max-width:86px; max-height:86px; width:25px; height:25px;-webkit-background-size:contain; }
-	
-
-
-
-/*iphone*/
-/*@media only screen and ( max-width:640px;){
-	body{
-	  -webkit-text-size-adjust:none;
-	}
-	.mod_yao{
-	  background: url(../images/bg.png) no-repeat;
-	  max-width:480px;
-	  height:400px;
-	  padding:80px 10% 0 10%;
-	  -webkit-background-size:contain;
-	}
-	.yao{
-		
-		background:#f00;
-	}
-	.mod_area{
-		width:100%;
-		height:310px;
-		position:relative;
-		-webkit-background-size:contain;
-	}
-	.control{
-		margin-top:30px;
-	}
-	.button{
-		background-image: url(../images/btn.png);
-		background-repeat: no-repeat;
-		width:40px;
-		height:40px;
-		margin-left: -20px;
-		-webkit-background-size:contain;
-	}
-	.s{
-		width:108px;
-		max-height: 111px;
-		background: url(../images/pointer.png) no-repeat;
-		position: absolute;
-		-webkit-background-size:contain;
-	}
-	.s  .is{ margin:2px 0 0 2px;}
-	.s  img{ -webkit-background-size:contain;max-width:30px; }
-}*/
+}
 
 /*ipad*/
 @media only screen and ( max-width:768px ){
