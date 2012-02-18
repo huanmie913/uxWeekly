@@ -16,11 +16,6 @@ body{
 	-webkit-text-size-adjust:none;
 	}
 	
-	
-	
-
-
-
 /*iphone*/
 @media only screen and ( max-width:640px;){
 	#mod_QF{
@@ -56,14 +51,23 @@ body{
 		margin-left: -20px;
 		-webkit-background-size:contain;
 	}
-	.s{ width : 30px;
-		height : 30px;
+	.s{ 
+		width : 40px;
+		height : 40px;
 		background: url(../images/pointer.png) no-repeat;
 		position: absolute;
 		-webkit-background-size:contain;
 	}
-	.s .is{ margin:2px 0 0 2px;}
-	.s img{ max-width:86px; max-height:86px; width:25px; height:25px;-webkit-background-size:contain; }
+	.s .is{ 
+		margin:3px 0 0 4px; 
+	}
+	.s img{ 
+		max-width:86px; 
+		max-height:86px; 
+		width:30px; 
+		height:30px;
+		-webkit-background-size:contain; 
+	}
 }
 
 /*ipad*/

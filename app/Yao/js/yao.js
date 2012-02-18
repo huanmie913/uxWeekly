@@ -47,10 +47,10 @@
 				_container = self.Q( self.setting._area ),
 				_objArray = _container.getElementsByClassName( self.setting._class );
 				for ( var i = 0;i< _objArray.length;i++){
-					self.resetPos(_objArray[i]);
+					self.reSetPos(_objArray[i]);
 				}
 		},
-		resetPos : function(obj){
+		reSetPos : function(obj){
 			var self = this,
 				_container = self.Q( self.setting._area ),
 				_containerWidth = parseInt( self.getCss( _container,"width") ),
