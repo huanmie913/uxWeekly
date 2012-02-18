@@ -13,7 +13,7 @@ mg{
 	left:50%;
 }
 /*iphone*/
-@media only screen and ( max-width:480px;){
+@media only screen and ( max-width:640px;){
 	body{
 	  -webkit-text-size-adjust:none;
 	}
@@ -54,7 +54,7 @@ mg{
 		-webkit-background-size:contain;
 	}
 	.s  .is{ margin:2px 0 0 2px;}
-	.s  img{ -webkit-background-size:contain;width:30px; }
+	.s  img{ -webkit-background-size:contain;max-width:30px; }
 }
 
 /*ipad*/
