@@ -29,40 +29,51 @@
                 _container.innerHTML = "";
             }
 
-            var _dfrag = document.createDocumentFragment(),
-                _containerWidth = parseInt( self.getCss( _container,"width") ),
-                _containerHeight = parseInt( self.getCss( _container,'height') );
+            var _dfrag = document.createDocumentFragment();
+
             for ( var i=0;i< self.setting._num;i++){
                  var _dpoint = document.createElement('div');
                  _dpoint.id = self.setting._class + i;
                  _dpoint.className = self.setting._class;
                  var _pointerNum = Math.random();
                  _dpoint.innerHTML = '<div class="is"><img src="images/pointer/'+self.pointer[ Math.floor( _pointerNum * self.pointer.length) ]+'.png"/><\/div>';
-                 var _dpLeft = Math.floor( Math.random() * _containerWidth ),
-                     _dpTop = Math.floor( Math.random() * _containerHeight );
-
-                //色子的宽高
-                 var _pointerWidth = parseInt( self.getCss(_dpoint,'width')),
-                     _pointerHeight = parseInt ( self.getCss(_dpoint,'height'));
-
-                //色子水平坐标
-                 if( _dpLeft + _pointerWidth > _containerWidth ){
-                     _dpoint.style.left = ( _containerWidth - _pointerWidth )+"px";
-                 }else{
-                     _dpoint.style.left = _dpLeft +"px";
-                 }
-
-                 //色子垂直坐标
-                 if ( _dpTop + _pointerHeight > _containerHeight ){
-                     _dpoint.style.top = ( _containerHeight - _pointerHeight )+"px";
-                 }else{
-                     _dpoint.style.top = _dpTop+"px";
-                 }
-
                  _dfrag.appendChild(_dpoint);
             }
             _container.appendChild(_dfrag);
+			self.setPos();
         },
+		setPos : function(){
+			var self = this,
+				_container = self.Q( self.setting._area ),
+				_objArray = _container.getElementsByClassName( self.setting._class );
+				for ( var i = 0;i< _objArray.length;i++){
+					self.resetPos(_objArray[i]);
+				}
+		},
+		resetPos : function(obj){
+			var self = this,
+				_container = self.Q( self.setting._area ),
+				_containerWidth = parseInt( self.getCss( _container,"width") ),
+                _containerHeight = parseInt( self.getCss( _container,"height") ),
+				_dpLeft = Math.floor( Math.random() * _containerWidth ),
+                _dpTop = Math.floor( Math.random() * _containerHeight ),
+				_pointerWidth = parseInt( self.getCss( obj,'width' )),
+				_pointerHeight = parseInt ( self.getCss( obj,'height' ));
+				console.log( _pointerWidth )
+				//色子水平坐标
+				if( _dpLeft + _pointerWidth > _containerWidth ){
+					obj.style.left = ( _containerWidth - _pointerWidth )+"px";
+				}else{
+					obj.style.left = _dpLeft +"px";
+				}
+
+				//色子垂直坐标
+				if ( _dpTop + _pointerHeight > _containerHeight ){
+					 obj.style.top = ( _containerHeight - _pointerHeight )+"px";
+				}else{
+					 obj.style.top = _dpTop+"px";
+				}
+		},
         getCss : function( obj,property ){
             if( obj.currentStyle ){
                 return obj.currentStyle[ property ];
