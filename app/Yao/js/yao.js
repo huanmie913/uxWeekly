@@ -32,7 +32,7 @@
             var _dfrag = document.createDocumentFragment(),
                 _containerWidth = parseInt( self.getCss( _container,"width") ),
                 _containerHeight = parseInt( self.getCss( _container,'height') );
-
+				alert(_containerWidth)
             for ( var i=0;i< self.setting._num;i++){
                  var _dpoint = document.createElement('div');
                  _dpoint.id = self.setting._class + i;
