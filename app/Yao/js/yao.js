@@ -9,11 +9,11 @@
             _area : ctg.container, //容器ID
             _num : ctg.num, //色子个数
             _class : ctg.cn, //色子class
-			_subtraBtn : ctg.subtraBtn,
-			_addBtn : ctg.addBtn,
-			_numId : ctg.numID,
-			_maxNum : ctg.maxNum,
-			_yaoBtn : ctg.yaoBtn
+			_subtraBtn : ctg.subtraBtn, //减id
+			_addBtn : ctg.addBtn, //加id
+			_numId : ctg.numID, //个数id
+			_maxNum : ctg.maxNum, //最大个数
+			_yaoBtn : ctg.yaoBtn //摇起来按钮ID
         };
 
         if( !(this instanceof Yao) ){
@@ -105,7 +105,7 @@
 				if( self.Q( self.setting._numId ).innerHTML >= self.setting._maxNum ){
 					alert('已经达到最大个数了');
 				}else{
-					self.setting._num = self.Q( self.setting._numId ).innerHTML++;
+					self.Q( self.setting._numId ).innerHTML++;
 				}
 				self.setting._num = self.Q( self.setting._numId ).innerHTML ;
 			}
