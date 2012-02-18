@@ -68,7 +68,7 @@ var Yao = (function( option ){
 					_dpTop = Math.floor( Math.random() * _containerHeight ),
 					_pointerWidth = parseInt( getCss( obj,'width' )),
 					_pointerHeight = parseInt ( getCss( obj,'height' ));
-					console.log( _pointerWidth )
+
 				//色子水平坐标
 				if( _dpLeft + _pointerWidth > _containerWidth ){
 					obj.style.left = ( _containerWidth - _pointerWidth )+"px";
