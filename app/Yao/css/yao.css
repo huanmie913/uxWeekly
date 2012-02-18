@@ -21,10 +21,10 @@ mg{
 	  background: url(../images/bg.png) no-repeat;
 	  max-width:480px;
 	  height:400px;
-	  padding:80px 20px 0 20px;
 	  -webkit-background-size:contain;
 	}
 	.yao{
+		padding:80px 20px 0 20px;
 		background:#f00;
 	}
 	.mod_area{
