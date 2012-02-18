@@ -41,27 +41,11 @@ body{
 	.control{
 		margin-top:30px;
 	}
-	/*.mod_yao{
-		padding:15% 10% 0 10%;
-		background:#000;
-	}
-	.yao{
-		
-		background:#ff0;
-	}/*
-	.mod_area{
-		width:70%;
-		height:60%;
-		position:relative;
-		background:#f00;
-		-webkit-background-size:contain;
-	}
-	.control{
-		margin-top:30px;
-	}
 	.button{
 		background-image: url(../images/btn.png);
 		background-repeat: no-repeat;
+		max-width:125px;
+		max-height:127px;
 		width:40px;
 		height:40px;
 		margin-left: -20px;
@@ -74,8 +58,9 @@ body{
 		position: absolute;
 		-webkit-background-size:contain;
 	}
-	.s  .is{ margin:2px 0 0 2px;}
-	.s  img{ }
+	.s .is{ margin:2px 0 0 2px;}
+	.s img{ }
+	
 
 
 
