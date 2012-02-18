@@ -52,8 +52,10 @@ body{
 		-webkit-background-size:contain;
 	}
 	.s{
-		width:108px;
+		max-width:108px;
 		max-height: 111px;
+		width : 30px;
+		height : 30px;
 		background: url(../images/pointer.png) no-repeat;
 		position: absolute;
 		-webkit-background-size:contain;
