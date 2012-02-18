@@ -29,14 +29,15 @@ var Yao = (function( option ){
 						_maxNum : option.maxNum, //最大个数
 						_yaoBtn : option.yaoBtn //摇起来按钮ID
 					},
-				pointer = [ 1,2,3,4,5,6 ];
+				pointer = [ 1,2,3,4,5,6 ],
+				_container = Q( _opt._area );
 				
 			function Q( id ){
                      return typeof id =="string" ? document.getElementById(id) : id;
 			}
 			
 			function createPointer(){
-				var _container = Q( _opt._area );
+				//var _container = Q( _opt._area );
 				if( _container.getElementsByClassName( _opt._class ).length > 0 ){
 					_container.innerHTML = "";
 				}
@@ -54,7 +55,7 @@ var Yao = (function( option ){
 			}
 			
 			function setPos(){
-				var _container = Q( _opt._area ),
+				var //_container = Q( _opt._area ),
 					_objArray = _container.getElementsByClassName( _opt._class );
 					for ( var i = 0;i< _objArray.length;i++){
 						reSetPos(_objArray[i]);
@@ -62,7 +63,7 @@ var Yao = (function( option ){
 			}
 			
 			function reSetPos(obj){
-				var _container = Q( _opt._area ),
+				var //_container = Q( _opt._area ),
 					_containerWidth = parseInt( getCss( _container,"width") ),
 					_containerHeight = parseInt( getCss( _container,"height") ),
 					_dpLeft = Math.floor( Math.random() * _containerWidth ),
