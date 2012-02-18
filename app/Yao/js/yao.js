@@ -46,7 +46,7 @@
             }
             _container.appendChild(_dfrag);
 			self.setPos();
-			navigator.vibrate(1000);
+			
         },
 		setPos : function(){
 			var self = this,
@@ -118,6 +118,7 @@
 			self.add();
 			self.Q( self.setting._yaoBtn ).onclick = function(){
 				self.createPointer();
+				navigator.vibrate(1000);
 			}
 		}
     };
