@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8"/>
     <title>摇色子</title>
-    <meta name="viewport" content="width=device-width; initial-scale=1.0;minimum-scale=1.0, maximum-scale=1.0; user-scalable=no" />
+    <!--<meta name="viewport" content="width=device-width; initial-scale=1.0;minimum-scale=1.0, maximum-scale=1.0; user-scalable=no" />
     <meta content="black" name="apple-mobile-web-app-status-bar-style" />
-	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />-->
 	<link href="css/yao.css" rel="stylesheet"/>
 </head>
 <body>
@@ -17,9 +17,9 @@
         <div class="mod_area" id="mod_area"></div>
         <div class="control">
             <div class="num_box">
-				<span class="sbutraction">-</span>
+				<span class="subtraction" id="subtraction">-</span>
 				<span id="num" class="num">1</span>
-				<span class="add">+</span>
+				<span class="add" id="add">+</span>
 			</div>
             <input type="button" value="摇起来" class="button" id="button"/>
         </div>
@@ -31,9 +31,16 @@
 
 <script src="js/yao.js"></script>
 <script>
-    document.getElementById("button").onclick = function(){
-        Yao({ container:"mod_area",num:3,cn:"s" });
-    }
+	var setting = { container:"mod_area",
+					num:3,
+					cn:"s",
+					subtraBtn:"subtraction",
+					addBtn : "add",
+					numID : "num",
+					maxNum : 6,
+					yaoBtn : "button"
+				}
+	Yao( setting ).init();
 </script>
 </body>
 </html>

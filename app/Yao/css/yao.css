@@ -68,11 +68,11 @@ body{
 		height:30px;
 		-webkit-background-size:contain; 
 	}
-	.num_box{ position:absolute; left:25px; top:410px; width:80px; height:30px; background:#f00}
-	.sbutraction,.add,.num{ display:inline-block; vertical-align:middle; background-image:url(../images/num.png);-webkit-background-size:contain; background-repeat:no-repeat; height:60px;max-height:60px;}
-	.sbutraction{ background-position: 0 0; width:50px;max-width:50px; font-size:0}
-	.add{ background-position: -134px 0; width:50px;max-width:50px;font-size:0 }
-	.num{ background-position: -65px 0; width:55px;max-width:55px; text-align:center;}
+	.num_box{ position:absolute; left:25px; top:410px; width:280px; height:30px; background:#f00}
+	.subtraction,.add,.num{ display:inline-block; vertical-align:middle; background-image:url(../images/num.png);/*-webkit-background-size:contain;*/ background-repeat:no-repeat; height:60px;}
+	.subtraction{ background-position: 0 0; width:50px; font-size:0}
+	.add{ background-position: -134px 0; width:50px;font-size:0 }
+	.num{ background-position: -65px 0; width:55px; text-align:center;}
 }
 
 /*ipad*/

@@ -8,13 +8,18 @@
         this.setting = {
             _area : ctg.container, //容器ID
             _num : ctg.num, //色子个数
-            _class : ctg.cn //色子class
+            _class : ctg.cn, //色子class
+			_subtraBtn : ctg.subtraBtn,
+			_addBtn : ctg.addBtn,
+			_numId : ctg.numID,
+			_maxNum : ctg.maxNum,
+			_yaoBtn : ctg.yaoBtn
         };
 
         if( !(this instanceof Yao) ){
             return new Yao( ctg );
         }
-        this.init();
+		this.init();
     }
 
     Yao.prototype = {
@@ -83,8 +88,35 @@
                 return document.defaultView.getComputedStyle(obj,null)[ property ];
             }
         },
-        init : function(){
-            var self = this;
-            self.createPointer();
-        }
+		subtraction : function(){
+			var self = this;
+			self.Q( self.setting._subtraBtn ).onclick = function(){
+				if( self.Q( self.setting._numId ).innerHTML <= 1 ){
+					alert('已经达到最小个数了');
+				}else{
+					self.Q( self.setting._numId ).innerHTML--;
+				}
+				self.setting._num = self.Q( self.setting._numId ).innerHTML ;
+			}
+		},
+		add : function(){
+			var self = this;
+			self.Q( self.setting._addBtn ).onclick = function(){
+				if( self.Q( self.setting._numId ).innerHTML >= self.setting._maxNum ){
+					alert('已经达到最大个数了');
+				}else{
+					self.setting._num = self.Q( self.setting._numId ).innerHTML++;
+				}
+				self.setting._num = self.Q( self.setting._numId ).innerHTML ;
+			}
+		},
+		init : function(){
+			var self = this;
+			self.Q( self.setting._numId ).innerHTML = self.setting._num;
+			self.subtraction();
+			self.add();
+			self.Q( self.setting._yaoBtn ).onclick = function(){
+				self.createPointer();
+			}
+		}
     };
