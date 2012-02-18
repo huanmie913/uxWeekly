@@ -5,15 +5,6 @@
  * update: 新增 设备手机震动
 */
 
-var setting = { container:"mod_area",
-			   num:3,
-			   cn:"s",
-			   subtraBtn:"subtraction",
-			   addBtn : "add",
-			   numID : "num",
-			   maxNum : 6,
-			   yaoBtn : "button"
-			 }
 var Yao = (function( option ){
 			var _opt = {
 						_area : option.container, //容器ID
