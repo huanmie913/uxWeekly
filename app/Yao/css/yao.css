@@ -25,13 +25,13 @@ body{
 	}
 	.yao{
 		
-		background:#f00;
+		background:#ff0;
 	}
 	.mod_area{
 		width:70%;
 		height:60%;
 		position:relative;
-		/*background:#f00;*/
+		background:#f00;
 		-webkit-background-size:contain;
 	}
 	.control{
