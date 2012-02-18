@@ -16,7 +16,7 @@ body{
 	-webkit-text-size-adjust:none;
 	}
 	
-#mod_QF{
+	#mod_QF{
 		max-width:640px;
 		min-height:480px;
 		margin:0 auto;
@@ -25,6 +25,14 @@ body{
 		background: url(../images/bg.png) no-repeat;	  
 		-webkit-background-size:contain;			
 	}
+	
+	.mod_area{
+		width:70%;
+		height:60%;
+		position:relative;
+		background:#f00;
+		-webkit-background-size:contain;
+	}
 	/*.mod_yao{
 		padding:15% 10% 0 10%;
 		background:#000;
@@ -32,7 +40,7 @@ body{
 	.yao{
 		
 		background:#ff0;
-	}
+	}/*
 	.mod_area{
 		width:70%;
 		height:60%;
@@ -59,7 +67,7 @@ body{
 		-webkit-background-size:contain;
 	}
 	.s  .is{ margin:2px 0 0 2px;}
-	.s  img{ }*/
+	.s  img{ }
 
 
 
