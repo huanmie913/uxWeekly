@@ -14,22 +14,23 @@ mg{
 }
 body{
 	  -webkit-text-size-adjust:none;
+	  background: url(../images/bg.png) no-repeat;
+	  width:100%;
+	  height:100%;
+	  position:relative;
+	  -webkit-background-size:contain;
 	}
 	.mod_yao{
-	  background: url(../images/bg.png) no-repeat;
-	  max-width:480px;
-	  height:400px;
-	  padding:80px 10% 0 10%;
-	  -webkit-background-size:contain;
+		padding:15% 10% 0 10%;
 	}
 	.yao{
 		
 		background:#f00;
 	}
 	.mod_area{
-		width:80%;
-		height:310px;
-		position:relative;
+		
+		height:25%;;
+		position:absolute;
 		/*background:#f00;*/
 		-webkit-background-size:contain;
 	}
