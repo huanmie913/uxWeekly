@@ -136,7 +136,10 @@ var Yao = (function( option ){
 					var alpha = event.alpha,/*y*/
 						beta = event.beta,/*z*/
 						gamma = event.gamma ;/*x*/
-					var rotationRate = event.accelerationIncludingGravity.x
+					var x = event.accelerationIncludingGravity.x,
+						y = event.accelerationIncludingGravity.y,
+						z =event.accelerationIncludingGravity.z;
+					var rotationRate = x +"<br/>"+y +"<br/>"+z;
 					document.getElementById("out").innerHTML =rotationRate;
 					if( rotationRate >10){
 						createPointer();
