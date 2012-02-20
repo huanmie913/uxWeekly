@@ -1,4 +1,4 @@
-/*
+﻿/*
  * To:Ajax Object
  * Time:2012-02-01
  * authro :f2er 
@@ -151,7 +151,36 @@ mod_f2er={
 		setTitle:function(title){
 			document.title=title;
 		},
+		loadScript : function(id,url,callback){
+			if( this._$(id) ){
+				return;
+			}
+			var _script = document.createElement("script"),
+				_head = document.getElementsByTagName('head')[0],
+				_paramPrefix = url.indexOf("?") == -1 ? "?" : "&";
+			url = url + _paramPrefix + "t=" + new Date();
+			_script.id = id;
+			_script.onreadystatechange = function(){
+				if( _script.readyState == 4){
+					if( _script.status >= 200 && _script.status < 300 || _script.status == 304 ){
+						if( Object.prototype.toString.call(callback) == "[object Function]"){
+							callback();
+						}
+					}
+				}
+			}
+			_script.onload = function(){
+				if( Object.prototype.toString.call(callback) == "[object Function]"){
+					callback();
+				}
+				/*解决在ff中改变url不重新加载资源的方案*/
+				_head.removeChild(_script);
+			}
+			_script.src= url;
+			_head.appendChild(_script);
+		},
 		loadPage:function( id ){
+			var that = this;
 			var _pid = this._$( id ),
 				_wrapper =  document.getElementsByClassName('wiki_content')[0];
 			var	_arrowHtml=document.createElement('span');
@@ -176,6 +205,12 @@ mod_f2er={
 				var _dataSource=_target.getAttribute('data-source');
 				Ajax.doAjax("GET",_dataSource,true,"",function(txt){
 					_wrapper.innerHTML = txt;
+					//搜索平台搜索模块
+					if ( _dataSource.indexOf("search") >-1 ){
+						that.loadScript("search","community/search/js/search.js",function(){
+							searchMode({iptId:"sch_key",btnSearchSubmit:"btn_sch",formSearchForm:"mod_search",num:4});
+						})
+					}
 				},"")
 				window.location.href="#/"+_dataSource;
 			}
