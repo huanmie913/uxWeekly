@@ -133,15 +133,10 @@ var Yao = (function( option ){
 					//navigator.vibrate(1000);
 				});
 				addEvent( window,'devicemotion',function(event){
-					var alpha = event.alpha,/*y*/
-						beta = event.beta,/*z*/
-						gamma = event.gamma ;/*x*/
 					var x = event.accelerationIncludingGravity.x,
 						y = event.accelerationIncludingGravity.y,
 						z =event.accelerationIncludingGravity.z;
-					var rotationRate = x +"<br/>"+y +"<br/>"+z;
-					document.getElementById("out").innerHTML =rotationRate;
-					if( x > 5){
+					if( x >=5 || y >=5 || z>=5 ){
 						createPointer();
 					}
 				})
