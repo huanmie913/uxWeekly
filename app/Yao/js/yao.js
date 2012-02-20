@@ -130,14 +130,14 @@ var Yao = (function( option ){
 				add();
 				addEvent( Q( _opt._yaoBtn ),'click',function(){
 					createPointer();
-					navigator.vibrate(1000);
+					//navigator.vibrate(1000);
 				});
 				addEvent( window,'deviceorientation',function(event){
 					var alpha = event.alpha,
 						beta = event.beta,
 						gamma = event.gamma ;
 					document.getElementById("out").innerHTML =alpha +"<br/>"+beta+"<br/>" +gamma;
-					if( alpha>50 || beta>50 || gamma>50){
+					if( alpha>500 || beta>500 || gamma>500){
 						createPointer();
 					}
 				})
