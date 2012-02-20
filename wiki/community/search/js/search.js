@@ -3,6 +3,12 @@
  * depend:javascript
  * author :f2er
 */
+/*
+ * iptId : 输入框ID
+ * btnSearchSubmit ：提交按钮ID
+ * formSearchForm ：表单ID
+ * num ：字数个数最大值
+*/
 function searchMode( ctg ){
 	this.setting = {
 					iptId : ctg.iptId,
