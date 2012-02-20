@@ -131,7 +131,6 @@
 					var x = event.accelerationIncludingGravity.x,
 						y = event.accelerationIncludingGravity.y,
 						z =event.accelerationIncludingGravity.z;
-					//document.getElementById("out").innerHTML = x +"<br/>"+y+"<br/>"+z;
 					if( x >=5 || y >=5 || z>=5 ){
 						self.createPointer();
 					}
