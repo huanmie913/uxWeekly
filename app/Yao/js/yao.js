@@ -141,7 +141,7 @@ var Yao = (function( option ){
 						z =event.accelerationIncludingGravity.z;
 					var rotationRate = x +"<br/>"+y +"<br/>"+z;
 					document.getElementById("out").innerHTML =rotationRate;
-					if( x >0){
+					if( x > 5){
 						createPointer();
 					}
 				})
