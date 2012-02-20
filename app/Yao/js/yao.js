@@ -136,6 +136,7 @@ var Yao = (function( option ){
 					var alpha = event.alpha,
 						beta = event.beta,
 						gamma = event.gamma ;
+					alert(alpha)
 					if( alpha>50 || beta>50 || z>50){
 						createPointer();
 					}
