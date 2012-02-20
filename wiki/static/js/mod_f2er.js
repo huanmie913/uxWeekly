@@ -179,10 +179,10 @@ mod_f2er={
 			_script.src= url;
 			_head.appendChild(_script);
 		},
-		doJS : function(){
+		doJS : function( dataSource ){
 			var that = this;
 			//搜索平台搜索模块
-			if ( _dataSource.indexOf("search") >-1 ){
+			if ( dataSource.indexOf("search") >-1 ){
 				that.loadScript("search","community/search/js/search.js",function(){
 					searchMode({iptId:"sch_key",btnSearchSubmit:"btn_sch",formSearchForm:"mod_search",num:4});
 				})
@@ -214,7 +214,7 @@ mod_f2er={
 				var _dataSource=_target.getAttribute('data-source');
 				Ajax.doAjax("GET",_dataSource,true,"",function(txt){
 					_wrapper.innerHTML = txt;
-					self.doJS();
+					self.doJS( _dataSource );
 				},"")
 				window.location.href="#/"+_dataSource;
 			}
