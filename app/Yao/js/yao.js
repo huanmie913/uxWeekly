@@ -132,7 +132,7 @@ var Yao = (function( option ){
 					createPointer();
 					//navigator.vibrate(1000);
 				});
-				addEvent( window,'deviceorientation',function(event){
+				addEvent( window,'devicemotion',function(event){
 					var alpha = event.alpha,/*y*/
 						beta = event.beta,/*z*/
 						gamma = event.gamma ;/*x*/
