@@ -1,8 +1,8 @@
 /*
  * to: 桌游助手beta
  * author :f2er
- * time : 2012-02-18
- * update: 新增 设备手机震动
+ * time : 2012-02-20
+ * update: 新增 设备手机震动,加速器
 */
 
 		  		  
