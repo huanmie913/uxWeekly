@@ -133,11 +133,12 @@ var Yao = (function( option ){
 					//navigator.vibrate(1000);
 				});
 				addEvent( window,'deviceorientation',function(event){
-					var alpha = event.alpha,
-						beta = event.beta,
-						gamma = event.gamma ;
-					document.getElementById("out").innerHTML =alpha +"<br/>"+beta+"<br/>" +gamma;
-					if( alpha>300 || beta>300 || gamma>300){
+					var alpha = event.alpha,/*y*/
+						beta = event.beta,/*z*/
+						gamma = event.gamma ;/*x*/
+					var rotationRate = event.rotationRate
+					document.getElementById("out").innerHTML =rotationRate;
+					if( rotationRate >10){
 						createPointer();
 					}
 				})
