@@ -214,7 +214,7 @@ mod_f2er={
 				var _dataSource=_target.getAttribute('data-source');
 				Ajax.doAjax("GET",_dataSource,true,"",function(txt){
 					_wrapper.innerHTML = txt;
-					self.doJS( _dataSource );
+					that.doJS( _dataSource );
 				},"")
 				window.location.href="#/"+_dataSource;
 			}
