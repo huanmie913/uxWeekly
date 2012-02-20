@@ -132,7 +132,7 @@ var Yao = (function( option ){
 					createPointer();
 					navigator.vibrate(1000);
 				});
-				addEvent( 'window','deviceorientation',function(event){
+				addEvent( window,'deviceorientation',function(event){
 					createPointer();
 				})
 			}
