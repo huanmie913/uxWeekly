@@ -132,7 +132,7 @@
 						y = event.accelerationIncludingGravity.y,
 						z =event.accelerationIncludingGravity.z;
 					if( x >=5 || y >=5 || z>=5 ){
-						createPointer();
+						self.createPointer();
 					}
 				})
 		}
