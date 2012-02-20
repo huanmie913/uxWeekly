@@ -132,7 +132,7 @@ var Yao = (function( option ){
 					createPointer();
 					navigator.vibrate(1000);
 				});
-				addEvent('window','devicemotion',function(event){
+				addEvent( window,'devicemotion',function(event){
 					var x = event.accelerationIncludingGravity.x,
 						y = event.accelerationIncludingGravity.y,
 						z = event.accelerationIncludingGravity.z;
