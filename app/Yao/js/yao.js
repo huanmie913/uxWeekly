@@ -137,7 +137,7 @@ var Yao = (function( option ){
 						beta = event.beta,
 						gamma = event.gamma ;
 					document.getElementById("out").innerHTML =alpha +"<br/>"+beta+"<br/>" +gamma;
-					if( alpha>500 || beta>500 || gamma>500){
+					if( alpha>300 || beta>300 || gamma>300){
 						createPointer();
 					}
 				})
