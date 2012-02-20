@@ -133,12 +133,12 @@ var Yao = (function( option ){
 					navigator.vibrate(1000);
 				});
 				addEvent( window,'devicemotion',function(event){
-					var x = event.accelerationIncludingGravity.x,
+					/*var x = event.accelerationIncludingGravity.x,
 						y = event.accelerationIncludingGravity.y,
 						z = event.accelerationIncludingGravity.z;
-					if( x>50 || y>50 || z>50){
+					if( x>50 || y>50 || z>50){*/
 						createPointer();
-					}
+					/*}*/
 				})
 			}
 			
