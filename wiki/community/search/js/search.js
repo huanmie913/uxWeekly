@@ -42,7 +42,7 @@ searchMode.prototype = {
 	submitForm : function(){
 		var self = this;
 		self.getid( self.setting.btnSearchSubmit ).onclick = function(){
-			var key = self.setting.getid( self.setting.iptId ).value;
+			var key = self.getid( self.setting.iptId ).value;
 			if( self.getLen( key )  < self.setting.num  || key == this.defaultValue ){
 				this.focus();
 				alert('关键字不能少于'+( self.setting.num-1 ));
