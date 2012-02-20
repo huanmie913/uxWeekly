@@ -5,10 +5,6 @@
  * update: 新增 设备手机震动
 */
 
-/*
- * 调用方式
- * Yao( setting ).init();
-*/
 		  		  
  function Yao( ctg ){
         this.setting = {
@@ -131,5 +127,13 @@
 				self.createPointer();
 				navigator.vibrate(1000);
 			});
+			self.addEvent( window,'devicemotion',function(event){
+					var x = event.accelerationIncludingGravity.x,
+						y = event.accelerationIncludingGravity.y,
+						z =event.accelerationIncludingGravity.z;
+					if( x >=5 || y >=5 || z>=5 ){
+						createPointer();
+					}
+				})
 		}
     };
