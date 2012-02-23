@@ -112,7 +112,7 @@
 				this.className = " operaHover";
 			})
 			self.addEvent( _subtraBtn,'touchend',function(){
-				this.className = "operaHover";
+				this.className = "subtraction";
 			})
 		},
 		add : function(){
@@ -132,7 +132,7 @@
 				this.className = " operaHover";
 			})
 			self.addEvent( _addBtn,'touchend',function(){
-				this.className = "operaHover";
+				this.className = "add";
 			})
 		},
 		init : function(){
