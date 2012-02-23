@@ -21,7 +21,6 @@ body{
 	.mod_QF{
 		width:320px;
 		height:480px;
-		
 		background: url(../images/bg.png) no-repeat;
 		-webkit-background-size:contain;
 	}
