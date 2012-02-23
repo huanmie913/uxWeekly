@@ -51,7 +51,7 @@ body{
 	.control{
 		margin-top:30px;
 	}
-	.button{
+	.button,.btnhover{
 		border: none;
 		text-indent: -999em; 
 		overflow: hidden; 
@@ -67,7 +67,7 @@ body{
 		margin-left: -20px;
 		-webkit-background-size:contain;
 	}
-	.button.hover{
+	.btnhover{
 		-webkit-tap-highlight-color:rgba(0,0,0,100);
 	}
 	.s{ 

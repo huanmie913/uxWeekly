@@ -130,7 +130,7 @@
 				//navigator.vibrate(1000);
 			});
 			self.addEvent( self.Q( self.setting._yaoBtn ),'touchstart',function(){
-				this.className = " hover";
+				this.className = " btnhover";
 			})
 			
 			self.addEvent( window,'devicemotion',function(event){
