@@ -127,11 +127,7 @@
 				self.createPointer();
 				navigator.vibrate(1000);
 			});
-			self.addEvent( window,'load',function(){
-				self.addEvent('document','touchmove',function(event){
-					 event.preventDefault();
-				})
-			});
+			
 			self.addEvent( window,'devicemotion',function(event){
 					var x = event.accelerationIncludingGravity.x,
 						y = event.accelerationIncludingGravity.y,
@@ -139,6 +135,9 @@
 					if( x >=5 || y >=5 || z>=5 ){
 						setTimeout(function(){ self.createPointer(); },500)
 					}
+				})
+			self.addEvent('document','touchmove',function(event){
+					 event.preventDefault();
 				})
 		}
     };
