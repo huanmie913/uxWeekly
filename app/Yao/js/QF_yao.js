@@ -138,6 +138,11 @@
 						setTimeout(function(){ self.createPointer();},500)
 					}
 				})
+			self.addEvent(window,"load",function(){
+				setTimeout(function(){
+					window.scrollTo(0,1);
+				},100)
+			})
 			self.addEvent(document,'touchmove',function(event){
 					 event.preventDefault();
 				})
