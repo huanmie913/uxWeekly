@@ -197,7 +197,7 @@
 			//console.log($(focusBox).find('img').attr('src') != 'undefined')
 			
 			$(focusBox).each(function(i){
-				var _src = $(this).find('img').attr('src');
+				var _src = $(this).find('img:eq('+i+')').attr('src');
 				if( _src == "undefined" ){
 					imgLoad(i);
 				}
