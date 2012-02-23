@@ -129,9 +129,6 @@
 				self.createPointer();
 				//navigator.vibrate(1000);
 			});
-			self.addEvent( self.Q( self.setting._yaoBtn ),'touchstart',function(){
-				this.className = " hover";
-			})
 			
 			self.addEvent( window,'devicemotion',function(event){
 					var x = event.accelerationIncludingGravity.x,

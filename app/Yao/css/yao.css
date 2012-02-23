@@ -67,7 +67,7 @@ body{
 		margin-left: -20px;
 		-webkit-background-size:contain;
 	}
-	.bclick{
+	.button.hover{
 		-webkit-tap-highlight-color:rgba(0,0,0,100);
 	}
 	.s{ 
