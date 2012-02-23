@@ -109,10 +109,10 @@
 			})
 			
 			self.addEvent( _subtraBtn,'touchstart',function(){
-				this.className += " operaHover";
+				_subtraBtn.className += " operaHover";
 			})
 			self.addEvent( _subtraBtn,'touchend',function(){
-				this.className = "subtraction";
+				_subtraBtn.className = "subtraction";
 			})
 		},
 		add : function(){
@@ -129,10 +129,10 @@
 				//navigator.vibrate(1000);
 			})
 			self.addEvent( _addBtn,'touchstart',function(){
-				this.className += " operaHover";
+				_addBtn.className += " Hover";
 			})
 			self.addEvent( _addBtn,'touchend',function(){
-				this.className = "add";
+				_addBtn.className = "add";
 			})
 		},
 		init : function(){
@@ -146,7 +146,7 @@
 				//navigator.vibrate(1000);
 			});
 			self.addEvent( _yaoBtn,'touchstart',function(){
-				this.className += " btnhover";
+				this.className += " Hover";
 			})
 			self.addEvent( _yaoBtn,'touchend',function(){
 				this.className = "button";
