@@ -15,7 +15,7 @@ body{
 	}
 
 /*iphone(profile,竖屏)*/
-@media screen and ( max-width:320px;){
+@media screen and ( max-device-width:640px;){
 	#mod_QF{
 		/*max-width:320px;
 		max-height:480px;*/
