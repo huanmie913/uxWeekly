@@ -105,7 +105,7 @@ body{
 }
 	
 /*iphone(landscape,横屏)*/
-@media screen and ( min-width: 321px){
+@media screen and ( max-width: 480px){
 	#mod_QF{
 		width:480px;
 		min-height:320px;
