@@ -20,7 +20,7 @@ body{
 @media screen and ( max-device-width:320px){
 	#mod_QF{
 		width:320px;
-		min-height:480px;
+		height:480px;
 		
 		background: url(../images/bg.png) no-repeat;
 		-webkit-background-size:contain;
