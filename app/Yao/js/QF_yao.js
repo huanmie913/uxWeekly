@@ -130,6 +130,11 @@
 			/*self.addEvent("body",'touchmove',function(event){
 				event.preventDefault();
 			})*/
+			self.addEvent( window,'load',function(){
+				self.addEvent('body','touchmove',function(event){
+					 event.preventDefault();
+				})
+			})
 			self.addEvent( window,'devicemotion',function(event){
 					var x = event.accelerationIncludingGravity.x,
 						y = event.accelerationIncludingGravity.y,
