@@ -51,7 +51,7 @@ body{
 	.control{
 		margin-top:30px;
 	}
-	.button,.btnhover{
+	.button{
 		border: none;
 		text-indent: -999em; 
 		overflow: hidden; 
@@ -94,7 +94,7 @@ body{
 		width:280px; 
 		height:30px;
 	}
-	.subtraction,.add,.num,.operaHover{ 
+	.subtraction,.add,.num{ 
 		display:inline-block; 
 		vertical-align:middle; 
 		background-image:url(../images/num.png); 

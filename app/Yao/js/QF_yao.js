@@ -109,7 +109,7 @@
 			})
 			
 			self.addEvent( _subtraBtn,'touchstart',function(){
-				this.className = " operaHover";
+				this.className += " operaHover";
 			})
 			self.addEvent( _subtraBtn,'touchend',function(){
 				this.className = "subtraction";
@@ -129,7 +129,7 @@
 				//navigator.vibrate(1000);
 			})
 			self.addEvent( _addBtn,'touchstart',function(){
-				this.className = " operaHover";
+				this.className += " operaHover";
 			})
 			self.addEvent( _addBtn,'touchend',function(){
 				this.className = "add";
@@ -146,7 +146,7 @@
 				//navigator.vibrate(1000);
 			});
 			self.addEvent( _yaoBtn,'touchstart',function(){
-				this.className = " btnhover";
+				this.className += " btnhover";
 			})
 			self.addEvent( _yaoBtn,'touchend',function(){
 				this.className = "button";
