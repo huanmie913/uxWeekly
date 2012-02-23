@@ -15,7 +15,7 @@ body{
 	}
 
 /*iphone(profile,竖屏)*/
-@media screen and ( max-width:320px){
+@media screen and ( max-width:320px;){
 	#mod_QF{
 		max-width:320px;
 		max-height:480px;
@@ -23,6 +23,86 @@ body{
 		height:100%;
 		background: url(../images/bg.png) no-repeat;
 		-webkit-background-size:contain;
+	}
+	.mod_yao{
+		padding:28% 10% 0 10%;
+	}
+	.mod_area{
+		min-width:260px;
+		min-height:300px;
+		width:70%;
+		height:60%;
+		position:relative;
+		-webkit-background-size:contain;
+	}
+	.control{
+		margin-top:30px;
+	}
+	.button{
+		border: none;
+		text-indent: -999em; 
+		overflow: hidden; 
+		position: absolute;
+		left:80%;
+		top:415px;
+		background-image: url(../images/btn.png);
+		background-repeat: no-repeat;
+		/*max-width:125px;
+		max-height:127px;*/
+		width:60px;
+		height:60px;
+		margin-left: -20px;
+		-webkit-background-size:contain;
+	}
+	.s{ 
+		width : 40px;
+		height : 40px;
+		background: url(../images/pointer.png) no-repeat;
+		position: absolute;
+		-webkit-background-size:contain;
+	}
+	.s .is{ 
+		margin:3px 0 0 4px; 
+	}
+	.s img{ 
+		max-width:86px; 
+		max-height:86px; 
+		width:30px; 
+		height:30px;
+		-webkit-background-size:contain; 
+	}
+	.num_box{ 
+		position:absolute; 
+		left:25px; 
+		top:413px; 
+		width:280px; 
+		height:30px;
+	}
+	.subtraction,.add,.num{ 
+		display:inline-block; 
+		vertical-align:middle; 
+		background-image:url(../images/num.png); 
+		background-repeat:no-repeat; 
+		height:60px; 
+		line-height:60px; 
+		font-size:26px; 
+		font-weight:700; 
+		color:#fff;
+	}
+	.subtraction{ 
+		background-position: 0 0; 
+		width:50px; 
+		font-size:0; 
+	}
+	.add{ 
+		background-position: -134px 0; 
+		width:50px;
+		font-size:0 
+	}
+	.num{ 
+		background-position: -65px 0; 
+		width:55px; 
+		text-align:center;
 	}
 }
 	
@@ -36,7 +116,7 @@ body{
 		width:480px; 
 		height:320px;
 		background: url(../images/bg.png) no-repeat;	  
-		/*-webkit-background-size:contain;*			
+		/*-webkit-background-size:contain;*/		
 	}
 	.mod_yao{
 		padding:28% 10% 0 10%;
