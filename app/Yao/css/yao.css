@@ -18,7 +18,7 @@ body{
 
 /*iphone(profile,竖屏)*/
 @media screen and ( max-device-width:320px){
-	.mod_QF{
+	#mod_QF{
 		width:320px;
 		height:480px;
 		background: url(../images/bg.png) no-repeat;
