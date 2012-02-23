@@ -112,7 +112,7 @@
 				_subtraBtn.className = "subtraction Hover";
 			})
 			self.addEvent( _subtraBtn,'touchend',function(){
-				_subtraBtn.className = "subtraction";
+				_subtraBtn.className = "subtraction Hover";
 			})
 		},
 		add : function(){
@@ -132,7 +132,7 @@
 				_addBtn.className = "add Hover";
 			})
 			self.addEvent( _addBtn,'touchend',function(){
-				_addBtn.className = "add";
+				_addBtn.className = "add Hover";
 			})
 		},
 		init : function(){
@@ -148,7 +148,6 @@
 			});
 			self.addEvent( _yaoBtn,'touchstart',function(){
 				_yaoBtn.className = "button Hover";
-				//alert(_yaoBtn.className)
 			})
 			self.addEvent( _yaoBtn,'touchend',function(){
 				_yaoBtn.className = "button Hover";
@@ -162,13 +161,13 @@
 						setTimeout(function(){ self.createPointer();},500)
 					}
 				})
-			/*self.addEvent(window,"load",function(){
+			self.addEvent(window,"load",function(){
 				setTimeout(function(){
 					window.scrollTo(0,1);
 				},100)
 			})
 			self.addEvent(document,'touchmove',function(event){
 					 event.preventDefault();
-				})*/
+				})
 		}
     };
