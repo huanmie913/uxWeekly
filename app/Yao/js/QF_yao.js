@@ -128,7 +128,7 @@
 				navigator.vibrate(1000);
 			});
 			self.addEvent( window,'load',function(){
-				self.addEvent('document','touchmove',function(event){
+				self.addEvent('document.body','touchmove',function(event){
 					 event.preventDefault();
 				})
 			});
