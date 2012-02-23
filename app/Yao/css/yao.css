@@ -27,6 +27,8 @@ body{
 	}
 	.mod_tip{
 		position:absolute;
+		left:100px;
+		top:20px;
 		width:120px;
 		height:24px;
 		text-align:center;
