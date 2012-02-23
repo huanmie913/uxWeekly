@@ -169,10 +169,7 @@
 					_object.attr("src",url);
 			}
 			var _fimg=$(focusBox).find('img');
-			console.log(_fimg.attr('src') != 'undefined')
-			if( _fimg.attr('src') != 'undefined'){
-				return;
-			}
+			
 			var _img=new Image();
 			var _url=_fimg.eq(i).attr(proper);
 			if(_url && _url != ""){
@@ -197,7 +194,10 @@
 	
 		//滚动动画程序
 		function scrollAnimate(i){
-			imgLoad(i);
+			//console.log($(focusBox).find('img').attr('src') != 'undefined')
+			if( $(focusBox).find('img').attr('src') == 'undefined'){
+				imgLoad(i);
+			}
 			//滚动动画
 			if(scrollDirection){
 				//上下滚动
