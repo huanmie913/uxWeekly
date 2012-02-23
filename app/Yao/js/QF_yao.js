@@ -141,8 +141,9 @@
 			self.Q( self.setting._numId ).innerHTML = self.setting._num;
 			self.subtraction();
 			self.add();
-			self.addEvent( self.Q( self.setting._yaoBtn ),'click',function(){
+			self.addEvent( _yaoBtn,'click',function(){
 				self.createPointer();
+				_yaoBtn.className = "button Hover";
 				//navigator.vibrate(1000);
 			});
 			self.addEvent( _yaoBtn,'touchstart',function(){
