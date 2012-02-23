@@ -197,8 +197,8 @@
 			//console.log($(focusBox).find('img').attr('src') != 'undefined')
 			
 			$(focusBox).find('img').each(function(i){
-				var _src = $(this).attr('src');
-				console.log(_src)
+				//var _src = $(this).attr('src');
+				console.log(i)
 			})
 			
 			//滚动动画
