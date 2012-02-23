@@ -196,11 +196,9 @@
 		function scrollAnimate(i){
 			//console.log($(focusBox).find('img').attr('src') != 'undefined')
 			
-			$(focusBox).each(function(i){
-				var _src = $(this).find('img:eq('+i+')').attr('src');
-				if( _src == "undefined" ){
-					imgLoad(i);
-				}
+			$(focusBox).find('img').each(function(i){
+				var _src = $(this).attr('src');
+				console.log(_src)
 			})
 			
 			//滚动动画
