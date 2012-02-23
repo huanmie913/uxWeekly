@@ -14,6 +14,7 @@ body{
 		-webkit-text-size-adjust:none;/*禁用自动字体调整*/
 		width:100%;
 		height:100%;
+		position:relative;
 	}
 
 /*iphone(profile,竖屏)*/
@@ -26,10 +27,10 @@ body{
 	}
 	.mod_tip{
 		position:absolute;
-		width:50%;
-		height:20px;
+		width:120px;
+		height:24px;
 		text-align:center;
-		line-height:20px;
+		line-height:24px;
 		background:#f00
 	}
 	.mod_yao{
