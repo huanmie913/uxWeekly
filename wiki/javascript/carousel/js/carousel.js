@@ -169,7 +169,9 @@
 					_object.attr("src",url);
 			}
 			var _fimg=$(focusBox).find('img');
-			
+			if( _fimg.attr('src')!==""){
+				return;
+			}
 			var _img=new Image();
 			var _url=_fimg.eq(i).attr(proper);
 			if(_url && _url != ""){

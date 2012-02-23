@@ -10,8 +10,13 @@ img{
 	max-width: 100%;
 	height : auto;
 }
+
+/*iphone(profile,竖屏)*/
+@media screen and ( max-device-width:320px){
+
+}
 	
-/*iphone*/
+/*iphone(landscape,横屏)*/
 @media screen and ( max-device-width: 480px){
 	body{
 		-webkit-text-size-adjust:none;/*禁用自动字体调整*/
@@ -108,7 +113,11 @@ img{
 }
 
 /*ipad*/
-@media only screen and ( max-width:768px ){
+/* orientation:屏幕方向检测
+ * portrait:竖屏
+ * landscape:横屏
+*/
+@media screen and ( orientation:portrait ){
 
 }
 
