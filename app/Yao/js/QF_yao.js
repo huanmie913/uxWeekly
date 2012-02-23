@@ -143,7 +143,7 @@
 			self.add();
 			self.addEvent( _yaoBtn,'click',function(){
 				self.createPointer();
-				_yaoBtn.className = "button Hover";
+				
 				//navigator.vibrate(1000);
 			});
 			self.addEvent( _yaoBtn,'touchstart',function(){
@@ -151,7 +151,7 @@
 				//alert(_yaoBtn.className)
 			})
 			self.addEvent( _yaoBtn,'touchend',function(){
-				_yaoBtn.className = "button";
+				_yaoBtn.className = "button Hover";
 			})
 			
 			self.addEvent( window,'devicemotion',function(event){
