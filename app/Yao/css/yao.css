@@ -10,17 +10,21 @@ img{
 	max-width: 100%;
 	height : auto;
 }
+body{
+		-webkit-text-size-adjust:none;/*禁用自动字体调整*/
+	}
 
 /*iphone(profile,竖屏)*/
 @media screen and ( max-device-width:320px){
-
+	#mod_QF{
+		width:100%;
+		height:100%;
+		background: url(../images/bg.png) no-repeat;	
+	}
 }
 	
 /*iphone(landscape,横屏)*/
 @media screen and ( max-device-width: 480px){
-	body{
-		-webkit-text-size-adjust:none;/*禁用自动字体调整*/
-	}
 	#mod_QF{
 		/*max-width:960px;
 		min-height:480px;
@@ -28,7 +32,7 @@ img{
 		width:100%; 
 		height:100%;
 		background: url(../images/bg.png) no-repeat;	  
-		-webkit-background-size:contain;			
+		//-webkit-background-size:contain;			
 	}
 	.mod_yao{
 		padding:28% 10% 0 10%;
