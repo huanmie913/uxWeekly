@@ -195,9 +195,14 @@
 		//滚动动画程序
 		function scrollAnimate(i){
 			//console.log($(focusBox).find('img').attr('src') != 'undefined')
-			if( $(focusBox).find('img').attr('src') == 'undefined'){
-				imgLoad(i);
-			}
+			
+			$(focusBox).each(function(i){
+				var _src = $(this).find('img').attr('src');
+				if( _src == "undefined" ){
+					imgLoad(i);
+				}
+			})
+			
 			//滚动动画
 			if(scrollDirection){
 				//上下滚动
