@@ -111,7 +111,8 @@
 			var self = this;
 			self.addEvent( self.Q( self.setting._addBtn ),'click',function(){
 				if( self.Q( self.setting._numId ).innerHTML >= self.setting._maxNum ){
-					alert('已经达到最大个数了');
+					//alert('已经达到最大个数了');
+					self.Q("J_tip").innerHTML = '已经达到最大个数了';
 				}else{
 					self.Q( self.setting._numId ).innerHTML++;
 				}
@@ -124,7 +125,7 @@
 			self.Q( self.setting._numId ).innerHTML = self.setting._num;
 			self.subtraction();
 			self.add();
-			self.addEvent( self.Q( self.setting._yaoBtn ),'click ',function(){
+			self.addEvent( self.Q( self.setting._yaoBtn ),'click',function(){
 				self.createPointer();
 				//navigator.vibrate(1000);
 			});
