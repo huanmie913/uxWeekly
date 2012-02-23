@@ -22,7 +22,7 @@ body{
 		background: url(../images/bg.png) no-repeat;
 		-webkit-background-size:contain;
 	}
-	/*.mod_yao{
+	.mod_yao{
 		padding:28% 10% 0 10%;
 	}
 	.mod_area{
@@ -47,7 +47,7 @@ body{
 		background-repeat: no-repeat;
 		/*max-width:125px;
 		max-height:127px;*/
-		/*width:60px;
+		width:60px;
 		height:60px;
 		margin-left: -20px;
 		-webkit-background-size:contain;
@@ -101,7 +101,7 @@ body{
 		background-position: -65px 0; 
 		width:55px; 
 		text-align:center;
-	}*/
+	}
 }
 	
 /*iphone(landscape,横屏)*/
