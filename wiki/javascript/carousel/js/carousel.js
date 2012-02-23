@@ -170,7 +170,7 @@
 			}
 			var _fimg=$(focusBox).find('img');
 			console.log(_fimg.attr('src'))
-			if( _fimg.attr('src')!==""){
+			if( _fimg.attr('src') != "undefined"){
 				return;
 			}
 			var _img=new Image();
