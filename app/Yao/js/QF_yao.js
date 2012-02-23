@@ -135,7 +135,7 @@
 						y = event.accelerationIncludingGravity.y,
 						z =event.accelerationIncludingGravity.z;
 					if( x >=5 || y >=5 || z>=5 ){
-						self.createPointer();
+						setTimeout(function(){ self.createPointer(); },500)
 					}
 				})
 		}
