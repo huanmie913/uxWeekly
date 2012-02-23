@@ -194,11 +194,13 @@
 	
 		//滚动动画程序
 		function scrollAnimate(i){
-			//console.log($(focusBox).find('img').attr('src') != 'undefined')
+			
 			
 			$(focusBox).find('img').each(function(i){
 				//var _src = $(this).attr('src');
-				alert(i)
+				return function(){
+					alert(i)
+				}(i)
 			})
 			
 			//滚动动画
