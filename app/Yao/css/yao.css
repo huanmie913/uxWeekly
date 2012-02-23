@@ -18,7 +18,7 @@ body{
 @media screen and ( max-width:320px){
 	#mod_QF{
 		width:320px;
-		/*min-height:480px;*/
+		min-height:480px;
 		background: url(../images/bg.png) no-repeat;
 		-webkit-background-size:contain;
 	}
@@ -108,7 +108,7 @@ body{
 @media screen and ( min-width: 321px){
 	#mod_QF{
 		width:480px;
-		/*min-height:320px;*/
+		min-height:320px;
 		background: url(../images/bg.png) no-repeat;	  
 		-webkit-background-size:contain;		
 	}
