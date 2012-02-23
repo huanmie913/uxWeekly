@@ -136,7 +136,7 @@
 						setTimeout(function(){ self.createPointer(); },500)
 					}
 				})
-			self.addEvent('document','touchmove',function(event){
+			self.addEvent(document,'touchmove',function(event){
 					 event.preventDefault();
 				})
 		}
