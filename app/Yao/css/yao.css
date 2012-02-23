@@ -16,16 +16,7 @@ body{
 		height:100%;
 		position:relative;
 	}
-
-/*iphone(profile,竖屏)*/
-@media screen and ( max-device-width:320px){
-	#mod_QF{
-		width:320px;
-		height:480px;
-		background: url(../images/bg.png) no-repeat;
-		-webkit-background-size:contain;
-	}
-	.mod_tip{
+.mod_tip{
 		position:absolute;
 		left:100px;
 		top:20px;
@@ -35,6 +26,16 @@ body{
 		line-height:24px;
 		background:#f00
 	}
+
+/*iphone(profile,竖屏)*/
+@media screen and ( max-device-width:320px){
+	#mod_QF{
+		width:320px;
+		height:480px;
+		background: url(../images/bg.png) no-repeat;
+		-webkit-background-size:contain;
+	}
+	
 	.mod_yao{
 		padding:28% 10% 0 10%;
 	}
