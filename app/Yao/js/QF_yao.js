@@ -130,6 +130,7 @@
 			})
 			self.addEvent( _addBtn,'touchstart',function(){
 				_addBtn.className += " Hover";
+				console.log(_addBtn.className)
 			})
 			self.addEvent( _addBtn,'touchend',function(){
 				_addBtn.className = "add";
