@@ -125,7 +125,6 @@
 			self.add();
 			self.addEvent( self.Q( self.setting._yaoBtn ),'click ',function(){
 				self.createPointer();
-				this.className=" bclick";
 				navigator.vibrate(1000);
 			});
 			
