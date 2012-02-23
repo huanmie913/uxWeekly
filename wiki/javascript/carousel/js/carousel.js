@@ -169,6 +169,7 @@
 					_object.attr("src",url);
 			}
 			var _fimg=$(focusBox).find('img');
+			console.log(_fimg.attr('src'))
 			if( _fimg.attr('src')!==""){
 				return;
 			}
