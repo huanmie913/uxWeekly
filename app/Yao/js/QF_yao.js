@@ -98,8 +98,8 @@
 			var self = this;
 			self.addEvent( self.Q( self.setting._subtraBtn ),"click",function(){
 				if( self.Q( self.setting._numId ).innerHTML <= 1 ){
-					//alert('已经达到最小个数了');
-					self.Q("J_tip").innerHTML = '已经达到最小个数了';
+					alert('已经达到最小个数了');
+					//self.Q("J_tip").innerHTML = '已经达到最小个数了';
 				}else{
 					self.Q( self.setting._numId ).innerHTML--;
 				}
@@ -111,8 +111,8 @@
 			var self = this;
 			self.addEvent( self.Q( self.setting._addBtn ),'click',function(){
 				if( self.Q( self.setting._numId ).innerHTML >= self.setting._maxNum ){
-					//alert('已经达到最大个数了');
-					self.Q("J_tip").innerHTML = '已经达到最大个数了';
+					alert('已经达到最大个数了');
+					//self.Q("J_tip").innerHTML = '已经达到最大个数了';
 				}else{
 					self.Q( self.setting._numId ).innerHTML++;
 				}
