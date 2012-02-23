@@ -198,7 +198,7 @@
 			
 			$(focusBox).find('img').each(function(i){
 				//var _src = $(this).attr('src');
-				console.log(i)
+				alert(i)
 			})
 			
 			//滚动动画
