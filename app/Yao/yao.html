@@ -13,19 +13,20 @@
 	<link href="css/yao.css" rel="stylesheet"/>
 </head>
 <body>
-<div id="mod_QF">
+<div class="mod_QF">
+<div class="mod_tip" id="J_tip></div>
 <!--mod_yao-->
 <div class="mod_yao">
     <!--yao-->
     <div class="yao">
-        <div class="mod_area" id="mod_area"></div>
+        <div class="mod_area" id="J_area"></div>
         <div class="control">
             <div class="num_box">
-				<span class="subtraction" id="subtraction">-</span>
-				<span id="num" class="num">1</span>
-				<span class="add" id="add">+</span>
+				<span class="subtraction" id="J_subtraction">-</span>
+				<span id="J_num" class="num">1</span>
+				<span class="J_add" id="add">+</span>
 			</div>
-            <input type="button" value="摇起来" class="button" id="button"/>
+            <input type="button" value="摇起来" class="button" id="J_button"/>
         </div>
     </div>
     <!--/yao-->
@@ -35,14 +36,14 @@
 
 <script src="js/QF_yao.js"></script>
 <script>
-Yao({ container:"mod_area",
+Yao({ container:"J_area",
 	  num:3,
 	  cn:"s",
-	  subtraBtn:"subtraction",
-	  addBtn : "add",
-	  numID : "num",
+	  subtraBtn:"J_subtraction",
+	  addBtn : "J_add",
+	  numID : "J_num",
 	  maxNum : 6,
-	  yaoBtn : "button"
+	  yaoBtn : "J_button"
 	});
 </script>
 </body>
