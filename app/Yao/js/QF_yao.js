@@ -95,8 +95,9 @@
 			return target.addEventListener( type,fn,false);
 		},
 		subtraction : function(){
-			var self = this;
-			self.addEvent( self.Q( self.setting._subtraBtn ),"click",function(){
+			var self = this,
+				_subtraBtn = self.Q( self.setting._subtraBtn );
+			self.addEvent( _subtraBtn,"click",function(){
 				if( self.Q( self.setting._numId ).innerHTML <= 1 ){
 					alert('已经达到最小个数了');
 					//self.Q("J_tip").innerHTML = '已经达到最小个数了';
@@ -106,10 +107,18 @@
 				self.setting._num = self.Q( self.setting._numId ).innerHTML ;
 				//navigator.vibrate(1000);
 			})
+			
+			self.addEvent( _subtraBtn,'touchstart',function(){
+				this.className = " operaHover";
+			})
+			self.addEvent( _subtraBtn,'touchend',function(){
+				this.className = "operaHover";
+			})
 		},
 		add : function(){
-			var self = this;
-			self.addEvent( self.Q( self.setting._addBtn ),'click',function(){
+			var self = this,
+				_addBtn =self.Q( self.setting._addBtn ); 
+			self.addEvent( _addBtn,'click',function(){
 				if( self.Q( self.setting._numId ).innerHTML >= self.setting._maxNum ){
 					alert('已经达到最大个数了');
 					//self.Q("J_tip").innerHTML = '已经达到最大个数了';
@@ -119,9 +128,16 @@
 				self.setting._num = self.Q( self.setting._numId ).innerHTML ;
 				//navigator.vibrate(1000);
 			})
+			self.addEvent( _addBtn,'touchstart',function(){
+				this.className = " operaHover";
+			})
+			self.addEvent( _addBtn,'touchend',function(){
+				this.className = "operaHover";
+			})
 		},
 		init : function(){
-			var self = this;
+			var self = this,
+				_yaoBtn = self.Q( self.setting._yaoBtn );
 			self.Q( self.setting._numId ).innerHTML = self.setting._num;
 			self.subtraction();
 			self.add();
@@ -129,10 +145,10 @@
 				self.createPointer();
 				//navigator.vibrate(1000);
 			});
-			self.addEvent( self.Q( self.setting._yaoBtn ),'touchstart',function(){
+			self.addEvent( _yaoBtn,'touchstart',function(){
 				this.className = " btnhover";
 			})
-			self.addEvent( self.Q( self.setting._yaoBtn ),'touchend',function(){
+			self.addEvent( _yaoBtn,'touchend',function(){
 				this.className = "button";
 			})
 			
