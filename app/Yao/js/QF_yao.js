@@ -103,7 +103,7 @@
 					self.Q( self.setting._numId ).innerHTML--;
 				}
 				self.setting._num = self.Q( self.setting._numId ).innerHTML ;
-				navigator.vibrate(1000);
+				//navigator.vibrate(1000);
 			})
 		},
 		add : function(){
@@ -115,7 +115,7 @@
 					self.Q( self.setting._numId ).innerHTML++;
 				}
 				self.setting._num = self.Q( self.setting._numId ).innerHTML ;
-				navigator.vibrate(1000);
+				//navigator.vibrate(1000);
 			})
 		},
 		init : function(){
@@ -125,7 +125,7 @@
 			self.add();
 			self.addEvent( self.Q( self.setting._yaoBtn ),'click ',function(){
 				self.createPointer();
-				navigator.vibrate(1000);
+				//navigator.vibrate(1000);
 			});
 			
 			self.addEvent( window,'devicemotion',function(event){
@@ -133,7 +133,7 @@
 						y = event.accelerationIncludingGravity.y,
 						z =event.accelerationIncludingGravity.z;
 					if( x >=5 || y >=5 || z>=5 ){
-						setTimeout(function(){ self.createPointer(); },500)
+						setTimeout(function(){ self.createPointer();},500)
 					}
 				})
 			self.addEvent(document,'touchmove',function(event){
