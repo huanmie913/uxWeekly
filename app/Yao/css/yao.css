@@ -17,7 +17,7 @@ body{
 	}
 
 /*iphone(profile,竖屏)*/
-@media screen and ( max-width:320px;){
+@media screen and ( max-width:320px){
 	#mod_QF{
 		max-width:320px;
 		min-height:480px;
@@ -109,7 +109,7 @@ body{
 /*iphone(landscape,横屏)*/
 @media screen and ( min-width: 321px){
 	#mod_QF{
-		min-width:321px;
+		max-width:640px;
 		min-height:320px;
 		background: url(../images/bg.png) no-repeat;	  
 		-webkit-background-size:contain;		
