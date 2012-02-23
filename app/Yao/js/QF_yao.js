@@ -1,4 +1,4 @@
-/*
+﻿/*
  * to: 桌游助手beta
  * author :f2er
  * time : 2012-02-20
