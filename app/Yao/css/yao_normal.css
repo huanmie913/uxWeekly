@@ -47,8 +47,7 @@ body{
 		position: absolute;
 		left:80%;
 		top:415px;
-		background-image: url(../images/btn.png);
-		background-repeat: no-repeat;
+		background: url(../images/btn.png)  no-repeat;
 		max-width:125px;
 		max-height:127px;
 		width:60px;
@@ -84,8 +83,7 @@ body{
 	.subtraction,.add,.num{ 
 		display:inline-block; 
 		vertical-align:middle; 
-		background-image:url(../images/num.png); 
-		background-repeat:no-repeat; 
+		background:url(../images/num.png) no-repeat; 
 		height:60px; 
 		line-height:60px; 
 		font-size:26px; 
