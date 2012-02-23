@@ -107,7 +107,7 @@ body{
 /*iphone(landscape,横屏)*/
 @media screen and ( min-device-width: 321px){
 	#mod_QF{
-		width:640px;
+		width:960px;
 		min-height:320px;
 		background: url(../images/bg.png) no-repeat;	  
 		-webkit-background-size:contain;		
