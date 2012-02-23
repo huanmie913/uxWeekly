@@ -132,6 +132,9 @@
 			self.addEvent( self.Q( self.setting._yaoBtn ),'touchstart',function(){
 				this.className = " btnhover";
 			})
+			self.addEvent( self.Q( self.setting._yaoBtn ),'touchend',function(){
+				this.className = "button";
+			})
 			
 			self.addEvent( window,'devicemotion',function(event){
 					var x = event.accelerationIncludingGravity.x,
