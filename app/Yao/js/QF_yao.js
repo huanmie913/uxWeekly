@@ -127,6 +127,9 @@
 				self.createPointer();
 				navigator.vibrate(1000);
 			});
+			self.addEvent("document",'touchmove',function(event){
+				event.preventDefault();
+			})
 			self.addEvent( window,'devicemotion',function(event){
 					var x = event.accelerationIncludingGravity.x,
 						y = event.accelerationIncludingGravity.y,
