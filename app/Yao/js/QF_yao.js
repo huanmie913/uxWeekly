@@ -123,8 +123,9 @@
 			self.Q( self.setting._numId ).innerHTML = self.setting._num;
 			self.subtraction();
 			self.add();
-			self.addEvent( self.Q( self.setting._yaoBtn ),'click',function(){
+			self.addEvent( self.Q( self.setting._yaoBtn ),'touchstart ',function(){
 				self.createPointer();
+				this.className="bclick";
 				navigator.vibrate(1000);
 			});
 			
