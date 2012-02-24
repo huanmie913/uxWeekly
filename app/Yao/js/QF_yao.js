@@ -147,10 +147,10 @@
 				//navigator.vibrate(1000);
 			});
 			self.addEvent( _yaoBtn,'touchstart',function(){
-				_yaoBtn.className = "button Hover";
+				_yaoBtn.className = "button buttonActive";
 			})
 			self.addEvent( _yaoBtn,'touchend',function(){
-				_yaoBtn.className = "button Hover";
+				_yaoBtn.className = "button";
 			})
 			
 			self.addEvent( window,'devicemotion',function(event){

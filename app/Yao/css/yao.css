@@ -51,7 +51,7 @@ body{
 	.control{
 		margin-top:30px;
 	}
-	.button{
+	.button,.buttonActive{
 		border: none;
 		text-indent: -999em; 
 		overflow: hidden; 
@@ -66,7 +66,10 @@ body{
 		height:60px;
 		margin-left: -20px;
 		-webkit-background-size:contain;
+		-webkit-tap-highlight-color:rgba(255,255,255,0);
+		-webkit-user-select: none;
 	}
+	.buttonActive{ background-position:-124px 0;}
 	
 	.s{ 
 		width : 40px;
@@ -120,7 +123,7 @@ body{
 		background-position:0 -60px;
 	}
 	.addActive{
-		background-position:-134px 0;
+		background-position:-134px -60px;
 	}
 	.num{ 
 		background-position: -65px 0; 
