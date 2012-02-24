@@ -109,10 +109,10 @@
 			})
 			
 			self.addEvent( _subtraBtn,'touchstart',function(){
-				_subtraBtn.className = "subtraction Hover";
+				_subtraBtn.className = "subtraction subtractionActive";
 			})
 			self.addEvent( _subtraBtn,'touchend',function(){
-				_subtraBtn.className = "subtraction Hover";
+				_subtraBtn.className = "subtraction";
 			})
 		},
 		add : function(){
@@ -129,10 +129,10 @@
 				//navigator.vibrate(1000);
 			})
 			self.addEvent( _addBtn,'touchstart',function(){
-				_addBtn.className = "add Hover";
+				_addBtn.className = "add addActive";
 			})
 			self.addEvent( _addBtn,'touchend',function(){
-				_addBtn.className = "add Hover";
+				_addBtn.className = "add";
 			})
 		},
 		init : function(){
