@@ -94,7 +94,7 @@
                 return document.defaultView.getComputedStyle(obj,null)[ property ];
             }
         },
-		addEvent : function( target,type,fn){
+		on : function( target,type,fn){
 			return target.addEventListener( type,fn,false);
 		},
 		showTip : function(o,txt){
@@ -113,7 +113,7 @@
 		subtractionEvent : function(){
 			var self = this,
 				_subtraBtn = self.Q( self.setting._subtraBtn );
-			self.addEvent( _subtraBtn,"click",function(){
+			self.on( _subtraBtn,"click",function(){
 				if( self.Q( self.setting._numId ).innerHTML <= 1 ){
 					self.showTip(self.Q("J_tip"),'已经达到最小个数了');
 				}else{
@@ -123,10 +123,10 @@
 				//navigator.vibrate(1000);
 			})
 			
-			self.addEvent( _subtraBtn,'touchstart',function(){
+			self.on( _subtraBtn,'touchstart',function(){
 				_subtraBtn.className = "subtraction subtractionActive";
 			})
-			self.addEvent( _subtraBtn,'touchend',function(){
+			self.on( _subtraBtn,'touchend',function(){
 				_subtraBtn.className = "subtraction";
 			})
 		},
@@ -134,7 +134,7 @@
 		addEvent : function(){
 			var self = this,
 				_addBtn =self.Q( self.setting._addBtn ); 
-			self.addEvent( _addBtn,'click',function(){
+			self.on( _addBtn,'click',function(){
 				if( self.Q( self.setting._numId ).innerHTML >= self.setting._maxNum ){
 					self.showTip(self.Q("J_tip"),'已经达到最大个数了');
 				}else{
@@ -143,23 +143,23 @@
 				self.setting._num = self.Q( self.setting._numId ).innerHTML ;
 				//navigator.vibrate(1000);
 			})
-			self.addEvent( _addBtn,'touchstart',function(){
+			self.on( _addBtn,'touchstart',function(){
 				_addBtn.className = "add addActive";
 			})
-			self.addEvent( _addBtn,'touchend',function(){
+			self.on( _addBtn,'touchend',function(){
 				_addBtn.className = "add";
 			})
 		},
 		yaoBtnEvent : function(){
 			var self = this,
 				_yaoBtn = self.Q( self.setting._yaoBtn );
-			self.addEvent( _yaoBtn,'click',function(){
+			self.on( _yaoBtn,'click',function(){
 				self.createPointer();
 			});
-			self.addEvent( _yaoBtn,'touchstart',function(){
+			self.on( _yaoBtn,'touchstart',function(){
 				_yaoBtn.className = "button buttonActive";
 			})
-			self.addEvent( _yaoBtn,'touchend',function(){
+			self.on( _yaoBtn,'touchend',function(){
 				_yaoBtn.className = "button";
 			})
 		},
@@ -171,7 +171,7 @@
 			self.addEvent();
 			self.yaoBtnEvent();
 			
-			self.addEvent( window,'devicemotion',function(event){
+			self.on( window,'devicemotion',function(event){
 						var _eaig = event.accelerationIncludingGravity;
 					var x = _eaig.x,
 						y = _eaig.y,
