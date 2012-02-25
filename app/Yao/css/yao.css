@@ -82,6 +82,24 @@ body{
 		-webkit-box-shadow: 3px 4px 0 rgba(232,230,202,0.9);
 		/*-webkit-transform: rotate(40deg);*/
 	}
+	.s1{
+		-webkit-transform: rotate(15deg);
+	}
+	.s2{
+		-webkit-transform: rotate(20deg);
+	}
+	.s3{
+		-webkit-transform: rotate(25deg);
+	}
+	.s4{
+		-webkit-transform: rotate(35deg);
+	}
+	.s5{
+		-webkit-transform: rotate(45deg);
+	}
+	.s6{
+		-webkit-transform: rotate(55deg);
+	}
 	.s .is{ 
 		margin:4px 0 0 5px; 
 	}
