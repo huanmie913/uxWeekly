@@ -100,12 +100,12 @@
 		},
 		showTip : function(o,txt){
 			var self = this;
-			if( o.style.display == "none" ){
+			//if( o.style.display == "none" ){
 				o.style.display = "block";
 				o.innerHTML = txt;
 				clearTimeout( self._t);
 				self.hideTip(o);
-			}
+			//}
 		},
 		hideTip : function(o){
 			var self = this;
