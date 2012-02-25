@@ -76,7 +76,7 @@ body{
 		background: url(../images/pointer.png) no-repeat;
 		position: absolute;
 		-webkit-background-size:contain;
-		-webkit-box-shadow: 10px 5px 10px 1px rgba(232,230,202,1);
+		-webkit-box-shadow: 0px 5px 5px rgba(232,230,202,1);
 	}
 	.s .is{ 
 		margin:4px 0 0 5px; 
