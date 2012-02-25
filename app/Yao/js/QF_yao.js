@@ -172,9 +172,10 @@
 			self.yaoBtnEvent();
 			
 			self.addEvent( window,'devicemotion',function(event){
-					var x = event.accelerationIncludingGravity.x,
-						y = event.accelerationIncludingGravity.y,
-						z =event.accelerationIncludingGravity.z;
+						var _eaig = event.accelerationIncludingGravity;
+					var x = _eaig.x,
+						y = _eaig.y,
+						z = _eaig.z;
 					//clearTimeout(_t);
 					if( x >=5 || y >=5 || z>=5 ){
 						self.createPointer();
