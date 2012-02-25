@@ -68,7 +68,6 @@
                 _dpTop = Math.floor( Math.random() * _containerHeight ),
 				_pointerWidth = parseInt( self.getCss( obj,'width' )),
 				_pointerHeight = parseInt ( self.getCss( obj,'height' ));
-				//console.log( _pointerWidth )
 				//色子水平坐标
 				if( _dpLeft + _pointerWidth > _containerWidth ){
 					obj.style.left = ( _containerWidth - _pointerWidth )+"px";
@@ -100,12 +99,10 @@
 		},
 		showTip : function(o,txt){
 			var self = this;
-			//if( o.style.display == "none" ){
 				o.style.display = "block";
 				o.innerHTML = txt;
 				clearTimeout( self._t);
 				self.hideTip(o);
-			//}
 		},
 		hideTip : function(o){
 			var self = this;
@@ -118,9 +115,6 @@
 				_subtraBtn = self.Q( self.setting._subtraBtn );
 			self.addEvent( _subtraBtn,"click",function(){
 				if( self.Q( self.setting._numId ).innerHTML <= 1 ){
-					//alert('已经达到最小个数了');
-					//self.Q("J_tip").style.display = "block";
-					//self.Q("J_tip").innerHTML = '已经达到最小个数了';
 					self.showTip(self.Q("J_tip"),'已经达到最小个数了');
 				}else{
 					self.Q( self.setting._numId ).innerHTML--;
@@ -142,9 +136,6 @@
 				_addBtn =self.Q( self.setting._addBtn ); 
 			self.addEvent( _addBtn,'click',function(){
 				if( self.Q( self.setting._numId ).innerHTML >= self.setting._maxNum ){
-					//alert('已经达到最大个数了');
-					//self.Q("J_tip").style.display = "block";
-					//self.Q("J_tip").innerHTML = '已经达到最大个数了';
 					self.showTip(self.Q("J_tip"),'已经达到最大个数了');
 				}else{
 					self.Q( self.setting._numId ).innerHTML++;
@@ -159,17 +150,11 @@
 				_addBtn.className = "add";
 			})
 		},
-		init : function(){
+		yaoBtnEvent : function(){
 			var self = this,
-				_t = null,
 				_yaoBtn = self.Q( self.setting._yaoBtn );
-			self.Q( self.setting._numId ).innerHTML = self.setting._num;
-			self.subtraction();
-			self.add();
 			self.addEvent( _yaoBtn,'click',function(){
 				self.createPointer();
-				
-				//navigator.vibrate(1000);
 			});
 			self.addEvent( _yaoBtn,'touchstart',function(){
 				_yaoBtn.className = "button buttonActive";
@@ -177,6 +162,14 @@
 			self.addEvent( _yaoBtn,'touchend',function(){
 				_yaoBtn.className = "button";
 			})
+		},
+		init : function(){
+			var self = this;
+				
+			self.Q( self.setting._numId ).innerHTML = self.setting._num;
+			self.subtraction();
+			self.add();
+			self.yaoBtnEvent();
 			
 			self.addEvent( window,'devicemotion',function(event){
 					var x = event.accelerationIncludingGravity.x,
