@@ -119,7 +119,7 @@ body{
 		font-size:0 
 	}
 	.subtractionActive{
-		background-position:0 -31px;
+		background-position:0 -60px;
 	}
 	.addActive{
 		background-position:-135px -60px;
@@ -129,7 +129,7 @@ body{
 		width:54px; 
 		text-align:center;
 		height:59px;
-		-webkit-text-shadow:-1px -1px rgba(177, 121, 62, 0.5)
+		-webkit-text-shadow:-2px -2px rgba(177, 121, 62, 0.5)
 	}
 }
 	
