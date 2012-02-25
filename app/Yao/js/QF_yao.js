@@ -67,7 +67,7 @@
                 _dpTop = Math.floor( Math.random() * _containerHeight ),
 				_pointerWidth = parseInt( self.getCss( obj,'width' )),
 				_pointerHeight = parseInt ( self.getCss( obj,'height' ));
-				console.log( _pointerWidth )
+				//console.log( _pointerWidth )
 				//色子水平坐标
 				if( _dpLeft + _pointerWidth > _containerWidth ){
 					obj.style.left = ( _containerWidth - _pointerWidth )+"px";
@@ -81,6 +81,7 @@
 				}else{
 					 obj.style.top = _dpTop+"px";
 				}
+				obj.style.transform = rotate( Math.random()*360+"deg");
 		},
         getCss : function( obj,property ){
             if( obj.currentStyle ){
