@@ -17,6 +17,7 @@
 			_maxNum : ctg.maxNum, //最大个数
 			_yaoBtn : ctg.yaoBtn //摇起来按钮ID
         };
+		this._t = null;
 
         if( !(this instanceof Yao) ){
             return new Yao( ctg );
@@ -97,14 +98,30 @@
 		addEvent : function( target,type,fn){
 			return target.addEventListener( type,fn,false);
 		},
+		showTip : function(o,txt){
+			var self = this;
+			if( o.style.display == "none" ){
+				o.style.display = "block";
+				o.innerHTML = txt;
+				clearTimeout( self._t);
+				self.hideTip(o);
+			}
+		},
+		hideTip : function(o){
+			var self = this;
+			self._t = setTimeout( function(){
+				o.style.display = "none";
+			},3000);
+		},
 		subtraction : function(){
 			var self = this,
 				_subtraBtn = self.Q( self.setting._subtraBtn );
 			self.addEvent( _subtraBtn,"click",function(){
 				if( self.Q( self.setting._numId ).innerHTML <= 1 ){
 					//alert('已经达到最小个数了');
-					self.Q("J_tip").style.display = "block";
-					self.Q("J_tip").innerHTML = '已经达到最小个数了';
+					//self.Q("J_tip").style.display = "block";
+					//self.Q("J_tip").innerHTML = '已经达到最小个数了';
+					self.showTip(self.Q("J_tip"),'已经达到最小个数了');
 				}else{
 					self.Q( self.setting._numId ).innerHTML--;
 				}
@@ -119,14 +136,16 @@
 				_subtraBtn.className = "subtraction";
 			})
 		},
+		
 		add : function(){
 			var self = this,
 				_addBtn =self.Q( self.setting._addBtn ); 
 			self.addEvent( _addBtn,'click',function(){
 				if( self.Q( self.setting._numId ).innerHTML >= self.setting._maxNum ){
 					//alert('已经达到最大个数了');
-					self.Q("J_tip").style.display = "block";
-					self.Q("J_tip").innerHTML = '已经达到最大个数了';
+					//self.Q("J_tip").style.display = "block";
+					//self.Q("J_tip").innerHTML = '已经达到最大个数了';
+					self.showTip(self.Q("J_tip"),'已经达到最大个数了');
 				}else{
 					self.Q( self.setting._numId ).innerHTML++;
 				}
