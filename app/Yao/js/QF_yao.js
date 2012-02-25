@@ -161,9 +161,10 @@
 					var x = event.accelerationIncludingGravity.x,
 						y = event.accelerationIncludingGravity.y,
 						z =event.accelerationIncludingGravity.z;
-					clearTimeout(_t);
+					//clearTimeout(_t);
 					if( x >=5 || y >=5 || z>=5 ){
-						_t = setTimeout(function(){ self.createPointer();},500)
+						self.createPointer();
+						//_t = setTimeout(function(){ self.createPointer();},500)
 					}
 				})
 			/*self.addEvent(window,"load",function(){
