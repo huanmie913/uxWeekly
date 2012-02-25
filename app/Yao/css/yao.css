@@ -79,7 +79,7 @@ body{
 		position: absolute;
 		-webkit-background-size:contain;
 		-webkit-border-radius:5px;
-		-webkit-box-shadow: 3px 4px 0 rgba(229,35,0,0.9);
+		-webkit-box-shadow: 3px 4px 0 rgba(232,230,202,0.9);
 		/*-webkit-transform: rotate(40deg);*/
 	}
 	.s .is{ 
