@@ -140,6 +140,7 @@
 		},
 		init : function(){
 			var self = this,
+				_t = null,
 				_yaoBtn = self.Q( self.setting._yaoBtn );
 			self.Q( self.setting._numId ).innerHTML = self.setting._num;
 			self.subtraction();
@@ -160,8 +161,9 @@
 					var x = event.accelerationIncludingGravity.x,
 						y = event.accelerationIncludingGravity.y,
 						z =event.accelerationIncludingGravity.z;
+					clearTimeout(_t);
 					if( x >=5 || y >=5 || z>=5 ){
-						setTimeout(function(){ self.createPointer();},500)
+						_t = setTimeout(function(){ self.createPointer();},500)
 					}
 				})
 			/*self.addEvent(window,"load",function(){
