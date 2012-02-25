@@ -41,7 +41,7 @@
             for ( var i=0;i< self.setting._num;i++){
                  var _dpoint = document.createElement('div');
                  _dpoint.id = self.setting._class + i;
-                 _dpoint.className = self.setting._class +" "+self.setting._class+i;
+                 _dpoint.className = self.setting._class;
                  var _pointerNum = Math.random();
                  _dpoint.innerHTML = '<div class="is"><img src="images/pointer/'+self.pointer[ Math.floor( _pointerNum * self.pointer.length) ]+'.png"/><\/div>';
                  _dfrag.appendChild(_dpoint);
@@ -81,6 +81,8 @@
 				}else{
 					 obj.style.top = _dpTop+"px";
 				}
+				
+				obj.className +=self.setting._class+Math.floor( Math.random()*self.pointer.length );
 				//obj.style.transform = rotate( "15deg");
 		},
         getCss : function( obj,property ){
