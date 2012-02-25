@@ -18,13 +18,13 @@ body{
 	}
 .mod_tip{
 		position:absolute;
-		left:100px;
-		top:20px;
-		width:120px;
+		left:0;
+		top:0;
+		width:100%;
 		height:24px;
 		text-align:center;
 		line-height:24px;
-		background:rgba(0,0,0,0.5);
+		background:rgba(0,0,0,0.9);
 		display:none;
 	}
 
