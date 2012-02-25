@@ -101,7 +101,7 @@ body{
 		background-repeat:no-repeat; 
 		height:57px; 
 		line-height:57px; 
-		font-size:20px; 
+		font-size:26px; 
 		font-weight:700; 
 		color:#fff;
 		-webkit-tap-highlight-color:rgba(255,255,255,0);
@@ -129,6 +129,7 @@ body{
 		width:54px; 
 		text-align:center;
 		height:59px;
+		-webkit-text-shadow:-1px -1px rgba(177, 121, 62, 0.5)
 	}
 }
 	
