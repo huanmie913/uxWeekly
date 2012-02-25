@@ -110,7 +110,7 @@
 				o.style.display = "none";
 			},3000);
 		},
-		subtraction : function(){
+		subtractionEvent : function(){
 			var self = this,
 				_subtraBtn = self.Q( self.setting._subtraBtn );
 			self.addEvent( _subtraBtn,"click",function(){
@@ -131,7 +131,7 @@
 			})
 		},
 		
-		add : function(){
+		addEvent : function(){
 			var self = this,
 				_addBtn =self.Q( self.setting._addBtn ); 
 			self.addEvent( _addBtn,'click',function(){
@@ -167,8 +167,8 @@
 			var self = this;
 				
 			self.Q( self.setting._numId ).innerHTML = self.setting._num;
-			self.subtraction();
-			self.add();
+			self.subtractionEvent();
+			self.addEvent();
 			self.yaoBtnEvent();
 			
 			self.addEvent( window,'devicemotion',function(event){
