@@ -86,19 +86,19 @@ body{
 		-webkit-transform: rotate(15deg);
 	}
 	.s2{
-		-webkit-transform: rotate(20deg);
+		-webkit-transform: rotate(40deg);
 	}
 	.s3{
-		-webkit-transform: rotate(25deg);
+		-webkit-transform: rotate(55deg);
 	}
 	.s4{
 		-webkit-transform: rotate(35deg);
 	}
 	.s5{
-		-webkit-transform: rotate(45deg);
+		-webkit-transform: rotate(65deg);
 	}
 	.s6{
-		-webkit-transform: rotate(55deg);
+		-webkit-transform: rotate(75deg);
 	}
 	.s .is{ 
 		margin:4px 0 0 5px; 
