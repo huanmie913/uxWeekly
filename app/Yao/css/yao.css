@@ -73,11 +73,14 @@ body{
 	.s{ 
 		width : 50px;
 		height : 50px;
-		background: url(../images/pointer.png) no-repeat;
+		/*background: url(../images/pointer.png) no-repeat;*/
+		background:#e1480c;
+		border:1px soid #bb3400;
 		position: absolute;
 		-webkit-background-size:contain;
-		-webkit-transform: rotate(40deg);
-		/*-webkit-box-shadow: 0px 5px 5px rgba(232,230,202,1);*/
+		-webkit-border-radius:5px;
+		-webkit-box-shadow: -5px 5px 5px rgba(204,57,0,1);
+		/*-webkit-transform: rotate(40deg);*/
 	}
 	.s .is{ 
 		margin:4px 0 0 5px; 
