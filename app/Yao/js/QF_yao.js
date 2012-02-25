@@ -81,7 +81,7 @@
 				}else{
 					 obj.style.top = _dpTop+"px";
 				}
-				//obj.style.transform = rotate( Math.random()*360+"deg");
+				obj.style.transform = rotate( "15deg");
 		},
         getCss : function( obj,property ){
             if( obj.currentStyle ){
