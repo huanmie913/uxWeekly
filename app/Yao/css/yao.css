@@ -86,12 +86,9 @@ body{
 		margin:4px 0 0 5px; 
 	}
 	.s img{ 
-		max-width:86px; 
-		max-height:86px; 
-		width:35px; 
-		height:35px;
+		width:40px; 
+		height:40px;
 		-webkit-background-size:contain; 
-		
 	}
 	.num_box{ 
 		position:absolute; 
