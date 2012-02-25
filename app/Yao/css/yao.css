@@ -86,7 +86,7 @@ body{
 		width:35px; 
 		height:35px;
 		-webkit-background-size:contain; 
-		-webkit-box-shadow: 2px 0 2px 1px rgba(232,230,202,0.5);
+		-webkit-box-shadow: -2px -2px 2px 1px rgba(232,230,202,0.5);
 	}
 	.num_box{ 
 		position:absolute; 
