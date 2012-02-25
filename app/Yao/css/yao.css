@@ -60,15 +60,15 @@ body{
 		top:415px;
 		background-image: url(../images/btn.png);
 		background-repeat: no-repeat;
-		width:100px;
-		height:100px;
+		width:62px;
+		height:63px;
 		margin-left: -20px;
 		-webkit-background-size:contain;
 		-webkit-tap-highlight-color:rgba(255,255,255,0);
 		-webkit-user-select: none;
 	}
 	.button{ background-position:0 0;}
-	.buttonActive{ background-position:-127px 0;}
+	.buttonActive{ background-position:-62px 0;}
 	
 	.s{ 
 		width : 50px;
