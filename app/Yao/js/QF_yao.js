@@ -83,7 +83,7 @@
 				}
 				
 				obj.className =self.setting._class+" "+self.setting._class+Math.floor( Math.random()*self.pointer.length );
-				//obj.style.transform = rotate( "15deg");
+				
 		},
         getCss : function( obj,property ){
             if( obj.currentStyle ){

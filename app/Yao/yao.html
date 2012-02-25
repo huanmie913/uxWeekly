@@ -36,6 +36,19 @@
 
 <script src="js/QF_yao.js"></script>
 <script>
+var imgArray = [
+				"images/pointer/1.png",	
+				"images/pointer/2.png",	
+				"images/pointer/3.png",	
+				"images/pointer/4.png",	
+				"images/pointer/5.png",	
+				"images/pointer/6.png",	
+			   ]
+for( var i=0,len=imgArray.length;i<len;i++){
+	var _img = new Image();
+	_img.src = imgArray[i];
+}
+
 Yao({ container:"J_area",
 	  num:3,
 	  cn:"s",
