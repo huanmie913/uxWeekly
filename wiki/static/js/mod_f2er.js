@@ -212,10 +212,8 @@ mod_f2er={
 			var	_arrowHtml=document.createElement('span');
 				_arrowHtml.className="m_arrow",
 				_arrowHtml.innerHTML="<em>◆</em><span>◆</span>";
-
-			
-
-			function getData( rout,flag ){
+				
+			function getData( rout){
 					Ajax.doAjax("GET",rout,true,"",function(txt){
 						_wrapper.innerHTML = txt;
 						that.doJS( rout );
