@@ -244,6 +244,11 @@ mod_f2er={
 			}
 			//直接输入url
 			var _hash = location.hash.substr(2);
-			that.Rout(_hash,getData(_hash));
+			alert(_hash)
+			if( _hash ==""){
+				return;
+			}else{
+				that.Rout(_hash,getData(_hash));
+			}
 		}
 	};
