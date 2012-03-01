@@ -244,7 +244,6 @@ mod_f2er={
 			}
 			//直接输入url
 			var _hash = location.hash.substr(2);
-			alert(_hash)
 			if( _hash ==""){
 				return;
 			}else{
