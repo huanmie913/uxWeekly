@@ -188,6 +188,23 @@ mod_f2er={
 				})
 			}
 		},
+		Rout : (function(){
+			var callback = {}, intervalId = null,lastHash = "";
+			var intervalFun = function(){
+				if( location.hash !== lastHash ){
+					lastHash = location.hash;
+					callback[ lastHash ] && callback[ lastHash ](lastHash);
+				}
+			}
+			var jsrout = function(path,fun){
+				callback[path] = fun;
+				return callback;
+			}
+			jsrout.stop = function(){ clearInterval(intervalId) };
+			jsrout.start = function(){ jsrout.stop(); intervalId = setInterval( intervalFun, 100); }
+			jsrout.start();
+			return jsrout;
+		})(),
 		loadPage:function( id ){
 			var that = this;
 			var _pid = this._$( id ),
@@ -195,6 +212,16 @@ mod_f2er={
 			var	_arrowHtml=document.createElement('span');
 				_arrowHtml.className="m_arrow",
 				_arrowHtml.innerHTML="<em>◆</em><span>◆</span>";
+
+			
+
+			function getData( rout,flag ){
+					Ajax.doAjax("GET",rout,true,"",function(txt){
+						_wrapper.innerHTML = txt;
+						that.doJS( rout );
+					},"");
+				}
+
 			_pid.onclick = function( evt ){
 				var _evt = evt || window.event,
 					_target = _evt.target || _evt.srcElement,
@@ -212,11 +239,13 @@ mod_f2er={
 				}
 				_target.className="on";
 				var _dataSource=_target.getAttribute('data-source');
-				Ajax.doAjax("GET",_dataSource,true,"",function(txt){
-					_wrapper.innerHTML = txt;
-					that.doJS( _dataSource );
-				},"")
+				
+				//获取数据
+				getData(_dataSource);
 				window.location.href="#/"+_dataSource;
 			}
+			//直接输入url
+			var _hash = location.hash.substr(2);
+			that.Rout(_hash,getData(_hash));
 		}
 	};
