@@ -36,7 +36,7 @@ a:hover{text-decoration:underline;}
 
 /*mod_box*/
 body{/*background:url(../../wiki/static/images/avatar/bg.png) repeat;*/}
-.mod_box{ /*height:382px;*/ width:100%; position:absolute; left:0; top:50%; margin-top:-191px; height:32px; line-height:32px;text-align:center; background:#59b5ef}
+.mod_box{ /*height:382px;*/ width:100%; position:absolute; left:0; top:50%; margin-top:-16px; height:32px; line-height:32px;text-align:center; background:#59b5ef}
 .mod_box a{ color:#fff;font-size:14px;}
 .mod_box a:hover{ color:#FFF000}
 .mod_box .ued{ width:1000px; margin:0 auto;display:block;}
