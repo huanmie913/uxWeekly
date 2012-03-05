@@ -5,11 +5,11 @@
 .mod_ul_txtlt{}
 .mod_ul_txtlt li{ border-bottom:1px dotted #F9BFBB; padding:3px 0; height:16px; color:#A2471B;}
 .mod_ul_txtlt span{ float:right;}
-.mod_ul_txtlt a{ color:#A2471B; white-space:nowrap;width:350px; overflow: hidden;display:block;}
+.mod_ul_txtlt a{ color:#A2471B; white-space:nowrap;width:80%; overflow: hidden;display:block;}
 .mod_ul_txtlt a:hover{ color:#f00;}
 
 /*mod_tb_textlist*/
 .mod_tb_txtlt{ width:100%;}
 .mod_tb_txtlt td{ padding:3px 0;color:#A2471B;border-bottom:1px dotted #F9BFBB; }
-.mod_tb_txtlt a{ width:350px; display:block; white-space:nowrap; overflow:hidden; color:#A2471B;}
+.mod_tb_txtlt a{ width:80%; display:block; white-space:nowrap; overflow:hidden; color:#A2471B;}
 .mod_tb_txtlt a:hover{color:#f00;};
