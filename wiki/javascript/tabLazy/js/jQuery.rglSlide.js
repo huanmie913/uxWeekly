@@ -150,7 +150,7 @@ function:   RescrollGapLevelSlide
 				_stepWidth=stepWidth;
 			}
 			if(d1.scrollLeft()==0){
-				btnRight.addClass(btnDisableCss);
+				btnRight.addClass(btnRightDisableCss);
 				if(e){
 					flag=true;
 				}else{
