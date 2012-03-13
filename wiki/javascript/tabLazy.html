@@ -7,17 +7,18 @@
         <ol>
             <li>1.先加载JQ库，再加载tabLazy.js( jq )</li>
             <li>2.参数说明:
-                <p>1) _tabHandle : $("#tab_ul li") </p>
-				<p>2)_curClass : "current"</p>
-				<p>_bdHandle : $('#tab_bd')</p>
-				<p>_conHandle : ".m_tcon"</p>
-				<p>_flag : "tflag"</p>
-				<p>_eventType : "click"</p>
-				<p>_num :0</p>
-				<p>_tabCon : "tabslide_"</p>
+                <p>1) _tabHandle : tab切换 </p>
+				<p>2)_curClass : 当前选中类名</p>
+				<p>_bdHandle : tab切换内容父容器</p>
+				<p>_conHandle : 内容层class</p>
+				<p>_flag : 是否加载过的标记</p>
+				<p>_eventType : 事件对象</p>
+				<p>_num :初始化第几个</p>
+				<p>_tabCon : 内容层Id</p>
 				<p>_callback: 回调函数</p>
             </li>
-            <li>3.调用方式:TabLoad({
+            <li>3.调用方式:
+				TabLoad({
 				_tabHandle : $("#tab_ul li"),
 				_curClass : "current",
 				_bdHandle : $('#tab_bd'),
