@@ -1,4 +1,3 @@
-
 /*
  * tab+loadContent
  * author:QF
@@ -32,18 +31,18 @@ TabLoad.prototype = {
 					_conHandle = _option._bdHandle.find( _option._conHandle );
 				that.siblings().removeClass( _option._curClass ).end().addClass( _option._curClass );
 				_conHandle.siblings( _option._conHandle ).hide();
-				if( Object.prototype.toString.call( _option._callback ) == "[object Function]"){
 					_conHandle.eq(i).show(0,function(){
-						var _textObj = $("#"+_option._tabCon+i);
+						var _textareaObj = $("#"+_option._tabCon+i);
 						var _flag = that.attr( _option._flag );
 						if( _flag == "false"){
-							var _v = _textObj.find('textarea').val();
-							_textObj.first().append(_v);
+							var _textareaValue = _textareaObj.find('textarea').val();
+							_textareaObj.first().append( _textareaValue );
 							that.attr( _option._flag,"true");
 						}
-						(_option._callback)(i);
+						if( Object.prototype.toString.call( _option._callback ) == "[object Function]"){
+							(_option._callback)(i);
+						}
 					});
-				}
 				e.preventDefault();
 			})
 		}).eq( _option._num ).trigger( _option._eventType )
