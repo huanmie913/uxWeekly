@@ -96,36 +96,17 @@
 			</dl>
 		</li>
 		<li>2.非特殊情况下样式文件必须外链至&lt;head&gt...&lt;/head&gt之间;非特殊情况下JavaScript文件必须外链至页面底部;</li>
-		<li>3.引入样式文件或JavaScript文件时, 须略去默认类型声明, 写法如下:
-			<pre>
-				<code class="xml">
-					&lt;link rel="stylesheet" href="..." /&gt;
-					&lt;style&gt;...&lt;/style&gt;
-					&lt;script src="..."&gt;&lt;/script&gt;
-				</code>
-			</pre>
+		<li>3.引入样式文件或JavaScript文件时, 须略去默认类型声明, 写法如下:<pre><code class="xml">&lt;link rel="stylesheet" href="..." /&gt;&lt;style&gt;...&lt;/style&gt;&lt;script src="..."&gt;&lt;/script&gt;</code></pre>
 		</li>
 		<li>4.引入JS库文件, 文件名须包含库名称及版本号及是否为压缩版, 比如jquery-1.4.1.min.js; 引入插件, 文件名格式为库名称+插件名称, 比 如jQuery.cookie.js;</li>
-		<li>5.必须为含有描述性表单元素(input, textarea)添加label, 如:
-			<pre>
-				<code class="xml">
-					&lt;p&gt;姓 名: &lt;input type="text" id="name" name="name" /&gt;&lt;/p&gt;须写成:
-	  				&lt;p&gt;&lt;label for="name"&gt;姓 名: &lt;/label&gt;&lt;input type="text" id="name" /&gt;&lt;/p&gt;
-	  			</code>
-			</pre>
+		<li>5.必须为含有描述性表单元素(input, textarea)添加label, 如:<pre><code class="xml">&lt;p&gt;姓 名: &lt;input type="text" id="name" name="name" /&gt;&lt;/p&gt;须写成:&lt;p&gt;&lt;label for="name"&gt;姓 名: &lt;/label&gt;&lt;input type="text" id="name" /&gt;&lt;/p&gt;</code></pre>
 		</li>
 		<li>6.规避class与id命名</li>
 		<li>7.css属性书写顺序, 建议遵循:  布局定位属性-->自身属性-->文本属性-->其他属性. 	此条可根据自身习惯书写, 但尽量保证同类属性写在一起. 属性列举:
 			<p>布局定位属性主要包括: display & list-style & position（相应的top,right,bottom,left＆ float & clear＆visibility＆overflow；自身属性	主要包括: width & height & margin & padding & border & background; 	文本属性主	要包括：color & font & text-decoration & text-align & vertical-align & white- space & 其他 & content; 我所列出的这些属性只是最常用到的, 并不代表全部.<p></li>
 		<li>8.书写代码前, 考虑并提高样式重复使用率</li>
 		<li>9.背景图片请尽可能使用sprite技术, 减小http请求, 考虑到多人协作开发, sprite按模块制作;</li>
-		<li>10.杜绝使用
-			<pre>
-				<code class="xml">
-					&lt;meta http-equiv="X-UA-Compatible" content="IE=7" /&gt;
-				</code>
-			</pre>
-			兼容 ie8;</li>
+		<li>10.杜绝使用<pre><code class="xml">&lt;meta http-equiv="X-UA-Compatible" content="IE=7" /&gt;</code></pre>兼容 ie8;</li>
 		<li>11.充分利用无兼容性问题的html自身标签, 比如span, em, strong, optgroup, label,等等; 	需	要为html元素添加自定义属性的时候, 首先要考虑下有没有默认的已有的合适标签去设置, 	如果没有, 可以使用须以"data-"为前缀来添加自定义属性，避免使用"data:"等其他命名方式;</li>
 		<li>充分利用html自身属性及样式继承原理减少代码量</li>
 	</ol>
