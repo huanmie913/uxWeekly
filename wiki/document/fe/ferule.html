@@ -13,11 +13,68 @@
 <!--/toolbar-->
 <!--ox_box-->
 <div class="ox_box ferule">
+	
 	<h2>一：规范目的</h2>
 	<p>为提高团队协作效率, 便于后端程序员添加功能及前端后期优化维护, 输出高质量的文档, 特制订此文档. 本规范文档一经确认, 前端开发人员必须按本文档规范进行前端页面开发. 本文档如有不对或者不合适的地方请及时提出, 经讨论决定后方可更改.</p>
 	<h3>基本准则</h3>
 	<p>符合web标准, 语义化html, 结构表现行为分离, 兼容性优良. 页面性能方面, 代码要求简洁明了有序, 尽可能的减小服务器负载, 保证最快的解析速度.</p>
 	<p>本文将对开发工具、文件规范、XHTML、CSS、JS、图片规范、注释规范、HACK这八个方面，进行规范。</p>
+	<h2>二：开发工具</h2>
+	<!--fe_tb-->
+	<div class="fe_tb">
+		<table>
+			<tr>
+				<th>操作系统:</th>
+				<td>Window</td>
+			</tr>
+			<tr>
+				<th>编辑器:</th>
+				<td>webStorm、subLime Text2、Adobe DW、vim</td>
+			</tr>
+			<tr>
+				<th>浏览器:</th>
+				<td>IE6,7,8,9、Firefox、360、傲游3、Chrome</td>
+			</tr>
+			<tr>
+				<td colspan="2">常用web开发工具</td>
+			</tr>
+			<tr>
+				<th>IE:</th>
+				<td>
+					<p><a href="#" target="_blank">IE Developer Toolbar</a> <span>(DOM, CSS)</span></p>
+					<p><a href="#" target="_blank">Microsoft Script Debugger</a> <span>(JavaScript)</span></p>
+					<p><a href="#" target="_blank">HttpWatch (无可代替的截包利器)</a></p>
+				</td>
+			</tr>
+			<tr>
+				<th>Firefox:</th>
+				<td>
+					<p><a href="#" target="_blank">Firebug</a> <span>(DOM,CSS,JavaScript,流量,性能)</span></p>
+					<p><a href="#" target="_blank">Html Validator</a> <span>(验证html标签正确性)</span></p>
+					<p><a href="#" target="_blank">Css Reloader (无刷新reload css)</a></p>
+					<p><a href="#" target="_blank">Css Usage (减少css规则冗余)</a></p>
+					<p><a href="#" target="_blank">Accessibility Extension (检测页面可用性问题)</a></p>
+					<p><a href="#" target="_blank">Web Developer Toolbar (多用途web开发利器)</a></p>
+				</td>
+			</tr>
+			<tr>
+				<th>Chrome:</th>
+				<td>
+					<p><a href="#" target="_blank">Javascript控制台</a></p>
+					<p>“控制当前页”-->“开发人员”-->“javascript控制台”</p>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<!--/fe_tb-->
+	<p>	开发工具，亦可根据自己喜好选择。但须遵循如下原则:</p>
+	<ol>
+		<li>1.不可利用IDE的视图模式'画'代码;</li>
+		<li>2.不可利用IDE生成相关功能代码, 比如Dw内置的一些功能js;</li>
+		<li>3.编码必须格式化, 比如缩进;;</li>
+	</ol>
+	<p>理想状态下，浏览器兼容性需支持所有主流浏览器。在实际的项目开发中，根据实际情况，浏览器的兼容有所偏重。</p>
+	<p>建议测试顺序: FireFox-->IE6-->IE9->IE8-->IE7-->Opera-->Chrome-->Safari, </p>
 </div>
 <!--/ox_box-->
 <footer class="bottomBar" id="bottomBar"></footer>

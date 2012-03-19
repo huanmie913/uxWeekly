@@ -7,5 +7,5 @@ Author:		f2er
 Update:     
 */
 .mt10{ margin-top:10px;}
-.ferule{ line-height:2;}
-.ferule p{ text-indent:2em;}
+.ferule{ line-height:2;width:1000px;margin:0 auto;}
+.ferule p,.ferule h3{ text-indent:2em;}
