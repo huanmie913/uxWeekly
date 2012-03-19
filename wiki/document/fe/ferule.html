@@ -103,13 +103,34 @@
 		</li>
 		<li>6.规避class与id命名</li>
 		<li>7.css属性书写顺序, 建议遵循:  布局定位属性-->自身属性-->文本属性-->其他属性. 	此条可根据自身习惯书写, 但尽量保证同类属性写在一起. 属性列举:
-			<p>布局定位属性主要包括: display & list-style & position（相应的top,right,bottom,left＆ float & clear＆visibility＆overflow；自身属性	主要包括: width & height & margin & padding & border & background; 	文本属性主	要包括：color & font & text-decoration & text-align & vertical-align & white- space & 其他 & content; 我所列出的这些属性只是最常用到的, 并不代表全部.<p></li>
+		<br/>布局定位属性主要包括: display & list-style & position（相应的top,right,bottom,left＆ float & clear＆visibility＆overflow；自身属性	主要包括: width & height & margin & padding & border & background; 	文本属性主	要包括：color & font & text-decoration & text-align & vertical-align & white- space & 其他 & content; 我所列出的这些属性只是最常用到的, 并不代表全部.</li>
 		<li>8.书写代码前, 考虑并提高样式重复使用率</li>
 		<li>9.背景图片请尽可能使用sprite技术, 减小http请求, 考虑到多人协作开发, sprite按模块制作;</li>
 		<li>10.杜绝使用<pre><code class="xml">&lt;meta http-equiv="X-UA-Compatible" content="IE=7" /&gt;</code></pre>兼容 ie8;</li>
 		<li>11.充分利用无兼容性问题的html自身标签, 比如span, em, strong, optgroup, label,等等; 	需	要为html元素添加自定义属性的时候, 首先要考虑下有没有默认的已有的合适标签去设置, 	如果没有, 可以使用须以"data-"为前缀来添加自定义属性，避免使用"data:"等其他命名方式;</li>
 		<li>充分利用html自身属性及样式继承原理减少代码量</li>
 	</ol>
+	<h3>4.2 XHTML文档格式</h3>
+	<p>创建格式良好的文档,可以使页面在各媒介中良好的展示,便于前端开发人员进一步的前端逻辑开发.对整个风格的规范，将提高代码的可视性，便于维护与查找。规范中将分为两个方面:符合标准的内容格式规范与整体风格规范。</p>
+	<h4>4.2.1 内容格式规范</h4>
+	<ul>
+		<li>1)正确的嵌套元素
+			<p>	按照打开标记元素的顺序关闭标签，如果一个在另一个元素中，那么在里面的元素的结束标签必须出现在外面元素的结束标签之前。</p>
+			<dl>
+				<dt>XHTML严格规定了一些嵌套限制，嵌套限制包括：</dt>
+				<dd>&lt;a&gt;标签不能包含其他&lt;/a&gt;标签</dd>
+				<dd>&lt;pre&gt;标签不能包含&lt;img&gt;、&lt;object&gt;、&lt;big&gt;、&lt;small&gt;、&lt;sub&gt;或&lt;sup&gt;标签</dd>
+				<dd>&lt;button&gt;标签不能包含&lt;input&gt;、&lt;select&gt;、&lt;textarea&gt;、&lt;label&gt;、&lt;button&gt;、&lt;form&gt;、&lt;fieldset>、 &lt;iframe&gt;或&lt;isindex&gt;标签</dd>
+				<dd>&lt;label&gt;标签不能包含其他&lt;label&gt;标签</dd>
+				<dd>&lt;form&gt;标签不能包含其他&lt;form&gt;标签</dd>
+			</dl>
+			<p>具体嵌套限制规则如下：</p>
+			<img>
+			<p class="notice">注意:任何内联元素不可嵌套任何块级元素。任何内联元素不允许直接以body为父容器。Body下的子元素必须是块级元素。内联元素很多都可以互相嵌套，很多语义化的块级元素有固定的父子关系（不可乱嵌套）。</p>
+		</li>
+
+
+	</ul>
 </div>
 <!--/ox_box-->
 <footer class="bottomBar" id="bottomBar"></footer>
