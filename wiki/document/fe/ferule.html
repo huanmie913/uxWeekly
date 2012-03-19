@@ -74,7 +74,54 @@
 		<li>3.编码必须格式化, 比如缩进;;</li>
 	</ol>
 	<p>理想状态下，浏览器兼容性需支持所有主流浏览器。在实际的项目开发中，根据实际情况，浏览器的兼容有所偏重。</p>
-	<p>建议测试顺序: FireFox-->IE6-->IE9->IE8-->IE7-->Opera-->Chrome-->Safari, </p>
+	<p>建议测试顺序: FireFox-->IE6-->IE9->IE8-->IE7-->Opera-->Chrome-->Safari。 </p>
+	<h2>三：文件规范</h2>
+	<ol>
+		<li>1.html, css, js, images,图片切片文件均归档至约定的目录中</li>
+		<li>2.html文件命名: 英文命名, 后缀.html. 若界面稿命名为中文, 请重命名与html文件同名, 以方便后端添加 功能时查找对应页面。</li>
+		<li>3.css文件命名: 英文命名, 后缀.css. 共用global_ue.css, 其他页面依实际模块需求命名</li>
+		<li>4.Js文件命名: 英文命名, 后缀.js. 共用global_ue.js, 其他依实际模块需求命名</li>
+		<li>5.整个DEMO的切片合并在一张PSD中，便已后期维护修改，并以相应的项目命名</li>
+	</ol>
+	<h2>四：XHTML规范</h2>
+	<h3>4.1 xhtml文档模板</h3>
+	<ol>
+		<li>1.长期开发的项目，页面结构需有较高的兼容性，保证兼容文档能被以后的xhtml文档完全兼容，因此在DOCTYPE声明中，统一使用HTML5声明。
+			<img>
+			<dl>
+				<dt>注意:</dt>
+				<dd>1）在IE6下，如果文档的第一行代码不是DOCTYPE声明，将触发怪异模式，所以在项目页面中不加XML声明<? xml version=”1.0” encoding=”utf-8” ?>。</dd>
+				<dd>2）如果css与xhtml的文档编码不一致，请在link中申明charset.</dd>
+			</dl>
+		</li>
+		<li>2.非特殊情况下样式文件必须外链至<head>...</head>之间;非特殊情况下JavaScript文件必须外链至页面底部;</li>
+		<li>3.引入样式文件或JavaScript文件时, 须略去默认类型声明, 写法如下:
+			<pre>
+					<link rel="stylesheet" href="..." />
+					<style>...</style>
+					<script src="..."></script>
+			</pre>
+		</li>
+		<li>4.引入JS库文件, 文件名须包含库名称及版本号及是否为压缩版, 比如jquery-1.4.1.min.js; 引入插件, 文件名格式为库名称+插件名称, 比 如jQuery.cookie.js;</li>
+		<li>5.必须为含有描述性表单元素(input, textarea)添加label, 如:
+			<pre>
+				<p>姓 名: <input type="text" id="name" name="name" /></p>须写成:
+  				<p><label for="name">姓 名: </label><input type="text" id="name" /></p>
+			</pre>
+		</li>
+		<li>6.规避class与id命名</li>
+		<li>7.css属性书写顺序, 建议遵循:  布局定位属性-->自身属性-->文本属性-->其他属性. 	此条可根据自身习惯书写, 但尽量保证同类属性写在一起. 属性列举:
+			<p>布局定位属性主要包括: display & list-style & position（相应的top,right,bottom,left＆ float & clear＆visibility＆overflow；自身属性	主要包括: width & height & margin & padding & border & background; 	文本属性主	要包括：color & font & text-decoration & text-align & vertical-align & white- space & 其他 & content; 我所列出的这些属性只是最常用到的, 并不代表全部.<p></li>
+		<li>8.书写代码前, 考虑并提高样式重复使用率</li>
+		<li>9.背景图片请尽可能使用sprite技术, 减小http请求, 考虑到多人协作开发, sprite按模块制作;</li>
+		<li>10.杜绝使用
+			<pre>
+				<meta http-equiv="X-UA-Compatible" content="IE=7" />
+			</pre>
+			兼容 ie8;</li>
+		<li>11.充分利用无兼容性问题的html自身标签, 比如span, em, strong, optgroup, label,等等; 	需	要为html元素添加自定义属性的时候, 首先要考虑下有没有默认的已有的合适标签去设置, 	如果没有, 可以使用须以"data-"为前缀来添加自定义属性，避免使用"data:"等其他命名方式;</li>
+		<li>充分利用html自身属性及样式继承原理减少代码量</li>
+	</ol>
 </div>
 <!--/ox_box-->
 <footer class="bottomBar" id="bottomBar"></footer>
