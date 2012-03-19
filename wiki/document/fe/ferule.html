@@ -91,11 +91,11 @@
 			<img>
 			<dl class="notice">
 				<dt>注意:</dt>
-				<dd>1）在IE6下，如果文档的第一行代码不是DOCTYPE声明，将触发怪异模式，所以在项目页面中不加XML声明<? xml version=”1.0” encoding=”utf-8” ?>。</dd>
+				<dd>1）在IE6下，如果文档的第一行代码不是DOCTYPE声明，将触发怪异模式，所以在项目页面中不加XML声明&lt;l? xml version=”1.0” encoding=”utf-8” ?&gt。</dd>
 				<dd>2）如果css与xhtml的文档编码不一致，请在link中申明charset.</dd>
 			</dl>
 		</li>
-		<li>2.非特殊情况下样式文件必须外链至<head>...</head>之间;非特殊情况下JavaScript文件必须外链至页面底部;</li>
+		<li>2.非特殊情况下样式文件必须外链至&lt;head&gt...&lt;/head&gt之间;非特殊情况下JavaScript文件必须外链至页面底部;</li>
 		<li>3.引入样式文件或JavaScript文件时, 须略去默认类型声明, 写法如下:
 			<pre>
 				<code class="xml">
@@ -109,8 +109,8 @@
 		<li>5.必须为含有描述性表单元素(input, textarea)添加label, 如:
 			<pre>
 				<code class="xml">
-					<p>姓 名: <input type="text" id="name" name="name" /></p>须写成:
-	  				<p><label for="name">姓 名: </label><input type="text" id="name" /></p>
+					&lt;p&gt;姓 名: &lt;input type="text" id="name" name="name" /&gt;&lt;/p&gt;须写成:
+	  				&lt;p&gt;&lt;label for="name"&gt;姓 名: &lt;/label&gt;&lt;input type="text" id="name" /&gt;&lt;/p&gt;
 	  			</code>
 			</pre>
 		</li>
@@ -122,7 +122,7 @@
 		<li>10.杜绝使用
 			<pre>
 				<code class="xml">
-					<meta http-equiv="X-UA-Compatible" content="IE=7" />
+					&lt;meta http-equiv="X-UA-Compatible" content="IE=7" /&gt;
 				</code>
 			</pre>
 			兼容 ie8;</li>
