@@ -113,13 +113,13 @@
 	<h3>4.2 XHTML文档格式</h3>
 	<p>创建格式良好的文档,可以使页面在各媒介中良好的展示,便于前端开发人员进一步的前端逻辑开发.对整个风格的规范，将提高代码的可视性，便于维护与查找。规范中将分为两个方面:符合标准的内容格式规范与整体风格规范。</p>
 	<h4>4.2.1 内容格式规范</h4>
-	<ul>
+	<ul class="x">
 		<li>1)正确的嵌套元素
 			<p>	按照打开标记元素的顺序关闭标签，如果一个在另一个元素中，那么在里面的元素的结束标签必须出现在外面元素的结束标签之前。</p>
 			<p>XHTML严格规定了一些嵌套限制，嵌套限制包括：</p>
 			<pre>
 				<code class="xml">
-					&lt;a&gt;标签不能包含其他&lt;/a&gt;标签
+					&lt;a&gt;标签不能包含其他&lt;a&gt;标签
 					&lt;pre&gt;标签不能包含&lt;img&gt;、&lt;object&gt;、&lt;big&gt;、&lt;small&gt;、&lt;sub&gt;或&lt;sup&gt;标签
 					&lt;button&gt;标签不能包含&lt;input&gt;、&lt;select&gt;、&lt;textarea&gt;、&lt;label&gt;、&lt;button&gt;、&lt;form&gt;、&lt;fieldset&gt;、 &lt;iframe&gt;或&lt;isindex&gt;标签
 					&lt;label&gt;标签不能包含其他&lt;label&gt;标签
