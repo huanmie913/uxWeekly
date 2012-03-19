@@ -118,7 +118,8 @@
 			<p>	按照打开标记元素的顺序关闭标签，如果一个在另一个元素中，那么在里面的元素的结束标签必须出现在外面元素的结束标签之前。</p>
 			<p>XHTML严格规定了一些嵌套限制，嵌套限制包括：</p>
 			<pre><code class="xml">&lt;a&gt;标签不能包含其他&lt;a&gt;标签&lt;pre&gt;标签不能包含&lt;img&gt;、&lt;object&gt;、&lt;big&gt;、&lt;small&gt;、&lt;sub&gt;或&lt;sup&gt;标签&lt;button&gt;标签不能包含&lt;input&gt;、&lt;select&gt;、
-				&lt;textarea&gt;、&lt;label&gt;、&lt;button&gt;、&lt;form&gt;、&lt;fieldset&gt;、 &lt;iframe&gt;或&lt;isindex&gt;标签&lt;label&gt;标签不能包含其他&lt;label&gt;标签&lt;form&gt;标签不能包含其他&lt;form&gt;标签</code></pre>
+				&lt;textarea&gt;、&lt;label&gt;、&lt;button&gt;、&lt;form&gt;、&lt;fieldset&gt;、 &lt;iframe&gt;或&lt;isindex&gt;
+				标签&lt;label&gt;标签不能包含其他&lt;label&gt;标签&lt;form&gt;标签不能包含其他&lt;form&gt;标签</code></pre>
 			<p>具体嵌套限制规则如下：</p>
 			<img>
 			<p class="notice">注意:任何内联元素不可嵌套任何块级元素。任何内联元素不允许直接以body为父容器。Body下的子元素必须是块级元素。内联元素很多都可以互相嵌套，很多语义化的块级元素有固定的父子关系（不可乱嵌套）。</p>
@@ -131,7 +132,7 @@
 		<li>4)属性值必须在引号中,没有值的属性必须使用自己的属性名当值
 			<p>	在xhtml中，每个属性都必须有一个值。每个值必须加双引号，没有值的属性必须使用属性名当值。</p>
 		</li>
-		<li>5)字符实体书写页面制作过程中，浏览器解析时，会把"< xxxxxx >"这样格式的代码作为注释不进行解析，为了避免这样的情况发生，遇到大于号、小于号时，使用实体字符"&gt;"、"&lt;"
+		<li>5)&、>、<、¥、<<特殊字符使用&amp;、&gt;、&lt;、&yen、&lsaquo; 字符实体书写页面制作过程中，浏览器解析时，会把"< xxxxxx >"这样格式的代码作为注释不进行解析，为了避免这样的情况发生，遇到大于号、小于号时，使用实体字符"&gt;"、"&lt;"
 			<p>常见的HTML字符实体表：<a href="#">http://www.w3schools.com/tags/ref_entities.asp</a></p>
 		</li>
 		<li>6)减少&nbsp的使用
