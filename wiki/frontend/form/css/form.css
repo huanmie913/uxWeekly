@@ -6,5 +6,5 @@
 .ui_form .ui_item{ padding:0 0 20px 120px; overflow:hidden; zoom:1;}
 .ui_form .label{ float:left;width:110px;text-align:right; height:30px; line-height:30px; margin-left:-120px;display:inline;font-size:14px;}
 .ui_form .ipt_txt{ border:1px solid #cfcfcf; border-radius:5px;outline:none;padding:5px 3px;}
-.ui_form .ri,.ui_form .ci{  margin:4px 0 0 ; }
-.ui_form .ri input,.ui_form .ci input{ font-size:0; line-height:0; margin:0 5px 0 0;}
+.ui_form .ri,.ui_form .ci{  margin:4px 0 0;display:inline-block;*zoom:1;*display:inline;vertical-align:middle;overflow:hidden; }
+.ui_form .ri input,.ui_form .ci input{ font-size:0; line-height:0; margin:0 5px 0 0;width:14px;height:14px;}
