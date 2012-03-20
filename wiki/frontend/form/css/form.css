@@ -3,6 +3,6 @@
 
 /*ui_form*/
 .ui_form{}
-.ui_form .ui_item{ padding:0 0 20px 100px; overflow:hidden; zoom:1;}
-.ui_form .label{ float:left;width:90px;text-align:right; height:30px; line-height:30px; margin-left:-100px;display:inline;font-size:14px;}
+.ui_form .ui_item{ padding:0 0 20px 120px; overflow:hidden; zoom:1;}
+.ui_form .label{ float:left;width:11px;text-align:right; height:30px; line-height:30px; margin-left:-120px;display:inline;font-size:14px;}
 .ui_form .ipt_txt{ border:1px solid #cfcfcf; border-radius:5px;outline:none;padding:5px 3px;}
