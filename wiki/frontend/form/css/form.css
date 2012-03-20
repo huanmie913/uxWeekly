@@ -14,3 +14,4 @@
 .ui_form .select{ display:inline-block;*zoom:1;*display:inline; border:1px solid #cfcfcf;border-radius:5px;}
 .ui_form .select select{ border:none;background:none; margin:3px;height:22px; line-height:18px; padding:2px 0}
 .ui_form textarea{ border:1px solid #cfcfcf;border-radius:5px; padding:5px; resize:none;outline:none; }
+.ui_form textarea:focus,.ui_form .ipt_txt{ border:1px solid #ED5816; outline:none;};
