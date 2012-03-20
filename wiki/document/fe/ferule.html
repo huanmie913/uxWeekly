@@ -14,7 +14,6 @@
 <!--/toolbar-->
 <!--ox_box-->
 <div class="ox_box ferule">
-	
 	<h2>一：规范目的</h2>
 	<p>为提高团队协作效率, 便于后端程序员添加功能及前端后期优化维护, 输出高质量的文档, 特制订此文档. 本规范文档一经确认, 前端开发人员必须按本文档规范进行前端页面开发. 本文档如有不对或者不合适的地方请及时提出, 经讨论决定后方可更改.</p>
 	<h3>基本准则</h3>
@@ -96,7 +95,7 @@
 			</dl>
 		</li>
 		<li>2.非特殊情况下样式文件必须外链至&lt;head&gt...&lt;/head&gt之间;非特殊情况下JavaScript文件必须外链至页面底部;</li>
-		<li>3.引入样式文件或JavaScript文件时, 须略去默认类型声明, 写法如下:<pre><code class="xml">&lt;link rel="stylesheet" href="..." /&gt;&lt;style&gt;...&lt;/style&gt;&lt;script src="..."&gt;&lt;/script&gt;</code></pre>
+		<li>3.引入样式文件或JavaScript文件时, 须略去默认类型声明, 写法如下:<pre><code class="xml">&lt;link rel="stylesheet" href="..." /&gt;<br/>&lt;style&gt;...&lt;/style&gt;<br/>&lt;script src="..."&gt;&lt;/script&gt;</code></pre>
 		</li>
 		<li>4.引入JS库文件, 文件名须包含库名称及版本号及是否为压缩版, 比如jquery-1.4.1.min.js; 引入插件, 文件名格式为库名称+插件名称, 比 如jQuery.cookie.js;</li>
 		<li>5.必须为含有描述性表单元素(input, textarea)添加label, 如:<pre><code class="xml">&lt;p&gt;姓 名: &lt;input type="text" id="name" name="name" /&gt;&lt;/p&gt;须写成:&lt;p&gt;&lt;label for="name"&gt;姓 名: &lt;/label&gt;&lt;input type="text" id="name" /&gt;&lt;/p&gt;</code></pre>
