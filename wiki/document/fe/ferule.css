@@ -8,6 +8,7 @@ Update:
 */
 .mt10{ margin-top:10px;}
 .ferule{ line-height:2;width:1000px; font-size:14px; font-family:"Microsoft Yahei";}
+.ferule a{ color:#0C72A4;}
 .ferule h2{ font-size:16px;}
 .ferule h3{ font-size:14px;}
 .ferule p,.ferule h3,.notice,.ferule h4,.ferule h5{ text-indent:2em;}
@@ -16,7 +17,7 @@ Update:
 .fe_tb td{ border-bottom:1px solid #ddd; padding:5px;}
 .fe_tb td p{ text-indent:0; }
 .fe_tb td span{ color:#aaa;}
-.fe_tb a{ color:#0C72A4;}
+
 ol{ margin-left:2em;}
 .x{ margin-left:4em;}
 .txtr{ text-align:right;}
