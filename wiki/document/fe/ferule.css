@@ -10,7 +10,7 @@ Update:
 .ferule{ line-height:2;width:1000px; font-size:14px; font-family:"Microsoft Yahei";}
 .ferule h2{ font-size:16px;}
 .ferule h3{ font-size:14px;}
-.ferule p,.ferule h3,.notice,.ferule h4{ text-indent:2em;}
+.ferule p,.ferule h3,.notice,.ferule h4,.ferule h5{ text-indent:2em;}
 .fe_tb table{ width:100%;}
 .fe_tb th{ border-right:1px solid #ddd;border-bottom:1px solid #ddd; width:20%; padding:5px; text-align:right;}
 .fe_tb td{ border-bottom:1px solid #ddd; padding:5px;}
