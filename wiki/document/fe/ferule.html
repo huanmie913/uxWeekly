@@ -20,7 +20,7 @@
 	<h3>基本准则</h3>
 	<p>符合web标准, 语义化html, 结构表现行为分离, 兼容性优良. 页面性能方面, 代码要求简洁明了有序, 尽可能的减小服务器负载, 保证最快的解析速度.</p>
 	<p>本文将对开发工具、文件规范、XHTML、CSS、JS、图片规范、注释规范、HACK这八个方面，进行规范。</p>
-	<h2>二：开发工具</h2>
+	<h2 class="mt10">二：开发工具</h2>
 	<!--fe_tb-->
 	<div class="fe_tb">
 		<table>
@@ -42,27 +42,27 @@
 			<tr>
 				<th>IE:</th>
 				<td>
-					<p><a href="#" target="_blank">IE Developer Toolbar</a> <span>(DOM, CSS)</span></p>
-					<p><a href="#" target="_blank">Microsoft Script Debugger</a> <span>(JavaScript)</span></p>
-					<p><a href="#" target="_blank">HttpWatch</a> <span>(无可代替的截包利器)</span></p>
+					<p><a href="http://www.microsoft.com/downloads/details.aspx?familyid=e59c3964-672d-4511-bb3e-2d5e1db91038&displaylang=en" target="_blank">IE Developer Toolbar</a> <span>(DOM, CSS)</span></p>
+					<p><a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=2f465be0-94fd-4569-b3c4-dffdf19ccd99&DisplayLang=en" target="_blank">Microsoft Script Debugger</a> <span>(JavaScript)</span></p>
+					<p><a href="http://www.httpwatch.com/download/" target="_blank">HttpWatch</a> <span>(无可代替的截包利器)</span></p>
 				</td>
 			</tr>
 			<tr>
 				<th>Firefox:</th>
 				<td>
-					<p><a href="#" target="_blank">Firebug</a> <span>(DOM,CSS,JavaScript,流量,性能)</span></p>
-					<p><a href="#" target="_blank">Html Validator</a> <span>(验证html标签正确性)</span></p>
-					<p><a href="#" target="_blank">Css Reloader</a><span> (无刷新reload css)</span></p>
-					<p><a href="#" target="_blank">Css Usage</a> <span>(减少css规则冗余)</span></p>
-					<p><a href="#" target="_blank">Accessibility Extension</a><span> (检测页面可用性问题)</span></p>
-					<p><a href="#" target="_blank">Web Developer Toolbar</a> <span>(多用途web开发利器)</span></p>
+					<p><a href="https://addons.mozilla.org/zh-CN/firefox/addon/1843" target="_blank">Firebug</a> <span>(DOM,CSS,JavaScript,流量,性能)</span></p>
+					<p><a href="http://validator.w3.org/" target="_blank">Html Validator</a> <span>(验证html标签正确性)</span></p>
+					<p><a href="https://addons.mozilla.org/en-US/firefox/addon/css-reloader/" target="_blank">Css Reloader</a><span> (无刷新reload css)</span></p>
+					<p><a href="https://addons.mozilla.org/en-us/firefox/addon/css-usage/" target="_blank">Css Usage</a> <span>(减少css规则冗余)</span></p>
+					<p><a href="https://addons.mozilla.org/en-US/firefox/addon/accessibility-evaluation-toolb/" target="_blank">Accessibility Extension</a><span> (检测页面可用性问题)</span></p>
+					<p><a href="http://www.butwho.net/2008/05/collection-of-web-developer-tools-per-browser.html" target="_blank">Web Developer Toolbar</a> <span>(多用途web开发利器)</span></p>
 				</td>
 			</tr>
 			<tr>
 				<th>Chrome:</th>
 				<td>
 					<p><a href="#" target="_blank">Javascript控制台</a></p>
-					<p>“控制当前页”-->“开发人员”-->“javascript控制台”</p>
+					<span>“控制当前页”-->“开发人员”-->“javascript控制台”</span>
 				</td>
 			</tr>
 		</table>
@@ -76,7 +76,7 @@
 	</ol>
 	<p>理想状态下，浏览器兼容性需支持所有主流浏览器。在实际的项目开发中，根据实际情况，浏览器的兼容有所偏重。</p>
 	<p>建议测试顺序: FireFox-->IE6-->IE9->IE8-->IE7-->Opera-->Chrome-->Safari。 </p>
-	<h2>三：文件规范</h2>
+	<h2 class="mt10">三：文件规范</h2>
 	<ol>
 		<li>1.html, css, js, images,图片切片文件均归档至约定的目录中</li>
 		<li>2.html文件命名: 英文命名, 后缀.html. 若界面稿命名为中文, 请重命名与html文件同名, 以方便后端添加 功能时查找对应页面。</li>
@@ -159,7 +159,7 @@
 			<p>书写整洁、体积较小的代码，方便维护与查找。建议在不破坏整体结构的前提下，减少空白</p>
 		</li>
 	</ul>
-	<h2>五：CSS规范</h2>
+	<h2 class="mt10">五：CSS规范</h2>
 	<p>单个独立页面采用一个样式文件完成所有页面的样式</p>
 	<h3>5.1 CSS文档结构规范</h3>
 	<p>一个样式文件主要包含以下几部分：通用样式、外观样式、组合样式、结构样式</p>
@@ -207,7 +207,7 @@
 		<li>9)不要在CSS中使用 !important</li>
 		<li>10)尽量不要在CSS中使用 "*" 选择符</li>
 	</ul>
-	<h2>六:JavaScript书写规范</h2>
+	<h2 class="mt10">六:JavaScript书写规范</h2>
 	<ul>
 		<li>1)文件编码统一为utf-8, 书写过程中, 每行代码结束必须有分号; 原则上所有功能均根据XXX项目需求原生开发</li>
 		<li>2)库引入: 原则上仅引入jQuery库, 若需引入第三方库, 须与团队其他人员讨论决定</li>
@@ -221,7 +221,7 @@
 		<li>10)代码结构明了, 加适量注释. 提高函数重用率;</li>
 		<li>11)注重与html分离, 减小reflow, 注重性能</li>
 	</ul>
-	<h2>七:图片规范</h2>
+	<h2 class="mt10">七:图片规范</h2>
 	<ul>
 		<li>1)所有页面元素类图片均放入images文件夹, 测试用图片放于images/demo文件夹;</li>
 		<li>2)图片格式仅限于gif || png || jpg;png仅限png8</li>
@@ -230,7 +230,7 @@
 		<li>5)尽量避免使用半透明的png图片</li>
 		<li>6)运用css sprite技术集中小的背景图或图标, 减小页面http请求, 但注意, 请务必在对应		的sprite psd源图中划参考线, 并保存至切片目录下</li>
 	</ul>
-	<h2>八:注释规范</h2>
+	<h2 class="mt10">八:注释规范</h2>
 	<ul>
 		<li>1)html注释: 注释格式 <!--这儿是注释-->, '--'只能在注释的始末位置,不可置入注释文字区域</li>
 		<li>2)	css注释: 注释格式 /* 这儿是注释 */;</li>
