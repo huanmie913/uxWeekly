@@ -229,10 +229,10 @@ mod_f2er={
 				}
 				for( var i=0,len=_srcElementA.length; i< len; i++ ){
 					_srcElementA[i].className="";
-					//_srcElementA[i].setAttribute('flag','false');
+					_srcElementA[i].setAttribute('flag','false');
 				}
 				var _flag=_target.getAttribute('flag');
-				if( _flag==undefined ){
+				if( _flag == undefined || _flag == "false" ){
 					_target.appendChild(_arrowHtml);
 					_target.setAttribute('flag','true');
 				}
