@@ -15,4 +15,4 @@
 .ui_form .select{ display:inline-block;*zoom:1;*display:inline; border:1px solid #cfcfcf;border-radius:5px;}
 .ui_form .select select{ border:none;background:none; margin:3px;height:22px; line-height:18px; padding:2px 0}
 .ui_form textarea{ border:1px solid #cfcfcf;border-radius:5px; padding:5px; resize:none;outline:none;}
-.ui_form textarea:focus,.ui_form .ipt_txt:focus{ border:1px solid #ED5816; outline:none;box-shadow:0 0 7px rgba(157,197,57,0.8);}
+.ui_form textarea:focus,.ui_form .ipt_txt:focus{ border:1px solid #ED5816; outline:none;box-shadow:0 0 7px rgba(237,88,22,0.8);
