@@ -4,7 +4,7 @@
 /*ui_form*/
 .ui_form{ font-family:Arial,"Microsoft YaHei",Helvetica,sans-serif;}
 .ui_form legend{ font-size:0; line-height:0;}
-.ui_form .ipt_txt,.ui_form textarea{-moz-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset; }
+.ui_form .ipt_txt,.ui_form textarea{-moz-transition: border 0.2s linear 0s,-webkit-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset; }
 .ui_form .ui_item{ padding:0 0 20px 120px; overflow:hidden; zoom:1;}
 .ui_form .label{ float:left;width:110px;text-align:right; height:30px; line-height:30px; margin-left:-120px;display:inline;font-size:14px;}
 .ui_form .ipt_txt{ border:1px solid #cfcfcf; border-radius:5px;outline:none;padding:5px 3px;}
