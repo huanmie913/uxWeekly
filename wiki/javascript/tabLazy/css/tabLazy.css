@@ -27,6 +27,22 @@
 .tab_type li{ display:inline;float:left;margin-right:30px;}
 .tab_type li a{ color:#555;}
 .tab_type .cur{ background:url("http://s4.img4399.com/nforums/image/type_current.png") no-repeat center bottom; padding-bottom:10px;}
+.img_game {
+    display: inline;
+    float: left;
+    margin-left: -88px;
+    width: 83px;
+}
+.img_game img {
+    border: 1px solid #DDEEFB;
+    display: block;
+    height: 75px;
+    padding: 3px;
+    width: 75px;
+}
+.img_game:hover img {
+    border: 1px solid #CAE7F9;
+}
 .m_imglist { margin-right: -20px;overflow: hidden;}
 .m_imglist li { border-top: 1px dashed #D1E8F9;display: inline;float: left;height: 86px;line-height: 22px;margin-top: -1px;padding: 10px 10px 10px 92px;width: 158px;
 }
