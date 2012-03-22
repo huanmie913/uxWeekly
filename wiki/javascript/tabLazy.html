@@ -4,7 +4,38 @@
     <h2>调用说明</h2>
     <!--调用说明-->
     <div class="invoke_desc demo_desc mt10">
-        <ol>
+    	<h3>一:Jquery版</h3>
+        <ol class="mt10">
+            <li>1.先加载JQ库，再加载tabLazy.js( jq )</li>
+            <li>2.参数说明:
+                <p>1) _tabHandle : tab切换 </p>
+				<p>2)_curClass : 当前选中类名</p>
+				<p>3)_bdHandle : tab切换内容父容器</p>
+				<p>4)_conHandle : 内容层class</p>
+				<p>5)_flag : 是否加载过的标记</p>
+				<p>6)_eventType : 事件对象</p>
+				<p>7)_num :初始化第几个</p>
+				<p>8)_tabCon : 内容层Id</p>
+				<p>9)_callback: 回调函数</p>
+            </li>
+            <li>3.调用方式:
+				TabLoad({
+				_tabHandle : $("#tab_ul li"),
+				_curClass : "current",
+				_bdHandle : $('#tab_bd'),
+				_conHandle : ".m_tcon",
+				_flag : "tflag",
+				_eventType : "click",
+				_num :0,
+				_tabCon : "tabslide_",
+				_callback: function(i){
+					tab_one(i);
+				}
+			})</li>
+        </ol>
+        <p class="example mt10">效果预览:<a href="javascript/tabLazy/tabLazy.html" target="_blank" title="tab+延迟加载+左右滚动">tab+延迟加载+左右滚动</a></p>
+        <h3 class="mt10">一:Jquery版</h3>
+        <ol class="mt10">
             <li>1.先加载JQ库，再加载tabLazy.js( jq )</li>
             <li>2.参数说明:
                 <p>1) _tabHandle : tab切换 </p>
