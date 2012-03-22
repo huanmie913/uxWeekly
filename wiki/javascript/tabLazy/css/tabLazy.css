@@ -28,44 +28,14 @@
 .tab_type li{ display:inline;float:left;margin-right:30px;}
 .tab_type li a{ color:#555;}
 .tab_type .cur{ background:url(http://s4.img4399.com/nforums/image/type_current.png) no-repeat center bottom; padding-bottom:10px;}
-.m_imglist {
-    margin-right: -20px;
-    overflow: hidden;
+.m_imglist { margin-right: -20px;overflow: hidden;}
+.m_imglist li { border-top: 1px dashed #D1E8F9;display: inline;float: left;height: 86px;line-height: 22px;margin-top: -1px;padding: 10px 10px 10px 92px;width: 158px;
 }
-.m_imglist li {
-    border-top: 1px dashed #D1E8F9;
-    display: inline;
-    float: left;
-    height: 86px;
-    line-height: 22px;
-    margin-top: -1px;
-    padding: 10px 10px 10px 92px;
-    width: 158px;
-}
-.m_imglist li h3 {
-    overflow: hidden;
-    white-space: nowrap;
-    width: 155px;
-}
-.m_imglist .hover {
-    background: none repeat scroll 0 0 #F3FAFE;
-}
-.m_imglist h3 a {
-    color: #008ED3;
-}
-.m_imglist h3 strong {
-    color: #FF5000;
-}
-.m_imglist .m_jion {
-    color: #000000;
-}
-.m_imglist p span {
-    margin-right: 6px;
-}
-.m_imglist .m_tz {
-    color: #999999;
-    overflow: hidden;
-}
-.m_imglist textarea {
-    display: none;
-}
+.m_imglist li h3 {overflow: hidden;white-space: nowrap;width: 155px;}
+.m_imglist .hover {background: none repeat scroll 0 0 #F3FAFE;}
+.m_imglist h3 a {color: #008ED3;}
+.m_imglist h3 strong {color: #FF5000;}
+.m_imglist .m_jion {color: #000000;}
+.m_imglist p span { margin-right: 6px;}
+.m_imglist .m_tz {color: #999999;overflow: hidden;}
+.m_imglist textarea {display: none;}
