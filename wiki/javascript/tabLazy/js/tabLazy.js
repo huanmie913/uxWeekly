@@ -123,7 +123,7 @@ TabLazy.prototype={
 				ele.setAttribute(that.option.dPro,'true');
 				
 			}
-			that.doMore(_uid);
+			//that.doMore(_uid);
 			that.preventDefault(ev);
 		}	
 	}	
