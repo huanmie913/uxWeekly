@@ -73,8 +73,7 @@ TabLazy.prototype={
 		tag[_m].setAttribute(that.option.dPro,'true');
 		var _uid=tag[_m].getAttribute('id');
 		btag[_m].style.display="block";
-		that.getData(_m);
-		that.doMore(_uid)	
+		that.getData(_m);	
 	},
 	getData:function(n){
 		var that=this;
