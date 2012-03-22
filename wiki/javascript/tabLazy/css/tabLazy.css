@@ -23,10 +23,10 @@
 
 
 
-.tab_type{ border-bottom:1px solid ##CFE3F1;}
+.tab_type{ border-bottom:1px solid #CFE3F1;}
 .tab_type li{ display:inline;float:left;margin-right:30px;}
 .tab_type li a{ color:#555;}
-.tab_type .cur{ background:url(http://s4.img4399.com/nforums/image/type_current.png) no-repeat center bottom; padding-bottom:10px;}
+.tab_type .cur{ background:url("http://s4.img4399.com/nforums/image/type_current.png") no-repeat center bottom; padding-bottom:10px;}
 .m_imglist { margin-right: -20px;overflow: hidden;}
 .m_imglist li { border-top: 1px dashed #D1E8F9;display: inline;float: left;height: 86px;line-height: 22px;margin-top: -1px;padding: 10px 10px 10px 92px;width: 158px;
 }
