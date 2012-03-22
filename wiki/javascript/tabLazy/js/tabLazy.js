@@ -73,7 +73,13 @@ TabLazy.prototype={
 		tag[_m].setAttribute(that.option.dPro,'true');
 		var _uid=tag[_m].getAttribute('id');
 		btag[_m].style.display="block";
-		that.getData(_m);	
+		that.getData(_m);
+		//that.doMore(_uid)	
+	},
+	doMore:function(m){
+		var that=this;
+		var _url=that.option.postUrl+m;
+		that.$get(that.option.mid).innerHTML='<a href="'+_url+'" title="更多&gt;&gt;">更多&gt;&gt;</a>';	
 	},
 	getData:function(n){
 		var that=this;
@@ -117,6 +123,7 @@ TabLazy.prototype={
 				ele.setAttribute(that.option.dPro,'true');
 				
 			}
+			//that.doMore(_uid);
 			that.preventDefault(ev);
 		}	
 	}	
