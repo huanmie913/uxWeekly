@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*ui_box*/
+.ui_box{ border:1px solid #ccc; zoom:1;}
+.ui_box_hd{ border-bottom:1px solid #ccc;}
+.ui_box_title{ border:1px solid #fff;height:14px;line-height:16px;overflow:hidden;padding:9px 10px 10px;}
+.ui_box_bd{ background:#fff;}
+
