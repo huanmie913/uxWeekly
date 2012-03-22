@@ -1,5 +1,4 @@
 @charset "utf-8";
-/*Í¼Æ¬ÇÐ»»*/
 .tab_pic{ height:32px;}
 .tab_pic li{ float: left; width:102px; height: 32px;}
 .tab_pic li a,.tab_pic li.current a{ background: url(http://g.static.my.4399.com/static/g/hzdmx/images/20120227/m_sprite.jpg) no-repeat -102px 0; display: block; height: 32px; text-align: center; line-height: 32px; font-size: 12px; color:#13505f; font-weight: 700}
