@@ -14,6 +14,9 @@ function TabSlide(ctg){
 			if( !( this instanceof TabSlide )){
 				return new TabSlide(ctg);
 			}
+			this._timer = null;
+			this._opacityStart = 10;
+			this._opacityEnd = 100;
 			this.init();
 		}
 		TabSlide.prototype = {
@@ -43,6 +46,25 @@ function TabSlide(ctg){
 					return computedStyle;
 				}
 			},
+			animateShow : function(obj){
+				var that = this;
+				function animate(i){
+					that._timer = setInterval(function(){
+							obj.style.opacity = i/100;
+							obj.style.filter = "alpha(opacity="+i+")";
+						},50)
+				}
+				clearInterval( that._timer );
+				if( that._opacityStart > that._opacityEnd ){
+					for( var i=that._opacityEnd; i<that._opacityStart;i--){
+						animate(i);
+					}
+				}else if( that._opacityStart < that._opacityEnd ){
+					for( var i=that._opacityStart; i<that._opacityEnd;i++){
+						animate(i);
+					}	
+				}
+			},
 			doTarget : function(  ){
 				var that = this,
 					_obj = document.getElementById(that.option._id),
@@ -62,7 +84,7 @@ function TabSlide(ctg){
 					for( var j=0,_len = _objArray.length;j<_len;j++){
 						_objArray[j].className = ( j != _index ) ? that.option._nornalClass : that.option._nornalClass+" "+that.option._currentClass;
 					}
-				
+					that.animateShow(_objArray[_index]);
 				})
 			},
 			init: function(){
