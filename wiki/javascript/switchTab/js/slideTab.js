@@ -56,10 +56,10 @@ function TabSlide(ctg){
 				}
 				clearInterval( that._timer );
 				if( that._opacityStart > that._opacityEnd ){
-					for( var i=that._opacityEnd; i<that._opacityStart;i--){
+					for( var i=that._opacityEnd; i<= that._opacityStart;i--){
 						animate(i);
 					}
-				}else if( that._opacityStart < that._opacityEnd ){
+				}else if( that._opacityStart <= that._opacityEnd ){
 					for( var i=that._opacityStart; i<that._opacityEnd;i++){
 						animate(i);
 					}	
@@ -75,6 +75,7 @@ function TabSlide(ctg){
 				var _width = parseInt(that.getCss(_content,'width'));
 				
 				that.addEvent( _obj, that.option._eventType,function(event){
+					clearInterval( that._timer );
 					var _ev = event || window.event,
 						_target = _ev.target || _ev.srcElement;
 					if( _target.nodeName.toLowerCase() != "dt"){
