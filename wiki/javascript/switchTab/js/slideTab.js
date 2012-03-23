@@ -54,7 +54,7 @@ function TabSlide(ctg){
 							obj.style.filter = "alpha(opacity="+i+")";
 						},50)
 				}
-				clearInterval( that._timer );
+				//clearInterval( that._timer );
 				if( that._opacityStart > that._opacityEnd ){
 					for( var i=that._opacityEnd; i<= that._opacityStart;i--){
 						animate(i);
@@ -85,7 +85,7 @@ function TabSlide(ctg){
 					for( var j=0,_len = _objArray.length;j<_len;j++){
 						_objArray[j].className = ( j != _index ) ? that.option._nornalClass : that.option._nornalClass+" "+that.option._currentClass;
 					}
-					that.animateShow(_objArray[_index]);
+					//that.animateShow(_objArray[_index]);
 				})
 			},
 			init: function(){
