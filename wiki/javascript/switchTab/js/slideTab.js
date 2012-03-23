@@ -74,9 +74,6 @@ function TabSlide(ctg){
 					_obj = document.getElementById(that.option._id),
 					_objArray = _obj.getElementsByTagName("div");
 					
-					for( var i = 0,len =_objArray.length;i<len;i++ ){
-						
-					}
 					_objArray[ that.option._n ].className = " "+that.option._currentClass;
 					_objArray[ that.option._n ].getElementsByTagName('dd')[0].style.opacity = 1;
 					_objArray[ that.option._n ].getElementsByTagName('dd')[0].style.filter = "alpha(opacity=100)";

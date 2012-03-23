@@ -5,6 +5,15 @@
 <title>情封 焦点图</title>
 <link href="../../static/css/demo.css" rel="stylesheet" type="text/css"/>
 <link href="css/slideTab.css" rel="stylesheet" />
+<style>
+	.ui_tabslide{ position:relative;width:980px;height:300px;border:1px solid #ddd;}
+	.ui_tabslide .ui_ts_bd{ position:absolute;left:0;top:0;width:980px;height:300px;overflow:hidden;}
+	.ui_tabslide .ui_ts_bd li{position:absolute;left:0;top:0}
+	.ui_tabslide .ui_num { height:22px;position:absolute;left:0;bottom:0;background:#000;width:980px;opacity:0.5;filter:alpha(opacity=50); padding-top:10px;}
+	.ui_tabslide .ui_num ul{position:absolute;right:10px;}
+	.ui_tabslide .ui_num li{ float:left;background-color: #FFFFFF;cursor:pointer;display: inline;box-shadow: 0 0 3px 2px #57A928;font-size: 0;height: 10px;line-height: 0;margin-left: 10px;opacity: 0.4;width: 25px;}
+	.ui_tabslide li.current{ opacity :1}
+</style>
 </head>
 <body>
 <!--toolbar-->
@@ -13,10 +22,26 @@
 <div class="ox_box">
   <!--ui_tabslide-->
   <div class="ui_tabslide" id="js_tabslide">
-	<div class="ui_ts_bd"></div>
-	<ul class="ui_num">
-		<li></li>
-	</ul>
+	<div class="ui_ts_bd">
+		<ul class="img_list clearfix" id="js_imgList">
+			<li><a target="_blank" href="http://piao.qq.com/acts/app/anhao.html"><img width="980" height="300" title="发暗号得Q币"  src="http://imgcache.qq.com/club-photo/vip/movie/elinezou/QB93.jpg"></a></li>
+			<li><a target="_blank" href="http://piao.qq.com/acts/dy/disney.html"><img width="980" height="300" title="异星战场"  src="http://imgcache.qq.com/club-photo/vip/movie/elinezou/ys93.jpg"></a></li>
+			<li><a target="_blank" href="http://s.qq.com/act/a20120302moive/index.htm"><img width="980" height="300" title="春娇与志明"  src="http://imgcache.qq.com/club-photo/vip/movie/elinezou/cjyzm.jpg"></a></li>
+			<li><a target="_blank" href="http://piao.qq.com/acts/jd/gotrip.html"><img width="980" height="300" title="会员专享特权" src="http://imgcache.qq.com/club-photo/vip/movie/elinezou/ls93.jpg"></a></li>
+			<li><a target="_blank" href="http://piao.qq.com/acts/star/leehom2012.html"><img width="980" height="300" title="王力宏巡回演唱会"  src="http://img1.gtimg.com/3/363/36345/3634535_1200x1000_0.jpg"></a></li>
+			<li><a target="_blank" href="http://piao.qq.com/yanchu/detail/35/detail_13235_101.html"><img width="980" height="300" title="丁当2012上海演唱会" l src="http://imgcache.qq.com/club-photo/vip/movie/elinezou/dd980x300.jpg"></a></li>
+		</ul>
+	</div>
+	<div class="ui_num">
+		<ul class="clearfix" id="js_num">
+			<li class="current">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+	</div>
   </div>
   <!--/ui_tabslide-->
 </div>
@@ -26,7 +51,8 @@
 <script type="text/javascript">
 mod_f2er.topBar('tab切换效果','toolbar');
 mod_f2er.bottomBar('bottomBar');
-TabSlide({ id:"js_tabSlide",eventType:"mouseover",currentClass:"on",nornalClass :"role_box",n:0,opacityStart:40,opacityEnd:100,step : 5 });
+
+Focuslide();
 </script>
 </body>
 </html>
