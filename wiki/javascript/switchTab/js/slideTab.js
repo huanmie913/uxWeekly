@@ -59,8 +59,8 @@ function TabSlide(ctg){
 					for( var i=that._opacityEnd; i<= that._opacityStart;i--){
 						animate(i);
 					}
-				}else if( that._opacityStart <= that._opacityEnd ){
-					for( var i=that._opacityStart; i<that._opacityEnd;i++){
+				}else if( that._opacityStart < that._opacityEnd ){
+					for( var i=that._opacityStart; i<=that._opacityEnd;i++){
 						animate(i);
 					}	
 				}
