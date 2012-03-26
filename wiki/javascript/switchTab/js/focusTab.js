@@ -1,26 +1,29 @@
 /**
-  * to:Focuslide
+  * to:FocuSlide
   * author:f2er
   * time:12-03-27
 **/
 
-/*Focuslide*/
-function Focuslide(){
+/*FocuSlide*/
+function FocuSlide(){
 	this.opt = {
-		_imgList : "js_imgList",
-		_numList : "js_num",
-		_numTarget : "li",
-		//_num : 0,
-		_eventType : "click",
-		_currentClass : "current"
+		     _imgList : "js_imgList",
+		     _numList : "js_num",
+		   _numTarget : "li",
+		         _num : 0,
+		   _eventType : "click",
+		_currentClass : "current",
+			_autoPlay : true,
+		_intervalTime : 3000
 	};
 	this._timer = null;
-	if( !(this instanceof Focuslide)){
-		return new Focuslide();
+	this._autoTimer = null;
+	if( !(this instanceof FocuSlide)){
+		return new FocuSlide();
 	}
 	this.Focus();
 }
-Focuslide.prototype = {
+FocuSlide.prototype = {
 	Q : function(id){
 		return typeof id =="string" ? document.getElementById(id) : id;
 	},
@@ -37,8 +40,13 @@ Focuslide.prototype = {
 		var that = this;
 		if( that._timer ){
 			clearInterval( that._timer );
+			that._timer = null;
 		}
-		that._timer = null;
+
+		if( that._autoTimer ){
+			clearInterval( that._autoTimer );
+			that._autoTimer = null;
+		}
 	},
 	getTarget : function(event){
 		var _e = event || window.event;
@@ -57,7 +65,7 @@ Focuslide.prototype = {
 		var that = this,
 			_opacity = 0;
 		function showImg(){
-			_opacity +=10;
+			_opacity += 10;
 			obj.style.opacity = _opacity/100;
 			obj.style.filter = "alpha(opacity="+_opacity+")";
 			if(_opacity>=100){
@@ -66,30 +74,66 @@ Focuslide.prototype = {
 			}
 		}
 		that.clearTimer();
-		that._timer = setInterval(showImg,100)
+		that._timer = setInterval(showImg,100);
 	},
-	Focus : function(){
+	autoSlide : function(){
+		var that = this,
+			_Length = that.Q(that.opt._numList).getElementsByTagName(that.opt._numTarget).length;
+		that.clearTimer();
+		that._autoTimer = setInterval(function(){
+			if( that.opt._num >= _Length-1 ){
+				that.opt._num = 0;
+			}else{
+				that.opt._num++;
+			}
+			that.showSlide( that.opt._num );
+		},that.opt._intervalTime);
+	},
+	Initialization : function(i){
 		var that = this,
 			_numList = that.Q(that.opt._numList).getElementsByTagName(that.opt._numTarget),
 			_imgList = that.Q(that.opt._imgList).getElementsByTagName(that.opt._numTarget);
-			
-		that.on( that.Q(that.opt._numList),that.opt._eventType,function(e){
+			_numList[i].className = that.opt._currentClass;
+			_imgList[i].style.opacity = 1;
+			_imgList[i].style.filter = "alpha(opacity=100)";
+	},
+	showSlide : function( _index ){
+		var that = this,
+			_numList = that.Q(that.opt._numList).getElementsByTagName(that.opt._numTarget),
+			_imgList = that.Q(that.opt._imgList).getElementsByTagName(that.opt._numTarget);
+		for( var i = 0,_len =_numList.length;i<_len;i++ ){
+				_numList[i].className = (i == _index ) ? that.opt._currentClass : "";
+			}
+		for( var j = 0,_len = _imgList.length;j<_len;j++){
+			if( j == _index ){
+				that.animateShow(_imgList[j]);
+			}else{
+				_imgList[j].style.opacity = 0;
+				_imgList[j].style.filter = "alpha(opacity=0)";
+			}
+		}
+	},
+	Focus : function(){
+		var that = this;
+		that.Initialization( that.opt._num );	
+		that.on( that.Q(that.opt._numList ),that.opt._eventType,function(e){
 			var _target = that.getTarget(e);
 			if( _target.nodeName.toLowerCase() != that.opt._numTarget ){
 				return;
 			}
 			var _index = that.index(_target);
-			for( var i = 0,_len =_numList.length;i<_len;i++ ){
-				_numList[i].className = (i == _index ) ? that.opt._currentClass : ""
-			}
-			for( var j = 0,_len = _imgList.length;j<_len;j++){
-				if( j==_index ){
-					that.animateShow(_imgList[j]);
-				}else{
-					_imgList[j].style.opacity = 0;
-					_imgList[j].style.filter = "alpha(opacity=0)";
-				}
-			}
-		})
+			that.opt._num = _index;
+			that.showSlide( that.opt._num );
+		});
+		if( that.opt._autoPlay ){
+			that.autoSlide();
+		}
+		/*that.Q("js_tabslide").onmouseover = function(){
+			that.clearTimer();
+		}
+		that.Q("js_tabslide").onmouseout = function(){
+			that.autoSlide();
+		}*/
+
 	}
 }

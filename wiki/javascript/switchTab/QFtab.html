@@ -6,9 +6,11 @@
 <link href="../../static/css/demo.css" rel="stylesheet" type="text/css"/>
 <link href="css/slideTab.css" rel="stylesheet" />
 <style>
+	.ox_box{ width:980px; margin:60px auto;}
 	.ui_tabslide{ position:relative;width:980px;height:300px;border:1px solid #ddd;}
 	.ui_tabslide .ui_ts_bd{ position:absolute;left:0;top:0;width:980px;height:300px;overflow:hidden;}
 	.ui_tabslide .ui_ts_bd li{position:absolute;left:0;top:0}
+	.ui_tabslide .img_list li{opacity:0;filter:alpha(opacity=0);}
 	.ui_tabslide .ui_num { height:22px;position:absolute;left:0;bottom:0;background:#000;width:980px;opacity:0.5;filter:alpha(opacity=50); padding-top:10px;}
 	.ui_tabslide .ui_num ul{position:absolute;right:10px;}
 	.ui_tabslide .ui_num li{ float:left;background-color: #FFFFFF;cursor:pointer;display: inline;box-shadow: 0 0 3px 2px #57A928;font-size: 0;height: 10px;line-height: 0;margin-left: 10px;opacity: 0.4;width: 25px;}
@@ -34,7 +36,7 @@
 	</div>
 	<div class="ui_num">
 		<ul class="clearfix" id="js_num">
-			<li class="current">1</li>
+			<li>1</li>
 			<li>2</li>
 			<li>3</li>
 			<li>4</li>
@@ -51,8 +53,7 @@
 <script type="text/javascript">
 mod_f2er.topBar('tab切换效果','toolbar');
 mod_f2er.bottomBar('bottomBar');
-
-Focuslide();
+FocuSlide();
 </script>
 </body>
 </html>
