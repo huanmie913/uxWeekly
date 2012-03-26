@@ -11,11 +11,11 @@ function FocuSlide(){
 		     _imgList : "js_imgList",
 		     _numList : "js_num",
 		   _numTarget : "li",
-		         _num : 1,
 		   _eventType : "click",
 		_currentClass : "current",
 			_autoPlay : true,
-		_intervalTime : 2000
+		_intervalTime : 2000,
+		         _num : 0
 	};
 	this._timer = null;
 	this._autoTimer = null;
@@ -124,11 +124,12 @@ FocuSlide.prototype = {
 			that.opt._num = _index;
 			that.showSlide(_index);
 		});
-		that.Q( that.opt._slideContainer ).onmouseover = function(){
+		that.on( that.Q(that.opt._slideContainer ),"mouseover",function(e){
 			that.clearTimer( that._autoTimer );
-		}
-		that.Q( that.opt._slideContainer ).onmouseout = function(){
+		});
+
+		that.on( that.Q(that.opt._slideContainer ),"mouseout",function(e){
 			that.autoSlide();
-		}
+		});
 	}
 }
