@@ -57,13 +57,16 @@ FocuSlide.prototype = {
 			}
 		}
 	},
+	setOpacity : function(obj,opacityValue){
+		obj.style.opacity = opacityValue/100;
+		obj.style.filter = "alpha(opacity="+opacityValue+")";
+	},
 	animateShow : function(obj){
 		var that = this,
 			_opacity = 0;
 		function showImg(){
 			_opacity += 10;
-			obj.style.opacity = _opacity/100;
-			obj.style.filter = "alpha(opacity="+_opacity+")";
+			that.setOpacity(obj,_opacity);
 			if(_opacity >= 100){
 				that.clearTimer( that._timer );
 				_opacity = 0;
@@ -83,8 +86,7 @@ FocuSlide.prototype = {
 			if( j == n ){
 				that.animateShow(_imgList[j]);
 			}else{
-				_imgList[j].style.opacity = 0;
-				_imgList[j].style.filter = "alpha(opacity=0)";
+				that.setOpacity(_imgList[j],0);
 			}
 		}
 	},
@@ -106,11 +108,11 @@ FocuSlide.prototype = {
 			_numList = that.Q(that.opt._numList).getElementsByTagName(that.opt._numTarget),
 			_imgList = that.Q(that.opt._imgList).getElementsByTagName(that.opt._numTarget);
 			_numList[i].className = that.opt._currentClass;
-			_imgList[i].style.opacity = 1;
-			_imgList[i].style.filter = "alpha(opacity=100)";
+			that.setOpacity(_imgList[i],100);
 	},
 	Focus : function(){
-		var that = this;
+		var that = this,
+			_slideContainer = that.Q(that.opt._slideContainer);
 		that.Initialization( that.opt._num );	
 		if( that.opt._autoPlay ){
 			that.autoSlide();
@@ -124,11 +126,11 @@ FocuSlide.prototype = {
 			that.opt._num = _index;
 			that.showSlide(_index);
 		});
-		that.on( that.Q(that.opt._slideContainer ),"mouseover",function(e){
+		that.on( _slideContainer ,"mouseover",function(e){
 			that.clearTimer( that._autoTimer );
 		});
 
-		that.on( that.Q(that.opt._slideContainer ),"mouseout",function(e){
+		that.on( _slideContainer ,"mouseout",function(e){
 			that.autoSlide();
 		});
 	}
