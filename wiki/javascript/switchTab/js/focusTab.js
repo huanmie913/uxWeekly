@@ -156,6 +156,7 @@ FocuSlide.prototype = {
 		}
 		
 		that.Initialization( that.opt._num );	
+		
 		if( that.opt._autoPlay ){
 			that.autoSlide();
 			that.on( _slideContainer ,"mouseover",function(e){
