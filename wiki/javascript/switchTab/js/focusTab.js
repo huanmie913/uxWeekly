@@ -13,7 +13,14 @@ function FocuSlide(){
 		   _numTarget : "li",
 		   _eventType : "click",
 		_currentClass : "current",
-			_autoPlay : true,
+			     _Btn : {
+			 			_left : "js_leftBtn",
+			 			_right : "js_rightBtn",
+			 			_leftClass : "leftBtn",
+			 			_rightClass : "rightBtn",
+			 			_btnDisable : "_disable"
+			 		},
+			_autoPlay : false,
 		_intervalTime : 2000,
 		         _num : 0
 	};
@@ -110,12 +117,54 @@ FocuSlide.prototype = {
 			_numList[i].className = that.opt._currentClass;
 			that.setOpacity(_imgList[i],100);
 	},
+	rightEvent : function(lobj,robj){
+		var that = this,
+			_length = that.Q(that.opt._numList).getElementsByTagName(that.opt._numTarget).length;
+		if( that.opt._num == _length-1 ){
+			robj.className = that.opt._Btn._rightClass + that.opt._Btn._btnDisable;
+		}else{
+			that.opt._num++;
+			lobj.className = that.opt._Btn._leftClass;
+			that.showSlide( that.opt._num );
+		}
+	},
+	leftEvent : function(lobj,robj){
+		var that = this,
+			_length = that.Q(that.opt._numList).getElementsByTagName(that.opt._numTarget).length;
+		if( that.opt._num == 0 ){
+			lobj.className = that.opt._Btn._leftClass + that.opt._Btn._btnDisable;
+		}else{
+			that.opt._num--;
+			robj.className = that.opt._Btn._rightClass;
+			that.showSlide( that.opt._num );
+		}
+		
+	},
 	Focus : function(){
 		var that = this,
 			_slideContainer = that.Q(that.opt._slideContainer);
+		if( Object.prototype.toString.call(that.opt._Btn) == "[object Object]" ){
+			var _leftBtn = that.Q( that.opt._Btn._left ),
+				_rightBtn = that.Q( that.opt._Btn._right );
+
+			that.on( _leftBtn, that.opt._eventType,function(){
+				that.leftEvent(_leftBtn,_rightBtn);
+			});
+			that.on( _rightBtn, that.opt._eventType,function(){
+				that.rightEvent(_leftBtn,_rightBtn);
+			});
+		}
+		
 		that.Initialization( that.opt._num );	
 		if( that.opt._autoPlay ){
 			that.autoSlide();
+			that.on( _slideContainer ,"mouseover",function(e){
+				that.clearTimer( that._autoTimer );
+			});
+
+			that.on( _slideContainer ,"mouseout",function(e){
+				that.autoSlide();
+			});
 		}
 		that.on( that.Q(that.opt._numList ),that.opt._eventType,function(e){
 			var _target = that.getTarget(e);
@@ -125,13 +174,6 @@ FocuSlide.prototype = {
 			var _index = that.index(_target);
 			that.opt._num = _index;
 			that.showSlide(_index);
-		});
-		that.on( _slideContainer ,"mouseover",function(e){
-			that.clearTimer( that._autoTimer );
-		});
-
-		that.on( _slideContainer ,"mouseout",function(e){
-			that.autoSlide();
 		});
 	}
 }

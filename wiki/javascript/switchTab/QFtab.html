@@ -6,12 +6,17 @@
 <link href="../../static/css/demo.css" rel="stylesheet" type="text/css"/>
 <link href="css/slideTab.css" rel="stylesheet" />
 <style>
-	.ox_box{ width:980px; margin:60px auto;}
-	.ui_tabslide{ position:relative;width:980px;height:300px;border:1px solid #ddd;}
-	.ui_tabslide .ui_ts_bd{ position:absolute;left:0;top:0;width:980px;height:300px;overflow:hidden;}
+	.ox_box{ width:1000px; margin:60px auto; position:relative;}
+	.leftBtn,.rightBtn,.leftBtn_disable,.rightBtn_disable {position:absolute;top:120px;width:20px; text-align:center;line-height:50px;height:50px;display:block; border:1px solid #ddd;background:#f00;cursor:pointer;}
+	.leftBtn{ left:0;}
+	.leftBtn_disable{ background:#ccc;left:0;}
+	.rightBtn{right:0;}
+	.rightBtn_disable{ background:#ccc;right:0;}
+	.ui_tabslide{ position:relative;width:880px;height:300px;border:1px solid #ddd; margin:0 auto;}
+	.ui_tabslide .ui_ts_bd{ position:absolute;left:0;top:0;width:880px;height:300px;overflow:hidden;}
 	.ui_tabslide .ui_ts_bd li{position:absolute;left:0;top:0}
 	.ui_tabslide .img_list li{opacity:0;filter:alpha(opacity=0);}
-	.ui_tabslide .ui_num { height:22px;position:absolute;left:0;bottom:0;background:#000;width:980px;opacity:0.5;filter:alpha(opacity=50); padding-top:10px;}
+	.ui_tabslide .ui_num { height:22px;position:absolute;left:0;bottom:0;background:#000;width:880px;opacity:0.5;filter:alpha(opacity=50); padding-top:10px;}
 	.ui_tabslide .ui_num ul{position:absolute;right:10px;}
 	.ui_tabslide .ui_num li{ float:left;background-color: #FFFFFF;cursor:pointer;display: inline;box-shadow: 0 0 3px 2px #57A928;font-size: 0;height: 10px;line-height: 0;margin-left: 10px;opacity: 0.4;width: 25px;}
 	.ui_tabslide li.current{ opacity :1}
@@ -22,6 +27,8 @@
 <div class="toolbar" id="toolbar"></div>
 <!--/toolbar-->
 <div class="ox_box">
+  <span class="leftBtn" id="js_leftBtn">&lt;</span>
+  <span class="rightBtn" id="js_rightBtn">&gt;</span>
   <!--ui_tabslide-->
   <div class="ui_tabslide" id="js_tabslide">
 	<div class="ui_ts_bd">
