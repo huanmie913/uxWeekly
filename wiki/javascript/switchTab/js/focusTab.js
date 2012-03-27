@@ -20,7 +20,7 @@ function FocuSlide(){
 			 			_rightClass : "rightBtn",
 			 			_btnDisable : "_disable"
 			 		},
-			_autoPlay : false,
+			_autoPlay : true,
 		_intervalTime : 2000,
 		         _num : 0
 	};
@@ -44,6 +44,15 @@ FocuSlide.prototype = {
 			obj["on"+type]=fn;
 		}
 	},
+	varArray : function(){
+		var that = this;
+		var _numList = that.Q( that.opt._numList ).getElementsByTagName( that.opt._numTarget ),
+			_imgList = that.Q(that.opt._imgList).getElementsByTagName(that.opt._numTarget);
+		return{
+			_numList : _numList,
+			_imgList : _imgList
+		}
+	},
 	clearTimer : function( timer ){
 		var that = this;
 		if( timer ){
@@ -57,9 +66,9 @@ FocuSlide.prototype = {
 	},
 	index : function(obj){
 		var that = this;
-		var _numTargetArray = that.Q( that.opt._numList ).getElementsByTagName( that.opt._numTarget );
-		for( var i = 0,_len =_numTargetArray.length ;i<_len;i++){
-			if( obj==_numTargetArray[i] ){
+		var _numList = that.varArray()._numList;
+		for( var i = 0,_len = _numList.length ;i<_len;i++){
+			if( obj == _numList[i] ){
 				return i;
 			}
 		}
@@ -82,10 +91,32 @@ FocuSlide.prototype = {
 		that.clearTimer( that._timer );
 		that._timer = setInterval(showImg,100);
 	},
+	BtnState : function(){
+		var that = this,
+			_numList = that.varArray()._numList,
+			_imgList = that.varArray()._imgList;
+		if( Object.prototype.toString.call(that.opt._Btn) == "[object Object]" ){
+			var _leftBtn = that.Q( that.opt._Btn._left ),
+				_rightBtn = that.Q( that.opt._Btn._right ),
+				_leftBtnClass = that.opt._Btn._leftClass,
+				_rightBtnClass = that.opt._Btn._rightClass;
+
+			if( that.opt._num >= _numList.length -1 ){
+				_leftBtn.className = _leftBtnClass;
+				_rightBtn.className = _rightBtnClass + that.opt._Btn._btnDisable;
+			}else if( that.opt._num < _numList.length -1 && that.opt._num >0 ){
+				_rightBtn.className = _rightBtnClass;
+				_leftBtn.className = _leftBtnClass;
+			}else if( that.opt._num <= 0 ){
+				_rightBtn.className = _rightBtnClass;
+				_leftBtn.className = _leftBtnClass + that.opt._Btn._btnDisable;
+			}
+		}
+	},
 	showSlide : function(n){
 		var that = this,
-			_numList = that.Q(that.opt._numList).getElementsByTagName(that.opt._numTarget),
-			_imgList = that.Q(that.opt._imgList).getElementsByTagName(that.opt._numTarget);
+			_numList = that.varArray()._numList,
+			_imgList = that.varArray()._imgList;
 		for( var i = 0,_length =_numList.length;i<_length;i++ ){
 				_numList[i].className = (i == n ) ? that.opt._currentClass : "";
 			}
@@ -96,21 +127,13 @@ FocuSlide.prototype = {
 				that.setOpacity(_imgList[j],0);
 			}
 		}
-		if( Object.prototype.toString.call(that.opt._Btn) == "[object Object]" ){
-			var _leftBtn = that.Q( that.opt._Btn._left ),
-				_rightBtn = that.Q( that.opt._Btn._right );
-			if( that.opt._num >= _numList.length -1 ){
-				_rightBtn.className = that.opt._Btn._rightClass + that.opt._Btn._btnDisable;
-			}
-			if( that.opt._num <= 0 ){
-				_leftBtn.className = that.opt._Btn._leftClass + that.opt._Btn._btnDisable;
-			}
-		}
+
+		that.BtnState();
 		
 	},
 	autoSlide : function(){
 		var that = this,
-			_Length = that.Q(that.opt._numList).getElementsByTagName(that.opt._numTarget).length;
+			_Length = that.varArray()._numList.length;
 		that.clearTimer( that._autoTimer );
 		that._autoTimer = setInterval(function(){
 			if( that.opt._num >= _Length-1 ){
@@ -123,14 +146,15 @@ FocuSlide.prototype = {
 	},
 	Initialization : function(i){
 		var that = this,
-			_numList = that.Q(that.opt._numList).getElementsByTagName(that.opt._numTarget),
-			_imgList = that.Q(that.opt._imgList).getElementsByTagName(that.opt._numTarget);
-			_numList[i].className = that.opt._currentClass;
-			that.setOpacity(_imgList[i],100);
+			_numList = that.varArray()._numList,
+			_imgList = that.varArray()._imgList;
+		_numList[i].className = that.opt._currentClass;
+		that.setOpacity(_imgList[i],100);
+		that.BtnState();
 	},
 	rightEvent : function(lobj,robj){
 		var that = this,
-			_length = that.Q(that.opt._numList).getElementsByTagName(that.opt._numTarget).length;
+			_length = that.varArray()._numList.length;
 			that.opt._num++;
 			if( that.opt._num > _length-1 ){
 				that.opt._num = _length-1;
@@ -141,13 +165,13 @@ FocuSlide.prototype = {
 	},
 	leftEvent : function(lobj,robj){
 		var that = this;
-			that.opt._num--;
-			if( that.opt._num < 0 ){
-				that.opt._num = 0;
-				return;
-			}
-			robj.className = that.opt._Btn._rightClass;
-			that.showSlide( that.opt._num );
+		that.opt._num--;
+		if( that.opt._num < 0 ){
+			that.opt._num = 0;
+			return;
+		}
+		robj.className = that.opt._Btn._rightClass;
+		that.showSlide( that.opt._num );
 	},
 	Focus : function(){
 		var that = this,
