@@ -96,6 +96,17 @@ FocuSlide.prototype = {
 				that.setOpacity(_imgList[j],0);
 			}
 		}
+		if( Object.prototype.toString.call(that.opt._Btn) == "[object Object]" ){
+			var _leftBtn = that.Q( that.opt._Btn._left ),
+				_rightBtn = that.Q( that.opt._Btn._right );
+			if( that.opt._num >= _numList.length -1 ){
+				_rightBtn.className = that.opt._Btn._rightClass + that.opt._Btn._btnDisable;
+			}
+			if( that.opt._num <= 0 ){
+				_leftBtn.className = that.opt._Btn._leftClass + that.opt._Btn._btnDisable;
+			}
+		}
+		
 	},
 	autoSlide : function(){
 		var that = this,
@@ -120,25 +131,23 @@ FocuSlide.prototype = {
 	rightEvent : function(lobj,robj){
 		var that = this,
 			_length = that.Q(that.opt._numList).getElementsByTagName(that.opt._numTarget).length;
-		if( that.opt._num == _length-1 ){
-			robj.className = that.opt._Btn._rightClass + that.opt._Btn._btnDisable;
-		}else{
 			that.opt._num++;
+			if( that.opt._num > _length-1 ){
+				that.opt._num = _length-1;
+				return;
+			}
 			lobj.className = that.opt._Btn._leftClass;
 			that.showSlide( that.opt._num );
-		}
 	},
 	leftEvent : function(lobj,robj){
-		var that = this,
-			_length = that.Q(that.opt._numList).getElementsByTagName(that.opt._numTarget).length;
-		if( that.opt._num == 0 ){
-			lobj.className = that.opt._Btn._leftClass + that.opt._Btn._btnDisable;
-		}else{
+		var that = this;
 			that.opt._num--;
+			if( that.opt._num < 0 ){
+				that.opt._num = 0;
+				return;
+			}
 			robj.className = that.opt._Btn._rightClass;
 			that.showSlide( that.opt._num );
-		}
-		
 	},
 	Focus : function(){
 		var that = this,
