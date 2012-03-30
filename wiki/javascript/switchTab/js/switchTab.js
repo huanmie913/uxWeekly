@@ -78,6 +78,7 @@ function switchTab(ctg){
 		},
 		init:function(){
 			var that=this;
+			that.Initialization();
 			that.on( that._$(that._option._handle),that._option._event,function(e){
 				var _ev=e || window.event,
 					_target= _ev.target || _ev.srcElement;
