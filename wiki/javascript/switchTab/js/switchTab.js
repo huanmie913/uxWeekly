@@ -9,7 +9,8 @@ function switchTab(ctg){
 				_body:ctg.contentId,
 				_event:ctg.eventType,
 				_tag:ctg.tagName,
-				_classname:ctg.classname
+				_classname:ctg.classname,
+				_num : ctg.num
 			};
 		if( !(this instanceof switchTab)){
 			return new switchTab(ctg);	
@@ -43,6 +44,13 @@ function switchTab(ctg){
 			}
 			return _elementArray;
 		},
+		parents : function(element){
+            var _parent = element.parentNode;
+            while( _parent.nodeName.toLowerCase() != "li" && _parent.nodeType!=11){
+                _parent = _parent.parentNode;
+            }
+            return _parent;
+        },
 		index:function(target,obj){
 			var li=obj.getElementsByTagName('li');
 			for( var i=0,len=li.length;i<len;i++){
@@ -51,23 +59,34 @@ function switchTab(ctg){
 				}	
 			} 	
 		},
+		Initialization : function(){
+			var that = this;
+			that.trigger( that._option._num);
+		},
+		trigger : function(i){
+			var that = this,
+				_handle = that._$(that._option._handle);
+				_liObj= _handle.getElementsByTagName('li'),
+				_contentObj=that.getElementsByClassName(that._option._tag,that._option._classname,that._option._body);
+			for( var m=0,len=_liObj.length;m<len;m++){
+					_liObj[m].className=(m===i)?"current":"";
+				}
+			for( var n=0;n<_contentObj.length;n++){
+				_contentObj[n].style.display = ( n ===i ) ? "block" : "none";
+			}
+		},
 		init:function(){
 			var that=this;
 			that.on( that._$(that._option._handle),that._option._event,function(e){
 				var _ev=e || window.event,
 					_target= _ev.target || _ev.srcElement;
 				if( _target.nodeName.toLowerCase() !== "li"){
-					return;	
+					 _target = that.parents(_target);
 				}
 				var _index=that.index( _target,that._$(that._option._handle) );
 				var _liObj=that._$(that._option._handle).getElementsByTagName('li'),
 					_contentObj=that.getElementsByClassName(that._option._tag,that._option._classname,that._option._body);
-				for( var m=0,len=_liObj.length;m<len;m++){
-					_liObj[m].className=(m===_index)?"on":"";	
-				}
-				for( var n=0;n<_contentObj.length;n++){
-					_contentObj[n].style.display = ( n ===_index ) ? "block" : "none";
-				}
+				that.trigger(_index);
 			})
 		}	
 	}
