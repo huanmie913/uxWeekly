@@ -10,6 +10,7 @@ function switchTab(ctg){
 				_event:ctg.eventType,
 				_tag:ctg.tagName,
 				_classname:ctg.classname,
+				_current : ctg.currentClass,
 				_num : ctg.num
 			};
 		if( !(this instanceof switchTab)){
@@ -69,7 +70,7 @@ function switchTab(ctg){
 				_liObj= _handle.getElementsByTagName('li'),
 				_contentObj=that.getElementsByClassName(that._option._tag,that._option._classname,that._option._body);
 			for( var m=0,len=_liObj.length;m<len;m++){
-					_liObj[m].className=(m===i)?"current":"";
+					_liObj[m].className=(m===i)? that._option._currentClass:"";
 				}
 			for( var n=0;n<_contentObj.length;n++){
 				_contentObj[n].style.display = ( n ===i ) ? "block" : "none";
