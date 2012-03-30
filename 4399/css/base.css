@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* CSS Document 
+Use for:	www.f2er.net
+Version:	1.0
+Date:		2011/04/10
+Author:		QF
+Update:     
+*/
+
+/* CSS reset */
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{ padding: 0; margin: 0; }
+table { border-collapse: collapse; border-spacing: 0; }
+del, ins { text-decoration: none }
+fieldset, img { border: 0; }
+body,button,input,select,textarea{font:12px/1.5 tahoma,arial,宋体,sans-serif}
+input,select,img{ vertical-align:middle}
+input,select{ outline:none}
+ul,ol{ list-style:none }
+label{ cursor:pointer}
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+address,cite,dfn,em,var{font-style:normal;}
+input::-moz-focus-inner,button::-moz-focus-inner{ border:0;padding:0}
+
+/* global */
+body{ background:#fff; }
+.wrapper{ margin:0 auto;text-align:left;width:960px; }
+td{ font-size:12px; line-height:160%;}
+.left{ float:left }
+.right{ float:right }
+a{text-decoration:none;}
+a:hover{text-decoration:underline;}
+.txthide{ text-indent:-999em;overflow:hidden; line-height:0; font-size:0}
+.clearfix:after{ content:""; height:0; visibility:hidden; display:block; clear:both;}
+.clearfix{ zoom:1;}
+.clear{ clear:both }
+
+
+/*header*/
+.header{ background:url(../images/header.png) no-repeat bottom right; height:71px;}
+.logo{ float:left;width:158px;height:52px;margin:9px 0 0 18px;display:inline;}
+.main{}
+.footer{}
+
+/*基本模块(模块以每个人都代号开头+"_"+模块名称)*/
+.f_box{}
+.f_hd{}
+.f_bd{}
+.f_fd{}
+
+
