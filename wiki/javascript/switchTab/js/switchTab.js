@@ -10,7 +10,7 @@ function switchTab(ctg){
 				_event:ctg.eventType,
 				_tag:ctg.tagName,
 				_classname:ctg.classname,
-				_current : ctg.currentClass,
+				_currentClass : ctg.currentClass,
 				_num : ctg.num
 			};
 		if( !(this instanceof switchTab)){
