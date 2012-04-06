@@ -196,8 +196,8 @@ a:hover{text-decoration:underline;}
 .rk_list dl{ background:url(../images/repeatBottom.png) repeat-x 0 bottom;height:59px; padding:10px 0 10px 65px;height:40px;}
 .rk_list .m_imgtext .img{ margin:-15px 0 0 -59px;}
 .rk_list .m_imgtext img{ width:52px;height:40px;}
-.rk_list li{ border-bottom:1px dotted #c9dae5; padding:5px;}
-.rk_list .top{ border-bottom:1px solid #bce18d; padding:0;}
+.rk_list li{ border-bottom:1px dotted #c9dae5; padding:5px; height:15px;}
+.rk_list .top{ border-bottom:1px solid #bce18d; padding:0;height:60px;}
 .rk_list dt a{ width:19px;height:14px;overflow:hidden; text-indent:-1024em;display:inline-block;*zoom:1;*display:inline;vertical-align:middle;}
 .n1{background-position:-196px -98px;}
 .n2{background-position:-214px -98px;}
@@ -208,7 +208,7 @@ a:hover{text-decoration:underline;}
 .n7{background-position:-196px -126px;}
 .n8{background-position:-214px -126px;}
 .n9{background-position:-233px -126px;}
-.btm_rmore{ text-align:right; padding:5px; zoom:1;}
+.btm_rmore{ text-align:right; padding:2px 5px; zoom:1;}
 .btm_rmore a{color:#008000;}
 
 /*m_action*/
@@ -229,7 +229,7 @@ a:hover{text-decoration:underline;}
 .topic_list img{ display:block;margin:0 auto;}
 
 /*m_online*/
-.m_online .m_imgtext{ padding:10px 0 10px 93px;}
+.m_online .m_imgtext{ padding:10px 0 7px 93px;}
 .m_online .m_imgtext .img{ margin:-24px 0 0 -85px;}
 
 /*右上角更多*/
@@ -250,7 +250,7 @@ a:hover{text-decoration:underline;}
 
 /*mini_game*/
 .mini_game{ margin-bottom:-20px;overflow:hidden;}
-.mini_game li{ float:left;width:95px; text-align:center; overflow:hidden;white-space:nowrap; margin-bottom:20px;position:relative;}
+.mini_game li{ float:left;width:95px; height:95px; text-align:center; overflow:hidden;white-space:nowrap; margin-bottom:10px;position:relative;}
 .mini_game img{ display:block; width:72px;height:72px; margin:0 auto;}
 .mini_game a{ color:#616161;}
 .new,.hot{ width:32px;height:31px;display:block;position:absolute;left:12px;top:0;}
