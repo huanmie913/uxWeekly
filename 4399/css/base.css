@@ -54,7 +54,7 @@ a:hover{text-decoration:underline;}
 
 
 
-.a_webgame,.btn_wgleft,.btn_wgright,.sch_form,.rc_game span,.gm_list dt a,.txt_scroll,.gm_play .btn_left,.gm_play .btn_right,.gm_play .btn_clear,.game_box .btn_left,.game_box .btn_right,.as_box .hd,.m_rank span,.m_rank .cur .mr,.m_rank .cur .zr,.rk_list dt a,.m_action .hd,.m_topic .hd,.new,.hot,.type_list a{ background-image:url(../images/sprite.png);background-repeat:no-repeat;}
+.a_webgame,.btn_wgleft,.btn_wgright,.sch_form,.rc_game span,.gm_list dt a,.txt_scroll,.gm_play .btn_left,.gm_play .btn_right,.gm_play .btn_clear,.game_box .btn_left,.game_box .btn_right,.as_box .hd,.m_rank span,.m_rank .cur .mr,.m_rank .cur .zr,.rk_list dt a,.m_action .hd,.m_topic .hd,.new,.hot,.type_list a,.fk{ background-image:url(../images/sprite.png);background-repeat:no-repeat;}
 .m_newgame .hd,.m_newgame .tpl,.m_newgame .tpr,.mini_list .hd,.mini_list .tpl,.mini_list .tpr,.m_ogame .hd,.m_ogame .tpl,.m_ogame .tpr,.m_girl .hd,.m_girl .tpl,.m_girl .tpr,.column_box .hd,.column_box .tpl,.column_box .tpr,.tab_box .hd,.tab_box .tpl,.tab_box .tpr{ background-image:url(../images/play.png); background-repeat:no-repeat;}
 
 .evenbg{ background:#f3f9ed;}
@@ -319,12 +319,42 @@ a:hover{text-decoration:underline;}
 /*tab_box*/
 .tab_box{ border-color:#c0e38f;}
 .tab_box .hd{padding:0;}
-.tab_box .hd,.tab_box .tpl,.tab_box .tpr{ height:35px;line-height:35px;}
-.tab_box .hd{ background-position:0 -635px;background-repeat:repeat-x; padding:0 10px;}
-	.tab_box .tpl{ background-position:0 -600px;float:left;width:15px;margin:-35px 0 0 -10px;display:inline;}
-	.tab_box .tpr{ background-position:right -670px;float:right;width:15px;display:inline;margin:-35px -10px 0 0;}
-.tab_star{ height:35px;}
+.tab_box .hd,.tab_box .tpl,.tab_box .tpr{ height:39px;}
+.tab_box .hd{ background-position:0 -639px;background-repeat:repeat-x; padding:0 5px;}
+	.tab_box .tpl{ background-position:0 -600px;float:left;width:15px;margin:-39px 0 0 -5px;display:inline;}
+	.tab_box .tpr{ background-position:right -678px;float:right;width:10px;display:inline;margin:-39px -5px 0 0;}
+.tab_box .tp{ height:39px;}
+.tab_star{ margin-left:-5px;}
 .tab_star li{ float:left; font-size:14px;cursor:pointer;text-align:center;}
-.tab_star li span{ display:block; height:16px; width:60px; border-right:1px solid #ccc;margin-top:13px; line-height:16px;}
-.tab_star .current span{ background-image:url(../images/tab_current.gif); background-repeat:no-repeat;color:#468315;font-weight:700;height:39px;overflow:hidden;padding-left:42px;}
-.current .s1{ background-position:0 0;width:54px;}
+.tab_star li span{ display:block; height:16px; width:60px; border-right:1px solid #ccc;margin-top:15px; line-height:16px;}
+.tab_star .current span{ background-image:url(../images/tab_current.gif);width:54px; background-repeat:no-repeat;color:#468315;font-weight:700;height:39px;overflow:hidden;padding-left:42px;margin-top:0;border-right:none;line-height:39px;}
+.current .s1{ background-position:0 0;}
+.current .s2{ background-position:0 -39px;}
+.current .s3{ background-position:0 -78px;}
+.current .s4{ background-position:0 -117px;}
+.current .s5{ background-position:0 -156px;}
+.current .s6{ background-position:0 -195px;}
+.current .s7{ background-position:0 -234px;}
+.current .s8{ background-position:0 -273px;}
+.current .s9{ background-position:0 -312px;}
+.current .s10{ background-position:0 -351px;}
+.current .s11{ background-position:0 -429px;}
+.current .s12{ background-position:0 -468px;}
+.current .s13{ background-position:0 -507px;}
+.current .s14{ background-position:0 -546px;}
+.current .s15{ background-position:0 -585px;}
+
+/*links*/
+.links{ background:#F5FFE4;border:1px solid #CFEDA7; line-height:2;margin:10px 0;padding:0 5px;text-align:center;}
+.links a{ color:#008000;padding:0 3px;}
+
+/*advice*/
+.advice{ border:1px solid #cecece;width:330px; float:left; padding-left:105px;}
+.advice span{ float:left;width:94px;border-right:1px solid #cecece;margin-left:-105px;text-align:center;line-height:46px;font-weight:700;color:#3367B3;background:#F4F8FC;}
+.advice p{ line-height:22px;}
+.prompted{ float:right;width:515px;line-height:22px;}
+
+/*footer*/
+.footer{ border-top:1px dashed #d0d0d0;height:100px;margin-top:10px;text-align:center; line-height:2;}
+.footer a{ font-weight:700;color:#666;}
+.footer .fk{background-position:-169px -205px;padding-left:15px;color:#FF7C2D;}
