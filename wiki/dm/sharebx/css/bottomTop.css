@@ -1,0 +1,13 @@
+﻿/************
+  to:排行
+  add by Lj
+  Time: 12-04-07
+***********/
+.bx{ width:305px; margin:10px auto 0;}
+.bx_hd{ background:url(../images/hot3hd.jpg) no-repeat; height:46px;}
+.bx_bd{ background:url(../images/rp_hot3bg.jpg) repeat-y;}
+.bx_fd{ background:url(../images/hot3bg.jpg) no-repeat 0 100%;}
+.bx_hd .more{ float:right; margin:16px 13px 0 0; color:#009ED6;}
+.bx_hd .more:hover{ color:#F49B00;}
+.bx_hda{ float:left; width:155px; height:46px; overflow:hidden; text-indent:-9999em;}
+.bx_con{ width:280px; border:1px dashed red; margin:0 auto; padding-bottom:10px;}
