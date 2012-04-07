@@ -8,8 +8,8 @@
 .shareimgbx{ width:920px;}
 .shareline{ border-top:1px dashed #a6854f; padding-bottom:10px;}
 .share_long{ padding:10px 0; height:26px; overflow:hidden;}
-.share_long li{ background:url(btn.jpg) no-repeat 0 -53px;}
-.share_long li a{ background:url(btn.jpg) no-repeat 100% -53px; color:#f8eeca;}
+.share_long li{ background:url(../images/btn.jpg) no-repeat 0 -53px;}
+.share_long li a{ background:url(../images/btn.jpg) no-repeat 100% -53px; color:#f8eeca;}
 .share_short{ width:180px;}
 .share_long li a:hover{ color:#560e00;}
 .ln_ul{ width:340px;}
