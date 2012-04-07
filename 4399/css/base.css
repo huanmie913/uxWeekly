@@ -54,7 +54,7 @@ a:hover{text-decoration:underline;color:#468315;}
 .m_topic .frb,.mini_list .frb,.column_box .frb,.tab_box .frb{ background-position:right -56px;}
 .m_topic .flb,.mini_list .flb,.column_box .flb,.tab_box .flb{ background-position:left -42px;}
 
-.a_webgame,.btn_wgleft,.btn_wgright,.sch_form,.rc_game span,.gm_list dt a,.txt_scroll,.gm_play .btn_left,.gm_play .btn_right,.gm_play .btn_clear,.game_box .btn_left,.game_box .btn_right,.as_box .hd,.m_rank span,.m_rank .cur .mr,.m_rank .cur .zr,.rk_list dt a,.m_action .hd,.m_topic .hd,.new,.hot,.type_list a,.fk,.ico_hot,.column_box .rt a{ background-image:url(../images/sprite.png);background-repeat:no-repeat;}
+.a_webgame,.btn_wgleft,.btn_wgright,.sch_form,.rc_game span,.gm_list dt a,.txt_scroll,.gm_play .btn_left,.gm_play .btn_right,.gm_play .btn_clear,.game_box .btn_left,.game_box .btn_right,.as_box .hd,.m_rank span,.m_rank .cur .mr,.m_rank .cur .zr,.rk_list dt a,.m_action .hd,.m_topic .hd,.new,.hot,.type_list a,.fk,.ico_hot,.column_box .rt a,.nctip{ background-image:url(../images/sprite.png);background-repeat:no-repeat;}
 .m_newgame .hd,.m_newgame .tpl,.m_newgame .tpr,.mini_list .hd,.mini_list .tpl,.mini_list .tpr,.m_ogame .hd,.m_ogame .tpl,.m_ogame .tpr,.m_girl .hd,.m_girl .tpl,.m_girl .tpr,.column_box .hd,.column_box .tpl,.column_box .tpr,.tab_box .hd,.tab_box .tpl,.tab_box .tpr{ background-image:url(../images/play.png); background-repeat:no-repeat;}
 
 .evenbg{ background:#f3f9ed;}
@@ -244,6 +244,8 @@ a:hover{text-decoration:underline;color:#468315;}
 .m_newgame .tp,.m_ogame .tp,.m_girl .tp{ line-height:33px;position:relative;margin-left:-90px;height:33px;overflow:hidden;}
 .m_newgame .tp .a_title,.m_ogame .tp .a_title,.m_girl .tp .a_title{ width:98px;display: block;font-size:0;}
 
+.m_newgame .fd,.m_newgame .flb,.m_newgame .frb,.m_ogame .fd,.m_ogame .flb,.m_ogame .frb,.m_girl .fd,.m_girl .flb,.m_girl .frb{height:7px;overflow:hidden;}
+.m_newgame .fd,.m_girl .fd{ background-repeat:repeat-x; padding:0 15px;}
 /*mini_list*/
 .mini_list{ border-color:#acdb6d;}
 .mini_list .hd,.mini_list .tpl,.mini_list .tpr{height:34px;height:34px;}
@@ -269,8 +271,8 @@ a:hover{text-decoration:underline;color:#468315;}
 .m_newgame .hd{ background-position:0 -237px;padding:0 15px 0 139px;}
 .m_newgame .tpl{ background-position:0 -204px;width:139px;margin:-33px 0 0 -139px;}
 .m_newgame .tpr{ background-position:right -270px;margin:-33px -15px 0 0;}
-.m_newgame .fd,.m_newgame .flb,.m_newgame .frb{height:7px;overflow:hidden;}
-.m_newgame .fd{ background-position:0 -70px; background-repeat:repeat-x; padding:0 15px;}
+
+.m_newgame .fd{ background-position:0 -70px;}
 .m_newgame .flb{ background-position:left -63px; width:15px;float:left;margin:0 0 0 -15px;}
 .m_newgame .frb{ background-position:right -77px; float:right;display:inline;width:15px;margin: 0 -15px 0 0;}
 .m_newgame .rt a{ color:#947629;}
@@ -285,7 +287,6 @@ a:hover{text-decoration:underline;color:#468315;}
 .m_ogame .tpl{ background-position:0 -303px;width:139px;margin:-33px 0 0 -139px;}
 .m_ogame .tpr{ background-position:right -369px;margin:-33px -15px 0 0;}
 .m_ogame .tp{ line-height:33px;position:relative;}
-.m_ogame .fd,.m_ogame .flb,.m_ogame .frb{height:7px;overflow:hidden;}
 .m_ogame .fd{ background-position:0 -91px; background-repeat:repeat-x; padding:0 15px;}
 .m_ogame .flb{ background-position:left -84px; width:15px;float:left;margin:0 0 0 -15px;}
 .m_ogame .frb{ background-position:right -98px; float:right;display:inline;width:15px;margin: 0 -15px 0 0;}
@@ -296,11 +297,12 @@ a:hover{text-decoration:underline;color:#468315;}
 .m_girl .hd{ background-position:0 -435px;padding:0 15px 0 139px;}
 .m_girl .tpl{ background-position:0 -402px; width:139px;margin:-33px 0 0 -139px;}
 .m_girl .tpr{ background-position:right -468px;margin:-33px -15px 0 0;}
-.m_girl .fd,.m_girl .flb,.m_girl .frb{height:7px;overflow:hidden;}
-.m_girl .fd{ background-position:0 -112px; background-repeat:repeat-x; padding:0 15px;}
+
+.m_girl .fd{ background-position:0 -112px;}
 .m_girl .flb{ background-position:left -105px; width:15px;float:left;margin:0 0 0 -15px;}
 .m_girl .frb{ background-position:right -119px; float:right;display:inline;width:15px;margin: 0 -15px 0 0;}
 .m_girl .rt a{ color:#D74F5F;}
+.nctip{ background-position:0 -284px;width:174px;height:30px;display:inline-block;*zoom:1;*display:inline;position:absolute;left:372px;top:1px;}
 .type_list{ margin-right:-5px;overflow:hidden;}
 .type_list a{ background-position:-110px -27px;display:inline-block;*zoom:1;*display:inline;width:62px;height:23px;text-align:center;line-height:23px;margin:0 6px 5px 0;}
 
