@@ -1,0 +1,17 @@
+﻿/************
+  to:分享
+  add by Lj
+  Time: 12-04-07
+***********/
+.box{ width:930px; background:#f8eeca; margin:20px auto 0;}
+.sharebx{ width:650px;}
+.shareimgbx{ width:920px;}
+.shareline{ border-top:1px dashed #a6854f; padding-bottom:10px;}
+.share_long{ padding:10px 0; height:26px; overflow:hidden;}
+.share_long li{ background:url(btn.jpg) no-repeat 0 -53px;}
+.share_long li a{ background:url(btn.jpg) no-repeat 100% -53px; color:#f8eeca;}
+.share_short{ width:180px;}
+.share_long li a:hover{ color:#560e00;}
+.ln_ul{ width:340px;}
+.ln_s_ul{ width:270px;}
+#bshare_p{ padding:10px 0 0 5px;}
