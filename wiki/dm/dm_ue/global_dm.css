@@ -1,0 +1,46 @@
+﻿@charset "utf-8";
+/* CSS Document 
+Use for:	dm.4399.com
+Version:	1.0
+Date:		2012/04/07
+Author:		情封
+*/
+
+/* CSS reset */
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{ padding: 0; margin: 0; }
+table { border-collapse: collapse; border-spacing: 0; }
+del, ins { text-decoration: none }
+fieldset, img { border: 0; }
+body,button,input,select,textarea{font:12px/1.5 tahoma,arial,\5b8b\4f53;}
+input,select,img{ vertical-align:middle}
+input,select{ outline:none}
+ul,ol{ list-style:none }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+address,cite,dfn,em,var{font-style:normal;}
+legend{ display:none}
+
+/* global */
+body{ background:#fff; font:12px/1.8; }
+.wrapper{ margin:0 auto;text-align:left;width:1000px; }
+td{ font-size:12px; line-height:160%;}
+.left{ float:left }
+.right{ float:right }
+a{text-decoration:none;}
+a:hover{text-decoration:underline;}
+.txthide{ text-indent:-999em;overflow:hidden; line-height:0; font-size:0}
+.clearfix:after{ content:""; height:0; visibility:hidden; display:block; clear:both;}
+.clearfix{ zoom:1;}
+.clear{ clear:both }
+
+
+/* gallery缩略图picsbar模块 */
+.picsbar{ width:940px; overflow:hidden; margin:0 auto;}
+.picsbtn_l, .picsbtn_r{ float:left; display:block; width:28px; height:30px; overflow:hidden; margin:30px 0; cursor:pointer;}
+.picsbtn_r{ float:right;}
+.picsulbx{ float:left; display:inline; position:relative; width:840px; height:70px; overflow:hidden; margin:6px 0 0 23px;}
+.picsul{ position:absolute;}
+.picsul li{ float:left; display:inline; margin:0 7px;}
+.picsul li img{ width:100px; height:64px; padding:2px;}
+.pics{ position:relative; margin:0 auto; text-align:center; overflow:hidden;}
+#slide_left{ cursor:url(pre.cur), pointer; position:absolute; left:0; width:50%; z-index:999; filter:alpha(opacity=0); background:#fff;}
+#slide_right{ cursor:url(next.cur), pointer; position:absolute; right:0; width:50%; z-index:999; filter:alpha(opacity=0); background:#fff;}

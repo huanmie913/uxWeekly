@@ -1,0 +1,29 @@
+﻿/*add by Lj*/
+/* 页面初始化 */
+*{ margin:0; padding:0; font-size:12px;}
+a{ color:#955627; text-decoration:none;}
+a:hover{ color:#E8C478; text-decoration:underline;}
+.clearfix:after{ content:""; height:0; visibility:hidden; display:block; clear:both;}
+.clearfix{ zoom:1;}
+.page_infomation{ font-size:14px; width:888px; margin:20px auto 0; padding:5px; border:1px solid #aaa;}
+
+/* 以下为common.css里面共有的样式属性 */
+/* gallery缩略图picsbar模块 */
+.picsbar{ width:940px; overflow:hidden; margin:0 auto;}
+.picsbtn_l, .picsbtn_r{ float:left; display:block; width:28px; height:30px; overflow:hidden; margin:30px 0; cursor:pointer;}
+.picsbtn_r{ float:right;}
+.picsulbx{ float:left; display:inline; position:relative; width:840px; height:70px; overflow:hidden; margin:6px 0 0 23px;}
+.picsul{ position:absolute;}
+.picsul li{ float:left; display:inline; margin:0 7px;}
+.picsul li img{ width:100px; height:64px; padding:2px;}
+.pics{ position:relative; margin:0 auto; text-align:center; overflow:hidden;}
+#slide_left{ cursor:url(pre.cur), pointer; position:absolute; left:0; width:50%; z-index:999; filter:alpha(opacity=0); background:#fff;}
+#slide_right{ cursor:url(next.cur), pointer; position:absolute; right:0; width:50%; z-index:999; filter:alpha(opacity=0); background:#fff;}
+
+/* 以下为当前样式表里定义的样式属性 */
+.picsbtn_l, .picsbtn_r{ background:url(../images/icon.png) no-repeat 0 -151px;}
+.picsbtn_r{ background-position:-28px -151px;}
+.picsbtn_l:hover{ background-position:-56px -151px;}
+.picsbtn_r:hover{ background-position:-84px -151px;}
+.picsul li img{ border:1px solid #825400;}
+.picsul li.photo-Select img{ background:#cab485;}
