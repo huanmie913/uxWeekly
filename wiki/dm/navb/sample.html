@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
+<style>
+/* 页面初始化 */
+*{ margin:0; padding:0; font-size:12px;}
+body{ padding-top:30px;}
+a{ color:#955627; text-decoration:none;}
+a:hover{ color:#E8C478; text-decoration:underline;}
+.page_infomation{ font-size:14px; width:1002px; margin:20px auto 0; padding:10px 0 0; border-top:1px dashed #aaa;}
+/* 以下为common.css里面共有的样式属性 */
+/* navb导航栏底部通栏 */
+.navbli{ float:left; width:365px; height:57px; overflow:hidden;}
+.navbbar{ width:100%; height:26px; line-height:26px; overflow:hidden;}
+.navbbar span{ font-weight:700;}
+.navbcon{ display:inline;}
+.navbcon a{ margin:0 5px;}
+/* bshare */
+#bshare{ width:157px; height:69px; overflow:hidden; zoom:1;}
+#bshare .bshare_t{ float:left; display:block; width:100%; height:22px; overflow:hidden; line-height:25px;}
+#bshare #bdshare{ float:left; padding-bottom:0; _margin-top:-2px;}
+#bshare #bdshare a{ padding-bottom:0; margin-right:0;}
+#bshare_p{ float:left;}
+#bshare_p .bshare_t{ float:left; padding-top:4px;}
+#bshare_p #bdshare a{ padding-left:20px; margin-right:0;}
+/* sehbx */
+.sehbx{ float:right; display:inline;}
+.sehtxt{ width:273px; height:17px; line-height:16px\9; padding:5px 10px; color:#762600; background:transparent; border:0;}
+.sehbtn{ width:64px; height:25px; background:transparent; border:0; cursor:pointer;}
+.sehhot{ overflow:hidden;}
+.sehhot span{ font-weight:700;}
+.sehhot a{ margin:0 3px;}
+
+/* 以下为当前样式表里定义的样式属性 */
+/* navb */
+.navb{ background:url(nav.jpg) no-repeat 0 -126px; width:1002px; height:71px; margin:0 auto;}
+.navbli{ color:#955627; padding:10px 0 0 40px;}
+/* bshare */
+#bshare{ background:url(icon.png) no-repeat; padding-left:5px}
+#bshare .bshare_t{ color:#a26f4a; margin:10px 0 0 5px;}
+#bshare_p{ padding:10px 0 0 5px;}
+/* sehbx */
+.sehbx{ width:363px; margin:10px 40px 0 0;}
+.search{ width:363px; height:27px; background:url(fence.jpg) no-repeat -406px -182px;}
+.sehtxt{ width:273px; height:17px; line-height:16px\9; padding:5px 10px; color:#762600; background:transparent; border:0;}
+.sehbtn{ width:64px; height:25px; background:transparent; border:0; cursor:pointer;}
+.sehhot{ color:#955627; padding-top:4px; width:363px; height:18px;}
+</style>
+</head>
+<body>
+<!--navb-->
+<div class="navb clearfix">
+	<!--sehbx-->
+	<div class="sehbx clearfix">
+		<form class="search">
+			<input type="text" class="sehtxt" id="seh_t" value="" />
+			<input type="submit" class="sehbtn" value="" />
+		</form>
+		<p class="sehhot"><span>热门搜索：</span><a href="#">路飞</a><a href="#">路路飞飞</a><a href="#">路飞</a><a href="#">路的飞</a><a href="#">路飞</a><a href="#">路飞</a><a href="#">路飞</a><a href="#">秦时明月最新222话秦时明月最新222话</a></p>
+	</div>
+	<!--/sehbx-->
+	<!--navbli-->
+	<div class="navbli">
+		<div class="navbbar">
+			<span>最近更新：</span>
+			<div class="navbcon">
+				<a href="#" title="title">秦时明月222话</a>|<a href="#" title="title">秦时明月333话剧情分析</a>
+			</div>
+		</div>
+		<div class="navbbar">
+			<span>更新预告：</span>
+			<div class="navbcon">
+				<a href="#" title="title">秦时明月最新222话</a>|<a href="#" title="title">秦时明月333话剧情分析</a>
+			</div>
+		</div>
+	</div>
+	<!--/navbli-->
+	<!--bshare-->
+	<div id="bshare">
+		<span class="bshare_t">分享到：</span>
+		<!-- Baidu Button BEGIN -->
+		<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+		  <a class="bds_tqq"></a><a class="bds_tsina"></a><a class="bds_qzone"></a><a class="bds_tqf"></a><a class="bds_kaixin001"></a><a class="bds_renren"></a><a class="bds_copy"></a>
+		</div>
+		<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=401597" ></script>
+		<script type="text/javascript" id="bdshell_js"></script>
+		<script type="text/javascript">
+			document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?t=" + new Date().getHours();
+		</script>
+		<!-- Baidu Button END -->
+	</div>
+	<!--/bshare-->
+</div>
+<!--/navb-->
+<p class="page_infomation">
+	1 当前结构为动漫热门专题首页的nav下面的一般通用模块，颜色和背景的定义可能根据各自的风格有所不一样。根据实际效果修改custom.css。<br />
+	2 列表页和内页这些首页之外的页面，需要去掉里面的#bshare模块。<br />
+	3 该结构css代码部分已经按common.css和custom.css两个文件的方式分开了代码内容，由于common.css是指向另外的地址，写代码时复制的时候只需要复制对应的当前css部分即可。
+</p>
+</body>
+</html>
