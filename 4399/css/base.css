@@ -158,7 +158,7 @@ a:hover{text-decoration:underline;}
 
 .game_box .bd{ padding:0 20px; zoom:1; position:relative;border-color:#ACDB6D;}
 /*game_scroll*/
-.game_scroll{ margin:0 -20px 0 0;overflow:hidden;}
+.game_scroll{ margin:0 -20px -10px 0;overflow:hidden;}
 .game_scroll li{ float:left;width:77px; white-space:nowrap;text-align:center;line-height:2;padding-bottom:10px;}
 .game_scroll li img{ display: block;width:66px;height:45px;}
 .game_box .btn_right,.game_box .btn_left{ position:absolute;top:30px;width:15px;height:68px;display:block;cursor:pointer;}
