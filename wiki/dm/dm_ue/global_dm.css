@@ -3,7 +3,8 @@
 Use for:	dm.4399.com
 Version:	1.0
 Date:		2012/04/07
-Author:		情封
+Author:		LJ
+update:     QF
 */
 
 /* CSS reset */
@@ -32,6 +33,18 @@ a:hover{text-decoration:underline;}
 .clearfix{ zoom:1;}
 .clear{ clear:both }
 
+/* 顶部通栏 */
+.pub_hd{ background:url(pub_hd.png) repeat-x; height:33px;}
+.wrapper{ width:1000px; margin:0 auto;}
+.pub_logo{ float:left; margin-top:3px;}
+.pub_mu{  width:151px; height:22px; overflow:hidden; margin-top:5px;}
+.pub_fa, .pub_tg{ float:right; background:url(pub_hd.png) no-repeat -65px -105px; width:84px; height:22px; overflow:hidden; margin:5px 0 0 4px;}
+.pub_tg{ width:63px; background-position:0 -105px; margin-left:0;}
+.pub_nv{ float:left; padding-left:10px;}
+.pub_nvbg{ float:left; display:inline-block; background:url(pub_hd.png) no-repeat 0 -70px; width:190px; height:33px; overflow:hidden;}
+.pub_nv i{ float:left; display:inline-block; background:url(pub_hd.png) no-repeat -192px -70px; width:2px; height:33px; overflow:hidden;}
+.pub_nv a{ float:left; display:inline-block; height:33px; line-height:33px; padding:0 8px; color:#1797cc;}
+.pub_nv a:hover{ background:url(pub_hd.png) repeat-x 0 -35px; color:#0b1b92; text-decoration:none;}
 
 /* gallery缩略图picsbar模块 */
 .picsbar{ width:940px; overflow:hidden; margin:0 auto;}
@@ -44,3 +57,40 @@ a:hover{text-decoration:underline;}
 .pics{ position:relative; margin:0 auto; text-align:center; overflow:hidden;}
 #slide_left{ cursor:url(pre.cur), pointer; position:absolute; left:0; width:50%; z-index:999; filter:alpha(opacity=0); background:#fff;}
 #slide_right{ cursor:url(next.cur), pointer; position:absolute; right:0; width:50%; z-index:999; filter:alpha(opacity=0); background:#fff;}
+
+
+/* navb导航栏底部通栏 */
+.navbli{ float:left; width:365px; height:57px; overflow:hidden;}
+.navbbar{ width:100%; height:26px; line-height:26px; overflow:hidden;}
+.navbbar span{ font-weight:700;}
+.navbcon{ display:inline;}
+.navbcon a{ margin:0 5px;}
+/* bshare */
+#bshare{ width:157px; height:69px; overflow:hidden; zoom:1;}
+#bshare .bshare_t{ float:left; display:block; width:100%; height:22px; overflow:hidden; line-height:25px;}
+#bshare #bdshare{ float:left; padding-bottom:0; _margin-top:-2px;}
+#bshare #bdshare a{ padding-bottom:0; margin-right:0;}
+#bshare_p{ float:left;}
+#bshare_p .bshare_t{ float:left; padding-top:4px;}
+#bshare_p #bdshare a{ padding-left:20px; margin-right:0;}
+/* sehbx */
+.sehbx{ float:right; display:inline;}
+.sehtxt{ width:273px; height:17px; line-height:16px\9; padding:5px 10px; color:#762600; background:transparent; border:0;}
+.sehbtn{ width:64px; height:25px; background:transparent; border:0; cursor:pointer;}
+.sehhot{ overflow:hidden;}
+.sehhot span{ font-weight:700;}
+.sehhot a{ margin:0 3px;}
+
+/* bshare */
+#bshare_p{ float:left;}
+#bshare_p .bshare_t{ float:left; padding-top:4px;}
+#bshare_p #bdshare a{ padding-left:20px; margin-right:0;}
+/* sharebx内页分享模块 */
+.sharebx{ margin:0 auto;}
+.share_long li{ float:left; display:inline-block; padding-left:10px; height:26px; line-height:26px; _line-height:28px; overflow:hidden; margin-right:15px;}
+.share_long li a{ display:block; padding-right:10px;}
+.share_short{ float:right; padding:8px 0 0;}
+.share_short li{ float:right; display:inline-block; margin:0 0 0 10px;}
+.share_long li a:hover{ text-decoration:none;}
+.ln_ul{ float:left;}
+.ln_ul li{ width:100%; height:22px; line-height:22px; overflow:hidden;}
