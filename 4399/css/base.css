@@ -53,7 +53,7 @@ a:hover{text-decoration:underline;}
 .m_topic .frb,.mini_list .frb,.column_box .frb,.tab_box .frb{ background-position:right -56px;}
 .m_topic .flb,.mini_list .flb,.column_box .flb,.tab_box .flb{ background-position:left -42px;}
 
-.a_webgame,.btn_wgleft,.btn_wgright,.sch_form,.rc_game span,.gm_list dt a,.txt_scroll,.gm_play .btn_left,.gm_play .btn_right,.gm_play .btn_clear,.game_box .btn_left,.game_box .btn_right,.as_box .hd,.m_rank span,.m_rank .cur .mr,.m_rank .cur .zr,.rk_list dt a,.m_action .hd,.m_topic .hd,.new,.hot,.type_list a,.fk,.ico_hot{ background-image:url(../images/sprite.png);background-repeat:no-repeat;}
+.a_webgame,.btn_wgleft,.btn_wgright,.sch_form,.rc_game span,.gm_list dt a,.txt_scroll,.gm_play .btn_left,.gm_play .btn_right,.gm_play .btn_clear,.game_box .btn_left,.game_box .btn_right,.as_box .hd,.m_rank span,.m_rank .cur .mr,.m_rank .cur .zr,.rk_list dt a,.m_action .hd,.m_topic .hd,.new,.hot,.type_list a,.fk,.ico_hot,.column_box .rt a{ background-image:url(../images/sprite.png);background-repeat:no-repeat;}
 .m_newgame .hd,.m_newgame .tpl,.m_newgame .tpr,.mini_list .hd,.mini_list .tpl,.mini_list .tpr,.m_ogame .hd,.m_ogame .tpl,.m_ogame .tpr,.m_girl .hd,.m_girl .tpl,.m_girl .tpr,.column_box .hd,.column_box .tpl,.column_box .tpr,.tab_box .hd,.tab_box .tpl,.tab_box .tpr{ background-image:url(../images/play.png); background-repeat:no-repeat;}
 
 .evenbg{ background:#f3f9ed;}
@@ -309,7 +309,7 @@ a:hover{text-decoration:underline;}
 .column_box .tpl{ background-position:0 -501px;margin:-33px 0 0 -80px;}
 .column_box .tpr{ background-position:right -567px;margin:-33px -10px 0 0;}
 .column_box .tp{ line-height:33px;position:relative; margin-left:-55px;}
-
+.column_box .rt a{ background-position:-174px -27px;display:inline-block;*zoom:1;*display:inline;width:52px;height:24px;margin-top:5px;font-size:0;}
 .col_game{ margin-right:-10px;overflow:hidden;}
 .column_box .bd,.tab_box .bd{ padding:10px 0;zoom:1;}
 
