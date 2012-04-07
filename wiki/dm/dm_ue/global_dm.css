@@ -34,7 +34,7 @@ a:hover{text-decoration:underline;}
 .clear{ clear:both }
 
 /* 顶部通栏 */
-.pub_hd{ background:url(pub_hd.png) repeat-x; height:33px;}
+.pub_hd{ background:url(global_images/pub_hd.png) repeat-x; height:33px;}
 .wrapper{ width:1000px; margin:0 auto;}
 .pub_logo{ float:left; margin-top:3px;}
 .pub_mu{  width:151px; height:22px; overflow:hidden; margin-top:5px;}
