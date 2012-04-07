@@ -107,7 +107,7 @@ a:hover{text-decoration:underline;color:#468315;}
 .toolbar{ border-top:1px solid #fff;background-position:0 0;height:27px; padding:5px 10px 0 ;}
 .toolbar .login{ float:right;}
 .sch_form{ float:left; background-position:0 -55px;width:206px;height:21px; padding:1px 0 1px 23px;}
-.ipt_txt{ width:163px; padding:2px 0;border:0;}
+.ipt_txt{ width:163px; padding:2px 0;border:0;vertical-align:top;}
 .btn_sch{ width:39px;height:20px;border:none;background:none;cursor:pointer;}
 .key_word{ float:left;margin:2px 0 0 10px;display:inline;}
 .key_word a{ color:#686868;}
