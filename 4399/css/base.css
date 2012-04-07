@@ -28,7 +28,7 @@ td{ font-size:12px; line-height:160%;}
 .left{ float:left }
 .right{ float:right }
 a{text-decoration:none;color:#484848;}
-a:hover{text-decoration:underline;}
+a:hover{text-decoration:underline;color:#468315;}
 .txthide{ text-indent:-1024em;overflow:hidden; line-height:0; font-size:0}
 .clearfix:after{ content:""; height:0; visibility:hidden; display:block; clear:both;}
 .clearfix{ zoom:1;}
@@ -306,14 +306,13 @@ a:hover{text-decoration:underline;}
 
 /*column_box*/
 .column_box{ width:475px;}
-.column_box .bd{ border-color:#acdb6d;}
 .column_box .hd{ background-position:0 -534px;padding:0 10px 0 80px;}
 .column_box .tpl{ background-position:0 -501px;margin:-33px 0 0 -80px;}
 .column_box .tpr{ background-position:right -567px;margin:-33px -10px 0 0;}
 .column_box .tp{ line-height:33px;position:relative; margin-left:-55px;}
 .column_box .rt a{ background-position:-174px -27px;display:inline-block;*zoom:1;*display:inline;width:52px;height:24px;margin-top:5px;font-size:0;}
 .col_game{ margin-right:-10px;overflow:hidden;}
-.column_box .bd,.tab_box .bd{ padding:10px 0;zoom:1;}
+.column_box .bd,.tab_box .bd{ padding:10px 0;zoom:1;border-color:#acdb6d;}
 
 /*tab_box*/
 .tab_box{ border-color:#c0e38f;}
