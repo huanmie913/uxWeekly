@@ -6,7 +6,7 @@
 
 
 /* blacklist */
-.blacklist{ background:url(images/btn.jpg) no-repeat 0 -260px; height:57px;}
+.blacklist{ background:url(../images/btn.jpg) no-repeat 0 -260px; height:57px;}
 .blacknum{ color:#eab015;}
 .blackrq{ color:#ffcc52;}
 .blacklist{ margin-top:5px;}
