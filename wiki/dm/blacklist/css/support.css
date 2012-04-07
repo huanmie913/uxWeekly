@@ -3,11 +3,7 @@
   add by Lj
   Time: 12-04-07
 ***********/
-/* blacklist点击支持专题模块 */
-.blacklist{ overflow:hidden;}
-.blacknum{ float:left; font:900 26px/26px "arial"; padding:18px 0 0 7px; width:33px; height:26px; overflow:hidden; text-align:center;}
-.blackrq{ float:left; padding:33px 0 0 10px;}
-.blacklist a{ float:right; width:45px; height:39px; margin:10px 10px 0 0;}
+
 
 /* blacklist */
 .blacklist{ background:url(images/btn.jpg) no-repeat 0 -260px; height:57px;}
