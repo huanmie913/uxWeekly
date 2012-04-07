@@ -220,7 +220,7 @@ a:hover{text-decoration:underline;}
 .m_action img{display:block;margin:0 auto;}
 
 /*m_topic*/
-.m_topic{border-color:#a4d867;}
+.m_topic .bd{border-color:#a4d867;}
 .m_topic .hd{ background-position:0 -243px;height:41px; line-height:32px;position:relative;}
 .m_topic .hd a{color:#448230;}
 .m_topic .tpr_more{position:absolute;right:10px;top:0;}
