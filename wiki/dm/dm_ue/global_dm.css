@@ -38,13 +38,13 @@ a:hover{text-decoration:underline;}
 .wrapper{ width:1000px; margin:0 auto;}
 .pub_logo{ float:left; margin-top:3px;}
 .pub_mu{  width:151px; height:22px; overflow:hidden; margin-top:5px;}
-.pub_fa, .pub_tg{ float:right; background:url(pub_hd.png) no-repeat -65px -105px; width:84px; height:22px; overflow:hidden; margin:5px 0 0 4px;}
+.pub_fa, .pub_tg{ float:right; background:url(images/pub_hd.png) no-repeat -65px -105px; width:84px; height:22px; overflow:hidden; margin:5px 0 0 4px;}
 .pub_tg{ width:63px; background-position:0 -105px; margin-left:0;}
 .pub_nv{ float:left; padding-left:10px;}
 .pub_nvbg{ float:left; display:inline-block; background:url(pub_hd.png) no-repeat 0 -70px; width:190px; height:33px; overflow:hidden;}
 .pub_nv i{ float:left; display:inline-block; background:url(pub_hd.png) no-repeat -192px -70px; width:2px; height:33px; overflow:hidden;}
 .pub_nv a{ float:left; display:inline-block; height:33px; line-height:33px; padding:0 8px; color:#1797cc;}
-.pub_nv a:hover{ background:url(pub_hd.png) repeat-x 0 -35px; color:#0b1b92; text-decoration:none;}
+.pub_nv a:hover{ background:url(images/pub_hd.png) repeat-x 0 -35px; color:#0b1b92; text-decoration:none;}
 
 /* gallery缩略图picsbar模块 */
 .picsbar{ width:940px; overflow:hidden; margin:0 auto;}
