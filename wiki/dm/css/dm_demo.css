@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document 
+Use for:	dm.4399.com
+Version:	1.0
+Date:		2012/04/10
+Author:		情封
+Update:     
+*/
+
+.wrapper{ width:960px;margin:0 auto;}
+.demo_box{ margin-top:20px;}
+.demo_title{ height:32px;background:#29a4cf;color:#fff; line-height: 32px; border-radius: 5px;border:1px solid #fff; padding:0 10px;}
+.demo_content{ margin-bottom:20px;}
+.w340{ width:340px;}
+.w113{ width:113px;}
+.mt15{ margin-top:15px;}
+
+
+
+
+
