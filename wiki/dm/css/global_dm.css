@@ -89,3 +89,9 @@ a:hover{text-decoration:underline;}
 .dm_topbar li{ float:left;background-position:-343px -93px;padding:0 0 0 2px;}
 .dm_topbar li a{ padding:0 7px 0 6px;color:#1797cc;display:block;}
 .dm_topbar li a:hover{ background-position: 0 -31px;background-repeat: repeat-x; text-decoration: none;}
+
+/*dm_bottombar*/
+.dm_bottombar{ line-height: 2;text-align:center;color:#808080;padding:15px 0;zoom:1}
+.dm_bottombar a{ color:#808080;padding:0 8px;}
+.dm_bottombar a:hover{color:#ab0f0f;}
+.dm_bottombar .kf_mail{ color:#1111BB}
