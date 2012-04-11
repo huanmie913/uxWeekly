@@ -10,7 +10,8 @@ Update:
 .demo_wrapper{ width:960px;margin:60px auto;}
 .demo_box{ margin-top:20px;}
 .demo_title{ height:32px;background:#29a4cf;color:#fff; line-height: 32px; border-radius: 5px;border:1px solid #fff; padding:0 10px;}
-.demo_content{ margin-bottom:20px; position: relative; padding-right:200px;}
+.demo_content{ margin-bottom:20px;}
+.demo_code{ position: relative; padding-right:200px;}
 
 .w340{ width:340px;}
 .w113{ width:113px;}
