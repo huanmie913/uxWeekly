@@ -95,3 +95,9 @@ a:hover{text-decoration:underline;}
 .dm_bottombar a{ color:#808080;padding:0 8px;}
 .dm_bottombar a:hover{color:#ab0f0f;}
 .dm_bottombar .kf_mail{ color:#1111BB}
+
+/*dm_hsummary*/
+.dm_hsummary{}
+.dm_hsummary h2{ text-align:center; line-height: 2; font-size:14px;}
+.dm_hsummary h2 a{ color:#0b99c2}
+.dm_hsummary p{ line-height: 22px;color:#7e8387}
