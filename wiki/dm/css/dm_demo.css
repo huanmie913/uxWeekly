@@ -8,6 +8,7 @@ Update:
 */
 
 .demo_wrapper{ width:960px;margin:60px auto;}
+.demo_fullwrapper{ width:100%;margin:60px auto;}
 .demo_box{ margin-top:20px;}
 .demo_title{ height:32px;background:#29a4cf;color:#fff; line-height: 32px; border-radius: 5px;border:1px solid #fff; padding:0 10px;}
 .demo_content{ margin-bottom:20px;}
@@ -22,6 +23,8 @@ Update:
 .look_reource{ width:80px;height:24px; line-height:2;text-align:center;color:#000;cursor:pointer;background:#a0ddf2;border:1px solid #a0ddf2;border-radius: 5px; position: absolute;right:10px;top:20px;display: none;}
 .demo_content:hover .look_reource{ display: block;}
 .demo_resource{ margin:15px 0;display:none;}
+
+.demo_text{ padding:30px 0 0 10px;;}
 
 
 

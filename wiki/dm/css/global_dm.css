@@ -34,6 +34,8 @@ a:hover{text-decoration:underline;}
 .clearfix{ zoom:1;}
 .clear{ clear:both }
 
+.dm_wrapper{ width:980px;margin:0 auto;text-align:left;}
+
 /*dm_imgtext*/
 .dm_imgtext{ padding:0 0 0 122px;zoom:1;overflow: hidden;}
 .dm_imgtext .img{ float:left;display:inline;margin-left:-122px;width:112px;}
@@ -75,3 +77,15 @@ a:hover{text-decoration:underline;}
 .dm_textlist a{ color:#AA9155;}
 .dm_textlist span{ float: right; color:#666;}
 .dm_textlist img{ margin-left:5px;}
+
+/*dm_topbar*/
+.dm_topbar,.dm_tbr,.dm_topbar li,.dm_topbar .nav,.dm_topbar li a:hover,.dm_topbar .favorite,.dm_topbar .contributors{ background-image:url(../images/dm_topbar.png);background-repeat: no-repeat;}
+.dm_topbar,.dm_tbr{ background-position: 0 0;background-repeat:repeat-x;height:31px; line-height:31px;border-bottom:1px solid #bfbfbf;}
+.dm_tbr{ width:960px;margin:0 auto;padding:0 10px}
+.dm_topbar .favorite,.dm_topbar .contributors{ float:right; background-position: -259px -93px;margin:5px 5px 0 0;display:inline;width:84px;height:22px;text-indent:-1024em;overflow:hidden;cursor:pointer;}
+.dm_topbar .contributors{ background-position:-196px -93px;width:63px;}
+.dm_topbar .nav{ float:left;background-position:right -62px;; padding-right:200px; }
+.dm_topbar .dm_logo{ float:left;display:inline; margin:3px 10px 0 0;}
+.dm_topbar li{ float:left;background-position:-343px -93px;padding:0 0 0 2px;}
+.dm_topbar li a{ padding:0 7px 0 6px;color:#1797cc;display:block;}
+.dm_topbar li a:hover{ background-position: 0 -31px;background-repeat: repeat-x; text-decoration: none;}
