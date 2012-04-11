@@ -18,9 +18,11 @@ dm_f2er = {
                 return function(){
                     if( flag == 0 ){
                         _resourceBox[n].style.display = "block";
+                        this.innerHTML = "隐藏源代码";
                         flag = 1;
                     }else{
                         _resourceBox[n].style.display = "none";
+                        this.innerHTML = "查看源代码";
                         flag = 0;
                     }
                 }
