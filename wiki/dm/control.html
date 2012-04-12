@@ -96,43 +96,45 @@
     <!--/demo_box-->
 	<!--demo_box-->
 		<div class="demo_box">
-			<h2 class="demo_title">文字列表+时间</h2>
+			<h2 class="demo_title">搜索模块</h2>
 			<div class="demo_content mt15">
 				<!--demo_code-->
 				<div class="demo_code">
-                <!--dm_textlist-->
-				<ul class="dm_textlist w340">
-                    <li><span>04-12</span><a href="#">潜行吧!奈亚子01集<img alt="4399动漫" src="http://dm.4399.com/images/hot.gif" width="23" height="7"></a></li>
-                    <li><span>01-15</span><a href="#">少年同盟第二季02集</a></li>
-                    <li><span>02-25</span><a href="#">金苹果1集 秋天的回忆上</a></li>
-                    <li><span>05-25</span><a href="#">奇幻龙宝07集</a></li>
-                    <li><span>11-18</span><a href="#">战斗王ex1集</a></li>
-                    <li><span>10-16</span><a href="#">机甲兽神第2部1集</a></li>
-                    <li><span>05-15</span><a href="#">你看奥特曼传奇了没</a></li>
-                    <li><span>07-01</span><a href="#">柴犬子02集</a></li>
-                    <li><span>06-12</span><a href="#">纸箱战机W11集</a></li>
-                    <li><span>09-18</span><a href="#">水漫金山52集</a></li>
-				</ul>
+                <!--dm_form-->
+                <form class="dm_sform">
+                    <fieldset>
+                        <legend>4388动漫搜索</legend>
+                        <div class="dm_schbar">
+                            <label for="js_iptsch">请输入要搜索的内容</label>
+                            <input type="text" class="ipt_search" id="js_iptsch"/>
+                            <input type="submit" value="" class="btn_search"/>
+                        </div>
+                    </fieldset>
+                </form>
+				<!--/dm_form-->
                 <span class="look_reource">查看源码</span>
             </div>
              <!--/demo_code-->
             <!--demo_resource-->
             <div class="demo_resource">
                 <p>Html代码:</p>
-                <pre class="DlHighlight"><code class="xml">&lt;ul class="dm_textlist"&gt;
-    &lt;li&gt;&lt;span&gt;04-12&lt;/span&gt;&lt;a href="#"&gt;潜行吧!奈亚子01集&lt;img alt="4399动漫" src="http://dm.4399.com/images/hot.gif" width="23" height="7"&gt;&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;01-15&lt;/span&gt;&lt;a href="#"&gt;少年同盟第二季02集&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;02-25&lt;/span&gt;&lt;a href="#"&gt;金苹果1集 秋天的回忆上&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;05-25&lt;/span&gt;&lt;a href="#"&gt;奇幻龙宝07集&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;11-18&lt;/span&gt;&lt;a href="#"&gt;战斗王ex1集&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;10-16&lt;/span&gt;&lt;a href="#"&gt;机甲兽神第2部1集&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;05-15&lt;/span&gt;&lt;a href="#"&gt;你看奥特曼传奇了没&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;07-01&lt;/span&gt;&lt;a href="#"&gt;柴犬子02集&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;06-12&lt;/span&gt;&lt;a href="#"&gt;纸箱战机W11集&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;09-18&lt;/span&gt;&lt;a href="#"&gt;水漫金山52集&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
+                <pre class="DlHighlight"><code class="xml">&lt;form class="dm_sform"&gt;
+        &lt;fieldset&gt;
+            &lt;legend for="js_iptsch"&gt;4388动漫搜索&lt;/legend&gt;
+            &lt;div class="dm_schbar"&gt;
+                &lt;label&gt;请输入要搜索的内容&lt;/label&gt;
+                &lt;input type="text" class="ipt_search" id="js_iptsch"/&gt;
+                &lt;input type="submit" value="" class="btn_search"/&gt;
+            &lt;/div&gt;
+        &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
 				<p>Css代码:</p>
-                样式同----》文字列表
+                <pre class="DlHighlight"><code class="css">.dm_sform{ background:url(../images/dm_sform.png) no-repeat;width:377px;height:27px;}
+.dm_sform legend{display:none;}
+.dm_schbar{ position:relative;width:377px;height:27px; }
+.dm_schbar label{ position: absolute;left:10px;top:5px; color:#2da0df;}
+.dm_schbar .ipt_search{ width:300px;height:22px; padding:2px 0 2px 10px;border:none;background:none;}
+.dm_schbar .btn_search{ width:59px;height:27px; border:none; background:none;cursor:pointer;}</code></pre>
             </div>
             <!--/demo_resource-->
         </div>
