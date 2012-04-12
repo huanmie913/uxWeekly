@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>动漫--控件</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="../static/css/demo.css" rel="stylesheet" type="text/css"/>
+<link href="css/global_dm.css" rel="stylesheet" />
+<link href="css/dm_demo.css" rel="stylesheet" />
+<link href="../static/js/highlight/styles/sunburst.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!--toolbar-->
+<div class="toolbar" id="toolbar"></div>
+<!--/toolbar-->
+<!--demo_wrapper-->
+<div class="demo_wrapper" id="dm">
+
+    <!--demo_box-->
+    <div class="demo_box">
+        <h2 class="demo_title">内页收藏文章、分享、收藏4399按钮</h2>
+        <div class="demo_content mt15">
+            <!--demo_code-->
+            <div class="demo_code">
+                <!--dm_inpbtn-->
+                <div class="dm_inpbtn">
+                    <a href="#"><span>这篇文章太给力了，我要收藏</span></a>
+                    <a href="#"><span>我要跟好友分享这篇文章</span></a>
+                    <a href="#"><span>收藏4399动漫</span></a>
+                </div>
+                <!--/dm_inpbtn-->
+                <span class="look_reource">查看源码</span>
+            </div>
+            <!--/demo_ocde-->
+
+            <!--demo_resource-->
+            <div class="demo_resource">
+                <p>Html代码:</p>
+                <pre class="DlHighlight"><code class="xml">&lt;div class="dm_inpbtn"&gt;
+        &lt;a href="#"&gt;&lt;span&gt;这篇文章太给力了，我要收藏&lt;/span&gt;&lt;/a&gt;
+        &lt;a href="#"&gt;&lt;span&gt;我要跟好友分享这篇文章&lt;/span&gt;&lt;/a&gt;
+        &lt;a href="#"&gt;&lt;span&gt;收藏4399动漫&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+                <p>Css代码:</p>
+                <pre class="DlHighlight"><code class="css">.dm_inpbtn a,.dm_inpbtn span{ background-image:url(../images/dm_inpbtn.png); background-repeat:no-repeat;}
+.dm_inpbtn a{ background-position:left 0;display:inline;float:left;height:37px;line-height:37px;
+               margin-right:10px;padding-left:35px;}
+.dm_inpbtn span{ background-position:right 0;display:block;padding-right:30px;color:#fff;}
+.dm_inpbtn a:hover{ color:#3c6500;text-decoration:none;}</code></pre>
+            </div>
+            <!--/demo_resource-->
+        </div>
+    </div>
+    <!--/demo_box-->
+	<!--demo_box-->
+		<div class="demo_box">
+			<h2 class="demo_title">分页模块</h2>
+			<div class="demo_content mt15">
+				<!--demo_code-->
+				<div class="demo_code">
+                <!--dm_page-->
+                <div class="dm_page">
+                    <a href="#" class="dm_pre">&lt;</a>
+                    <a href="#">1</a>
+                    <span>2</span>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#" class="dm_next">&gt;</a>
+                </div>
+				<!--/dm_page-->
+                <span class="look_reource">查看源码</span>
+            </div>
+             <!--/demo_code-->
+            <!--demo_resource-->
+            <div class="demo_resource">
+                <p>Html代码:</p>
+                <pre class="DlHighlight"><code class="xml">&lt;div class="dm_page"&gt;
+    &lt;a href="#" class="dm_pre"&gt;&lt;&lt;/a&gt;
+    &lt;a href="#"&gt;1&lt;/a&gt;
+    &lt;span&gt;2&lt;/span&gt;
+    &lt;a href="#"&gt;3&lt;/a&gt;
+    &lt;a href="#"&gt;4&lt;/a&gt;
+    &lt;a href="#"&gt;5&lt;/a&gt;
+    &lt;a href="#" class="dm_next"&gt;&gt;&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+				<p>Css代码:</p>
+                <pre class="DlHighlight"><code class="css">.dm_page a,.dm_page span{ color:#FF8E48; display:inline-block;*zoom:1;*display:inline;border:1px solid #fff;width:23px;height:23px;line-height:24px;
+                    text-align:center;overflow:hidden;vertical-align:middle;}
+.dm_page span,.dm_page a:hover{ background:#ff8401;border:1px solid #ff8401;border-radius:12px;color:#fff;text-decoration:none;}</code></pre>
+            </div>
+            <!--/demo_resource-->
+        </div>
+    </div>
+    <!--/demo_box-->
+	<!--demo_box-->
+		<div class="demo_box">
+			<h2 class="demo_title">文字列表+时间</h2>
+			<div class="demo_content mt15">
+				<!--demo_code-->
+				<div class="demo_code">
+                <!--dm_textlist-->
+				<ul class="dm_textlist w340">
+                    <li><span>04-12</span><a href="#">潜行吧!奈亚子01集<img alt="4399动漫" src="http://dm.4399.com/images/hot.gif" width="23" height="7"></a></li>
+                    <li><span>01-15</span><a href="#">少年同盟第二季02集</a></li>
+                    <li><span>02-25</span><a href="#">金苹果1集 秋天的回忆上</a></li>
+                    <li><span>05-25</span><a href="#">奇幻龙宝07集</a></li>
+                    <li><span>11-18</span><a href="#">战斗王ex1集</a></li>
+                    <li><span>10-16</span><a href="#">机甲兽神第2部1集</a></li>
+                    <li><span>05-15</span><a href="#">你看奥特曼传奇了没</a></li>
+                    <li><span>07-01</span><a href="#">柴犬子02集</a></li>
+                    <li><span>06-12</span><a href="#">纸箱战机W11集</a></li>
+                    <li><span>09-18</span><a href="#">水漫金山52集</a></li>
+				</ul>
+                <span class="look_reource">查看源码</span>
+            </div>
+             <!--/demo_code-->
+            <!--demo_resource-->
+            <div class="demo_resource">
+                <p>Html代码:</p>
+                <pre class="DlHighlight"><code class="xml">&lt;ul class="dm_textlist"&gt;
+    &lt;li&gt;&lt;span&gt;04-12&lt;/span&gt;&lt;a href="#"&gt;潜行吧!奈亚子01集&lt;img alt="4399动漫" src="http://dm.4399.com/images/hot.gif" width="23" height="7"&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;01-15&lt;/span&gt;&lt;a href="#"&gt;少年同盟第二季02集&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;02-25&lt;/span&gt;&lt;a href="#"&gt;金苹果1集 秋天的回忆上&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;05-25&lt;/span&gt;&lt;a href="#"&gt;奇幻龙宝07集&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;11-18&lt;/span&gt;&lt;a href="#"&gt;战斗王ex1集&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;10-16&lt;/span&gt;&lt;a href="#"&gt;机甲兽神第2部1集&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;05-15&lt;/span&gt;&lt;a href="#"&gt;你看奥特曼传奇了没&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;07-01&lt;/span&gt;&lt;a href="#"&gt;柴犬子02集&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;06-12&lt;/span&gt;&lt;a href="#"&gt;纸箱战机W11集&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;09-18&lt;/span&gt;&lt;a href="#"&gt;水漫金山52集&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+				<p>Css代码:</p>
+                样式同----》文字列表
+            </div>
+            <!--/demo_resource-->
+        </div>
+    </div>
+    <!--/demo_box-->
+    <!--demo_box-->
+    		<div class="demo_box">
+    			<h2 class="demo_title">标题+简介</h2>
+    			<div class="demo_content mt15">
+    				<!--demo_code-->
+    				<div class="demo_code">
+                    <!--dm_hsummary-->
+                     <div class="dm_hsummary">
+                         <h2><a href="#">每周动漫推荐 鬼眼狂刀</a></h2>
+                         <p>即将于7月2号首播的《神的记事本》，近日其官网终于正式大量更新，一次过把角色设定、PV及动
+                         画的OP、ED的讯息大量更新即将于7月2号首播的《神的记事本》，近</p>
+                     </div>
+                    <!--/dm_hsummary-->
+                    <span class="look_reource">查看源码</span>
+                </div>
+                 <!--/demo_code-->
+                <!--demo_resource-->
+                <div class="demo_resource">
+                    <p>Html代码:</p>
+                    <pre class="DlHighlight"><code class="xml">&lt;div class="dm_hsummary"&gt;
+        &lt;h2&gt;&lt;a href="#"&gt;每周动漫推荐 鬼眼狂刀&lt;/a&gt;&lt;/h2&gt;
+         &lt;p&gt;即将于7月2号首播的《神的记事本》，近日其官网终于正式大量更新，一次过把角色设定、PV及动
+                        画的OP、ED的讯息大量更新即将于7月2号首播的《神的记事本》，近&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+    				<p>Css代码:</p>
+                    <pre class="DlHighlight"><code class="css">.dm_hsummary{}
+.dm_hsummary h2{ text-align:center; line-height: 2; font-size:14px;}
+.dm_hsummary h2 a{ color:#0b99c2}
+.dm_hsummary p{ line-height: 22px;color:#7e8387}</code></pre>
+                </div>
+                <!--/demo_resource-->
+            </div>
+        </div>
+        <!--/demo_box-->
+</div>
+<!--/wrapper-->
+<footer class="bottomBar" id="bottomBar"></footer>
+<script src="../static/js/mod_f2er.js" type="text/javascript"></script>
+<script type="text/javascript " src="js/demo_dm.js"></script>
+<script src="../static/js/highlight/highlight.pack.js"></script>
+<script type="text/javascript">
+mod_f2er.topBar('动漫基础库--控件','toolbar');
+mod_f2er.bottomBar('bottomBar');
+dm_f2er.triggerResource();
+hljs.tabReplace = ' ';
+hljs.initHighlightingOnLoad();
+</script>
+</body>
+</html>

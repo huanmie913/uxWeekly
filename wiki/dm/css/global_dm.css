@@ -101,3 +101,15 @@ a:hover{text-decoration:underline;}
 .dm_hsummary h2{ text-align:center; line-height: 2; font-size:14px;}
 .dm_hsummary h2 a{ color:#0b99c2}
 .dm_hsummary p{ line-height: 22px;color:#7e8387}
+
+/*dm_inpbtn*/
+.dm_inpbtn a,.dm_inpbtn span{ background-image:url(../images/dm_inpbtn.png); background-repeat:no-repeat;}
+.dm_inpbtn a{ background-position:left 0;display:inline;float:left;height:37px;line-height
+:37px;margin-right:10px;padding-left:35px;}
+.dm_inpbtn span{ background-position:right 0;display:block;padding-right:30px;color:#fff;}
+.dm_inpbtn a:hover{ color:#3c6500;text-decoration:none;}
+
+/*dm_page*/
+.dm_page{}
+.dm_page a,.dm_page span{ color:#FF8E48; display:inline-block;*zoom:1;*display:inline;border:1px solid #fff;width:23px;height:23px;line-height:24px;text-align:center;overflow:hidden;vertical-align:middle;}
+.dm_page span,.dm_page a:hover{ background:#ff8401;border:1px solid #ff8401;border-radius:12px;color:#fff;text-decoration:none;}
