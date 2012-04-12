@@ -138,3 +138,8 @@ a:hover{text-decoration:underline;}
 .dm_vote .img{ display:block; position:relative; text-align:center; cursor:pointer;}
 .dm_vote .v{ position:absolute; left:0; _left:-10px; top:-10px; display:none; background:url(../images/v.gif) no-repeat;width:100px;height:100px;}
 #dm_vote_tip{ visibility:hidden;text-align:left; padding:10px 0 0 10px; color:#f90}
+
+/*dm_crumbs*/
+.dm_crumbs{ color:#84c43f;}
+.dm_crumbs a{ color:#84c43f;}
+.dm_crumbs .split{ margin:0 5px;}
