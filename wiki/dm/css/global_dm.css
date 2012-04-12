@@ -140,6 +140,5 @@ a:hover{text-decoration:underline;}
 #dm_vote_tip{ visibility:hidden;text-align:left; padding:10px 0 0 10px; color:#f90}
 
 /*dm_crumbs*/
-.dm_crumbs{ color:#84c43f;}
-.dm_crumbs a{ color:#84c43f;}
+.dm_crumbs,.dm_crumbs a{ color:#84c43f;}
 .dm_crumbs .split{ margin:0 5px;}
