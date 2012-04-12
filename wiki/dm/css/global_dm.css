@@ -129,4 +129,4 @@ a:hover{text-decoration:underline;}
 .dm_tform .select_type{background:#e0f8ff; padding:5px 0; border-width:0 2px 2px;border-color:#20a2cf; border-style:solid; width:74px;text-align:center; position:absolute;left:0;top:30px;display:none;}
 .dm_tform .select_type li{ cursor:pointer; height:22px;line-height:22px; margin-bottom:5px;color:#004b69;}
 .dm_tform .select_type .current{ background:#00c3ed;color:#fff;}
-.dm_tform .btn_search{ float:left;}
+.dm_tform .btn_search{ float:left;width:71px;height:30px;}
