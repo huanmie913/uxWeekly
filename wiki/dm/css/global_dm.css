@@ -142,3 +142,19 @@ a:hover{text-decoration:underline;}
 /*dm_crumbs*/
 .dm_crumbs,.dm_crumbs a{ color:#84c43f;}
 .dm_crumbs .split{ margin:0 5px;}
+
+/*dm_box*/
+.dm_box{}
+.dm_hd,.dm_hd .tl,.dm_hd .tr,.dm_fd,.dm_fd .bl,.dm_fd .br{ background-image:url(../images/dm_box.png); background-repeat:no-repeat; height:65px;overflow: hidden;}
+.dm_hd{ background-position:0 0;padding:0 20px 0 200px;}
+.dm_hd .tl{ background-position:0 -65px;background-repeat:repeat-x;display:block;margin-top:-75px;}
+.dm_hd .tr{ background-position:right -130px;display:block;margin:-65px -20px 0 0;}
+.dm_t{ height:65px;margin-bottom:-65px; margin:10px 0 0 -130px;position:relative;}
+.dm_t .title{display:block;width:100px;height:30px;text-indent:-999em;overflow:hidden;}
+.dm_t .more{ position: absolute;right:0px;top:9px;color:#ffae00;}
+.dm_bd{ background:#ffffff;}
+.dm_bd .ld{ background:url(../images/dm_ld.png) repeat-y left top;}
+.dm_bd .rd{ background:url(../images/dm_rd.png) repeat-y right top;}
+.dm_fd{ background-position:0 -195px;padding:0 20px; height:21px;}
+.dm_fd .bl{ background-position:0 -216px;background-repeat:repeat-x;display:block;height:21px;}
+.dm_fd .br{ background-position:right -237px;display:block;margin:-21px -20px 0 0;height:21px;}
