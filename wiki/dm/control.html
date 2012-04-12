@@ -141,11 +141,11 @@
     </div>
     <!--/demo_box-->
     <!--demo_box-->
-    		<div class="demo_box">
-    			<h2 class="demo_title">搜索+分类</h2>
-    			<div class="demo_content mt15">
-    				<!--demo_code-->
-    				<div class="demo_code">
+            <div class="demo_box">
+                <h2 class="demo_title">搜索+分类</h2>
+                <div class="demo_content mt15">
+                    <!--demo_code-->
+                    <div class="demo_code">
                     <!--dm_sform-->
                     <form class="dm_tform">
                         <fieldset>
@@ -208,7 +208,7 @@
         &lt;/div&gt;
     &lt;/fieldset&gt;
 &lt;/form&gt;</code></pre>
-    				<p>Css代码:</p>
+                    <p>Css代码:</p>
                     <pre class="DlHighlight"><code class="css">.dm_tform{ background:url(../images/dm_tform.png) no-repeat;width:310px;height:30px;}
 .dm_tform .dm_schbar{ width:310px;height:30px;}
 .dm_tform .sch_bar{ float:left; padding:5px 10px;height:20px;width:142px;overflow:hidden;}
@@ -219,6 +219,168 @@
 .dm_tform .select_type li{ cursor:pointer; height:22px;line-height:22px; margin-bottom:5px;color:#004b69;}
 .dm_tform .select_type .current{ background:#00c3ed;color:#fff;}
 .dm_tform .btn_search{ float:left;width:71px;height:30px;}</code></pre>
+                </div>
+                <!--/demo_resource-->
+            </div>
+        </div>
+        <!--/demo_box-->
+    <!--demo_box-->
+    		<div class="demo_box">
+    			<h2 class="demo_title">投票</h2>
+    			<div class="demo_content mt15">
+    				<!--demo_code-->
+    				<div class="demo_code">
+                    <!--dm_vote-->
+                    <table class="dm_vote">
+						<tr>
+							<td>0位点选<div class="column"></div></td>
+							<td>0位<div class="column"></div></td>
+							<td>0位<div class="column"></div></td>
+							<td>10位<div class="column" style="height:100px;"></div></td>
+							<td>110位<div class="column" style="height:21px;"></div></td>
+							<td>0位<div class="column" style="height:40px"></div></td>
+						</tr>
+						<tr>
+							<td>0%</td>
+							<td>0%</td>
+							<td>0%</td>
+							<td>100%</td>
+							<td>21%</td>
+							<td>40%</td>
+						</tr>
+						<tr>
+							<td>
+                                <div class="img">
+                                    <img src="images/vote/qswg.png" pic="qswg" />
+                                    <span class="v"></span>
+                                </div>
+                            </td>
+							<td>
+                                <div class="img">
+                                    <img src="images/vote/whzt.png" pic="whzt" />
+                                    <span class="v"></span>
+                                </div>
+                            </td>
+							<td>
+                                <div class="img">
+                                    <img src="images/vote/bnl.png" pic="bnl" />
+                                    <span class="v"></span>
+                                </div>
+                            </td>
+							<td>
+                                <div class="img">
+                                    <img src="images/vote/jlwb.png" pic="jlwb" />
+                                    <span class="v"></span>
+                                </div>
+                            </td>
+							<td>
+                                <div class="img">
+                                    <img src="images/vote/nn.png" pic="nn" />
+                                    <span class="v"></span>
+                                </div>
+                            </td>
+							<td>
+                                <div class="img">
+                                    <img src="images/vote/bccm.png" pic="bccm" />
+                                    <span class="v"></span>
+                                </div>
+                            </td>
+						</tr>
+						<tr>
+							  <td>强势围观</td>
+							  <td>我很赞同</td>
+							  <td>别闹了</td>
+							  <td>囧雷无比</td>
+							  <td>纳尼？</td>
+							  <td>保持沉默</td>
+							</tr>
+						<tr>
+							  <td colspan="6" id="dm_vote_tip">您已经投票成功了，请继续投票</td>
+						</tr>
+					</table>
+                    <!--/dm_vote-->
+                    <span class="look_reource">查看源码</span>
+                </div>
+                 <!--/demo_code-->
+                <!--demo_resource-->
+                <div class="demo_resource">
+                    <p>Html代码:</p>
+                    <pre class="DlHighlight"><code class="xml">&lt;table class="dm_vote"&gt;
+        &lt;tr&gt;
+            &lt;td&gt;0位点选&lt;div class="column"&gt;&lt;/div&gt;&lt;/td&gt;
+            &lt;td&gt;0位&lt;div class="column"&gt;&lt;/div&gt;&lt;/td&gt;
+            &lt;td&gt;0位&lt;div class="column"&gt;&lt;/div&gt;&lt;/td&gt;
+            &lt;td&gt;10位&lt;div class="column" style="height:100px;"&gt;&lt;/div&gt;&lt;/td&gt;
+            &lt;td&gt;110位&lt;div class="column" style="height:21px;"&gt;&lt;/div&gt;&lt;/td&gt;
+            &lt;td&gt;0位&lt;div class="column" style="height:40px"&gt;&lt;/div&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;0%&lt;/td&gt;
+            &lt;td&gt;0%&lt;/td&gt;
+            &lt;td&gt;0%&lt;/td&gt;
+            &lt;td&gt;100%&lt;/td&gt;
+            &lt;td&gt;21%&lt;/td&gt;
+            &lt;td&gt;40%&lt;/td&gt;
+        &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;
+                    &lt;div class="img"&gt;
+                        &lt;img src="images/vote/qswg.png" pic="qswg" /&gt;
+                        &lt;span class="v"&gt;&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/td&gt;
+                &lt;td&gt;
+                    &lt;div class="img"&gt;
+                        &lt;img src="images/vote/whzt.png" pic="whzt" /&gt;
+                        &lt;span class="v"&gt;&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/td&gt;
+                &lt;td&gt;
+                    &lt;div class="img"&gt;
+                        &lt;img src="images/vote/bnl.png" pic="bnl" /&gt;
+                        &lt;span class="v"&gt;&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/td&gt;
+                &lt;td&gt;
+                    &lt;div class="img"&gt;
+                        &lt;img src="images/vote/jlwb.png" pic="jlwb" /&gt;
+                        &lt;span class="v"&gt;&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/td&gt;
+                &lt;td&gt;
+                    &lt;div class="img"&gt;
+                        &lt;img src="images/vote/nn.png" pic="nn" /&gt;
+                        &lt;span class="v"&gt;&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/td&gt;
+                &lt;td&gt;
+                    &lt;div class="img"&gt;
+                        &lt;img src="images/vote/bccm.png" pic="bccm" /&gt;
+                        &lt;span class="v"&gt;&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;强势围观&lt;/td&gt;
+                &lt;td&gt;我很赞同&lt;/td&gt;
+                &lt;td&gt;别闹了&lt;/td&gt;
+                &lt;td&gt;囧雷无比&lt;/td&gt;
+                &lt;td&gt;纳尼？&lt;/td&gt;
+                &lt;td&gt;保持沉默&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td colspan="6" id="dm_vote_tip"&gt;您已经投票成功了，请继续投票&lt;/td&gt;
+            &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+    				<p>Css代码:</p>
+                    <pre class="DlHighlight"><code class="css">.dm_vote{ width:90%; text-align:center; margin:0 auto; color:#999;}
+.dm_vote tr{ vertical-align:bottom;}
+.dm_vote .column{ width:20px; height:20px; border:1px solid #e9aa00; 
+            background:-moz-linear-gradient(left,#ffe672,#fdbd58)!important;
+             background:-webkit-linear-gradient(left,#ffe672,#fdbd58)!important; background:#ffe672; margin:0 auto;}
+.dm_vote .img{ display:block; position:relative; text-align:center; cursor:pointer;}
+.dm_vote .v{ position:absolute; left:0; _left:-10px; top:-10px; display:none; background:url(../images/v.gif) no-repeat;width:100px;height:100px;}
+#dm_vote_tip{ visibility:hidden;text-align:left; padding:10px 0 0 10px; color:#f90}</code></pre>
                 </div>
                 <!--/demo_resource-->
             </div>

@@ -130,3 +130,11 @@ a:hover{text-decoration:underline;}
 .dm_tform .select_type li{ cursor:pointer; height:22px;line-height:22px; margin-bottom:5px;color:#004b69;}
 .dm_tform .select_type .current{ background:#00c3ed;color:#fff;}
 .dm_tform .btn_search{ float:left;width:71px;height:30px;}
+
+/*dm_vote*/
+.dm_vote{ width:90%; text-align:center; margin:0 auto; color:#999;}
+.dm_vote tr{ vertical-align:bottom;}
+.dm_vote .column{ width:20px; height:20px; border:1px solid #e9aa00; background:-moz-linear-gradient(left,#ffe672,#fdbd58)!important; background:-webkit-linear-gradient(left,#ffe672,#fdbd58)!important; background:#ffe672; margin:0 auto;}
+.dm_vote .img{ display:block; position:relative; text-align:center; cursor:pointer;}
+.dm_vote .v{ position:absolute; left:0; _left:-10px; top:-10px; display:none; background:url(../images/v.gif) no-repeat;width:100px;height:100px;}
+#dm_vote_tip{ visibility:hidden;text-align:left; padding:10px 0 0 10px; color:#f90}
