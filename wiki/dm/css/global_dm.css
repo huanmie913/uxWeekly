@@ -171,4 +171,20 @@ a:hover{text-decoration:underline;}
 .dm_support{ background:url(../images/dm_support.png) no-repeat; height:57px; overflow:hidden;margin-top:5px;}
 .dm_support .num{ float:left; font:900 26px/26px "arial";color:#eab015; padding:18px 0 0 7px; width:33px; height:26px; overflow:hidden; text-align:center;}
 .dm_support .rq{ float:left; padding:33px 0 0 10px;color:#ffcc52;}
-.dm_support a{ float:right; display:inline; width:45px; height:39px; margin:10px 10px 0 0;}
+.dm_support a{ float:right; display:inline; width:45px; height:39px; margin:10px 10px 0 0;text-indent:-1024em;overflow:hidden;}
+
+/*dm_bx*/
+.dm_bx{}
+.dm_bx .hd,.dm_bx .bd{ background-image:url(../images/dm_bx.png); background-repeat:no-repeat;}
+.dm_bx .hd{ background-position:0 0;height:40px; position: relative; padding:6px 5px 0 40px;}
+.dm_bx .hd .title{ width:106px;height:32px;display:block;text-indent:-1024px;overflow:hidden;}
+.dm_bx .hd .more{ position: absolute;right:12px;top:15px;}
+.dm_bx .bd{ background-position:-305px 0;background-repeat:repeat-y;}
+.dm_bx .fd{ background:url(../images/dm_bx_fd.png) no-repeat 0 bottom;}
+
+/*dm_remcommend*/
+.dm_recommend,.dm_htag{ background-image:url(../images/dm_tagrecommend.png);background-repeat:no-repeat;height:90px; overflow:hidden; }
+.dm_recommend{width:685px;background-position:0 0;}
+.dm_recommend .title{ float: left;height: 90px;text-indent: -1024em;width: 40px;}
+.dm_recommend .bd{ float:left;width:645px;height:90px;}
+.dm_htag{ background-position:-685px 0; padding:0 0 0 40px; width:255px;}

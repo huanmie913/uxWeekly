@@ -17,7 +17,7 @@
 <!--demo_wrapper-->
 <div class="demo_wrapper" id="dm">
 	<!--demo_box-->
-		<div class="demo_box">
+		<div class="demo_box" id="mk_1">
 			<h2 class="demo_title">基本外框</h2>
 			<div class="demo_content mt15">
 				<!--demo_code-->
@@ -94,13 +94,13 @@
     </div>
     <!--/demo_box-->
 	<!--demo_box-->
-        <div class="demo_box">
+        <div class="demo_box" id="mk_2">
             <h2 class="demo_title">顶</h2>
             <div class="demo_content mt15">
                 <!--demo_code-->
                 <div class="demo_code">
                 <!--dm_support-->
-                <div class="dm_support">
+                <div class="dm_support w207">
                     <span class="num">13</span>
                     <span class="rq">人气：1222222</span>
                     <a href="#" title="我要支持魁拔">我要支持魁拔</a>
@@ -113,15 +113,116 @@
             <div class="demo_resource">
                 <p>Html代码:</p>
                 <pre class="DlHighlight"><code class="xml">&lt;div class="dm_support"&gt;
-                    &lt;span class="num"&gt;13&lt;/span&gt;
-                    &lt;span class="rq"&gt;人气：1222222&lt;/span&gt;
-                    &lt;a href="#" title="我要支持魁拔"&gt;我要支持魁拔&lt;/a&gt;
-                &lt;/div&gt;</code></pre>
+    &lt;span class="num"&gt;13&lt;/span&gt;
+    &lt;span class="rq"&gt;人气：1222222&lt;/span&gt;
+    &lt;a href="#" title="我要支持魁拔"&gt;我要支持魁拔&lt;/a&gt;
+&lt;/div&gt;</code></pre>
                 <p>Css代码:</p>
                 <pre class="DlHighlight"><code class="css">.dm_support{ background:url(../images/dm_support.png) no-repeat; height:57px; overflow:hidden;margin-top:5px;}
 .dm_support .num{ float:left; font:900 26px/26px "arial";color:#eab015; padding:18px 0 0 7px; width:33px; height:26px; overflow:hidden; text-align:center;}
 .dm_support .rq{ float:left; padding:33px 0 0 10px;color:#ffcc52;}
-.dm_support a{ float:right; display:inline; width:45px; height:39px; margin:10px 10px 0 0;}</code></pre>
+.dm_support a{ float:right; display:inline; width:45px; height:39px; margin:10px 10px 0 0;text-indent:-1024em;overflow:hidden;}</code></pre>
+            </div>
+            <!--/demo_resource-->
+        </div>
+    </div>
+    <!--/demo_box-->
+    <!--demo_box-->
+        <div class="demo_box" id="mk_3">
+            <h2 class="demo_title">背景固定底部模块</h2>
+            <div class="demo_content mt15">
+                <!--demo_code-->
+                <div class="demo_code">
+                <!--dm_bx-->
+                <div class="dm_bx w305">
+                    <div class="hd">
+                        <h2><a href="#" class="title">火影忍者专栏</a></h2>
+                        <a href="#" class="more">更多</a>
+                    </div>
+                    <div class="bd">
+                        <div class="fd" style="height:120px;">
+                            内容
+                        </div>
+                    </div>
+                </div>
+                <!--/dm_bx-->
+                <span class="look_reource">查看源码</span>
+            </div>
+             <!--/demo_code-->
+            <!--demo_resource-->
+            <div class="demo_resource">
+                <p>Html代码:</p>
+                <pre class="DlHighlight"><code class="xml">&lt;div class="dm_bx"&gt;
+    &lt;div class="hd"&gt;
+        &lt;h2&gt;&lt;a href="#" class="title"&gt;火影忍者专栏&lt;/a&gt;&lt;/h2&gt;
+        &lt;a href="#" class="more"&gt;更多&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="bd"&gt;
+        &lt;div class="fd" style="height:120px;"&gt;
+            内容
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                <p>Css代码:</p>
+                <pre class="DlHighlight"><code class="css">.dm_bx{}
+.dm_bx .hd,.dm_bx .bd{ background-image:url(../images/dm_bx.png); background-repeat:no-repeat;}
+.dm_bx .hd{ background-position:0 0;height:40px; position: relative; padding:6px 5px 0 40px;}
+.dm_bx .hd .title{ width:106px;height:32px;display:block;text-indent:-1024px;overflow:hidden;}
+.dm_bx .hd .more{ position: absolute;right:12px;top:15px;}
+.dm_bx .bd{ background-position:-305px 0;background-repeat:repeat-y;}
+.dm_bx .fd{ background:url(../images/dm_bx_fd.png) no-repeat 0 bottom;}</code></pre>
+            </div>
+            <!--/demo_resource-->
+        </div>
+    </div>
+    <!--/demo_box-->
+    <!--demo_box-->
+        <div class="demo_box" id="mk_4">
+            <h2 class="demo_title">推荐+热门模块</h2>
+            <div class="demo_content mt15">
+                <!--demo_code-->
+                <div class="demo_code">
+                <!--dm_recommend-->
+                <div class="dm_recommend">
+                    <a href="#" class="title">推荐游戏</a>
+                    <div class="bd">
+                        内容
+                    </div>
+                </div>
+                <!--/dm_recommend-->
+                <!--dm_htag-->
+                <div class="dm_htag">
+                    <div class="bd">
+                        内容
+                    </div>
+                </div>
+                <!--/dm_htag-->
+                <span class="look_reource">查看源码</span>
+            </div>
+             <!--/demo_code-->
+            <!--demo_resource-->
+            <div class="demo_resource">
+                <p>Html代码:</p>
+                <pre class="DlHighlight"><code class="xml">/*dm_recommend*/
+&lt;div class="dm_recommend"&gt;
+    &lt;a href="#" class="title"&gt;推荐游戏&lt;/a&gt;
+    &lt;div class="bd"&gt;
+        内容
+    &lt;/div&gt;
+&lt;/div&gt;
+
+/*dm_htag*/
+&lt;div class="dm_htag"&gt;
+    &lt;div class="bd"&gt;
+        内容
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                <p>Css代码:</p>
+                <pre class="DlHighlight"><code class="css">.dm_recommend,.dm_htag{ background-image:url(../images/dm_tagrecommend.png);background-repeat:no-repeat;height:90px; overflow:hidden; }
+.dm_recommend{width:685px;background-position:0 0;}
+.dm_recommend .title{ float: left;height: 90px;text-indent: -1024em;width: 40px;}
+.dm_recommend .bd{ float:left;width:645px;height:90px;}
+.dm_htag{ background-position:-685px 0; padding:0 0 0 40px; width:255px;}</code></pre>
             </div>
             <!--/demo_resource-->
         </div>
@@ -134,7 +235,7 @@
 <script type="text/javascript " src="js/demo_dm.js"></script>
 <script src="../static/js/highlight/highlight.pack.js"></script>
 <script type="text/javascript">
-mod_f2er.topBar('动漫基础库--文字列表列表','toolbar');
+mod_f2er.topBar('动漫基础库--模块','toolbar');
 mod_f2er.bottomBar('bottomBar');
 dm_f2er.triggerResource();
 hljs.tabReplace = ' ';
