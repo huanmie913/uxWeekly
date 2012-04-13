@@ -27,26 +27,38 @@ a:hover{text-decoration:underline;}
 
 .page_wrapper{ width:980px; margin:0 auto;}
 /*my头部*/
-.mod_header{}
-.mod_header a{ color:#00579F}
-.mod_header a:hover{ color:#1068C5}
-.mod_top,.mod_header_l,.mod_header_r{ background:url(../images/mod_public.png) no-repeat; height:50px;}
-.mod_top{ background-repeat:repeat-x; background-position:0 -50px; margin:0 5px;}
-.mod_header_l,.mod_header_r{ display:inline; margin-top:-50px;}
-.mod_header_l{ background-position:left 0; float:left; width:10px;}
-.mod_header_r{ background-position:right -100px; float:right; width:5px;}
-.mod_logo,.mod_nav{ float:left; display:inline;}
-.mod_logo{ margin:8px 5px 0 10px;}
-.mod_nav{ margin:20px 0 0 0;}
-.mod_nav li{ float:left; font-weight:700; font-size:14px; margin:0 7px; display:inline}
-.mod_uinfo{ float:right; padding:7px 0 0 36px; line-height:20px; }
-.mod_avatar{ float:left; margin:5px 0 0 -36px; display:inline; background:url(../images/avtbg.gif) no-repeat; width:22px; height:22px; padding:2px}
-.mod_ulinks a{ margin-right:10px; zoom:1; display:inline-block; zoom:1;*display:inline;}
-.mod_nav li.mod_notify{ background:url(../images/notify_bg.gif) no-repeat; width:75px; height:20px; line-height:20px; font-size:12px; font-weight:400; padding-left:15px; margin-top:3px;}
-.mod_nav li.mod_notify a{ color:#fff;}
-.mod_nav li.mod_notify a:hover{ color:#fff}
-.mod_panel{ float:right; padding:7px 20px 0 0; line-height:43px}
-.mod_panel a{ margin-left:10px; zoom:1}
+/*mod_topbar*/
+.mod_topbar,.mod_topbox{ background:url(../images/mod_public.png?v=5084) repeat-x 0 -66px;height:51px;}
+.mod_topbox{height:42px; padding-top:9px; width:980px; margin:0 auto; text-align:left}
+
+/*mod_logo*/
+.mod_logo img{ width:180px; height:35px;}
+
+/*mod_nav*/
+.mod_nav{ margin-left:30px; display:inline}
+.mod_nav li{ float:left; display:inline; margin-right:5px;}
+.mod_nav a{ float:left; height:33px; line-height:33px; padding-left:10px; color:#fff; font-weight:700; font-size:14px;}
+.mod_nav span{ display:block; padding-right:10px;}
+
+.mod_nav a:hover,.mod_nav a:hover span,.mod_nav .current a,.mod_nav .current a span{ background-image:url(../images/mod_public.png?v=5084); background-repeat:no-repeat}
+.mod_nav a:hover{ background-position:0 0; color:#1c8ed3; text-decoration:none;}
+.mod_nav a:hover span{background-position:right 0;}
+.mod_nav .current a,.mod_nav .current a:hover{ background-position:0 -33px;}
+.mod_nav .current a:hover{ color:#fff;}
+.mod_nav .current a span,.mod_nav .current a:hover span{ background-position:right -33px;}
+
+/*未登录*/
+.mod_panel{ float:right; padding:7px 20px 0 0;}
+.mod_panel a{ margin-left:10px; zoom:1; color:#fff;}
+.mod_panel a:hover{ color:#fff000}
+/*登录*/
+.mod_ulinks{ position:relative; zoom:1}
+.mod_uinfo{ float:right; padding-left:43px;line-height:18px; width:180px; }
+.mod_ulinks a{ float:left; margin-right:10px; display:inline;color:#fff;}
+.mod_ulinks a:hover{ color:#fff000}
+.mod_name{ color:#fff000; font-weight:700}
+.mod_avatar{ float:left; margin:2px 0 0 -43px; display:inline; background:url(../images/mod_public.png?v=5084) no-repeat 0 -117px; width:24px; height:25px; padding:4px;}
+.mod_mnew{ background:url(../images/new2.gif?v=5084) no-repeat; width:15px; height:13px; display:block; position:absolute; left:122px; top:-8px}
 
 /*选服框*/
 .wg_server{width:623px; height:375px; position:absolute; left:50%; margin-left: -311px; top:190px;}
