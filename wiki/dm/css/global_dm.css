@@ -158,3 +158,11 @@ a:hover{text-decoration:underline;}
 .dm_fd{ background-position:0 -195px;padding:0 20px; height:21px;}
 .dm_fd .bl{ background-position:0 -216px;background-repeat:repeat-x;display:block;height:21px;}
 .dm_fd .br{ background-position:right -237px;display:block;margin:-21px -20px 0 0;height:21px;}
+
+/*dm_bshare*/
+.dm_bshare{ width:163px; height:57px; overflow:hidden; zoom:1;}
+.dm_bshare .bshare_t{ float:left; display:block; width:100%; height:22px; overflow:hidden; line-height:25px;}
+.dm_pbshare{ float:left;}
+.dm_pbshare .bshare_t{ float:left; padding-top:5px;}
+ #bdshare{ float:left; padding-bottom:0; _margin-top:-2px;}
+ #bdshare a{ padding-bottom:0; margin-right:0;}
