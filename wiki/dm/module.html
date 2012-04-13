@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>动漫--模块外框</title>
+<title>动漫--模块</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link href="../static/css/demo.css" rel="stylesheet" type="text/css"/>
@@ -93,7 +93,67 @@
         </div>
     </div>
     <!--/demo_box-->
-	
+	<!--demo_box-->
+        <div class="demo_box">
+            <h2 class="demo_title">顶</h2>
+            <div class="demo_content mt15">
+                <!--demo_code-->
+                <div class="demo_code">
+                <!--dm_support-->
+                <div class="dm_support">
+                    <div class="num">13</div>
+                    <div class="rq">人气：1222222</div>
+                    <a href="#" title="我要支持魁拔">我要支持魁拔</a>
+                </div>
+                <!--/dm_box-->
+                <span class="look_reource">查看源码</span>
+            </div>
+             <!--/demo_code-->
+            <!--demo_resource-->
+            <div class="demo_resource">
+                <p>Html代码:</p>
+                <pre class="DlHighlight"><code class="xml">&lt;div class="dm_box"&gt;
+    &lt;div class="dm_hd"&gt;
+        &lt;div class="dm_t"&gt;
+            &lt;h2&gt;&lt;a href="#" class="title"&gt;狼堡杂谈&lt;/a&gt;&lt;/h2&gt;
+            &lt;a href="#" class="more"&gt;更多&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;span class="tl"&gt;&lt;/span&gt;
+        &lt;span class="tr"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="dm_bd"&gt;
+        &lt;div class="ld"&gt;
+            &lt;div class="rd" style="height:200px;"&gt;
+                                内容
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="dm_fd"&gt;
+        &lt;span class="bl"&gt;&lt;/span&gt;
+        &lt;span class="br"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                <p>Css代码:</p>
+                <pre class="DlHighlight"><code class="css">.dm_box{}
+.dm_hd,.dm_hd .tl,.dm_hd .tr,.dm_fd,.dm_fd .bl,.dm_fd .br{ background-image:url(../images/dm_box.png); background-repeat:no-repeat; height:65px;
+    overflow: hidden;}
+.dm_hd{ background-position:0 0;padding:0 20px 0 200px;}
+.dm_hd .tl{ background-position:0 -65px;background-repeat:repeat-x;display:block;margin-top:-75px;}
+.dm_hd .tr{ background-position:right -130px;display:block;margin:-65px -20px 0 0;}
+.dm_t{ height:65px;margin-bottom:-65px; margin:10px 0 0 -130px;position:relative;}
+.dm_t .title{display:block;width:100px;height:30px;text-indent:-999em;overflow:hidden;}
+.dm_t .more{ position: absolute;right:0px;top:9px;color:#ffae00;}
+.dm_bd{ background:#ffffff;}
+.dm_bd .ld{ background:url(../images/dm_ld.png) repeat-y left top;}
+.dm_bd .rd{ background:url(../images/dm_rd.png) repeat-y right top;}
+.dm_fd{ background-position:0 -195px;padding:0 20px; height:21px;}
+.dm_fd .bl{ background-position:0 -216px;background-repeat:repeat-x;display:block;height:21px;}
+.dm_fd .br{ background-position:right -237px;display:block;margin:-21px -20px 0 0;height:21px;}</code></pre>
+            </div>
+            <!--/demo_resource-->
+        </div>
+    </div>
+    <!--/demo_box-->
 </div>
 <!--/wrapper-->
 <footer class="bottomBar" id="bottomBar"></footer>
