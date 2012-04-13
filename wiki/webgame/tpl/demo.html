@@ -9,6 +9,42 @@
 <link href="css/mxw.css" rel="stylesheet" />
 </head>
 <body>
+<!--mod_topbar-->
+<div class="mod_topbar">
+    <div class="mod_topbox clearfix">
+        <a href="/" title="4399游戏吧" class="mod_logo left"><img src="http://s4.img4399.com/1/logo.gif?v=5084" alt="4399游戏吧" /></a>
+        <ul class="mod_nav left">
+            <li class="game_login_state" ><a target="_blank" name="17_2" href="/index.php?ct=space&ac=home"><span>首页</span></a></li>
+            <li class="game_login_state" ><a target="_blank" name="17_3" href="/home.php"><span>个人主页</span></a></li>
+            <li class="game_login_state" ><a target="_blank" name="17_4" href="/space-friend.html"><span>好友</span></a></li>
+            <li class="game_logout_state"  style='display:none;'><a target="_blank" href="/" name="17_5"><span>首页</span></a></li>
+            <li ><a target="_blank" name="17_6" href="/index.php?ct=myapp"><span>游戏中心</span></a></li>
+            <li ><a target="_blank" name="17_7" href="/network.html"><span>随便看看</span></a></li>
+            <li><a target="_blank" name="17_8" href="http://pay.my.4399.com/?ct=paygame"><span>充值中心</span></a></li>
+        </ul>
+        
+        <!--mod_uinfo(登录状态)-->
+        <div class="mod_uinfo game_login_state" >
+            <a target="_blank" title="头像" name="18_1" href="/space.php?uid=121465122" class="mod_avatar" class="login_bar_space"><img src="http://a.img4399.com/121465122/small" width="24" height="24" alt="" class="login_bar_avatar" /></a>
+            <a target="_blank" name="18_2" href="/space.php?uid=121465122" class="mod_name login_bar_space login_bar_username">uepanda</a>
+            <!--mod_ulinks-->
+            <div class="mod_ulinks" id="mod_ulinks">
+                            <a target="_blank" name="18_3" href="/cp.php?ac=invite">邀请</a>
+                            <a target="_blank" name="18_5" href="/cp.php">设置</a>
+                            <a target="_blank" name="18_6" href="/help1.php">帮助</a>
+                            <a target="_blank" name="17_8" href="/space-pm.html">消息</a>
+                            <a name="18_7" onclick="game_do_logout();return false;" href="#">退出</a>
+                            <span class="mod_mnew" id="mod_mnew" style="display:none"></span>
+                        </div>
+            <!--/mod_ulinks-->
+        </div>
+        <!--/mod_uinfo-->
+        <!--mod_panel-->
+         <div class="mod_panel game_logout_state"  style='display:none;'><a href="javascript:yxDoShowPopupLogin();" name="18_8" title="登录">登录</a><a href="javascript:yxDoShowPopupReg();" name="18_9" title="注册">注册</a><a target="_blank" href="/help1.php" name="18_10" title="帮助">帮助</a></div>
+        <!--mod_panel-->
+    </div>
+</div>
+<!--/mod_topbar-->
 <!--full_bg-->
 <div class="full_bg">
 	<!--wrapper-->
@@ -401,6 +437,21 @@
 	<!--/wrapper-->
 </div>
 <!--/full_bg-->
+<!--footer-->
+<div class="footer clearfix">
+    <div class="page_wrapper">
+        <div class="left mod_server">
+            <p>4399游戏吧&nbsp;&nbsp;最大的中文休闲游戏社区</p>
+            <p class="mod_phone"><span>服务热线：400-633-4399</span></p>
+        </div>
+        <div class="right mod_desc">
+            <p><a href="http://t.sina.com.cn/my4399" target="_blank" rel="nofollow" name="13_6" >4399官方微博</a>|<a href="http://t.sina.com.cn/caiwensheng" target="_blank" rel="nofollow" name="13_7">蔡文胜微博</a>|<a href="/sitemap/" target="_blank">网站地图</a>|<a href="/help1.php" target="_blank">客服中心</a>|<a href="/joinus/zhaopin.html" target="_blank" name="13_3" class="a_zp">诚聘英才</a>|<a href="/joinus/" target="_blank" name="13_4">关于我们</a></p>
+            <p><span><a rel="nofollow" href="http://imga.4399.com/upload_pic/2011/icp.jpg?v=5084" target="_blank" name="13_2">ICP证：闽B2-20040099</a></span><span><a rel="nofollow" href="http://net.china.cn/chinese/index.htm" target="_blank" name="13_4" title="不良信息举报中心">不良信息举报中心</a></span><span><a href="http://imga.4399.com/upload_pic/2011/wenwangwen.jpg" target="_blank" name="13_5" title="文网文[2009]245号">文网文[2009]245号</a></span><span><a href="http://imga.4399.com/upload_pic/2011/chuban.jpg" target="_blank" rel="nofollow" name="13_8">新出网证（闽）字06号</a></span></p>
+            <p>Copyright&copy;2004 - 2011 4399.com All Rights Reserved. 厦门游家网络有限公司 版权所有</p>
+        </div>
+    </div>
+</div>
+<!--/footer-->
 <script src="../js/jquery-1.4.min.js" type="text/javascript"></script>
 <script src="../js/global_game.js" type="text/javascript"></script>
 </body>
