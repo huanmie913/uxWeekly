@@ -118,11 +118,9 @@ function:   RescrollGapLevelSlide
 		var stepWidth=step*splitWidth;
 		var stepWidthBtn=btnStep*splitWidth;
 		var d2Width=splitWidth*Math.ceil(d3Size/row);
-		//console.log(d2.width())
 		
 		//fall short of nmuber,return false
 		if(d2Width<d1Width){
-			//alert('x')
 			btnLeft.addClass(btnDisableCss);
 			btnRight.addClass(btnDisableCss);
 			return false;
@@ -572,12 +570,13 @@ function TabSlide(ctg){
 				that.doTarget();
 			}
 		}
-TabSlide({ id:"js_tabSlide",eventType:"mouseover",currentClass:"on",nornalClass :"role_box",n:0,opacityStart:40,opacityEnd:100,step : 5 });
+
+
 /**
   * to:Tab_two
 **/
 
- function tab_two(i){
+ function tabTrigger(i){
 	if(i){
 		$("#photo_more").attr("href","http://my.4399.com/album/square/700/");
 	}else{
@@ -600,17 +599,23 @@ TabSlide({ id:"js_tabSlide",eventType:"mouseover",currentClass:"on",nornalClass 
     });	
 }
 
+/*列表hover*/
+var hoverItem=(function(){function a(k,h,c){var g=k?document.getElementById(k):document.getElementsByTagName("body")[0];var f=h?g.getElementsByTagName(h):g.getElementsByTagName("*");var e=[];for(var d=0;d<f.length;d++){var j=f[d];if(j.className==c){e.push(j)}}return e}function b(h,f,d,g){var e=a(h,f,d);for(var c=0;c<e.length;c++){e[c].onmouseover=function(j){return function(){e[j].className+=" "+g}}(c);e[c].onmouseout=function(j){return function(){e[j].className=d}}(c)}}return{init:b}})();
 
- TabLoad({
+
+ /*页面初始化*/
+TabSlide({ id:"js_tabSlide",eventType:"mouseover",currentClass:"on",nornalClass :"role_box",n:0,opacityStart:40,opacityEnd:100,step : 5 });
+TabLoad({
     	_tabHandle : $("#tab_ul_sp li"),
     	_curClass : "current",
 		_bdHandle : $('#tab_bd_sp'),
-		_conHandle : ".m_tcon",
+		_conHandle : ".wg_imgscroll",
 		_flag : "tflag",
 		_eventType : "click",
 		_num :0,
 		_tabCon : "tabsp_",
 		_callback: function(i){
-			tab_two(i);
+			tabTrigger(i);
 		}
-    })
+    });
+hoverItem.init("","tr","","hover");
