@@ -56,4 +56,22 @@ a:hover{text-decoration:underline;}
 /*wg_kf*/
 .wg_kf p{ color:#5c5c5c; height:26px; padding:3px 0;}
 
+/*wg_textlist*/
+.wg_textlist{ line-height: 2;}
+.wg_textlist li{ height:24px;white-space: nowrap;overflow: hidden; border-bottom:1px dotted #003D5E;}
+.wg_textlist a{ color:#AA9155;display:block; width:280px;}
+.wg_textlist span{ float: right; color:#666;}
+.wg_textlist img{ margin-left:5px;}
+
+/*wg_table*/
+.wg_table th,.wg_table td{ padding:3px 5px; color:#5c5c5c; text-align:left;}
+.wg_table td a{color:#5c5c5c}
+.wg_table td a:hover{ color:#e9380f}
+.wg_table li{ padding:3px 5px; color:#5c5c5c; zoom:1; overflow:hidden; border-bottom:dashed 1px #e8c87b;}
+.wg_table li span{ float:right; width:60px; height:19px; overflow:hidden; text-align:right;}
+.wg_table li a{color:#5c5c5c; width:345px; height:19px; overflow:hidden; display:block;}
+.wg_table .title{ width:270px; overflow:hidden; height:23px; line-height:23px;}
+.wg_table li a:hover{ color:#e9380f}
+.wg_table tr.hover td{ background:#fefbeb;}
+
 
