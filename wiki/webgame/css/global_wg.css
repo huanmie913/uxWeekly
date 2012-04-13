@@ -168,4 +168,11 @@ a.jScrollArrowDown:hover { background-position: -305px -12px;}
 .mod_phone{ color:#888}
 .mod_phone span{ margin-right:10px;}
 
+/*mod_desc*/
+.mod_desc{ text-align:right; line-height:22px; color:#888}
+.mod_desc a{ color:#1c8ed3; margin:0 5px;}
+.mod_desc a.a_zp{ color:#ff0000}
+.mod_desc a:hover{ color:#ff6600}
+.mod_desc span{ margin-left:10px;}
+
 
