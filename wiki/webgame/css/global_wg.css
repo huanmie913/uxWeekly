@@ -30,7 +30,7 @@ a:hover{text-decoration:underline;}
 .mod_header{}
 .mod_header a{ color:#00579F}
 .mod_header a:hover{ color:#1068C5}
-.mod_top,.mod_header_l,.mod_header_r{ background:url(../images/pub_head.png) no-repeat; height:50px;}
+.mod_top,.mod_header_l,.mod_header_r{ background:url(../images/mod_public.png) no-repeat; height:50px;}
 .mod_top{ background-repeat:repeat-x; background-position:0 -50px; margin:0 5px;}
 .mod_header_l,.mod_header_r{ display:inline; margin-top:-50px;}
 .mod_header_l{ background-position:left 0; float:left; width:10px;}
