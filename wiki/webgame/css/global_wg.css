@@ -150,4 +150,10 @@ a.jScrollArrowDown:hover { background-position: -305px -12px;}
 .wg_table li a:hover{ color:#e9380f}
 .wg_table tr.hover td{ background:#fefbeb;}
 
+/*footer*/
+.footer{ padding:10px 0; zoom:1}
+.mod_server{ color:#555; line-height:2}
+.mod_phone{ color:#888}
+.mod_phone span{ margin-right:10px;}
+
 
