@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* CSS Document */
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{ padding: 0; margin: 0; }
+table { border-collapse: collapse; border-spacing: 0; }
+del, ins { text-decoration: none }
+fieldset, img { border: 0; }
+body,button,input,select,textarea{font:12px/1.5 tahoma,arial,宋体,sans-serif}
+input,select,img{ vertical-align:middle}
+input,select{ outline:none}
+ul,ol{ list-style:none }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+address,cite,dfn,em,var{font-style:normal;}
+input::-moz-focus-inner,button::-moz-focus-inner{ border:0;padding:0}
+
+/* global */
+body{ background:#fff; }
+.wrapper{ margin:0 auto;text-align:left;width:1000px; }
+td{ font-size:12px; line-height:160%;}
+.left{ float:left }
+.right{ float:right }
+a{text-decoration:none;}
+a:hover{text-decoration:underline;}
+.txthide{ text-indent:-999em;overflow:hidden; line-height:0; font-size:0}
+.clearfix:after{ content:""; height:0; visibility:hidden; display:block; clear:both;}
+.clearfix{ zoom:1;}
+.clear{ clear:both }
+
+/*wg_box*/
+.wg_box .hd,.wg_box .lt,.wg_box .rt,.wg_box .fd,.wg_box .rb,.wg_box .lb{height:35px; background-image:url(../images/mod_box.png); background-repeat:no-repeat;}
+.wg_box .hd{ background-position:0 0; padding:0 42px;}
+.wg_box .lt{ background-position:0 -35px; background-repeat:repeat-x;display:block;}
+.wg_box .rt{ background-position:right -70px;display:block;margin:-35px -42px 0 0}
+.wg_box .hd_t{ margin-bottom:-35px; height:35px; line-height:35px;}
+.wg_box .fd{ background-position:0 -105px; padding:0 42px;height:30px;}
+.wg_box .lb{ background-position:0 -135px; background-repeat:repeat-x;display:block;height:30px;}
+.wg_box .rb{ background-position:right -165px;display:block;margin:-30px -42px 0 0;height:30px;}
+
+.wg_box .bd{ background:#f8fefe;}
+.wg_box .bd_l{ background:url(../images/mod_box_l.png) repeat-y 0 0;}
+.wg_box .bd_r{ background:url(../images/mod_box_r.png) repeat-y right 0;}
+
