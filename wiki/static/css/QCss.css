@@ -12,13 +12,21 @@ body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legen
 table { border-collapse: collapse; border-spacing: 0; }
 del, ins { text-decoration: none }
 fieldset, img { border: 0; }
-body,button,input,select,textarea{ font:12px/1.5 "microsoft YaHei"}
+body{ font:12px/1.5 "microsoft YaHei"}
+button,input,select,textarea{ font-family:sans-serif;}
 input,select,img{ vertical-align:middle}
 input,select{ outline:none}
 ul,ol{ list-style:none }
 label{ cursor:pointer}
 h1, h2, h3, h4, h5, h6 { font-size: 100%; }
 address,cite,dfn,em,var{font-style:normal;}
+
+
+/*Correct block display not defined in IE6/7/8/9 & ff3*/
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary { display: block;}
+
+/*Correct text resizing oddly in IE6/7 when body font-size is set using em units*/
+html{ font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
 
 /* global */
 body{ background:#fff; }
