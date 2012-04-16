@@ -59,7 +59,7 @@ a:hover{text-decoration:underline;color:#468315;}
 
 .evenbg{ background:#f3f9ed;}
 .mt5{ margin-top:5px;}
-.a_title{ color:#448230;}
+.a_title{ color:#448230;font-size:14px;}
 
 /*header*/
 .header{ background:url(../images/header.png) no-repeat 178px bottom; height:71px;}
@@ -168,8 +168,8 @@ a:hover{text-decoration:underline;color:#468315;}
 /*column*/
 .column{ float:left;width:100%;}
 .section{ margin:0 186px 0 176px;}
-.aside{float:left;width:166px; margin-left:-100%;display: inline; background:#f00;}
-.rside{ float:left;width:176px; margin-left:-176px;display:inline; background:#000;}
+.aside{float:left;width:166px; margin-left:-100%;display: inline; }
+.rside{ float:left;width:176px; margin-left:-176px;display:inline;}
 
 /*as_box*/
 .as_box .hd{ background-position:-30px -98px;height:41px;text-align:center; line-height:28px;}
@@ -236,14 +236,14 @@ a:hover{text-decoration:underline;color:#468315;}
 .m_online .m_imgtext .img{ margin:-24px 0 0 -85px;}
 
 /*右上角更多*/
-.mini_list .rt,.m_newgame .rt,.m_ogame .rt,.m_girl .rt,.column_box .rt{position:absolute;right:0;top:0;}
+.mini_list .rt,.m_newgame .rt,.m_ogame .rt,.m_girl .rt,.column_box .rt{position:absolute;right:0;top:0;overflow:hidden;}
 .mini_list .bd,.m_newgame .bd,.m_ogame .bd,.m_girl .bd{ padding:10px;zoom:1;border-color:#BDE17C;}
 .m_newgame .hd,.m_newgame .tpl,.m_newgame .tpr,.m_ogame .hd,.m_ogame .tpl,.m_ogame .tpr,.m_girl .hd,.m_girl .tpl,.m_girl .tpr,.column_box .hd,.column_box .tpl,.column_box .tpr{ height:33px;line-height:33px;}
 .mini_list .hd,.m_newgame .hd,.m_ogame .hd,.m_girl .hd,.column_box .hd{background-repeat:repeat-x;padding:0 10px 0 30px;}
 .mini_list .tpl,.m_newgame .tpl,.m_ogame .tpl,.m_girl .tpl,.column_box .tpl{float:left;width:30px;display:inline;}
 .mini_list .tpr,.m_newgame .tpr,.m_ogame .tpr,.m_girl .tpr,.column_box .tpr{float:right;width:15px;display:inline;}
 .m_newgame .tp,.m_ogame .tp,.m_girl .tp{ line-height:33px;position:relative;margin-left:-90px;height:33px;overflow:hidden;}
-.m_newgame .tp .a_title,.m_ogame .tp .a_title,.m_girl .tp .a_title{ width:98px;display: block;font-size:0;}
+.m_newgame .tp .a_title,.m_ogame .tp .a_title,.m_girl .tp .a_title{ width:98px;display: block;text-indent:-1024em;}
 
 .m_newgame .fd,.m_newgame .flb,.m_newgame .frb,.m_ogame .fd,.m_ogame .flb,.m_ogame .frb,.m_girl .fd,.m_girl .flb,.m_girl .frb{height:7px;overflow:hidden;}
 .m_newgame .fd,.m_girl .fd{ background-repeat:repeat-x; padding:0 15px;}
@@ -312,8 +312,8 @@ a:hover{text-decoration:underline;color:#468315;}
 .column_box .hd{ background-position:0 -534px;padding:0 10px 0 80px;}
 .column_box .tpl{ background-position:0 -501px;margin:-33px 0 0 -80px;}
 .column_box .tpr{ background-position:right -567px;margin:-33px -10px 0 0;}
-.column_box .tp{ line-height:33px;position:relative; margin-left:-55px;}
-.column_box .rt a{ background-position:-174px -27px;display:inline-block;*zoom:1;*display:inline;width:52px;height:24px;margin-top:5px;font-size:0;}
+.column_box .tp{ line-height:33px;zoom:1;position:relative; margin-left:-55px;}
+.column_box .rt a{ background-position:-174px -27px;display:block;width:52px;height:24px;margin-top:5px;font-size:0;text-indent:-1024em;overflow:hidden;}
 .col_game{ margin-right:-10px;overflow:hidden;}
 .column_box .bd,.tab_box .bd{ padding:10px 0;zoom:1;border-color:#acdb6d;}
 
