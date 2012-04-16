@@ -113,7 +113,7 @@ function ImgScroll(){
     	rightBtn    : "js_btn_wgright",
     	marginOffset : 14,
     	step        : 1, //每次滚动step个
-    	circle      : false //true:有缝  false:无缝
+    	circle      : true //true:有缝  false:无缝
 
     };
     this._var = {
@@ -161,7 +161,7 @@ ImgScroll.prototype = {
 	Move : function(iT,callback){
 		var self = this;
 		clearInterval(self.timer)
-		this.timer = setInterval(function (){
+		self.timer = setInterval(function (){
 			var iS = (iT - self._var._subId.offsetLeft) / 5;
 			iS = iS > 0 ? Math.ceil(iS) : Math.floor(iS);
 			self._var._subId.offsetLeft == iT ? (clearInterval(self.timer), callback && callback.apply(self)) : self._var._subId.style.left = iS + self._var._subId.offsetLeft + "px"
@@ -169,7 +169,6 @@ ImgScroll.prototype = {
 	},
 	init : function(){
 		var self = this,_node = YJ.clearBlank( self.opts.subcontainer );
-
 		self._var._subId = YJ.getid( self.opts.subcontainer),
 		self._var._firstChild = self._var._subId.children[0],
 		self._var._conId = YJ.getid( self.opts.container );
