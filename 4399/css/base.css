@@ -248,7 +248,7 @@ a:hover{text-decoration:underline;color:#468315;}
 .m_newgame .fd,.m_newgame .flb,.m_newgame .frb,.m_ogame .fd,.m_ogame .flb,.m_ogame .frb,.m_girl .fd,.m_girl .flb,.m_girl .frb{height:7px;overflow:hidden;}
 .m_newgame .fd,.m_girl .fd{ background-repeat:repeat-x; padding:0 15px;}
 /*mini_list*/
-.mini_list{ border-color:#acdb6d;}
+.mini_list{ }
 .mini_list .hd,.mini_list .tpl,.mini_list .tpr{height:34px;height:34px;}
 .mini_list .hd{ background-position:0 -136px;}
 .mini_list .tpl{ background-position:left -102px;margin:-34px 0 0 -30px;}
