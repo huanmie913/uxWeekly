@@ -66,9 +66,9 @@ a:hover{text-decoration:underline;color:#468315;}
 .logo{ float:left;width:177px;height:70px;/*margin:9px 0 0 18px;*/display:inline;}
 .wg_list{ float:left; margin:6px 0 0 30px;display:inline;}
 .a_webgame{ float:left; background-position:0 0;width:31px;height:55px;}
-.webgame_list{ float:left; position:relative;margin:1px 0 0 6px;display:inline;padding:0 20px;}
-.wb_list{ width:443px;overflow:hidden;}
-.webgame_list ul{ /*position:absolute;left:0;top:0; width:430px;*/height:54px;}
+.webgame_list{ float:left;margin:1px 0 0 6px;display:inline;padding:0 20px; width:442px;position:relative;}
+.wb_list{ width:442px;overflow:hidden;position:relative;height:54px; }
+.webgame_list ul{ position:absolute;left:0;top:0;height:54px;}
 .webgame_list li{ float:left;width:60px;height:54px; margin-right:14px;display:inline;}
 .site_logo{ float:left;margin-top:5px;display:inline;}
 .site_logo a{ margin-right:8px;}

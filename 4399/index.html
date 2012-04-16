@@ -17,8 +17,8 @@
             <a href="#" class="a_webgame txthide">网页游戏</a>
             <div class="webgame_list">
                 <!--wb_list-->
-                <div class="wb_list">
-                    <ul class="clearfix" style="width:1000px;">
+                <div class="wb_list" id="js_weblist">
+                    <ul class="clearfix" id="js_ul">
                         <li>
                             <a href="#"><img src="http://imga.4399.com/upload_pic/2012/logo_ddt3.gif" alt=""/></a>
                         </li>
@@ -58,8 +58,8 @@
                     </ul>
                 </div>
                 <!--/wb_list-->
-                <span class="btn_wgleft" title="向左">向左</span>
-                <span class="btn_wgright" title="向右">向右</span>
+                <span class="btn_wgleft" title="向左" id="js_btn_wgleft">向左</span>
+                <span class="btn_wgright" title="向右" id="js_btn_wgright">向右</span>
             </div>
         </div>
         <div class="site_logo">
@@ -754,6 +754,7 @@ Copyright &copy; 2004 - 2012 4399.com All Rights Reserved. 厦门游家网络有
 <script src="js/4399.js"></script>
 <script>
     searchMode({iptId:"js_schkey",btnSearchSubmit:"js_btnsch",formSearchForm:"js_search",num:4});
+    ImgScroll();
 </script>
 </body>
 </html>
