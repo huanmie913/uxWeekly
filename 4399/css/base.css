@@ -168,8 +168,8 @@ a:hover{text-decoration:underline;color:#468315;}
 /*column*/
 .column{ float:left;width:100%;}
 .section{ margin:0 186px 0 176px;}
-.aside{float:left;width:166px; margin-left:-100%;display: inline;}
-.rside{ float:left;width:176px; margin-left:-176px;display:inline;}
+.aside{float:left;width:166px; margin-left:-100%;display: inline; background:#f00;}
+.rside{ float:left;width:176px; margin-left:-176px;display:inline; background:#000;}
 
 /*as_box*/
 .as_box .hd{ background-position:-30px -98px;height:41px;text-align:center; line-height:28px;}
@@ -220,6 +220,7 @@ a:hover{text-decoration:underline;color:#468315;}
 .m_action img{display:block;margin:0 auto;}
 
 /*m_topic*/
+.m_topic{ width:176px;}
 .m_topic .bd{border-color:#a4d867;}
 .m_topic .hd{ background-position:0 -243px;height:41px; line-height:32px;position:relative;}
 .m_topic .hd a{color:#448230;}
