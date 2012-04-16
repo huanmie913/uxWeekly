@@ -129,26 +129,39 @@ ImgScroll.prototype = {
 	leftEvent : function(){
 		var self = this;
 		YJ.on( YJ.getid(self.opts.leftBtn),"click",function(){
-			
+			if( self._var._subId.offsetLeft < 0 ){
+				self.Move( self._var._subId.offsetLeft + self._var._subId.children[0].offsetWidth+self.opts.marginOffset);
+			}
 		});
 	},
 	rightEvent : function(){
 		var self = this;
-
+		
 		YJ.on( YJ.getid(self.opts.rightBtn),"click",function(){
-			
+
+			if( self._var._subId.offsetLeft > -(self._var._subId.offsetWidth - self._var._conId.offsetWidth - self.opts.marginOffset) ){
+				console.log(self._var._subId.offsetLeft)
+				self.Move( self._var._subId.offsetLeft - self._var._subId.children[0].offsetWidth -self.opts.marginOffset);
+			}
+
 		});
 	},
 	Move : function(iT,onEnd){
-		
+		var self = this;
+		clearInterval(self.timer)
+		this.timer = setInterval(function ()
+		{
+			var iS = (iT - self._var._subId.offsetLeft) / 5;
+			iS = iS > 0 ? Math.ceil(iS) : Math.floor(iS);
+			self._var._subId.offsetLeft == iT ? (clearInterval(self.timer), onEnd && onEnd.apply(self)) : self._var._subId.style.left = iS + self._var._subId.offsetLeft + "px"
+		}, 30);
 	},
 	init : function(){
 		var self = this,
 			_node = YJ.clearBlank( self.opts.subcontainer );
 		self._var._subId = YJ.getid( self.opts.subcontainer),
 		self._var._conId = YJ.getid( self.opts.container );
-
-		self._var._subId.style.width = ( parseInt(YJ.getCssProperty(_node.children[0],"width")) + self.opts.marginOffset ) * _node.children.length;
+		self._var._subId.style.width = ( parseInt(YJ.getCssProperty(_node.children[0],"width")) + self.opts.marginOffset ) * _node.children.length+"px";
 		self.leftEvent();
 		self.rightEvent();
 	}
