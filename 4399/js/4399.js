@@ -101,7 +101,9 @@ searchMode.prototype = {
 	}
 }
 
-/*ImgScroll*/
+/**
+  * ImgScroll(图片左右无缝滚动，有缝滚动)
+ **/
 function ImgScroll(){
     this.opts = {
     	container   : "js_weblist",
@@ -111,12 +113,13 @@ function ImgScroll(){
     	rightBtn    : "js_btn_wgright",
     	marginOffset : 14,
     	step        : 1, //每次滚动step个
-    	manner      : "circle"
+    	circle      : false //true:有缝  false:无缝
 
     };
     this._var = {
     	_subId : null,
-    	_conId : null
+    	_conId : null,
+    	_firstChild : null
     }
     this.timer = null;
     if( !(this instanceof ImgScroll )){
@@ -129,37 +132,46 @@ ImgScroll.prototype = {
 	leftEvent : function(){
 		var self = this;
 		YJ.on( YJ.getid(self.opts.leftBtn),"click",function(){
-			if( self._var._subId.offsetLeft < 0 ){
-				self.Move( self._var._subId.offsetLeft + self._var._subId.children[0].offsetWidth+self.opts.marginOffset);
+			if( self.opts.circle){
+				self._var._subId.insertBefore( self._var._subId.children[self._var._subId.children.length-1],self._var._subId.children[0]);
+				self._var._subId.style.left = -(self._var._firstChild.offsetWidth+self.opts.marginOffset) +"px";
+				that.Move(0);
+			}else{
+				if( self._var._subId.offsetLeft < 0 ){
+					self.Move( self._var._subId.offsetLeft + self._var._firstChild.offsetWidth + self.opts.marginOffset);
+				}
 			}
 		});
 	},
 	rightEvent : function(){
 		var self = this;
-		
 		YJ.on( YJ.getid(self.opts.rightBtn),"click",function(){
-
-			if( self._var._subId.offsetLeft > -(self._var._subId.offsetWidth - self._var._conId.offsetWidth - self.opts.marginOffset) ){
-				console.log(self._var._subId.offsetLeft)
-				self.Move( self._var._subId.offsetLeft - self._var._subId.children[0].offsetWidth -self.opts.marginOffset);
+			if( self.opts.circle){
+				self.Move(-self._var._firstChild.offsetWidth,function(){
+					self._var._subId.appendChild(self._var._subId.children[0]);
+					self._var._subId.style.left = 0;
+				})
+			}else{
+				if( self._var._subId.offsetLeft > -(self._var._subId.offsetWidth - self._var._conId.offsetWidth - self.opts.marginOffset) ){
+					self.Move( self._var._subId.offsetLeft - self._var._firstChild.offsetWidth - self.opts.marginOffset);
+				}
 			}
-
 		});
 	},
-	Move : function(iT,onEnd){
+	Move : function(iT,callback){
 		var self = this;
 		clearInterval(self.timer)
-		this.timer = setInterval(function ()
-		{
+		this.timer = setInterval(function (){
 			var iS = (iT - self._var._subId.offsetLeft) / 5;
 			iS = iS > 0 ? Math.ceil(iS) : Math.floor(iS);
-			self._var._subId.offsetLeft == iT ? (clearInterval(self.timer), onEnd && onEnd.apply(self)) : self._var._subId.style.left = iS + self._var._subId.offsetLeft + "px"
+			self._var._subId.offsetLeft == iT ? (clearInterval(self.timer), callback && callback.apply(self)) : self._var._subId.style.left = iS + self._var._subId.offsetLeft + "px"
 		}, 30);
 	},
 	init : function(){
-		var self = this,
-			_node = YJ.clearBlank( self.opts.subcontainer );
+		var self = this,_node = YJ.clearBlank( self.opts.subcontainer );
+
 		self._var._subId = YJ.getid( self.opts.subcontainer),
+		self._var._firstChild = self._var._subId.children[0],
 		self._var._conId = YJ.getid( self.opts.container );
 		self._var._subId.style.width = ( parseInt(YJ.getCssProperty(_node.children[0],"width")) + self.opts.marginOffset ) * _node.children.length+"px";
 		self.leftEvent();
