@@ -17,6 +17,7 @@ function TabSlide(ctg){
 		return new TabSlide(ctg);
 	}
 	this._timer = null;
+	this.Initialization();
 }
 TabSlide.prototype = {
 	constructor : TabSlide,
@@ -69,18 +70,19 @@ TabSlide.prototype = {
 		that._timer = setInterval(show,50)
 	},
 	trigger : function(n){
-		var that = this,
-			_obj = document.getElementById(that.option._id),
-		_objArray = _obj.getElementsByTagName("div"),
-		_o = _objArray[n];
+		var that      = this,
+			_obj      = document.getElementById(that.option._id),
+			_objArray = _obj.getElementsByTagName("div"),
+		    _o        = _objArray[n];
 		_o.className = " "+that.option._currentClass;
 		_o.getElementsByTagName('dd')[0].style.opacity = 1;
 		_o.getElementsByTagName('dd')[0].style.filter = "alpha(opacity=100)";
 		return that;
 	},
 	Initialization : function(){
-		var that = this,
-		_obj = document.getElementById(that.option._id);
+		var that      = this,
+		    _obj      = document.getElementById(that.option._id),
+		    _objArray = _obj.getElementsByTagName("div");
 		that.addEvent( _obj, that.option._eventType,function(event){
 			var _ev = event || window.event,
 				_target = _ev.target || _ev.srcElement;
