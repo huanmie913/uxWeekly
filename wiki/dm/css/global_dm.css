@@ -81,12 +81,12 @@ a:hover{text-decoration:underline;}
 .dm_topbar{ background:url(../images/dm_topbar.png) repeat-x; height:32px;}
 .dm_tbr{ width:1000px; margin:0 auto;}
 .dm_logo{ float:left; margin-top:3px;display:inline;}
-.favorite, .contributors{ float:right; background:url(../images/dm_topbar.png) no-repeat -65px -140px; width:84px; height:22px; overflow:hidden; margin:5px 0 0 4px; cursor:pointer;}
+.favorite, .contributors{ float:right; background:url(../images/dm_topbar.png) no-repeat -65px -140px; width:84px; height:22px; overflow:hidden; margin:5px 0 0 4px; cursor:pointer;text-indent:-1024em;overflow:hidden;}
 .contributors{ width:63px; background-position:0 -140px; margin-left:0; text-indent:-9999em;}
 .topbar_nav{ float:left; height:32px; padding:0 210px 0 20px; background:url(../images/dm_topbar.png) no-repeat 100% -105px;}
 .topbar_nav a{ float:left; display:inline; height:32px; line-height:32px; padding:0 8px; color:#1797cc; background:url(dm_topbar.png) no-repeat 0 -35px;}
 .topbar_nav a:hover{ background-position:0 -70px; color:#0b1b92; text-decoration:none;}
-.topbar_nav span{ float:left; width:2px; height:33px; background:url(../images/dm_topbar.png) no-repeat 0 -35px;}
+.topbar_nav span{ float:left; width:2px; height:32px; background:url(../images/dm_topbar.png) no-repeat 0 -35px;}
 
 /*dm_bottombar*/
 .dm_bottombar{ line-height: 2;text-align:center;color:#808080;padding:15px 0;zoom:1}
