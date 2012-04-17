@@ -28,19 +28,9 @@
                     <span class="favorite">收藏我吧</span>
                     <a href="#" class="contributors">投稿</a>
                     <a href="#" class="dm_logo"><img src="http://dm.4399.com/images/share/dm_logo.jpg" width="119" height="28" alt="4399动漫"/></a>
-                    <ul class="nav">
-                        <li><a href="#">首页</a></li>
-                        <li><a href="#">资讯</a></li>
-                        <li><a href="#">动画</a></li>
-                        <li><a href="#">漫画</a></li>
-                        <li><a href="#">轻小说</a></li>
-                        <li><a href="#">音乐</a></li>
-                        <li><a href="#">同人</a></li>
-                        <li><a href="#">八卦杂谈</a></li>
-                        <li><a href="#">周边</a></li>
-                        <li><a href="#">图库</a></li>
-                        <li><a href="#">论坛</a></li>
-                    </ul>
+                    <div class="topbar_nav">
+                      <a href="#">首页</a><a href="#">资讯</a><a href="#">动画</a><a href="#">漫画</a><a href="#">轻小说</a><a href="#">音乐</a><a href="#">同人</a><a href="#">八卦杂谈</a><a href="#">周边</a><a href="#">图库</a><a href="#">论坛</a><span></span>
+                    </div>
                  </div>
             </div>
             <!--/mod_topbar-->
@@ -55,39 +45,26 @@
             <!--demo_resource-->
             <div class="demo_resource">
                 <p>Html代码:</p>
-                <pre class="DlHighlight"><code class="xml">&lt;div class="dm_topbar mt15"&gt;
-    &lt;div class="dm_tbr clearfix"&gt;
-    &lt;span class="favorite"&gt;收藏我吧&lt;/span&gt;
-    &lt;a href="#" class="contributors"&gt;投稿&lt;/a&gt;
-    &lt;a href="#" class="dm_logo"&gt;&lt;img src="http://dm.4399.com/images/share/dm_logo.jpg" width="119" height="28" alt="4399动漫"/&gt;&lt;/a&gt;
-    &lt;ul class="nav"&gt;
-        &lt;li&gt;&lt;a href="#"&gt;首页&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;资讯&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;动画&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;漫画&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;轻小说&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;音乐&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;同人&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;八卦杂谈&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;周边&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;图库&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;论坛&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+                <pre class="DlHighlight"><code class="xml">&lt;div class="dm_topbar"&gt;
+                &lt;div class="dm_tbr clearfix"&gt;
+                    &lt;span class="favorite"&gt;收藏我吧&lt;/span&gt;
+                    &lt;a href="#" class="contributors"&gt;投稿&lt;/a&gt;
+                    &lt;a href="#" class="dm_logo"&gt;&lt;img src="http://dm.4399.com/images/share/dm_logo.jpg" width="119" height="28" alt="4399动漫"/&gt;&lt;/a&gt;
+                    &lt;div class="topbar_nav"&gt;
+                      &lt;a href="#"&gt;首页&lt;/a&gt;&lt;a href="#"&gt;资讯&lt;/a&gt;&lt;a href="#"&gt;动画&lt;/a&gt;&lt;a href="#"&gt;漫画&lt;/a&gt;&lt;a href="#"&gt;轻小说&lt;/a&gt;&lt;a href="#"&gt;音乐&lt;/a&gt;&lt;a href="#"&gt;同人&lt;/a&gt;&lt;a href="#"&gt;八卦杂谈&lt;/a&gt;&lt;a href="#"&gt;周边&lt;/a&gt;&lt;a href="#"&gt;图库&lt;/a&gt;&lt;a href="#"&gt;论坛&lt;/a&gt;&lt;span&gt;&lt;/span&gt;
+                    &lt;/div&gt;
+                 &lt;/div&gt;
+            &lt;/div&gt;</code></pre>
                 <p>Css代码:</p>
-                <pre class="DlHighlight"><code class="css">.dm_topbar,.dm_tbr,.dm_topbar li,.dm_topbar .nav,.dm_topbar li a:hover,.dm_topbar .favorite,.dm_topbar .contributors{
-                    background-image:url(../images/dm_topbar.png);background-repeat: no-repeat;}
-.dm_topbar,.dm_tbr{ background-position: 0 0;background-repeat:repeat-x;height:31px; line-height:31px;border-bottom:1px solid #bfbfbf;}
-.dm_tbr{ width:960px;margin:0 auto;padding:0 10px}
-.dm_topbar .favorite,.dm_topbar .contributors{ float:right; background-position: -259px -93px;margin:5px 5px 0 0;display:inline;
-                    width:84px;height:22px;text-indent:-1024em;overflow:hidden;cursor:pointer;}
-.dm_topbar .contributors{ background-position:-196px -93px;width:63px;}
-.dm_topbar .nav{ float:left;background-position:right -62px;; padding-right:200px; }
-.dm_topbar .dm_logo{ float:left;display:inline; margin:3px 10px 0 0;}
-.dm_topbar li{ float:left;background-position:-343px -93px;padding:0 0 0 2px;}
- .dm_topbar li a{ padding:0 7px 0 6px;color:#1797cc;display:block;}
-.dm_topbar li a:hover{ background-position: 0 -31px;background-repeat: repeat-x; text-decoration: none;}</code></pre>
+                <pre class="DlHighlight"><code class="css">.dm_topbar{ background:url(../images/dm_topbar.png) repeat-x; height:32px;}
+.dm_tbr{ width:1000px; margin:0 auto;}
+.dm_logo{ float:left; margin-top:3px;display:inline;}
+.favorite, .contributors{ float:right; background:url(../images/dm_topbar.png) no-repeat -65px -140px; width:84px; height:22px; overflow:hidden; margin:5px 0 0 4px; cursor:pointer;}
+.contributors{ width:63px; background-position:0 -140px; margin-left:0; text-indent:-9999em;}
+.topbar_nav{ float:left; height:33px; padding:0 210px 0 20px; background:url(../images/dm_topbar.png) no-repeat 100% -105px;}
+.topbar_nav a{ float:left; display:inline; height:32px; line-height:32px; padding:0 8px; color:#1797cc; background:url(dm_topbar.png) no-repeat 0 -35px;}
+.topbar_nav a:hover{ background-position:0 -70px; color:#0b1b92; text-decoration:none;}
+.topbar_nav span{ float:left; width:2px; height:33px; background:url(../images/dm_topbar.png) no-repeat 0 -35px;}</code></pre>
             </div>
             <!--/demo_resource-->
         </div>
