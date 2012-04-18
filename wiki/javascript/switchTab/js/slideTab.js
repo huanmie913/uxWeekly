@@ -9,9 +9,7 @@ function TabSlide(ctg){
 		_eventType    : ctg.eventType, //事件触发类型
 		_currentClass : ctg.currentClass, //选中类名
 		_nornalClass  : ctg.nornalClass, //默认类名
-		_opacityStart : ctg.opacityStart, //透明度起始
-		_opacityEnd   : ctg.opacityEnd, //透明度终止
-		_step         : ctg.step //透明步值
+		_effection    : ctg.effection //slide : 展开,transparent : 透明度,start:起始值,end:终止值,step:步骤
 	}
 	if( !( this instanceof TabSlide )){
 		return new TabSlide(ctg);
@@ -30,18 +28,35 @@ TabSlide.prototype = {
 			target["on"+type] = fn;
 		}
 	},
+	_$ : function(id){
+		return typeof id == "string" ? document.getElementById(id) : id;
+	}, 
+	_tag : function(obj,tag){
+		return tag != "" ? obj.getElementsByTagName( tag ) : obj.getElementsByTagName("*");
+	},
+	_var : function(){
+		var that      = this,
+			_dtArray  = that._tag( that._$( that.option._id),"dt" ),
+			_divArray = that._tag( that._$( that.option._id),"div") ,
+			_ddArray  = that._tag( that._$( that.option._id),"dd" );
+		return {
+			_dtArray  : _dtArray,
+			_divArray : _divArray,
+			_ddArray  : _ddArray
+		}
+	},
 	index : function(obj){
 		var that = this,
-			_objArray = document.getElementById(that.option._id).getElementsByTagName("dt");
-		for( var i=0,_len = _objArray.length;i<_len;i++){
-			if( obj == _objArray[i] ){
+			_dtArray = that._var()._dtArray;
+		for( var i=0,_len = _dtArray.length;i<_len;i++){
+			if( obj == _dtArray[i] ){
 				return i;
 			}
 		}
 	},
 	getCss : function(element,property){
 		if( element.currentStyle ){
-			return element.currentStyle[property]
+			return element.currentStyle[property];
 		}else{
 			var computedStyle = document.defaultView.getComputedStyle(element,null)[property]
 			return computedStyle;
@@ -54,49 +69,76 @@ TabSlide.prototype = {
 		}
 		that._timer = null;
 	},
+	setOpacity : function(obj,num){
+		obj.style.opacity = num/100;
+		obj.style.filter = "alpha(opacity="+num+")";
+	},
+	setSlide : function(obj,num){
+		obj.style.width = num +"px";
+	},
 	animateShow : function(obj){
-		var that = this;
-		time = that.option._opacityStart;
+		var that = this,
+			step = that.option._effection.start;
 		function show(){
-			time += that.option._step;
-			obj.style.opacity = time/100;
-			obj.style.filter = "alpha(opacity="+time+")";
-			if( time >= that.option._opacityEnd ){
+			step += that.option._effection.step;
+			switch( that.option._effection.effect ){
+				case "transparent" :
+					that.setOpacity(obj,step);
+					break;
+				case "slide" :
+					that.setSlide(obj,step);
+					break;
+			}
+			if( step >= that.option._effection.end ){
 				that.clearTimer();
-				time = that.option._opacityStart ;
+				step = that.option._effection.start ;
 			}
 		}
 		that.clearTimer();
-		that._timer = setInterval(show,50)
+		that._timer = setInterval(show,50);
 	},
 	trigger : function(n){
 		var that      = this,
-			_obj      = document.getElementById(that.option._id),
-			_objArray = _obj.getElementsByTagName("div"),
-		    _o        = _objArray[n];
-		_o.className = " "+that.option._currentClass;
-		_o.getElementsByTagName('dd')[0].style.opacity = 1;
-		_o.getElementsByTagName('dd')[0].style.filter = "alpha(opacity=100)";
+			_ddArray  = that._var()._ddArray,
+			_divArray = that._var()._divArray[n];
+		_divArray.className = that.option._nornalClass+" "+that.option._currentClass;
+		switch( that.option._effection.effect ){
+				case "transparent" :
+					that.setOpacity(_ddArray[0],100);
+					break;
+				case "slide" :
+					that.setSlide(_ddArray[0],that.getCss(_ddArray[0],"width"));
+					break;
+			}
+		
 		return that;
+	},
+	effect : function(j){
+		var that      = this,
+			_dd = that._tag( that._var()._divArray[j],'dd')[0];
+		switch( that.option._effection.effect ){
+			case "transparent" :
+				that.setOpacity(_dd,that.option._effection.start);
+				break;
+			case "slide" :
+				that.setSlide(_dd,that.option._effection.start);
+				break;
+		}
 	},
 	Initialization : function(){
 		var that      = this,
-		    _obj      = document.getElementById(that.option._id),
-		    _objArray = _obj.getElementsByTagName("div");
+			_obj      = that._$(that.option._id),
+		    _objArray = that._var()._divArray;
 		that.addEvent( _obj, that.option._eventType,function(event){
 			var _ev = event || window.event,
 				_target = _ev.target || _ev.srcElement;
-			if( _target.nodeName.toLowerCase() != "dt"){
-				return;
-			}
+			if( _target.nodeName.toLowerCase() != "dt"){ return; }
 			var _index = that.index( _target );
 			for( var j=0,_len = _objArray.length;j<_len;j++){
-				var _dd = _objArray[j].getElementsByTagName('dd')[0];
-				_dd.style.opacity = that.option._opacityStart/100;
-				_dd.style.filter = "alpha(opacity="+that.option._opacityStart+")";
+				that.effect(j);
 				_objArray[j].className = ( j != _index ) ? that.option._nornalClass : that.option._nornalClass+" "+that.option._currentClass;
-				var _targetImg = _objArray[_index].getElementsByTagName('dd')[0];
-					that.animateShow(_targetImg)
+				var _targetImg = that._tag(_objArray[_index],'dd')[0];
+				that.animateShow(_targetImg);
 			}
 		});
 		return that;

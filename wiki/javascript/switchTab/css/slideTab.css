@@ -3,7 +3,7 @@
 	.mod_tabSlide dl{ float:left;}
 	.mod_tabSlide dt,.mod_tabSlide dd{ background-image:url(../images/tete.jpg); background-position:no-repeat;  overflow:hidden; height:228px;}
 	.mod_tabSlide dt{ float:left; width:40px;text-indent:-999em;}
-	.mod_tabSlide dd{ float:left; width:170px;display:none;color:#fff; padding:80px 10px 0 170px;}
+	.mod_tabSlide dd{ float:left; width:170px;display:none;color:#fff; padding:80px 10px 0 170px; height:148px;}
 	/*.mod_tabSlide .on dt{ display:none;}*/
 	.mod_tabSlide .on dd{display:block;/*opacity:0.4;filter:alpha(opacity=40)*/}
 	.role_xl dt{ background-position:0 0;}
