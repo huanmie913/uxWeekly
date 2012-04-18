@@ -134,7 +134,7 @@ TabSlide.prototype = {
 				_target = _ev.target || _ev.srcElement;
 			if( _target.nodeName.toLowerCase() != "dt"){ return; }
 			var _index = that.index( _target );
-			for( var j=0,_len = _objArray.length;j<_len;j++){
+			for( var j = _objArray.length-1;j>=0;j-- ){
 				that.effect(j);
 				_objArray[j].className = ( j != _index ) ? that.option._nornalClass : that.option._nornalClass+" "+that.option._currentClass;
 				var _targetImg = that._tag(_objArray[_index],'dd')[0];
