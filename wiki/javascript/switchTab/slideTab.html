@@ -4,7 +4,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>情封 switchTab模块 tab切换</title>
 <link href="../../static/css/demo.css" rel="stylesheet" type="text/css"/>
+<link href="../../static/js/highlight/styles/sunburst.css" rel="stylesheet" type="text/css"/>
 <link href="css/slideTab.css" rel="stylesheet" />
+
 </head>
 <body>
 <!--toolbar-->
@@ -39,16 +41,34 @@
 		</div>
 	</div>
 	<!--mod_tabSlide-->
+	<!--demo_resource-->
+    <div class="demo_resource wrapper">
+        <p>参数说明:</p>
+        <pre class="DlHighlight"><code class="xml">id                   :容器ID
+eventTypeL   : 事件触发类型
+currentClass : 当前选中的类名
+nornalClass  : 默认类名
+effection      : {
+				 effect : 效果 //slide : 展开,transparent : 透明度,
+				 start  : 起始值,
+				 end    : 终止值
+				 step   : 步骤
+			   }</code></pre>
+                    
+    </div>
+    <!--/demo_resource-->
 </div>
 <div class="bottomBar" id="bottomBar"></div>
 <script src="../../static/js/mod_f2er.js" type="text/javascript"></script>
 <script src="js/slideTab.js" type="text/javascript"></script>
+<script src="../../static/js/highlight/highlight.pack.js"></script>
 <script type="text/javascript">
 mod_f2er.topBar('手风琴效果','toolbar');
 mod_f2er.bottomBar('bottomBar');
-/*TabSlide({ id:"js_tabSlide",eventType:"mouseover",currentClass:"on",nornalClass :"role_box",n:0,opacityStart:40,opacityEnd:100,step : 5 });*/
+hljs.tabReplace = ' ';
+hljs.initHighlightingOnLoad();
 TabSlide({ id:"js_tabSlide",
-		   eventType   :"mouseover",
+		   eventType   :"click",
 		   currentClass:"on",
 		   nornalClass :"role_box",
 		   effection   : {
@@ -57,7 +77,7 @@ TabSlide({ id:"js_tabSlide",
 		   					end    : 170,
 		   					step   : 34
 		   				}
-		}).trigger(1);
+		}).trigger(0);
 </script>
 </body>
 </html>
