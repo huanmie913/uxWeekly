@@ -4,8 +4,9 @@
 	.mod_tabSlide dt,.mod_tabSlide dd{ background-image:url(../images/tete.jpg); background-position:no-repeat;  overflow:hidden; height:228px;}
 	.mod_tabSlide dt{ float:left; width:40px;text-indent:-999em;filter:alpha(opacity = 60);opacity :0.6;}
 	.mod_tabSlide dd{ float:left; width:170px;display:none;color:#fff; padding:80px 10px 0 170px; height:148px;}
+
 	/*.mod_tabSlide .on dt{ display:none;}*/
-	.mod_tabSlide .on dt{ filter:alpha(opacity = 100);opacity : 1;}
+	.mod_tabSlide .on dt,.mod_tabSlide dt:hover{ filter:alpha(opacity = 100);opacity : 1;}
 	.mod_tabSlide .on dd{display:block;/*opacity:0.4;filter:alpha(opacity=40)*/}
 	.role_xl dt{ background-position:0 0;}
 	.role_ms dt{ background-position:-40px 0;}
