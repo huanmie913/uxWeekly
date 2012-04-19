@@ -135,7 +135,7 @@ ImgScroll.prototype = {
 			if( self.opts.circle){
 				self._var._subId.insertBefore( self._var._subId.children[self._var._subId.children.length-1],self._var._subId.children[0]);
 				self._var._subId.style.left = -(self._var._firstChild.offsetWidth+self.opts.marginOffset) +"px";
-				that.Move(0);
+				self.Move(0);
 			}else{
 				if( self._var._subId.offsetLeft < 0 ){
 					self.Move( self._var._subId.offsetLeft + self._var._firstChild.offsetWidth + self.opts.marginOffset);
@@ -162,7 +162,7 @@ ImgScroll.prototype = {
 		var self = this;
 		clearInterval(self.timer)
 		self.timer = setInterval(function (){
-			var iS = (iT - self._var._subId.offsetLeft) / 5;
+			var iS = (iT - self._var._subId.offsetLeft) / 3;
 			iS = iS > 0 ? Math.ceil(iS) : Math.floor(iS);
 			self._var._subId.offsetLeft == iT ? (clearInterval(self.timer), callback && callback.apply(self)) : self._var._subId.style.left = iS + self._var._subId.offsetLeft + "px"
 		}, 30);
