@@ -72,10 +72,12 @@ a:hover{text-decoration:underline;color:#468315;}
 .webgame_list li{ float:left;width:60px;height:54px; margin-right:14px;display:inline;}
 .site_logo{ float:left;margin-top:5px;display:inline;}
 .site_logo a{ margin-right:8px;}
-.btn_wgleft,.btn_wgright{ position:absolute;cursor:pointer;width:13px;height:18px;top:14px;display:inline-block;*zoom:1;*display:inline; line-height:0;font-size:0;}
-.btn_wgleft{ left:0; background-position:-33px 0;}
-.btn_wgright{ right:10px; background-position:-46px 0;}
+.btn_wgleft,.btn_wgright,.btn_wgleft_disable,.btn_wgright_disable{ position:absolute;cursor:pointer;width:13px;height:18px;top:14px;display:inline-block;*zoom:1;*display:inline; line-height:0;font-size:0;}
 
+.btn_wgleft,.btn_wgleft_disable{ left:0; background-position:-33px 0;}
+.btn_wgleft_disable{ background:#ddd;}
+.btn_wgright,.btn_wgright_disable{ right:10px; background-position:-46px 0;}
+.btn_wgright_disable{ background:#ddd;}
 /* nav */
 .nav{ background-position:0 0; height:36px; padding:12px 0 0 10px;overflow:hidden;}
 .nav ul,.nav .site{ float:left;}

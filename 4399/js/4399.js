@@ -109,8 +109,11 @@ function ImgScroll(){
     	container   : "js_weblist",
     	subcontainer: "js_ul",
     	item        : "li",
-    	leftBtn     : "js_btn_wgleft",
-    	rightBtn    : "js_btn_wgright",
+		btn         : {
+						leftBtn     : "btn_wgleft",
+						rightBtn    : "btn_wgright",
+						disableClass: "_disable"
+					},
     	marginOffset : 14,
     	step        : 1, //每次滚动step个
     	circle      : false //true:有缝  false:无缝
@@ -131,7 +134,7 @@ ImgScroll.prototype = {
 	constructor : ImgScroll,
 	leftEvent : function(){
 		var self = this;
-		YJ.on( YJ.getid(self.opts.leftBtn),"click",function(){
+		YJ.on( YJ.getid("js_"+self.opts.btn.leftBtn),"click",function(){
 			if( self.opts.circle){
 				self._var._subId.insertBefore( self._var._subId.children[self._var._subId.children.length-1],self._var._subId.children[0]);
 				self._var._subId.style.left = -(self._var._firstChild.offsetWidth+self.opts.marginOffset) +"px";
@@ -145,7 +148,7 @@ ImgScroll.prototype = {
 	},
 	rightEvent : function(){
 		var self = this;
-		YJ.on( YJ.getid(self.opts.rightBtn),"click",function(){
+		YJ.on( YJ.getid("js_"+self.opts.btn.rightBtn),"click",function(){
 			if( self.opts.circle){
 				self.Move( -self._var._firstChild.offsetWidth - self.opts.marginOffset,function(){
 					self._var._subId.appendChild(self._var._subId.children[0]);
@@ -165,7 +168,6 @@ ImgScroll.prototype = {
 			var iS = (iT - self._var._subId.offsetLeft) / 5;
 			iS = iS > 0 ? Math.ceil(iS) : Math.floor(iS);
 			self._var._subId.offsetLeft == iT ? (clearInterval(self.timer), callback && callback.apply(self)) : self._var._subId.style.left = iS + self._var._subId.offsetLeft + "px";
-			console.log(iS);
 		}, 30);
 	},
 	init : function(){
