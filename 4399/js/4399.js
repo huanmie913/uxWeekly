@@ -37,6 +37,12 @@ YJ = {
 			_pro = document.defaultView.getComputedStyle(_node,null).getPropertyValue(styleProp);
 		}
 		return _pro;
+	},
+	extend : function(destination,resource){
+		for( var pro in resource ){
+			destination[pro] = resource[pro];
+		}
+		return destination;
 	}
 }
 
@@ -102,13 +108,14 @@ searchMode.prototype = {
 }
 
 /**
-  * ImgScroll(图片左右无缝滚动，有缝滚动)
+  * QScroll(图片左右无缝滚动，有缝滚动)
  **/
-function ImgScroll(){
-    this.opts = {
+function QScroll(o){
+	this._ctg = {
     	container   : "js_weblist",
     	subcontainer: "js_ul",
     	item        : "li",
+    	eventType   : "click",
 		btn         : {
 						leftBtn     : "btn_wgleft",
 						rightBtn    : "btn_wgright",
@@ -117,24 +124,24 @@ function ImgScroll(){
     	marginOffset : 14,
     	step        : 1, //每次滚动step个
     	circle      : false //true:有缝  false:无缝
-
     };
+	this.opts = YJ.extend(this._ctg,o || {});
     this._var = {
     	_subId : null,
     	_conId : null,
     	_firstChild : null
     }
     this.timer = null;
-    if( !(this instanceof ImgScroll )){
-    	return new ImgScroll();
+    if( !(this instanceof QScroll )){
+    	return new QScroll(o);
     }
     this.init();
 }
-ImgScroll.prototype = {
-	constructor : ImgScroll,
+QScroll.prototype = {
+	constructor : QScroll,
 	leftEvent : function(){
 		var self = this;
-		YJ.on( YJ.getid("js_"+self.opts.btn.leftBtn),"click",function(){
+		YJ.on( YJ.getid("js_"+self.opts.btn.leftBtn),self.opts.eventType,function(){
 			if( self.opts.circle){
 				self._var._subId.insertBefore( self._var._subId.children[self._var._subId.children.length-1],self._var._subId.children[0]);
 				self._var._subId.style.left = -(self._var._firstChild.offsetWidth+self.opts.marginOffset) +"px";
@@ -148,7 +155,7 @@ ImgScroll.prototype = {
 	},
 	rightEvent : function(){
 		var self = this;
-		YJ.on( YJ.getid("js_"+self.opts.btn.rightBtn),"click",function(){
+		YJ.on( YJ.getid("js_"+self.opts.btn.rightBtn),self.opts.eventType,function(){
 			if( self.opts.circle){
 				self.Move( -self._var._firstChild.offsetWidth - self.opts.marginOffset,function(){
 					self._var._subId.appendChild(self._var._subId.children[0]);

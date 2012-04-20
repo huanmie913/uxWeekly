@@ -165,22 +165,26 @@
     <!--/ui_box-->
     <!--gm_play-->
     <div class="gm_play mt5">
-        <ul>
-            <li><a href="#">虫虫特攻队</a></li>
-            <li><a href="#">神魔斗</a></li>
-            <li><a href="#">美食大战老鼠</a></li>
-            <li><a href="#">豆娃连连看</a></li>
-            <li><a href="#">海贼大冒险</a></li>
-            <li><a href="#">造梦西游3之大闹天庭篇</a></li>
-            <li><a href="#">虫虫特攻队</a></li>
-            <li><a href="#">神魔斗</a></li>
-            <li><a href="#">美食大战老鼠</a></li>
-            <li><a href="#">豆娃连连看</a></li>
-            <li><a href="#">海贼大冒险</a></li>
-            <li><a href="#">造梦西游3之大闹天庭篇</a></li>
-        </ul>
-        <span class="btn_left"></span>
-        <span class="btn_right"></span>
+        <!--gm_playbox-->
+        <div class="gm_playbox"  id="js_play">
+            <ul id="js_playList" class="clearfix">
+                <li><a href="#">虫虫特攻队</a></li>
+                <li><a href="#">神魔斗</a></li>
+                <li><a href="#">美食大战老鼠</a></li>
+                <li><a href="#">豆娃连连看</a></li>
+                <li><a href="#">海贼大冒险</a></li>
+                <li><a href="#">造梦西游3之大闹天庭篇</a></li>
+                <li><a href="#">虫虫特攻队</a></li>
+                <li><a href="#">神魔斗</a></li>
+                <li><a href="#">美食大战老鼠</a></li>
+                <li><a href="#">豆娃连连看</a></li>
+                <li><a href="#">海贼大冒险</a></li>
+                <li><a href="#">造梦西游3之大闹天庭篇</a></li>
+            </ul>
+        </div>
+        <!--/gm_playbox-->
+        <span class="btn_left" id="js_btnLeft"></span>
+        <span class="btn_right" id="js_btnRight"></span>
         <span class="btn_clear txthide">清空</span> 
         <div class="gpl"></div>
         <div class="gpr"></div> 
@@ -757,7 +761,20 @@ Copyright &copy; 2004 - 2012 4399.com All Rights Reserved. 厦门游家网络有
 <script src="js/4399.js"></script>
 <script>
     searchMode({iptId:"js_schkey",btnSearchSubmit:"js_btnsch",formSearchForm:"js_search",num:4});
-    ImgScroll();
+    QScroll();
+    QScroll({container   : "js_play",
+            subcontainer: "js_playList",
+            item        : "a",
+            eventType   : "click",
+            btn         : {
+                        leftBtn     : "btnLeft",
+                        rightBtn    : "btnRight",
+                        disableClass: "_disable"
+                    },
+            marginOffset : 10,
+            step        : 5, 
+            circle      : true 
+        });
 </script>
 </body>
 </html>

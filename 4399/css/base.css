@@ -109,7 +109,7 @@ a:hover{text-decoration:underline;color:#468315;}
 .toolbar{ border-top:1px solid #fff;background-position:0 0;height:27px; padding:5px 10px 0 ;}
 .toolbar .login{ float:right;}
 .sch_form{ float:left; background-position:0 -55px;width:206px;height:21px; padding:1px 0 1px 23px;}
-.ipt_txt{ width:163px; padding:2px 0;border:0;vertical-align:top;}
+.ipt_txt{ width:163px; padding:2px 0;border:0;vertical-align:top; background:none;overflow:hidden;}
 .btn_sch{ width:39px;height:20px;border:none;background:none;cursor:pointer;}
 .key_word{ float:left;margin:2px 0 0 10px;display:inline;}
 .key_word a{ color:#686868;}
@@ -148,15 +148,17 @@ a:hover{text-decoration:underline;color:#468315;}
 
 /*gm_play*/
 .gm_play,.gm_play .gpl,.gm_play .gpr{ background-image:url(../images/play.png); background-repeat:no-repeat;height:34px;overflow:hidden;}
-.gm_play{ background-position:0 -34px; background-repeat:repeat-x; padding:0 10px 0 86px; position:relative;}
-.gm_play .gpl{ float:left;width:86px;background-position:left 0;margin-left:-86px;display:inline;}
-.gm_play .gpr{ float:right;width:10px;background-position:right -68px;margin-right:-10px;display:inline;}
-.gm_play ul{ position:absolute;left:90px;top:0; line-height:34px;width:775px;overflow:hidden;}
-.gm_play li{ float:left;margin-right:10px;display:inline;}
+.gm_play{ background-position:0 -34px; background-repeat:repeat-x; padding:0 10px 0 96px; position:relative;}
+.gm_play .gpl{ float:left;width:86px;background-position:left 0;margin:-34px 0 0 -96px;display:inline;}
+.gm_play .gpr{ float:right;width:10px;background-position:right -68px;margin:-34px -10px 0 0;display:inline;}
+.gm_play ul{ position:absolute;top:0; left:0; /*left:90px;line-height:34px;width:775px;overflow:hidden;*/}
+.gm_play li{ float:left;margin-right:10px;display:inline; /*width:100px;*/ white-space:nowrap;}
 .gm_play .btn_left,.gm_play .btn_right,.gm_play .btn_clear{position:absolute;top:10px;display:inline-block;*zoom:1;*display:inline;vertical-align:middle;width:13px;height:13px;cursor:pointer;}
 .gm_play .btn_left{ background-position:-34px -27px;right:80px;}
 .gm_play .btn_right{ background-position:-49px -27px;right:60px;}
 .gm_play .btn_clear{ background-position:-67px -27px;width:40px;height:20px;right:10px;top:7px;}
+
+.gm_playbox{ width:745px;overflow:hidden; position:relative;height:34px;line-height:34px;}
 
 .game_box .bd{ padding:0 20px; zoom:1; position:relative;border-color:#ACDB6D;overflow:hidden;}
 /*game_scroll*/
