@@ -124,7 +124,8 @@ function QScroll(o){
     	marginOffset : 14,
     	step        : 1, //每次滚动step个
     	circle      : false, //true:有缝  false:无缝
-    	autoScroll  : false //是否自动滚动
+    	autoScroll  : false, //是否自动滚动
+    	direction   : ""
     };
 	this.opts = YJ.extend(this._ctg,o || {});
     this._var = {
@@ -149,34 +150,43 @@ QScroll.prototype = {
 	},
 	leftEvent : function(){
 		var self = this;
-		var _LBtn = YJ.getid("js_"+self.opts.btn.leftBtn);
-		if( self.opts.eventType == "mouseover" ){
-			YJ.on( _LBtn,"mouseover",function(){
-				self.autoPlay().left();
-			});
-			YJ.on( _LBtn,"mouseout",function(){
-				self.clearTimer(self.autoLTimer);
-			});
+		if( self.opts.btn != null ){
+			var _LBtn = YJ.getid("js_"+self.opts.btn.leftBtn);
+			if( self.opts.eventType == "mouseover" ){
+				YJ.on( _LBtn,"mouseover",function(){
+					self.autoPlay().left();
+				});
+				YJ.on( _LBtn,"mouseout",function(){
+					self.clearTimer(self.autoLTimer);
+				});
+				
+			}else{
+				YJ.on( _LBtn,self.opts.eventType,function(){
+					self.scrollLeft();
+				});
+			}
 		}else{
-			YJ.on( _LBtn,self.opts.eventType,function(){
-				self.scrollLeft();
-			});
+			self.autoPlay().left();
 		}
 	},
 	rightEvent : function(){
 		var self = this;
-		var _RBtn = YJ.getid("js_"+self.opts.btn.rightBtn);
-		if( self.opts.eventType == "mouseover" ){
-			YJ.on( _RBtn,"mouseover",function(){
-				self.autoPlay().right();
-			});
-			YJ.on( _RBtn,"mouseout",function(){
-				self.clearTimer(self.autoRTimer);
-			});
+		if( self.opts.btn != null ){
+			var _RBtn = YJ.getid("js_"+self.opts.btn.rightBtn);
+			if( self.opts.eventType == "mouseover" ){
+				YJ.on( _RBtn,"mouseover",function(){
+					self.autoPlay().right();
+				});
+				YJ.on( _RBtn,"mouseout",function(){
+					self.clearTimer(self.autoRTimer);
+				});
+			}else{
+				YJ.on( _RBtn,self.opts.eventType,function(){
+					self.scrollRight();
+				});
+			}
 		}else{
-			YJ.on( _RBtn,self.opts.eventType,function(){
-				self.scrollRight();
-			});
+			self.autoPlay().right();
 		}
 	},
 	Move : function(iT,callback){
@@ -232,13 +242,37 @@ QScroll.prototype = {
 			right : autoRPlay
 		}
 	},
+	dirPlay : function(direction){
+		var self = this;
+		switch( self.opts.direction ){
+			case "left":
+				self.leftEvent();
+				break;
+			case "right":
+				self.rightEvent();
+				break;
+			case "top":
+				self.topEvent();
+				break;
+			case "bottom":
+				self.bottomEvent();
+				break;
+			case "left-right":
+				self.leftEvent();
+				self.rightEvent();
+				break;
+			case "top-bottom":
+				self.topEvent();
+				self.bottomEvent();
+
+		}
+	},
 	init : function(){
 		var self = this,_node = YJ.clearBlank( self.opts.subcontainer );
 		self._var._subId = YJ.getid( self.opts.subcontainer),
 		self._var._firstChild = self._var._subId.children[0],
 		self._var._conId = YJ.getid( self.opts.container );
 		self._var._subId.style.width = ( parseInt(YJ.getCssProperty(_node.children[0],"width")) + self.opts.marginOffset ) * _node.children.length+"px";
-		self.leftEvent();
-		self.rightEvent();
+		self.dirPlay( self.opts.direction);
 	}
 }

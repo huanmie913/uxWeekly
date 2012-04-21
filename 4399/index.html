@@ -761,19 +761,21 @@ Copyright &copy; 2004 - 2012 4399.com All Rights Reserved. 厦门游家网络有
 <script src="js/4399.js"></script>
 <script>
     searchMode({iptId:"js_schkey",btnSearchSubmit:"js_btnsch",formSearchForm:"js_search",num:4});
-    QScroll();
+    QScroll({ circle:true,direction:"left-right" });
     QScroll({container   : "js_play",
             subcontainer: "js_playList",
             item        : "a",
             eventType   : "mouseover",
-            btn         : {
+           /* btn         : {
                         leftBtn     : "btnLeft",
                         rightBtn    : "btnRight",
                         disableClass: "_disable"
-                    },
+                    },*/
+            btn : null,
             marginOffset : 10,
-            step        : 5, 
-            circle      : true 
+            step        : 2, 
+            circle      : true,
+            direction   : "right" 
         });
 </script>
 </body>
