@@ -123,7 +123,8 @@ function QScroll(o){
 					},
     	marginOffset : 14,
     	step        : 1, //每次滚动step个
-    	circle      : false //true:有缝  false:无缝
+    	circle      : false, //true:有缝  false:无缝
+    	autoScroll  : false
     };
 	this.opts = YJ.extend(this._ctg,o || {});
     this._var = {
@@ -131,7 +132,7 @@ function QScroll(o){
     	_conId : null,
     	_firstChild : null
     }
-    this.timer = null;
+   this.timer = this.autoLTimer =this.autoRTimer = null;
     if( !(this instanceof QScroll )){
     	return new QScroll(o);
     }
@@ -139,44 +140,112 @@ function QScroll(o){
 }
 QScroll.prototype = {
 	constructor : QScroll,
+	clearTimer : function(timer){
+		var self = this;
+		if( timer ){
+			clearInterval(timer);
+			timer = null;
+		}
+	},
 	leftEvent : function(){
 		var self = this;
-		YJ.on( YJ.getid("js_"+self.opts.btn.leftBtn),self.opts.eventType,function(){
-			if( self.opts.circle){
-				self._var._subId.insertBefore( self._var._subId.children[self._var._subId.children.length-1],self._var._subId.children[0]);
-				self._var._subId.style.left = -(self._var._firstChild.offsetWidth+self.opts.marginOffset) +"px";
-				self.Move(0);
-			}else{
-				if( self._var._subId.offsetLeft < 0 ){
-					self.Move( self._var._subId.offsetLeft + self._var._firstChild.offsetWidth + self.opts.marginOffset);
-				}
-			}
-		});
+		var _LBtn = YJ.getid("js_"+self.opts.btn.leftBtn);
+		if( self.opts.eventType == "mouseover" ){
+			YJ.on( _LBtn,"mouseover",function(){
+				self.autoPlay.left();
+			});
+			YJ.on( _LBtn,"mouseout",function(){
+				self.clearTimer(self.autoLTimer);
+			});
+		}else{
+			YJ.on( _LBtn,self.opts.eventType,function(){
+				self.scrollLeft();
+			});
+		}
 	},
 	rightEvent : function(){
 		var self = this;
-		YJ.on( YJ.getid("js_"+self.opts.btn.rightBtn),self.opts.eventType,function(){
-			if( self.opts.circle){
-				self.Move( -self._var._firstChild.offsetWidth - self.opts.marginOffset,function(){
-					self._var._subId.appendChild(self._var._subId.children[0]);
-					self._var._subId.style.left = 0;
-				})
-			}else{
-				if( self._var._subId.offsetLeft > -(self._var._subId.offsetWidth - self._var._conId.offsetWidth - self.opts.marginOffset) ){
-					self.Move( self._var._subId.offsetLeft - self._var._firstChild.offsetWidth - self.opts.marginOffset);
-				}
-			}
-		});
+		var _RBtn = YJ.getid("js_"+self.opts.btn.rightBtn);
+		if( self.opts.eventType == "mouseover" ){
+			YJ.on( _RBtn,"mouseover",function(){
+				self.autoPlay.right();
+			});
+			YJ.on( _RBtn,"mouseout",function(){
+				self.clearTimer(self.autoRTimer);
+			});
+		}else{
+			YJ.on( _RBtn,self.opts.eventType,function(){
+				self.scrollRight();
+			});
+		}
 	},
 	Move : function(iT,callback){
 		var self = this;
-		clearInterval(self.timer)
+		self.clearTimer(self.timer);
 		self.timer = setInterval(function (){
 			var iS = (iT - self._var._subId.offsetLeft) / 5;
 			iS = iS > 0 ? Math.ceil(iS) : Math.floor(iS);
-			self._var._subId.offsetLeft == iT ? (clearInterval(self.timer), callback && callback.apply(self)) : self._var._subId.style.left = iS + self._var._subId.offsetLeft + "px";
+			self._var._subId.offsetLeft == iT ? ( self.clearTimer(self.timer), callback && callback.apply(self)) : self._var._subId.style.left = iS + self._var._subId.offsetLeft + "px";
 		}, 30);
 	},
+	scrollLeft : function(){
+		var self = this;
+		if( self.opts.circle){
+			self._var._subId.insertBefore( self._var._subId.children[self._var._subId.children.length-1],self._var._subId.children[0]);
+			self._var._subId.style.left = -(self._var._firstChild.offsetWidth+self.opts.marginOffset) +"px";
+			self.Move(0);
+		}else{
+			if( self._var._subId.offsetLeft < 0 ){
+				self.Move( self._var._subId.offsetLeft + self._var._firstChild.offsetWidth + self.opts.marginOffset);
+			}
+		}
+	},
+	scrollRight : function(){
+		var self = this;
+		if( self.opts.circle){
+			self.Move( -self._var._firstChild.offsetWidth - self.opts.marginOffset,function(){
+				self._var._subId.appendChild(self._var._subId.children[0]);
+				self._var._subId.style.left = 0;
+			})
+		}else{
+			if( self._var._subId.offsetLeft > -(self._var._subId.offsetWidth - self._var._conId.offsetWidth - self.opts.marginOffset) ){
+				self.Move( self._var._subId.offsetLeft - self._var._firstChild.offsetWidth - self.opts.marginOffset);
+			}
+		}
+	},
+	autoPlay : (function(o){
+		var self = o;
+		function autoLPleft(){
+			self.clearTimer(self.autoLTimer);
+			self.autoLTimer = setInterval(function(){
+				self.scrollLeft();
+			},600);
+		}
+		function autoRPlay(){
+			self.clearTimer(self.autoRTimer);
+			self.autoRTimer = setInterval(function(){
+				self.scrollRight();
+			},600);
+		}
+		return {
+			left : autoLPleft,
+			right : autoRPlay
+		}
+	})(this),
+	/*autoLPlay : function(){
+		var self = this;
+		self.clearTimer(self.autoLTimer);
+		self.autoLTimer = setInterval(function(){
+			self.scrollLeft();
+		},600);
+	},
+	autoRPlay : function(){
+		var self = this;
+		self.clearTimer(self.autoRTimer);
+		self.autoRTimer = setInterval(function(){
+			self.scrollRight();
+		},600);
+	},*/
 	init : function(){
 		var self = this,_node = YJ.clearBlank( self.opts.subcontainer );
 		self._var._subId = YJ.getid( self.opts.subcontainer),
