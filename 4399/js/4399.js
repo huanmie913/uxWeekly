@@ -124,7 +124,7 @@ function QScroll(o){
     	marginOffset : 14,
     	step        : 1, //每次滚动step个
     	circle      : false, //true:有缝  false:无缝
-    	autoScroll  : false
+    	autoScroll  : false //是否自动滚动
     };
 	this.opts = YJ.extend(this._ctg,o || {});
     this._var = {
@@ -213,12 +213,14 @@ QScroll.prototype = {
 			}
 		}
 	},
-	autoPlay : (function(o){
-		var self = o;
+	/*autoPlay : (function(){
+
 		function autoLPleft(){
+			var self = QScroll.prototype;
 			self.clearTimer(self.autoLTimer);
 			self.autoLTimer = setInterval(function(){
 				self.scrollLeft();
+				//self.scrollLeft.call(self);
 			},600);
 		}
 		function autoRPlay(){
@@ -231,8 +233,8 @@ QScroll.prototype = {
 			left : autoLPleft,
 			right : autoRPlay
 		}
-	})(this),
-	/*autoLPlay : function(){
+	})(),*/
+	autoLPlay : function(){
 		var self = this;
 		self.clearTimer(self.autoLTimer);
 		self.autoLTimer = setInterval(function(){
@@ -245,7 +247,7 @@ QScroll.prototype = {
 		self.autoRTimer = setInterval(function(){
 			self.scrollRight();
 		},600);
-	},*/
+	},
 	init : function(){
 		var self = this,_node = YJ.clearBlank( self.opts.subcontainer );
 		self._var._subId = YJ.getid( self.opts.subcontainer),
