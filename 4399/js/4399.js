@@ -264,7 +264,6 @@ QScroll.prototype = {
 			case "top-bottom":
 				self.topEvent();
 				self.bottomEvent();
-
 		}
 	},
 	init : function(){
