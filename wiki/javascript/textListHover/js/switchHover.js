@@ -9,11 +9,11 @@
  @ target    : 目标对象
 */
 
-function SwitchHover(ctg){
+/*function SwitchHover(ctg){
 	this.opt = {
 		        _id : ctg.id, 
 		_hoverClass : ctg.hoverClass,
-		   _target : ctg.target
+		    _target : ctg.target
 	}
 	if( !( this instanceof SwitchHover)){
 		return new SwitchHover(ctg);
@@ -46,4 +46,68 @@ SwitchHover.prototype = {
 			})
 		}
 	}
-}
+}*/
+(function(win,doc){
+	function extend(destination,resourece){
+		for( var prop in resourece){
+			destination[prop] = resourece[prop];
+		}
+		return destination;
+	}
+	
+	function listEffection(ctg){
+		this.setting = {
+					_id           : "js_textList",
+				    _tag          : "tr",
+					_currentClass : "hover",
+					_originClass  : {
+										_oddClass : "odd",
+										_evenClass: "even"
+									} //odd : 奇行  even :偶行
+		}
+		this._opt = extend( this.setting,ctg || {});
+		if( !(this instanceof listEffection)){
+			return new listEffection(ctg);
+		}
+	}
+	listEffection.prototype = {
+		Q : function(id){
+			return typeof id == "string" ? document.getElementById(id) : id;
+		},
+		on : function(obj,type,fn){
+			if( obj.addEventListener ){
+				obj.addEventListener(type,fn,false);
+			}else if( obj.attachEvent ){
+				obj.attachEvent("on"+type,fn);
+			}else{
+				obj["on"+type]=fn;
+			}
+		},
+		interlacedColor : function(){
+			var self = this,
+			   _list = self.Q( self._id ).getElementsByTagName( self._tag ),
+			   _len = _list.length;
+			for( var i = _len-1; i>=0; i-- ){
+				if( i%2 ==0 ){
+					_list[i].className = self._opt._originClass._evenClass;
+				}else{
+					_list[i].className = self._opt._originClass._oddClass;
+				}
+			}
+		},
+		eventColor : function(){
+			var self = this,
+			   _list = self.Q( self._id ).getElementsByTagName( self._tag ),
+			   _len = _list.length;
+			for( var i = 0;i<_len;i++){
+				that.on(_list[i],"mouseover",function(){
+					this.className = that.opt._currentClass;
+				})
+				that.on(_list[i],"mouseout",function(){
+					this.className = "";
+				})
+			}
+		}
+	}
+	win.listEffection = listEffection;
+})(window,document);
