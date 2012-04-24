@@ -3,10 +3,15 @@
  * time : 2012-03-27
  * author :QF
 */
+/*
+ @ id        : 列表ID
+ @ hoverClass: hover的样式
+ @ target    : 目标对象
+*/
 
 function SwitchHover(ctg){
 	this.opt = {
-		        _id : ctg.id,
+		        _id : ctg.id, 
 		_hoverClass : ctg.hoverClass,
 		   _target : ctg.target
 	}
