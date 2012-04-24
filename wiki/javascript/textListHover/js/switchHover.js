@@ -108,8 +108,8 @@ SwitchHover.prototype = {
 					this.className = "";
 				})
 			}
+			return self;
 		}
-		return self;
 	}
 	win.listEffection = listEffection;
 })(window,document);
