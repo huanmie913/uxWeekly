@@ -154,7 +154,7 @@ QScroll.prototype = {
 			var _LBtn = YJ.getid("js_"+self.opts.btn.leftBtn);
 			if( self.opts.eventType == "mouseover" ){
 				YJ.on( _LBtn,"mouseover",function(){
-					self.autoPlay().left();
+					self.autoPlay.left();
 				});
 				YJ.on( _LBtn,"mouseout",function(){
 					self.clearTimer(self.autoLTimer);
@@ -175,7 +175,7 @@ QScroll.prototype = {
 			var _RBtn = YJ.getid("js_"+self.opts.btn.rightBtn);
 			if( self.opts.eventType == "mouseover" ){
 				YJ.on( _RBtn,"mouseover",function(){
-					self.autoPlay().right();
+					self.autoPlay.right();
 				});
 				YJ.on( _RBtn,"mouseout",function(){
 					self.clearTimer(self.autoRTimer);
@@ -223,8 +223,8 @@ QScroll.prototype = {
 			}
 		}
 	},
-	autoPlay : function(){
-		var self = this;
+	autoPlay : (function(){
+		var self = QScroll;
 		function autoLPleft(){
 			self.clearTimer(self.autoLTimer);
 			self.autoLTimer = setInterval(function(){
@@ -241,7 +241,7 @@ QScroll.prototype = {
 			left : autoLPleft,
 			right : autoRPlay
 		}
-	},
+	})(),
 	dirPlay : function(direction){
 		var self = this;
 		switch( self.opts.direction ){
