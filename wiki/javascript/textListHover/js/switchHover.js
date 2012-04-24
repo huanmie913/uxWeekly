@@ -11,7 +11,7 @@ function SwitchHover(ctg){
 		   _target : ctg.target
 	}
 	if( !( this instanceof SwitchHover)){
-		return new SwitchHover();
+		return new SwitchHover(ctg);
 	}
 	this.doHover();
 }
