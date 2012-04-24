@@ -72,7 +72,7 @@ SwitchHover.prototype = {
 	}
 	listEffection.prototype = {
 		Q : function(id){
-			return typeof id == "string" ? document.getElementById(id) : id;
+			return typeof id == "string" ? doc.getElementById(id) : id;
 		},
 		on : function(obj,type,fn){
 			if( obj.addEventListener ){
