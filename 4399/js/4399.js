@@ -257,11 +257,11 @@ QScroll.prototype = {
 			case "bottom":
 				self.bottomEvent();
 				break;
-			case "left-right":
+			case "left-right" || "right-left":
 				self.leftEvent();
 				self.rightEvent();
 				break;
-			case "top-bottom":
+			case "top-bottom" || "bottom-top":
 				self.topEvent();
 				self.bottomEvent();
 		}
@@ -271,7 +271,11 @@ QScroll.prototype = {
 		self._var._subId = YJ.getid( self.opts.subcontainer),
 		self._var._firstChild = self._var._subId.children[0],
 		self._var._conId = YJ.getid( self.opts.container );
-		self._var._subId.style.width = ( parseInt(YJ.getCssProperty(_node.children[0],"width")) + self.opts.marginOffset ) * _node.children.length+"px";
+		if( self.opts.direction == ("top" ||  "bottom" || "top-bottom" ||  "bottom-top" )){
+			self._var._subId.style.height = ( parseInt(YJ.getCssProperty(_node.children[0],"height"))) * _node.children.length+"px";
+		}else{
+			self._var._subId.style.width = ( parseInt(YJ.getCssProperty(_node.children[0],"width")) + self.opts.marginOffset ) * _node.children.length+"px";
+		}
 		self.dirPlay( self.opts.direction);
 	}
 }
