@@ -216,7 +216,7 @@ QScroll.prototype = {
 			self.Move( -self._var._firstChild.offsetWidth - self.opts.marginOffset,function(){
 				self._var._subId.appendChild(self._var._subId.children[0]);
 				self._var._subId.style.left = 0;
-			})
+			});
 		}else{
 			if( self._var._subId.offsetLeft > -(self._var._subId.offsetWidth - self._var._conId.offsetWidth - self.opts.marginOffset) ){
 				self.Move( self._var._subId.offsetLeft - self._var._firstChild.offsetWidth - self.opts.marginOffset);

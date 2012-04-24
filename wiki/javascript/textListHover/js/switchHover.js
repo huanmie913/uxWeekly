@@ -4,11 +4,11 @@
  * author :QF
 */
 
-function SwitchHover(){
+function SwitchHover(ctg){
 	this.opt = {
-		        _id : "js_textList",
-		_hoverClass : "hover",
-		   _target : "tr"
+		        _id : ctg.id,
+		_hoverClass : ctg.hoverClass,
+		   _target : ctg.target
 	}
 	if( !( this instanceof SwitchHover)){
 		return new SwitchHover();
