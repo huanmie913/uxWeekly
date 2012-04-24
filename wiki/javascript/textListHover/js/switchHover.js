@@ -96,15 +96,15 @@ SwitchHover.prototype = {
 			}
 			return self;
 		},
-		eventColor : function(){
+		switchColor : function(){
 			var self = this,
 			   _list = self.Q( self._opt.id ).getElementsByTagName( self._opt.tag ),
 			   _len = _list.length;
 			for( var i = 0;i<_len;i++){
-				that.on(_list[i],"mouseover",function(){
+				self.on(_list[i],"mouseover",function(){
 					this.className = that._opt.currentClass;
 				})
-				that.on(_list[i],"mouseout",function(){
+				self.on(_list[i],"mouseout",function(){
 					this.className = "";
 				})
 			}
