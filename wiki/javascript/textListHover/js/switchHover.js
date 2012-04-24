@@ -57,12 +57,12 @@ SwitchHover.prototype = {
 	
 	function listEffection(ctg){
 		this.setting = {
-					_id           : "js_textList",
-				    _tag          : "tr",
-					_currentClass : "hover",
-					_originClass  : {
-										_oddClass : "odd",
-										_evenClass: "even"
+					id           : "js_textList",
+				    tag          : "tr",
+					currentClass : "hover",
+					originClass  : {
+										oddClass : "odd",
+										evenClass: "even"
 									} //odd : 奇行  even :偶行
 		}
 		this._opt = extend( this.setting,ctg || {});
@@ -85,23 +85,23 @@ SwitchHover.prototype = {
 		},
 		interlacedColor : function(){
 			var self = this,
-			   _list = self.Q( self._id ).getElementsByTagName( self._tag ),
+			   _list = self.Q( self._opt.id ).getElementsByTagName( self._opt.tag ),
 			   _len = _list.length;
 			for( var i = _len-1; i>=0; i-- ){
 				if( i%2 ==0 ){
-					_list[i].className = self._opt._originClass._evenClass;
+					_list[i].className = self._opt.originClass.evenClass;
 				}else{
-					_list[i].className = self._opt._originClass._oddClass;
+					_list[i].className = self._opt.originClass.oddClass;
 				}
 			}
 		},
 		eventColor : function(){
 			var self = this,
-			   _list = self.Q( self._id ).getElementsByTagName( self._tag ),
+			   _list = self.Q( self._opt.id ).getElementsByTagName( self._opt.tag ),
 			   _len = _list.length;
 			for( var i = 0;i<_len;i++){
 				that.on(_list[i],"mouseover",function(){
-					this.className = that.opt._currentClass;
+					this.className = that._opt.currentClass;
 				})
 				that.on(_list[i],"mouseout",function(){
 					this.className = "";
