@@ -94,6 +94,7 @@ SwitchHover.prototype = {
 					_list[i].className = self._opt.originClass.oddClass;
 				}
 			}
+			return self;
 		},
 		eventColor : function(){
 			var self = this,
@@ -108,6 +109,7 @@ SwitchHover.prototype = {
 				})
 			}
 		}
+		return self;
 	}
 	win.listEffection = listEffection;
 })(window,document);
