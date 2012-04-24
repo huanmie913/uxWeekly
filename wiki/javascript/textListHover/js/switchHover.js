@@ -101,11 +101,13 @@ SwitchHover.prototype = {
 			   _list = self.Q( self._opt.id ).getElementsByTagName( self._opt.tag ),
 			   _len = _list.length;
 			for( var i = 0;i<_len;i++){
+				var _tmpClass = "";
 				self.on(_list[i],"mouseover",function(){
-					this.className = self._opt.currentClass;
+					_tmpClass = this.className;
+					this.className += self._opt.currentClass;
 				})
 				self.on(_list[i],"mouseout",function(){
-					this.className = "";
+					this.className = _tmpClass;
 				})
 			}
 			return self;
