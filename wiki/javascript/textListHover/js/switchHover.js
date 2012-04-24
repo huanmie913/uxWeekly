@@ -104,7 +104,7 @@ SwitchHover.prototype = {
 				var _tmpClass = "";
 				self.on(_list[i],"mouseover",function(){
 					_tmpClass = this.className;
-					this.className += self._opt.currentClass;
+					this.className += " "+self._opt.currentClass;
 				})
 				self.on(_list[i],"mouseout",function(){
 					this.className = _tmpClass;
