@@ -157,6 +157,11 @@ a.jScrollArrowDown:hover { background-position: -305px -12px;}
 .wg_textlist img{ margin-left:5px;}
 
 /*wg_table*/
+.wg_table{ width:100%;}
+.wg_table .th_o{ width:45%;}
+.wg_table .th_t{ width:20%;}
+.wg_table .th_th{ width:20%;}
+.wg_table .th_f{ width:15%;}
 .wg_table th,.wg_table td{ padding:3px 5px; color:#5c5c5c; text-align:left;}
 .wg_table td a{color:#5c5c5c}
 .wg_table td a:hover{ color:#e9380f}
