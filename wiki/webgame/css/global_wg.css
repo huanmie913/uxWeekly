@@ -1,4 +1,9 @@
 @charset "utf-8";
+/*
+ @To:     webgame 
+ @Update: 2012-04-26 by QF
+*/
+
 /* CSS Document */
 body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{ padding: 0; margin: 0; }
 table { border-collapse: collapse; border-spacing: 0; }
@@ -39,7 +44,6 @@ a:hover{text-decoration:underline;}
 .mod_nav li{ float:left; display:inline; margin-right:5px;}
 .mod_nav a{ float:left; height:33px; line-height:33px; padding-left:10px; color:#fff; font-weight:700; font-size:14px;}
 .mod_nav span{ display:block; padding-right:10px;}
-
 .mod_nav a:hover,.mod_nav a:hover span,.mod_nav .current a,.mod_nav .current a span{ background-image:url(../images/mod_public.png?v=5084); background-repeat:no-repeat}
 .mod_nav a:hover{ background-position:0 0; color:#1c8ed3; text-decoration:none;}
 .mod_nav a:hover span{background-position:right 0;}
@@ -51,6 +55,7 @@ a:hover{text-decoration:underline;}
 .mod_panel{ float:right; padding:7px 20px 0 0;}
 .mod_panel a{ margin-left:10px; zoom:1; color:#fff;}
 .mod_panel a:hover{ color:#fff000}
+
 /*登录*/
 .mod_ulinks{ position:relative; zoom:1}
 .mod_uinfo{ float:right; padding-left:43px;line-height:18px; width:180px; }
