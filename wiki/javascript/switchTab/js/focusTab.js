@@ -13,13 +13,14 @@ function FocuSlide(){
 		   _numTarget : "li",
 		   _eventType : "click",
 		_currentClass : "current",
-			     _Btn : {
+			     /*_Btn : {
 			 			_left : "js_leftBtn",
 			 			_right : "js_rightBtn",
 			 			_leftClass : "leftBtn",
 			 			_rightClass : "rightBtn",
 			 			_btnDisable : "_disable"
-			 		},
+			 		},*/
+				 _Btn : null,
 			_autoPlay : true,
 		_intervalTime : 2000,
 		         _num : 0
