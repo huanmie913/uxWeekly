@@ -2,6 +2,7 @@
   * to:carousel
   * author:f2er
   * time:12-03-27
+  * update : 12-05-02
 **/
 
 /*carousel*/
