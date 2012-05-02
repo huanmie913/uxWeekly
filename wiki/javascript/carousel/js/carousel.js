@@ -5,7 +5,9 @@
 **/
 
 /*carousel*/
-(function(win,doc){
+(function(win,undefined){
+	
+    /*public method YJ*/
 	var YJ = win.YJ || {};
 	YJ = {
 		extend : function(destination,source){
@@ -21,7 +23,9 @@
 			if( obj.addEventListener ){
 				obj.addEventListener(type,fn,false);
 			}else if( obj.attachEvent ){
-				obj.attachEvent("on"+type,fn);
+				obj.attachEvent("on"+type,function(){
+					fn.call(obj);
+				});
 			}else{
 				obj["on"+type]=fn;
 			}
@@ -32,14 +36,16 @@
 		}
 	}
 	
+	/*FocusCarousel*/
 	function FocusCarousel(ctg){
 		this.opt = {
 				  slideContainer : "js_tabslide",
 						 imgList : "js_imgList",
-						 numList : "js_num",
-					   numTarget : "li",
+						 numList : "",//js_num
+					   slideTarget : "li",
 					   eventType : "click",
 					currentClass : "current",
+							 num : 0,
 							 Btn : {
 									left : "js_leftBtn",
 									right : "js_rightBtn",
@@ -47,13 +53,17 @@
 									rightClass : "rightBtn",
 									btnDisable : "_disable"
 								},
-						autoPlay : false,
-					intervalTime : 2000,
-							 num : 0
+						autoPlay : {
+									play : false,
+									intervalTime : 2000
+						}
+							
 				};
+		
 		this.setting = YJ.extend(this.opt,ctg || {});
 		this._timer = null;
 		this._autoTimer = null;
+		this.LENGTH = 0;
 		if( !(this instanceof FocusCarousel)){
 			return new FocusCarousel(ctg);
 		}
@@ -61,19 +71,21 @@
 	}
 	
 	FocusCarousel.prototype = {
-		varArray : function(){
+		constructor : FocusCarousel,
+		numList : function(){
 			var that = this;
-			var _numList = YJ.Q( that.setting.numList ).getElementsByTagName( that.setting.numTarget ),
-				_imgList = YJ.Q( that.setting.imgList ).getElementsByTagName(that.setting.numTarget);
-			return{
-				_numList : _numList,
-				_imgList : _imgList
-			}
+			var _numList = YJ.Q( that.setting.numList ) && YJ.Q( that.setting.numList ).getElementsByTagName( that.setting.slideTarget );
+			return _numList;
+		},
+		imgList : function(){
+			var that = this;
+			var	_imgList = YJ.Q( that.setting.imgList ).getElementsByTagName(that.setting.slideTarget);
+			return _imgList;
 		},
 		index : function(obj){
 			var that = this;
-			var _numList = that.varArray()._numList;
-			for( var i = 0,_len = _numList.length ;i<_len;i++){
+			var _numList = that.numList();
+			for( var i = 0;i<that.LENGTH;i++){
 				if( obj == _numList[i] ){
 					return i;
 				}
@@ -106,8 +118,10 @@
 		},
 		BtnState : function(){
 			var that = this,
-				_numList = that.varArray()._numList,
-				_imgList = that.varArray()._imgList;
+				_imgList = that.imgList();
+			if( YJ.Q( that.setting.numList ) != null ){	
+				var _numList = that.numList();
+			}
 			if( Object.prototype.toString.call(that.setting.Btn) == "[object Object]" ){
 				
 				var _leftBtn = YJ.Q( that.setting.Btn.left ),
@@ -115,10 +129,10 @@
 					_leftBtnClass = that.setting.Btn.leftClass,
 					_rightBtnClass = that.setting.Btn.rightClass;
 
-				if( that.setting.num >= _numList.length -1 ){
+				if( that.setting.num >= that.LENGTH -1 ){
 					_leftBtn.className = _leftBtnClass;
 					_rightBtn.className = _rightBtnClass + that.setting.Btn.btnDisable;
-				}else if( that.setting.num < _numList.length -1 && that.setting.num >0 ){
+				}else if( that.setting.num < that.LENGTH -1 && that.setting.num >0 ){
 					_rightBtn.className = _rightBtnClass;
 					_leftBtn.className = _leftBtnClass;
 				}else if( that.setting.num <= 0 ){
@@ -129,47 +143,55 @@
 		},
 		showSlide : function(n){
 			var that = this,
-				_numList = that.varArray()._numList,
-				_imgList = that.varArray()._imgList;
-			for( var i = 0,_length =_numList.length;i<_length;i++ ){
+				_imgList = that.imgList();
+			if( YJ.Q( that.setting.numList ) != null ){	
+				var _numList = that.numList();
+				for( var i = 0;i< that.LENGTH; i++ ){
 					_numList[i].className = (i == n ) ? that.setting.currentClass : "";
 				}
-			for( var j = 0,_len = _imgList.length;j<_len;j++){
+			}
+			for( var j = 0;j<that.LENGTH;j++){
+				var _obj = _imgList[j];
 				if( j == n ){
-					that.animateShow(_imgList[j]);
+					that.animateShow(_obj);
+					_obj.style.zIndex = 11;
 				}else{
-					that.setOpacity(_imgList[j],0);
+					that.setOpacity(_obj,0);
+					_obj.style.zIndex = 10;
 				}
 			}
 			that.BtnState();
 		},
 		autoSlide : function(){
-			var that = this,
-				_Length = that.varArray()._numList.length;
+			var that = this;
 			that.clearTimer( that._autoTimer );
 			that._autoTimer = setInterval(function(){
-				if( that.setting.num >= _Length-1 ){
+				if( that.setting.num >= that.LENGTH - 1 ){
 					that.setting.num = 0;
 				}else{
 					that.setting.num++;
 				}
 				that.showSlide(that.setting.num);
-			},that.setting.intervalTime);
+			},that.setting.autoPlay.intervalTime);
 		},
 		Initialization : function(i){
 			var that = this,
-				_numList = that.varArray()._numList,
-				_imgList = that.varArray()._imgList;
-			_numList[i].className = that.setting.currentClass;
+				_imgList = that.imgList();
+			that.LENGTH = YJ.Q(that.setting.imgList).children.length;
+			
+			if( YJ.Q( that.setting.numList ) != null ){
+				var _numList = that.numList();
+				_numList[i].className = that.setting.currentClass;
+			}
+			
 			that.setOpacity(_imgList[i],100);
 			that.BtnState();
 		},
 		rightEvent : function(lobj,robj){
-			var that = this,
-				_length = that.varArray()._numList.length;
+			var that = this;
 				that.setting.num++;
-				if( that.setting.num > _length-1 ){
-					that.setting.num = _length-1;
+				if( that.setting.num > that.LENGTH - 1 ){
+					that.setting.num = that.LENGTH - 1;
 					return;
 				}
 				lobj.className = that.setting.Btn.leftClass;
@@ -188,6 +210,8 @@
 		init : function(){
 			var that = this,
 				_slideContainer = YJ.Q(that.setting.slideContainer);
+			that.Initialization( that.setting.num );
+			
 			if( Object.prototype.toString.call(that.setting.Btn) == "[object Object]" ){
 				var _leftBtn = YJ.Q( that.setting.Btn.left ),
 					_rightBtn = YJ.Q( that.setting.Btn.right );
@@ -197,9 +221,9 @@
 				YJ.on( _rightBtn, that.setting.eventType,function(){
 					that.rightEvent(_leftBtn,_rightBtn);
 				});
-			}
-			that.Initialization( that.setting.num );	
-			if( that.setting.autoPlay ){
+			};
+			
+			if( that.setting.autoPlay.play ){
 				that.autoSlide();
 				YJ.on( _slideContainer ,"mouseover",function(e){
 					that.clearTimer( that._autoTimer );
@@ -209,16 +233,20 @@
 					that.autoSlide();
 				});
 			}
-			YJ.on( YJ.Q(that.setting.numList ),that.setting.eventType,function(e){
-				var _target = YJ.getTarget(e);
-				if( _target.nodeName.toLowerCase() != that.setting.numTarget ){
-					return;
-				}
-				var _index = that.index(_target);
-				that.setting.num = _index;
-				that.showSlide(_index);
-			});
+			/*ÐòºÅ*/
+			if( YJ.Q( that.setting.numList ) != null ){
+				YJ.on( YJ.Q(that.setting.numList ),that.setting.eventType,function(e){
+					var _target = YJ.getTarget(e);
+					if( _target.nodeName.toLowerCase() != that.setting.slideTarget ){
+						return;
+					}
+					var _index = that.index(_target);
+					that.setting.num = _index;
+					that.showSlide(that.setting.num);
+				});
+			}
+			that.showSlide(that.setting.num);
 		}
 	}
 	win.FocusCarousel = FocusCarousel;
-})(window,document);
+})(window);
