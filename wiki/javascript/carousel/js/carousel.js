@@ -41,7 +41,7 @@
 		this.opt = {
 				  slideContainer : "js_tabslide",
 						 imgList : "js_imgList",
-						 numList : "js_num",//js_num
+						 numList : "",//js_num
 					   slideTarget : "li",
 					   eventType : "click",
 					currentClass : "current",
@@ -150,12 +150,14 @@
 		showSlide : function(n){
 			var that = this,
 				_imgList = that.imgList();
-			if( YJ.Q( that.setting.numList ) != null ){	
+				
+			that.checkType( YJ.Q( that.setting.numList ),function(){
 				var _numList = that.numList();
 				for( var i = 0;i< that.LENGTH; i++ ){
 					_numList[i].className = (i == n ) ? that.setting.currentClass : "";
 				}
-			}
+			});
+			
 			for( var j = 0;j<that.LENGTH;j++){
 				var _obj = _imgList[j];
 				if( j == n ){
