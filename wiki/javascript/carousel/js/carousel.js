@@ -41,11 +41,12 @@
 		this.opt = {
 				  slideContainer : "js_tabslide",
 						 imgList : "js_imgList",
-						 numList : "",//js_num
+						 numList : "js_num",//js_num
 					   slideTarget : "li",
 					   eventType : "click",
 					currentClass : "current",
 							 num : 0,
+							 /*Btn : null,*/
 							 Btn : {
 									left : "js_leftBtn",
 									right : "js_rightBtn",
@@ -63,7 +64,7 @@
 		this.setting = YJ.extend(this.opt,ctg || {});
 		this._timer = null;
 		this._autoTimer = null;
-		this.LENGTH = 0;
+		this.LENGTH = 0; //统计子个数
 		if( !(this instanceof FocusCarousel)){
 			return new FocusCarousel(ctg);
 		}
@@ -81,6 +82,11 @@
 			var that = this;
 			var	_imgList = YJ.Q( that.setting.imgList ).getElementsByTagName(that.setting.slideTarget);
 			return _imgList;
+		},
+		checkType : function(obj,callback){
+			if( Object.prototype.toString.call(obj) != "[object Null]" ){
+				callback && callback();
+			}
 		},
 		index : function(obj){
 			var that = this;
@@ -119,11 +125,11 @@
 		BtnState : function(){
 			var that = this,
 				_imgList = that.imgList();
-			if( YJ.Q( that.setting.numList ) != null ){	
+			that.checkType(that.setting.numList,function(){
 				var _numList = that.numList();
-			}
-			if( Object.prototype.toString.call(that.setting.Btn) == "[object Object]" ){
-				
+			});
+			
+			that.checkType(that.setting.Btn,function(){
 				var _leftBtn = YJ.Q( that.setting.Btn.left ),
 					_rightBtn = YJ.Q( that.setting.Btn.right ),
 					_leftBtnClass = that.setting.Btn.leftClass,
@@ -139,7 +145,7 @@
 					_rightBtn.className = _rightBtnClass;
 					_leftBtn.className = _leftBtnClass + that.setting.Btn.btnDisable;
 				}
-			}
+			})
 		},
 		showSlide : function(n){
 			var that = this,
@@ -179,10 +185,10 @@
 				_imgList = that.imgList();
 			that.LENGTH = YJ.Q(that.setting.imgList).children.length;
 			
-			if( YJ.Q( that.setting.numList ) != null ){
+			that.checkType( YJ.Q(that.setting.numList),function(){
 				var _numList = that.numList();
 				_numList[i].className = that.setting.currentClass;
-			}
+			})
 			
 			that.setOpacity(_imgList[i],100);
 			that.BtnState();
@@ -212,16 +218,16 @@
 				_slideContainer = YJ.Q(that.setting.slideContainer);
 			that.Initialization( that.setting.num );
 			
-			if( Object.prototype.toString.call(that.setting.Btn) == "[object Object]" ){
+			that.checkType(that.setting.Btn,function(){
 				var _leftBtn = YJ.Q( that.setting.Btn.left ),
 					_rightBtn = YJ.Q( that.setting.Btn.right );
-				YJ.on( _leftBtn, that.setting.eventType,function(){
-					that.leftEvent(_leftBtn,_rightBtn);
-				});
-				YJ.on( _rightBtn, that.setting.eventType,function(){
-					that.rightEvent(_leftBtn,_rightBtn);
-				});
-			};
+					YJ.on( _leftBtn, that.setting.eventType,function(){
+						that.leftEvent(_leftBtn,_rightBtn);
+					});
+					YJ.on( _rightBtn, that.setting.eventType,function(){
+						that.rightEvent(_leftBtn,_rightBtn);
+					});
+			});
 			
 			if( that.setting.autoPlay.play ){
 				that.autoSlide();
@@ -233,8 +239,9 @@
 					that.autoSlide();
 				});
 			}
+			
 			/*序号*/
-			if( YJ.Q( that.setting.numList ) != null ){
+			that.checkType( YJ.Q(that.setting.numList),function(){
 				YJ.on( YJ.Q(that.setting.numList ),that.setting.eventType,function(e){
 					var _target = YJ.getTarget(e);
 					if( _target.nodeName.toLowerCase() != that.setting.slideTarget ){
@@ -244,7 +251,7 @@
 					that.setting.num = _index;
 					that.showSlide(that.setting.num);
 				});
-			}
+			});
 			that.showSlide(that.setting.num);
 		}
 	}
