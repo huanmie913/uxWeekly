@@ -74,7 +74,7 @@
 							 num : 0,
 					      effect : {
 									 efficacy : "slide", //transparent:透明  slide:滑动
-									direction : 0 // 1:左右  0：上下
+									direction : 1 // 1:左右  0：上下
 								},
 							 /*Btn : null,*/
 							 Btn : {
@@ -153,13 +153,36 @@
 			that.clearTimer( that._timer );
 			that._timer = setInterval(showImg,100);
 		},
-		slideShow : function(obj,dir,n){
+		setSlide : function(obj,dir,n,arg){
 			var that = this;
 			if( dir == 1){
-				obj.style.marginLeft = ( -that.WIDTH * n )+"px";
+				obj.style.marginLeft = ( -arg * n )+"px";
 			}else{
-				obj.style.marginTop = ( -that.HEIGHT * n )+"px";
+				obj.style.marginTop = ( -arg * n )+"px";
 			}
+		},
+		slideShow : function(obj,dir,n){
+			var that = this,
+				_width = _height = 0;
+			function animate(){
+				if(dir == 1){
+					_width += 20;
+					that.setSlide(obj,1,n,_width)
+					if( _width >= that.WIDTH ){
+						that.clearTimer( that._timer );
+						_width = 0;
+					}
+				}else if( dir==0){
+					_height += 20;
+					that.setSlide(obj,0,n,_height)
+					if( _height >= that.HEIGHT ){
+						that.clearTimer( that._timer );
+						_height = 0;
+					}
+				}
+			}
+			that.clearTimer( that._timer );
+			that._timer = setInterval(animate,10);
 		},
 		BtnState : function(){
 			var that = this,
@@ -197,22 +220,21 @@
 					_numList[i].className = (i == n ) ? that.setting.currentClass : "";
 				}
 			});
-			
+			//透明
 			if( that.setting.effect.efficacy == "transparent"){
 				for( var j = 0;j<that.LENGTH;j++){
 					var _obj = _imgList[j];
-					
-						if( j == n ){
-							that.opacityShow(_obj);
-							_obj.style.zIndex = 11;
-						}else{
-							that.setOpacity(_obj,0);
-							_obj.style.zIndex = 10;
-						}
+					if( j == n ){
+						that.opacityShow(_obj);
+						_obj.style.zIndex = 11;
+					}else{
+						that.setOpacity(_obj,0);
+						_obj.style.zIndex = 10;
 					}
+				}
 			}
+			//左右、上下
 			if( that.setting.effect.efficacy == "slide"){
-					//左右、上下
 				that.slideShow(_imgContainer,that.setting.effect.direction,n);
 			}
 			that.BtnState();
