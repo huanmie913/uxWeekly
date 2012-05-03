@@ -153,28 +153,28 @@
 			that.clearTimer( that._timer );
 			that._timer = setInterval(showImg,100);
 		},
-		setSlide : function(obj,dir,n,arg){
+		setSlide : function(obj,n,arg){
 			var that = this;
-			if( dir == 1){
+			if( that.setting.effect.direction == 1){
 				obj.style.marginLeft = ( -arg * n )+"px";
 			}else{
 				obj.style.marginTop = ( -arg * n )+"px";
 			}
 		},
-		slideShow : function(obj,dir,n){
+		slideShow : function(obj,n){
 			var that = this,
 				_width = _height = 0;
 			function animate(){
-				if(dir == 1){
+				if( that.setting.effect.direction == 1 ){
 					_width += 20;
-					that.setSlide(obj,1,n,_width)
+					that.setSlide(obj,n,_width)
 					if( _width >= that.WIDTH ){
 						that.clearTimer( that._timer );
 						_width = 0;
 					}
-				}else if( dir==0){
+				}else if( that.setting.effect.direction == 0 ){
 					_height += 20;
-					that.setSlide(obj,0,n,_height)
+					that.setSlide(obj,n,_height)
 					if( _height >= that.HEIGHT ){
 						that.clearTimer( that._timer );
 						_height = 0;
@@ -235,7 +235,7 @@
 			}
 			//×óÓÒ¡¢ÉÏÏÂ
 			if( that.setting.effect.efficacy == "slide"){
-				that.slideShow(_imgContainer,that.setting.effect.direction,n);
+				that.slideShow(_imgContainer,n);
 			}
 			that.BtnState();
 		},
@@ -253,15 +253,20 @@
 		},
 		Initialization : function(i){
 			var that = this,
-				_imgList = that.imgList();
-			that.LENGTH = YJ.Q(that.setting.imgList).children.length;
+				_imgList = that.imgList(),
+				_imgContainer = YJ.Q( that.setting.imgList );
+			that.LENGTH = _imgContainer.children.length;
 			
 			that.checkType( YJ.Q(that.setting.numList),function(){
 				var _numList = that.numList();
 				_numList[i].className = that.setting.currentClass;
 			})
-			
-			that.setOpacity(_imgList[i],100);
+			if(that.setting.effect.efficacy == "transparent"){
+				that.setOpacity(_imgList[i],100);
+			}else if(that.setting.effect.efficacy == "slide"){
+				var _arg = that.setting.effect.direction ? that.WIDTH : that.HEIGHT;
+				that.setSlide(_imgContainer,i,_arg);
+			}
 			that.BtnState();
 		},
 		rightEvent : function(lobj,robj){
