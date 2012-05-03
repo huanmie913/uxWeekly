@@ -34,6 +34,31 @@
 		getTarget : function(event){
 			var _e = event || window.event;
 			return _e.target || _e.srcElement;
+		},
+		clearBlank : function(obj){
+			for( var i = 0,len = obj.children.length;i<len;i++){
+				if( obj.children[i].nodeType != 1){
+					obj.removeChild(obj.children[i]);
+				}
+			}
+			return obj;
+		},
+		getCssProperty : function(element,attr){
+			if(element.style[attr]){
+				//若样式存在于html中,优先获取
+				return element.style[attr];
+			}else if(element.currentStyle){
+				//IE下获取CSS属性最终样式(同于CSS优先级)
+				return element.currentStyle[attr];
+			}else if(document.defaultView && document.defaultView.getComputedStyle){
+				//W3C标准方法获取CSS属性最终样式(同于CSS优先级)
+				//注意,此法属性原格式(text-align)获取的,故要转换一下
+				attr=attr.replace(/([A-Z])/g,'-$1').toLowerCase();
+				//获取样式对象并获取属性值
+				return document.defaultView.getComputedStyle(element,null).getPropertyValue(attr);
+			}else{
+				return null;
+			}
 		}
 	}
 	
@@ -42,11 +67,15 @@
 		this.opt = {
 				  slideContainer : "js_tabslide",
 						 imgList : "js_imgList",
-						 numList : "",//js_num
+						 numList : "js_num",//js_num
 					   slideTarget : "li",
 					   eventType : "click",
 					currentClass : "current",
 							 num : 0,
+					      effect : {
+									 efficacy : "slide", //transparent:透明  slide:滑动
+									direction : 0 // 1:左右  0：上下
+								},
 							 /*Btn : null,*/
 							 Btn : {
 									left : "js_leftBtn",
@@ -58,7 +87,7 @@
 						autoPlay : {
 									play : false,
 									intervalTime : 2000
-						}
+								}
 							
 				};
 		
@@ -66,6 +95,7 @@
 		this._timer = null;
 		this._autoTimer = null;
 		this.LENGTH = 0; //统计子个数
+		this.WIDTH = this.HEIGHT = 0; //宽度，高度
 		if( !(this instanceof FocusCarousel)){
 			return new FocusCarousel(ctg);
 		}
@@ -109,7 +139,7 @@
 			obj.style.opacity = opacityValue/100;
 			obj.style.filter = "alpha(opacity="+opacityValue+")";
 		},
-		animateShow : function(obj){
+		opacityShow : function(obj){
 			var that = this,
 				_opacity = 0;
 			function showImg(){
@@ -122,6 +152,14 @@
 			}
 			that.clearTimer( that._timer );
 			that._timer = setInterval(showImg,100);
+		},
+		slideShow : function(obj,dir,n){
+			var that = this;
+			if( dir == 1){
+				obj.style.marginLeft = ( -that.WIDTH * n )+"px";
+			}else{
+				obj.style.marginTop = ( -that.HEIGHT * n )+"px";
+			}
 		},
 		BtnState : function(){
 			var that = this,
@@ -150,7 +188,8 @@
 		},
 		showSlide : function(n){
 			var that = this,
-				_imgList = that.imgList();
+				_imgList = that.imgList(),
+				_imgContainer = YJ.Q( that.setting.imgList );
 				
 			that.checkType( YJ.Q( that.setting.numList ),function(){
 				var _numList = that.numList();
@@ -159,15 +198,22 @@
 				}
 			});
 			
-			for( var j = 0;j<that.LENGTH;j++){
-				var _obj = _imgList[j];
-				if( j == n ){
-					that.animateShow(_obj);
-					_obj.style.zIndex = 11;
-				}else{
-					that.setOpacity(_obj,0);
-					_obj.style.zIndex = 10;
-				}
+			if( that.setting.effect.efficacy == "transparent"){
+				for( var j = 0;j<that.LENGTH;j++){
+					var _obj = _imgList[j];
+					
+						if( j == n ){
+							that.opacityShow(_obj);
+							_obj.style.zIndex = 11;
+						}else{
+							that.setOpacity(_obj,0);
+							_obj.style.zIndex = 10;
+						}
+					}
+			}
+			if( that.setting.effect.efficacy == "slide"){
+					//左右、上下
+				that.slideShow(_imgContainer,that.setting.effect.direction,n);
 			}
 			that.BtnState();
 		},
@@ -218,7 +264,10 @@
 		},
 		init : function(){
 			var that = this,
-				_slideContainer = YJ.Q(that.setting.slideContainer);
+				_slideContainer = YJ.Q(that.setting.slideContainer),
+				_imgContainer = YJ.Q( that.setting.imgList );
+				
+			YJ.clearBlank( _imgContainer );
 			that.Initialization( that.setting.num );
 			
 			that.checkType(that.setting.Btn,function(){
@@ -255,6 +304,17 @@
 					that.showSlide(that.setting.num);
 				});
 			});
+			
+			if( that.setting.effect.efficacy == "slide"){
+				var _firstChild = _imgContainer.children[0];
+				if( that.setting.effect.direction == 1){
+					that.WIDTH = parseInt( YJ.getCssProperty(_firstChild,'width'));
+					_imgContainer.style.width = that.WIDTH * that.LENGTH +"px";
+				}else{
+					that.HEIGHT = parseInt( YJ.getCssProperty(_firstChild,'height'));
+					_imgContainer.style.height = that.HEIGHT * that.LENGTH +"px";
+				}
+			}
 			that.showSlide(that.setting.num);
 		}
 	}
