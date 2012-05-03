@@ -72,6 +72,7 @@
 					   eventType : "click",
 					currentClass : "current",
 							 num : 0,
+						   speed : 100,
 					      effect : {
 									 efficacy : "slide", //transparent:透明  slide:滑动
 									direction : 1 // 1:左右  0：上下
@@ -151,7 +152,7 @@
 				}
 			}
 			that.clearTimer( that._timer );
-			that._timer = setInterval(showImg,100);
+			that._timer = setInterval(showImg,that.setting.speed);
 		},
 		setSlide : function(obj,n,arg){
 			var that = this;
@@ -182,7 +183,7 @@
 				}
 			}
 			that.clearTimer( that._timer );
-			that._timer = setInterval(animate,10);
+			that._timer = setInterval(animate,that.setting.speed);
 		},
 		BtnState : function(){
 			var that = this,
