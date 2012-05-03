@@ -72,7 +72,8 @@
 					   eventType : "click",
 					currentClass : "current",
 							 num : 0,
-						   speed : 100,
+						   speed : 100, //速度
+						   step  : 10, //步长
 					      effect : {
 									 efficacy : "slide", //transparent:透明  slide:滑动
 									direction : 1 // 1:左右  0：上下
@@ -144,7 +145,7 @@
 			var that = this,
 				_opacity = 0;
 			function showImg(){
-				_opacity += 10;
+				_opacity += that.setting.step;
 				that.setOpacity(obj,_opacity);
 				if(_opacity >= 100){
 					that.clearTimer( that._timer );
@@ -167,14 +168,14 @@
 				_width = _height = 0;
 			function animate(){
 				if( that.setting.effect.direction == 1 ){
-					_width += 20;
+					_width += that.setting.step;
 					that.setSlide(obj,n,_width)
 					if( _width >= that.WIDTH ){
 						that.clearTimer( that._timer );
 						_width = 0;
 					}
 				}else if( that.setting.effect.direction == 0 ){
-					_height += 20;
+					_height += that.setting.step;
 					that.setSlide(obj,n,_height)
 					if( _height >= that.HEIGHT ){
 						that.clearTimer( that._timer );
