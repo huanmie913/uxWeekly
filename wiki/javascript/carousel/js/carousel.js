@@ -87,7 +87,7 @@
 									btnDisable : "_disable"
 								},
 						autoPlay : {
-									play : false,
+									play : true,
 									intervalTime : 2000
 								}
 							
