@@ -87,7 +87,7 @@
 									btnDisable : "_disable"
 								},
 						autoPlay : {
-									play : true,
+									play : false,
 									intervalTime : 2000
 								}
 							
@@ -298,7 +298,6 @@
 				
 			YJ.clearBlank( _imgContainer );
 			that.Initialization( that.setting.num );
-			
 			that.checkType(that.setting.Btn,function(){
 				var _leftBtn = YJ.Q( that.setting.Btn.left ),
 					_rightBtn = YJ.Q( that.setting.Btn.right );
