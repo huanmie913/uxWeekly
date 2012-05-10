@@ -120,18 +120,26 @@ a.jScrollArrowDown:hover { background-position: -305px -12px;}
 .orange-bar .jScrollPaneDrag { background: 50% 50% #c88d00;}
 .orange-bar .scroll-pane { background: none repeat scroll 0 0 #6699FF;}
 
-/*wg_box*/
-.wg_box .wg_hd,.wg_box .lt,.wg_box .rt,.wg_box .wg_fd,.wg_box .rb,.wg_box .lb{height:35px; background-image:url(../images/mod_box.png); background-repeat:no-repeat;}
-.wg_box .wg_hd{ background-position:0 0; padding:0 42px;}
-.wg_box .lt{ background-position:0 -35px; background-repeat:repeat-x;display:block;}
-.wg_box .rt{ background-position:right -70px;display:block;margin:-35px -42px 0 0}
-.wg_box .hd_t{ margin-bottom:-35px; height:35px;}
-.wg_box .wg_fd{ background-position:0 -105px; padding:0 42px;height:30px;}
-.wg_box .lb{ background-position:0 -135px; background-repeat:repeat-x;display:block;height:30px;}
-.wg_box .rb{ background-position:right -165px;display:block;margin:-30px -42px 0 0;height:30px;}
-.wg_box .wg_bd{ background:#f8fefe;}
-.wg_box .bd_l{ background:url(../images/mod_box_l.png) repeat-y 0 0;}
-.wg_box .bd_r{ background:url(../images/mod_box_r.png) repeat-y right 0;}
+/*wg-box*/
+.wg-box .wg-hd,.wg-box .lt,.wg-box .rt,.wg-box .wg-fd,.wg-box .rb,.wg-box .lb{height:36px; background-image:url(../images/mod_box.png); background-repeat:no-repeat;}
+.wg-box .wg-hd{ background-position:0 0; padding:0 42px; position:relative;}
+.wg-box .lt{ background-position:0 -36px; background-repeat:repeat-x;display:block;}
+.wg-box .rt{ background-position:right -72px;display:block;margin:-36px -42px 0 0}
+.wg-box .hd-t{ margin-bottom:-36px; height:33px; padding-top:3px; position:relative;}
+.wg-box .wg-fd{ background-position:0 -108px; padding:0 42px;height:25px;}
+.wg-box .lb{ background-position:0 -133px; background-repeat:repeat-x;display:block;height:25px;}
+.wg-box .rb{ background-position:right -158px;display:block;margin:-25px -42px 0 0;height:25px;}
+.wg-box .wg-bd{ background:#f8fefe; zoom:1}
+.wg-box .wg-bl{ background:url(../images/mod_box_l.png) repeat-y 0 0;}
+.wg-box .wg-br{ background:url(../images/mod_box_r.png) repeat-y right 0; padding:15px 20px 0; zoom:1;}
+.wg-box .hd-t h2{ background:url(../images/m_sprite.png)  no-repeat 0 -120px; width:103px; float:left; height:32px; color:#005d52; display:block; text-align: center;line-height:32px; font-size:16px;font-family:"microsoft Yahei,simsun"}
+.wg-box .hd-t a.more,.wg-box .hd-t a.ht-a,.wg-box .hd-t a.ht-up,.wg-imgscroll .more,.wg-imgscroll .ht-up{ background-image: url(../images/m_sprite.png); background-repeat:no-repeat;line-height:0;font-size:0;overflow:hidden;zoom:1;}
+.wg-box .hd-t a.more,.wg-imgscroll .more{ position:absolute; right:-15px; top:8px;background-position:0 -62px;width:62px; height:21px; z-index:2;}
+.wg-box .hd-t a.more:hover,.wg-imgscroll .more:hover{ background-position:0 -84px;}
+.wg-box .hd-t a.ht-a{ background-position:-62px -33px; width:82px; height: 21px; position:absolute; right:68px; top:8px; z-index:2; }
+.wg-box .hd-t a.ht-a:hover{ background-position:-62px -54px;}
+.wg-box .hd-t a.ht-up,.wg-imgscroll .ht-up{ background-position:-62px -76px; width:82px; height:21px; position:absolute; top:8px; right:68px; z-index:2;}
+.wg-box .hd-t a.ht-up:hover,.wg-imgscroll .ht-up:hover{ background-position:-62px -98px;}
 
 /*wg_imgscroll*/
 .wg_imgscroll{ position: relative;  height:130px; overflow: hidden;}
@@ -157,14 +165,14 @@ a.jScrollArrowDown:hover { background-position: -305px -12px;}
 .wg_textlist img{ margin-left:5px;}
 
 /*wg_table*/
-.wg_table{ width:100%;}
-.wg_table .th_o{ width:45%;}
-.wg_table .th_t{ width:20%;}
-.wg_table .th_th{ width:20%;}
-.wg_table .th_f{ width:15%;}
-.wg_table th,.wg_table td{ padding:3px 5px; color:#5c5c5c; text-align:left;}
-.wg_table td a{color:#5c5c5c}
-.wg_table td a:hover{ color:#e9380f}
+.wg-table{ width:100%;}
+.wg-table .c1{ width:50%;}
+.wg-table .c2,.wg-table .c3,.wg-table .c4{ width:19%;}
+.wg-table th,.wg-table td{color:#005d52; height:23px; line-height:23px; padding:3px 5px;}
+.wg-table .hover td{ background:#ddd;}
+.wg-table a{ color:#005d52;}
+.wg-table .xdis-tit{ width:400px; height:23px; overflow:hidden;}
+
 .wg_table li{ padding:3px 5px; color:#5c5c5c; zoom:1; overflow:hidden; border-bottom:dashed 1px #e8c87b;}
 .wg_table li span{ float:right; width:60px; height:19px; overflow:hidden; text-align:right;}
 .wg_table li a{color:#5c5c5c; width:345px; height:19px; overflow:hidden; display:block;}
