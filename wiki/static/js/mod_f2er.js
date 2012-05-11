@@ -123,7 +123,7 @@ mod_f2er={
 		   if( ! this._$(id) ){
 				return;   
 			}
-			var _tpl='&copy;copyRight 2012 4399UED @情封制作  前端组 维护 @小薇设计  内部资料 请勿外传 谢谢合作';
+			var _tpl='&copy;copyRight 2012 4399UED @情封制作  前端组 维护 @小郭设计  内部资料 请勿外传 谢谢合作';
 			this._$(id).innerHTML=_tpl;
 		},
 		blind:function( id ){
@@ -211,7 +211,7 @@ mod_f2er={
 				_wrapper =  document.getElementsByClassName('wiki_content')[0];
 			var	_arrowHtml=document.createElement('span');
 				_arrowHtml.className="m_arrow",
-				_arrowHtml.innerHTML="<em>◆</em><span>◆</span>";
+				_arrowHtml.innerHTML="<em></em>";
 				
 			function getData( rout){
 					Ajax.doAjax("GET",rout,true,"",function(txt){
