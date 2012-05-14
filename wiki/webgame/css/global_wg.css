@@ -1,7 +1,7 @@
 @charset "utf-8";
 /*
  @To:     webgame 
- @Update: 2012-04-26 by QF
+ @Update: 2012-05-10 by QF
 */
 
 /* CSS Document */
@@ -24,16 +24,16 @@ td{ font-size:12px; line-height:160%;}
 .left{ float:left }
 .right{ float:right }
 a{text-decoration:none;}
-a:hover{text-decoration:underline;}
+a:hover{text-decoration:none;}
 .txthide{ text-indent:-999em;overflow:hidden; line-height:0; font-size:0}
 .clearfix:after{ content:""; height:0; visibility:hidden; display:block; clear:both;}
 .clearfix{ zoom:1;}
 .clear{ clear:both }
 
 .page_wrapper{ width:980px; margin:0 auto;}
-/*my头部*/
+
 /*mod_topbar*/
-.mod_topbar,.mod_topbox{ background:url(../images/mod_public.png?v=5084) repeat-x 0 -66px;height:51px;}
+.mod_topbar,.mod_topbox{ background:url(http://s4.img4399.com/m/images/global/mod_public.png?v=5084) repeat-x 0 -66px;height:51px;}
 .mod_topbox{height:42px; padding-top:9px; width:980px; margin:0 auto; text-align:left}
 
 /*mod_logo*/
@@ -44,7 +44,7 @@ a:hover{text-decoration:underline;}
 .mod_nav li{ float:left; display:inline; margin-right:5px;}
 .mod_nav a{ float:left; height:33px; line-height:33px; padding-left:10px; color:#fff; font-weight:700; font-size:14px;}
 .mod_nav span{ display:block; padding-right:10px;}
-.mod_nav a:hover,.mod_nav a:hover span,.mod_nav .current a,.mod_nav .current a span{ background-image:url(../images/mod_public.png?v=5084); background-repeat:no-repeat}
+.mod_nav a:hover,.mod_nav a:hover span,.mod_nav .current a,.mod_nav .current a span{ background-image:url(http://s4.img4399.com/m/images/global/mod_public.png?v=5084); background-repeat:no-repeat}
 .mod_nav a:hover{ background-position:0 0; color:#1c8ed3; text-decoration:none;}
 .mod_nav a:hover span{background-position:right 0;}
 .mod_nav .current a,.mod_nav .current a:hover{ background-position:0 -33px;}
@@ -62,135 +62,157 @@ a:hover{text-decoration:underline;}
 .mod_ulinks a{ float:left; margin-right:10px; display:inline;color:#fff;}
 .mod_ulinks a:hover{ color:#fff000}
 .mod_name{ color:#fff000; font-weight:700}
-.mod_avatar{ float:left; margin:2px 0 0 -43px; display:inline; background:url(../images/mod_public.png?v=5084) no-repeat 0 -117px; width:24px; height:25px; padding:4px;}
+.mod_avatar{ float:left; margin:2px 0 0 -43px; display:inline; background:url(http://s4.img4399.com/m/images/global/mod_public.png?v=5084) no-repeat 0 -117px; width:24px; height:25px; padding:4px;}
 .mod_mnew{ background:url(../images/new2.gif?v=5084) no-repeat; width:15px; height:13px; display:block; position:absolute; left:122px; top:-8px}
 
-/*选服框*/
-.wg_server{width:623px; height:375px; position:absolute; left:50%; margin-left: -311px; top:190px;}
-.wg_server_hd,.wg_server_bd,.wg_server_yd{ background-image:url(../images/out_face_bg.png); background-repeat:no-repeat;}
-.wg_server_hd{ padding:8px 0 0 43px;}
-.wg_server_bd{ background-position:-623px 0; padding:0 13px; background-repeat:repeat-y;}
-.wg_server_yd{ background-position:-1246px bottom; height:30px;}
+/*================= 选服框 =================*/
+
+.wg_server{width:622px;position:absolute; left:50%; margin-left: -311px;}
+.wg_server_hd{ padding:8px 0 0; background-repeat:no-repeat;}
+.wg_server_bd{ background-position:-622px 0; padding:0 13px; background-repeat:repeat-y;}
+.wg_server_fd{ background-position:-1244px bottom; height:30px;background-repeat:no-repeat;}
+
+/* store_btn */
+.store_btn{float:right; width:80px; height:30px; *display:inline;*zoom:1; margin-right:20px; overflow:hidden; text-indent:-999em;  cursor:pointer;}
+.store_btn:hover{ background-position:0 -30px;}
 
 /* sns_textscroll */
-.sns_textscroll{ padding:0 0 8px 75px; width:481px;  height:24px; overflow:hidden; line-height:24px;}
-.text_scroll_bx{ height:24px;width:470px; overflow:hidden;}
-.sns_textscroll h2{ float:left; *display:inline; margin-left:-75px; color:#805933; font-weight:bold; }
+.sns_textscroll{ padding:0 0 8px 105px; width:400px;  height:24px; overflow:hidden; line-height:24px; float:left;}
+.text_scroll_bx{ height:30px;width:380px; overflow:hidden;}
+.sns_textscroll h2{ float:left; *display:inline; margin-left:-75px;}
 
 /*sns_box*/
-.sns_service .sns_hd,.sns_service  .sns_bd,.sns_service  .sns_fd{ background-image:url(../images/bgsprite.png); background-repeat:no-repeat;}
-.sns_service .sns_hd{ background-position:0 0; width:596px; height:10px; color:#318fd2; overflow: hidden;}
-.sns_service .sns_hd a{ color:#318fd2; overflow:hidden;}
-.sns_service .sns_hd a:hover{ color:#ff0000}
-.sns_service h2{ background-image:url(../images/server_box.png); background-repeat:no-repeat;height:35px; width: 144px; text-indent:-999em; overflow:hidden;}
-.sns_service .recommend_server h2{ background-position:0 0; }
-.sns_service .all_server h2{ background-position:-144px 0;  overflow:hidden;}
-.sns_service .sns_bd{ background-position:-596px 0; width:581px; padding-left:15px; background-repeat:repeat-y;}
-.sns_service .sns_bd a:hover{ text-decoration:none;}
-.sns_service .server_box{ height:160px; position:relative; zoom:1; overflow:hidden;width:575px;}
-.sns_service .server_list{ padding-left:30px;}
-.sns_service .server_list li{  float: left; width:245px; height:33px;margin:0 10px 10px 0; display: inline;}
-.sns_service .server_list a{width:245px; background-image:url(../images/server_box.png);font-size:14px; text-align: center; background-repeat:no-repeat; color:#ffffe7; font-weight:700; display:block; height:29px;line-height:29px; overflow:hidden; position:relative;  background-position:0 -96px;}
-.sns_service .server_list a:hover{ background-position:-247px -96px;}
-.sns_service .new_ico{background:url(../images/new_ico.png) no-repeat ; width:32px; height:28px; display:block; position:absolute; left:1px; top:0}
-.sns_service .recommon a{ background-position:0 -36px;}
-.sns_service .recommon a:hover{ background-position:-247px -36px;}
-.sns_service .weihu a ,.sns_service  .nopen a{  color:#555; padding:0 50px 0 20px; width: 175px; text-align: center}
-.sns_service .weihu a{ background-position:0 -66px;}
-.sns_service .weihu a:hover{ background-position:-247px -66px;}
-.sns_service .nopen a{ background-position: 0 -126px; color:#555;}
-.sns_service .nopen a:hover{ background-position:-247px -126px;}
+.sns_service  .sns_hd{ background-position:0 0; width:596px; height:10px; color:#318fd2; overflow: hidden;}
+.sns_service  h2{background-repeat:no-repeat;height:35px; width: 144px; text-indent:-999em; overflow:hidden;}
+.sns_service  .recommend_server h2{ background-position:0 0; }
+.sns_service  .all_server h2{ background-position:-144px 0;  overflow:hidden;}
+.sns_service  .sns_bd{ background-position:-596px 0; width:581px; padding-left:15px; background-repeat:repeat-y;}
+.sns_service  .sns_bd a:hover{ text-decoration:none;}
+.sns_service  .server_box{ height:160px; position:relative; zoom:1; overflow:hidden;width:575px;}
+.sns_service  .server_list{ padding-left:30px;}
+.sns_service  .server_list li{  float: left; width:245px; height:33px;margin:0 10px 10px 0; display: inline;}
+.sns_service  .server_list a{width:245px;font-size:14px; text-align: center; background-repeat:no-repeat; color:#ffffe7; font-weight:700; display:block; height:29px;line-height:29px; overflow:hidden; position:relative;  background-position:0 -96px;}
+.sns_service  .server_list a:hover{ background-position:-247px -96px;}
+.sns_service  .new_ico{background:url(../images/new_ico.png) no-repeat ; width:32px; height:28px; display:block; position:absolute; left:1px; top:0}
+.sns_service  .recommon a{ background-position:0 -36px;}
+.sns_service  .recommon a:hover{ background-position:-247px -36px;}
+.sns_service  .weihu a ,.sns_service  .nopen a{  color:#555; padding:0 50px 0 20px; width: 175px; text-align: center}
+.sns_service  .weihu a{ background-position:0 -66px;}
+.sns_service  .weihu a:hover{ background-position:-247px -66px;}
+.sns_service  .nopen a{ background-position: 0 -126px; color:#555;}
+.sns_service  .nopen a:hover{ background-position:-247px -126px;}
 .sns_service .crowd a{ background-position:0 -156px;}
-.sns_service .crowd a:hover{ background-position:-247px -156px;}
-.sns_service .sns_fd{background-position:-1192px bottom; width:596px; height:20px;}
+.sns_service .crowd a:hover{ background-position:-247px -156px;} 
+.sns_service  .sns_fd{background-position:-1192px bottom; width:596px; height:20px;}
 
 /*scrollbar*/
 .jScrollPaneContainer {overflow: hidden;position: relative;z-index: 1;}
-.jScrollPaneTrack { background: #b29142;cursor: pointer; height: 100%;position: absolute;right:5px;top: 0;}
-.jScrollPaneDrag {background:#f5f8c9;cursor: pointer;overflow: hidden;position: absolute;}
+.jScrollPaneTrack {cursor: pointer; height: 100%;position: absolute;right: 0;top: 0;}
+.jScrollPaneDrag {cursor: pointer;overflow: hidden;position: absolute;}
 .jScrollPaneDragTop { left: 0; overflow: hidden;position: absolute;top: 0;}
 .jScrollPaneDragBottom {bottom: 0;left: 0; overflow: hidden; position: absolute;}
-a.jScrollArrowUp { display: block; height: 12px; overflow: hidden; position: absolute; right: 5px; text-indent: -2000px; top: 0; z-index: 1;}
-a.jScrollArrowDown { bottom: 0; display: block;  height: 12px; overflow: hidden; position: absolute; right: 5px; text-indent: -2000px; z-index: 1;}
-a.jScrollArrowUp { background:url(../images/server_box.png) no-repeat  -288px 0;}
-a.jScrollArrowDown { background: url(../images/server_box.png) no-repeat  -305px 0    ;}
+a.jScrollArrowUp { display: block; height: 12px; overflow: hidden; position: absolute; right: 0; text-indent: -2000px; top: 0; z-index: 1;}
+a.jScrollArrowDown { bottom:0; display: block;  height: 12px; overflow: hidden; position: absolute; right: 0; text-indent: -2000px; z-index: 1;}
+a.jScrollArrowUp { background-position:-288px 0; background-repeat:no-repeat;}
+a.jScrollArrowDown {background-repeat:no-repeat; background-position: -305px 0;}
 a.jScrollArrowUp:hover { background-position: -288px -12px;}
 a.jScrollArrowDown:hover { background-position: -305px -12px;}
 .orange-bar .jScrollPaneTrack { background: none repeat scroll 0 0 #e3dab5;}
 .orange-bar .jScrollPaneDrag { background: 50% 50% #c88d00;}
 .orange-bar .scroll-pane { background: none repeat scroll 0 0 #6699FF;}
 
-/*wg-box*/
-.wg-box .wg-hd,.wg-box .lt,.wg-box .rt,.wg-box .wg-fd,.wg-box .rb,.wg-box .lb{height:36px; background-image:url(../images/mod_box.png); background-repeat:no-repeat;}
-.wg-box .wg-hd{ background-position:0 0; padding:0 42px; position:relative;}
-.wg-box .lt{ background-position:0 -36px; background-repeat:repeat-x;display:block;}
-.wg-box .rt{ background-position:right -72px;display:block;margin:-36px -42px 0 0}
-.wg-box .hd-t{ margin-bottom:-36px; height:33px; padding-top:3px; position:relative;}
-.wg-box .wg-fd{ background-position:0 -108px; padding:0 42px;height:25px;}
-.wg-box .lb{ background-position:0 -133px; background-repeat:repeat-x;display:block;height:25px;}
-.wg-box .rb{ background-position:right -158px;display:block;margin:-25px -42px 0 0;height:25px;}
-.wg-box .wg-bd{ background:#f8fefe; zoom:1}
-.wg-box .wg-bl{ background:url(../images/mod_box_l.png) repeat-y 0 0;}
-.wg-box .wg-br{ background:url(../images/mod_box_r.png) repeat-y right 0; padding:15px 20px 0; zoom:1;}
-.wg-box .hd-t h2{ background:url(../images/m_sprite.png)  no-repeat 0 -120px; width:103px; float:left; height:32px; color:#005d52; display:block; text-align: center;line-height:32px; font-size:16px;font-family:"microsoft Yahei,simsun"}
-.wg-box .hd-t a.more,.wg-box .hd-t a.ht-a,.wg-box .hd-t a.ht-up,.wg-imgscroll .more,.wg-imgscroll .ht-up{ background-image: url(../images/m_sprite.png); background-repeat:no-repeat;line-height:0;font-size:0;overflow:hidden;zoom:1;}
-.wg-box .hd-t a.more,.wg-imgscroll .more{ position:absolute; right:-15px; top:8px;background-position:0 -62px;width:62px; height:21px; z-index:2;}
-.wg-box .hd-t a.more:hover,.wg-imgscroll .more:hover{ background-position:0 -84px;}
-.wg-box .hd-t a.ht-a{ background-position:-62px -33px; width:82px; height: 21px; position:absolute; right:68px; top:8px; z-index:2; }
-.wg-box .hd-t a.ht-a:hover{ background-position:-62px -54px;}
-.wg-box .hd-t a.ht-up,.wg-imgscroll .ht-up{ background-position:-62px -76px; width:82px; height:21px; position:absolute; top:8px; right:68px; z-index:2;}
-.wg-box .hd-t a.ht-up:hover,.wg-imgscroll .ht-up:hover{ background-position:-62px -98px;}
-
-/*wg_imgscroll*/
-.wg_imgscroll{ position: relative;  height:130px; overflow: hidden;}
-.wg_imgscroll textarea{ display:none;}
-.wg_imgscroll .arrow_left,.wg_imgscroll .arrow_right{ background-image: url(../images/m_sprite.png?v=5084); background-repeat: no-repeat; display: block; width:30px; height:30px; position: absolute; cursor: pointer;top:30px; text-indent: -999em; overflow: hidden;}
-.wg_imgscroll .arrow_left{ background-position: 0 -32px; left:0;}
-.wg_imgscroll .arrow_right{ background-position: -30px -32px; right:0;}
-.wg_imgscroll .bd{ position:absolute; left:35px;top:0px; width:900px; height:110px; overflow: hidden;}
-
-/*wg_imglist*/
-.wg_imglist li{float: left; line-height: 2; text-align: center;  display: inline;white-space: nowrap; overflow: hidden; width:120px;margin-right:30px; padding:0; }
-.wg_imglist li a{ background:url(../images/screen_pic_bg.png) center 0 no-repeat; display:table-cell; height:110px; text-align:center; vertical-align:middle; width:108px; overflow:hidden;*display: block;*font-size:96px;*font-family:Arial;}
-.wg_imglist li img{vertical-align:middle;}
-
-/*wg_kf*/
-.wg_kf p{ color:#5c5c5c; height:26px; padding:3px 0;}
+/*wg_box*/
+.wg_box .wg_hd,.wg_box .lt,.wg_box .rt,.wg_box .wg_fd,.wg_box .rb,.wg_box .lb{height:36px; background-repeat:no-repeat;}
+.wg_box .wg_hd{ background-position:0 0; padding:0 36px; position:relative;}
+.wg_box .lt{ background-position:0 -36px; background-repeat:repeat-x;display:block;}
+.wg_box .rt{ background-position:right -72px;display:block;margin:-36px -36px 0 0}
+.wg_box .hd_t{ margin-bottom:-36px; height:33px; padding-top:3px; position:relative;}
+.wg_box .wg_fd{ background-position:0 -108px; padding:0 36px;height:25px;}
+.wg_box .lb{ background-position:0 -133px; background-repeat:repeat-x;display:block;height:25px;}
+.wg_box .rb{ background-position:right -158px;display:block;margin:-25px -36px 0 0;height:25px;}
+.wg_box .wg_bd{zoom:1}
+.wg_box .hd_t h2{ background-repeat: no-repeat; background-position:0 -120px; width:103px; float:left; height:32px; color:#3b3322; display:block; text-align: center;line-height:32px; font-size:16px;font-family:"microsoft Yahei,simsun"}
+.wg_box .hd_t a.more,.wg_box .hd_t a.ht_a,.wg_box .hd_t a.ht_up,.wg_imgscroll .more,.wg_imgscroll .ht_up{ background-repeat:no-repeat;line-height:0;font-size:0;overflow:hidden;zoom:1;}
+.wg_box .hd_t a.more,.wg_imgscroll .more{ position:absolute; right:-15px; top:8px;background-position:0 -69px;width:60px; height:20px; z-index:2;}
+.wg_imgscroll .more{ top:-45px; right:15px;}
+.wg_box .hd_t a.more:hover,.wg_imgscroll .more:hover{ background-position:0 -89px;}
+.wg_box .hd_t a.ht_a{ background-position:-72px -33px; width:80px; height:19px; position:absolute; right:68px; top:8px; z-index:2; }
+.wg_box .hd_t a.ht_a:hover{ background-position:-72px -52px;}
+.wg_box .hd_t a.ht_up,.wg_imgscroll .ht_up{ background-position:-72px -71px; width:80px; height:19px; position:absolute; top:-45px; right:90px; z-index:2;}
+.wg_box .hd_t a.ht_up:hover,.wg_imgscroll .ht_up:hover{ background-position:-72px -90px;}
 
 /*wg_textlist*/
 .wg_textlist{ line-height: 2;}
-.wg_textlist li{ height:24px;white-space: nowrap;overflow: hidden; border-bottom:1px dotted #003D5E;}
-.wg_textlist a{ color:#AA9155;display:block; width:280px;}
-.wg_textlist span{ float: right; color:#666;}
+.wg_textlist li{ height:24px;white-space: nowrap;overflow: hidden; border-bottom:1px dotted #eedaab;}
+.wg_textlist a{ color:#3b3322;display:block; width:280px;}
+.wg_textlist a:hover{ color:#e9380f;}
+.wg_textlist span{ float: right; color:#3b3322;}
 .wg_textlist img{ margin-left:5px;}
 
-/*wg_table*/
-.wg-table{ width:100%;}
-.wg-table .c1{ width:50%;}
-.wg-table .c2,.wg-table .c3,.wg-table .c4{ width:19%;}
-.wg-table th,.wg-table td{color:#005d52; height:23px; line-height:23px; padding:3px 5px;}
-.wg-table .hover td{ background:#ddd;}
-.wg-table a{ color:#005d52;}
-.wg-table .xdis-tit{ width:400px; height:23px; overflow:hidden;}
+/*wg_gameinfo*/
+.wg_gameinfo{padding:18px 10px 0; zoom:1; overflow:hidden;}
+.yxzl_bg{height:50px;padding: 5px 1px 0 67px;overflow: hidden;}
+.yxzl_bg dt{ font-size: 14px;  line-height: 1.2; font-weight: 700; text-align: center; /*background-repeat: no-repeat;*/ width:37px; height: 45px; padding: 3px 20px 0 13px; float: left; margin:1px 0 0 -67px; display: inline; }
+.yxzl_bg dd{float: left; width: 96%; padding:2px 5px; zoom:1; height:45px; overflow:hidden;}
+.yxzl_bg dd a{margin:0 5px 0 3px;  float:left; zoom:1; *display: inline; white-space:nowrap;line-height: 1.8; }
 
-.wg_table li{ padding:3px 5px; color:#5c5c5c; zoom:1; overflow:hidden; border-bottom:dashed 1px #e8c87b;}
-.wg_table li span{ float:right; width:60px; height:19px; overflow:hidden; text-align:right;}
-.wg_table li a{color:#5c5c5c; width:345px; height:19px; overflow:hidden; display:block;}
-.wg_table .title{ width:270px; overflow:hidden; height:23px; line-height:23px;}
-.wg_table li a:hover{ color:#e9380f}
-.wg_table tr.hover td{ background:#fefbeb;}
+/* tab_pic */
+.tab_pic{ height:32px; position:relative; top:1px;}
+.tab_pic li{ float: left; width:99px; height: 32px;}
+.tab_pic li span,.tab_pic li.cur span{display: block; height: 32px; text-align: center; line-height: 32px; font-size: 16px; color:#3b3322; font-weight: 700; cursor:pointer; background-position:-100px 0;}
+.tab_pic li.cur span{ background-position: 0 0;}
+.tab_pic li a:hover{ text-decoration: none;}
+
+/*wg_imgscroll*/
+.wg_imgscroll { position: relative;  height:130px;}
+.wg_imgscroll textarea{ display:none;}
+.wg_imgscroll .arrow_left,.wg_imgscroll .arrow_right{ background-repeat: no-repeat; display: block; width:36px; height:36px; position: absolute; cursor: pointer;top:30px; text-indent: -999em; overflow: hidden;}
+.wg_imgscroll .arrow_left{ background-position: 0 -33px; left:5px;}
+.wg_imgscroll .arrow_right{ background-position: -36px -33px; right:5px;}
+.wg_imgscroll .disable{ display:none;}
+.wg_imgscroll .wg_imgcontainer{position:absolute; left:50px;top:0px; width:875px; height:110px; overflow: hidden;}
+.wg_imglist li{  float: left; line-height: 2; text-align: center;  display: inline; white-space: nowrap; overflow: hidden; width:120px;margin-right:5px;padding:0; }
+.wg_imglist li a{background-position: center 0; background-repeat: no-repeat; display:table-cell; height:110px; text-align:center; vertical-align:middle; width:108px; overflow:hidden;*display: block;*font-size:96px;*font-family:Arial;}
+.wg_imglist li a:hover{ text-decoration:none;}
+.wg_imglist li img{ border:0; vertical-align:middle; display:inline;}
+
+/*wg_kf*/
+.wg_kf p{ padding: 3px 0; zoom:1; color:#3b3322;}
+.wg_kf .online{ display:inline-block;*zoom:1; overflow:hidden;width:72px; height:26px; vertical-align:middle; margin-left:3px;}
+
+/*wg_table*/
+.wg_table{ width:100%;}
+.wg_table th,.wg_table td{color:#3b3322; height:23px; line-height:23px; padding:3px 5px; overflow:hidden;}
+.wg_table .hover td{ background:#e8e1cf;}
+.wg_table .xdis_tit{ width:400px; height:23px; overflow:hidden;}
+.wg_table td{border-bottom:dashed 1px #e8c87b;}
+.wg_table td span{ float:right; width:60px; height:19px; overflow:hidden; text-align:right;}
+.wg_table td a{color:#3b3322; height:19px; overflow:hidden; display:block;}
+.wg_table td a:hover{ color:#e9380f;}
+
 
 /*footer*/
 .footer{ padding:10px 0; zoom:1}
-.mod_server{ color:#555; line-height:2}
-.mod_phone{ color:#888}
+.mod_server{ color:#3B3322; line-height:2}
+.mod_phone{ color:#3B3322}
 .mod_phone span{ margin-right:10px;}
 
 /*mod_desc*/
-.mod_desc{ text-align:right; line-height:22px; color:#888}
+.mod_desc{ text-align:right; line-height:22px; color:#3B3322}
 .mod_desc a{ color:#1c8ed3; margin:0 5px;}
 .mod_desc a.a_zp{ color:#ff0000}
 .mod_desc a:hover{ color:#ff6600}
 .mod_desc span{ margin-left:10px;}
+
+.game_logo a{ text-indent:-999em; overflow: hidden; line-height:0; font-size:0;}
+
+/* ========= 这个写到具体的页面 ======== */
+.wg_box .wg_hd,.wg_box .lt,.wg_box .rt,.wg_box .wg_fd,.wg_box .rb,.wg_box .lb{background-image:url(../images/mod_box.png);}
+.wg_box .wg_bd{background:#eeebe4;}
+.wg_box .wg_bl{ background:url(../images/mod_box_l.png) repeat-y 0 0;}
+.wg_box .wg_br{ background:url(../images/mod_box_r.png) repeat-y right 0; padding:10px 20px 0; zoom:1;}
+.wg_box .hd_t h2,.wg_box .hd_t a.more,.wg_box .hd_t a.ht_a,.wg_box .hd_t a.ht_up,.wg_imgscroll .more,.wg_imgscroll .ht_up,.wg_imgscroll .arrow_left,.wg_imgscroll .arrow_right{ background-image: url(../images/m_sprite.png);}
+.wg_imglist li a{ background-image:url(../images/screen_pic_bg.png);}
+
 
 
