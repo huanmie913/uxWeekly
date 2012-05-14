@@ -182,7 +182,7 @@ a.jScrollArrowDown:hover { background-position: -305px -12px;}
 
 /*wg_table*/
 .wg_table{ width:100%;}
-.wg_table th,.wg_table td{color:#3b3322; height:23px; line-height:23px; padding:3px 5px; overflow:hidden;}
+.wg_table th,.wg_table td{color:#3b3322; height:23px; line-height:23px; padding:3px 5px; overflow:hidden;text-align:left;}
 .wg_table .hover td{ background:#e8e1cf;}
 .wg_table .xdis_tit{ width:400px; height:23px; overflow:hidden;}
 .wg_table td{border-bottom:dashed 1px #e8c87b;}
