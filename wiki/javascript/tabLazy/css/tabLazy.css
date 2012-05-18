@@ -23,6 +23,7 @@
 
 
 
+
 .tab_type{ border-bottom:1px solid #CFE3F1;}
 .tab_type li{ display:inline;float:left;margin-right:30px;}
 .tab_type li a{ color:#555;}
@@ -43,7 +44,7 @@
 .img_game:hover img {
     border: 1px solid #CAE7F9;
 }
-.m_imglist { margin-right: -20px;overflow: hidden;}
+.m_imglist { margin-right: -20px;overflow: hidden;display:none;}
 .m_imglist li { border-top: 1px dashed #D1E8F9;display: inline;float: left;height: 86px;line-height: 22px;margin-top: -1px;padding: 10px 10px 10px 92px;width: 158px;
 }
 .m_imglist li h3 {overflow: hidden;white-space: nowrap;width: 155px;}

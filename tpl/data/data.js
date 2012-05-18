@@ -6,7 +6,7 @@
 
 var ued = {
 	article : [
-		{ title:"Android4.0设计规范",href:"article/201205/android4.0.html" },
+		{ title:"Android4.0设计规范",href:"article/201205/android4.0.html"},
 		{ title:"Google HTML/CSS代码风格指南",href:"article/201205/googleHtmlCss.html"}
 	]
 }
