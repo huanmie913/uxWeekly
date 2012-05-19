@@ -68,7 +68,7 @@
 			tId : null,
 			bId : null
 		}
-		this.option = Object.extend(this.setting,ctg || {});
+		this.option = QF.extend(this.setting,ctg || {});
 		if( !(this instanceof arguments.callee) ){
 			return new arguments.callee(this.option);
 		}	
