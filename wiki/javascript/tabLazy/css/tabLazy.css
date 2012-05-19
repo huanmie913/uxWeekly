@@ -27,7 +27,9 @@
 .tab_type{ border-bottom:1px solid #CFE3F1;}
 .tab_type li{ display:inline;float:left;margin-right:30px;}
 .tab_type li a{ color:#555;}
+.tab_type li a:hover{ text-decoration:none;}
 .tab_type .cur{ background:url("http://s4.img4399.com/nforums/image/type_current.png") no-repeat center bottom; padding-bottom:10px;}
+.tab_type .cur a{ color:#008ED3;font-weight:700;}
 .img_game {
     display: inline;
     float: left;

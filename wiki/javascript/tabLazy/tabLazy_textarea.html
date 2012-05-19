@@ -16,13 +16,13 @@
 <div class="ox_box">
   	<!--ui_tab-->
 	<ul id="tab_type" class="clearfix tab_type">
-		<li data-loaded = "false" data-widget = "tab-item"><a title="社区游戏" href="">社区游戏</a></li>
-		<li data-loaded = "false" data-widget = "tab-item"><a title="动漫联盟" href="">动漫联盟</a></li>
-		<li data-loaded = "false" data-widget = "tab-item"><a title="4399中心广场" href="">4399中心广场</a></li>
-		<li data-loaded = "false" data-widget = "tab-item"><a title="儿童网游" href="">儿童网游</a></li>
-		<li data-loaded = "false" data-widget = "tab-item"><a title="网页游戏" href="">网页游戏</a></li>
-		<li data-loaded = "false" data-widget = "tab-item"><a title="单机游戏" href="">单机游戏</a></li>
-		<li data-loaded = "false" data-widget = "tab-item"><a title="大型网游" href="">大型网游</a></li>
+		<li data-widget = "tab-item"><a title="社区游戏" href="">社区游戏</a></li>
+		<li data-widget = "tab-item"><a title="动漫联盟" href="">动漫联盟</a></li>
+		<li data-widget = "tab-item"><a title="4399中心广场" href="">4399中心广场</a></li>
+		<li data-widget = "tab-item"><a title="儿童网游" href="">儿童网游</a></li>
+		<li data-widget = "tab-item"><a title="网页游戏" href="">网页游戏</a></li>
+		<li data-widget = "tab-item"><a title="单机游戏" href="">单机游戏</a></li>
+		<li data-widget = "tab-item"><a title="大型网游" href="">大型网游</a></li>
     </ul>
     <!--/ui_tab-->
     <div id="tab_game" class="bd">
@@ -392,7 +392,7 @@
 mod_f2er.topBar('tab、内容延迟','toolbar');
 mod_f2er.bottomBar('bottomBar');
 //TabLazy({hid:"tab_type",bid:"tab_game",num:0});
-TabDelayed({hid:"tab_type",bid:"tab_game"}).trigger(0);
+TabDelayed({hid:"tab_type",bid:"tab_game",eventType:"mouseover"}).trigger(2);
 </script>
 </body>
 </html>
