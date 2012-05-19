@@ -52,7 +52,7 @@
 	}
 	
 	/*TabDelayed*/
-	function TabDelayed(ctg){
+	function Switchable(ctg){
 		this.setting={
 			tabid:"tab_type",
 			htag:"tab-item", 
@@ -61,6 +61,7 @@
 			btag:"tab-content", /*内容区标识*/
 			dPro:"data-loaded",/*是否加载过*/
 			eventType : "click",
+			tabType : 1, // 0:普通切换 1:延迟加载
 			callback : function(){}
 		};
 		this.GLOBAL = {
@@ -73,8 +74,8 @@
 		}	
 		this.init();
 	}
-	TabDelayed.prototype = {
-		constructor : TabDelayed,
+	Switchable.prototype = {
+		constructor : Switchable,
 		getData:function(n){
 			var that = this;
 			if( that.GLOBAL.bId[n].getAttribute('data-widget') != that.option.btag ){
@@ -110,8 +111,9 @@
 			for( var m=0,len = that.GLOBAL.bId.length;m<len;m++){
 				that.GLOBAL.bId[m].style.display = (m == i) ? "block" : "none";
 			}
-			that.checkLoad(that.GLOBAL.tId[i],i);
-			
+			if( that.option.tabType == 1){
+				that.checkLoad(that.GLOBAL.tId[i],i);
+			}
 			return that;
 		},
 		doEvent : function(){
@@ -135,7 +137,9 @@
             	}
             	_index = that.getIndex(_element,that.GLOBAL.tId);
             	that.trigger(_index);
-				that.checkLoad(_element,_index);
+            	if( that.option.tabType == 1){
+					that.checkLoad(_element,_index);
+				}
 				QF.preventDefault(_ev);
             });
 
@@ -148,7 +152,7 @@
 			return that;
 		}	
 	}
-	win.TabDelayed = TabDelayed;
+	win.Switchable = Switchable;
 })(window);
 
 
