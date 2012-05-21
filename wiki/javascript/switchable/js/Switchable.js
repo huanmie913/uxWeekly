@@ -83,9 +83,10 @@
 			}
 			var _tabContent = that.GLOBAL.bId[n];
 			var _textarea = _tabContent.getElementsByTagName('textarea')[0];
-			var _ul  =document.createElement('ul');
-			_ul.innerHTML = _textarea.value;
-			_tabContent.replaceChild(_ul,_textarea);
+			var _div  =document.createElement('div');
+			_div.className = "dw_container";
+			_div.innerHTML = _textarea.value;
+			_tabContent.replaceChild(_div,_textarea);
 			QF.IsFunction( that.option.callback );
 		},
 		getIndex:function(node,obj){
