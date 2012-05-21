@@ -46,7 +46,7 @@
 	function ModuleLoad(ctg){
 		this.setting={
 				id : "box_1",
-				cid : "box_1c",
+				cid : "",
 				callback : function(){}
 		}
 		this.option = Object.extend(this.setting,ctg||{});
