@@ -55,16 +55,16 @@
 	<p>调用说明:</p>
     <pre class="DlHighlight"><code class="xml">Switchable({tabid:"tab_ooxx",bid:"tab_game",eventType:"mouseover",tabType:"0"}).trigger(2);</code></pre>
 		<p>参数说明:</p>
-        <pre class="DlHighlight"><code class="xml">tabid:"tab_type",
-htag:"tab-item", 
-currentClass:"cur",
+        <pre class="DlHighlight"><code class="xml">tabid:"tab_type",/*tab区ID*/
+htag:"tab-item", /*tab区标识*/
+currentClass:"cur",/*当前选中样式*/
 cProp : "data-widget", /*自定义属性名*/
 bid:"tab_ooxx", /*内容区ID*/
 btag:"tab-content", /*内容区标识*/
 dPro:"data-loaded",/*是否加载过*/
-eventType : "click",
+eventType : "click",/*事件类型*/
 tabType : 1, // 0:普通切换 1:延迟加载
-callback : function(){}
+callback : function(){} /*加载完成后的回调函数*/
 </code></pre>    
     </div>
     <!--/demo_resource-->
