@@ -84,10 +84,11 @@
 				if( that._filling==0){
 					if(  _v >=0 && _v< _clientHeight ){
 						var _cid = ( that.option.cid === "" ) ? QF.$( that.option.id ) : QF.$( that.option.cid );
-						var _textarea=_cid.getElementsByTagName('textarea')[0].value;
+						var _textarea=_cid.getElementsByTagName('textarea')[0],
+							_txtValue = _textarea.value;
 						var _dv=document.createElement('div');
 						_dv.className = "lc_container";
-						_dv.innerHTML=_textarea;
+						_dv.innerHTML = _txtValue;
 						_cid.replaceChild(_dv,_textarea);
 						that._filling=1;
 					}
