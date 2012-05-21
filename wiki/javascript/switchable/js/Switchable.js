@@ -79,13 +79,13 @@
 		constructor : Switchable,
 		getData:function(n){
 			var that = this;
-			if( that.GLOBAL.bId[n].getAttribute('data-widget') != that.option.btag ){
+			if( that.GLOBAL.bId[n].getAttribute(that.option.cProp) != that.option.btag ){
 				return;
 			}
 			var _tabContent = that.GLOBAL.bId[n];
 			var _textarea = _tabContent.getElementsByTagName('textarea')[0];
 			var _div  =document.createElement('div');
-			_div.className = "dw_container";
+			_div.className = "sw_container";
 			_div.innerHTML = _textarea.value;
 			_tabContent.replaceChild(_div,_textarea);
 			QF.IsFunction( that.option.callback );
