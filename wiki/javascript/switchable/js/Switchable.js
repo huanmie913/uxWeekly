@@ -1,5 +1,5 @@
 /*
- * plugIn:Switchable(Tab切换+内容延迟加载)
+ * plugIn:Switchable.js(Tab切换+内容延迟加载)
  * depend:js
  * author:QF
  * time: 12-05-18
@@ -57,6 +57,7 @@
 			tabid:"tab_type",
 			htag:"tab-item", 
 			currentClass:"cur",
+			cProp : "data-widget", /*自定义属性名*/
 			bid:"tab_ooxx", /*内容区ID*/
 			btag:"tab-content", /*内容区标识*/
 			dPro:"data-loaded",/*是否加载过*/
@@ -106,10 +107,10 @@
 		},
 		trigger : function(i){
 			var that = this;
-			for( var n=0,len = that.GLOBAL.tId.length;n<len;n++){
+			for( var n = that.GLOBAL.tId.length-1;n>=0;n--){
 				that.GLOBAL.tId[n].className = (n == i) ? that.option.currentClass : "";
 			}
-			for( var m=0,len = that.GLOBAL.bId.length;m<len;m++){
+			for( var m = that.GLOBAL.bId.length-1;m>=0;m--){
 				that.GLOBAL.bId[m].style.display = (m == i) ? "block" : "none";
 			}
 			if( that.option.tabType == 1){
@@ -131,7 +132,7 @@
             	}
 
             	//判断当前对象的自定义属性
-            	if(  _target.getAttribute("data-widget") != that.option.htag){
+            	if(  _target.getAttribute( that.option.cProp ) != that.option.htag){
             		_element = _target.parentNode;
             	}else{
             		_element = _target;
