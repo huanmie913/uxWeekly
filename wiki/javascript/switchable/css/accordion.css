@@ -1,7 +1,7 @@
 @charset "utf-8";
 	.mod_tabSlide{ width:513px; overflow:hidden; height:228px;border:1px solid #ddd; margin:15px auto;}
 	.mod_tabSlide dl{ float:left;}
-	.mod_tabSlide dt,.mod_tabSlide dd{ background-image:url(http://s4.img4399.com/yx/g/smd/images/tete.jpg?v=5120); background-position:no-repeat;  overflow:hidden; height:228px;}
+	.mod_tabSlide dt,.mod_tabSlide dd{ background-image:url(http://image.91wan.com/smd/images/tete.jpg); background-position:no-repeat;  overflow:hidden; height:228px;}
 	.mod_tabSlide dt{ float:left; width:40px;text-indent:-999em;filter:alpha(opacity = 60);opacity :0.6;}
 	.mod_tabSlide dd{ float:left; width:170px;display:none;color:#fff; padding:80px 10px 0 170px; height:148px;}
 
