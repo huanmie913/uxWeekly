@@ -55,7 +55,6 @@
 			return new arguments.callee(ctg);  
 		}	
 		this.init(); 
-		
 	}
 	
 	ModuleLoad.prototype = {
@@ -84,8 +83,7 @@
 				}
 				if( that._filling==0){
 					if(  _v >=0 && _v< _clientHeight ){
-					
-						var _cid = ( that.option.cid === " " ) ? QF.$( that.setting.id ) : QF.$( that.option.cid );
+						var _cid = ( that.option.cid === " " ) ? QF.$( that.option.id ) : QF.$( that.option.cid );
 						var _textarea=_cid.getElementsByTagName('textarea')[0].value;
 						var _dv=document.createElement('div');
 						_dv.innerHTML=_textarea;
@@ -93,7 +91,6 @@
 						that._filling=1;
 					}
 				}
-				
 				QF.IsFunction(that.option.callback);
 			},
 			init:function(){
@@ -106,6 +103,7 @@
 				}
 			}	
 		}
+		win.ModuleLoad = ModuleLoad;
 })(window);
 
 
