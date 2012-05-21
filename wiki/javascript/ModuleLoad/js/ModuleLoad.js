@@ -63,7 +63,7 @@
 			var that = this,
 				_obj = QF.$(that.option.id),
 				_top = 0;
-			while( _obj ){
+			while( _obj!=null ){
 				_top += _obj.offsetTop;
 				_obj = _obj.offsetParent;
 			}
