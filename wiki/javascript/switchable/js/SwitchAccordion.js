@@ -3,7 +3,7 @@
   * author:f2er
   * time:12-03-27
 **/
-function TabSlide(ctg){
+function SwitchAccordion(ctg){
 	this.option = {
 		_id           : ctg.id, //容器ID
 		_eventType    : ctg.eventType, //事件触发类型
@@ -11,14 +11,14 @@ function TabSlide(ctg){
 		_nornalClass  : ctg.nornalClass, //默认类名
 		_effection    : ctg.effection //slide : 展开,transparent : 透明度,start:起始值,end:终止值,step:步骤
 	}
-	if( !( this instanceof TabSlide )){
-		return new TabSlide(ctg);
+	if( !( this instanceof arguments.callee )){
+		return new arguments.callee(ctg);
 	}
 	this._timer = null;
 	this.Initialization();
 }
-TabSlide.prototype = {
-	constructor : TabSlide,
+SwitchAccordion.prototype = {
+	constructor : SwitchAccordion,
 	addEvent : function( target,type,fn ){
 		if( target.addEventListener ){
 			target.addEventListener( type,fn,false );
