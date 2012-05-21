@@ -86,8 +86,9 @@
 						var _cid = ( that.option.cid === "" ) ? QF.$( that.option.id ) : QF.$( that.option.cid );
 						var _textarea=_cid.getElementsByTagName('textarea')[0].value;
 						var _dv=document.createElement('div');
+						_dv.className = "lc_container";
 						_dv.innerHTML=_textarea;
-						_cid.appendChild(_dv);
+						_cid.replaceChild(_dv,_textarea);
 						that._filling=1;
 					}
 				}
