@@ -9,14 +9,37 @@
  @ tag         : 标签
  @ originClass : 原始类名
 */
-(function(win,doc){
-	function extend(destination,resourece){
-		for( var prop in resourece){
-			destination[prop] = resourece[prop];
+(function(win,undefined){
+	var version = 1.0;
+	
+	var doc = win.document;
+	Object.prototype.extend = function(destination,resourece){
+		for( var prop in sourece){
+			if( sourece.hasOwnProperty(prop) ){
+				destination[prop] = sourece[prop];
+			}
 		}
 		return destination;
 	}
 	
+	var QF = QF || {};
+	QF = {
+		$ : function(id){
+			return typeof id == "string" ? doc.getElementById(id) : id;
+		},
+		addEvent : function(obj,type,fn){
+			if( obj.addEventListener ){
+				obj.addEventListener(type,fn,false);
+			}else if( obj.attachEvent ){
+				obj.attachEvent("on"+type,function(){
+					fn.call(obj);
+				});
+			}else{
+				obj["on"+type]=fn;
+			}
+		}
+	}
+
 	function listEffection(ctg){
 		this.setting = {
 					id           : "js_textList",
@@ -27,55 +50,51 @@
 										evenClass: "even"
 									} //odd : 奇行  even :偶行
 		}
-		this._opt = extend( this.setting,ctg || {});
-		if( !(this instanceof listEffection)){
-			return new listEffection(ctg);
+		this._opt = Object.extend( this.setting,ctg || {});
+		if( !(this instanceof arguments.callee)){
+			return new arguments.callee(ctg);
 		}
+		
+		this.GLOBAL = {
+			_ArrayList : null,
+			_len   : 0
+		}
+		this.init();
+		
 	}
 	listEffection.prototype = {
-		Q : function(id){
-			return typeof id == "string" ? doc.getElementById(id) : id;
-		},
-		on : function(obj,type,fn){
-			if( obj.addEventListener ){
-				obj.addEventListener(type,fn,false);
-			}else if( obj.attachEvent ){
-				obj.attachEvent("on"+type,function(){
-					fn.call(obj);
-				});
-			}else{
-				obj["on"+type]=fn;
-			}
-		},
+		constructor : listEffection,
+		
 		interlacedColor : function(){
-			var self = this,
-			   _list = self.Q( self._opt.id ).getElementsByTagName( self._opt.tag ),
-			   _len = _list.length;
-			for( var i = _len-1; i>=0; i-- ){
+			var self = this;
+			for( var i = that.GLOBAL._len-1; i>=0; i-- ){
 				if( i%2 ==0 ){
-					_list[i].className = self._opt.originClass.evenClass;
+					that.GLOBAL._ArrayList[i].className = self._opt.originClass.evenClass;
 				}else{
-					_list[i].className = self._opt.originClass.oddClass;
+					that.GLOBAL._ArrayList[i].className = self._opt.originClass.oddClass;
 				}
 			}
 			return self;
 		},
 		switchColor : function(){
-			var self = this,
-			   _list = self.Q( self._opt.id ).getElementsByTagName( self._opt.tag ),
-			   _len = _list.length;
-			for( var i = 0;i<_len;i++){
+			var self = this;
+			for( var i = that.GLOBAL._len-1; i>=0; i--){
 				var _tmpClass = "";
-				self.on(_list[i],"mouseover",function(){
+				QF.addEvent(that.GLOBAL._ArrayList[i],"mouseover",function(){
 					_tmpClass = this.className;
 					this.className += " "+self._opt.currentClass;
 				});
-				self.on(_list[i],"mouseout",function(){
+				QF.addEvent(that.GLOBAL._ArrayList[i],"mouseout",function(){
 					this.className = _tmpClass;
 				});
 			}
 			return self;
+		},
+		init : function(){
+			var that = this;
+			that.GLOBAL._ArrayList = QF.$( self._opt.id ).getElementsByTagName( self._opt.tag ),
+			that.GLOBAL._len = that.GLOBAL._ArrayList.length;
 		}
 	}
 	win.listEffection = listEffection;
-})(window,document);
+})(window);
