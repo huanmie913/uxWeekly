@@ -66,7 +66,7 @@
 		constructor : listEffection,
 		
 		interlacedColor : function(){
-			var self = this;
+			var that = this;
 			for( var i = that.GLOBAL._len-1; i>=0; i-- ){
 				if( i%2 ==0 ){
 					that.GLOBAL._ArrayList[i].className = self._opt.originClass.evenClass;
@@ -74,10 +74,10 @@
 					that.GLOBAL._ArrayList[i].className = self._opt.originClass.oddClass;
 				}
 			}
-			return self;
+			return that;
 		},
 		switchColor : function(){
-			var self = this;
+			var that = this;
 			for( var i = that.GLOBAL._len-1; i>=0; i--){
 				var _tmpClass = "";
 				QF.addEvent(that.GLOBAL._ArrayList[i],"mouseover",function(){
@@ -88,12 +88,13 @@
 					this.className = _tmpClass;
 				});
 			}
-			return self;
+			return that;
 		},
 		init : function(){
 			var that = this;
 			that.GLOBAL._ArrayList = QF.$( self._opt.id ).getElementsByTagName( self._opt.tag ),
 			that.GLOBAL._len = that.GLOBAL._ArrayList.length;
+			return that;
 		}
 	}
 	win.listEffection = listEffection;
