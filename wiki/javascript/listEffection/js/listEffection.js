@@ -13,7 +13,7 @@
 	var version = 1.0;
 	
 	var doc = win.document;
-	Object.prototype.extend = function(destination,resourece){
+	Object.prototype.extend = function(destination,sourece){
 		for( var prop in sourece){
 			if( sourece.hasOwnProperty(prop) ){
 				destination[prop] = sourece[prop];
