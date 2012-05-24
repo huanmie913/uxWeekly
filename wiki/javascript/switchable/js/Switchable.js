@@ -3,6 +3,7 @@
  * depend:js
  * author:QF
  * time: 12-05-18
+ * update: 修复callback
 */
 
 (function(win,undefined){
