@@ -46,7 +46,9 @@
 		},
 		IsFunction : function(obj){
 			if( Object.prototype.toString.call(obj) == "[object Function]"){
-				(obj)();
+				return true;
+			}else{
+				return false;
 			}
 		}
 	}
@@ -88,7 +90,7 @@
 			_div.className = "sw_container";
 			_div.innerHTML = _textarea.value;
 			_tabContent.replaceChild(_div,_textarea);
-			QF.IsFunction( that.option.callback );
+			QF.IsFunction( that.option.callback ) && ( that.option.callback)(n);
 		},
 		getIndex:function(node,obj){
 			var that=this;
