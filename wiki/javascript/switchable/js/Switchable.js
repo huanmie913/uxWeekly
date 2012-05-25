@@ -60,6 +60,7 @@
 			tabid:"tab_type",
 			htag:"tab-item", 
 			currentClass:"cur",
+			cProp : "data-widget",
 			bid:"tab_ooxx", /*内容区ID*/
 			btag:"tab-content", /*内容区标识*/
 			dPro:"data-loaded",/*是否加载过*/
@@ -81,14 +82,15 @@
 		constructor : Switchable,
 		getData:function(n){
 			var that = this;
-			if( that.GLOBAL.bId[n].getAttribute('data-widget') != that.option.btag ){
+			if( that.GLOBAL.bId[n].getAttribute( that.option.cProp ) != that.option.btag ){
 				return;
 			}
 			var _tabContent = that.GLOBAL.bId[n];
 			var _textarea = _tabContent.getElementsByTagName('textarea')[0];
-			var _ul  =document.createElement('ul');
-			_ul.innerHTML = _textarea.value;
-			_tabContent.replaceChild(_ul,_textarea);
+			var _div  =document.createElement('div');
+			_div.className = "sw_container";
+			_div.innerHTML = _textarea.value;
+			_tabContent.replaceChild(_div,_textarea);
 			QF.IsFunction( that.option.callback ) && (that.option.callback)(n);
 		},
 		getIndex:function(node,obj){
@@ -133,7 +135,7 @@
             	}
 
             	//判断当前对象的自定义属性
-            	if( _target.getAttribute("data-widget") != that.option.htag){
+            	if( _target.getAttribute( that.option.cProp) != that.option.htag){
             		_element = _target.parentNode;
             	}else{
             		_element = _target;
