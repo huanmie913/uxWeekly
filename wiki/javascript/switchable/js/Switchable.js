@@ -1,20 +1,13 @@
 /*
- * plugIn:Switchable.js(Tab切换+内容延迟加载)
+ * plugIn:TabDelayed(Tab切换+内容延迟加载)
  * depend:js
  * author:QF
  * time: 12-05-18
+ * update : 修复回调函数
 */
 
 (function(win,undefined){
 	var doc = win.document;
-	Object.prototype.extend = function(desction,source){
-		for( var prop in source ){
-			if( source.hasOwnProperty(prop) ){
-				desction[prop] = source[prop];
-			}
-		}
-		return desction;
-	}
 	var QF = QF || {};
 	QF = {
 		$ : function(id){
@@ -46,8 +39,18 @@
 		},
 		IsFunction : function(obj){
 			if( Object.prototype.toString.call(obj) == "[object Function]"){
-				(obj)();
+				return true;
+			}else{
+				return false;
 			}
+		},
+		extend : function(destination,source){
+			for( var prop in source ){
+				if( source.hasOwnProperty(prop)){
+					destination[prop] = source[prop];
+				}
+			}
+			return destination;
 		}
 	}
 	
@@ -57,13 +60,12 @@
 			tabid:"tab_type",
 			htag:"tab-item", 
 			currentClass:"cur",
-			cProp : "data-widget", /*自定义属性名*/
 			bid:"tab_ooxx", /*内容区ID*/
 			btag:"tab-content", /*内容区标识*/
 			dPro:"data-loaded",/*是否加载过*/
 			eventType : "click",
 			tabType : 1, // 0:普通切换 1:延迟加载
-			callback : function(){}
+			callback : function(i){}
 		};
 		this.GLOBAL = {
 			tId : null,
@@ -71,7 +73,7 @@
 		}
 		this.option = QF.extend(this.setting,ctg || {});
 		if( !(this instanceof arguments.callee) ){
-			return new arguments.callee(this.option);
+			return new arguments.callee(ctg);
 		}	
 		this.init();
 	}
@@ -79,16 +81,15 @@
 		constructor : Switchable,
 		getData:function(n){
 			var that = this;
-			if( that.GLOBAL.bId[n].getAttribute(that.option.cProp) != that.option.btag ){
+			if( that.GLOBAL.bId[n].getAttribute('data-widget') != that.option.btag ){
 				return;
 			}
 			var _tabContent = that.GLOBAL.bId[n];
 			var _textarea = _tabContent.getElementsByTagName('textarea')[0];
-			var _div  =document.createElement('div');
-			_div.className = "sw_container";
-			_div.innerHTML = _textarea.value;
-			_tabContent.replaceChild(_div,_textarea);
-			QF.IsFunction( that.option.callback );
+			var _ul  =document.createElement('ul');
+			_ul.innerHTML = _textarea.value;
+			_tabContent.replaceChild(_ul,_textarea);
+			QF.IsFunction( that.option.callback ) && (that.option.callback)(n);
 		},
 		getIndex:function(node,obj){
 			var that=this;
@@ -107,10 +108,10 @@
 		},
 		trigger : function(i){
 			var that = this;
-			for( var n = that.GLOBAL.tId.length-1;n>=0;n--){
+			for( var n=0,len = that.GLOBAL.tId.length;n<len;n++){
 				that.GLOBAL.tId[n].className = (n == i) ? that.option.currentClass : "";
 			}
-			for( var m = that.GLOBAL.bId.length-1;m>=0;m--){
+			for( var m=0,len = that.GLOBAL.bId.length;m<len;m++){
 				that.GLOBAL.bId[m].style.display = (m == i) ? "block" : "none";
 			}
 			if( that.option.tabType == 1){
@@ -132,7 +133,7 @@
             	}
 
             	//判断当前对象的自定义属性
-            	if(  _target.getAttribute( that.option.cProp ) != that.option.htag){
+            	if( _target.getAttribute("data-widget") != that.option.htag){
             		_element = _target.parentNode;
             	}else{
             		_element = _target;
