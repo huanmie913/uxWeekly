@@ -54,8 +54,14 @@ img{ max-width:100%;}
 	-webkit-box-flex:1;
 	overflow:auto;
 }*/
-
-body{ font-family:"Microsoft YaHei"; background:#f4f4f4;}
+/*竖屏*/
+@media screen and (max-device-width:480px){
+	body{
+		-webkit-text-size-adjust:none;
+  		font-family:"Microsoft YaHei"; 
+	}
+}
+body{ background:#f4f4f4;}
 .itunes{ background:url(../images/mobile.png) no-repeat 0 -75px;width:112px;height:42px;display:block;text-indent:-999em;overflow:hidden;}
 .star{ background:url(../images/star.png) no-repeat 0 0;width:97px;height:16px; position:relative;overflow:hidden;}
 .star .degree{background:url(../images/star.png) no-repeat 0 -18px;display:block; height:16px; position:absolute;left:0;top:0;}
