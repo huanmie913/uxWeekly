@@ -68,9 +68,9 @@ body{ font-family:"Microsoft YaHei"; background:#f4f4f4;}
 
 /*m_list*/
 .m_list{ overflow:hidden;}
-.m_list li{ padding:20px 150px 20px 20px;overflow:hidden; position: relative;border-width:1px 0;border-style:solid;border-color:#fff transparent #c3c3c3;}
+.m_list li{ padding:20px 150px 20px 160px;overflow:hidden; position: relative;border-width:1px 0;border-style:solid;border-color:#fff transparent #c3c3c3;}
 .m_list li.even{ background:#e2e2e2;}
-.m_list .img{ float:left;margin-right:20px;}
+.m_list .img{ float:left;margin-left:-140px;}
 .m_list h2,.m_ginfo h2{ font-size:20px;line-height:2;}
 .m_list h2 a{ color:#333;display:block;}
 .m_list h2 a:hover{text-decoration:none;color:#ff6315;}
