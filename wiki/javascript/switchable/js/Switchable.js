@@ -3,7 +3,11 @@
  * depend:js
  * author:QF
  * time: 12-05-18
+<<<<<<< HEAD
  * update : 修复回调函数
+=======
+ * update: 修复callback
+>>>>>>> 2de932f21a094588c990b57b20a3b142777f0083
 */
 
 (function(win,undefined){
@@ -42,6 +46,7 @@
 				return true;
 			}else{
 				return false;
+<<<<<<< HEAD
 			}
 		},
 		extend : function(destination,source){
@@ -49,6 +54,8 @@
 				if( source.hasOwnProperty(prop)){
 					destination[prop] = source[prop];
 				}
+=======
+>>>>>>> 2de932f21a094588c990b57b20a3b142777f0083
 			}
 			return destination;
 		}
@@ -91,7 +98,11 @@
 			_div.className = "sw_container";
 			_div.innerHTML = _textarea.value;
 			_tabContent.replaceChild(_div,_textarea);
+<<<<<<< HEAD
 			QF.IsFunction( that.option.callback ) && (that.option.callback)(n);
+=======
+			QF.IsFunction( that.option.callback ) && ( that.option.callback)(n);
+>>>>>>> 2de932f21a094588c990b57b20a3b142777f0083
 		},
 		getIndex:function(node,obj){
 			var that=this;
