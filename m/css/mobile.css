@@ -36,7 +36,7 @@ a:hover{text-decoration:underline;}
 
 .mt10{ margin-top:10px}
 
-img{ max-width:100%;}
+
 
 /*.flex_wrap{ 
 	height:100%;
@@ -60,6 +60,7 @@ img{ max-width:100%;}
 		-webkit-text-size-adjust:none;
   		font-family:"Microsoft YaHei"; 
 	}
+	img{ max-width:100%;height:auto;}
 }
 body{ background:#f4f4f4;}
 .itunes{ background:url(../images/mobile.png) no-repeat 0 -75px;width:112px;height:42px;display:block;text-indent:-999em;overflow:hidden;}
