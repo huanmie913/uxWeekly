@@ -43,6 +43,7 @@ a:hover{text-decoration:underline;}
   		font-family:"Microsoft YaHei"; 
 	}
 　　img{max-width:100%;height:auto;}
+    .logo img{ backgrouns-size::contain }
 }
 
 /*body{ background:#f4f4f4;}
