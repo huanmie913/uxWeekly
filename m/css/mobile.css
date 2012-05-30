@@ -36,42 +36,22 @@ a:hover{text-decoration:underline;}
 
 .mt10{ margin-top:10px}
 
-/*竖屏*/
-@media screen and (max-device-width: 480px){  
-	body{
-		-webkit-text-size-adjust:none;
-  		font-family:"Microsoft YaHei"; 
-	}
-　　img{max-width:100%;height:auto;}
-    .logo img{ background-size:91px 18px;} 
-}
-
-/*@media only screen and (-webkit-min-device-pixel-ratio: 2),  
-only screen and (-moz-min-device-pixel-ratio: 2),  
-only screen and (-o-min-device-pixel-ratio: 2/1),  
-only screen and (min-device-pixel-ratio: 2) {  
-	.m_list img{ width:114px;height:114px; -webkit-background-size: cover;
-     -moz-background-size: cover;
-     -o-background-size: cover;
-     background-size: cover;}
-}  */
-
-body{ background:#f4f4f4;}
-.itunes{ background:url(../images/mobile.png) no-repeat 0 -75px;-webkit-background-size:61px 21px;display:block;text-indent:-999em;overflow:hidden;}
+body{ font-family:"Microsoft YaHei"; background:#f4f4f4;}
+.itunes{ background:url(../images/mobile.png) no-repeat 0 -75px;width:112px;height:42px;display:block;text-indent:-999em;overflow:hidden;}
 .star{ background:url(../images/star.png) no-repeat 0 0;width:97px;height:16px; position:relative;overflow:hidden;}
 .star .degree{background:url(../images/star.png) no-repeat 0 -18px;display:block; height:16px; position:absolute;left:0;top:0;}
 
-
+/*m_bar*/
 .m_bar{ background:url(../images/mobile.png) repeat-x 0 0;height:75px; padding:0 20px;overflow:hidden;}
 .m_bar .logo{ float:left;margin-top:20px;}
-.m_bar .m_login{ float:right; line-height:75px;font-size:20px;font-weight:700;display:none;}
+.m_bar .m_login{ float:right; line-height:75px;font-size:20px;font-weight:700;}
 .m_bar .m_login a{ color:#555; margin-left:40px;text-shadow:1px 1px 1px #fff;}
 
-
+/*m_list*/
 .m_list{ overflow:hidden;}
-.m_list li{ padding:20px 150px 20px 160px;overflow:hidden; position: relative;border-width:1px 0;border-style:solid;border-color:#fff transparent #c3c3c3;}
+.m_list li{ padding:20px 150px 20px 20px;overflow:hidden; position: relative;border-width:1px 0;border-style:solid;border-color:#fff transparent #c3c3c3;}
 .m_list li.even{ background:#e2e2e2;}
-.m_list .img{ float:left;margin-left:-140px;}
+.m_list .img{ float:left;margin-right:20px;}
 .m_list h2,.m_ginfo h2{ font-size:20px;line-height:2;}
 .m_list h2 a{ color:#333;display:block;}
 .m_list h2 a:hover{text-decoration:none;color:#ff6315;}
@@ -81,7 +61,7 @@ body{ background:#f4f4f4;}
 
 .m_footer{ background:#eaeaea;padding:20px;text-align:center;line-height:2;text-shadow:1px 1px 1px #fff;}
 
-
+/*m_detail*/
 .m_detail{ text-shadow:1px 1px 1px #fff;}
 .m_ginfo { overflow:hidden; padding:20px 150px 20px 160px; position: relative;border-bottom:1px solid #fff;}
 .m_ginfo .img{ float:left; margin-left:-140px;}
