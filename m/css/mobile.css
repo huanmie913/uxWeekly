@@ -37,7 +37,7 @@ a:hover{text-decoration:underline;}
 .mt10{ margin-top:10px}
 
 /*竖屏*/
-@media screen and (max-device-width: 480px){*/
+/*@media screen and (max-device-width: 480px){*/
 	body{
 		-webkit-text-size-adjust:none;
   		font-family:"Microsoft YaHei"; 
@@ -45,7 +45,7 @@ a:hover{text-decoration:underline;}
 　　img{max-width:100%;height:auto;}
 	.m_list img{ background-size:57px 57px;}
     .logo img{ background-size:contain }
-}
+/*}*/
 
 /*body{ background:#f4f4f4;}
 .itunes{ background:url(../images/mobile.png) no-repeat 0 -75px;width:112px;height:42px;display:block;text-indent:-999em;overflow:hidden;}
