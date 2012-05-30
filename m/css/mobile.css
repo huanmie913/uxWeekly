@@ -46,18 +46,18 @@ a:hover{text-decoration:underline;}
     .logo img{ background-size:91px 18px;} 
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 1/2),  
-only screen and (-moz-min-device-pixel-ratio: 1/2),  
-only screen and (-o-min-device-pixel-ratio: 1/2),  
-only screen and (min-device-pixel-ratio: 1) {  
-	.m_list img{ width:57px;height:57px; -webkit-background-size: cover;
+@media only screen and (-webkit-min-device-pixel-ratio: 2),  
+only screen and (-moz-min-device-pixel-ratio: 2),  
+only screen and (-o-min-device-pixel-ratio: 2/1),  
+only screen and (min-device-pixel-ratio: 2) {  
+	.m_list img{ width:114px;height:114px; -webkit-background-size: cover;
      -moz-background-size: cover;
      -o-background-size: cover;
      background-size: cover;}
 }  
 
-/*body{ background:#f4f4f4;}
-.itunes{ background:url(../images/mobile.png) no-repeat 0 -75px;-webkit-background-size:61px 21px;display:block;/*text-indent:-999em;overflow:hidden;}
+body{ background:#f4f4f4;}
+.itunes{ background:url(../images/mobile.png) no-repeat 0 -75px;-webkit-background-size:61px 21px;display:block;text-indent:-999em;overflow:hidden;}
 .star{ background:url(../images/star.png) no-repeat 0 0;width:97px;height:16px; position:relative;overflow:hidden;}
 .star .degree{background:url(../images/star.png) no-repeat 0 -18px;display:block; height:16px; position:absolute;left:0;top:0;}
 
@@ -82,7 +82,7 @@ only screen and (min-device-pixel-ratio: 1) {
 .m_footer{ background:#eaeaea;padding:20px;text-align:center;line-height:2;text-shadow:1px 1px 1px #fff;}
 
 
-/*.m_detail{ text-shadow:1px 1px 1px #fff;}
+.m_detail{ text-shadow:1px 1px 1px #fff;}
 .m_ginfo { overflow:hidden; padding:20px 150px 20px 160px; position: relative;border-bottom:1px solid #fff;}
 .m_ginfo .img{ float:left; margin-left:-140px;}
 .m_ginfo .parameter{ margin-top:10px;line-height:24px;font-size:14px;}
@@ -99,4 +99,4 @@ only screen and (min-device-pixel-ratio: 1) {
 
 .num{ text-align:center; margin-top:10px;}
 .num li{width:13px;height:13px;background:#c3c3c3;cursor:pointer;border-radius:10px;display:inline-block;vertical-align:middle;margin:0 3px;font-size:0;line-height:0;}
-.num .cur{ background:#399eee;}*/
+.num .cur{ background:#399eee;}
