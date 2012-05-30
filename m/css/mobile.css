@@ -46,7 +46,7 @@ a:hover{text-decoration:underline;}
     .logo img{ background-size:91px 18px;} 
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2),  
+/*@media only screen and (-webkit-min-device-pixel-ratio: 2),  
 only screen and (-moz-min-device-pixel-ratio: 2),  
 only screen and (-o-min-device-pixel-ratio: 2/1),  
 only screen and (min-device-pixel-ratio: 2) {  
@@ -54,7 +54,7 @@ only screen and (min-device-pixel-ratio: 2) {
      -moz-background-size: cover;
      -o-background-size: cover;
      background-size: cover;}
-}  
+}  */
 
 body{ background:#f4f4f4;}
 .itunes{ background:url(../images/mobile.png) no-repeat 0 -75px;-webkit-background-size:61px 21px;display:block;text-indent:-999em;overflow:hidden;}
