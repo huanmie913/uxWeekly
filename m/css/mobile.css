@@ -44,7 +44,7 @@ a:hover{text-decoration:underline;}
 	}
 　　img{max-width:100%;height:auto;}
 	.m_list .img img{ background-size:57px 57px;}
-    .logo img,.m_list .img img{ backgrouns-size:contain }
+    .logo img{ backgrouns-size:contain }
 }
 
 /*body{ background:#f4f4f4;}
