@@ -36,32 +36,15 @@ a:hover{text-decoration:underline;}
 
 .mt10{ margin-top:10px}
 
-
-
-/*.flex_wrap{ 
-	height:100%;
-	display:box;
-	display:-moz-box;
-	display:-webkit-box;
-	-webkit-box-orient : vertical;
-	-moz-box-orient : vertical;
-	box-orient : vertical;
-}
-
-.flex_bd{
-	box-flex:1;
-	-moz-box-flex:1;
-	-webkit-box-flex:1;
-	overflow:auto;
-}*/
 /*竖屏*/
-@media screen and (max-device-width:480px){
+@media screen and (max-device-width: 480px){
 	body{
 		-webkit-text-size-adjust:none;
   		font-family:"Microsoft YaHei"; 
 	}
-	img{ max-width:100%;height:auto;}
+　　img{max-width:100%;height:auto;}
 }
+
 body{ background:#f4f4f4;}
 .itunes{ background:url(../images/mobile.png) no-repeat 0 -75px;width:112px;height:42px;display:block;text-indent:-999em;overflow:hidden;}
 .star{ background:url(../images/star.png) no-repeat 0 0;width:97px;height:16px; position:relative;overflow:hidden;}
