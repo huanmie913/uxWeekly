@@ -43,8 +43,8 @@ a:hover{text-decoration:underline;}
   		font-family:"Microsoft YaHei"; 
 	}
 　　img{max-width:100%;height:auto;}
-	.m_list .img img{ background-size:57px 57px;}
-    .logo img{ backgrouns-size:contain }
+	.m_list img{ background-size:57px 57px;}
+    .logo img{ background-size:contain }
 /*}*/
 
 /*body{ background:#f4f4f4;}
