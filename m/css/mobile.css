@@ -41,7 +41,7 @@ body{ font-family:"Microsoft YaHei"; background:#f4f4f4;
 }
 
 /*m_bar*/
-.m_bar{ background:url(../images/mobile.png) repeat-x 0 0;height:75px; padding:0 20px;overflow:hidden;}
+.m_bar{ background:url(../images/mobile@2x.png) repeat-x 0 0;/*height:75px;*/padding:0 10px; overflow:hidden;}
 .m_bar .logo{ float:left;margin-top:20px;}
 .m_bar .m_login{ float:right; line-height:75px;font-size:20px;font-weight:700;}
 .m_bar .m_login a{ color:#555; margin-left:40px;text-shadow:1px 1px 1px #fff;}
@@ -54,6 +54,7 @@ body{ font-family:"Microsoft YaHei"; background:#f4f4f4;
 .star .degree{background:url(../images/star.png) no-repeat 0 -18px;display:block; height:16px; position:absolute;left:0;top:0;}
 
 @media only screen and (-webkit-min-device-pixel-ratio:2){
+	.m_bar{ background-size:100% 37px;}
 	.itunes{ background-size:61px;height:21px;}
 }
 
