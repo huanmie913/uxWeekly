@@ -52,7 +52,7 @@ body{ font-family:"Microsoft YaHei"; background:#f4f4f4;
 .m_list li{ overflow:hidden; position: relative;border-width:1px 0;border-style:solid;border-color:#fff transparent #c3c3c3;}
 .m_list li:nth-child(2n){ background:#e2e2e2;}
 .m_list .img{ float:left;}
-.m_list h2,.m_ginfo h2{ font-size:20px;line-height:2;}
+.m_list h2,.m_ginfo h2{ line-height:2;}
 .m_list h2 a{ color:#333;display:block;}
 .m_list h2 a:hover{text-decoration:none;color:#ff6315;}
 .m_list h2 span{ margin-left:20px;}
@@ -68,6 +68,7 @@ body{ font-family:"Microsoft YaHei"; background:#f4f4f4;
 	.m_bar .m_login a{ margin-left:10px;}
 	.m_list li{ padding:20px 80px 20px 97px; background:#f00}
 	.m_list .img{ margin-left:-77px;}
+	.m_list h2,.m_ginfo h2{font-size:12px;}
 } 
 /* iphone */
 @media only screen and (-webkit-min-device-pixel-ratio:2){
