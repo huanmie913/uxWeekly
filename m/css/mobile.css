@@ -42,8 +42,8 @@ body{ font-family:"Microsoft YaHei"; background:#f4f4f4;
 
 /*m_bar*/
 .m_bar{ padding:0 5px; overflow:hidden;background:url(../images/mobile.png) repeat-x 0 0;height:44px;}
-.m_bar .logo{ float:left;margin-top:10px;}
-.m_bar .m_login{ float:right; font-weight:700;}
+.m_bar .logo{ float:left;margin-top:10px;background:url(../images/logo.png) no-repeat;width:138px;height:26px;}
+.m_bar .m_login{ float:right; font-weight:700;font-size:14px; line-height:44px;}
 .m_bar .m_login a{ color:#555;text-shadow:1px 1px 1px #fff; margin-left:10px;}
 
 .m_list img{display:block;max-width:100%;}
@@ -53,8 +53,7 @@ body{ font-family:"Microsoft YaHei"; background:#f4f4f4;
 
 /* iphone */
 @media only screen and (-webkit-min-device-pixel-ratio:2) and (-webkit-max-width:480px) {
-	.m_bar .m_login{ font-size:14px; line-height:44px;}
-	.m_bar .logo{ background:url(../images/logo.png) no-repeat;width:138px;height:26px;}
+	
 	.m_bar .m_login a{ margin-left:10px;}
 	.itunes{ background-size:61px 21px;}
 }
