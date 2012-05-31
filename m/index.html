@@ -75,7 +75,7 @@
 					var _imgArr = doc.getElementsByClassName('replace-2x');
 					for(var i=0,len = _imgArr.length;i<len;i++){
 						var _img = _imgArr[i];
-						if(_img.currentStyle['fontSize']=="1px"){
+						if(window.getComputedStyle(_img , null)['fontSize']=="1px"){
 							var _src = _img.src;
 							_src = _src.replace('.png','@2x.png');
 							_img.src = _src;
