@@ -90,7 +90,7 @@ body{ font-family:"Microsoft YaHei"; background:#f4f4f4;
 	.itunes{ background:url(../images/mobile@2x.png) no-repeat 0 -75px; width:112px;height:42px;}
 }
 
-/* High Resolution Screens and Large Viewports (Retina iPad) */
+/*f High Resolution Screens and Large Viewports (Retina iPad) */
 /*@media only screen and (-webkit-min-device-pixel-ratio:2) and (min-device-width:768px) and (max-device-width:1024){
 	.itunes{background:url(../images/mobile@2x.png) no-repeat 0 -75px; background-size:112px 42px;}
 }*/
