@@ -36,16 +36,39 @@ a:hover{text-decoration:underline;}
 
 .mt10{ margin-top:10px}
 
-body{ font-family:"Microsoft YaHei"; background:#f4f4f4;}
-.itunes{ background:url(../images/mobile.png) no-repeat 0 -75px;width:112px;height:42px;display:block;text-indent:-999em;overflow:hidden;}
-.star{ background:url(../images/star.png) no-repeat 0 0;width:97px;height:16px; position:relative;overflow:hidden;}
-.star .degree{background:url(../images/star.png) no-repeat 0 -18px;display:block; height:16px; position:absolute;left:0;top:0;}
+body{ font-family:"Microsoft YaHei"; background:#f4f4f4;
+	-webkit-text-size-adjust:none;
+}
 
 /*m_bar*/
 .m_bar{ background:url(../images/mobile.png) repeat-x 0 0;height:75px; padding:0 20px;overflow:hidden;}
 .m_bar .logo{ float:left;margin-top:20px;}
 .m_bar .m_login{ float:right; line-height:75px;font-size:20px;font-weight:700;}
 .m_bar .m_login a{ color:#555; margin-left:40px;text-shadow:1px 1px 1px #fff;}
+
+
+
+.m_list img{display:block;max-width:100%;}
+.itunes{ background:url(../images/mobile.png) no-repeat 0 -75px;/*width:112px;height:42px;*/display:block;text-indent:-999em;overflow:hidden;}
+.star{ background:url(../images/star.png) no-repeat 0 0;width:97px;height:16px; position:relative;overflow:hidden;}
+.star .degree{background:url(../images/star.png) no-repeat 0 -18px;display:block; height:16px; position:absolute;left:0;top:0;}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2){
+	.itunes{ background-size:61px;height:21px;}
+}
+
+/* Large Viewports (iPad, wide windows) */
+@media only screen and (min-device-width:768px) and (max-device-width:1024px),screen and (min-width:768px){
+	.itunes{ background:url(../images/mobile@2x.png) no-repeat 0 -75px;
+}
+
+/* High Resolution Screens and Large Viewports (Retina iPad) */
+@media only screen and (-webkit-min-device-pixel-ratio:2) and (min-device-width:768px) and (max-device-width:1024){
+	.itunes{background:url(../images/mobile@2x.png) no-repeat 0 -75px; background-size:112px 42px;}
+}
+
+
+
 
 /*m_list*/
 .m_list{ overflow:hidden;}
@@ -59,7 +82,7 @@ body{ font-family:"Microsoft YaHei"; background:#f4f4f4;}
 .m_list .desc{ line-height:24px;font-size:16px; margin-top:5px;text-shadow:1px 1px 1px #fff;}
 .m_list .itunes{ position: absolute;right:20px;top:50px;}
 
-.m_footer{ background:#eaeaea;padding:20px;text-align:center;line-height:2;text-shadow:1px 1px 1px #fff;}
+.m_footer{font-size:12px; background:#eaeaea;padding:20px;text-align:center;line-height:2;text-shadow:1px 1px 1px #fff;}
 
 /*m_detail*/
 .m_detail{ text-shadow:1px 1px 1px #fff;}
