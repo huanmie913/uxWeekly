@@ -61,8 +61,8 @@ body{ font-family:"Microsoft YaHei"; background:#f4f4f4;
 
 .m_list img{display:block;max-width:100%;}
 .itunes{ background:url(../images/mobile.png) no-repeat 0 -45px;display:block;text-indent:-999em;overflow:hidden;}
-.star{ background:url(../images/star.png) no-repeat 0 0;width:97px;height:16px; position:relative;overflow:hidden;}
-.star .degree{background:url(../images/star.png) no-repeat 0 -18px;display:block; height:16px; position:absolute;left:0;top:0;}
+.star{ background:url(../images/star@2x.png) no-repeat 0 0;width:97px;height:16px; position:relative;overflow:hidden;}
+.star .degree{background:url(../images/star@2x.png) no-repeat 0 -18px;display:block; height:16px; position:absolute;left:0;top:0;}
 
 @media only screen and (-webkit-max-width:480px){
 	.m_bar .m_login a{ margin-left:10px;}
