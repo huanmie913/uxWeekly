@@ -68,7 +68,7 @@ body{ font-family:"Microsoft YaHei"; background:#f4f4f4;
 @media only screen and (-webkit-min-device-pixel-ratio:2) and (-webkit-max-width:480px) {
 	.m_bar .m_login a{ margin-left:10px;}
 	.m_list li{padding:20px 150px 20px 97px;}
-	.m_list .img{ margin-left:-77px;width:57px;height:57px;}
+	.m_list .img{ margin-left:-77px;}
 	.itunes{ background-size:61px 21px;}
 }
 
@@ -80,6 +80,7 @@ body{ font-family:"Microsoft YaHei"; background:#f4f4f4;
 	.m_bar .m_login a{ margin-left:40px;}
 	
 	.m_list li{padding:20px 150px 20px 154px;}
+	.replace-2x{ font-size:1px;}
 	.m_list .img{ margin-left:-134px;}
 	.itunes{ background:url(../images/mobile@2x.png) no-repeat 0 -75px;}
 }

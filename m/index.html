@@ -22,35 +22,35 @@
 				<!--m_list-->
 				<ul class="m_list">
 					<li>
-						<a href="#" class="img"><img src="images/114114.png" alt=""></a>
+						<a href="#" class="img"><img src="images/5757.png" alt="" class="replace-2x"></a>
 						<h2><a href="#">豆娃连连看<span>10M</span></a></h2>
 						<div class="star"><span class="degree" style="width:50%"></span></div>
 						<p class="desc">撒旦法阿什顿飞阿什顿飞啊阿什顿发生阿什顿飞</p>
 						<a href="#" class="itunes">iTunes下载</a>
 					</li>
 					<li class="even">
-						<a href="#" class="img"><img src="images/114114.png" alt=""></a>
+						<a href="#" class="img"><img src="images/5757.png" class="replace-2x" alt=""></a>
 						<h2><a href="#">豆娃连连看<span>10M</span></a></h2>
 						<div class="star"><span class="degree" style="width:50%"></span></div>
 						<p class="desc">撒旦法阿什顿飞阿什顿飞啊阿什顿发生阿什顿飞</p>
 						<a href="#" class="itunes">iTunes下载</a>
 					</li>
 					<li>
-						<a href="#" class="img"><img src="images/114114.png" alt=""></a>
+						<a href="#" class="img"><img src="images/5757.png" class="replace-2x" alt=""></a>
 						<h2><a href="#">豆娃连连看<span>10M</span></a></h2>
 						<div class="star"><span class="degree" style="width:50%"></span></div>
 						<p class="desc">撒旦法阿什顿飞阿什顿飞啊阿什顿发生阿什顿飞</p>
 						<a href="#" class="itunes">iTunes下载</a>
 					</li>
 					<li class="even">
-						<a href="#" class="img"><img src="images/114114.png" alt=""></a>
+						<a href="#" class="img"><img src="images/5757.png" class="replace-2x" alt=""></a>
 						<h2><a href="#">豆娃连连看<span>10M</span></a></h2>
 						<div class="star"><span class="degree" style="width:50%"></span></div>
 						<p class="desc">撒旦法阿什顿飞阿什顿飞啊阿什顿发生阿什顿飞</p>
 						<a href="#" class="itunes">iTunes下载</a>
 					</li>
 					<li>
-						<a href="#" class="img"><img src="images/114114.png" alt=""></a>
+						<a href="#" class="img"><img src="images/5757.png" class="replace-2x" alt=""></a>
 						<h2><a href="#">豆娃连连看<span>10M</span></a></h2>
 						<div class="star"><span class="degree" style="width:50%"></span></div>
 						<p class="desc">撒旦法阿什顿飞阿什顿飞啊阿什顿发生阿什顿飞</p>
@@ -68,5 +68,23 @@
 			<!--/m_footer-->
 		</div>
 		<!--/flex_wrap-->
+		<script>
+			(function(win,undefined){
+				var doc = win.document;
+				function ipadImg(){
+					var _imgArr = doc.getElementsByClassName('replace-2x');
+					for(var i=0,len = _imgArr.length;i<len;i++){
+						var _img = _imgArr[i];
+						if(_img.currentStyle['fontSize']=="1px"){
+							var _src = _img.src;
+							_src = _src.replace('.png','@2x.png');
+							_img.src = _src;
+						}
+					}
+				}
+				win.ipadImg = ipadImg;
+			})(window);
+			window.onload = ipadImg;
+		</script>
 	</body>
 </html>
