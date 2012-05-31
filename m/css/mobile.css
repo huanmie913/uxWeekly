@@ -50,7 +50,7 @@ body{ font-family:"Microsoft YaHei"; background:#f4f4f4;
 /*m_list*/
 .m_list{ overflow:hidden;}
 .m_list li{ overflow:hidden; position: relative;border-width:1px 0;border-style:solid;border-color:#fff transparent #c3c3c3;}
-.m_list li.even{ background:#e2e2e2;}
+.m_list li:nth-child(2n){ background:#e2e2e2;}
 .m_list .img{ float:left;}
 .m_list h2,.m_ginfo h2{ font-size:20px;line-height:2;}
 .m_list h2 a{ color:#333;display:block;}
@@ -64,12 +64,14 @@ body{ font-family:"Microsoft YaHei"; background:#f4f4f4;
 .star{ background:url(../images/star.png) no-repeat 0 0;width:97px;height:16px; position:relative;overflow:hidden;}
 .star .degree{background:url(../images/star.png) no-repeat 0 -18px;display:block; height:16px; position:absolute;left:0;top:0;}
 
-/* iphone */
-@media only screen and (-webkit-min-device-pixel-ratio:2) and (-webkit-max-width:480px) {
+@media only screen and (-webkit-max-width:480px){
 	.m_bar .m_login a{ margin-left:10px;}
-	.m_list li{padding:20px 150px 20px 97px;}
+	.m_list li{ padding:20px 150px 20px 97px;}
 	.m_list .img{ margin-left:-77px;}
-	.itunes{ background-size:61px 21px;}
+} 
+/* iphone */
+@media only screen and (-webkit-min-device-pixel-ratio:2){
+
 }
 
 /* Large Viewports (iPad, wide windows) */
