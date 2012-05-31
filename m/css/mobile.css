@@ -65,9 +65,9 @@ body{ font-family:"Microsoft YaHei"; background:#f4f4f4;
 .star .degree{background:url(../images/star@2x.png) no-repeat 0 -18px;display:block; height:16px; position:absolute;left:0;top:0;}
 
 @media only screen and (-webkit-max-width:480px){
+	.m_list li{ padding:20px 50px 20px 70px;  background:#f00}
+	.m_list .img{ margin-left:-77px;}
 	.m_bar .m_login a{ margin-left:10px;}
-	/*.m_list li{ padding:20px 50px 20px 70px;  background:#f00}*/
-	
 	.m_list h2,.m_ginfo h2{font-size:14px;}
 	.m_list .desc{font-size:12px;line-height:18px;}
 	
