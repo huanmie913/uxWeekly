@@ -68,7 +68,7 @@ body{ font-family:"Microsoft YaHei"; background:#f4f4f4;
 @media only screen and (-webkit-min-device-pixel-ratio:2) and (-webkit-max-width:480px) {
 	.m_bar .m_login a{ margin-left:10px;}
 	.m_list li{padding:20px 150px 20px 97px;}
-	.m_list .img{ margin-left:-77px;}
+	.m_list .img{ margin-left:-77px;background-size:57px 57px;}
 	.itunes{ background-size:61px 21px;}
 }
 
