@@ -53,8 +53,8 @@ body{ font-family:"Microsoft YaHei"; background:#f4f4f4;
 
 /* iphone */
 @media only screen and (-webkit-max-width:480px){
-	
 	.m_bar .m_login{ font-size:14px; line-height:44px;}
+	.m_bar .logo{ background:url(../images/logo.png) no-repeat;width:138px;height:26px;}
 	.m_bar .m_login a{ margin-left:10px;}
 }
 @media only screen and (-webkit-min-device-pixel-ratio:2){
@@ -65,6 +65,7 @@ body{ font-family:"Microsoft YaHei"; background:#f4f4f4;
 /* Large Viewports (iPad, wide windows) */
 @media only screen and (min-device-width:768px) and (max-device-width:1024px),screen and (min-width:768px){
 	.m_bar{ background:url(../images/mobile@2x.png) repeat-x 0 0;height:75px}
+	.m_bar .logo{ background:url(../images/logo@2x.png) no-repeat;width:183px;height:37px;margin-top:20px;}
 	.m_bar .m_login{ font-size:20px;line-height:75px;}
 	.m_bar .m_login a{ margin-left:40px;}
 	.itunes{ background:url(../images/mobile@2x.png) no-repeat 0 -75px;
