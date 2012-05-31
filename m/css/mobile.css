@@ -51,13 +51,10 @@ body{ font-family:"Microsoft YaHei"; background:#f4f4f4;
 .star{ background:url(../images/star.png) no-repeat 0 0;width:97px;height:16px; position:relative;overflow:hidden;}
 .star .degree{background:url(../images/star.png) no-repeat 0 -18px;display:block; height:16px; position:absolute;left:0;top:0;}
 
-@media screen and (-webkit-max-width:480px){
-	.m_bar .logo{ /*background:url(../images/logo.png) no-repeat;*/ background:#f00;width:138px;height:26px;}
-}
 /* iphone */
-@media only screen and (-webkit-min-device-pixel-ratio:2){
+@media only screen and (-webkit-min-device-pixel-ratio:2) and (-webkit-max-width:480px) {
 	.m_bar .m_login{ font-size:14px; line-height:44px;}
-	
+	.m_bar .logo{ background:url(../images/logo.png) no-repeat;width:138px;height:26px;}
 	.m_bar .m_login a{ margin-left:10px;}
 	.itunes{ background-size:61px 21px;}
 }
