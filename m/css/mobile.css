@@ -65,29 +65,37 @@ body{ font-family:"Microsoft YaHei"; background:#f4f4f4;
 .star{ background:url(../images/star@2x.png) no-repeat 0 0;width:97px;height:16px; position:relative;overflow:hidden;margin:5px 0;}
 .star .degree{background:url(../images/star@2x.png) no-repeat 0 -18px;display:block; height:16px; position:absolute;left:0;top:0;}
 .m_ginfo .img{ float:left; }
+.m_ginfo .ditunes{ background:url(../images/mobile.png) no-repeat 0 -76px; width:70px;height:25px; position:absolute;right:10px;top:50px;text-indent:-999em;overflow:hidden;}
 
 /*m_detail*/
 .m_detail{ text-shadow:1px 1px 1px #fff;}
 .m_ginfo { overflow:hidden;  position: relative;border-bottom:1px solid #fff;}
-
-
+.m_desc{border-width:1px 0;border-style:solid;border-color:#fff transparent #bdbdbd;}
+.view{height:130px;position: relative; overflow: hidden;margin:0 auto;}
 @media only screen and (-webkit-max-width:480px){
-	.m_list li{ padding:20px 50px 20px 77px; background:#f00}
+	.m_list li{ padding:20px 50px 20px 77px;}
 	.m_list .img{ margin-left:-67px;}
 	.m_bar .m_login a{ margin-left:10px;}
 	.m_list h2,.m_ginfo h2{font-size:14px;line-height:18px;}
 	.m_list .desc{font-size:12px;line-height:18px;}
 	.itunes{ width:72px;height:28px;}
+	
 	.m_ginfo { padding:20px 50px 20px 77px;}
 	.m_ginfo .img{margin-left:-67px;}
+	.m_desc{ padding:10px;font-size:12px;line-height:20px;}
+	.view{ width:190px;}
 } 
 /* iphone */
 @media only screen and (-webkit-min-device-pixel-ratio:2){
 	.m_list li{ padding:20px 97px 20px 77px;}
 	.m_list .img{ margin-left:-67px;}
 	.itunes{ width:72px;height:28px;}
+	.m_ginfo { padding:20px 50px 20px 77px;}
+	.m_ginfo .img{margin-left:-67px;}
+	.m_desc{ padding:10px;}
+	.m_ginfo .parameter{ margin-top:10px;line-height:20px;font-size:12px;}
+	.view{ width:190px;}
 }
-
 /* Large Viewports (iPad, wide windows) */
 @media only screen and (min-device-width:768px) and (max-device-width:1024px),screen and (min-width:768px){
 	.m_bar{ background:url(../images/mobile@2x.png) repeat-x 0 0;height:75px;padding:0 20px;}
@@ -101,33 +109,21 @@ body{ font-family:"Microsoft YaHei"; background:#f4f4f4;
 	.m_list h2,.m_ginfo h2{font-size:20px;}
 	.m_list .desc{font-size:16px;line-height:24px;}
 	.itunes{ background:url(../images/mobile@2x.png) no-repeat 0 -75px; width:112px;height:42px;}
+	.m_ginfo .ditunes{ background:url(../images/mobile@2x.png) no-repeat 0 -121px; width:100px;height:41px; }
 	.m_ginfo { padding:20px 150px 20px 160px;}
 	.m_ginfo .img{ margin-left:-140px;}
-	
+	.m_ginfo .parameter{ margin-top:10px;line-height:24px;font-size:14px;}
+	.m_desc{line-height:2;font-size:14px;padding:20px;}
+	.view{ width:600px;}
 }
-
-/*f High Resolution Screens and Large Viewports (Retina iPad) */
-/*@media only screen and (-webkit-min-device-pixel-ratio:2) and (min-device-width:768px) and (max-device-width:1024){
-	.itunes{background:url(../images/mobile@2x.png) no-repeat 0 -75px; background-size:112px 42px;}
-}*/
-
-
-
-
-
 
 .m_footer{font-size:12px; background:#eaeaea;padding:20px;text-align:center;line-height:20px;text-shadow:1px 1px 1px #fff;}
 
+.m_imgview{border-width:1px 0;border-style:solid;border-color:#bdbdbd transparent;padding:20px 9px;}
 
 
-.m_ginfo .parameter{ margin-top:10px;line-height:24px;font-size:14px;}
-.m_ginfo .ditunes{ background:url(../images/mobile.png) no-repeat 0 -121px;width:100px;height:41px;position: absolute;right:20px;top:30px;text-indent:-999em;overflow:hidden;}
 
-.m_imgview{display:none; border-width:1px 0;border-style:solid;border-color:#bdbdbd transparent;padding:20px 9px;}
 
-.m_desc{border-width:1px 0;border-style:solid;border-color:#fff transparent #bdbdbd;padding:20px; line-height:2;font-size:14px;}
-
-.view{ width:600px;height:130px;position: relative; overflow: hidden;}
 .m_imglist{ position: absolute;left:0;top:0; margin-right:-10px; }
 .m_imglist li{ float:left; margin-right:4px;width:194px;}
 .m_imglist img{ padding:2px;background:#fff;}
