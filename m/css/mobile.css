@@ -58,7 +58,7 @@ body{ font-family:"Microsoft YaHei"; background:#f4f4f4;
 	.m_bar{ background:url(../images/mobile@2x.png) repeat-x 0 0;padding:0 10px; overflow:hidden;}
 }
 @media only screen and (-webkit-min-device-pixel-ratio:2){
-	.m_bar{ background-size:100% 37px;}
+	/*.m_bar{ background-size:100% 37px;}*/
 	.itunes{ background-size:61px 21px;}
 }
 
