@@ -53,9 +53,13 @@ body{ font-family:"Microsoft YaHei"; background:#f4f4f4;
 .star{ background:url(../images/star.png) no-repeat 0 0;width:97px;height:16px; position:relative;overflow:hidden;}
 .star .degree{background:url(../images/star.png) no-repeat 0 -18px;display:block; height:16px; position:absolute;left:0;top:0;}
 
+/* iphone */
+@media only screen and (-webkit-max-width:460px){
+	.m_bar{ background:url(../images/mobile@2x.png) repeat-x 0 0;padding:0 10px; overflow:hidden;}
+}
 @media only screen and (-webkit-min-device-pixel-ratio:2){
 	.m_bar{ background-size:100% 37px;}
-	.itunes{ background-size:61px;height:21px;}
+	.itunes{ background-size:61px 21px;}
 }
 
 /* Large Viewports (iPad, wide windows) */
