@@ -69,17 +69,17 @@ body{ font-family:"Microsoft YaHei"; background:#f4f4f4;
 	.m_list li{ padding:20px 50px 20px 70px;  background:#f00}
 	.m_list .img{ margin-left:-77px;}
 	.m_list h2,.m_ginfo h2{font-size:14px;}
-	.m_list .desc{font-size:12px;line-height:20px;}
+	.m_list .desc{font-size:12px;line-height:18px;}
 	.itunes{ width:72px;height:28px;}
 } 
 /* iphone */
 @media only screen and (-webkit-min-device-pixel-ratio:2){
-
+	.m_list li{ padding:20px 50px 20px 70px;  background:#f00}
 }
 
 /* Large Viewports (iPad, wide windows) */
 @media only screen and (min-device-width:768px) and (max-device-width:1024px),screen and (min-width:768px){
-	.m_bar{ background:url(../images/mobile@2x.png) repeat-x 0 0;height:75px}
+	.m_bar{ background:url(../images/mobile@2x.png) repeat-x 0 0;height:75px;padding:0 20px;}
 	.m_bar .logo{ background:url(../images/logo@2x.png) no-repeat;width:183px;height:37px;margin-top:20px;}
 	.m_bar .m_login{ font-size:20px;line-height:75px;}
 	.m_bar .m_login a{ margin-left:40px;}
