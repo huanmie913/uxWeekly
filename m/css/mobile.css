@@ -38,6 +38,7 @@ a:hover{text-decoration:underline;}
 
 body{ font-family:"Microsoft YaHei"; background:#f4f4f4;
 	-webkit-text-size-adjust:none;
+	text-shadow:1px 1px 1px #fff;
 }
 
 /*m_bar*/
@@ -57,7 +58,7 @@ body{ font-family:"Microsoft YaHei"; background:#f4f4f4;
 .m_list h2 a:hover{text-decoration:none;color:#ff6315;}
 .m_list h2 span{ margin-left:20px;}
 .m_list .desc{  margin-top:5px;text-shadow:1px 1px 1px #fff;}
-.m_list .itunes{ position: absolute;right:20px;top:50px;}
+.m_list .itunes{ position: absolute;right:10px;top:40px;}
 
 .m_list img{display:block;max-width:100%;}
 .itunes{ background:url(../images/mobile.png) no-repeat 0 -45px;display:block;text-indent:-999em;overflow:hidden;}
@@ -65,17 +66,17 @@ body{ font-family:"Microsoft YaHei"; background:#f4f4f4;
 .star .degree{background:url(../images/star@2x.png) no-repeat 0 -18px;display:block; height:16px; position:absolute;left:0;top:0;}
 
 @media only screen and (-webkit-max-width:480px){
-	.m_list li{ padding:20px 50px 20px 70px;  background:#f00}
-	.m_list .img{ margin-left:-77px;}
+	.m_list li{ padding:20px 50px 20px 77px;}
+	.m_list .img{ margin-left:-67px;}
 	.m_bar .m_login a{ margin-left:10px;}
-	.m_list h2,.m_ginfo h2{font-size:14px;}
+	.m_list h2,.m_ginfo h2{font-size:14px;white-space:nowrap;}
 	.m_list .desc{font-size:12px;line-height:18px;}
 	
 } 
 /* iphone */
 @media only screen and (-webkit-min-device-pixel-ratio:2){
-	.m_list li{ padding:20px 50px 20px 70px;  background:#f00}
-	.m_list .img{ margin-left:-77px;}
+	.m_list li{ padding:20px 97px 20px 77px;}
+	.m_list .img{ margin-left:-67px;}
 	.itunes{ width:72px;height:28px;}
 }
 
