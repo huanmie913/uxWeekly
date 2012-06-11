@@ -1,4 +1,3 @@
-
 /*
 function:   RescrollGapLevelSlide
 */
@@ -22,8 +21,7 @@ function:   RescrollGapLevelSlide
 				step:1,
 				left:"#left",
 				right:"#right",
-				leftDisableCss:"disable",
-				rightDisableCss:"disable",
+				disableCss:"disable",
 				isChangeState:true
 			},
 			bugD1Width:0,
@@ -45,8 +43,7 @@ function:   RescrollGapLevelSlide
 			btnStep=btn.step,
 			btnLeft=$(btn.left),
 			btnRight=$(btn.right),
-			btnLeftDisableCss=btn.leftDisableCss,
-			btnRightDisableCss=btn.rightDisableCss,
+			btnDisableCss=btn.disableCss,
 			btnIsChangeState=btn.isChangeState,
 			bugD1Width=settings.bugD1Width,
 			callback=settings.callback;
@@ -71,18 +68,13 @@ function:   RescrollGapLevelSlide
 		var stepWidth=step*splitWidth;
 		var stepWidthBtn=btnStep*splitWidth;
 		var d2Width=splitWidth*Math.ceil(d3Size/row);
-		console.log(d2.width())
 		
 		//fall short of nmuber,return false
 		if(d2Width<d1Width){
-			//alert('x')
-			btnLeft.addClass(btnLeftDisableCss);
-			btnRight.addClass(btnRightDisableCss);
-			return false;
+			//return false;
 		}
 		//bear with
 		d2.width(d2Width+100);
-		//
 		var flag=true;
 		//left
 		var left=function(e){
@@ -98,14 +90,14 @@ function:   RescrollGapLevelSlide
 				_stepWidth=stepWidth;
 			}
 			if((d1Width+d1.scrollLeft())==d2Width){
-				btnLeft.addClass(btnLeftDisableCss);
+				btnLeft.addClass(btnDisableCss);
 				if(e){
 					flag=true;
 				}else{
 					if(autRescrollTime){
 						d1.animate({scrollLeft:0},autRescrollTime,function(){
-							btnLeft.removeClass(btnLeftDisableCss);
-							btnRight.addClass(btnRightDisableCss);
+							btnLeft.removeClass(btnDisableCss);
+							btnRight.addClass(btnDisableCss);
 							if(callback)callback($this,0,splitWidth,d1Width,d2Width);
 							flag=true;
 						});
@@ -122,14 +114,14 @@ function:   RescrollGapLevelSlide
 				}
 			}else if(_stepWidth+d1.scrollLeft()>=d2Width-d1Width){
 				d1.animate({scrollLeft:d2Width-d1Width},speed,function(){
-					btnLeft.addClass(btnLeftDisableCss);
-					btnRight.removeClass(btnRightDisableCss);
+					btnLeft.addClass(btnDisableCss);
+					btnRight.removeClass(btnDisableCss);
 					if(callback)callback($this,d2Width-d1Width,splitWidth,d1Width,d2Width);
 					flag=true;
 				});
 			}else{
 				d1.animate({scrollLeft:d1.scrollLeft()+_stepWidth},speed,function(){
-					btnRight.removeClass(btnRightDisableCss);
+					btnRight.removeClass(btnDisableCss);
 					if(callback)callback($this,d1.scrollLeft(),splitWidth,d1Width,d2Width);
 					flag=true;
 				});
@@ -150,14 +142,14 @@ function:   RescrollGapLevelSlide
 				_stepWidth=stepWidth;
 			}
 			if(d1.scrollLeft()==0){
-				btnRight.addClass(btnRightDisableCss);
+				btnRight.addClass(btnDisableCss);
 				if(e){
 					flag=true;
 				}else{
 					if(autRescrollTime){
 						d1.animate({scrollLeft:d2Width-d1Width},autRescrollTime,function(){
-							btnRight.removeClass(btnRightDisableCss);
-							btnLeft.addClass(btnLeftDisableCss);
+							btnRight.removeClass(btnDisableCss);
+							btnLeft.addClass(btnDisableCss);
 							if(callback)callback($this,d2Width-d1Width,splitWidth,d1Width,d2Width);
 							flag=true;
 						});
@@ -174,14 +166,14 @@ function:   RescrollGapLevelSlide
 				}
 			}else if((d1.scrollLeft())<=_stepWidth){
 				d1.animate({scrollLeft:0},speed,function(){
-					btnRight.addClass(btnRightDisableCss);
-					btnLeft.removeClass(btnLeftDisableCss);
+					btnRight.addClass(btnDisableCss);
+					btnLeft.removeClass(btnDisableCss);
 					if(callback)callback($this,0,splitWidth,d1Width,d2Width);
 					flag=true;
 				});
 			}else{
 				d1.animate({scrollLeft:d1.scrollLeft()-_stepWidth},speed,function(){
-					btnLeft.removeClass(btnLeftDisableCss);
+					btnLeft.removeClass(btnDisableCss);
 					if(callback)callback($this,d1.scrollLeft(),splitWidth,d1Width,d2Width);
 					flag=true;
 				});
@@ -195,14 +187,14 @@ function:   RescrollGapLevelSlide
 			d1.animate({scrollLeft:xy},speed,function(){
 				if(callback)callback($this,xy,splitWidth,d1Width,d2Width);
 				if(xy==0){
-					btnRight.addClass(btnRightDisableCss);
-					btnLeft.removeClass(btnLeftDisableCss);
+					btnRight.addClass(btnDisableCss);
+					btnLeft.removeClass(btnDisableCss);
 				}else if(xy==(d2Width-d1Width)){
-					btnRight.removeClass(btnRightDisableCss);
-					btnLeft.addClass(btnLeftDisableCss);
+					btnRight.removeClass(btnDisableCss);
+					btnLeft.addClass(btnDisableCss);
 				}else{
-					btnRight.removeClass(btnRightDisableCss);
-					btnLeft.removeClass(btnLeftDisableCss);
+					btnRight.removeClass(btnDisableCss);
+					btnLeft.removeClass(btnDisableCss);
 				}
 				flag=true;
 			});
@@ -223,20 +215,19 @@ function:   RescrollGapLevelSlide
 			return false;
 		};
 		if(aut){
-			//ready autoPlay
 			autoPlay();
-			//
 			$this.hover(autoStop,autoPlay);
 			if(btn){
 				btnLeft.hover(autoStop,autoPlay);
 				btnRight.hover(autoStop,autoPlay);
 			}
 		}
+		
 		//btn
 		if(btn){
 			if( d3Size<=seeColumn ){
-				btnLeft.addClass(btnLeftDisableCss);
-				btnRight.addClass(btnRightDisableCss);
+				btnLeft.addClass(btnDisableCss);
+				btnRight.addClass(btnDisableCss);
 				return false;
 			}
 			btnLeft.click(left);
@@ -246,14 +237,12 @@ function:   RescrollGapLevelSlide
 				case "left":
 					//避免动画的同时初始化callback
 					d1.scrollLeft(0);gotoscroll(0);
-					btnRight.addClass(btnRightDisableCss);
-					//console.log('xx')
+					btnRight.addClass(btnDisableCss);
 					break;
 				case "right":
 					//避免动画的同时初始化callback
 					d1.scrollLeft(d2Width-d1Width);gotoscroll(d2Width-d1Width);
-					btnLeft.addClass(btnLeftDisableCss);
-					//console.log('yy')
+					btnLeft.addClass(btnDisableCss);
 					break;
 			}
 		}
@@ -264,4 +253,3 @@ function:   RescrollGapLevelSlide
 		return {$this:$this,autoStop:autoStop,autoPlay:autoPlay,gotoscroll:gotoscroll};
 	};
 })(jQuery);
-
