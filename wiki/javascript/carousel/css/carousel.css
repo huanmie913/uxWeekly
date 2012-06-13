@@ -10,3 +10,4 @@
 .mod_carousel .m_num li{ background:url(../image/ico.jpg) -73px 0 no-repeat;float:left; margin-right:2px; color:#fff; cursor:pointer; display:inline; font-size:11px; height:20px; line-height:20px; text-align:center; width:20px;}
 .mod_carousel .m_num .current{ background-position:-97px 0;}
 .mod_carousel .img_loading{ background:url('../image/loading.gif') no-repeat center center;}
+

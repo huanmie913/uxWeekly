@@ -45,16 +45,12 @@
 		},
 		getCssProperty : function(element,attr){
 			if(element.style[attr]){
-				//若样式存在于html中,优先获取
 				return element.style[attr];
 			}else if(element.currentStyle){
-				//IE下获取CSS属性最终样式(同于CSS优先级)
+
 				return element.currentStyle[attr];
 			}else if(document.defaultView && document.defaultView.getComputedStyle){
-				//W3C标准方法获取CSS属性最终样式(同于CSS优先级)
-				//注意,此法属性原格式(text-align)获取的,故要转换一下
 				attr=attr.replace(/([A-Z])/g,'-$1').toLowerCase();
-				//获取样式对象并获取属性值
 				return document.defaultView.getComputedStyle(element,null).getPropertyValue(attr);
 			}else{
 				return null;
@@ -72,11 +68,11 @@
 					   eventType : "click",
 					currentClass : "current",
 							 num : 0,
-						   speed : 100, //速度
-						   step  : 10, //步长
+						   speed : 10, 
+						   step  : 40,
 					      effect : {
-									 efficacy : "slide", //transparent:透明  slide:滑动
-									direction : 1 // 1:左右  0：上下
+									 efficacy : "slide", 
+									 direction : 1 
 								},
 							 /*Btn : null,*/
 							 Btn : {
@@ -96,14 +92,21 @@
 		this.setting = YJ.extend(this.opt,ctg || {});
 		this._timer = null;
 		this._autoTimer = null;
-		this.LENGTH = 0; //统计子个数
-		this.WIDTH = this.HEIGHT = 0; //宽度，高度
+		this.LENGTH = 0; 
+		this.WIDTH = this.HEIGHT = 0; 
 		if( !(this instanceof FocusCarousel)){
 			return new FocusCarousel(ctg);
 		}
 		this.init();
 	}
-	
+	/* Tween */
+	var Tween = {
+		slide: {
+			easeOut: function(t, b, c, d) {
+				return (t == d) ? b + c: c * ( - Math.pow(2, -10 * t / d) + 1) + b;
+			}
+		}
+	}
 	FocusCarousel.prototype = {
 		constructor : FocusCarousel,
 		numList : function(){
@@ -117,7 +120,7 @@
 			return _imgList;
 		},
 		checkType : function(obj,callback){
-			if( Object.prototype.toString.call(obj) != "[object Null]" ){
+			if( {}.toString.call(obj) != "[object Null]" && {}.toString.call(callback) == "[object Function]" ){
 				callback && callback();
 			}
 		},
@@ -158,9 +161,13 @@
 		setSlide : function(obj,n,arg){
 			var that = this;
 			if( that.setting.effect.direction == 1){
-				obj.style.marginLeft = ( -arg * n )+"px";
+				var _oW = parseInt(YJ.getCssProperty(obj,'marginLeft')),
+					_nW = ( -that.WIDTH * n ) - _oW;
+				obj.style.marginLeft = Math.ceil(Tween.slide.easeOut(arg, _oW, _nW, that.WIDTH ))+"px";
 			}else{
-				obj.style.marginTop = ( -arg * n )+"px";
+				var _oH = parseInt(YJ.getCssProperty(obj,'marginTop')),
+					_nH = ( -that.HEIGHT * n ) - _oH;
+				obj.style.marginLeft = Math.ceil(Tween.slide.easeOut(arg, _oH, _nH, that.HEIGHT ))+"px";
 			}
 		},
 		slideShow : function(obj,n){
@@ -168,22 +175,22 @@
 				_width = _height = 0;
 			function animate(){
 				if( that.setting.effect.direction == 1 ){
-					_width += that.setting.step;
-					that.setSlide(obj,n,_width)
-					if( _width >= that.WIDTH ){
+					that.setSlide(obj,n,_width);
+					if( _width < that.WIDTH ){
+						_width += that.setting.step;
+					}else{
 						that.clearTimer( that._timer );
-						_width = 0;
 					}
 				}else if( that.setting.effect.direction == 0 ){
-					_height += that.setting.step;
-					that.setSlide(obj,n,_height)
-					if( _height >= that.HEIGHT ){
+					that.setSlide(obj,n,_height);
+					if( _height < that.HEIGHT ){
+						_height += that.setting.step;
+					}else{
 						that.clearTimer( that._timer );
-						_height = 0;
 					}
 				}
 			}
-			that.clearTimer( that._timer );
+			
 			that._timer = setInterval(animate,that.setting.speed);
 		},
 		BtnState : function(){
@@ -222,7 +229,6 @@
 					_numList[i].className = (i == n ) ? that.setting.currentClass : "";
 				}
 			});
-			//透明
 			if( that.setting.effect.efficacy == "transparent"){
 				for( var j = 0;j<that.LENGTH;j++){
 					var _obj = _imgList[j];
@@ -235,7 +241,7 @@
 					}
 				}
 			}
-			//左右、上下
+			
 			if( that.setting.effect.efficacy == "slide"){
 				that.slideShow(_imgContainer,n);
 			}
@@ -327,8 +333,7 @@
 					if( _target.nodeName.toLowerCase() != that.setting.slideTarget ){
 						return;
 					}
-					var _index = that.index(_target);
-					that.setting.num = _index;
+					that.setting.num = that.index(_target);
 					that.showSlide(that.setting.num);
 				});
 			});
