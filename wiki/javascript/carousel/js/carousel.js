@@ -68,11 +68,11 @@
 					   eventType : "click",
 					currentClass : "current",
 							 num : 0,
-						   speed : 10, 
-						   step  : 40,
+						   speed : 300, 
+						   step  : 5,
 					      effect : {
-									 efficacy : "slide", 
-									 direction : 1 
+									 efficacy : "transparent"/*, 
+									 direction : 1 */
 								},
 							 /*Btn : null,*/
 							 Btn : {
@@ -102,8 +102,15 @@
 	/* Tween */
 	var Tween = {
 		slide: {
-			easeOut: function(t, b, c, d) {
-				return (t == d) ? b + c: c * ( - Math.pow(2, -10 * t / d) + 1) + b;
+				easeOut: function(t, b, c, d) {
+					return (t == d) ? b + c: c * ( - Math.pow(2, -10 * t / d) + 1) + b;
+			}
+		},
+		transparent : {
+				setOpacity : function(obj,opacityValue){
+					obj.style.opacity = opacityValue/100;
+					obj.style.filter = "alpha(opacity="+opacityValue+")";
+					return obj;
 			}
 		}
 	}
@@ -140,22 +147,19 @@
 				timer = null;
 			}
 		},
-		setOpacity : function(obj,opacityValue){
-			obj.style.opacity = opacityValue/100;
-			obj.style.filter = "alpha(opacity="+opacityValue+")";
-		},
+		
 		opacityShow : function(obj){
 			var that = this,
 				_opacity = 0;
 			function showImg(){
-				_opacity += that.setting.step;
-				that.setOpacity(obj,_opacity);
+				Tween.transparent.setOpacity(obj,_opacity);
 				if(_opacity >= 100){
 					that.clearTimer( that._timer );
-					_opacity = 0;
+				}else{
+					_opacity += that.setting.step;
 				}
+				
 			}
-			that.clearTimer( that._timer );
 			that._timer = setInterval(showImg,that.setting.speed);
 		},
 		setSlide : function(obj,n,arg){
@@ -236,7 +240,7 @@
 						that.opacityShow(_obj);
 						_obj.style.zIndex = 11;
 					}else{
-						that.setOpacity(_obj,0);
+						Tween.transparent.setOpacity(_obj,0);
 						_obj.style.zIndex = 10;
 					}
 				}
@@ -270,7 +274,7 @@
 				_numList[i].className = that.setting.currentClass;
 			})
 			if(that.setting.effect.efficacy == "transparent"){
-				that.setOpacity(_imgList[i],100);
+				Tween.transparent.setOpacity(_imgList[i],100);
 			}else if(that.setting.effect.efficacy == "slide"){
 				var _arg = that.setting.effect.direction ? that.WIDTH : that.HEIGHT;
 				that.setSlide(_imgContainer,i,_arg);
@@ -326,7 +330,6 @@
 				});
 			}
 			
-			/*ÐòºÅ*/
 			that.checkType( YJ.Q(that.setting.numList),function(){
 				YJ.on( YJ.Q(that.setting.numList ),that.setting.eventType,function(e){
 					var _target = YJ.getTarget(e);
