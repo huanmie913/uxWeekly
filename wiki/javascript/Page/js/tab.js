@@ -1,7 +1,8 @@
+
+
 	
 /*
  * Page : 分页
- * Time : 2012-06-14
 */
 (function(win,undefined){
 	var doc = win.document;
@@ -50,71 +51,62 @@
 			}
 		}
 	}
-	
-	
-	/*Page*/
-	function Page(ctg){
+	/*WeekTab*/
+	function WeekTab(ctg){
 		this.opt = {
-			maxNum     : 8,
-			bid        : 'j-qlist',
-			pid        : 'j_qpage',
-			curClass   : 'cur',
-			Initnum    : 1, // 初始化
-			eventType  : "click"
+			tid       : "j-tabweek",
+			bid       : "j-qlist",
+			tag       : "li",
+			curClass  : "cur",
+			eventType : "click",
+			tnum      : 3,
+			dataArr   : DHlist,
+			callback  : function(){}
 		}
-		this.option = QF.extend(this.opt,ctg||{});
+		this.option = QF.extend(this.opt,ctg || {});
 		if( !(this instanceof arguments.callee) ){
 			return new arguments.callee(ctg);
 		}
 		this.init();
 	}
-	Page.prototype = {
-		constructor : Page,
-		initPage : function(n,m){
+	WeekTab.prototype = {
+		constructor : WeekTab,
+		getData : function(n){
 			var that = this,
+				_aList = that.option.dataArr[n],
 				_html = "";
-			for(var i =1;i<=n;i++){
-				_html +='<li class='+(m==i?"cur":"")+'>'+i+'</li>';
-			}
-			QF.$(that.option.pid).innerHTML = _html;
+			for( var i=0,len = _aList.length;i<len;i++ ){
+				var _list = _aList[i];
+				_html += '<li><span class="nr">第<em>'+_list.num+'</em>集</span><a href="'+_list.href+'">'+(i< that.option.tnum ? '<span class="tt">&middot;</span>' : '&middot;')+_list.title+'</a></li>';
+			}	
+			QF.$( that.option.bid ).innerHTML = _html;
 		},
-		goPage : function(n){
+		trigger : function(n){
 			var that = this,
-				len = QF.$( that.option.bid ).children.length;
-			for( var i=0;i<len;i++){
-				QF.$( that.option.bid ).children[i].style.display = ( i>=that.option.maxNum*(n-1) && i<that.option.maxNum*n ) ? "block" : "none";
+				_aTag = QF.$( that.option.tid ).getElementsByTagName( that.option.tag );
+			for( var len = _aTag.length-1;len>=0;len--){
+				_aTag[len].className = (len == n ) ? that.option.curClass : "";
 			}
-			
+			that.getData(n);
+			QF.IsFunction(that.option.callback) && (that.option.callback)();
 		},
 		init : function(){
 			var that = this,
-				_children = QF.$( that.option.bid ).children,
-				_len = _children.length,
-				_pnum = 0;//总页数
-			if(_len < that.opt.maxNum){
-				_pnum = 1;
-			}
-			if( _len%that.opt.maxNum == 0 ){
-				_pnum = _len/that.opt.maxNum;
-			}else{
-				_pnum = Math.floor(_len/that.opt.maxNum)+1;
-			}
-			that.initPage(_pnum,that.option.Initnum);
-			that.goPage(that.option.Initnum);
-			var _pchildren = QF.$( that.option.pid ).children;
-			QF.addEvent( QF.$( that.option.pid ),that.option.eventType,function(e){
+				_odate = new Date().getDay(),
+				_aTag = QF.$( that.option.tid ).getElementsByTagName( that.option.tag );
+				that.trigger(_odate);
+
+			QF.addEvent( QF.$( that.option.tid ),that.option.eventType,function(e){
 				var _ev = QF.getEvent(e),
 					_target = QF.getTarget(_ev);
 				if(_target.nodeName.toLowerCase()!="li"){
 					return;
 				}
-				var _index = QF.getIndex(_target,_pchildren);
-				that.goPage(_index+1);
-				for( var j=0;j<_pchildren.length;j++){
-					QF.$( that.option.pid ).children[j].className = (j==_index) ? that.option.curClass : "";
-				}
+				_odate = QF.getIndex(_target,_aTag);
+				that.trigger(_odate);
 			})
 		}
 	}
-	win.Page = Page;
+	
+	win.WeekTab = WeekTab;
 })(window);
