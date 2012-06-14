@@ -69,10 +69,10 @@
 					currentClass : "current",
 							 num : 0,
 						   speed : 300, 
-						   step  : 5,
+						   step  : 24,
 					      effect : {
-									 efficacy : "transparent"/*, 
-									 direction : 1 */
+									 efficacy : "slide", /*transparent,slide*/
+									 direction : 0 
 								},
 							 /*Btn : null,*/
 							 Btn : {
@@ -103,7 +103,9 @@
 	var Tween = {
 		slide: {
 				easeOut: function(t, b, c, d) {
-					return (t == d) ? b + c: c * ( - Math.pow(2, -10 * t / d) + 1) + b;
+					//return (t == d) ? b + c: c * ( - Math.pow(2, -10 * t / d) + 1) + b;
+					//console.log( (t == d) ? b + c: c * (0.5 + 1) + b);
+					return (t == d) ? b + c: c * (0.5 + 1) + b;
 			}
 		},
 		transparent : {
@@ -171,7 +173,7 @@
 			}else{
 				var _oH = parseInt(YJ.getCssProperty(obj,'marginTop')),
 					_nH = ( -that.HEIGHT * n ) - _oH;
-				obj.style.marginLeft = Math.ceil(Tween.slide.easeOut(arg, _oH, _nH, that.HEIGHT ))+"px";
+				obj.style.marginTop = Math.ceil(Tween.slide.easeOut(arg, _oH, _nH, that.HEIGHT ))+"px";
 			}
 		},
 		slideShow : function(obj,n){
@@ -179,18 +181,22 @@
 				_width = _height = 0;
 			function animate(){
 				if( that.setting.effect.direction == 1 ){
-					that.setSlide(obj,n,_width);
+					
 					if( _width < that.WIDTH ){
 						_width += that.setting.step;
+						that.setSlide(obj,n,_width);
 					}else{
 						that.clearTimer( that._timer );
+						//_width = 0;
 					}
 				}else if( that.setting.effect.direction == 0 ){
-					that.setSlide(obj,n,_height);
+					
 					if( _height < that.HEIGHT ){
 						_height += that.setting.step;
+						that.setSlide(obj,n,_height);
 					}else{
 						that.clearTimer( that._timer );
+						_height = 0;
 					}
 				}
 			}
