@@ -27,13 +27,48 @@
         </dl>
     </div>
 </div>
-<!--/mod_item-->
+<!--/wiki_box-->
+<!--mod_item-->
+<div class="wiki_box mt">
+    <div class="hd">
+        <h2>前端后端模块化说明</h2>
+    </div>
+    <!--调用说明-->
+    <div class="bd">
+		<dl class="dl_t">
+			<dt>语法：  <?php M('Settpl')->format('key', 'value', $num); ?></dt>
+			<dd>key 是自定义的模块标识， 通常为模块的拼音首组成，只要保证不重复就可以  （这个直会在页面开始设计前就定义好，保证后台数据及前端页面可以同步）</dd>
+			<dd>$num 表示返回的数据条数（默认为5. 优先级： 后台设置 > 模版页设置 > 5)</dd>
+			<dd>value 支持返回预设的结构及自定义，预设项包括：title, jumpto, lilist, tablelist, imglist, kfcontent</dd>
+		</dl>
+		<dl class="dl_t">
+			<dt>value的自定义模版说明:自定义单条数据的结构，定义了一些默认的可替换的标签。</dt>
+			<dd>__url__：  链接地址</dd>
+			<dd>__txt__:   文字</dd>
+			<dd>__img__:   图片地址</dd>
+			<dd>__tip__:   鼠标悬停时的提示</dd>
+			<dd>__dat__:   时间</dd>
+			<dd>比如调用:<?php M('Settpl')->format('key', '<li><a href="__url__" title="__tip__">__txt__</a></li>', 5); ?>	</dd>
+		</dl>
+		<ul class="txtlist">
+			<li>title   后台设置的模块名称（后台没有数据时可能为空，可以无视）</li>
+			<li>jumpto  后台设置的更多跳转地址（后台没数据时可能为空，可以无视）</li>
+			<li>lilist  返回文字列表的</li>
+			<li>tablelist  返回玩家交流的列表</li>
+			<li>imglist  返回图片列表</li>
+			<li>kfcenter  返回客服中心数据</li>
+		</ul>
+        <p> 前端使用时，无需在乎数据是怎么组合，只需要关注结构即可</p>
+    </div>
+</div>
+<!--/wiki_box-->
 <div class="wiki_box mt">
     <div class="hd">
         <h2 class="mt50">更新记录</h2>
     </div>
     <div class="bd">
         <ol class="txtlist">
+			<li>12-06-16 新增前端后端模块化说明</li>
             <li>12-04-26 更新群组讨论组列表、网页游戏公共样式表CDN路径 <span>by 情封</span></li>
             <li>12-04-13 新增模块 <span>by 情封</span></li>
         </ol>
