@@ -54,7 +54,7 @@
 		}
 	}
 	
-	/*TabDelayed*/
+	/*Switchable*/
 	function Switchable(ctg){
 		this.setting={
 			tabid:"tab_type",
