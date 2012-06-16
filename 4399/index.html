@@ -1306,9 +1306,10 @@ Copyright &copy; 2004 - 2012 4399.com All Rights Reserved. 厦门游家网络有
                         _cProperty = "data-src";
                     for( var i=_imgArr.length-1;i>=0;i--){
                         var _img = _imgArr[i];
-                        if(_img.getAttribute(_cProperty)!=""){
+                        if(_img.getAttribute(_cProperty)){
                             var _dataSrc = _img.getAttribute(_cProperty);
                             _img.setAttribute("src",_dataSrc);
+                            
                             _img.removeAttribute(_cProperty);
                         }
                     }
