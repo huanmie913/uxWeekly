@@ -199,6 +199,7 @@ a:hover{text-decoration:underline;color:#468315;}
 .zr{ background-position:-30px -172px;}
 
 /*rk_list*/
+.rk_list{display:none;}
 .rk_list dl{ background:url(../images/repeatBottom.png) repeat-x 0 bottom;height:59px; padding:10px 0 10px 65px;height:40px;}
 .rk_list .m_imgtext .img{ margin:-15px 0 0 -59px;}
 .rk_list .m_imgtext img{ width:52px;height:40px;}
