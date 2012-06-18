@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>多栏布局</title>
+	<link href="/wiki/static/css/demo.css" rel="stylesheet" type="text/css"/>
+    <style>
+        *{ margin:0;padding:0;}
+        .qf{width:60em;}
+        .cone{
+            -moz-column-count:2; //设定多栏
+            -webkit-column-count:2;
+            -moz-column-width:20em; //设定栏宽度
+            -webkit-column-width:20em;
+            -moz-column-gap:2em; //设定多栏之间的间隔距离
+            -webkit-column-gap:2em;
+            -moz-column-rule:1px solid #f00; //设定栏之间的隔离线
+            -webkit-column-rule:1px solid #f00;
+        }
+        .cthree{
+            background: #f00;
+        }
+
+        .qf_box{
+            display:-moz-box;
+            display:-webkit-box;
+            -moz-box-orient:vertical;
+            -webkit-box-orient:vertical;
+        }
+        .lside{
+            background:#ccc;width:200px;
+            padding:20px;
+            -moz-box-ordinal-group:3;
+            -webkit-box-ordinal-group:3;
+        }
+        .content{
+            background:#ddd;
+           // width:300px;
+            -moz-box-flex:1;//弹性布局
+            -webkit-box-flex:1;
+            padding:20px;
+            -moz-box-ordinal-group:1;
+            -webkit-box-ordinal-group:1;
+        }
+        .rside{
+            -webkit-box-ordinal-group:2;
+            -moz-box-ordinal-group:2;
+            width:200px;
+            background:#999;
+            padding:20px;
+        }
+        .lside,.content,.rside{
+            -moz-box-sizing:border-box;
+            -webkit-box-sizing:border-box;
+        }
+        .pp_box{
+            display:-moz-box;
+            display:-webkit-box;
+            -moz-box-orient:vertical;
+            -webkit-box-orient:vertical;
+            width:500px;
+            height:300px;
+            border:5px solid #000;
+            /*-moz-box-orient:horizontal;
+            -webkit-box-orient:horizontal;*/
+
+        }
+       .a{ background:#ddd;
+            -moz-box-flex:2;
+           -webkit-box-flex:2;
+       }
+       .b{ background:#f00;
+            -moz-box-flex:1;
+            -webkit-box-flex:1;
+       }
+       .c{ background:#f0f;
+        -moz-box-flex:1;
+        -webkit-box-flex:1;
+       }
+       .a,.b,.c{
+           -moz-box-sizing:border-box;
+           -webkit-box-sizing:border-box;
+           font-size:2em;
+           font-weight:700;
+       }
+        .ox_box{
+            display:-moz-box;
+            display:-webkit-box;
+            -moz-box-align:center;
+            -webkit-box-align:center;
+            -moz-box-pack:center;
+            -webkit-box-pack:center;
+            width:300px;
+            height:200px;
+            background: #f00;
+            color:#fff
+            
+        }
+    </style>
+</head>
+<body>
+<!--toolbar-->
+<div class="toolbar" id="toolbar"></div>
+<!--/toolbar-->
+<!--qf-->
+<div class="qf">
+    <div class="cone">
+        <img src="http://tp3.sinaimg.cn/1646215042/50/5621833989/1"/>
+        <p>嗨！累死我了！我在淘宝网天猫砸金砖，鼠标是无线加有线 轮番点击，手指都点酸了，3分钟过后就差一点 总是被抢了。后来发现不砸它自己也会融化！！什么意思？？？</p>
+        <p>回复@卷卷小冰块:叫你同事发张图出来，真实用户说服力大，不枉我们辛苦熬了几个通宵送红包 //@卷卷小冰块:我同事砸中4999~羡慕嫉妒恨~ //@nunumick:一群人打怪，你不动手打，怪同样会被别人打到半残乃至打死，但你拿不到经验值</p>
+    </div>
+    <div class="cthree">
+        我似乎其他内容
+    </div>
+</div>
+<!--/qf-->
+<div class="qf_box">
+    <div class="lside">
+        <ul>
+            <li>锋芝被曝正式复合</li>
+            <li>神九成功对接天宫</li>
+            <li>锋芝被曝正式复合</li>
+            <li>神九成功对接天宫</li>
+            <li>锋芝被曝正式复合</li>
+            <li>神九成功对接天宫</li>
+            <li>锋芝被曝正式复合</li>
+            <li>神九成功对接天宫</li>
+            <li>锋芝被曝正式复合</li>
+                        <li>神九成功对接天宫</li>
+            <li>锋芝被曝正式复合</li>
+                        <li>神九成功对接天宫</li>
+        </ul>
+    </div>
+    <div class="content">
+        #端午北京周边游#还在为端午不知去哪儿而困惑？不想看攻略只想出去玩？百度旅游首度重磅推出最人情味、最贴心的《北京周边游路书》！无论你准备花几天，想要怎样的旅行方式，都能找到适合的路线！ 一书在手，轻松享受端午小长假！ http://t.cn/zWzYwKI 。端午 可以找个地方活动了
+    </div>
+    <div class="rside">
+        <ul>
+            <li>阅尽科技 唯见信仰</li>
+            <li>欧洲杯荷兰零分出局</li>
+            <li>阅尽科技 唯见信仰</li>
+            <li>欧洲杯荷兰零分出局</li>
+            <li>阅尽科技 唯见信仰</li>
+            <li>欧洲杯荷兰零分出局</li>
+        </ul>
+    </div>
+</div>
+<div class="pp_box">
+    <div class="a">我是左侧</div>
+    <div class="b">我是中间</div>
+    <div class="c">我是右侧</div>
+</div>
+<div class="ox_box">
+    我是居中显示
+</div>
+<div class="ox_box">
+    <img src="http://ww1.sinaimg.cn/thumbnail/6a19c5a3tw1du0ggobe1hj.jpg"/>
+</div>
+<footer class="bottomBar" id="bottomBar"></footer>
+<script src="/wiki/static/js/mod_f2er.js" type="text/javascript"></script>
+<script type="text/javascript">
+mod_f2er.topBar('css3布局','toolbar');
+mod_f2er.bottomBar('bottomBar');
+</script>
+</body>
+</html>
