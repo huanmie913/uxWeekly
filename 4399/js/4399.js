@@ -65,6 +65,15 @@ YJ = {
 		}else{
 			return false;
 		}
+	},
+	getOffsetTop : function(dom){
+		var that = this,
+			_top = 0;
+		while( dom!=null ){
+			_top += dom.offsetTop;
+			dom = dom.offsetParent;
+		}
+		return _top;
 	}
 };
 
@@ -424,76 +433,110 @@ YJ = {
 	win.Switchable = Switchable;
 })(window);
 
-/*
- * 图片延迟
-*/
+/**
+  * to:ModuleLoad.js (模块延迟加载)
+  * author:QF
+  * time:12-05-21
+**/
+
 (function(win,undefined){
-	var _doc = win.document; 
+	var doc = win.document;	
 	function lazyLoad(ctg){
-		this.option = {
-			dpro : "lazy_src",
-			offsetH : 0
+		this.setting={
+				id : "box_1",
+				cid : "",
+				type : "img", // img,module
+				dpro : "data-src",
+				preloadHeight : 20,
+				callback : function(){}
 		}
-		this.setting = YJ.extend(this.option,ctg||{});
-		this._imageLoaderMap = null;
-		if( !( this instanceof arguments.callee)){
-			return new arguments.callee(ctg);
-		}
-		this.init();
+		this.option = YJ.extend(this.setting,ctg||{});
+		this._filling=0;
+		if( !(this instanceof arguments.callee) ){
+			return new arguments.callee(ctg);  
+		}	
+		this.init(); 
 	}
+	
 	lazyLoad.prototype = {
 		constructor : lazyLoad,
-		getOffsetTop : function(dom){
-			var _offsetTop = dom.offsetTop;
-			if(!dom){ return; }
-			while( dom = dom.offsetParent ){
-				_offsetTop += dom.offsetParent;
+		lazyModule : function(callback){
+			var that=this,
+				_clientHeight = doc.documentElement.clientHeight || doc.body.clientHeight,
+				_scrollTop = doc.documentElement.scrollTop || doc.body.scrollTop,
+				_obj = YJ.$( that.option.id ),
+				_offsetTop = YJ.getOffsetTop( _obj );
+				
+			var _height = YJ.getCssProperty( _obj,'height');
+			var _v = _offsetTop-_scrollTop;
+				
+			if( that._filling==1){
+				return;	
 			}
-			return _offsetTop;
+			if( that._filling==0){
+				if(  _v >=0 && _v< _clientHeight ){
+					var _cid = ( that.option.cid === "" ) ? YJ.$( that.option.id ) : QF.$( that.option.cid );
+					var _textarea=_cid.getElementsByTagName('textarea')[0],
+						_txtValue = _textarea.value;
+					var _dv=document.createElement('div');
+					_dv.className = "lc_container";
+					_dv.innerHTML = _txtValue;
+					_cid.replaceChild(_dv,_textarea);
+					that._filling=1;
+				}
+			}
+			YJ.IsFunction(that.option.callback)();
+		},
+		lazyImage : function(){
+			var that = this,
+				_clientHeight = doc.documentElement.clientHeight || doc.body.clientHeight,
+				_scrollTop = doc.documentElement.scrollTop || doc.body.scrollTop,
+				_offsetTop = 0;
+			var _imageLoaderMap = {
+				dNum : 0,
+				loadList : {}
+			}
+			var _imgArr = doc.images;
+			for( var i = 0,len = _imgArr.length;i<len;i++){
+				if( (typeof(_imgArr[i]) == "object") && _imgArr[i].getAttribute(that.option.dpro)){
+					_offsetTop = YJ.getOffsetTop(_imgArr[i]);
+					//var _index = _offsetTop > that.option.offHeight ? (_offsetTop - that.option.offHeight) : 0;
+					_imageLoaderMap.loadList[_offsetTop] ? _imageLoaderMap.loadList[_offsetTop].push(_imgArr[i]) : _imageLoaderMap.loadList[_offsetTop] = [_imgArr[i]];
+					_imageLoaderMap.dNum++;
+				}
+				//console.log(_imgArr[i])
+			}
+			
+			if(_imageLoaderMap.dNum<1){ return;}
+			var _viewH = _scrollTop + _clientHeight;
+			for( var i in _imageLoaderMap.loadList ){
+				if( _viewH > i){
+					for( var m =0,len = _imageLoaderMap.loadList[i].length;m<len;m++){
+						_imageLoaderMap.loadList[i][m].src = _imageLoaderMap.loadList[i][m].getAttribute(that.option.dpro);
+						_imageLoaderMap.loadList[i][m].removeAttribute(that.option.dpro);
+					}
+					delete _imageLoaderMap.loadList[i];
+					_imageLoaderMap.dNum--;
+				}
+			}
+			
 		},
 		init : function(){
-			var that = this;
-			
-			if( !that._imageLoaderMap ){
-				that._imageLoaderMap = {
-				    dCount : 0,
-					_body : _doc.body,
-					_dodyM : document.compateMode == "BackCompat" ? _body : _doc.documentElement,
-					allImage : document.images,
-					loadList : {}
+			var that=this;
+			if( that.option.type == "module"){
+				that.lazyModule(that.option.callback);
+				if( that._filling==0 ){
+					YJ.addEvent(window,'scroll',function(){	
+						that.lazyModule(that.option.callback);	
+					})
 				}
+			}else if(that.option.type == "img"){
+				that.lazyImage();
+				YJ.addEvent(window,'scroll',function(){	
+					that.lazyImage();
+				})
 			}
-			
-			if( that.setting.offsetH || that.setting.offsetH == 0){
-				var _imageArr = that._imageLoaderMap.allImage;
-				that._imageLoaderMap.loadList = {};
-				for( var i=0,len = _imageArr.length;i<len;i++ ){
-					if( (typeof(_imageArr[i])=="object") && _imageArr[i].getAttribute(that.setting.dpro)){
-						var _offsetTop = that.getOffsetTop(_imageArr[i]);	
-						_offsetTop = _offsetTop > that.setting.offsetH ? (_offsetTop-that.setting.offsetH):0;
-						that._imageLoaderMap.loadList[_offsetTop] ? that._imageLoaderMap.loadList[_offsetTop].push(_imageArr[i]) : that._imageLoaderMap.loadList[_offsetTop] = [_imageArr[i]];
-						that._imageLoaderMap.dCount++;
-					}
-				}
-			}
-			
-			if(that._imageLoaderMap.dCount<1){
-				return;
-			}
-			var _scrollTop = Math.max(that._imageLoaderMap._body.scrollTop,that._imageLoaderMap._dodyM.scrollTop);
-			var _viewH = _scrollTop + that._imageLoaderMap._dodyM.clientHeight;
-			for( var i in that._imageLoaderMap.loadList ){
-				if(_viewH > i){
-					for( var m =0,len = that._imageLoaderMap.loadList[i].length;m<len;m++){
-						that._imageLoaderMap.loadList[i][m].src = that._imageLoaderMap.loadList[i][m].getAttribute(that.setting.dpro);
-						that._imageLoaderMap.loadList[i][m].removeAttribute(that.setting.dpro);
-					}
-					delete that._imageLoaderMap.loadList[i];
-					that._imageLoaderMap.dCount--;
-				}
-			}
-			setTimeout(arguments.callee,100)
-		}
+		}	
 	}
-     win.lazyLoad = lazyLoad;
+	win.lazyLoad = lazyLoad;
 })(window);
