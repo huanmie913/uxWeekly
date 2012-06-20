@@ -74,7 +74,7 @@ a:hover{text-decoration:underline;}
 .m_played_ser li a:hover{ background-position:-165px -181px;}
 
 /*m_all_ser*/
-.server_all  .server_box{ height:120px; position:relative; zoom:1; overflow:hidden;width:575px;}
+.server_all  .server_box{ height:80px; position:relative; zoom:1; overflow:hidden;width:575px;}
 .m_all_ser h2{ background-position:-145px 0;}
 .select_ser{ *display:inline; *zoom:1; margin-right:75px; padding:10px 0 0; height:26px;  color:#41135f;}
 .select_ser .ser_txt{ border: solid #b7856a 1px; background-color:#fdeecd; width:30px; text-align:center;height:16px; line-height:16px; overflow:hidden; display:inline-block; *zoom:1;*display:inline;}
