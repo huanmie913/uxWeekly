@@ -539,7 +539,7 @@ YJ = {
 				_len = _imgArr.length,
 				i = 0,
 				_targets = _imgArr,
-				viewOffset = getLoadOffset();
+				viewOffset = getLoadOffset(),
 				_target;
 			
 			if (that.option.className) {
@@ -598,9 +598,6 @@ YJ = {
 				}
 			}else if(that.option.type == "img"){
 				that.lazyImage();
-				YJ.addEvent(window,'scroll',function(){	
-					that.lazyImage();
-				})
 			}
 		}	
 	}
