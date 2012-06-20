@@ -572,13 +572,13 @@ YJ = {
 					i = 0,
 					len = _targets.length;
 				for (; i < len; ++i) {
-					target = _targets[i];
-					imgSrc = target.getAttribute(that.option.dpro);
+					_target = _targets[i];
+					imgSrc = _target.getAttribute(that.option.dpro);
 					imgSrc && (finished = false);
-					if (YJ.getOffsetTop(target) < viewOffset && imgSrc) {
-						target.src = imgSrc;
-						target.removeAttribute(that.option.dpro);
-						YJ.isFunction(that.option.callback) && that.option.callback(target);
+					if (YJ.getOffsetTop(_target) < viewOffset && imgSrc) {
+						_target.src = imgSrc;
+						_target.removeAttribute(that.option.dpro);
+						YJ.isFunction(that.option.callback) && that.option.callback(_target);
 					}
 				}
 				//当全部图片都已经加载, 去掉事件监听
