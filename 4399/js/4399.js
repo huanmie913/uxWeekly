@@ -536,12 +536,11 @@ YJ = {
 		lazyImage : function(){
 			var that = this,
 				_imgArr = doc.getElementsByTagName('img'),
+				_targets = _imgArr,
 				_len = _imgArr.length,
 				i = 0,
-				_targets = _imgArr,
 				viewOffset = getLoadOffset(),
 				_target;
-			
 			if (that.option.className) {
 				_targets= [];
 				for (; i < _len; ++i) {
@@ -556,8 +555,8 @@ YJ = {
 			}
 			
 			//加载可视图片
-			for (var j = 0, len = _targets.length; j < len; ++j) {
-				_target = _targets[j];
+			for (var i = 0, len = _targets.length; i < len; ++i) {
+				_target = _targets[i];
 				if ( YJ.getOffsetTop(_target) > viewOffset) {
 					_target.setAttribute(that.option.dpro, _target.src);
 					that.option.placeHolder ? _target.src = that.options.placeHolder : _target.removeAttribute('src');
@@ -565,7 +564,7 @@ YJ = {
 			}
 			
 			//处理延迟加载
-			var loadNeeded = function() {
+			var doLoad = function() {
 				var viewOffset = getLoadOffset(),
 					imgSrc,
 					finished = true,
@@ -580,12 +579,12 @@ YJ = {
 						_target.removeAttribute(that.option.dpro);
 						YJ.isFunction(that.option.callback) && that.option.callback(_target);
 					}
+					
 				}
 				//当全部图片都已经加载, 去掉事件监听
-				finished && YJ.removeEvent(window, 'scroll', loadNeeded);
+				finished && YJ.removeEvent(win, 'scroll', doLoad);
 			};
-
-			YJ.addEvent(window, 'scroll', loadNeeded);
+			YJ.addEvent(win, 'scroll', doLoad);
 		},
 		init : function(){
 			var that=this;
