@@ -423,3 +423,78 @@ YJ = {
 	}
 	win.Switchable = Switchable;
 })(window);
+
+/*
+ * 图片延迟
+*/
+(function(win,undefined){
+	var _doc = win.document; 
+	function lazyLoad(ctg){
+		this.option = {
+			dpro : "lazy_src",
+			offsetH : 500
+		}
+		this.setting = YJ.extend(this.option,ctg||{});
+		this._imageLoaderMap = null;
+		if( !( this instanceof arguments.callee)){
+			return new arguments.callee(ctg);
+		}
+		this.init();
+	}
+	lazyLoad.prototype = {
+		constructor : lazyLoad,
+		getOffsetTop : function(dom){
+			var _offsetTop = dom.offsetTop;
+			if(!dom){ return; }
+			while( dom = dom.offsetParent ){
+				_offsetTop += dom.offsetParent;
+			}
+			return _offsetTop;
+		},
+		imageLoaderMap : function(){
+			var that = this;
+			if( !that._imageLoaderMap ){
+				that._imageLoaderMap = {
+				    dCount : 0,
+					_body : _doc.body,
+					_dodyM : document.compateMode == "BackCompat" ? _body : _doc.documentElement,
+					allImage : _doc.images,
+					loadList : {}
+				}
+			}
+			if( that.offsetH || that.offsetH == 0){
+				var _imageArr = that._imageLoaderMap.allImage;
+				that._imageLoaderMap.loadList = {};
+				for( var i=0,len = _imageArr.length;i<len;i++ ){
+					if( typeof(_imageArr[i])=="object" && _imageArr[i].getAttribute(that.dpro)){
+						var _offsetTop = that.getOffsetTop(_imageArr[i]);
+						_offsetTop = _offsetTop > that.offsetH ? (_offsetTop-that.offsetH):0;
+						that._imageLoaderMap.loadList[_offsetTop] ? that._imageLoaderMap.loadList[_offsetTop].push(_imageArr[i]) : that._imageLoaderMap.loadList[_offsetTop] = [_imageArr[i]];
+						that._imageLoaderMap.dCount++;
+					}
+				}
+			}
+		},
+		init : function(){
+			var that = this;
+			that.imageLoaderMap();
+			if(that._imageLoaderMap.dCount<1){
+				return;
+			}
+			var _scrollTop = Math.max(that._imageLoaderMap._body.scrollTop,that._imageLoaderMap._dodyM.scrollTop);
+			var _viewH = _scrollTop + that._imageLoaderMap._dodyM.clientHeight;
+			for( var i in that._imageLoaderMap ){
+				if(_viewH > i){
+					for( var m =0,len = that._imageLoaderMap.loadList[i].length;m<len;m++){
+						that._imageLoaderMap.loadList[i][m].src = that._imageLoaderMap.loadList[i][m].getAttribute(that.setting.dpro);
+						that._imageLoaderMap.loadList[i][m].removeAttribute(that.setting.dpro);
+					}
+					delete that._imageLoaderMap.loadList[i];
+					that._imageLoaderMap.dCount--;
+				}
+			}
+			setTimeout(arguments.callee,100)
+		}
+	}
+     win.lazyLoad = lazyLoad;
+})(window);
