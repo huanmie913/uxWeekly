@@ -6,7 +6,13 @@
 var YJ = window.YJ || {};
 YJ = {
     $ : function(id){
-        return typeof id == "string" ? document.getElementById(id) : id;
+		if (!id) return null; 
+		if ('string' == typeof id || id instanceof String) {
+			return document.getElementById(id);
+		} else if (id.nodeName && (id.nodeType == 1 || id.nodeType == 9)) {
+			return id;
+		}
+		return null;
     },
     addEvent : function(otarget,otype,ofn){
 		if( otarget.addEventListener ){
@@ -17,6 +23,17 @@ YJ = {
 			});
 		}else{
 			otarget["on"+otype] = ofn;
+		}
+	},
+	removeEvent : function(otarget,otype,ofn){
+		if( otarget.removeEventListener ){
+			otarget.removeEventListener(otype,ofn,false);
+		}else if( otarget.detachEvent ){
+			otarget.detachEvent("on"+otype,function(){
+				ofn.call(otarget);
+			});
+		}else{
+			otarget["on"+otype] = null;
 		}
 	},
     preventDefault:function(e){
@@ -75,11 +92,32 @@ YJ = {
 		}
 		return _top;
 	},
-	hasClass : function(obj,classname){
-		
+	hasClass : function(element,classname){
+		var element = YJ.$(element);
+		if(!element || !element.classname) return false;
+
+		var classArray = YJ.trim(classname).split(/\s+/), 
+			len = classArray.length;
+		classname = element.classname.split(/\s+/).join(" ");
+		while (len--) {
+			if(!(new RegExp("(^| )" + classArray[len] + "( |\x24)")).test(classname)){
+				return false;
+			}
+		}
+		return true;
 	},
 	getViewHeight : function(){
-		return document.documentElement.clientHeight || document.body.clientHeight;
+		var doc = document,
+			client = doc.compatMode == "BackCompat" ? doc.body : doc.documentElement;
+		return client.clientHeight;
+	},
+	getScrollTop : function(){
+		var doc = document;
+		return window.pageYOffset || doc.body.scrollTop || doc.documentElement.scrollTop;
+	},
+	trim : function(source){
+		var trimer = new RegExp("(^[\\s\\t\\xa0\\u3000]+)|([\\u3000\\xa0\\s\\t]+\x24)", "g");
+		return String(source).replace(trimer, "");
 	}
 };
 
@@ -454,7 +492,8 @@ YJ = {
 				type : "img", // img,module
 				dpro : "data-src",
 				className : "lazyimg",
-				preloadHeight : 20,
+				preloadHeight : 100,
+				placeHolder : "",
 				callback : function(){}
 		}
 		this.option = YJ.extend(this.setting,ctg||{});
@@ -497,10 +536,9 @@ YJ = {
 		lazyImage : function(){
 			var that = this,
 				_imgArr = doc.getElementsByTagName('img'),
-				_clientHeight = doc.documentElement.clientHeight || doc.body.clientHeight,
-				_scrollTop = doc.documentElement.scrollTop || doc.body.scrollTop,
 				_len = _imgArr.length,
 				i = 0,
+				_targets = _imgArr,
 				viewOffset = getLoadOffset();
 				_target;
 			
@@ -514,15 +552,15 @@ YJ = {
 			}
 			
 			function getLoadOffset(){
-				return _clientHeight + _scrollTop + that.option.preloadHeight;
+				return YJ.getViewHeight() + YJ.getScrollTop() + that.option.preloadHeight;
 			}
 			
 			//加载可视图片
-			for (j = 0, len = _imgArr.length; j < len; ++j) {
-				_target = _imgArr[i];
+			for (var j = 0, len = _targets.length; j < len; ++j) {
+				_target = _targets[j];
 				if ( YJ.getOffsetTop(_target) > viewOffset) {
 					_target.setAttribute(that.option.dpro, _target.src);
-					that.option.placeHolder ? _target.src = options.placeHolder : _target.removeAttribute('src');
+					that.option.placeHolder ? _target.src = that.options.placeHolder : _target.removeAttribute('src');
 				}
 			}
 			
@@ -532,15 +570,15 @@ YJ = {
 					imgSrc,
 					finished = true,
 					i = 0,
-					len = _imgArr.length;
+					len = _targets.length;
 				for (; i < len; ++i) {
-					target = _imgArr[i];
+					target = _targets[i];
 					imgSrc = target.getAttribute(that.option.dpro);
 					imgSrc && (finished = false);
 					if (YJ.getOffsetTop(target) < viewOffset && imgSrc) {
 						target.src = imgSrc;
-						target.removeAttribute(srcAttr);
-						YJ.isFunction(that.option.callback) && that.option.callback();
+						target.removeAttribute(that.option.dpro);
+						YJ.isFunction(that.option.callback) && that.option.callback(target);
 					}
 				}
 				//当全部图片都已经加载, 去掉事件监听
