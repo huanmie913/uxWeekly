@@ -74,6 +74,12 @@ YJ = {
 			dom = dom.offsetParent;
 		}
 		return _top;
+	},
+	hasClass : function(obj,classname){
+		
+	},
+	getViewHeight : function(){
+		return document.documentElement.clientHeight || document.body.clientHeight;
 	}
 };
 
@@ -447,6 +453,7 @@ YJ = {
 				cid : "",
 				type : "img", // img,module
 				dpro : "data-src",
+				className : "lazyimg",
 				preloadHeight : 20,
 				callback : function(){}
 		}
@@ -489,37 +496,58 @@ YJ = {
 		},
 		lazyImage : function(){
 			var that = this,
+				_imgArr = doc.getElementsByTagName('img'),
 				_clientHeight = doc.documentElement.clientHeight || doc.body.clientHeight,
 				_scrollTop = doc.documentElement.scrollTop || doc.body.scrollTop,
-				_offsetTop = 0;
-			var _imageLoaderMap = {
-				dNum : 0,
-				loadList : {}
-			}
-			var _imgArr = doc.images;
-			for( var i = 0,len = _imgArr.length;i<len;i++){
-				if( (typeof(_imgArr[i]) == "object") && _imgArr[i].getAttribute(that.option.dpro)){
-					_offsetTop = YJ.getOffsetTop(_imgArr[i]);
-					//var _index = _offsetTop > that.option.offHeight ? (_offsetTop - that.option.offHeight) : 0;
-					_imageLoaderMap.loadList[_offsetTop] ? _imageLoaderMap.loadList[_offsetTop].push(_imgArr[i]) : _imageLoaderMap.loadList[_offsetTop] = [_imgArr[i]];
-					_imageLoaderMap.dNum++;
-				}
-				//console.log(_imgArr[i])
-			}
+				_len = _imgArr.length,
+				i = 0,
+				viewOffset = getLoadOffset();
+				_target;
 			
-			if(_imageLoaderMap.dNum<1){ return;}
-			var _viewH = _scrollTop + _clientHeight;
-			for( var i in _imageLoaderMap.loadList ){
-				if( _viewH > i){
-					for( var m =0,len = _imageLoaderMap.loadList[i].length;m<len;m++){
-						_imageLoaderMap.loadList[i][m].src = _imageLoaderMap.loadList[i][m].getAttribute(that.option.dpro);
-						_imageLoaderMap.loadList[i][m].removeAttribute(that.option.dpro);
+			if (that.option.className) {
+				_targets= [];
+				for (; i < _len; ++i) {
+					if (YJ.hasClass(_imgArr[i], that.option.className)) {
+						_targets.push(_imgArr[i]);
 					}
-					delete _imageLoaderMap.loadList[i];
-					_imageLoaderMap.dNum--;
 				}
 			}
 			
+			function getLoadOffset(){
+				return _clientHeight + _scrollTop + that.option.preloadHeight;
+			}
+			
+			//加载可视图片
+			for (j = 0, len = _imgArr.length; j < len; ++j) {
+				_target = _imgArr[i];
+				if ( YJ.getOffsetTop(_target) > viewOffset) {
+					_target.setAttribute(that.option.dpro, _target.src);
+					that.option.placeHolder ? _target.src = options.placeHolder : _target.removeAttribute('src');
+				}
+			}
+			
+			//处理延迟加载
+			var loadNeeded = function() {
+				var viewOffset = getLoadOffset(),
+					imgSrc,
+					finished = true,
+					i = 0,
+					len = _imgArr.length;
+				for (; i < len; ++i) {
+					target = _imgArr[i];
+					imgSrc = target.getAttribute(that.option.dpro);
+					imgSrc && (finished = false);
+					if (YJ.getOffsetTop(target) < viewOffset && imgSrc) {
+						target.src = imgSrc;
+						target.removeAttribute(srcAttr);
+						YJ.isFunction(that.option.callback) && that.option.callback();
+					}
+				}
+				//当全部图片都已经加载, 去掉事件监听
+				finished && YJ.removeEvent(window, 'scroll', loadNeeded);
+			};
+
+			YJ.addEvent(window, 'scroll', loadNeeded);
 		},
 		init : function(){
 			var that=this;
