@@ -383,6 +383,7 @@ YJ = {
 			bid:"tab_ooxx", /*内容区ID*/
 			btag:"tab-content", /*内容区标识*/
 			dPro:"data-loaded",/*是否加载过*/
+			dimgPro : "data-src",
 			eventType : "click",
 			tabType : 1, // 0:普通切换 1:延迟加载
 			callback : false
@@ -440,7 +441,7 @@ YJ = {
 				var _imgArr = that.GLOBAL.bId[i].getElementsByTagName('img');
 				for( var m=_imgArr.length-1;m>=0;m--){
                     var _img = _imgArr[m];
-                    _img.setAttribute(that.option.dPro, _img.getAttribute('src'));
+                    _img.setAttribute(that.option.dimgPro, _img.getAttribute('src'));
 					_img.removeAttribute('src');
                 }
 			}
