@@ -441,6 +441,7 @@ YJ = {
 				for( var i=_imgArr.length-1;i>=0;i--){
                     var _img = _imgArr[i];
                     _img.setAttribute(that.option.dPro, _img.getAttribute('src'));
+					_img.removeAttribute('src');
                 }
 			}
 			
