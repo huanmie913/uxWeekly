@@ -1432,7 +1432,7 @@ Copyright &copy; 2004 - 2012 4399.com All Rights Reserved. 厦门游家网络有
                 currentClass:"current",
                 callback:function(i){
                     var _imgArr = YJ.$("j_tgame").getElementsByTagName('ul')[i].getElementsByTagName('img'),
-                        _cProperty = "src";
+                        _cProperty = "data-src";
                     for( var i=_imgArr.length-1;i>=0;i--){
                         var _img = _imgArr[i];
                         if(typeof(_img.getAttribute(_cProperty))=="string"){
