@@ -1420,7 +1420,7 @@ Copyright &copy; 2004 - 2012 4399.com All Rights Reserved. 厦门游家网络有
                 tabid:"j_rank",
                 bid:"j_rcontent",
                 eventType:"mouseover",
-                tabType:"0",
+                tabType:0,
                 currentClass:"cur"
             }).trigger(0);
 
@@ -1428,17 +1428,18 @@ Copyright &copy; 2004 - 2012 4399.com All Rights Reserved. 厦门游家网络有
                 tabid:"j_tab_star",
                 bid:"j_tgame",
                 eventType:"click",
-                tabType:"0",
+                tabType:0,
                 currentClass:"current",
                 callback:function(i){
                     var _imgArr = YJ.$("j_tgame").getElementsByTagName('ul')[i].getElementsByTagName('img'),
                         _cProperty = "data-src";
-                    for( var i=_imgArr.length-1;i>=0;i--){
-                        var _img = _imgArr[i];
+                    for( var m=_imgArr.length-1;m>=0;m--){
+                        var _img = _imgArr[m];
                         if(typeof(_img.getAttribute(_cProperty))=="string"){
                             var _dataSrc = _img.getAttribute(_cProperty);
+							console.log(_dataSrc)
                             _img.setAttribute("src",_dataSrc); 
-                            _img.removeAttribute(_cProperty);
+                            //_img.removeAttribute(_cProperty);
                         }
                     }
             }}).trigger(0);

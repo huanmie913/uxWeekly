@@ -441,6 +441,15 @@ YJ = {
 			YJ.IsFunction( that.option.callback ) && (that.option.callback)(i);
 			return that;
 		},
+		imgInit : function(){
+			var that = this;
+			var _imgArr = YJ.$(that.option.bid).getElementsByTagName('img');
+			for( var k=_imgArr.length-1;k>=0;k--){
+                var _img = _imgArr[k];
+                _img.setAttribute(that.option.dimgPro, _img.getAttribute('src'));
+				_img.removeAttribute('src');
+            }
+		},
 		doEvent : function(){
 			var that = this;
 			YJ.addEvent(YJ.$(that.option.tabid),that.option.eventType,function(e){
@@ -462,22 +471,15 @@ YJ = {
             	}
             	_index = that.getIndex(_element,that.GLOBAL.tId);
             	that.trigger(_index);
-				
 				YJ.preventDefault(_ev);
             });
-
 		},
 		init:function(){
 			var that = this;
 			that.GLOBAL.tId = YJ.$(that.option.tabid).children;
             that.GLOBAL.bId = YJ.$(that.option.bid).children;
 			if(that.option.tabType == 0){
-				var _imgArr = YJ.$(that.option.bid).getElementsByTagName('img');
-				for( var k=_imgArr.length-1;k>=0;k--){
-                    var _img = _imgArr[k];
-                    _img.setAttribute(that.option.dimgPro, _img.getAttribute('src'));
-					_img.removeAttribute('src');
-                }
+				that.imgInit();
 			}
             that.doEvent();
 			return that;
