@@ -559,7 +559,7 @@ YJ = {
 			for (var i = 0, len = _targets.length; i < len; ++i) {
 				_target = _targets[i];
 				if ( YJ.getOffsetTop(_target) > viewOffset) {
-					//_target.setAttribute(that.option.dpro, _target.src);
+					_target.setAttribute(that.option.dpro, _target.src);
 					//that.option.placeHolder ? _target.src = that.option.placeHolder : _target.removeAttribute('src');
 				}
 			}
@@ -574,11 +574,9 @@ YJ = {
 				for (; i < _targets.length; ++i) {
 					_target = _targets[i];
 					imgSrc = _target.getAttribute(that.option.dpro);
-					
 					imgSrc && (finished = false);
 					if (YJ.getOffsetTop(_target) < viewOffset && imgSrc) {
 						_target.setAttribute('src',imgSrc);
-						console.log(imgSrc)
 						_target.removeAttribute(that.option.dpro);
 						YJ.IsFunction(that.option.callback) && that.option.callback(_target);
 					}
