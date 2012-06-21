@@ -437,13 +437,6 @@ YJ = {
 			}
 			if( that.option.tabType == 1){
 				that.checkLoad(that.GLOBAL.tId[i],i);
-			}else if(that.option.tabType == 0){
-				var _imgArr = that.GLOBAL.bId[i].getElementsByTagName('img');
-				for( var k=_imgArr.length-1;k>=0;k--){
-                    var _img = _imgArr[k];
-                    _img.setAttribute(that.option.dimgPro, _img.getAttribute('src'));
-					_img.removeAttribute('src');
-                }
 			}
 			YJ.IsFunction( that.option.callback ) && (that.option.callback)(i);
 			return that;
@@ -478,6 +471,14 @@ YJ = {
 			var that = this;
 			that.GLOBAL.tId = YJ.$(that.option.tabid).children;
             that.GLOBAL.bId = YJ.$(that.option.bid).children;
+			if(that.option.tabType == 0){
+				var _imgArr = YJ.$(that.option.bid).getElementsByTagName('img');
+				for( var k=_imgArr.length-1;k>=0;k--){
+                    var _img = _imgArr[k];
+                    _img.setAttribute(that.option.dimgPro, _img.getAttribute('src'));
+					_img.removeAttribute('src');
+                }
+			}
             that.doEvent();
 			return that;
 		}	
