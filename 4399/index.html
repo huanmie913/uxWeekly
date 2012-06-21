@@ -2158,6 +2158,21 @@ Copyright &copy; 2004 - 2012 4399.com All Rights Reserved. 厦门游家网络有
 <!--/wrapper-->
 <script src="js/4399.js"></script>
 <script>
+	var QF = QF ||{};
+	QF = {
+		changeSrc : function(id,tag,i){
+			var _imgArr = YJ.$(id).getElementsByTagName(tag)[i].getElementsByTagName('img'),
+            _cProperty = "data-src";
+			for( var m=_imgArr.length-1;m>=0;m--){
+				var _img = _imgArr[m];
+				if(typeof(_img.getAttribute(_cProperty))=="string"){
+					var _dataSrc = _img.getAttribute(_cProperty);
+					_img.setAttribute("src",_dataSrc); 
+					_img.removeAttribute(_cProperty);
+				}
+			}
+		}
+	}
     //搜索
     searchMode({
                 iptId:"js_schkey",
@@ -2186,14 +2201,17 @@ Copyright &copy; 2004 - 2012 4399.com All Rights Reserved. 厦门游家网络有
             circle      : true,
             direction   : "left-right" 
         });
-
+		
     //切换
     Switchable({
                 tabid:"j_rank",
                 bid:"j_rcontent",
                 eventType:"mouseover",
                 tabType:0,
-                currentClass:"cur"
+                currentClass:"cur",
+				callback:function(i){
+					QF.changeSrc("j_rcontent","ol",i)
+				}
             }).trigger(0);
 
     Switchable({
@@ -2203,17 +2221,7 @@ Copyright &copy; 2004 - 2012 4399.com All Rights Reserved. 厦门游家网络有
                 tabType:0,
                 currentClass:"current",
                 callback:function(i){
-                    var _imgArr = YJ.$("j_tgame").getElementsByTagName('ul')[i].getElementsByTagName('img'),
-                        _cProperty = "data-src";
-                    for( var m=_imgArr.length-1;m>=0;m--){
-                        var _img = _imgArr[m];
-                        if(typeof(_img.getAttribute(_cProperty))=="string"){
-                            var _dataSrc = _img.getAttribute(_cProperty);
-							console.log(_dataSrc)
-                            _img.setAttribute("src",_dataSrc); 
-                            _img.removeAttribute(_cProperty);
-                        }
-                    }
+                    QF.changeSrc("j_tgame",'ul',i)
             }}).trigger(0);
 	lazyLoad({dpro:"data-src"})
 </script>
