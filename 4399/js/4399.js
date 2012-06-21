@@ -491,7 +491,7 @@ YJ = {
 				cid : "",
 				type : "img", // img,module
 				dpro : "data-src",
-				className : "lazyimg",
+				className : "",
 				preloadHeight : 100,
 				placeHolder : "",
 				callback : function(){}
@@ -541,13 +541,16 @@ YJ = {
 				i = 0,
 				viewOffset = getLoadOffset(),
 				_target;
-			if (that.option.className) {
+				
+				
+			if ( that.option.className) {
 				_targets= [];
 				for (; i < _len; ++i) {
 					if (YJ.hasClass(_imgArr[i], that.option.className)) {
 						_targets.push(_imgArr[i]);
 					}
 				}
+				
 			}
 			
 			function getLoadOffset(){
@@ -559,7 +562,7 @@ YJ = {
 				_target = _targets[i];
 				if ( YJ.getOffsetTop(_target) > viewOffset) {
 					_target.setAttribute(that.option.dpro, _target.src);
-					that.option.placeHolder ? _target.src = that.options.placeHolder : _target.removeAttribute('src');
+					that.option.placeHolder ? _target.src = that.option.placeHolder : _target.removeAttribute('src');
 				}
 			}
 			
@@ -568,16 +571,17 @@ YJ = {
 				var viewOffset = getLoadOffset(),
 					imgSrc,
 					finished = true,
-					i = 0,
-					len = _targets.length;
-				for (; i < len; ++i) {
+					i = 0;
+					
+				for (; i < _targets.length; ++i) {
 					_target = _targets[i];
 					imgSrc = _target.getAttribute(that.option.dpro);
+					
 					imgSrc && (finished = false);
 					if (YJ.getOffsetTop(_target) < viewOffset && imgSrc) {
 						_target.src = imgSrc;
 						_target.removeAttribute(that.option.dpro);
-						YJ.isFunction(that.option.callback) && that.option.callback(_target);
+						YJ.IsFunction(that.option.callback) && that.option.callback(_target);
 					}
 					
 				}
