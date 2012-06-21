@@ -438,13 +438,12 @@ YJ = {
 				that.checkLoad(that.GLOBAL.tId[i],i);
 			}else if(that.option.tabType == 0){
 				var _imgArr = that.GLOBAL.bId[i].getElementsByTagName('img');
-				for( var i=_imgArr.length-1;i>=0;i--){
-                    var _img = _imgArr[i];
+				for( var m=_imgArr.length-1;m>=0;m--){
+                    var _img = _imgArr[m];
                     _img.setAttribute(that.option.dPro, _img.getAttribute('src'));
 					_img.removeAttribute('src');
                 }
 			}
-			
 			YJ.IsFunction( that.option.callback ) && (that.option.callback)(i);
 			return that;
 		},
