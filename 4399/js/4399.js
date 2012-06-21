@@ -485,9 +485,9 @@ YJ = {
 })(window);
 
 /**
-  * to:ModuleLoad.js (模块延迟加载)
+  * to:lazyLoad.js (模块延迟加载)
   * author:QF
-  * time:12-05-21
+  * time:12-06-21
 **/
 
 (function(win,undefined){
