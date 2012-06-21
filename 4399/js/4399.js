@@ -559,8 +559,8 @@ YJ = {
 			for (var i = 0, len = _targets.length; i < len; ++i) {
 				_target = _targets[i];
 				if ( YJ.getOffsetTop(_target) > viewOffset) {
-					_target.setAttribute(that.option.dpro, _target.src);
-					//that.option.placeHolder ? _target.src = that.option.placeHolder : _target.removeAttribute('src');
+					_target.setAttribute(that.option.dpro, _target.getAttribute('src'));
+					that.option.placeHolder ? _target.src = that.option.placeHolder : _target.removeAttribute('src');
 				}
 			}
 			
