@@ -439,8 +439,8 @@ YJ = {
 				that.checkLoad(that.GLOBAL.tId[i],i);
 			}else if(that.option.tabType == 0){
 				var _imgArr = that.GLOBAL.bId[i].getElementsByTagName('img');
-				for( var m=_imgArr.length-1;m>=0;m--){
-                    var _img = _imgArr[m];
+				for( var k=_imgArr.length-1;k>=0;k--){
+                    var _img = _imgArr[k];
                     _img.setAttribute(that.option.dimgPro, _img.getAttribute('src'));
 					_img.removeAttribute('src');
                 }
