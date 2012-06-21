@@ -492,7 +492,7 @@ YJ = {
 				type : "img", // img,module
 				dpro : "data-src",
 				className : "",
-				preloadHeight : 100,
+				preloadHeight : 0,
 				placeHolder : "",
 				callback : function(){}
 		}
@@ -542,7 +542,6 @@ YJ = {
 				viewOffset = getLoadOffset(),
 				_target;
 				
-				
 			if ( that.option.className) {
 				_targets= [];
 				for (; i < _len; ++i) {
@@ -550,7 +549,6 @@ YJ = {
 						_targets.push(_imgArr[i]);
 					}
 				}
-				
 			}
 			
 			function getLoadOffset(){
@@ -561,8 +559,8 @@ YJ = {
 			for (var i = 0, len = _targets.length; i < len; ++i) {
 				_target = _targets[i];
 				if ( YJ.getOffsetTop(_target) > viewOffset) {
-					_target.setAttribute(that.option.dpro, _target.src);
-					that.option.placeHolder ? _target.src = that.option.placeHolder : _target.removeAttribute('src');
+					//_target.setAttribute(that.option.dpro, _target.src);
+					//that.option.placeHolder ? _target.src = that.option.placeHolder : _target.removeAttribute('src');
 				}
 			}
 			
@@ -579,11 +577,11 @@ YJ = {
 					
 					imgSrc && (finished = false);
 					if (YJ.getOffsetTop(_target) < viewOffset && imgSrc) {
-						_target.src = imgSrc;
+						_target.setAttribute('src',imgSrc);
+						console.log(imgSrc)
 						_target.removeAttribute(that.option.dpro);
 						YJ.IsFunction(that.option.callback) && that.option.callback(_target);
 					}
-					
 				}
 				//当全部图片都已经加载, 去掉事件监听
 				finished && YJ.removeEvent(win, 'scroll', doLoad);
