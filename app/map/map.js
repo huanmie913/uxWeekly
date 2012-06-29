@@ -96,13 +96,10 @@ var QF = QF || {};
             function getArg(){
                 if( x<len ){
                   timer = setTimeout(arguments.callee,that.option.timer);
-                        _dataId = that.option.dataJson[that._ArrExit[x].split("|")[2]];
-                         that.tpl(_dataId);
-                }else{
-                        clearTimeout(timer);
-                        that.initialization();
+                  _dataId = that.option.dataJson[that._ArrExit[x].split("|")[2]];
+                  that.tpl(_dataId);
                 }
-                    x++;
+                x++;
             }
             getArg();
     	},
@@ -110,7 +107,7 @@ var QF = QF || {};
     		var that = this;
     		var _provinceArr = that.$(that.option.container).querySelectorAll("."+that.option.provinceName);
     		for( var i = 0,len =_provinceArr.length;i<len;i++ ){
-    				that._Arrtmp.push(_provinceArr[i].getAttribute("id"));
+    			that._Arrtmp.push(_provinceArr[i].getAttribute("id"));
     		};
     		that.orderProvince();
     	}
