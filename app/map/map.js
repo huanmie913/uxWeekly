@@ -28,7 +28,9 @@ var gameIndex = [
                 }
     		];
 
-(function(win,undefined){
+var QF = QF || {};
+
+(function(win,QF,undefined){
     var doc = win.document;
     function GameIndex(ctg){
     	this.option = {
@@ -123,5 +125,5 @@ var gameIndex = [
     		that.orderProvince();
     	}
     }
-    win.GameIndex = GameIndex;
-})(window);
+    win.GameIndex = QF.GameIndex = GameIndex;
+})(window,QF);
