@@ -4,10 +4,10 @@
     	
     	/*地区*/
     	.province{ width:50px;height:50px; position:absolute;}
-    	#fj_pt{background:#dcc;bottom:100px;right:50px;}
-    	#hn_sy{background:#dcc;bottom:15px;right:250px;}
-        #xz_ls{ background:#cdd;bottom:250px;right:850px;}
-        #sc_cd{ background:#c00; bottom:100px;right:650px;}
+    	#fj_pt{ /*background:#dcc;*/bottom:100px;right:50px;}
+    	#hn_sy{ /*background:#dcc;*/bottom:15px;right:250px;}
+        #xz_ls{ /*background:#cdd;*/bottom:250px;right:850px;}
+        #sc_cd{ /*background:#c00;*/ bottom:100px;right:650px;}
 
     	/*动画*/
     	@-webkit-keyframes showPop{

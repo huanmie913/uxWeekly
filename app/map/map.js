@@ -13,7 +13,8 @@ var QF = QF || {};
     		dataJson : gameIndex,
     		provinceName : "province",
     		container : "gameMap",
-    		timer : 2000
+    		timer : 2000,
+            backgroundColorName : "255,0,0"
     	}
     	if( !(this instanceof arguments.callee)){
     		return new arguments.callee(ctg);
@@ -38,9 +39,18 @@ var QF = QF || {};
     		}
     		return false;
     	},
+        //颜色深浅
+        colorDepth : function(id,depth){
+            var that = this,_totalColor = 0,_colorDepth = 0;
+            for( var n =0,len = that._ArrExit.length;n<len;n++){
+                _totalColor += parseInt(that._ArrExit[n].split("|")[0]);
+            }  
+            that.$(id).style.backgroundColor = "rgba("+that.option.backgroundColorName+","+(depth/_totalColor).toFixed(2)+")";
+        },
     	//处理结构
     	tpl : function(data){
-    		var that = this;
+    		var that = this,
+                colorDepth = 0;
     		var _html = '<div class="indexPop"><ul>';
     			_html += '<li>地区:'+data["area"][1]+'</li>';
     			_html += '<li>游戏:';
@@ -49,8 +59,9 @@ var QF = QF || {};
     				}
     			_html += '</li><li>时间段:'+data["time"][0].split("|")[0]+'</li>';
     			_html += '</ul></div>';
-
+            colorDepth = data["area"][2];
     		that.$(data["area"][0]).innerHTML=_html;
+            that.colorDepth(data["area"][0],colorDepth);
     		//延迟消失
             setTimeout(function(){
     			that.hide(data["area"][0]);
