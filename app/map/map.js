@@ -47,7 +47,7 @@ var QF = QF || {};
             }  
             that.$(id).style.backgroundColor = "rgba("+that.option.backgroundColorName+","+(depth/_totalColor).toFixed(2)+")";
         },
-    	//处理结构
+    	//模板
     	tpl : function(data){
     		var that = this,
                 colorDepth = 0;
@@ -72,13 +72,13 @@ var QF = QF || {};
     		var _indexPop = that.$(id).querySelector('.indexPop');
     			_indexPop.style.display = "none";
     	},
+        //根据地区热度倒序排行
     	orderProvince : function(){
     		var that = this;
     		for(var j = 0,_len = that.option.dataJson.length;j<_len;j++){
     			if( that.hasObject(that._Arrtmp,that.option.dataJson[j]["area"][0])){
     				var _dataJson = that.option.dataJson[j];
     				that._ArrExit.push(_dataJson["area"][2]+"|"+_dataJson["area"][1]+"|"+j);
-    				//根据地区热度倒序排行
     				that._ArrExit.sort(function(a,b){
     					return parseInt(b)-parseInt(a);
     			     });
@@ -86,6 +86,7 @@ var QF = QF || {};
     	    };
             that.renderTo();
     	},
+        //渲染模板
     	renderTo : function(){
     		var that = this,
     			_dataId = 0,
