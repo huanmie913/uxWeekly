@@ -4,30 +4,6 @@
  * Time : 2012-06-28
 */
 
-
-var gameIndex = [
-    			{
-    				"area":["fj_pt","福建莆田",100],
-    				"game":["造梦西游|150","三国小镇|10"],
-    				"time" : ["周天|150"]
-    			},
-    			{
-    				"area":["hn_sy","海南三亚",210],
-    				"game":["神魔遮天|50","海贼王|10"],
-    				"time" : ["星期一|50"]
-    			},
-                {
-                    "area":["xz_ls","西藏拉萨",150],
-                    "game":["穿越三国|100","神魔斗|101"],
-                    "time" : ["星期二|10"]
-                },
-                {
-                    "area":["sc_cd","四川成都",320],
-                    "game":["斗圣|580","飘渺西游|101"],
-                    "time" : ["星期二|10"]
-                }
-    		];
-
 var QF = QF || {};
 
 (function(win,QF,undefined){
@@ -103,13 +79,15 @@ var QF = QF || {};
     		var that = this,
     			_dataId = 0,
                 x = 0,
-                len = that._ArrExit.length;
+                len = that._ArrExit.length,
+                timer = null;
             function getArg(){
                 if( x<len ){
-                    setTimeout(arguments.callee,that.option.timer);
+                  timer = setTimeout(arguments.callee,that.option.timer);
                         _dataId = that.option.dataJson[that._ArrExit[x].split("|")[2]];
                          that.tpl(_dataId);
                 }else{
+                        clearTimeout(timer);
                         that.initialization();
                 }
                     x++;
