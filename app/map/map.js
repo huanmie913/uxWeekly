@@ -20,7 +20,7 @@ var QF = QF || {};
     		return new arguments.callee(ctg);
     	}
     	this._Arrtmp = [];
-    	this._ArrExit = []
+    	this._ArrExit = [];
         this.initialization();
     }
     GameIndex.prototype = {
@@ -59,9 +59,8 @@ var QF = QF || {};
     				}
     			_html += '</li><li>时间段:'+data["time"][0].split("|")[0]+'</li>';
     			_html += '</ul></div>';
-            colorDepth = data["area"][2];
+            
     		that.$(data["area"][0]).innerHTML=_html;
-            that.colorDepth(data["area"][0],colorDepth);
     		//延迟消失
             setTimeout(function(){
     			that.hide(data["area"][0]);
@@ -103,6 +102,17 @@ var QF = QF || {};
             }
             getArg();
     	},
+        initColor : function(){
+            var that = this,
+                dataObj = null,
+                colorDepth = 0;
+            for( var m = 0,len = that._ArrExit.length;m<len;m++){
+                data = that.option.dataJson[that._ArrExit[m].split("|")[2]];
+                colorDepth = data["area"][2];
+                that.colorDepth(data["area"][0],colorDepth);
+            }
+            return that;
+        },
     	initialization : function(){
     		var that = this;
     		var _provinceArr = that.$(that.option.container).querySelectorAll("."+that.option.provinceName);
@@ -110,6 +120,7 @@ var QF = QF || {};
     			that._Arrtmp.push(_provinceArr[i].getAttribute("id"));
     		};
     		that.orderProvince();
+            return that;
     	}
     }
     win.GameIndex = QF.GameIndex = GameIndex;
