@@ -21,6 +21,8 @@ var QF = QF || {};
     	}
     	this._Arrtmp = [];
     	this._ArrExit = [];
+        this._initFlag = false;
+        
         this.initialization();
     }
     GameIndex.prototype = {
@@ -63,13 +65,18 @@ var QF = QF || {};
     		that.$(data["area"][0]).innerHTML=_html;
     		//延迟消失
             setTimeout(function(){
-    			that.hide(data["area"][0]);
+    			that.hideShow(data["area"][0],0);
 		    },that.option.timer);
+            that.loopInterval();
     	},
-    	hide:function(id){	
+    	hideShow:function(id,flag){	
     		var that = this;
     		var _indexPop = that.$(id).querySelector('.indexPop');
+            if(flag == 0){
     			_indexPop.style.display = "none";
+            }else{
+                _indexPop.style.display = "block";
+            }
     	},
         //根据地区热度倒序排行
     	orderProvince : function(){
@@ -102,6 +109,21 @@ var QF = QF || {};
             }
             getArg();
     	},
+        loopInterval : function(){
+            var that = this,
+                _num = 0;
+            function count(){
+                if(_num>=that._ArrExit.length){
+                   that._initFlag = true;
+                   that.initialization(); 
+                   that._num = 0;
+                }else{
+                    setTimeout(arguments.callee,that.option.timer);
+                     _num++;
+                }
+            }
+            count();
+        },
         initColor : function(){
             var that = this,
                 dataObj = null,
@@ -113,13 +135,37 @@ var QF = QF || {};
             }
             return that;
         },
+        reInit : function(id){
+            var that = this,
+                m = 0,
+                timer = null;
+            function showPop(){
+                if(m<that._ArrExit.length){
+                    timer = setTimeout(arguments.callee,that.option.timer);
+                    var id = that.option.dataJson[that._ArrExit[m].split("|")[2]]["area"][0];
+                    that.hideShow(id,1);
+                    //延迟消失
+                    setTimeout(function(){
+                        that.hideShow(id,0);
+                    },that.option.timer);
+                }
+                m++;
+            }
+            showPop();
+            that.loopInterval();
+        },
     	initialization : function(){
     		var that = this;
+            if( that._initFlag == true ){
+                that.reInit();
+                return;
+            }
     		var _provinceArr = that.$(that.option.container).querySelectorAll("."+that.option.provinceName);
     		for( var i = 0,len =_provinceArr.length;i<len;i++ ){
     			that._Arrtmp.push(_provinceArr[i].getAttribute("id"));
     		};
-    		that.orderProvince();
+            
+    		that.orderProvince();   
             return that;
     	}
     }
