@@ -23,10 +23,25 @@
         <!--/xz_ls-->
     </div>
     <!--/gameMap-->
+    <!--gameList-->
+    <div class="gameList">
+        <table>
+            <thead>
+                <tr>
+                    <th>地区</th>
+                    <th>游戏</th>
+                    <th>时段</th>
+                </tr>
+            </thead>
+            <tbody id="j-gameList"></tbody>
+        </table>
+    </div>
+    <!--/gameList-->
     <script src="gameData.js"></script>
     <script src="map.js"></script>
     <script>
-    	QF.GameIndex().initColor();;
+    	QF.GameIndex().initColor().dataList();
+
     </script>
 </body>
 </html>

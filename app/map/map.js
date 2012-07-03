@@ -14,7 +14,8 @@ var QF = QF || {};
     		provinceName : "province",
     		container : "gameMap",
     		timer : 2000,
-            backgroundColorName : "255,0,0"
+            backgroundColorName : "255,0,0",
+            listId : "j-gameList"
     	}
     	if( !(this instanceof arguments.callee)){
     		return new arguments.callee(ctg);
@@ -22,7 +23,6 @@ var QF = QF || {};
     	this._Arrtmp = [];
     	this._ArrExit = [];
         this._initFlag = false;
-        
         this.initialization();
     }
     GameIndex.prototype = {
@@ -48,6 +48,26 @@ var QF = QF || {};
                 _totalColor += parseInt(that._ArrExit[n].split("|")[0]);
             }  
             that.$(id).style.backgroundColor = "rgba("+that.option.backgroundColorName+","+(depth/_totalColor).toFixed(2)+")";
+        },
+        dataList : function(){
+          var that = this,_flagment = doc.createDocumentFragment();;
+          for(var i=0,len = that._ArrExit.length;i<len;i++){
+                var tr = document.createElement("tr");
+                var tdarea = document.createElement("td");
+                var tdgame = document.createElement("td");
+                var tdtime = document.createElement("td");
+                var areaTd = doc.createTextNode( that.option.dataJson[that._ArrExit[i].split("|")[2]]["area"][1]);
+                var gameTd = doc.createTextNode( that.option.dataJson[that._ArrExit[i].split("|")[2]]["game"]);
+                var timeTd = doc.createTextNode( that.option.dataJson[that._ArrExit[i].split("|")[2]]["time"]);
+                tdarea.appendChild(areaTd);
+                tdgame.appendChild(gameTd);
+                tdtime.appendChild(timeTd);
+                tr.appendChild(tdarea);
+                tr.appendChild(tdgame);
+                tr.appendChild(tdtime);
+                _flagment.appendChild(tr);
+          }  
+          that.$(that.option.listId).appendChild(_flagment);
         },
     	//模板
     	tpl : function(data){
