@@ -50,24 +50,39 @@ var QF = QF || {};
             that.$(id).style.backgroundColor = "rgba("+that.option.backgroundColorName+","+(depth/_totalColor).toFixed(2)+")";
         },
         dataList : function(){
-          var that = this,_flagment = doc.createDocumentFragment();;
-          for(var i=0,len = that._ArrExit.length;i<len;i++){
-                var tr = document.createElement("tr");
-                var tdarea = document.createElement("td");
-                var tdgame = document.createElement("td");
-                var tdtime = document.createElement("td");
-                var areaTd = doc.createTextNode( that.option.dataJson[that._ArrExit[i].split("|")[2]]["area"][1]);
-                var gameTd = doc.createTextNode( that.option.dataJson[that._ArrExit[i].split("|")[2]]["game"]);
-                var timeTd = doc.createTextNode( that.option.dataJson[that._ArrExit[i].split("|")[2]]["time"]);
-                tdarea.appendChild(areaTd);
-                tdgame.appendChild(gameTd);
-                tdtime.appendChild(timeTd);
-                tr.appendChild(tdarea);
-                tr.appendChild(tdgame);
-                tr.appendChild(tdtime);
-                _flagment.appendChild(tr);
-          }  
-          that.$(that.option.listId).appendChild(_flagment);
+          var that = this,_flagment = doc.createDocumentFragment(),_totalColor=0;
+          if(that.option.listId != ""){
+              
+              for( var n =0,len = that._ArrExit.length;n<len;n++){
+                    _totalColor += parseInt(that._ArrExit[n].split("|")[0]);
+                }  
+              for(var i=0,len = that._ArrExit.length;i<len;i++){
+                    var _tmpObj = that.option.dataJson[that._ArrExit[i].split("|")[2]];
+                    var tr = document.createElement("tr");
+                    var tdarea = document.createElement("td");
+                    var tdgame = document.createElement("td");
+                    var tdtime = document.createElement("td");
+                    var tdratio = document.createElement("td");
+                    var areaTd = doc.createTextNode( _tmpObj["area"][1]);
+                    var gameTd = doc.createTextNode( _tmpObj["game"]);
+                    var timeTd = doc.createTextNode( _tmpObj["time"]);
+                    var colorDepth = _tmpObj["area"][2];
+                    var ratioDiv = doc.createElement("div");
+                    ratioDiv.className = "rd";
+                    ratioDiv.style.width = (colorDepth/_totalColor)*100+"%";
+                    tdarea.appendChild(areaTd);
+                    tdgame.appendChild(gameTd);
+                    tdtime.appendChild(timeTd);
+                    tdratio.appendChild(ratioDiv);
+
+                    tr.appendChild(tdarea);
+                    tr.appendChild(tdgame);
+                    tr.appendChild(tdtime);
+                    tr.appendChild(tdratio);
+                    _flagment.appendChild(tr);
+              }  
+              that.$(that.option.listId).appendChild(_flagment);
+          }
         },
     	//模板
     	tpl : function(data){

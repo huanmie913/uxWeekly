@@ -44,3 +44,8 @@ li{ list-style:none;}
 .gameList th,.gameList td{ padding:5px 0;}
 .gameList th{ background:#ddd;}
 .gameList td{ border-bottom:1px solid #ddd;}
+.gameList .area{ width:20%;}
+.gameList .game{ width:40%;}
+.gameList .time{ width:20%;}
+.gameList .ratio{ width:20%;}
+.gameList .rd{ background:#f00;height:28px; width:10%;}
