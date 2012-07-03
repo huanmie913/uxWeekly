@@ -1,0 +1,78 @@
+/*
+ * 游戏指数
+*/
+
+*{ margin:0;padding:0; font-size:12px; line-height:18px;}
+table{ border-collapse: collapse; border-spacing: 0;}
+li{ list-style:none;}
+#gameMap{ width:800px;height:600px;background:url(m/map.png) no-repeat;-webkit-background-size:800px 600px;border:1px solid #9fa0a0; position:relative; margin:50px 0 0 20px;}
+    	
+/*地区*/
+.province{ width:800px;height:600px; background-repeat: no-repeat; position:absolute;left:0;top:0;}
+
+#xj{ background-image:url(m/xj.png);} /*新疆*/
+#xz{ background-image:url(m/xz.png);}  /*西藏*/
+#qh{ background-image:url(m/qh.png);}  /*青海*/
+#gs{ background-image:url(m/gs.png);}  /*甘肃*/
+#nmg{ background-image:url(m/nmg.png);}  /*内蒙古*/
+#hlj{ background-image:url(m/hlj.png);}  /*黑龙江*/
+#jl{ background-image:url(m/jl.png);}  /*吉林*/
+#ln{ background-image:url(m/ln.png);}  /*辽宁*/
+#sc{ background-image:url(m/sc.png);}  /*四川*/
+#sx{ background-image:url(m/sx.png);}  /*陕西*/
+#js{ background-image:url(m/js.png);}  /*江苏*/
+#zj{ background-image:url(m/zj.png);}  /*浙江*/
+#tw{ background-image:url(m/tw.png);}  /*台湾*/
+#ah{ background-image:url(m/ah.png);}  /*安徽*/
+#fj{ background-image:url(m/fj.png);}  /*福建*/
+#jx{ background-image:url(m/jx.png);}  /*江西*/
+#gd{ background-image:url(m/gd.png);}  /*广东*/
+#hn{ background-image:url(m/hn.png);}  /*海南*/
+#gx{ background-image:url(m/gx.png);}  /*广西*/
+#hun{ background-image:url(m/hun.png);}  /*湖南*/
+#gz{ background-image:url(m/gz.png);}  /*贵州*/
+#yn{ background-image:url(m/yn.png);}  /*云南*/
+#nx{ background-image:url(m/nx.png);}  /*宁夏*/
+#shx{ background-image:url(m/shx.png);}  /*山西*/
+#hen{ background-image:url(m/hen.png);}  /*河南*/
+#hb{ background-image:url(m/hb.png);}  /*湖北*/
+#cq{ background-image:url(m/cq.png);}  /*重庆*/
+#heb{ background-image:url(m/heb.png);}  /*河北*/
+#tj{ background-image:url(m/tj.png);}  /*天津*/
+#bj{ background-image:url(m/bj.png);}  /*北京*/
+#sd{ background-image:url(m/sd.png);}  /*山东*/
+/*动画*/
+@-webkit-keyframes showPop{
+    0%{ background:#f00; bottom:0px;opacity:0;}
+    25%{ background:#f00; bottom:0px;opacity:0;}
+    50%{ background:#f00; bottom:0px;opacity:0;}
+    100%{ background:#f00; bottom:50px;opacity:1;}
+}
+
+/*提示框*/
+.indexPop{
+    position:absolute;
+    padding:5px;
+    width:150px;
+    background:#f00;
+    height:50px;
+    bottom:50px;
+    right:-55px; /* (width+padding-contentWidth)/2*/
+    color:#fff;
+    -webkit-border-radius:10px;
+    -webkit-animation:showPop linear 1s;
+}
+
+
+/*列表*/
+.gameList{ width:600px; position:absolute;right:20px;top:20px;}
+.gameList table{ width:100%; border:1px solid #ddd;}
+.gameList th,.gameList td{ padding:5px 0;}
+.gameList th{ background:#ddd;}
+.gameList td{ border-bottom:1px solid #ddd;}
+.gameList .area{ width:20%;}
+.gameList .game{ width:40%;}
+.gameList .time{ width:20%;}
+.gameList .ratio{ width:20%;}
+.gameList .rd{ background:#f00;height:24px; width:10%; line-height:24px;color:#000;}
+.gameList .ctime{ text-align:right;margin-top:10px;}
