@@ -49,10 +49,10 @@ var QF = QF || {};
             }  
             that.$(id).style.backgroundColor = "rgba("+that.option.backgroundColorName+","+(depth/_totalColor).toFixed(2)+")";
         },
+        //数据列表
         dataList : function(){
           var that = this,_flagment = doc.createDocumentFragment(),_totalColor=0;
-          if(that.option.listId != ""){
-              
+          if( typeof(that.option.listId) == "string"){
               for( var n =0,len = that._ArrExit.length;n<len;n++){
                     _totalColor += parseInt(that._ArrExit[n].split("|")[0]);
                 }  
@@ -67,9 +67,11 @@ var QF = QF || {};
                     var gameTd = doc.createTextNode( _tmpObj["game"]);
                     var timeTd = doc.createTextNode( _tmpObj["time"]);
                     var colorDepth = _tmpObj["area"][2];
-                    var ratioDiv = doc.createElement("div");
+                    var ratioDiv = doc.createElement("div"),
+                        _ratio = ((colorDepth/_totalColor)*100).toFixed(2)+"%";
                     ratioDiv.className = "rd";
-                    ratioDiv.style.width = (colorDepth/_totalColor)*100+"%";
+                    ratioDiv.style.width = _ratio;
+                    ratioDiv.innerHTML = _ratio;
                     tdarea.appendChild(areaTd);
                     tdgame.appendChild(gameTd);
                     tdtime.appendChild(timeTd);

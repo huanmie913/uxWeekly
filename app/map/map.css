@@ -48,4 +48,4 @@ li{ list-style:none;}
 .gameList .game{ width:40%;}
 .gameList .time{ width:20%;}
 .gameList .ratio{ width:20%;}
-.gameList .rd{ background:#f00;height:28px; width:10%;}
+.gameList .rd{ background:#f00;height:24px; width:10%; line-height:24px;color:#000;}
