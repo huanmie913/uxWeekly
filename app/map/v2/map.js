@@ -58,10 +58,8 @@ var QF = QF || {};
             setInterval(function(){
                 var _randNum = Math.floor(Math.random()*10+1);
                 _num += _randNum;
-                that.$("j_total").innerHTML = numFormat(_num);
-                
+                that.$("j_total").innerHTML = numFormat(_num);  
             },that.option.timer);
-            
         },
         //数字时间戳 转换 日期时间
         timeFormat : function(format){
