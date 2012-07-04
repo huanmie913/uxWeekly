@@ -48,7 +48,31 @@ var QF = QF || {};
                 _totalColor += parseInt(that._ArrExit[n].split("|")[0]);
             }  
           // that.$(id).style.backgroundColor = "rgba("+that.option.backgroundColorName+","+(depth/_totalColor).toFixed(2)+")";
-           that.$(id).style.opacity = (depth/_totalColor).toFixed(2);
+           var caseOpactiy = depth;
+           var opacity = 0;
+           switch(true){
+                case caseOpactiy <= 3 :
+                     opacity = 0.2;
+                     break; 
+                case caseOpactiy > 3 && caseOpactiy <= 5 :
+                     opacity = 0.4;
+                     break;
+                 case caseOpactiy > 5 && caseOpactiy <= 6 :  
+                     opacity = 0.6;
+                     break;
+                case caseOpactiy > 6 && caseOpactiy <= 7 :  
+                     opacity = 0.7;
+                     break; 
+                case caseOpactiy > 7 && caseOpactiy <= 8 :  
+                     opacity = 0.8;
+                     break;
+                case caseOpactiy > 8 && caseOpactiy <= 9 :  
+                     opacity = 0.9;
+                     break;
+                default :
+                    opacity = 1;
+           }
+           that.$(id).style.opacity = opacity;
         },
         //数据列表
         dataList : function(){

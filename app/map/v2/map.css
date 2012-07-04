@@ -41,6 +41,7 @@ li{ list-style:none;}
 #tj{ background-image:url(m/tj.png);}  /*天津*/
 #bj{ background-image:url(m/bj.png);}  /*北京*/
 #sd{ background-image:url(m/sd.png);}  /*山东*/
+#sh{ background-image:url(m/sh.png);}  /*上海*/
 /*动画*/
 @-webkit-keyframes showPop{
     0%{ background:#f00; bottom:0px;opacity:0;}
