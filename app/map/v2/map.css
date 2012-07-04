@@ -42,16 +42,20 @@ li{ list-style:none;}
 #bj{ background-image:url(m/bj.png);}  /*北京*/
 #sd{ background-image:url(m/sd.png);}  /*山东*/
 #sh{ background-image:url(m/sh.png);}  /*上海*/
+
+#j_total{ position:absolute;left:400px;top:28px;font-size:24px;}
 /*动画*/
 @-webkit-keyframes showPop{
-    0%{ background:#f00;opacity:0;}
-    25%{ background:#f00;opacity:0.4;}
-    50%{ background:#f00;opacity:0.8;}
-    100%{ background:#f00;opacity:1;}
+    0%{ background:#f00;opacity:0;font-size:2px;}
+    25%{ background:#f00;opacity:0.4;font-size:6px;}
+    50%{ background:#f00;opacity:0.6;font-size:8px;}
+    75%{ background:#f00;opacity:0.8;font-size:10px;}
+    100%{ background:#f00;opacity:1;font-size:12px;}
 }
 
 /*提示框*/
 .indexPop{
+
     position:absolute;
     padding:5px;
     width:50px;
@@ -60,8 +64,10 @@ li{ list-style:none;}
     /*bottom:50px;
     right:-55px;*/ /* (width+padding-contentWidth)/2*/
     color:#fff;
-    -webkit-border-radius:100px;
     text-align:center;
+    -webkit-border-radius:100px;
+    -webkit-transform-origin:center center;
+    -webkit-transform: scale(1,1); /* Safari and Chrome */
     -webkit-animation:showPop linear 1s;
 }
 
