@@ -49,6 +49,7 @@ li{ list-style:none;}
         color:#000;
         font-size:24px;
         padding:0 10px;
+        font-family: Constantia,Georgia
     }
 /*动画*/
 @-webkit-keyframes showPop{
