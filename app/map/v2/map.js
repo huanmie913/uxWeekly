@@ -116,16 +116,19 @@ var QF = QF || {};
     	tpl : function(data){
     		var that = this,
                 colorDepth = 0;
-    		var _html = '<div class="indexPop"><ul>';
-    			_html += '<li>地区:'+data["area"][1]+'</li>';
-    			_html += '<li>游戏:';
-    				for( var i = 0,len = data["game"].length;i<len;i++){
-    					_html +=data["game"][i].split("|")[0]+","
-    				}
-    			_html += '</li><li>时间段:'+data["time"][0].split("|")[0]+'</li>';
-    			_html += '</ul></div>';
-            
-    		that.$(data["area"][0]).innerHTML=_html;
+            var _str = "";
+            var _html = doc.createElement("div");
+                _html.className = "indexPop";
+                _html.id = data["area"][0]+"_pop";
+                _str = '<ul><li>地区:'+data["area"][1]+'</li>';
+                _str += '<li>游戏:';
+                    for( var i = 0,len = data["game"].length;i<len;i++){
+                        _str +=data["game"][i].split("|")[0]+","
+                    }
+                _str += '</li><li>时间段:'+data["time"][0].split("|")[0]+'</li>';
+                _str += '</ul>';
+                _html.innerHTML = _str;
+            that.$(that.option.container).appendChild(_html);
             that.setPosition(data);
     		//延迟消失
             setTimeout(function(){
@@ -139,7 +142,6 @@ var QF = QF || {};
             if(element.style[attr]){
                 return element.style[attr];
             }else if(element.currentStyle){
-
                 return element.currentStyle[attr];
             }else if(document.defaultView && document.defaultView.getComputedStyle){
                 attr=attr.replace(/([A-Z])/g,'-$1').toLowerCase();
@@ -151,7 +153,8 @@ var QF = QF || {};
         //确定提示位置
         setPosition : function(data){
             var that = this;
-            var _indexPop = that.$(data["area"][0]).querySelector('.indexPop');
+           // var _indexPop = that.$(data["area"][0]).querySelector('.indexPop');
+            var _indexPop = that.$(data["area"][0]+"_pop");
             var _objWidth = parseInt( that.getCSS(_indexPop,"width") );
             var _objHeight = parseInt( that.getCSS(_indexPop,"height") );
             _indexPop.style.left = data["position"]["x"] - (_objWidth/2)+"px";
@@ -160,7 +163,8 @@ var QF = QF || {};
         //显示隐藏提示框
     	hideShow:function(data,flag){	
     		var that = this;
-    		var _indexPop = that.$(data["area"][0]).querySelector('.indexPop');
+    		//var _indexPop = that.$(data["area"][0]).querySelector('.indexPop');
+            var _indexPop = that.$(data["area"][0]+"_pop");
             _indexPop.style.display = ( flag ==0 ) ? "none" : "block";
     	},
         //根据地区热度倒序排行
@@ -239,6 +243,7 @@ var QF = QF || {};
                 m++;
             }
             showPop();
+            //clearTimeout(_timer);
             that.loopInterval();
         },
     	initialization : function(){
