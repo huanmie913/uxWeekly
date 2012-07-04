@@ -73,6 +73,7 @@ var QF = QF || {};
                     opacity = 1;
            }
            that.$(id).style.opacity = opacity;
+           //that.$(id).style.opacity = "rgba("+that.option.backgroundColorName+","+opacity+")";
         },
         //数据列表
         dataList : function(){
@@ -125,20 +126,42 @@ var QF = QF || {};
     			_html += '</ul></div>';
             
     		that.$(data["area"][0]).innerHTML=_html;
+            that.setPosition(data);
     		//延迟消失
             setTimeout(function(){
-    			that.hideShow(data["area"][0],0);
+                that.hideShow(data,0);
 		    },that.option.timer);
             that.loopInterval();
     	},
-    	hideShow:function(id,flag){	
-    		var that = this;
-    		var _indexPop = that.$(id).querySelector('.indexPop');
-            if(flag == 0){
-    			_indexPop.style.display = "none";
+        //获取元素属性
+        getCSS : function(element,attr){
+            var that = this;
+            if(element.style[attr]){
+                return element.style[attr];
+            }else if(element.currentStyle){
+
+                return element.currentStyle[attr];
+            }else if(document.defaultView && document.defaultView.getComputedStyle){
+                attr=attr.replace(/([A-Z])/g,'-$1').toLowerCase();
+                return document.defaultView.getComputedStyle(element,null).getPropertyValue(attr);
             }else{
-                _indexPop.style.display = "block";
+                return null;
             }
+        },
+        //确定提示位置
+        setPosition : function(data){
+            var that = this;
+            var _indexPop = that.$(data["area"][0]).querySelector('.indexPop');
+            var _objWidth = parseInt( that.getCSS(_indexPop,"width") );
+            var _objHeight = parseInt( that.getCSS(_indexPop,"height") );
+            _indexPop.style.left = data["position"]["x"] - (_objWidth/2)+"px";
+            _indexPop.style.top = data["position"]["y"] - (_objHeight/2)+"px";
+        },
+        //显示隐藏提示框
+    	hideShow:function(data,flag){	
+    		var that = this;
+    		var _indexPop = that.$(data["area"][0]).querySelector('.indexPop');
+            _indexPop.style.display = ( flag ==0 ) ? "none" : "block";
     	},
         //根据地区热度倒序排行
     	orderProvince : function(){
@@ -186,6 +209,7 @@ var QF = QF || {};
             }
             count();
         },
+        //初始化颜色
         initColor : function(){
             var that = this,
                 dataObj = null,
@@ -204,7 +228,8 @@ var QF = QF || {};
             function showPop(){
                 if(m<that._ArrExit.length){
                     timer = setTimeout(arguments.callee,that.option.timer);
-                    var id = that.option.dataJson[that._ArrExit[m].split("|")[2]]["area"][0];
+                    //var id = that.option.dataJson[that._ArrExit[m].split("|")[2]]["area"][0];
+                    var id = that.option.dataJson[that._ArrExit[m].split("|")[2]];
                     that.hideShow(id,1);
                     //延迟消失
                     setTimeout(function(){
