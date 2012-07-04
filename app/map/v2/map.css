@@ -5,7 +5,8 @@
 *{ margin:0;padding:0; font-size:12px; line-height:18px;}
 table{ border-collapse: collapse; border-spacing: 0;}
 li{ list-style:none;}
-#gameMap{ width:800px;height:600px;background:url(m/map.png) no-repeat;-webkit-background-size:800px 600px;border:1px solid #9fa0a0; position:relative; float:left; margin:20px 0 0 20px; /*margin:50px 0 0 20px; margin:40px auto;*/}
+.gameBox{ position: relative;float:left; margin:20px 0 0 20px;width:800px;height:700px;border:1px solid #ddd;}
+#gameMap{ height:600px; background:url(m/map.png) no-repeat;-webkit-background-size:800px 600px; position:relative; /*margin:50px 0 0 20px; margin:40px auto;*/}
     	
 /*地区*/
 .province{ width:800px;height:600px; background-repeat: no-repeat; position:absolute;left:0;top:0;}
@@ -43,7 +44,12 @@ li{ list-style:none;}
 #sd{ background-image:url(m/sd.png);}  /*山东*/
 #sh{ background-image:url(m/sh.png);}  /*上海*/
 
-#j_total{ position:absolute;left:400px;top:28px;font-size:24px;}
+.tipNum{ font-size:24px;color:#ff5500;font-weight:700;padding:20px 0;text-align:center;}
+#j_total{ 
+        color:#000;
+        font-size:24px;
+        padding:0 10px;
+    }
 /*动画*/
 @-webkit-keyframes showPop{
     0%{ background:#f00;opacity:0;font-size:2px;}

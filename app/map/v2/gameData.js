@@ -5,6 +5,7 @@
 */
 var gameIndex = [ 
                     {timestamp :1280977330748} ,
+                    {initnum : 267342912 },
                     {info :[
                 			{
                 				"area":["xj","新疆",3],

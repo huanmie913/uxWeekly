@@ -41,6 +41,29 @@ var QF = QF || {};
     		}
     		return false;
     	},
+        updateTotal : function(){
+            var that = this;
+            var _num = that.option.dataJson[1].initnum;
+            function numFormat(n){
+                var _nstr = n.toString(),_ntmp = [];
+                for( var i = 0,len = _nstr.length;i<len;i++){
+                    if(i%3 == 0){
+                        
+                        var _substr = _nstr.substring(i,i+3);
+                        _ntmp.push(_substr);
+                    }
+                }
+                return _ntmp.join(",");
+            }
+            that.$("j_total").innerHTML = numFormat(_num);
+            setInterval(function(){
+                var _randNum = Math.floor(Math.random()*10+1);
+                _num += _randNum;
+                that.$("j_total").innerHTML = numFormat(_num);
+                
+            },that.option.timer);
+            
+        },
         //数字时间戳 转换 日期时间
         timeFormat : function(format){
             var that = this;
@@ -93,7 +116,7 @@ var QF = QF || {};
         //数据列表
         dataList : function(){
           var that = this,_flagment = doc.createDocumentFragment(),_totalColor=0;
-          var _infoJson = that.option.dataJson[1].info;
+          var _infoJson = that.option.dataJson[2].info;
           if( typeof(that.option.listId) == "string"){
               for( var n =0,len = that._ArrExit.length;n<len;n++){
                     _totalColor += parseInt(that._ArrExit[n].split("|")[0]);
@@ -194,7 +217,7 @@ var QF = QF || {};
         //根据地区热度倒序排行
     	orderProvince : function(){
     		var that = this;
-            var _infoJson = that.option.dataJson[1].info;
+            var _infoJson = that.option.dataJson[2].info;
     		for(var j = 0,_len = _infoJson.length;j<_len;j++){
     			if( that.hasObject(that._Arrtmp,_infoJson[j]["area"][0])){
     				var _dataJson = _infoJson[j];
@@ -216,7 +239,7 @@ var QF = QF || {};
             function getArg(){
                 if( x<len ){
                   timer = setTimeout(arguments.callee,that.option.timer);
-                  var _infoJson = that.option.dataJson[1].info;
+                  var _infoJson = that.option.dataJson[2].info;
                   _dataId = _infoJson[that._ArrExit[x].split("|")[2]];
                   that.tpl(_dataId);
                 }
@@ -244,7 +267,7 @@ var QF = QF || {};
             var that = this,
                 dataObj = null,
                 colorDepth = 0;
-            var _infoJson = that.option.dataJson[1].info;
+            var _infoJson = that.option.dataJson[2].info;
             for( var m = 0,len = that._ArrExit.length;m<len;m++){
                 data = _infoJson[that._ArrExit[m].split("|")[2]];
                 colorDepth = data["area"][2];
@@ -260,7 +283,7 @@ var QF = QF || {};
                 if(m<that._ArrExit.length){
                     timer = setTimeout(arguments.callee,that.option.timer);
                     //var id = that.option.dataJson[that._ArrExit[m].split("|")[2]]["area"][0];
-                    var _infoJson = that.option.dataJson[1].info;
+                    var _infoJson = that.option.dataJson[2].info;
                     var id = _infoJson[that._ArrExit[m].split("|")[2]];
                     that.hideShow(id,1);
                     //延迟消失
