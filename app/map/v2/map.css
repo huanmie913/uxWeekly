@@ -45,8 +45,8 @@ li{ list-style:none;}
 /*动画*/
 @-webkit-keyframes showPop{
     0%{ background:#f00;opacity:0;}
-    25%{ background:#f00;opacity:0;}
-    50%{ background:#f00;opacity:0;}
+    25%{ background:#f00;opacity:0.4;}
+    50%{ background:#f00;opacity:0.8;}
     100%{ background:#f00;opacity:1;}
 }
 
@@ -54,14 +54,15 @@ li{ list-style:none;}
 .indexPop{
     position:absolute;
     padding:5px;
-    width:150px;
+    width:50px;
     background:#f00;
     height:50px;
     /*bottom:50px;
     right:-55px;*/ /* (width+padding-contentWidth)/2*/
     color:#fff;
-    -webkit-border-radius:10px;
-    //-webkit-animation:showPop linear 1s;
+    -webkit-border-radius:100px;
+    text-align:center;
+    -webkit-animation:showPop linear 1s;
 }
 
 
@@ -71,6 +72,7 @@ li{ list-style:none;}
 .gameList th,.gameList td{ padding:5px 0;}
 .gameList th{ background:#ddd;}
 .gameList td{ border-bottom:1px solid #ddd;}
+.gameList tr:hover td{ background:#f5f4f4;}
 .gameList .area{ width:20%;}
 .gameList .game{ width:40%;}
 .gameList .time{ width:20%;}

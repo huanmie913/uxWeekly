@@ -119,13 +119,13 @@
             </thead>
             <tbody id="j-gameList"></tbody>
         </table>
-        <p class="ctime">统计于:2012-07-03</p>
+        <p class="ctime">统计于:<span id="date"></span></p>
     </div>
     <!--/gameList-->
     <script src="gameData.js"></script>
     <script src="map.js"></script>
     <script>
-    	QF.GameIndex().initColor().dataList();
+    	QF.GameIndex().initColor().dataList().timeFormat("-");
     </script>
 </body>
 </html>

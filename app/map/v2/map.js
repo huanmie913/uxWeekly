@@ -41,6 +41,21 @@ var QF = QF || {};
     		}
     		return false;
     	},
+        //数字时间戳 转换 日期时间
+        timeFormat : function(format){
+            var that = this;
+            var _date = that.option.dataJson[0].timestamp;
+
+            var date = new Date(_date);
+            var month = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+            var currentDate = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+            var hh = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
+            var mm = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+            var _str =  date.getFullYear() + format + month + format + currentDate+" "+hh + ":" + mm;
+
+            that.$("date").innerHTML = _str;
+            return that;
+        },
         //颜色深浅
         colorDepth : function(id,depth){
             var that = this,_totalColor = 0,_colorDepth = 0;
@@ -78,12 +93,13 @@ var QF = QF || {};
         //数据列表
         dataList : function(){
           var that = this,_flagment = doc.createDocumentFragment(),_totalColor=0;
+          var _infoJson = that.option.dataJson[1].info;
           if( typeof(that.option.listId) == "string"){
               for( var n =0,len = that._ArrExit.length;n<len;n++){
                     _totalColor += parseInt(that._ArrExit[n].split("|")[0]);
                 }  
               for(var i=0,len = that._ArrExit.length;i<len;i++){
-                    var _tmpObj = that.option.dataJson[that._ArrExit[i].split("|")[2]];
+                    var _tmpObj = _infoJson[that._ArrExit[i].split("|")[2]];
                     var tr = document.createElement("tr");
                     var tdarea = document.createElement("td");
                     var tdgame = document.createElement("td");
@@ -111,6 +127,7 @@ var QF = QF || {};
               }  
               that.$(that.option.listId).appendChild(_flagment);
           }
+          return that;
         },
     	//模板
     	tpl : function(data){
@@ -120,12 +137,19 @@ var QF = QF || {};
             var _html = doc.createElement("div");
                 _html.className = "indexPop";
                 _html.id = data["area"][0]+"_pop";
-                _str = '<ul><li>地区:'+data["area"][1]+'</li>';
+                /*_str = '<ul><li>地区:'+data["area"][1]+'</li>';
                 _str += '<li>游戏:';
                     for( var i = 0,len = data["game"].length;i<len;i++){
                         _str +=data["game"][i].split("|")[0]+","
                     }
                 _str += '</li><li>时间段:'+data["time"][0].split("|")[0]+'</li>';
+                _str += '</ul>';*/
+                _str = '<ul><li>'+data["area"][1]+'</li>';
+                _str += '<li>';
+                    for( var i = 0,len = data["game"].length;i<len;i++){
+                        _str +=data["game"][i].split("|")[0];
+                    }
+                _str += '</li>';
                 _str += '</ul>';
                 _html.innerHTML = _str;
             that.$(that.option.container).appendChild(_html);
@@ -170,9 +194,10 @@ var QF = QF || {};
         //根据地区热度倒序排行
     	orderProvince : function(){
     		var that = this;
-    		for(var j = 0,_len = that.option.dataJson.length;j<_len;j++){
-    			if( that.hasObject(that._Arrtmp,that.option.dataJson[j]["area"][0])){
-    				var _dataJson = that.option.dataJson[j];
+            var _infoJson = that.option.dataJson[1].info;
+    		for(var j = 0,_len = _infoJson.length;j<_len;j++){
+    			if( that.hasObject(that._Arrtmp,_infoJson[j]["area"][0])){
+    				var _dataJson = _infoJson[j];
     				that._ArrExit.push(_dataJson["area"][2]+"|"+_dataJson["area"][1]+"|"+j);
     				that._ArrExit.sort(function(a,b){
     					return parseInt(b)-parseInt(a);
@@ -191,7 +216,8 @@ var QF = QF || {};
             function getArg(){
                 if( x<len ){
                   timer = setTimeout(arguments.callee,that.option.timer);
-                  _dataId = that.option.dataJson[that._ArrExit[x].split("|")[2]];
+                  var _infoJson = that.option.dataJson[1].info;
+                  _dataId = _infoJson[that._ArrExit[x].split("|")[2]];
                   that.tpl(_dataId);
                 }
                 x++;
@@ -218,8 +244,9 @@ var QF = QF || {};
             var that = this,
                 dataObj = null,
                 colorDepth = 0;
+            var _infoJson = that.option.dataJson[1].info;
             for( var m = 0,len = that._ArrExit.length;m<len;m++){
-                data = that.option.dataJson[that._ArrExit[m].split("|")[2]];
+                data = _infoJson[that._ArrExit[m].split("|")[2]];
                 colorDepth = data["area"][2];
                 that.colorDepth(data["area"][0],colorDepth);
             }
@@ -233,7 +260,8 @@ var QF = QF || {};
                 if(m<that._ArrExit.length){
                     timer = setTimeout(arguments.callee,that.option.timer);
                     //var id = that.option.dataJson[that._ArrExit[m].split("|")[2]]["area"][0];
-                    var id = that.option.dataJson[that._ArrExit[m].split("|")[2]];
+                    var _infoJson = that.option.dataJson[1].info;
+                    var id = _infoJson[that._ArrExit[m].split("|")[2]];
                     that.hideShow(id,1);
                     //延迟消失
                     setTimeout(function(){
