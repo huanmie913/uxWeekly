@@ -48,7 +48,6 @@ var QF = QF || {};
                 var _nstr = n.toString(),_ntmp = [];
                 for( var i = 0,len = _nstr.length;i<len;i++){
                     if(i%3 == 0){
-                        
                         var _substr = _nstr.substring(i,i+3);
                         _ntmp.push(_substr);
                     }
