@@ -5,7 +5,7 @@
 *{ margin:0;padding:0; font-size:12px; line-height:18px;}
 table{ border-collapse: collapse; border-spacing: 0;}
 li{ list-style:none;}
-#gameMap{ width:800px;height:600px;background:url(m/map.png) no-repeat;-webkit-background-size:800px 600px;border:1px solid #9fa0a0; position:relative; margin:50px 0 0 20px;}
+#gameMap{ width:800px;height:600px;background:url(m/map.png) no-repeat;-webkit-background-size:800px 600px;border:1px solid #9fa0a0; position:relative; float:left; margin:20px 0 0 20px; /*margin:50px 0 0 20px; margin:40px auto;*/}
     	
 /*地区*/
 .province{ width:800px;height:600px; background-repeat: no-repeat; position:absolute;left:0;top:0;}
@@ -66,7 +66,7 @@ li{ list-style:none;}
 
 
 /*列表*/
-.gameList{ width:600px; position:absolute;right:20px;top:20px;}
+.gameList{ width:800px; float:left;margin:20px 0 0 20px; /* margin:0 auto; position:absolute;right:20px;top:20px;*/}
 .gameList table{ width:100%; border:1px solid #ddd;}
 .gameList th,.gameList td{ padding:5px 0;}
 .gameList th{ background:#ddd;}
