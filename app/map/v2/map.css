@@ -6,7 +6,7 @@
 table{ border-collapse: collapse; border-spacing: 0;}
 li{ list-style:none;}
 .gameBox{ position: relative;float:left; margin:20px 0 0 20px;width:800px;height:700px;border:1px solid #ddd;}
-#gameMap{ height:600px; background:url(m/map.png) no-repeat;-webkit-background-size:800px 600px; position:relative; /*margin:50px 0 0 20px; margin:40px auto;*/}
+#gameMap{ height:600px; background:url(m/map.jpg) no-repeat;-webkit-background-size:800px 600px; position:relative; /*margin:50px 0 0 20px; margin:40px auto;*/}
     	
 /*地区*/
 .province{ width:800px;height:600px; background-repeat: no-repeat; position:absolute;left:0;top:0;}

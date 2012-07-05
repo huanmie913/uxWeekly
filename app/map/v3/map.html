@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Map</title>
+    <meta charset="utf-8"/>
+    <link href="map.css" rel="stylesheet"/>
+</head>
+<body>
+    <!--gameMap-->
+    <div class="gameBox">
+        <!--<div class="tipNum">4399用户全国分布  全球已有<span id="j_total"></span>玩家入驻</div>-->
+
+        <div  id="gameMap">
+        	<!--xj(新疆)-->
+            <div id="xj" class="province"></div>
+            <!--/xj-->
+            <!--xz(西藏)-->
+            <div id="xz" class="province"></div>
+            <!--/xz-->
+            <!--qh(青海)-->
+            <div id="qh" class="province"></div>
+            <!--/qh-->
+            <!--gs(甘肃)-->
+            <div id="gs" class="province"></div>
+            <!--/gs-->
+            <!--nmg(内蒙古)-->
+            <div id="nmg" class="province"></div>
+            <!--/nmg-->
+            <!--nmg(黑龙江)-->
+            <div id="hlj" class="province"></div>
+            <!--/nmg-->
+            <!--jl(吉林)-->
+            <div id="jl" class="province"></div>
+            <!--/jl-->
+            <!--ln(辽宁)-->
+            <div id="ln" class="province"></div>
+            <!--/ln-->
+            <!--sc(四川)-->
+            <div id="sc" class="province"></div>
+            <!--/sc-->
+            <!--sc(陕西)-->
+            <div id="sx" class="province"></div>
+            <!--/sc-->
+            <!--js(江苏)-->
+            <div id="js" class="province"></div>
+            <!--/js-->
+            <!--zj(浙江)-->
+            <div id="zj" class="province"></div>
+            <!--/zj-->
+            <!--tw(台湾)-->
+            <div id="tw" class="province"></div>
+            <!--/tw-->
+            <!--an(安徽)-->
+            <div id="ah" class="province"></div>
+            <!--/ah-->
+            <!--aj(福建)-->
+            <div id="fj" class="province"></div>
+            <!--/fj-->
+            <!--jx(江西)-->
+            <div id="jx" class="province"></div>
+            <!--/jx-->
+            <!--gd(广东)-->
+            <div id="gd" class="province"></div>
+            <!--/gd-->
+            <!--hn(海南)-->
+            <div id="hn" class="province"></div>
+            <!--/hn-->
+            <!--gx(广西)-->
+            <div id="gx" class="province"></div>
+            <!--/gx-->
+            <!--hun(湖南)-->
+            <div id="hun" class="province"></div>
+            <!--/hun-->
+            <!--gz(贵州)-->
+            <div id="gz" class="province"></div>
+            <!--/gz-->
+            <!--yn(云南)-->
+            <div id="yn" class="province"></div>
+            <!--/yn-->
+            <!--nx(宁夏)-->
+            <div id="nx" class="province"></div>
+            <!--/nx-->
+            <!--nx(山西)-->
+            <div id="shx" class="province"></div>
+            <!--/shax-->
+            <!--hen(河南)-->
+            <div id="hen" class="province"></div>
+            <!--/hen-->
+            <!--hen(湖北)-->
+            <div id="hb" class="province"></div>
+            <!--/hb-->
+            <!--cq(重庆)-->
+            <div id="cq" class="province"></div>
+            <!--/cq-->
+            <!--cq(河北)-->
+            <div id="heb" class="province"></div>
+            <!--/heb-->
+            <!--tj(天津)-->
+            <div id="tj" class="province"></div>
+            <!--/tj-->
+            <!--bj(北京)-->
+            <div id="bj" class="province"></div>
+            <!--/bj-->
+            <!--sd(山东)-->
+            <div id="sd" class="province"></div>
+            <!--/sd-->
+            <!--sh(上海)-->
+            <div id="sh" class="province"></div>
+            <!--/sh-->
+            <span id="j_total"></span>
+        </div>
+        
+    </div>
+    <!--/gameMap-->
+
+    <!--gameList-->
+    <!--<div class="gameList">
+        <table>
+            <thead>
+                <tr>
+                    <th class="area">地区</th>
+                    <th class="game">游戏</th>
+                    <th class="time">时段</th>
+                    <th class="ratio">占比</th>
+                </tr>
+            </thead>
+            <tbody id="j-gameList"></tbody>
+        </table>
+        <p class="ctime">统计于:<span id="date"></span></p>
+    </div>-->
+    <!--/gameList-->
+    <script src="gameData.js"></script>
+    <script src="map.js"></script>
+    <script>
+    	QF.GameIndex().initColor().updateTotal()/*.dataList().timeFormat("-")*/;
+    </script>
+</body>
+</html>
