@@ -173,7 +173,8 @@ var QF = QF || {};
                 _str += '</ul>';
                 _html.innerHTML = _str;
             that.$(that.option.container).appendChild(_html);
-            that.setPosition(data);
+            var _ratio = data["area"][2];
+            that.setPosition(data,_ratio);
     		//延迟消失
             setTimeout(function(){
                 that.hideShow(data,0);
@@ -195,14 +196,20 @@ var QF = QF || {};
             }
         },
         //确定提示位置
-        setPosition : function(data){
-            var that = this;
+        setPosition : function(data,r){
+            var that = this,_totalColor = 0;
+            /*for( var n =0,len = that._ArrExit.length;n<len;n++){
+                _totalColor += parseInt(that._ArrExit[n].split("|")[0]);
+            } */
            // var _indexPop = that.$(data["area"][0]).querySelector('.indexPop');
             var _indexPop = that.$(data["area"][0]+"_pop");
             var _objWidth = parseInt( that.getCSS(_indexPop,"width") );
             var _objHeight = parseInt( that.getCSS(_indexPop,"height") );
             _indexPop.style.left = data["position"]["x"] - (_objWidth/2)+"px";
             _indexPop.style.top = data["position"]["y"] - (_objHeight/2)+"px";
+
+            /*_indexPop.style.width = parseInt( (_objWidth * r/_totalColor))+"px";
+            _indexPop.style.height = parseInt( (_objHeight * r/_totalColor))+"px";*/
         },
         //显示隐藏提示框
     	hideShow:function(data,flag){	
@@ -278,7 +285,7 @@ var QF = QF || {};
                 timer = null;
             function showPop(){
                 if(m<that._ArrExit.length){
-                    timer = setTimeout(arguments.callee,that.option.timer);
+                    timer = setTimeout(arguments.callee,that.option.timer/2);
                     //var id = that.option.dataJson[that._ArrExit[m].split("|")[2]]["area"][0];
                     var _infoJson = that.option.dataJson[2].info;
                     var id = _infoJson[that._ArrExit[m].split("|")[2]];
