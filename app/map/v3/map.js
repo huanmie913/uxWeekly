@@ -56,7 +56,7 @@ var QF = QF || {};
             }
             that.$("j_total").innerHTML = numFormat(_num);
             setInterval(function(){
-                var _randNum = Math.floor(Math.random()*10+1);
+                var _randNum = Math.floor(Math.random()*100+1);
                 _num += _randNum;
                 that.$("j_total").innerHTML = numFormat(_num);  
             },that.option.timer);
