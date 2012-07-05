@@ -6,7 +6,7 @@
 body{ background:#35363a;}
 table{ border-collapse: collapse; border-spacing: 0;}
 li{ list-style:none;}
-.gameBox{ position: absolute;left:50%;top:50%;margin:-364px 0 0 -500px;/*float:left; margin:20px 0 0 20px;*/width:1000px;height:1736px;/*border:1px solid #ddd;*/}
+.gameBox{ position: absolute;left:50%;top:50%;margin:-364px 0 0 -500px;/*float:left; margin:20px 0 0 20px;*/width:1000px;height:850px;/*border:1px solid #ddd;*/}
 #gameMap{ height:750px; background:url(m/map.jpg) no-repeat;-webkit-background-size:1000px 750px; position:relative; /*margin:50px 0 0 20px; margin:40px auto;*/}
     	
 /*地区*/
