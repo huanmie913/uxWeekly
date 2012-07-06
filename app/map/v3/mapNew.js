@@ -276,21 +276,30 @@ var QF = QF || {};
             var that = this,
                 _opacity = 1,
                 _totalColor = 0;
-
+            //获取总数
             for( var n =0,len = that._ArrExit.length;n<len;n++){
                  _totalColor += parseInt(that._ArrExit[n].split("|")[0]);
             }
-            function Opacity(){
-                if(_opacity<1){
-                    setTimeout(arguments.callee,Math.floor(h/_totalColor)*1000);
-                    _opacity+=0.1;
-                }else{
-                    setTimeout(arguments.callee,Math.floor(h/_totalColor)*1000);
-                    _opacity-=0.1;
+
+            //渐显
+            function showOpacity(){
+                if(_opacity>=1){
+                    hideOpacity();
                 }
+                setTimeout(arguments.callee,Math.round((h/_totalColor)*100000))
+                _opacity+=0.2;
                 GameIndex.$(id).style.opacity = _opacity;
             }
-            Opacity();
+            //渐隐
+            function hideOpacity(){
+                if(_opacity<=0){
+                    showOpacity();
+                }
+                setTimeout(arguments.callee,Math.round((h/_totalColor)*100000));
+                _opacity-=0.2;
+                GameIndex.$(id).style.opacity = _opacity;
+            }
+            hideOpacity();
         },
         //根据不同的热度,闪烁程度不同
         reInit : function(id){
