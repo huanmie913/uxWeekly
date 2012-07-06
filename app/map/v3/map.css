@@ -64,7 +64,7 @@ li{ list-style:none;}
 }
 
 /*提示框*/
-.indexPop,.ox{
+.indexPop{
     font-family:microsoft YaHei;
     position:absolute;
     padding:5px;
@@ -83,7 +83,7 @@ li{ list-style:none;}
     /*text-indent:-999em;
     overflow:hidden;*/
 }
-.indexPop img,.ox img{ -webkit-border-radius:30px;vertical-align: top}
+.indexPop img{ -webkit-border-radius:30px;vertical-align: top}
 
 
 /*列表*/
