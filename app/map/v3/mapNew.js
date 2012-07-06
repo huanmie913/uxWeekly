@@ -285,28 +285,30 @@ var QF = QF || {};
                 if(_opacity>1){
                     hideOpacity();
                 }
-                setTimeout(arguments.callee,Math.round((h/_totalColor)*200000))
-                _opacity+=0.2;
+                setTimeout(arguments.callee,Math.round((h/_totalColor)*500000));
                 GameIndex.$(id).style.opacity = _opacity;
+                _opacity+=0.2;
+                
             }
             //渐隐
             function hideOpacity(){
                 if(_opacity<=0){
                     showOpacity();
                 }
-                setTimeout(arguments.callee,Math.round((h/_totalColor)*200000));
-                _opacity-=0.2;
+                setTimeout(arguments.callee,Math.round((h/_totalColor)*500000));
                 GameIndex.$(id).style.opacity = _opacity;
+                _opacity-=0.2;
+                
             }
             hideOpacity();
         },
         //根据不同的热度,闪烁程度不同
         reInit : function(id){
             var that = this,
-                m = 0,
+                m = that._ArrExit.length-1,
                 timer = null;
             var _infoJson = that.option.dataJson[2].info;
-            for(;m<that._ArrExit.length;m++){
+            for(;m>=0;m--){
                 var data = _infoJson[that._ArrExit[m].split("|")[2]],
                     _hot = data["area"][2];
                 var id = data["area"][0]+"_pop";
