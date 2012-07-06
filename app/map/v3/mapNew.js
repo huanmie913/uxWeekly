@@ -283,11 +283,11 @@ var QF = QF || {};
 
             //渐显
             function showOpacity(){
-                if(_opacity>=1){
+                if(_opacity>1){
                     hideOpacity();
                 }
                 setTimeout(arguments.callee,Math.round((h/_totalColor)*100000))
-                _opacity+=0.2;
+                _opacity+=0.1;
                 GameIndex.$(id).style.opacity = _opacity;
             }
             //渐隐
@@ -296,7 +296,7 @@ var QF = QF || {};
                     showOpacity();
                 }
                 setTimeout(arguments.callee,Math.round((h/_totalColor)*100000));
-                _opacity-=0.2;
+                _opacity-=0.1;
                 GameIndex.$(id).style.opacity = _opacity;
             }
             hideOpacity();
@@ -318,7 +318,7 @@ var QF = QF || {};
     	initialization : function(){
     		var that = this;
             if( that._initFlag == true ){
-                that.reInit();
+                setTimeout(function(){that.reInit();},0)
                 return;
             }
     		var _provinceArr = GameIndex.$(that.option.container).querySelectorAll("."+that.option.provinceName);
