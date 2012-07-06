@@ -319,7 +319,7 @@ var QF = QF || {};
     	initialization : function(){
     		var that = this;
             if( that._initFlag == true ){
-                setTimeout(function(){that.reInit();},0)
+                setTimeout(function(){that.reInit();},that.option.timer/2);
                 return;
             }
     		var _provinceArr = GameIndex.$(that.option.container).querySelectorAll("."+that.option.provinceName);
