@@ -250,7 +250,6 @@ var QF = QF || {};
                    that._initFlag = true;
                    that.initialization(); 
                    that._num = 0;
-                   //console.log(253)
                 }else{
                     setTimeout(arguments.callee,0);
                     _num++;
