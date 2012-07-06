@@ -285,8 +285,8 @@ var QF = QF || {};
                 if(_opacity>1){
                     hideOpacity();
                 }
-                setTimeout(arguments.callee,Math.round((h/_totalColor)*100000))
-                _opacity+=0.1;
+                setTimeout(arguments.callee,Math.round((h/_totalColor)*200000))
+                _opacity+=0.2;
                 GameIndex.$(id).style.opacity = _opacity;
             }
             //渐隐
@@ -294,8 +294,8 @@ var QF = QF || {};
                 if(_opacity<=0){
                     showOpacity();
                 }
-                setTimeout(arguments.callee,Math.round((h/_totalColor)*100000));
-                _opacity-=0.1;
+                setTimeout(arguments.callee,Math.round((h/_totalColor)*200000));
+                _opacity-=0.2;
                 GameIndex.$(id).style.opacity = _opacity;
             }
             hideOpacity();
