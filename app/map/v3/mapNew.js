@@ -85,10 +85,10 @@ var QF = QF || {};
             }
             GameIndex.$("j_total").innerHTML = numFormat(_num);
             setInterval(function(){
-                var _randNum = Math.floor(Math.random()*100+1);
+                var _randNum = Math.floor(Math.random()*1000+1);
                 _num += _randNum;
                 GameIndex.$("j_total").innerHTML = numFormat(_num);  
-            },that.option.timer);
+            },that.option.timer/2);
         },
         //数字时间戳 转换 日期时间
         timeFormat : function(format){
@@ -250,8 +250,9 @@ var QF = QF || {};
                    that._initFlag = true;
                    that.initialization(); 
                    that._num = 0;
+                   //console.log(253)
                 }else{
-                    setTimeout(arguments.callee,that.option.timer);
+                    setTimeout(arguments.callee,0);
                     _num++;
                 }
             }
@@ -270,38 +271,39 @@ var QF = QF || {};
             }
             return that;
         },
+        //渐隐渐显
+        animateOpacity : function(id,h){
+            var that = this,
+                _opacity = 1,
+                _totalColor = 0;
+
+            for( var n =0,len = that._ArrExit.length;n<len;n++){
+                 _totalColor += parseInt(that._ArrExit[n].split("|")[0]);
+            }
+            function Opacity(){
+                if(_opacity<1){
+                    setTimeout(arguments.callee,Math.floor(h/_totalColor)*1000);
+                    _opacity+=0.1;
+                }else{
+                    setTimeout(arguments.callee,Math.floor(h/_totalColor)*1000);
+                    _opacity-=0.1;
+                }
+                GameIndex.$(id).style.opacity = _opacity;
+            }
+            Opacity();
+        },
         //根据不同的热度,闪烁程度不同
         reInit : function(id){
             var that = this,
                 m = 0,
-                timer = null,
-                _totalColor = 0;
-            /*function showPop(){
-                if(m<that._ArrExit.length){
-                    timer = setTimeout(arguments.callee,that.option.timer/2);
-                    //var id = that.option.dataJson[that._ArrExit[m].split("|")[2]]["area"][0];
-                    var _infoJson = that.option.dataJson[2].info;
-                    var dataObj = _infoJson[that._ArrExit[m].split("|")[2]],
-                        _hot = dataObj["area"][2];
-
-                    for( var n =0,len = that._ArrExit.length;n<len;n++){
-                        _totalColor += parseInt(that._ArrExit[n].split("|")[0]);
-                    }
-
-                    function animateOpacity(){
-                        var i = 1;
-                        if(i>0){
-                            i-=0.25;
-                        }else{
-                            i+=0.25;
-                        }
-                        GameIndex.$(dataObj["area"][0]+"_pop").style.opacity = i;
-                    }
-                    setTimeout(animateOpacity,Math.floor(_hot/_totalColor));
-                }
-                m++;
+                timer = null;
+            var _infoJson = that.option.dataJson[2].info;
+            for(;m<that._ArrExit.length;m++){
+                var data = _infoJson[that._ArrExit[m].split("|")[2]],
+                    _hot = data["area"][2];
+                var id = data["area"][0]+"_pop";
+                that.animateOpacity(id,_hot);
             }
-            showPop();*/
             that.loopInterval();
         },
     	initialization : function(){
