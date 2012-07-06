@@ -323,7 +323,7 @@ var QF = QF || {};
                 return;
             }
     		var _provinceArr = GameIndex.$(that.option.container).querySelectorAll("."+that.option.provinceName);
-    		for( var i = 0,len =_provinceArr.length;i<len;i++ ){
+    		for( var i =_provinceArr.length-1;i>=0;i-- ){
     			that._Arrtmp.push(_provinceArr[i].getAttribute("id"));
     		};
     		that.orderProvince();   
