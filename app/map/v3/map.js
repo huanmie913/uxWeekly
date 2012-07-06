@@ -14,7 +14,7 @@ var QF = QF || {};
     		provinceName : "province",
     		container : "gameMap",
     		timer : 2000,
-            backgroundColorName : "255,255,255",
+            /*backgroundColorName : "255,255,255",*/
             listId : "j-gameList"
     	}
     	if( !(this instanceof arguments.callee)){
@@ -25,22 +25,50 @@ var QF = QF || {};
         this._initFlag = false;
         this.initialization();
     }
+    //获取元素css
+    GameIndex.getCSS =  function(element,attr){
+            var that = this;
+            if(element.style[attr]){
+                return element.style[attr];
+            }else if(element.currentStyle){
+                return element.currentStyle[attr];
+            }else if(document.defaultView && document.defaultView.getComputedStyle){
+                attr=attr.replace(/([A-Z])/g,'-$1').toLowerCase();
+                return document.defaultView.getComputedStyle(element,null).getPropertyValue(attr);
+            }else{
+                return null;
+            }
+    }
+    //时间戳转换成日期
+    GameIndex.formaTime = function(time,format){
+        var date = new Date(time);
+        var month = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+        var currentDate = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+        var hh = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
+        var mm = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+        var _str =  date.getFullYear() + format + month + format + currentDate+" "+hh + ":" + mm;
+        return _str;
+    }
+
+    GameIndex.$ = function(id){
+        return typeof id == "string" ? doc.getElementById(id) : id;
+    }
+
+    //检测目标对象是否存在数组中
+    GameIndex.hasObject = function(source,target){
+        if({}.toString.call(source) == "[object Array]"){
+            for( prop in source ){
+                if( source[prop] == target ){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    
     GameIndex.prototype = {
     	constructor : GameIndex,
-    	$ : function(id){
-    		return typeof id == "string" ? doc.getElementById(id) : id;
-    	},
-    	//检测目标对象是否存在数组中
-    	hasObject : function(source,target){
-    		if({}.toString.call(source) == "[object Array]"){
-    			for( prop in source ){
-    				if( source[prop] == target ){
-    					return true;
-    				}
-    			}
-    		}
-    		return false;
-    	},
+    	
         updateTotal : function(){
             var that = this;
             var _num = that.option.dataJson[1].initnum;
@@ -54,35 +82,27 @@ var QF = QF || {};
                 }
                 return _ntmp.join(",");
             }
-            that.$("j_total").innerHTML = numFormat(_num);
+            GameIndex.$("j_total").innerHTML = numFormat(_num);
             setInterval(function(){
                 var _randNum = Math.floor(Math.random()*100+1);
                 _num += _randNum;
-                that.$("j_total").innerHTML = numFormat(_num);  
+                GameIndex.$("j_total").innerHTML = numFormat(_num);  
             },that.option.timer);
         },
         //数字时间戳 转换 日期时间
         timeFormat : function(format){
             var that = this;
             var _date = that.option.dataJson[0].timestamp;
-
-            var date = new Date(_date);
-            var month = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
-            var currentDate = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
-            var hh = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
-            var mm = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
-            var _str =  date.getFullYear() + format + month + format + currentDate+" "+hh + ":" + mm;
-
-            that.$("date").innerHTML = _str;
+            GameIndex.$("date").innerHTML = GameIndex.formaTime(_date,'-');
             return that;
         },
         //颜色深浅
         colorDepth : function(id,depth){
             var that = this,_totalColor = 0,_colorDepth = 0;
-            for( var n =0,len = that._ArrExit.length;n<len;n++){
+            /*for( var n =0,len = that._ArrExit.length;n<len;n++){
                 _totalColor += parseInt(that._ArrExit[n].split("|")[0]);
-            }  
-          // that.$(id).style.backgroundColor = "rgba("+that.option.backgroundColorName+","+(depth/_totalColor).toFixed(2)+")";
+            }*/  
+          // GameIndex.$(id).style.backgroundColor = "rgba("+that.option.backgroundColorName+","+(depth/_totalColor).toFixed(2)+")";
            var caseOpactiy = depth;
            var opacity = 0;
            switch(true){
@@ -107,8 +127,8 @@ var QF = QF || {};
                 default :
                     opacity = 1;
            }
-           that.$(id).style.opacity = opacity;
-           //that.$(id).style.opacity = "rgba("+that.option.backgroundColorName+","+opacity+")";
+           GameIndex.$(id).style.opacity = opacity;
+           //GameIndex.$(id).style.opacity = "rgba("+that.option.backgroundColorName+","+opacity+")";
         },
         //数据列表
         dataList : function(){
@@ -145,7 +165,7 @@ var QF = QF || {};
                     tr.appendChild(tdratio);
                     _flagment.appendChild(tr);
               }  
-              that.$(that.option.listId).appendChild(_flagment);
+              GameIndex.$(that.option.listId).appendChild(_flagment);
           }
           return that;
         },
@@ -173,7 +193,7 @@ var QF = QF || {};
                 _str += '</li>';
                 _str += '<li>'+data["area"][1]+'</li></ul>';
                 _html.innerHTML = _str;
-            that.$(that.option.container).appendChild(_html);
+            GameIndex.$(that.option.container).appendChild(_html);
             var _ratio = data["area"][2];
             that.setPosition(data,_ratio);
     		//延迟消失
@@ -182,30 +202,17 @@ var QF = QF || {};
 		    },that.option.timer);
             that.loopInterval();
     	},
-        //获取元素属性
-        getCSS : function(element,attr){
-            var that = this;
-            if(element.style[attr]){
-                return element.style[attr];
-            }else if(element.currentStyle){
-                return element.currentStyle[attr];
-            }else if(document.defaultView && document.defaultView.getComputedStyle){
-                attr=attr.replace(/([A-Z])/g,'-$1').toLowerCase();
-                return document.defaultView.getComputedStyle(element,null).getPropertyValue(attr);
-            }else{
-                return null;
-            }
-        },
+        
         //确定提示位置
         setPosition : function(data,r){
             var that = this,_totalColor = 0;
             /*for( var n =0,len = that._ArrExit.length;n<len;n++){
                 _totalColor += parseInt(that._ArrExit[n].split("|")[0]);
             } */
-           // var _indexPop = that.$(data["area"][0]).querySelector('.indexPop');
-            var _indexPop = that.$(data["area"][0]+"_pop");
-            var _objWidth = parseInt( that.getCSS(_indexPop,"width") );
-            var _objHeight = parseInt( that.getCSS(_indexPop,"height") );
+           // var _indexPop = GameIndex.$(data["area"][0]).querySelector('.indexPop');
+            var _indexPop = GameIndex.$(data["area"][0]+"_pop");
+            var _objWidth = parseInt( GameIndex.getCSS(_indexPop,"width") );
+            var _objHeight = parseInt( GameIndex.getCSS(_indexPop,"height") );
             _indexPop.style.left = data["position"]["x"] - (_objWidth/2)+"px";
             _indexPop.style.top = data["position"]["y"] - (_objHeight/2)+"px";
 
@@ -215,8 +222,8 @@ var QF = QF || {};
         //显示隐藏提示框
     	hideShow:function(data,flag){	
     		var that = this;
-    		//var _indexPop = that.$(data["area"][0]).querySelector('.indexPop');
-            var _indexPop = that.$(data["area"][0]+"_pop");
+    		//var _indexPop = GameIndex.$(data["area"][0]).querySelector('.indexPop');
+            var _indexPop = GameIndex.$(data["area"][0]+"_pop");
             _indexPop.style.display = ( flag ==0 ) ? "none" : "block";
     	},
         //根据地区热度倒序排行
@@ -224,7 +231,7 @@ var QF = QF || {};
     		var that = this;
             var _infoJson = that.option.dataJson[2].info;
     		for(var j = 0,_len = _infoJson.length;j<_len;j++){
-    			if( that.hasObject(that._Arrtmp,_infoJson[j]["area"][0])){
+    			if( GameIndex.hasObject(that._Arrtmp,_infoJson[j]["area"][0])){
     				var _dataJson = _infoJson[j];
     				that._ArrExit.push(_dataJson["area"][2]+"|"+_dataJson["area"][1]+"|"+j);
     				that._ArrExit.sort(function(a,b){
@@ -308,7 +315,7 @@ var QF = QF || {};
                 that.reInit();
                 return;
             }
-    		var _provinceArr = that.$(that.option.container).querySelectorAll("."+that.option.provinceName);
+    		var _provinceArr = GameIndex.$(that.option.container).querySelectorAll("."+that.option.provinceName);
     		for( var i = 0,len =_provinceArr.length;i<len;i++ ){
     			that._Arrtmp.push(_provinceArr[i].getAttribute("id"));
     		};
