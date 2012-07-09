@@ -13,9 +13,7 @@ var QF = QF || {};
     		dataJson : gameIndex,
     		provinceName : "province",
     		container : "gameMap",
-    		timer : 2000,
-            /*backgroundColorName : "255,255,255",*/
-            listId : "j-gameList"
+    		timer : 2000
     	}
     	if( !(this instanceof arguments.callee)){
     		return new arguments.callee(ctg);
@@ -23,6 +21,7 @@ var QF = QF || {};
     	this._Arrtmp = [];
     	this._ArrExit = [];
         this._initFlag = false;
+        this._num = 0;
         this.initialization();
     }
     //获取元素css
@@ -38,17 +37,6 @@ var QF = QF || {};
             }else{
                 return null;
             }
-    }
-
-    //时间戳转换成日期
-    GameIndex.formaTime = function(time,format){
-        var date = new Date(time);
-        var month = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
-        var currentDate = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
-        var hh = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
-        var mm = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
-        var _str =  date.getFullYear() + format + month + format + currentDate+" "+hh + ":" + mm;
-        return _str;
     }
 
     //根据ID类型获取元素
@@ -83,27 +71,17 @@ var QF = QF || {};
                 }
                 return _ntmp.join(",");
             }
-            GameIndex.$("j_total").innerHTML = numFormat(_num);
             setInterval(function(){
                 var _randNum = Math.floor(Math.random()*1000+1);
                 _num += _randNum;
                 GameIndex.$("j_total").innerHTML = numFormat(_num);  
             },that.option.timer/2);
-        },
-        //数字时间戳 转换 日期时间
-        timeFormat : function(format){
-            var that = this;
-            var _date = that.option.dataJson[0].timestamp;
-            GameIndex.$("date").innerHTML = GameIndex.formaTime(_date,'-');
-            return that;
+
+            GameIndex.$("j_total").innerHTML = numFormat(_num);
         },
         //颜色深浅
         colorDepth : function(id,depth){
-            var that = this,_totalColor = 0,_colorDepth = 0;
-            /*for( var n =0,len = that._ArrExit.length;n<len;n++){
-                _totalColor += parseInt(that._ArrExit[n].split("|")[0]);
-            }*/  
-          // GameIndex.$(id).style.backgroundColor = "rgba("+that.option.backgroundColorName+","+(depth/_totalColor).toFixed(2)+")";
+            var that = this,_totalColor = 0,_colorDepth = 0;  
            var caseOpactiy = depth;
            var opacity = 0;
            switch(true){
@@ -130,45 +108,7 @@ var QF = QF || {};
            }
            GameIndex.$(id).style.opacity = opacity;
         },
-        //数据列表
-        dataList : function(){
-          var that = this,_flagment = doc.createDocumentFragment(),_totalColor=0;
-          var _infoJson = that.option.dataJson[2].info;
-          if( typeof(that.option.listId) == "string"){
-              for( var n =0,len = that._ArrExit.length;n<len;n++){
-                    _totalColor += parseInt(that._ArrExit[n].split("|")[0]);
-                }  
-              for(var i=0,len = that._ArrExit.length;i<len;i++){
-                    var _tmpObj = _infoJson[that._ArrExit[i].split("|")[2]];
-                    var tr = document.createElement("tr");
-                    var tdarea = document.createElement("td");
-                    var tdgame = document.createElement("td");
-                    var tdtime = document.createElement("td");
-                    var tdratio = document.createElement("td");
-                    var areaTd = doc.createTextNode( _tmpObj["area"][1]);
-                    var gameTd = doc.createTextNode( _tmpObj["game"]);
-                    var timeTd = doc.createTextNode( _tmpObj["time"]);
-                    var colorDepth = _tmpObj["area"][2];
-                    var ratioDiv = doc.createElement("div"),
-                        _ratio = ((colorDepth/_totalColor)*100).toFixed(2)+"%";
-                    ratioDiv.className = "rd";
-                    ratioDiv.style.width = _ratio;
-                    ratioDiv.innerHTML = _ratio;
-                    tdarea.appendChild(areaTd);
-                    tdgame.appendChild(gameTd);
-                    tdtime.appendChild(timeTd);
-                    tdratio.appendChild(ratioDiv);
-
-                    tr.appendChild(tdarea);
-                    tr.appendChild(tdgame);
-                    tr.appendChild(tdtime);
-                    tr.appendChild(tdratio);
-                    _flagment.appendChild(tr);
-              }  
-              GameIndex.$(that.option.listId).appendChild(_flagment);
-          }
-          return that;
-        },
+        
     	//模板
     	tpl : function(data){
     		var that = this,zIndex = data["area"][2];
@@ -183,13 +123,9 @@ var QF = QF || {};
             GameIndex.$(that.option.container).appendChild(_html);
             var _ratio = data["area"][2];
             that.setPosition(data,_ratio,zIndex);
-    		//延迟消失
-            /*setTimeout(function(){
-                that.hideShow(data,0);
-		    },that.option.timer/2);*/
-            that.loopInterval();
+            that._num++;
+            that.Interval();
     	},
-        
         //确定提示位置,根据火热程度确定层级
         setPosition : function(data,r,z){
             var that = this,
@@ -202,12 +138,12 @@ var QF = QF || {};
             _indexPop.style.zIndex = z;
         },
         //显示隐藏提示框
-    	hideShow:function(data,flag){	
+    	/*hideShow:function(data,flag){	
     		var that = this;
     		//var _indexPop = GameIndex.$(data["area"][0]).querySelector('.indexPop');
             var _indexPop = GameIndex.$(data["area"][0]+"_pop");
             _indexPop.style.display = ( flag ==0 ) ? "none" : "block";
-    	},
+    	},*/
         //根据地区热度倒序排行
     	orderProvince : function(){
     		var that = this;
@@ -230,11 +166,10 @@ var QF = QF || {};
                 x = 0,
                 len = that._ArrExit.length,
                 timer = null;
+            var _infoJson = that.option.dataJson[2].info;
             function getArg(){
                 if( x<len ){
-                  //timer = setTimeout(arguments.callee,that.option.timer);
                   timer = setTimeout(arguments.callee,0);
-                  var _infoJson = that.option.dataJson[2].info;
                   _dataId = _infoJson[that._ArrExit[x].split("|")[2]];
                   that.tpl(_dataId);
                 }
@@ -242,20 +177,12 @@ var QF = QF || {};
             }
             getArg();
     	},
-        loopInterval : function(){
-            var that = this,
-                _num = 0;
-            function count(){
-                if(_num>=that._ArrExit.length){
-                   that._initFlag = true;
-                   that.initialization(); 
-                   that._num = 0;
-                }else{
-                    setTimeout(arguments.callee,0);
-                    _num++;
-                }
+        Interval : function(){
+            var that = this;
+            if(that._num>=that._ArrExit.length){
+                that.reInit();
+               // that._num = 0;
             }
-            count();
         },
         //初始化颜色
         initColor : function(){
@@ -273,7 +200,7 @@ var QF = QF || {};
         //渐隐渐显
         animateOpacity : function(id,h){
             var that = this,
-                _opacity = 1,
+                _opacity = 100,
                 _totalColor = 0;
             //获取总数
             for( var n =0,len = that._ArrExit.length;n<len;n++){
@@ -282,46 +209,43 @@ var QF = QF || {};
 
             //渐显
             function showOpacity(){
-                if(_opacity>1){
+                if(_opacity>=100){
                     hideOpacity();
+                }else{
+                    setTimeout(arguments.callee,(h/_totalColor*20000).toFixed(1));
                 }
-                setTimeout(arguments.callee,Math.round((h/_totalColor)*500000));
-                GameIndex.$(id).style.opacity = _opacity;
-                _opacity+=0.2;
-                
+                _opacity+=20;
+                GameIndex.$(id).style.opacity = (_opacity/100).toFixed(1);
             }
             //渐隐
             function hideOpacity(){
                 if(_opacity<=0){
                     showOpacity();
+                }else{
+                    setTimeout(arguments.callee,(h/_totalColor*20000).toFixed(1));
                 }
-                setTimeout(arguments.callee,Math.round((h/_totalColor)*500000));
-                GameIndex.$(id).style.opacity = _opacity;
-                _opacity-=0.2;
-                
+                 _opacity-=20;
+                 GameIndex.$(id).style.opacity = (_opacity/100).toFixed(1);
             }
             hideOpacity();
+            
         },
         //根据不同的热度,闪烁程度不同
         reInit : function(id){
             var that = this,
-                m = that._ArrExit.length-1,
+                len = that._ArrExit.length,
                 timer = null;
             var _infoJson = that.option.dataJson[2].info;
-            for(;m>=0;m--){
+            for(var m=0;m<len;m++){
                 var data = _infoJson[that._ArrExit[m].split("|")[2]],
                     _hot = data["area"][2];
                 var id = data["area"][0]+"_pop";
                 that.animateOpacity(id,_hot);
             }
-            that.loopInterval();
+           //that.Interval();
         },
     	initialization : function(){
     		var that = this;
-            if( that._initFlag == true ){
-                setTimeout(function(){that.reInit();},that.option.timer);
-                return;
-            }
     		var _provinceArr = GameIndex.$(that.option.container).querySelectorAll("."+that.option.provinceName);
     		for( var i =_provinceArr.length-1;i>=0;i-- ){
     			that._Arrtmp.push(_provinceArr[i].getAttribute("id"));

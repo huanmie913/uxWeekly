@@ -180,6 +180,7 @@ var QF = QF || {};
             setTimeout(function(){
                 that.hideShow(data,0);
 		    },that.option.timer);
+            
             that.loopInterval();
     	},
         //获取元素属性
@@ -243,10 +244,13 @@ var QF = QF || {};
                 timer = null;
             function getArg(){
                 if( x<len ){
-                  timer = setTimeout(arguments.callee,that.option.timer);
+                  //timer = setTimeout(arguments.callee,that.option.timer);
+                  timer = setTimeout(arguments.callee,that.option.timer/10);
                   var _infoJson = that.option.dataJson[2].info;
                   _dataId = _infoJson[that._ArrExit[x].split("|")[2]];
                   that.tpl(_dataId);
+                }else{
+                    clearTimeout(timer);
                 }
                 x++;
             }
@@ -254,15 +258,20 @@ var QF = QF || {};
     	},
         loopInterval : function(){
             var that = this,
-                _num = 0;
+                _num = 0,
+                _timer = null;
             function count(){
                 if(_num>=that._ArrExit.length){
-                   that._initFlag = true;
+                   clearTimeout(_timer);
+                   
                    that.initialization(); 
+                   that.reInit();
+                   console.log("269:"+_num);
                    that._num = 0;
                 }else{
-                    setTimeout(arguments.callee,that.option.timer);
-                     _num++;
+                    _timer = setTimeout(arguments.callee,that.option.timer/10);
+                    _num++;
+                    console.log("273:"+_num);
                 }
             }
             count();
@@ -283,7 +292,7 @@ var QF = QF || {};
         reInit : function(id){
             var that = this,
                 m = 0,
-                timer = null;
+                _timer = null;
             function showPop(){
                 if(m<that._ArrExit.length){
                     timer = setTimeout(arguments.callee,that.option.timer/2);
@@ -292,14 +301,14 @@ var QF = QF || {};
                     var id = _infoJson[that._ArrExit[m].split("|")[2]];
                     that.hideShow(id,1);
                     //延迟消失
-                    setTimeout(function(){
+                    _timer = setTimeout(function(){
                         that.hideShow(id,0);
-                    },that.option.timer);
+                    },that.option.timer*2);
                 }
                 m++;
             }
             showPop();
-            //clearTimeout(_timer);
+            clearTimeout(_timer);
             that.loopInterval();
         },
     	initialization : function(){
