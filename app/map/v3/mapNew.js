@@ -211,7 +211,7 @@ var QF = QF || {};
             }
             //渐隐
             function hideOpacity(){
-                if(_opacity<=25){
+                if(_opacity<=0){
                     showOpacity();
                 }else{
                     setTimeout(arguments.callee,(h/_totalColor*20000).toFixed(1));
