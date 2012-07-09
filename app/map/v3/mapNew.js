@@ -137,13 +137,6 @@ var QF = QF || {};
             _indexPop.style.top = data["position"]["y"] - (_objHeight/2)+"px";
             _indexPop.style.zIndex = z;
         },
-        //显示隐藏提示框
-    	/*hideShow:function(data,flag){	
-    		var that = this;
-    		//var _indexPop = GameIndex.$(data["area"][0]).querySelector('.indexPop');
-            var _indexPop = GameIndex.$(data["area"][0]+"_pop");
-            _indexPop.style.display = ( flag ==0 ) ? "none" : "block";
-    	},*/
         //根据地区热度倒序排行
     	orderProvince : function(){
     		var that = this;
@@ -181,7 +174,6 @@ var QF = QF || {};
             var that = this;
             if(that._num>=that._ArrExit.length){
                 that.reInit();
-               // that._num = 0;
             }
         },
         //初始化颜色
@@ -214,7 +206,7 @@ var QF = QF || {};
                 }else{
                     setTimeout(arguments.callee,(h/_totalColor*20000).toFixed(1));
                 }
-                _opacity+=20;
+                _opacity+=25;
                 GameIndex.$(id).style.opacity = (_opacity/100).toFixed(1);
             }
             //渐隐
@@ -224,11 +216,10 @@ var QF = QF || {};
                 }else{
                     setTimeout(arguments.callee,(h/_totalColor*20000).toFixed(1));
                 }
-                 _opacity-=20;
-                 GameIndex.$(id).style.opacity = (_opacity/100).toFixed(1);
+                _opacity-=25;
+                GameIndex.$(id).style.opacity = (_opacity/100).toFixed(1);
             }
             hideOpacity();
-            
         },
         //根据不同的热度,闪烁程度不同
         reInit : function(id){
@@ -237,12 +228,11 @@ var QF = QF || {};
                 timer = null;
             var _infoJson = that.option.dataJson[2].info;
             for(var m=0;m<len;m++){
-                var data = _infoJson[that._ArrExit[m].split("|")[2]],
+                var data = _infoJson[that._ArrExit[len-1-m].split("|")[2]],
                     _hot = data["area"][2];
                 var id = data["area"][0]+"_pop";
                 that.animateOpacity(id,_hot);
             }
-           //that.Interval();
         },
     	initialization : function(){
     		var that = this;
