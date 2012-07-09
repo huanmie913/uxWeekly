@@ -20,7 +20,7 @@ var QF = QF || {};
     	}
     	this._Arrtmp = [];
     	this._ArrExit = [];
-        this._initFlag = false;
+        //this._initFlag = false;
         this._num = 0;
         this.initialization();
     }
@@ -176,6 +176,9 @@ var QF = QF || {};
                 that.reInit();
             }
         },
+        changeImage : function(){
+
+        },
         //初始化颜色
         initColor : function(){
             var that = this,
@@ -206,7 +209,7 @@ var QF = QF || {};
                 }else{
                     setTimeout(arguments.callee,(h/_totalColor*20000).toFixed(1));
                 }
-                _opacity+=25;
+                _opacity+=20;
                 GameIndex.$(id).style.opacity = (_opacity/100).toFixed(1);
             }
             //渐隐
@@ -216,7 +219,7 @@ var QF = QF || {};
                 }else{
                     setTimeout(arguments.callee,(h/_totalColor*20000).toFixed(1));
                 }
-                _opacity-=25;
+                _opacity-=20;
                 GameIndex.$(id).style.opacity = (_opacity/100).toFixed(1);
             }
             hideOpacity();
@@ -228,8 +231,8 @@ var QF = QF || {};
                 timer = null;
             var _infoJson = that.option.dataJson[2].info;
             for(var m=0;m<len;m++){
-                var data = _infoJson[that._ArrExit[len-1-m].split("|")[2]],
-                    _hot = data["area"][2];
+                var data = _infoJson[that._ArrExit[m].split("|")[2]],
+                    _hot = _infoJson[that._ArrExit[len-1-m].split("|")[2]]["area"][2];
                 var id = data["area"][0]+"_pop";
                 that.animateOpacity(id,_hot);
             }
