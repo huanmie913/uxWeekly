@@ -14,14 +14,14 @@ body { line-height:18px; font-size:13px; background:#000;}
 .mask{ position:absolute;left:0; top:0; background:#000; opacity:0.6;filter:alpha(opacity=60); width:100%; height:100%;z-index:5}
 
 /*皮肤公共样式*/
-.ue_login{ /*background:#000;*/zoom:1; padding:5px; width:394px; height:334px;position:relative;background:url("/tpl/xm_blcx2/images/skin_2/bg.jpg") no-repeat;}
+.ue_login{ /*background:#000;*/zoom:1; padding:5px; width:394px; height:334px;position:relative;background:url(/tpl/xm_blcx2/images/skin_2/bg.jpg) no-repeat;}
 .ue_login_tab{ overflow:hidden; zoom:1; padding:6px 0 0 45px; height:41px;}
 .ue_login_tab li{ float:left; margin-right:10px; display:inline}
 .ue_login_tab li span,.ue_login_tab li.cur span{ float:left; width:145px; height:36px; display:inline; cursor:pointer; text-indent:-999em; overflow:hidden}
-.ue_r{ background:url("/tpl/xm_blcx2/images/skin_2/btn.jpg") no-repeat 0 0}
-.ue_login_tab li.cur .ue_r{ background:url("/tpl/xm_blcx2/images/skin_2/btn.jpg") no-repeat 0 -36px;}
-.ue_l{ background:url("/tpl/xm_blcx2/images/skin_2/btn.jpg") no-repeat -145px 0}
-.ue_login_tab li.cur .ue_l{ background:url("/tpl/xm_blcx2/images/skin_2/btn.jpg") no-repeat -145px -36px;}
+.ue_r{ background:url(/tpl/xm_blcx2/images/skin_2/btn.jpg) no-repeat 0 0}
+.ue_login_tab li.cur .ue_r{ background:url(/tpl/xm_blcx2/images/skin_2/btn.jpg) no-repeat 0 -36px;}
+.ue_l{ background:url(/tpl/xm_blcx2/images/skin_2/btn.jpg) no-repeat -145px 0}
+.ue_login_tab li.cur .ue_l{ background:url(/tpl/xm_blcx2/images/skin_2/btn.jpg) no-repeat -145px -36px;}
 .ue_login .ue_login_b{ height:245px;}
 
 /*=========注册=====*/
@@ -31,7 +31,7 @@ body { line-height:18px; font-size:13px; background:#000;}
 .fm_dv .text{ float:left;width:195px; background:#FFFFFF;border: 1px solid #97B4D5;height:22px;line-height:22px;padding:2px 3px;}
 .fm_dv .fm_tip{ float:left;display:inline; margin:3px 0 0 3px;font-size:12px;white-space:nowrap;}
 .fm_op,.fm_login{ padding-left:120px; margin-top:10px;}
-.fm_op .ptlogin_register{background:url("/tpl/xm_blcx2/images/skin_2/btn.jpg") no-repeat -290px 0; width:145px; height:36px;border:none;cursor:pointer;}
+.fm_op .ptlogin_register{background:url(/tpl/xm_blcx2/images/skin_2/btn.jpg) no-repeat -290px 0; width:145px; height:36px;border:none;cursor:pointer;}
 .fm_login label{ font-family:"thomas"}
 </style>
 
@@ -43,7 +43,23 @@ document.execCommand("BackgroundImageCache", false, true);
 </head>
 
 <body>
-<div id="show" style="display:none;"><!--注册填写“隐藏/显示”的DIV style="display:none"-->
+<div class="po1" id="divFlash" >
+	<div class="swf01">
+	  <script type="text/javascript">
+	AC_FL_RunContent( 'codebase','http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0','width','1000','height','600','src','/tpl/xm_blcx2/main','quality','high','pluginspage','http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash','wmode','transparent','movie','/tpl/xm_blcx2/main' ); //end AC code
+	  </script>
+	  <noscript>
+	  <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" width="1000" height="600">
+		<param name="movie" value="/tpl/xm_blcx2/main.swf" />
+		<param name="quality" value="high" />
+		<param name="wmode" value="opaque" />
+		<param name="wmode" value="transparent" />
+		<embed src="/tpl/xm_blcx2/main.swf" width="1000" height="600" quality="high" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" wmode="transparent"></embed>
+	  </object>
+	  </noscript>
+	</div>
+</div>
+<div id="show" style="visibility:hidden;"><!--注册填写“隐藏/显示”的DIV style="display:none"-->
 <!--ue_login-->
 <div class="ue_login skin_ad">
 	<div class="ue_login_hd">
@@ -108,33 +124,6 @@ document.execCommand("BackgroundImageCache", false, true);
 	<!--/ue_login_bd-->
 </div>
 <!--/ue_login-->
-<div class="po1" id="divFlash" >
-	<!--<div class="swf01">
-	  <script type="text/javascript">
-	AC_FL_RunContent( 'codebase','http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0','width','1000','height','600','src','main','quality','high','pluginspage','http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash','wmode','transparent','movie','/tpl/xm_blcx2/main' ); //end AC code
-	  </script>
-	  <noscript>
-	  <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" width="1000" height="600">
-		<param name="movie" value="/tpl/xm_blcx2/main.swf" />
-		<param name="quality" value="high" />
-		<param name="wmode" value="opaque" />
-		<param name="wmode" value="transparent" />
-		<embed src="/tpl/xm_blcx2/main.swf" width="1000" height="600" quality="high" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" wmode="transparent"></embed>
-	  </object>
-	  </noscript>
-	</div>-->
-	<script type="text/javascript">
-	 document.write('<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" width="1000" height="600" id="flash_contant" name="flash_contant">');
-    document.write('<param name="movie" value="/tpl/xm_blcx2/main.swf" />');
-    document.write('<param name="quality" value="high" />');
-    document.write('<param name="wmode" value="transparent" />');
-    document.write('<param name="menu" value="false" />');
-    document.write('<param name="AllowScriptAccess" value="always" />');
-    document.write('<embed src="/tpl/xm_blcx2/main.swf" quality="high" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="1000" height="600" wmode="transparent" name="flash_contant"></embed>');
-   document.write('</object>');
-  </script>
-</div>
-
 </div>
 </body>
 <script>  attackInputEvent(); </script>
@@ -231,7 +220,7 @@ document.execCommand("BackgroundImageCache", false, true);
     function OpenDiv(a,b,c){       
 		var _height=Math.max(document.documentElement.scrollHeight,document.body.scrollHeight,document.body.clientHeight);
         //如果为登录来源站内 或者 未站外
-        document.getElementById('show').style.display="block";
+        document.getElementById('show').style.visibility="visible";
     }
     
     function click1Statist(){
