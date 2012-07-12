@@ -74,68 +74,48 @@ AC_FL_RunContent( 'codebase','http://download.macromedia.com/pub/shockwave/cabs/
 	<div class="ue_login_bd">
 		<div class="ue_login_bd_t">
 			<div class="ue_login_b">
-				<!--<div id="iframe_div"></div>-->
 				<!--popup_autoReg_frame(注册)-->
 				<div id="popup_autoReg_frame" class="popup_autoReg_frame">
-				<form id="myform" style="MARGIN:0px" name="myform" onsubmit="return beforeSubmit(this)" action=http://web.4399.com/user/xreg_action.php method=post>
-					<input type="hidden" name='game_src' value="mhxx" />
-					<table width="390" border="0" align="center" cellpadding="0" cellspacing="0">
-					  <tr>
-						<td class="txt_label">4399用户名</td>
-						<td class="txt_ipt">
-						  <input type="text" class="text" id="login_name" name="login_name" />
-						</td>
-						<td class="text_txt" id="u_info">6-20个字符,由字母、数字组成！</td>
-					  </tr>
-					  <tr>
-						<td class="txt_label">密码</td>
-						<td class="txt_ipt"><input  id="login_password"  type="password" name="login_password" class="text"  /></td>
-						<td class="text_txt"  id="w_info">长度6-20个字符！</td>
-					  </tr>
-					  <tr>
-						<td class="txt_label">确认密码</td>
-						<td class="txt_ipt"><input id="relogin_pwd"   type="password" name="relogin_pwd"  class="text"  /></td>
-						<td class="text_txt"  id="p_info">两次输入的密码请保持一致！ </td>
-					  </tr>
-					  <tr>
-						<td colspan="3" style="padding-left:100px; "><input type="submit" class="ptlogin_register" name="SubmitBtn" onclick="return checkForm(myform)" value="" id="submitbtn"/><!--<input type="image" onclick="return checkForm(myform)" name="SubmitBtn" src="/tpl/xmad_blxx/an.gif" id="submitbtn" />--></td>
-					  </tr>
-					</table>
-				  </form>
+					<form id="myform"  name="myform" onsubmit="return beforeSubmit(this)" action="http://web.4399.com/user/xreg_action.php" method="post">
+						<input type="hidden" name='game_src' value="mhxx" />
+						<div class="fm_dv">
+							<label class="field">4399用户名</label>
+							<div class="fm_ipt"><input type="text" class="text" id="login_name" name="login_name" /></div>
+							<div class="fm_tip" id="u_info">6-20个字符,由字母、数字组成！</div>
+						</div>
+						<div class="fm_dv">
+							<label class="field">密码</label>
+							<div class="fm_ipt"><input id="login_password"   type="password" name="login_password"  class="text"  /></div>
+							<div class="fm_tip" id="w_info">长度6-20个字符！</div>
+						</div>
+						<div class="fm_dv">
+							<label class="field">确认密码</label>
+							<div class="fm_ipt"><input id="relogin_pwd"   type="password" name="relogin_pwd"  class="text"  /></div>
+							<div class="fm_tip" id="p_info">两次输入的密码请保持一致！</div>
+						</div>
+						<div class="fm_op"><input type="submit" class="ptlogin_register" name="SubmitBtn" onclick="return checkForm(myform)" value="" id="submitbtn"/></div>
+					</form>
 				</div>
 				<!--popup_autoReg_frame(注册)-->
 				<!--popup_autoLogin_frame-->
-				<div id="popup_autoLogin_frame" style="display:none;">
-					<div class="login_vertical center">
-						<form onSubmit="return check_login(username, password, null, 'Msg');" id="login_form" name="login_form"	method="post" 
-
-action="/ptlogin/advLogin.do">
-							<fieldset>
-								<div id="Msg" class="login_hor login_err_tip">
-									<span style="color:#666762;font-size:14px;"></span>
-								</div>
-								<div class="login_hor">
-									<label id = "lf_label_username">4399用户名</label>
-									<input type="text" id="username" name="username" class="login_ipt iptw2" value="uepanda"  />
-								</div>
-								<div class="login_hor">
-									<label id = "lf_label_password">密码</label>
-									<input type="password" id="password" name="password" class="login_ipt iptw2" value="" />
-								</div>
-								<div class="login_hor">
-									<div class="login_tip">
-										<input id="login_autoLogin" type="checkbox" name="autoLogin" /><label for="login_autoLogin" 
-
-id="login_remember_passwd_tip">记住密码</label><label for="login_autoLogin" id="login_autoLogin_tip">自动登录</label>
-										<a id="login_forgetPasswd" href="http://u.4399.com/do/password/forget" title="忘记密码" target="_blank">
-
-忘记密码</a>
-									</div>
-								</div>
-								<div class="login_hor">
-									<input type="submit" value="" class="ptlogin_btn" />
-								</div>
-							</fieldset>
+				<div id="popup_autoLogin_frame" class="popup_autoLogin_frame" style="display:none;">
+						<form  id="login_form" name="login_form"	method="post" action="http://my.4399.com/?ct=api&ac=dologin">
+							<input type="hidden" name="game" value="blcx"/>
+							<div class="fm_dv">
+								<label class="field">4399用户名</label>
+								<div class="fm_ipt"><input type="text" class="text" id="login_name" name="login_name" /></div>
+								<div class="fm_tip" id="u_info">6-20个字符,由字母、数字组成！</div>
+							</div>
+							<div class="fm_dv">
+								<label class="field">密码</label>
+								<div class="fm_ipt"><input id="login_password"   type="password" name="relogin_pwd"  class="text"  /></div>
+								<div class="fm_tip" id="w_info">长度6-20个字符！</div>
+							</div>
+							<div class="fm_login">
+								<input id="login_autoLogin" type="checkbox" name="autoLogin" />
+								<label for="login_autoLogin" id="login_autoLogin_tip">自动登录</label>
+							</div>
+							<div class="fm_op"><input type="submit" class="ptlogin_register" name="SubmitBtn"  value="" id="submitbtn"/></div>
 						</form>
 					</div>
 				</div>
