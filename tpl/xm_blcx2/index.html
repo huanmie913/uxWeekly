@@ -59,7 +59,7 @@ document.execCommand("BackgroundImageCache", false, true);
 	  </noscript>
 	</div>
 </div>
-<div id="show" style="position:relative;" style="visibility:visibility;"><!--注册填写“隐藏/显示”的DIV style="display:none"-->
+<div id="show" style="position:relative;" style="display:none;"><!--注册填写“隐藏/显示”的DIV style="display:none"-->
 <img src="/tpl/xm_blcx2/images/skin_2/bg.jpg" width="394px" height="334px" />
 
 <!--ue_login-->
@@ -220,9 +220,10 @@ document.execCommand("BackgroundImageCache", false, true);
     
 	
     function OpenDiv(a,b,c){       
-		var _height=Math.max(document.documentElement.scrollHeight,document.body.scrollHeight,document.body.clientHeight);
+		//var _height=Math.max(document.documentElement.scrollHeight,document.body.scrollHeight,document.body.clientHeight);
         //如果为登录来源站内 或者 未站外
-        document.getElementById('show').style.visibility="visible";
+        //document.getElementById('show').style.visibility="visible";
+		document.getElementById('show').style.display="block";
     }
     
     function click1Statist(){
