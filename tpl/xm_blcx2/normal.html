@@ -3,8 +3,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>4399百炼成仙--同名小说改编巨献</title>
-<script src="/tpl/xm_blcx2/AC_RunActiveContent.js" type="text/javascript"></script>
-<script type="text/javascript" src="http://web.4399.com/js/reg_gg_rpc_nope.js" ></script>
 <style>
 *{margin:0;padding:0}
 body { line-height:18px; font-size:13px; background:#000;}
@@ -43,8 +41,8 @@ document.execCommand("BackgroundImageCache", false, true);
 </head>
 
 <body>
-<div id="btn">点我~~~~~~</div>
-<div id="show" style="position:relative;" style="display:none;">
+<div id="btn" style="color:#fff;cursor:pointer;">点我~~~~~~</div>
+<div id="show"  style="display:none;">
 <!--ue_login-->
 <div class="ue_login skin_ad">
 	<div class="ue_login_hd">
@@ -111,11 +109,9 @@ document.execCommand("BackgroundImageCache", false, true);
 <!--/ue_login-->
 </div>
 </body>
-<script>  attackInputEvent(); </script>
+
 <script type="text/javascript">
-	document.getElementById('click1Statist').onclick = function(){
-		click1Statist();
-	}
+
 	var ue_tab={
 		_$:function(id){
 			return typeof id=="string" ? document.getElementById(id):id;
@@ -209,16 +205,19 @@ document.execCommand("BackgroundImageCache", false, true);
 		document.getElementById('show').style.display="block";
     }
     
-    function click1Statist(){
+    /*function click1Statist(){
 		OpenDiv();
-	} 
+	} */
+	document.getElementById('btn').onclick = function(){
+		OpenDiv();
+	}
 	/*预加载资源*/
-var preLoad=['/tpl/xm_blcx2/images/skin_2/bg_sprite.gif'
+/*var preLoad=['/tpl/xm_blcx2/images/skin_2/bg_sprite.gif'
 			];
 for( var i=0,len=preLoad.length;i<len;i++){
 	var _img=new Image();
 	_img.src=preLoad[i];
-}
+}*/
 </script>
 
 </html>
