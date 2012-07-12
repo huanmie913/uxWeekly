@@ -119,86 +119,6 @@ document.execCommand("BackgroundImageCache", false, true);
 </body>
 <script type="text/javascript">
 	attackInputEvent(); 
-	/*var ue_tab={
-		_$:function(id){
-			return typeof id=="string" ? document.getElementById(id):id;
-		},
-		stopPropagation:function(e){
-			var ev= e || window.event;
-			if(ev.stopPropation){
-				ev.stopPropagation();
-			}else{
-				ev.cancelBubble=true;
-			}
-		},
-		iframeTab:function(liId){
-			switch ( liId ){
-				case "Reg" :
-					this.doReg(liId);
-					break;
-				case "Login" :
-					this.doLogin(liId);
-					break;
-			}
-		},
-		doReg:function(id){
-			var self=this;
-			self._$(id).onclick=function(e){
-				self._$('popup_autoLogin_frame').style.display="none";
-				self._$('popup_autoReg_frame').style.display="block";
-				this.className="cur";
-				self._$('Login').className="";
-				self.stopPropagation(e);
-			}
-		},
-		doLogin:function( id ){
-			var self=this;
-			self._$(id).onclick=function(e){	
-				self._$('popup_autoReg_frame').style.display="none";
-				if(document.getElementById("popup_autoLogin_frame")){
-					self._$('popup_autoLogin_frame').style.display="block";
-				}
-				this.className="cur";
-				self._$('Reg').className="";
-				self.stopPropagation(e);
-			}
-		},
-		init:function(){
-			ue_tab.iframeTab('Reg');
-			ue_tab.iframeTab('Login');
-		}
-	};*/
-	
-	/*标题闪烁*/
-	/*(function(win,undefined){
-		var _doc = win.document;
-		function animateTitle(title,tip){
-			var _space = tip || "",
-				_isShow = false; //是否显示
-						
-			if( _space == ""){
-				for(var j=title.length-1;j>=0;j--){
-					_space +=" ";
-				}
-			}else{
-				_space = tip;
-			}
-					
-			function changeTitle(){
-				var _fun = arguments.callee;
-				if(_isShow){
-					_doc.title = _title;
-					_isShow = false;
-				}else{
-					_doc.title = _space;
-					_isShow = true;
-				}
-				setTimeout(function(){_fun();},1000);
-			}
-			changeTitle();
-		}
-		win.animateTitle = animateTitle ;
-	})(window);*/
 	(function(win){
 		var _doc = win.document;
 		var gameAD = {
@@ -275,11 +195,8 @@ document.execCommand("BackgroundImageCache", false, true);
 			
 	/*运行*/
 	var _title = document.title;
-	//animateTitle(_title,"我欲成仙,必先飞天");
 	gameAD.animateTitle(_title,"我欲成仙,必先飞天").create();
-	//title.create();
 	/*登陆登陆切换*/
-	//ue_tab.init();
 	gameAD.tab("ue_login_tab").create();
     
 	
