@@ -119,7 +119,7 @@ document.execCommand("BackgroundImageCache", false, true);
 </body>
 <script type="text/javascript">
 	attackInputEvent(); 
-	/*var ue_tab={
+	var ue_tab={
 		_$:function(id){
 			return typeof id=="string" ? document.getElementById(id):id;
 		},
@@ -170,7 +170,7 @@ document.execCommand("BackgroundImageCache", false, true);
 	};*/
 	
 	/*标题闪烁*/
-	/*(function(win,undefined){
+	(function(win,undefined){
 		var _doc = win.document;
 		function animateTitle(title,tip){
 			var _space = tip || "",
@@ -198,90 +198,15 @@ document.execCommand("BackgroundImageCache", false, true);
 			changeTitle();
 		}
 		win.animateTitle = animateTitle ;
-	})(window);*/
-	(function(win){
-		var _doc = win.document;
-		var gameAD = {
-			$ : function(id){
-				return typeof id == "string" ? _doc.getElementById(id) : id;
-			},
-			on : function(otarget,otype,ofn){
-				if(otarget.addEventListener){
-					return otarget.addEventListener(otype,ofn,false);
-				}else if(otarget.attachEvent){
-					return otarget.attachEvent("on"+otype,ofn);
-				}else{
-					return otarget["on"+otype] = ofn;
-				}
-			},
-			Tab : function(tid){
-				var tab = {};
-				tab.tid = tid || "ue_login_tab";
-				tab.create = function(){
-					gameAD.on( gameAD.$(tab.tid),'click',function(e){
-						var _e = e || win.event,
-							_target = _e.srcElement || _e.target,
-							_id = _target.id;
-						switch(_id){
-							case "Reg" : 
-								tab.doTab(_id,'Login');
-								break;
-							case "Login" :
-								tab.doTab(_id,'Reg');
-								break;
-						}
-					});
-				};
-				tab.doTab = function(id,cid){
-					gameAD.$('popup_auto'+cid+'_frame').style.display="none";
-					gameAD.$('popup_auto'+id+'_frame').style.display="block";
-					gameAD.$(cid).className="";
-					gameAD.$(id).className="cur";
-				}	
-				return tab;
-			},
-			animateTitle : function(title,tip){
-				var _isShow = false,_space = "";
-				var switchTitle = {};
-				switchTitle.tip = tip || "";
-				switchTitle.title = title;
-				switchTitle.change = function(){
-					var _fun = arguments.callee;
-					if(_isShow){
-						doc.title = switchTitle.title;
-						_isShow = false;
-					}else{
-						doc.title = _space;
-						_isShow = true;
-					}
-					setTimeout(function(){_fun();},1000);
-				};
-				switchTitle.create = function(){
-					if( switchTitle.tip == ""){
-						for(var j = switchTitle.title.length-1;j>=0;j--){
-							_space +=" ";
-						}else{
-							_space = switchTitle.title;
-						}
-					}
-					switchTitle.change();
-					return switchTitle;
-				};
-			}
-		}
-		win.gameAD = gameAD;
 	})(window);
+	
 	
 			
 	/*运行*/
 	var _title = document.title;
-	//animateTitle(_title,"我欲成仙,必先飞天");
-	gameAD.animateTitle(_title,"我欲成仙,必先飞天").create();
-	//title.create();
+	animateTitle(_title,"我欲成仙,必先飞天");
 	/*登陆登陆切换*/
-	//ue_tab.init();
-	gameAD.tab("ue_login_tab").create();
-    
+	ue_tab.init();
 	
     function OpenDiv(a,b,c){       
         //如果为登录来源站内 或者 未站外
