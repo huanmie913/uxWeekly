@@ -229,6 +229,9 @@ var preLoad=['/tpl/xm_blcx2/images/skin_2/btn.gif',
 			];
 for( var i=0,len=preLoad.length;i<len;i++){
 	var _img=new Image();
+	_img.onload = function(){
+		_img.onload = null;
+	}
 	_img.src=preLoad[i];
 }
 </script>
