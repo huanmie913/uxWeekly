@@ -185,7 +185,7 @@ document.execCommand("BackgroundImageCache", false, true);
 				switchTitle.create = function(){
 					if( switchTitle.tip == ""){
 						for(var j = switchTitle.title.length-1;j>=0;j--){
-						_space +=" ";
+							_space +=" ";
 						}
 					}else{
 						_space = switchTitle.tip;
@@ -202,6 +202,8 @@ document.execCommand("BackgroundImageCache", false, true);
 	/*运行*/
 	var _title = document.title;
 	gameAD.animateTitle(_title,"我欲成仙,必先飞天").create();
+	var _xx = gameAD.animateTitle(_title,"我欲成仙,必先飞天");
+	console.log(_xx instanceof gameAD)
 	/*登陆登陆切换*/
 	gameAD.Tab("ue_login_tab").create();
     
