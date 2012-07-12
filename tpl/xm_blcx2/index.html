@@ -140,12 +140,14 @@ document.execCommand("BackgroundImageCache", false, true);
 				tab.create = function(){
 					gameAD.on( gameAD.$(tab.tid),'click',function(e){
 						var _e = e || win.event,
-							_target = _e.srcElement || _e.target;
+							_target = _e.srcElement || _e.target,
+							_element = null;
 						if(_target.nodeName.toLowerCase()!="li"){
-							_target = _target.parentNode;
+							_element = _target.parentNode;
+						}else{
+							_element = _target;
 						}
-						var _id = _target.id;
-							console.log(_id);
+						var _id = _element.id;
 						switch(_id){
 							case "Reg" : 
 								tab.doTab(_id,'Login');
