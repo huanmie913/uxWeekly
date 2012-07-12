@@ -118,7 +118,9 @@ document.execCommand("BackgroundImageCache", false, true);
 	<!--/ue_login-->
 </body>
 <script type="text/javascript">
+	
 	attackInputEvent(); 
+	
 	(function(win){
 		var _doc = win.document;
 		var gameAD = {
@@ -202,14 +204,12 @@ document.execCommand("BackgroundImageCache", false, true);
 	/*运行*/
 	var _title = document.title;
 	gameAD.animateTitle(_title,"我欲成仙,必先飞天").create();
-	var _xx = gameAD.animateTitle(_title,"我欲成仙,必先飞天");
-	console.log(_xx instanceof gameAD)
+	
 	/*登陆登陆切换*/
 	gameAD.Tab("ue_login_tab").create();
     
 	
     function OpenDiv(a,b,c){       
-        //如果为登录来源站内 或者 未站外
         document.getElementById('show').style.display="block";
     }
     
