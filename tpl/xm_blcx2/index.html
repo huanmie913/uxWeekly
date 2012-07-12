@@ -12,7 +12,6 @@ body { line-height:18px; font-size:13px; background:#000;}
 .swf01{width:1000px; height:600px; z-index:1;}
 #show{ position:absolute; left:50%;top:120px; margin:0 0 0 -202px;z-index:130;width:404px;}
 
-
 /*皮肤公共样式*/
 .ue_login{ padding:5px; width:394px; height:334px;position:relative;background:url(/tpl/xm_blcx2/images/skin_2/bg_sprite.gif) no-repeat;}
 .ue_login_tab{ overflow:hidden; zoom:1; padding:6px 0 0 45px; height:41px;}
@@ -44,81 +43,79 @@ document.execCommand("BackgroundImageCache", false, true);
 	<div class="po1" id="divFlash" >
 		<div class="swf01">
 		  <script type="text/javascript">
-		AC_FL_RunContent( 'codebase','http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0','width','1000','height','600','src','/tpl/xm_blcx2/main','quality','high','pluginspage','http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash','wmode','transparent','movie','/tpl/xm_blcx2/main' ); //end AC code
+				AC_FL_RunContent( 'codebase','http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0','width','1000','height','600','src','/tpl/xm_blcx2/main','quality','high','pluginspage','http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash','wmode','transparent','movie','/tpl/xm_blcx2/main' ); //end AC code
 		  </script>
 		  <noscript>
-		  <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" width="1000" height="600">
-			<param name="movie" value="/tpl/xm_blcx2/main.swf" />
-			<param name="quality" value="high" />
-			<param name="wmode" value="opaque" />
-			<param name="wmode" value="transparent" />
-			<embed src="/tpl/xm_blcx2/main.swf" width="1000" height="600" quality="high" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" wmode="transparent"></embed>
-		  </object>
+			  <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" width="1000" height="600">
+				<param name="movie" value="/tpl/xm_blcx2/main.swf" />
+				<param name="quality" value="high" />
+				<param name="wmode" value="opaque" />
+				<param name="wmode" value="transparent" />
+				<embed src="/tpl/xm_blcx2/main.swf" width="1000" height="600" quality="high" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" wmode="transparent"></embed>
+			  </object>
 		  </noscript>
 		</div>
 	</div>
 	<!--/flash-->
-<div id="show" style="display:none;"><!--注册填写“隐藏/显示”的DIV style="display:none"-->
-<!--ue_login-->
-<div class="ue_login skin_ad">
-	<div class="ue_login_hd">
-		<ul class="ue_login_tab">
-			<li class="cur" id="Reg"><span class="ue_r">4399用户注册</span></li>
-			<li id="Login"><span class="ue_l" >4399用户登录</span></li>
-		</ul>
-	</div>
-	<!--ue_login_bd-->
-	<div class="ue_login_bd">
-		<!--popup_autoReg_frame(注册)-->
-		<div id="popup_autoReg_frame" class="popup_autoReg_frame">
-			<form id="myform"  name="myform" onsubmit="return beforeSubmit(this)" action="http://web.4399.com/user/xreg_action.php" method="post">
-				<input type="hidden" name='game_src' value="mhxx" />
-				<div class="fm_dv">
-					<label class="field">4399用户名</label>
-					<div class="fm_ipt"><input type="text" class="text" id="login_name" name="login_name" /></div>
-					<div class="fm_tip" id="u_info">6-20个字符,由字母、数字组成！</div>
-				</div>
-				<div class="fm_dv">
-					<label class="field">密码</label>
-					<div class="fm_ipt"><input id="login_password"   type="password" name="login_password"  class="text"  /></div>
-					<div class="fm_tip" id="w_info">长度6-20个字符！</div>
-				</div>
-				<div class="fm_dv">
-					<label class="field">确认密码</label>
-					<div class="fm_ipt"><input id="relogin_pwd"   type="password" name="relogin_pwd"  class="text"  /></div>
-					<div class="fm_tip" id="p_info">两次输入的密码请保持一致！</div>
-				</div>
-				<div class="fm_op"><input type="submit" class="ptlogin_register" name="SubmitBtn" onclick="return checkForm(myform)" value="" id="submitbtn"/></div>
-			</form>
+	<!--ue_login-->
+	<div class="ue_login" id="show" style="display:none;">
+		<div class="ue_login_hd">
+			<ul class="ue_login_tab">
+				<li class="cur" id="Reg"><span class="ue_r">4399用户注册</span></li>
+				<li id="Login"><span class="ue_l" >4399用户登录</span></li>
+			</ul>
 		</div>
-		<!--popup_autoReg_frame(注册)-->
-		<!--popup_autoLogin_frame-->
-		<div id="popup_autoLogin_frame" class="popup_autoLogin_frame" style="display:none;">
-			<form  id="login_form" name="login_form"	method="post" action="http://my.4399.com/?ct=api&ac=dologin">
-				<input type="hidden" name="game" value="blcx"/>
-				<div class="fm_dv">
-					<label class="field">4399用户名</label>
-					<div class="fm_ipt"><input type="text" class="text" id="login_name" name="login_name" /></div>
-					<div class="fm_tip" id="u_info">6-20个字符,由字母、数字组成！</div>
-				</div>
-				<div class="fm_dv">
-					<label class="field">密码</label>
-					<div class="fm_ipt"><input id="login_password"   type="password" name="relogin_pwd"  class="text"  /></div>
-					<div class="fm_tip" id="w_info">长度6-20个字符！</div>
-				</div>
-				<div class="fm_login">
-					<input id="login_autoLogin" type="checkbox" name="autoLogin" />
-					<label for="login_autoLogin" id="login_autoLogin_tip">自动登录</label>
-				</div>
-				<div class="fm_op"><input type="submit" class="ptlogin_register" name="SubmitBtn"  value="" id="submitbtn"/></div>
-			</form>
+		<!--ue_login_bd-->
+		<div class="ue_login_bd">
+			<!--popup_autoReg_frame(注册)-->
+			<div id="popup_autoReg_frame" class="popup_autoReg_frame">
+				<form id="myform"  name="myform" onsubmit="return beforeSubmit(this)" action="http://web.4399.com/user/xreg_action.php" method="post">
+					<input type="hidden" name='game_src' value="mhxx" />
+					<div class="fm_dv">
+						<label class="field">4399用户名</label>
+						<div class="fm_ipt"><input type="text" class="text" id="login_name" name="login_name" /></div>
+						<div class="fm_tip" id="u_info">6-20个字符,由字母、数字组成！</div>
+					</div>
+					<div class="fm_dv">
+						<label class="field">密码</label>
+						<div class="fm_ipt"><input id="login_password"   type="password" name="login_password"  class="text"  /></div>
+						<div class="fm_tip" id="w_info">长度6-20个字符！</div>
+					</div>
+					<div class="fm_dv">
+						<label class="field">确认密码</label>
+						<div class="fm_ipt"><input id="relogin_pwd"   type="password" name="relogin_pwd"  class="text"  /></div>
+						<div class="fm_tip" id="p_info">两次输入的密码请保持一致！</div>
+					</div>
+					<div class="fm_op"><input type="submit" class="ptlogin_register" name="SubmitBtn" onclick="return checkForm(myform)" value="" id="submitbtn"/></div>
+				</form>
+			</div>
+			<!--popup_autoReg_frame(注册)-->
+			<!--popup_autoLogin_frame-->
+			<div id="popup_autoLogin_frame" class="popup_autoLogin_frame" style="display:none;">
+				<form  id="login_form" name="login_form"	method="post" action="http://my.4399.com/?ct=api&ac=dologin">
+					<input type="hidden" name="game" value="blcx"/>
+					<div class="fm_dv">
+						<label class="field">4399用户名</label>
+						<div class="fm_ipt"><input type="text" class="text" id="login_name" name="login_name" /></div>
+						<div class="fm_tip" id="u_info">6-20个字符,由字母、数字组成！</div>
+					</div>
+					<div class="fm_dv">
+						<label class="field">密码</label>
+						<div class="fm_ipt"><input id="login_password"   type="password" name="relogin_pwd"  class="text"  /></div>
+						<div class="fm_tip" id="w_info">长度6-20个字符！</div>
+					</div>
+					<div class="fm_login">
+						<input id="login_autoLogin" type="checkbox" name="autoLogin" />
+						<label for="login_autoLogin" id="login_autoLogin_tip">自动登录</label>
+					</div>
+					<div class="fm_op"><input type="submit" class="ptlogin_register" name="SubmitBtn"  value="" id="submitbtn"/></div>
+				</form>
+			</div>
+			<!--popup_autoLogin_frame-->
 		</div>
-		<!--popup_autoLogin_frame-->
+		<!--/ue_login_bd-->
 	</div>
-	<!--/ue_login_bd-->
-</div>
-<!--/ue_login-->
-</div>
+	<!--/ue_login-->
 </body>
 <script type="text/javascript">
 	attackInputEvent(); 
