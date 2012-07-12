@@ -141,7 +141,7 @@ document.execCommand("BackgroundImageCache", false, true);
 					gameAD.on( gameAD.$(tab.tid),'click',function(e){
 						var _e = e || win.event,
 							_target = _e.srcElement || _e.target;
-						if(_target.nodeName.toLowercase()!="li"){
+						if(_target.nodeName.toLowerCase()!="li"){
 							_target = _target.parentNode;
 						}
 						var _id = _target.id;
