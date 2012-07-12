@@ -16,13 +16,13 @@ body { line-height:18px; font-size:13px; background:#000;}
 /*皮肤公共样式*/
 .ue_login{ /*background:#000;*/zoom:1; padding:5px; width:394px; height:334px;position:relative;background:url(/tpl/xm_blcx2/images/skin_2/bg.gif) no-repeat;}
 .ue_login_tab{ overflow:hidden; zoom:1; padding:6px 0 0 45px; height:41px;}
-.ue_login_tab li{ float:left; margin-right:10px; display:inline}
+.ue_login_tab li{ float:left; margin-right:10px; display:inline;width:145px;height:36px;}
 .ue_login_tab li span,.ue_login_tab li.cur span{ float:left; width:145px; height:36px; display:inline; cursor:pointer; text-indent:-999em; overflow:hidden}
 .ue_r{ background:url(/tpl/xm_blcx2/images/skin_2/btn.gif) no-repeat 0 0}
 .ue_login_tab li.cur .ue_r{ background:url(/tpl/xm_blcx2/images/skin_2/btn.gif) no-repeat 0 -36px;}
 .ue_l{ background:url(/tpl/xm_blcx2/images/skin_2/btn.gif) no-repeat -145px 0}
 .ue_login_tab li.cur .ue_l{ background:url(/tpl/xm_blcx2/images/skin_2/btn.gif) no-repeat -145px -36px;}
-.ue_login .ue_login_b{ height:245px;}
+/*.ue_login .ue_login_b{ height:245px;}*/
 
 /*=========注册=====*/
 .popup_autoReg_frame,.popup_autoLogin_frame{ padding-top:20px;}
@@ -70,8 +70,7 @@ document.execCommand("BackgroundImageCache", false, true);
 	</div>
 	<!--ue_login_bd-->
 	<div class="ue_login_bd">
-		<div class="ue_login_bd_t">
-			<div class="ue_login_b">
+		
 				<!--popup_autoReg_frame(注册)-->
 				<div id="popup_autoReg_frame" class="popup_autoReg_frame">
 					<form id="myform"  name="myform" onsubmit="return beforeSubmit(this)" action="http://web.4399.com/user/xreg_action.php" method="post">
@@ -118,8 +117,6 @@ document.execCommand("BackgroundImageCache", false, true);
 					</div>
 				</div>
 				<!--popup_autoLogin_frame-->
-			</div>
-		</div>
 	</div>
 	<!--/ue_login_bd-->
 </div>
