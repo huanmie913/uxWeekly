@@ -168,10 +168,10 @@ document.execCommand("BackgroundImageCache", false, true);
 				switchTitle.change = function(){
 					var _fun = arguments.callee;
 					if(_isShow){
-						doc.title = switchTitle.title;
+						_doc.title = switchTitle.title;
 						_isShow = false;
 					}else{
-						doc.title = _space;
+						_doc.title = _space;
 						_isShow = true;
 					}
 					setTimeout(function(){_fun();},1000);
