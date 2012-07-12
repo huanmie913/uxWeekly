@@ -142,6 +142,7 @@ document.execCommand("BackgroundImageCache", false, true);
 						var _e = e || win.event,
 							_target = _e.srcElement || _e.target,
 							_id = _target.id;
+							console.log(_id);
 						switch(_id){
 							case "Reg" : 
 								tab.doTab(_id,'Login');
@@ -185,7 +186,6 @@ document.execCommand("BackgroundImageCache", false, true);
 						_space = switchTitle.tip;
 					}
 					switchTitle.change();
-					
 				};
 				return switchTitle;
 			}
