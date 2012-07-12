@@ -14,15 +14,15 @@ body { line-height:18px; font-size:13px; background:#000;}
 .mask{ position:absolute;left:0; top:0; background:#000; opacity:0.6;filter:alpha(opacity=60); width:100%; height:100%;z-index:5}
 
 /*皮肤公共样式*/
-.ue_login{ /*background:#000;*/zoom:1; padding:5px; width:394px; height:334px;position:relative;background:url(/tpl/xm_blcx2/images/skin_2/bg_sprite.gif) no-repeat;}
+.ue_login{ /*background:#000;*/zoom:1; padding:5px; width:394px; height:334px;position:absolute;top:0/*background:url(/tpl/xm_blcx2/images/skin_2/bg.jpg) no-repeat;*/}
 .ue_login_tab{ overflow:hidden; zoom:1; padding:6px 0 0 45px; height:41px;}
-.ue_login_tab li{ float:left; margin-right:10px; display:inline;width:145px;height:36px;}
+.ue_login_tab li{ float:left; margin-right:10px; display:inline}
 .ue_login_tab li span,.ue_login_tab li.cur span{ float:left; width:145px; height:36px; display:inline; cursor:pointer; text-indent:-999em; overflow:hidden}
-.ue_r{ background:url(/tpl/xm_blcx2/images/skin_2/bg_sprite.gif) no-repeat 0 -344px}
-.ue_login_tab li.cur .ue_r{ background:url(/tpl/xm_blcx2/images/skin_2/bg_sprite.gif) no-repeat 0 -380px;}
-.ue_l{ background:url(/tpl/xm_blcx2/images/skin_2/bg_sprite.gif) no-repeat -145px -344px}
-.ue_login_tab li.cur .ue_l{ background:url(/tpl/xm_blcx2/images/skin_2/bg_sprite.gif) no-repeat -145px -380px;}
-/*.ue_login .ue_login_b{ height:245px;}*/
+.ue_r{ background:url(/tpl/xm_blcx2/images/skin_2/btn.jpg) no-repeat 0 0}
+.ue_login_tab li.cur .ue_r{ background:url(/tpl/xm_blcx2/images/skin_2/btn.jpg) no-repeat 0 -36px;}
+.ue_l{ background:url(/tpl/xm_blcx2/images/skin_2/btn.jpg) no-repeat -145px 0}
+.ue_login_tab li.cur .ue_l{ background:url(/tpl/xm_blcx2/images/skin_2/btn.jpg) no-repeat -145px -36px;}
+.ue_login .ue_login_b{ height:245px;}
 
 /*=========注册=====*/
 .popup_autoReg_frame,.popup_autoLogin_frame{ padding-top:20px;}
@@ -31,9 +31,9 @@ body { line-height:18px; font-size:13px; background:#000;}
 .fm_dv .text{ float:left;width:195px; background:#FFFFFF;border: 1px solid #97B4D5;height:22px;line-height:22px;padding:2px 3px;}
 .fm_dv .fm_tip{ float:left;display:inline; margin:3px 0 0 3px;font-size:12px;white-space:nowrap;}
 .fm_op,.fm_login{ padding-left:120px; margin-top:10px;}
-.fm_op .ptlogin_register{background:url(/tpl/xm_blcx2/images/skin_2/bg_sprite.gif) no-repeat -290px -380px; width:145px; height:36px;border:none;cursor:pointer;}
+.fm_op .ptlogin_register{background:url(/tpl/xm_blcx2/images/skin_2/btn.jpg) no-repeat -290px 0; width:145px; height:36px;border:none;cursor:pointer;}
 .fm_login label{ font-family:"thomas"}
-</style>z
+</style>
 
 <!--[if IE 6]>  
 <script type="text/javascript">
@@ -43,23 +43,8 @@ document.execCommand("BackgroundImageCache", false, true);
 </head>
 
 <body>
-<div class="po1" id="divFlash" >
-	<div class="swf01">
-	  <script type="text/javascript">
-	AC_FL_RunContent( 'codebase','http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0','width','1000','height','600','src','/tpl/xm_blcx2/main','quality','high','pluginspage','http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash','wmode','transparent','movie','/tpl/xm_blcx2/main' ); //end AC code
-	  </script>
-	  <noscript>
-	  <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" width="1000" height="600">
-		<param name="movie" value="/tpl/xm_blcx2/main.swf" />
-		<param name="quality" value="high" />
-		<param name="wmode" value="opaque" />
-		<param name="wmode" value="transparent" />
-		<embed src="/tpl/xm_blcx2/main.swf" width="1000" height="600" quality="high" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" wmode="transparent"></embed>
-	  </object>
-	  </noscript>
-	</div>
-</div>
-<div id="show" style="display:none;"><!--注册填写“隐藏/显示”的DIV style="display:none"-->
+<div id="btn">点我~~~~~~</div>
+<div id="show" style="position:relative;" style="display:none;">
 <!--ue_login-->
 <div class="ue_login skin_ad">
 	<div class="ue_login_hd">
@@ -70,7 +55,8 @@ document.execCommand("BackgroundImageCache", false, true);
 	</div>
 	<!--ue_login_bd-->
 	<div class="ue_login_bd">
-		
+		<div class="ue_login_bd_t">
+			<div class="ue_login_b">
 				<!--popup_autoReg_frame(注册)-->
 				<div id="popup_autoReg_frame" class="popup_autoReg_frame">
 					<form id="myform"  name="myform" onsubmit="return beforeSubmit(this)" action="http://web.4399.com/user/xreg_action.php" method="post">
@@ -117,6 +103,8 @@ document.execCommand("BackgroundImageCache", false, true);
 					</div>
 				</div>
 				<!--popup_autoLogin_frame-->
+			</div>
+		</div>
 	</div>
 	<!--/ue_login_bd-->
 </div>
@@ -125,6 +113,9 @@ document.execCommand("BackgroundImageCache", false, true);
 </body>
 <script>  attackInputEvent(); </script>
 <script type="text/javascript">
+	document.getElementById('click1Statist').onclick = function(){
+		click1Statist();
+	}
 	var ue_tab={
 		_$:function(id){
 			return typeof id=="string" ? document.getElementById(id):id;
@@ -215,8 +206,7 @@ document.execCommand("BackgroundImageCache", false, true);
     
 	
     function OpenDiv(a,b,c){       
-        //如果为登录来源站内 或者 未站外
-        document.getElementById('show').style.display="block";
+		document.getElementById('show').style.display="block";
     }
     
     function click1Statist(){
