@@ -179,10 +179,10 @@ document.execCommand("BackgroundImageCache", false, true);
 				switchTitle.create = function(){
 					if( switchTitle.tip == ""){
 						for(var j = switchTitle.title.length-1;j>=0;j--){
-							_space +=" ";
-						}else{
-							_space = switchTitle.tip;
+						_space +=" ";
 						}
+					}else{
+						_space = switchTitle.tip;
 					}
 					switchTitle.change();
 					return switchTitle;
