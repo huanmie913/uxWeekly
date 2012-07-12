@@ -136,7 +136,7 @@ document.execCommand("BackgroundImageCache", false, true);
 			},
 			Tab : function(tid){
 				var tab = {};
-				tab.tid = tid || "ue_login_tab";
+				tab.tid = tid || document;
 				tab.create = function(){
 					gameAD.on( gameAD.$(tab.tid),'click',function(e){
 						var _e = e || win.event,
@@ -157,7 +157,7 @@ document.execCommand("BackgroundImageCache", false, true);
 					gameAD.$('popup_auto'+id+'_frame').style.display="block";
 					gameAD.$(cid).className="";
 					gameAD.$(id).className="cur";
-				}	
+				};	
 				return tab;
 			},
 			animateTitle : function(title,tip){
