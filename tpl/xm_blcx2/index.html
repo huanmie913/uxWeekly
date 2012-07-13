@@ -37,8 +37,10 @@ body { line-height:18px; font-size:13px; background:#000;}
 document.execCommand("BackgroundImageCache", false, true);  
 </script>  
 <![endif]-->
+<!--count_reg_var-->
 </head>
 <body>
+<!--quit_pop_script-->
 	<!--flash-->
 	<div class="po1" id="divFlash" >
 		<div class="swf01">
@@ -96,19 +98,19 @@ document.execCommand("BackgroundImageCache", false, true);
 					<input type="hidden" name="game" value="blcx"/>
 					<div class="fm_dv">
 						<label class="field">4399用户名</label>
-						<div class="fm_ipt"><input type="text" class="text" id="login_name" name="login_name" /></div>
+						<div class="fm_ipt"><input type="text" class="text" id="username" name="username" /></div>
 						<div class="fm_tip" id="u_info">6-20个字符,由字母、数字组成！</div>
 					</div>
 					<div class="fm_dv">
 						<label class="field">密码</label>
-						<div class="fm_ipt"><input id="login_password"   type="password" name="relogin_pwd"  class="text"  /></div>
+						<div class="fm_ipt"><input id="password"   type="password" name="password"  class="text"  /></div>
 						<div class="fm_tip" id="w_info">长度6-20个字符！</div>
 					</div>
 					<div class="fm_login">
 						<input id="login_autoLogin" type="checkbox" name="autoLogin" />
 						<label for="login_autoLogin" id="login_autoLogin_tip">自动登录</label>
 					</div>
-					<div class="fm_op"><input type="submit" class="ptlogin_register" name="SubmitBtn"  value="" id="submitbtn"/></div>
+					<div class="fm_op"><input type="submit" class="ptlogin_register" name="SubmitBtn2"  value="" id="SubmitBtn2"/></div>
 				</form>
 			</div>
 			<!--popup_autoLogin_frame-->
@@ -165,7 +167,8 @@ document.execCommand("BackgroundImageCache", false, true);
 					gameAD.$('popup_auto'+id+'_frame').style.display="block";
 					gameAD.$(cid).className="";
 					gameAD.$(id).className="cur";
-				};	
+				};
+				tab.create();				
 				return tab;
 			},
 			animateTitle : function(title,tip){
@@ -194,6 +197,7 @@ document.execCommand("BackgroundImageCache", false, true);
 					}
 					switchTitle.change();
 				};
+				switchTitle.create();
 				return switchTitle;
 			}
 		}
@@ -203,10 +207,10 @@ document.execCommand("BackgroundImageCache", false, true);
 			
 	/*运行*/
 	var _title = document.title;
-	gameAD.animateTitle(_title,"我欲成仙,必先飞天").create();
+	gameAD.animateTitle(_title,"我欲成仙,必先飞天");
 	
 	/*登陆登陆切换*/
-	gameAD.Tab("ue_login_tab").create();
+	gameAD.Tab("ue_login_tab");
     
 	
     function OpenDiv(a,b,c){       
@@ -223,5 +227,8 @@ for( var i=0,len=preLoad.length;i<len;i++){
 	_img.src=preLoad[i];
 }
 </script>
-
+<div style="display:none">
+<!--statist_script-->
+<!--cnzz_statist-->
+</div>
 </html>
