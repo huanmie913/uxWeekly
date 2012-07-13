@@ -9,8 +9,7 @@
 *{margin:0;padding:0}
 :focus{outline:none;}
 body { line-height:18px; font-size:13px; background:#000;}
-.po1{ width:1000px; height:600px; margin:0 auto;z-index:1;}
-/*.swf01{width:1000px; height:600px; z-index:1;}*/
+.flash{ width:1000px; height:600px; margin:0 auto;z-index:1;}
 
 /*皮肤公共样式*/
 .ue_login{ position:absolute; left:50%;top:120px; margin:0 0 0 -202px;z-index:130; padding:5px; width:394px; height:334px;background:url(/tpl/xm_blcx2/images/skin_2/bg_sprite.gif) no-repeat;}
@@ -43,7 +42,7 @@ document.execCommand("BackgroundImageCache", false, true);
 <body>
 <!--quit_pop_script-->
 <!--flash-->
-<div class="po1" id="divFlash" >
+<div class="flash" id="divFlash" >
 	<script type="text/javascript">
 		AC_FL_RunContent( 'codebase','http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0','width','1000','height','600','src','/tpl/xm_blcx2/main','quality','high','pluginspage','http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash','wmode','transparent','movie','/tpl/xm_blcx2/main' ); //end AC code
 	</script>
@@ -121,6 +120,10 @@ document.execCommand("BackgroundImageCache", false, true);
 <script type="text/javascript">
 	
 	attackInputEvent(); 
+	
+	function OpenDiv(a,b,c){ document.getElementById('show').style.display="block"; }
+    
+    function click1Statist(){ OpenDiv(); } 
 	
 	(function(win){
 		var _doc = win.document;
@@ -210,13 +213,6 @@ document.execCommand("BackgroundImageCache", false, true);
 	/*登陆登陆切换*/
 	gameAD.Tab("ue_login_tab");
     
-    function OpenDiv(a,b,c){       
-        document.getElementById('show').style.display="block";
-    }
-    
-    function click1Statist(){
-		OpenDiv();
-	} 
 	/*预加载资源*/
 	var preLoad=['/tpl/xm_blcx2/images/skin_2/bg_sprite.gif'];
 	for( var i=0,len=preLoad.length;i<len;i++){
