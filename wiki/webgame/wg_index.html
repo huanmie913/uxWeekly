@@ -63,12 +63,44 @@
     </div>
 </div>
 <!--/wiki_box-->
+<!--mod_item-->
+<div class="wiki_box mt">
+    <div class="hd">
+        <h2>网页游戏广告页注意事项</h2>
+    </div>
+    <!--调用说明-->
+    <div class="bd">
+		<dl class="dl_t">
+			<dt>一：换肤</dt>
+			<dd>只要更改相应的图片资源的目录即可.( 如/tpl/xm_blcx2/images/skin_2 )</dd>
+		</dl>
+		<dl class="dl_t">
+			<dt>二：必须要添加代码</dt>
+			<dd>1）<!--count_reg_var--> （head内）</dd>
+			<dd><!--quit_pop_script--> (flash代码前)</dd>
+			<dd><!--statist_script--><!--cnzz_statist-->放置在隐藏的div中（页面底部的统计代码）</dd>
+		</dl>
+		<dl class="dl_t">
+			<dt>三：游戏接口</dt>
+			<dd>1）注册模块：类型为hidden的，name='game_src'的input的标签， ==>  value值改成相应游戏名称,以下划线开头:_+"游戏名称";</dd>
+			<dd>2）登录模块: 类型为hidden的，name="game"的input的标签， ==>  value值改成相应游戏名称</dd>
+		</dl>
+		<dl class="dl_t">
+			<dt>四：更换标题</dt>
+			<dd>1）在title标签中定义默认页面标题。</dd>
+			<dd>2）在 gameAD.animateTitle(_title,"我欲成仙,必先飞天")方法中; 把第二个参数更改为交替变换的标题。</dd>
+		</dl>
+		<p>详情猛点击：<a href="https://github.com/f2er/YJwiki/tree/gh-pages/tpl">游戏广告页注意事项</a></p>
+    </div>
+</div>
+<!--/wiki_box-->
 <div class="wiki_box mt">
     <div class="hd">
         <h2 class="mt50">更新记录</h2>
     </div>
     <div class="bd">
         <ol class="txtlist">
+			<li>12-07-13 新增游戏广告页注意事项</li>
 			<li>12-06-20 新增新旧版两个选服框</li>
 			<li>12-06-16 新增前端后端模块化说明</li>
             <li>12-04-26 更新群组讨论组列表、网页游戏公共样式表CDN路径 <span>by 情封</span></li>
