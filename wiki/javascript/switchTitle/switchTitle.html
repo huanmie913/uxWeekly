@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>情封 切换标题switchTitle</title>
+<link href="../../static/css/demo.css" rel="stylesheet" type="text/css"/>
+<style>
+	.ox_box{ width:1000px;}
+</style>
+</head>
+<body>
+<!--toolbar-->
+<div class="toolbar" id="toolbar"></div>
+<!--/toolbar-->
+<div class="ox_box">
+这个重点看标题栏～～～～～～
+</div>
+<div class="bottomBar" id="bottomBar"></div>
+<script src="../../static/js/mod_f2er.js" type="text/javascript"></script>
+<script src="js/Qf.switchTitle.js" type="text/javascript"></script>
+<script type="text/javascript">
+mod_f2er.topBar('切换标题','toolbar');
+mod_f2er.bottomBar('bottomBar');
+var _title = document.title;
+F2er.switchTitle(_title,"我是切换标题插件");
+</script>
+</body>
+</html>

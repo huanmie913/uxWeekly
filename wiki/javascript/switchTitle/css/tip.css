@@ -1,0 +1,12 @@
+@charset "utf-8";
+.server_list{}
+.server_list li{ background:#ffffe1; float:left; position:relative; width:120px; height:24px; text-align:center; line-height:2; border:1px solid #ddd; margin:0 10px 10px 0;display:inline;}
+.server_list li a{ color:#333;}
+
+.sns_tip{ background:url(http://s4.img4399.com/yx/g/hysj/images/120229/12-02-29_a_bg.jpg); border:1px solid #afc6fb;z-index:100; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px; background:# color:#333;width:245px; line-height:22px; position: absolute;  padding:0 5px; min-height:44px; _height:44px;  }
+.sns_tip a{ color:#ff0000;}
+.sns_tip .new_card{background:url(http://s4.img4399.com/yx/g/hysj/images/120229/12-02-09-new_bg.png); position:absolute; width:50px; height:36px; top:2px; right:5px; overflow:hidden; text-indent:-999em;}
+.sns_tip .m_arrow{ position:relative;top:-10px;left:45px;}
+.sns_tip .m_arrow *{color: #feffff;font-size: 13px;height: 15px;line-height: 21px;overflow: hidden;position: absolute;width: 18px;}
+.sns_tip .m_arrow em{ z-index:999;}
+.sns_tip .m_arrow span{color: #afc6fb;left: 0;top: -1px;z-index: 99;}
