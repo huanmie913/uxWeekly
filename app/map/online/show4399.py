@@ -8,14 +8,68 @@ Created on Jul 6, 2012
 import datetime, time, random, web, sys, json
 
 
-speedRate = 1
+speedRate = 4
 showByProvince = True
-areas = {'厦门':(6, 30, 50, '福建'), '泉州':(3, 41, 62, '福建'), '福州':(5, 20, 80, '福建'),
-          '广州':(20, 130, 150, '广东'), '梅州':(2, 140, 160, '广东'), '珠海':(4, 120, 180, '广东'),
-          '上海':(30, 30, 50), '北京':(25, 45, 63)}
+areas = {
+          '上海':('sh',10, 780,470), 
+          '北京':('bj',10, 690, 320),
+          '天津':('tj',8,700,330),
+          '重庆':('cq',8,565,520),
 
-games = {'卡布西游':{'w' : 10, 'icon' : 'ga.png'}, '神魔遮天':{'w' : 8, 'icon' : 'gb.png'}, 
-         '植物大战僵尸':{'w' : 15, 'icon' : 'gc.png'} , '4399开心农场':{'w' : 12, 'icon' : 'gd.png'}}
+          '内蒙古自治区':('nmg',3,610,320),
+          '新疆维吾尔自治区':('xj',3,310,260),
+          '西藏自治区':('xz',3,350,490),
+          '宁夏回族自治区':('nx',3,550,360),
+          '广西壮族自治区':('gx',4,590,630),
+
+          '厦门':('xm',6, 755, 570, '福建'),
+          '广州':('gz',7, 670, 630, '广东'), 
+          '哈尔滨':('heb',5,800,200,'黑龙江'),
+          '长春':('cc',5,780,280,'吉林'),
+          '沈阳':('sy',5,780,285,'辽宁'),
+          '石家庄':('sjz',7,670,365,'河北'),
+          '太原':('ty',5,635,380,'山西'),
+          '西宁':('xn',3,450,410,'青海'),
+          '济南':('jn',7,700,390,'山东'),
+          '郑州':('zz',5,665,430,'河南'),
+          '南京':('nj',6,750,460,'江苏'),
+          '合肥':('hf',100,720,480,'安徽'),
+          '杭州':('hz',7,760,500,'浙江'),
+          '南昌':('nc',5,700,530,'江西'),
+          '长沙':('cs',6,650,540,'湖南'),
+          '武汉':('wh',6,670,500,'湖北'),
+          '海口':('hk',6,620,690,'海南'),
+          '兰州':('lz',3,520,410,'甘肃'),
+          '西安':('xa',5,590,350,'陕西'),
+          '成都':('cd',6,520,500,'四川'),
+          '贵阳':('gy',5,560,575,'贵州'),
+          '昆明':('km',5,500,600,'云南'),
+          '台北':('tb',60,800,580,'台湾')
+        }
+
+provinceName = {'新疆维吾尔自治区' : 'xj', '西藏自治区' : 'xz', '青海':'qh', '甘肃':'gs', '内蒙古自治区':'nmg', '黑龙江':'hlj', '吉林':'jl', '辽宁':'ln', '四川':'sc', 
+                 '陕西':'sx', '江苏':'js', '浙江':'zj', '台湾':'tw', '安徽':'ah','福建':'fj', '江西':'jx','广东':'gd','海南':'hn','广西壮族自治区':'gx',
+                 '湖南':'hun', '贵州':'gz','云南':'yn','宁夏回族自治区':'nx','山西':'shx','河南':'hen','湖北':'hb','重庆':'cq','河北':'heb','天津':'tj',
+                 '北京':'bj','山东':'sd','上海':'sh'             
+                }
+
+games = {
+         '造梦西游':{'w' : 10, 'icon' : 'http://s4.img4399.com/1/apps/155.gif'},
+         '海贼王':{'w' : 8, 'icon' : 'http://s4.img4399.com/1/apps/800110.gif'}, 
+         '4399开心农场':{'w' : 15, 'icon' : 'http://s4.img4399.com/1/apps/800112.gif'}, 
+         '穿越三国':{'w' : 12, 'icon' : 'http://s4.img4399.com/1/apps/800105.gif'},
+         '疯狂宠物':{'w' : 12, 'icon' : 'http://s4.img4399.com/1/apps/800106.gif'},
+         '美食大战老鼠':{'w' : 12, 'icon' : 'http://s4.img4399.com/1/apps/800108.gif'},
+         '神魔斗':{'w' : 12, 'icon' : 'http://s4.img4399.com/1/apps/100225.gif'},
+         '4399神仙道':{'w' : 12, 'icon' : 'http://s4.img4399.com/1/apps/800103.gif'},
+         '4399火影世界':{'w' : 12, 'icon' : 'http://s4.img4399.com/1/apps/800111.gif'},
+         '洛克王国':{'w' : 12, 'icon' : 'http://s4.img4399.com/1/apps/100222.gif'},
+         '海贼王':{'w' : 12, 'icon' : 'http://s4.img4399.com/1/apps/1005122.gif'},
+         '飘渺西游':{'w' : 12, 'icon' : 'http://s4.img4399.com/1/apps/100150.gif'},
+         '花园抢战':{'w' : 12, 'icon' : 'http://s4.img4399.com/1/apps/100162.gif'},
+         '百炼成仙':{'w' : 12, 'icon' : 'http://s4.img4399.com/1/apps/100227.gif'},
+         '海贼大冒险':{'w' : 12, 'icon' : 'http://s4.img4399.com/1/apps/100192.gif'}
+         }
 
 '''
 normal 和 weekend_holiday 是必须有的，
@@ -47,23 +101,24 @@ def construct_place_conf():
         place_conf = {}
         places[area] = place_conf
         place_conf['w_start'] = all_place_weight
-        all_place_weight += area_conf[0]
+        place_conf['brief'] = area_conf[0]
+        all_place_weight += area_conf[1]
         place_conf['w_end'] = all_place_weight - 1
-        place_conf['x'] = area_conf[1]
-        place_conf['y'] = area_conf[2]
+        place_conf['x'] = area_conf[2]
+        place_conf['y'] = area_conf[3]
         
         province_conf = None
-        if len(area_conf) == 4:
+        if len(area_conf) == 5:
             province_conf = provinces.get(area_conf[3])
             if province_conf is None:
                 province_conf = {}
-                provinces[area_conf[3]] = province_conf
+                provinces[area_conf[4]] = province_conf
         else:
             province_conf = {}
             provinces[area] = province_conf
-        province_conf['w'] = province_conf.get('w', 0) + area_conf[0]
-        province_conf['x'] = province_conf.get('x', 0) + area_conf[1]
-        province_conf['y'] = province_conf.get('y', 0) + area_conf[2]
+        province_conf['w'] = province_conf.get('w', 0) + area_conf[1]
+        province_conf['x'] = province_conf.get('x', 0) + area_conf[2]
+        province_conf['y'] = province_conf.get('y', 0) + area_conf[3]
         province_conf['n'] = province_conf.get('n', 0) + 1
     all_place_weight = 0
     for province in provinces:
@@ -73,6 +128,12 @@ def construct_place_conf():
         province_conf['w_end'] = all_place_weight - 1
         province_conf['x'] /= province_conf['n']
         province_conf['y'] /= province_conf['n']
+        brief = provinceName.get(province)
+        if brief is None:
+            province_conf['brief'] = ''
+        else:
+            province_conf['brief'] = brief
+        
     
 all_game_weight = 0
 def construct_game_conf():
@@ -119,6 +180,9 @@ def printDic(a, b):
 
 urls = (r'/show4399', 'RequestShow', 
         r'/provinceWeight', 'ProvinceWeight')
+#,
+#        r'/(.*)', 'StaticResource')
+render = web.template.render('template/')
 app = web.application(urls, globals())
 
 construct_specific_visit()
@@ -135,10 +199,17 @@ visit = None
 today = None
 show_time = datetime.datetime.now()
 
+#class StaticResource():
+#    def GET(self, name):
+#        print 'name', name
+#        return render.name()
+    
 class ProvinceWeight():
     def GET(self):
         web.header('Content-Type','text/html; charset=utf-8', unique=True) 
-        return json.dumps(dict([(i[0], i[1]['w']) for i in provinces.items()]), ensure_ascii = False)
+        return json.dumps(dict([(i[0], dict([('w', i[1]['w']), ('brief', provinceName.get(i[0]))])) for i in provinces.items()]), ensure_ascii = False)
+
+#        return json.dumps(provinces, ensure_ascii = False)
 
 class RequestShow():
     def GET(self):
@@ -198,9 +269,9 @@ class RequestShow():
                 offset_y = random.randint(1, 7) - 4
             return {'game' : game, 
                     'icon' : games[game]['icon'], 
-                    'place' : place, 
+                    'place' : places[place]['brief'], 
                     'x' : places[place]['x'] + offset_x, 
-                    'y' : places[place]['y'] + offset_y
+                    'y' : places[place]['y'] + offset_y,
                     }
         
         
