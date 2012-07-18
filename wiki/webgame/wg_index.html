@@ -98,12 +98,41 @@
     </div>
 </div>
 <!--/wiki_box-->
+<!--mod_item-->
+<div class="wiki_box mt">
+    <div class="hd">
+        <h2>网页游戏广告分析报告</h2>
+    </div>
+    <!--调用说明-->
+    <div class="bd">
+		<p>网页游戏广告页的问题都出现在IE6环境下。主要有以下情况：</p>
+		<dl class="dl_t">
+			<dt>一：IE6环境下，图片被请求中断导致注册登录框背景图片没显示。</dt>
+			<dd>排查以及分析：可能flash导致第二张背景图片请求被中断。(无flash环境下，请求正常)</dd>
+			<dd>解决办法：1）背景图片合并  2）图片采取预加载的方式提前加载背景图片。</dd>
+		</dl>
+		<dl class="dl_t">
+			<dt>二：IE6环境下，表单重复提交的问题。</dt>
+			<dd>排查以及分析：
+				<p>1) 替换成JS的注释代码没添加。导致页面中存在record_baidu_kw函数，但页面却没这个函数的定义。</p>
+				<p>2）移除cnzz,百度的代码或cnzz文件做本地解析，cnzz能顺利请求，表单就不会重复提交。</p>
+			</dd>
+			<dd>	解决办法：添加注释代码，程序重新生成页面，不把record_baidu_kw方法写进提交表单的方法里。</dd>
+		</dl>
+		<dl class="dl_t">
+			<dt>三：IE6环境下，出现警告框提示错误。</dt>
+			<dd>原因：cnzz的http://s94.cnzz.com/stat.php 请求没完成，点击flash广告出现错误提示。</dd>
+		</dl>
+    </div>
+</div>
+<!--/wiki_box-->
 <div class="wiki_box mt">
     <div class="hd">
         <h2 class="mt50">更新记录</h2>
     </div>
     <div class="bd">
         <ol class="txtlist">
+			<li>12-07-18 新增游网页游戏广告分析报告</li>
 			<li>12-07-13 新增游戏广告页注意事项</li>
 			<li>12-06-20 新增新旧版两个选服框</li>
 			<li>12-06-16 新增前端后端模块化说明</li>
