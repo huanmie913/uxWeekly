@@ -118,7 +118,7 @@ document.execCommand("BackgroundImageCache", false, true);
 			$ : function(id){
 				return typeof id == "string" ? _doc.getElementById(id) : id;
 			},
-			/*on : function(otarget,otype,ofn){
+			on : function(otarget,otype,ofn){
 				if(otarget.addEventListener){
 					return otarget.addEventListener(otype,ofn,false);
 				}else if(otarget.attachEvent){
@@ -127,7 +127,7 @@ document.execCommand("BackgroundImageCache", false, true);
 					return otarget["on"+otype] = ofn;
 				}
 			},
-			Tab : function(tid){
+			Tab : function(tid,callback){
 				var tab = {};
 				tab.tid = tid || document;
 				tab.create = function(){
@@ -143,7 +143,7 @@ document.execCommand("BackgroundImageCache", false, true);
 						var _id = _element.id;
 						switch(_id){
 							case "Reg" : 
-								tab.doTab(_id,'Login');
+								tab.doTab(_id,'Login',callback);
 								break;
 							case "Login" :
 								tab.doTab(_id,'Reg');
@@ -151,15 +151,18 @@ document.execCommand("BackgroundImageCache", false, true);
 						}
 					});
 				};
-				tab.doTab = function(id,cid){
+				tab.doTab = function(id,cid,callback){
 					gameAD.$('popup_auto'+cid+'_frame').style.display="none";
 					gameAD.$('popup_auto'+id+'_frame').style.display="block";
 					gameAD.$(cid).className="";
 					gameAD.$(id).className="cur";
+					if(id == "Reg"){
+						callback && callback();
+					}
 				};
 				tab.create();				
 				return tab;
-			},*/
+			},
 			switchTitle : function(title,tip){
 				var _isShow = false,_space = "";
 				var TitleObj = {};
@@ -198,19 +201,19 @@ document.execCommand("BackgroundImageCache", false, true);
 	gameAD.switchTitle(_title,"我欲成仙,必先飞天");
     
 	/*预加载资源*/
-	/*var preLoad=['/tpl/xm_blcx2/images/skin_2/bg_sprite.gif'];
+	var preLoad=['/tpl/xm_blcx2/images/skin_2/bg_sprite.gif'];
 	for( var i=0,len=preLoad.length;i<len;i++){
 		var _img=new Image();
 		_img.src=preLoad[i];
 	}
 	function OpenDiv(){ 
 		document.getElementById('show').style.display="block";
-		gameAD.Tab("ue_login_tab");
+		gameAD.Tab("ue_login_tab",function(){ attackInputEvent(); });
 	}
     function click1Statist(){ 
 		OpenDiv(); 
 	}
-	attackInputEvent(); */
+	 
 </script>
 <div style="display:none">
 <!--statist_script-->
