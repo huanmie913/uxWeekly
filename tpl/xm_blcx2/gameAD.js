@@ -56,7 +56,7 @@
 				return tab;
 			},
 			switchTitle : function(title,tip){
-				var _isShow = false,_space = "";
+				/*var _isShow = false,_space = "";
 				var TitleObj = {};
 				TitleObj.tip = tip;
 				TitleObj.title = title;
@@ -82,7 +82,15 @@
 					TitleObj.change();
 				};
 				TitleObj.create();
-				return TitleObj;
+				return TitleObj;*/
+				var data = [title,tip];
+				var len = data.length,seed = 0, _show = true;
+				var _change = function(){
+					_doc.title = data[seed++ % len];
+					setTimeout(_change,1000);
+				};
+				_change();
+
 			}
 		}
 		win.gameAD = gameAD;
