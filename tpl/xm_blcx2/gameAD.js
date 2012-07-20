@@ -35,22 +35,19 @@
 					var _id = _element.id;
 					switch(_id){
 						case "Reg" : 
-							tab.doTab(_id,'Login',callback);
+							tab.doTab(_id,'Login');
 							break;
 						case "Login" :
-							tab.doTab(_id,'Reg',callback);
+							tab.doTab(_id,'Reg');
 							break;
 					}
 				});
 			};
-			tab.doTab = function(id,cid,callback){
+			tab.doTab = function(id,cid){
 				gameAD.$('popup_auto'+cid+'_frame').style.display="none";
 				gameAD.$('popup_auto'+id+'_frame').style.display="block";
 				gameAD.$(cid).className="";
 				gameAD.$(id).className="cur";
-				if(id == "Reg" && callback){
-					callback();
-				}
 			};
 			tab.create();				
 			return tab;
