@@ -48,8 +48,8 @@
 				gameAD.$('popup_auto'+id+'_frame').style.display="block";
 				gameAD.$(cid).className="";
 				gameAD.$(id).className="cur";
-				if(id == "Reg"){
-					callback && callback();
+				if(id == "Reg" && callback){
+					callback();
 				}
 			};
 			tab.create();				
