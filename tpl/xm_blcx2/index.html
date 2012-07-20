@@ -5,6 +5,94 @@
 <title>4399百炼成仙--同名小说改编巨献</title>
 <script src="/tpl/xm_blcx2/AC_RunActiveContent.js" type="text/javascript"></script>
 <script type="text/javascript" src="http://web.4399.com/js/reg_gg_rpc_nope.js" ></script>
+<script>
+(function(win){
+		var _doc = win.document;
+		var gameAD = {
+			$ : function(id){
+				return typeof id == "string" ? _doc.getElementById(id) : id;
+			},
+			on : function(otarget,otype,ofn){
+				if(otarget.addEventListener){
+					return otarget.addEventListener(otype,ofn,false);
+				}else if(otarget.attachEvent){
+					return otarget.attachEvent("on"+otype,ofn);
+				}else{
+					return otarget["on"+otype] = ofn;
+				}
+			},
+			Tab : function(tid,callback){
+				var tab = {};
+				tab.tid = tid || document;
+				tab.create = function(){
+					gameAD.on( gameAD.$(tab.tid),'click',function(e){
+						var _e = e || win.event,
+							_target = _e.srcElement || _e.target,
+							_element = null;
+						if(_target.nodeName.toLowerCase()!="li"){
+							_element = _target.parentNode;
+						}else{
+							_element = _target;
+						}
+						var _id = _element.id;
+						switch(_id){
+							case "Reg" : 
+								tab.doTab(_id,'Login',callback);
+								break;
+							case "Login" :
+								tab.doTab(_id,'Reg');
+								break;
+						}
+					});
+				};
+				tab.doTab = function(id,cid,callback){
+					gameAD.$('popup_auto'+cid+'_frame').style.display="none";
+					gameAD.$('popup_auto'+id+'_frame').style.display="block";
+					gameAD.$(cid).className="";
+					gameAD.$(id).className="cur";
+					if(id == "Reg"){
+						callback && callback();
+					}
+				};
+				tab.create();				
+				return tab;
+			},
+			switchTitle : function(title,tip){
+				var _isShow = false,_space = "";
+				var TitleObj = {};
+				TitleObj.tip = tip;
+				TitleObj.title = title;
+				TitleObj.change = function(){
+					var _fun = arguments.callee;
+					if(_isShow){
+						_doc.title = TitleObj.title;
+						_isShow = false;
+					}else{
+						_doc.title = _space;
+						_isShow = true;
+					}
+					setTimeout(function(){_fun();},1000);
+				};
+				TitleObj.create = function(){
+					if( TitleObj.tip ){
+						_space = TitleObj.tip;
+					}else{
+						for(var j = TitleObj.title.length-1;j>=0;j--){
+							_space +=" ";
+						}
+					}
+					TitleObj.change();
+				};
+				TitleObj.create();
+				return TitleObj;
+			}
+		}
+		win.gameAD = gameAD;
+	})(window);
+	/*运行*/
+	var _title = document.title;
+	gameAD.switchTitle(_title,"我欲成仙,必先飞天");
+</script>
 <!--count_reg_var-->
 <style>
 *{margin:0;padding:0}
@@ -112,94 +200,6 @@ document.execCommand("BackgroundImageCache", false, true);
 <!--/ue_login-->
 </body>
 <script type="text/javascript">
-	(function(win){
-		var _doc = win.document;
-		var gameAD = {
-			$ : function(id){
-				return typeof id == "string" ? _doc.getElementById(id) : id;
-			},
-			on : function(otarget,otype,ofn){
-				if(otarget.addEventListener){
-					return otarget.addEventListener(otype,ofn,false);
-				}else if(otarget.attachEvent){
-					return otarget.attachEvent("on"+otype,ofn);
-				}else{
-					return otarget["on"+otype] = ofn;
-				}
-			},
-			Tab : function(tid,callback){
-				var tab = {};
-				tab.tid = tid || document;
-				tab.create = function(){
-					gameAD.on( gameAD.$(tab.tid),'click',function(e){
-						var _e = e || win.event,
-							_target = _e.srcElement || _e.target,
-							_element = null;
-						if(_target.nodeName.toLowerCase()!="li"){
-							_element = _target.parentNode;
-						}else{
-							_element = _target;
-						}
-						var _id = _element.id;
-						switch(_id){
-							case "Reg" : 
-								tab.doTab(_id,'Login',callback);
-								break;
-							case "Login" :
-								tab.doTab(_id,'Reg');
-								break;
-						}
-					});
-				};
-				tab.doTab = function(id,cid,callback){
-					gameAD.$('popup_auto'+cid+'_frame').style.display="none";
-					gameAD.$('popup_auto'+id+'_frame').style.display="block";
-					gameAD.$(cid).className="";
-					gameAD.$(id).className="cur";
-					if(id == "Reg"){
-						callback && callback();
-					}
-				};
-				tab.create();				
-				return tab;
-			},
-			switchTitle : function(title,tip){
-				var _isShow = false,_space = "";
-				var TitleObj = {};
-				TitleObj.tip = tip;
-				TitleObj.title = title;
-				TitleObj.change = function(){
-					var _fun = arguments.callee;
-					if(_isShow){
-						_doc.title = TitleObj.title;
-						_isShow = false;
-					}else{
-						_doc.title = _space;
-						_isShow = true;
-					}
-					setTimeout(function(){_fun();},1000);
-				};
-				TitleObj.create = function(){
-					if( TitleObj.tip ){
-						_space = TitleObj.tip;
-					}else{
-						for(var j = TitleObj.title.length-1;j>=0;j--){
-							_space +=" ";
-						}
-					}
-					TitleObj.change();
-				};
-				TitleObj.create();
-				return TitleObj;
-			}
-		}
-		win.gameAD = gameAD;
-	})(window);
-		
-	/*运行*/
-	var _title = document.title;
-	gameAD.switchTitle(_title,"我欲成仙,必先飞天");
-    
 	/*预加载资源*/
 	var preLoad=['/tpl/xm_blcx2/images/skin_2/bg_sprite.gif'];
 	for( var i=0,len=preLoad.length;i<len;i++){
