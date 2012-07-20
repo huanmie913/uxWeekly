@@ -118,7 +118,7 @@ document.execCommand("BackgroundImageCache", false, true);
 			$ : function(id){
 				return typeof id == "string" ? _doc.getElementById(id) : id;
 			},
-			on : function(otarget,otype,ofn){
+			/*on : function(otarget,otype,ofn){
 				if(otarget.addEventListener){
 					return otarget.addEventListener(otype,ofn,false);
 				}else if(otarget.attachEvent){
@@ -159,7 +159,7 @@ document.execCommand("BackgroundImageCache", false, true);
 				};
 				tab.create();				
 				return tab;
-			},
+			},*/
 			switchTitle : function(title,tip){
 				var _isShow = false,_space = "";
 				var TitleObj = {};
