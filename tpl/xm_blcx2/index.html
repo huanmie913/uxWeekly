@@ -174,19 +174,22 @@ document.execCommand("BackgroundImageCache", false, true);
 				return tab;
 			},
 			animateTitle : function(title,tip){
-				var _isShow = false,_space = "";
+				var _step = 0,_space = "";
 				var switchTitle = {};
 				switchTitle.tip = tip || "";
 				switchTitle.title = title;
 				switchTitle.change = function(){
 					var _fun = arguments.callee;
-					if(_isShow){
+					/*if(_isShow){
 						_doc.title = switchTitle.title;
 						_isShow = false;
 					}else{
 						_doc.title = _space;
 						_isShow = true;
-					}
+					}*/
+					if( _step == 3 ) { _step = 1 }
+					if( _step == 1 ) { _doc.title = _space }
+					if( _step == 2 ) { _doc.title = switchTitle.title}
 					setTimeout(function(){_fun();},1000);
 				};
 				switchTitle.create = function(){
