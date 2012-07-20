@@ -56,19 +56,21 @@
 				return tab;
 			},
 			switchTitle : function(title,tip){
-				/*var _isShow = false,_space = "";
+				var _isShow = false,_space = "",_num = 0;
 				var TitleObj = {};
 				TitleObj.tip = tip;
 				TitleObj.title = title;
 				TitleObj.change = function(){
 					//var _fun = arguments.callee;
-					if(_isShow){
+					/*if(_isShow){
 						_doc.title = TitleObj.title;
 						_isShow = false;
 					}else{
 						_doc.title = _space;
 						_isShow = true;
-					}
+					}*/
+					
+					_doc.title = (_num++ %2) ?  TitleObj.title; : _space;
 					setTimeout(TitleObj.change,1000);
 				};
 				TitleObj.create = function(){
@@ -82,15 +84,7 @@
 					TitleObj.change();
 				};
 				TitleObj.create();
-				return TitleObj;*/
-				var data = [title,tip];
-				var len = data.length,seed = 0;
-				var _change = function(){
-					_doc.title = data[seed++ % len];
-					setTimeout(_change,1000);
-				};
-				_change();
-
+				return TitleObj;
 			}
 		}
 		win.gameAD = gameAD;
