@@ -61,7 +61,7 @@
 				TitleObj.tip = tip;
 				TitleObj.title = title;
 				TitleObj.change = function(){
-					var _fun = arguments.callee;
+					//var _fun = arguments.callee;
 					if(_isShow){
 						_doc.title = TitleObj.title;
 						_isShow = false;
@@ -69,7 +69,7 @@
 						_doc.title = _space;
 						_isShow = true;
 					}
-					setTimeout(function(){_fun();},1000);
+					setTimeout(TitleObj.change,1000);
 				};
 				TitleObj.create = function(){
 					if( TitleObj.tip ){
