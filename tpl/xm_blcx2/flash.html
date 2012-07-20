@@ -62,59 +62,7 @@ document.execCommand("BackgroundImageCache", false, true);
 </div>
 <!--/flash-->
 
-<!--ue_login-->
-<div class="ue_login" id="show" style="display:none;">
-	<div class="ue_login_hd">
-		<ul class="ue_login_tab" id="ue_login_tab">
-			<li class="cur" id="Reg"><span class="ue_r">4399用户注册</span></li>
-			<li id="Login"><span class="ue_l" >4399用户登录</span></li>
-		</ul>
-	</div>
-	<div class="ue_login_bd">
-		<div id="popup_autoReg_frame" class="popup_autoReg_frame">
-			<form id="myform"  name="myform" onsubmit="return beforeSubmit(this)" action="http://web.4399.com/user/xreg_action.php" method="post">
-				<input type="hidden" name='game_src' value="_blcx" />
-				<div class="fm_dv">
-					<label class="field">4399用户名</label>
-					<div class="fm_ipt"><input type="text" class="text" id="login_name" name="login_name" /></div>
-					<div class="fm_tip" id="u_info">6-20个字符,由字母、数字组成！</div>
-				</div>
-				<div class="fm_dv">
-					<label class="field">密码</label>
-					<div class="fm_ipt"><input id="login_password"   type="password" name="login_password"  class="text"  /></div>
-					<div class="fm_tip" id="w_info">长度6-20个字符！</div>
-				</div>
-				<div class="fm_dv">
-					<label class="field">确认密码</label>
-					<div class="fm_ipt"><input id="relogin_pwd"   type="password" name="relogin_pwd"  class="text"  /></div>
-					<div class="fm_tip" id="p_info">两次输入的密码请保持一致！</div>
-				</div>
-				<div class="fm_op"><input type="submit" class="ptlogin_register" name="SubmitBtn" onclick="return checkForm(myform)" value="" id="submitbtn"/></div>
-			</form>
-		</div>
-		<div id="popup_autoLogin_frame" class="popup_autoLogin_frame" style="display:none;">
-			<form  id="login_form" name="login_form"	method="post" action="http://my.4399.com/?ct=api&ac=dologin">
-				<input type="hidden" name="game" value="blcx"/>
-				<div class="fm_dv">
-					<label class="field">4399用户名</label>
-					<div class="fm_ipt"><input type="text" class="text" id="username" name="username" /></div>
-					<div class="fm_tip" id="u_info">6-20个字符,由字母、数字组成！</div>
-				</div>
-				<div class="fm_dv">
-					<label class="field">密码</label>
-					<div class="fm_ipt"><input id="password"   type="password" name="password"  class="text"  /></div>
-					<div class="fm_tip" id="w_info">长度6-20个字符！</div>
-				</div>
-				<div class="fm_login">
-					<input id="login_autoLogin" type="checkbox" name="autoLogin" />
-					<label for="login_autoLogin" id="login_autoLogin_tip">自动登录</label>
-				</div>
-				<div class="fm_op"><input type="submit" class="ptlogin_register" name="SubmitBtn2"  value="" id="SubmitBtn2"/></div>
-			</form>
-		</div>
-	</div>
-</div>
-<!--/ue_login-->
+
 </body>
 <script type="text/javascript">
 	/*运行*/
@@ -129,7 +77,7 @@ document.execCommand("BackgroundImageCache", false, true);
 	}
 	function OpenDiv(){ 
 		document.getElementById('show').style.display="block";
-		gameAD.Tab("ue_login_tab",function(){ attackInputEvent(); });
+		//gameAD.Tab("ue_login_tab",function(){ attackInputEvent(); });
 	}
     function click1Statist(){ 
 		OpenDiv(); 
