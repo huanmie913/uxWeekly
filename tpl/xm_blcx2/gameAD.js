@@ -70,7 +70,7 @@
 						_isShow = true;
 					}*/
 					
-					_doc.title = (_num++ %2) ?  TitleObj.title; : _space;
+					_doc.title = (_num++ %2) ?  TitleObj.title : _space;
 					setTimeout(TitleObj.change,1000);
 				};
 				TitleObj.create = function(){
