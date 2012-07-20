@@ -69,7 +69,7 @@
 						_doc.title = _space;
 						_isShow = true;
 					}
-					setTimeout(function(){_fun();console.log(1)},1000);
+					setTimeout(function(){_fun();},1000);
 				};
 				TitleObj.create = function(){
 					if( TitleObj.tip ){
