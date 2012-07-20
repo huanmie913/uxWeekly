@@ -59,7 +59,7 @@
 			var _num = false,_space = "";
 			var TitleObj = {};
 			TitleObj.tip = tip;
-			TiteObj.title = title;
+			TitleObj.title = title;
 			TitleObj.change = function(){
 				var _fun = arguments.callee;
 				_doc.title = _num++%2 ? TitleObj.title : _space;
