@@ -3,8 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>4399百炼成仙--同名小说改编巨献</title>
-<script src="/tpl/xm_blcx2/AC_RunActiveContent.js" type="text/javascript"></script>
-<!--<script src="/tpl/xm_blcx2/swfobject.js" type="text/javascript"></script>-->
+<!--<script src="/tpl/xm_blcx2/AC_RunActiveContent.js" type="text/javascript"></script>-->
+<script src="/tpl/xm_blcx2/swfobject.js" type="text/javascript"></script>
 <script src="/tpl/xm_blcx2/gameAD.js" type="text/javascript"></script>
 <!--<script type="text/javascript" src="http://web.4399.com/js/reg_gg_rpc_nope.js" ></script>-->
 <!--count_reg_var-->
@@ -41,7 +41,7 @@ body { line-height:18px; font-size:13px; background:#000;}
 <!--quit_pop_script-->
 <!--flash-->
 <div class="flash" id="divFlash" >
-	<script type="text/javascript">
+	<!--<script type="text/javascript">
 		AC_FL_RunContent( 'codebase','http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0','width','1000','height','600','src','/tpl/xm_blcx2/main','quality','high','pluginspage','http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash','wmode','transparent','movie','/tpl/xm_blcx2/main' ); //end AC code
 	</script>
 	<noscript>
@@ -52,9 +52,30 @@ body { line-height:18px; font-size:13px; background:#000;}
 			<param name="wmode" value="transparent" />
 			<embed src="/tpl/xm_blcx2/main.swf" width="1000" height="600" quality="high" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" wmode="transparent"></embed>
 		</object>
-	</noscript>
+	</noscript>-->
 </div>
 <!--/flash-->
+<script>
+	var flashvars = { 
+			u: Id('JF_url').value
+		}; 
+		var params = { 
+			quality : "high" ,
+			wmode : "transparent",
+			allowscriptaccess : "always",
+			allowfullscreen : "false",
+			bgcolor : "#ffffff"
+		}; 
+		var attributes = { 
+			id: "JF_swf", 
+			name: "JF_swf",
+			"class" : "act_flash"
+		};
+	
+		swfobject.embedSWF('/tpl/xm_blcx2/main.swf', "divFlash", "800", "330", "10.0.0", 
+			"expressInstall.swf", flashvars, params, attributes); 
+	};
+</script>
 </body>
 <script type="text/javascript">
 	/*运行*/
