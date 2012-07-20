@@ -38,7 +38,7 @@
 							tab.doTab(_id,'Login',callback);
 							break;
 						case "Login" :
-							tab.doTab(_id,'Reg');
+							tab.doTab(_id,'Reg','');
 							break;
 					}
 				});
