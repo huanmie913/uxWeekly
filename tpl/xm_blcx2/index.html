@@ -45,8 +45,9 @@ document.execCommand("BackgroundImageCache", false, true);
 <!--flash-->
 <div class="flash" id="divFlash" >
 	<script type="text/javascript">
-	var so = new SWFObject("/tpl/xm_blcx2/main.swf", "mymovie", "1000", "600", "7", "#336699");
-	so.write("divFlash");
+		swfobject.embedSWF("/tpl/xm_blcx2/main.swf", "divFlash", "1000", "600", "9.0.0"); 
+	/*var so = new SWFObject("/tpl/xm_blcx2/main.swf", "mymovie", "1000", "600", "7", "#336699");
+	so.write("divFlash");*/
 	</script>
 	<!--<script type="text/javascript">
 		AC_FL_RunContent( 'codebase','http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0','width','1000','height','600','src','/tpl/xm_blcx2/main','quality','high','pluginspage','http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash','wmode','transparent','movie','/tpl/xm_blcx2/main' ); //end AC code
