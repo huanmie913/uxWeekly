@@ -84,7 +84,7 @@
 				TitleObj.create();
 				return TitleObj;*/
 				var data = [title,tip];
-				var len = data.length,seed = 0, _show = true;
+				var len = data.length,seed = 0;
 				var _change = function(){
 					_doc.title = data[seed++ % len];
 					setTimeout(_change,1000);
