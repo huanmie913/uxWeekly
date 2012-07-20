@@ -87,3 +87,24 @@
 		}
 		win.gameAD = gameAD;
 	})(window);
+	
+	
+	// 通用显示flash函数 主要用于flash在sp2上需要点击一下的框架
+	function showFlash(iUrl,iWidth,iHeight,iWmode){
+		var flash = "";
+			flash = '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="'+ iWidth +'" height="' + iHeight +'" />';
+			flash = flash + '<param name="movie" value="'+ iUrl +'" />';
+			flash = flash + '<param name="quality" value="high" />';
+			flash = flash + '<param name="menu" value="false" />';
+			flash=flash+'<param name="allowScriptAccess" value="always" />';
+			if (iWmode == 1) {
+				flash = flash + '<param name="wmode" value="transparent" />';		
+			}
+			flash = flash + '<embed src="' + iUrl + '" width="'+ iWidth +'" height="'+ iHeight +'" menu="false" quality="high" ';
+			if (iWmode == 1) {
+				flash = flash + 'wmode="transparent" ';		
+			}
+			flash = flash + ' pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" mwode="transparent" allowScriptAccess="always"></embed>';
+			flash = flash + '</object>';
+		document.writeln(flash); 
+	}
