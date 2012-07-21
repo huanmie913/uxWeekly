@@ -139,12 +139,16 @@ attackInputEvent();
   function OpenDiv(a,b,c){
       document.getElementById('show').style.display="block";
   }
+
+  /*预加载资源*/
+  var preLoad=['/tpl/xm_blcx4/an.gif'];
+  for( var i=0,len=preLoad.length;i<len;i++){
+    var _img=new Image();
+    _img.src=preLoad[i];
+  }
 </script>
 <div style="display:none">
 <!--statist_script-->
 <!--cnzz_statist-->
-<script>
-  function loadStatist(){}
-</script>
 </div>
 </html>
