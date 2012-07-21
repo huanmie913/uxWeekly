@@ -22,8 +22,9 @@ a:hover{ color: #FF0;}
 .fm_dv .fm_ipt{float:left;}
 .fm_dv .fm_tip{ float:left;display:inline; margin:3px 0 0 10px;font-size:12px;white-space:nowrap;color:#67e026;}
 .fm_op,.fm_login{ padding-left:120px; margin-top:10px;}
-.fm_op .ptlogin_register{width:172px; height:51px;border:none;cursor:pointer;}
-.fm_login label{ font-family:"thomas";}
+.fm_op .ptlogin_register{ width:172px; height:51px;border:none;cursor:pointer;vertical-align:middle;}
+.fm_op .ouser{ margin-left:10px;font-size:16px;text-decoration:none;color:#fff;}
+.fm_op .ouser:hover{ color:#ff9900}
 
 </style>
 <!--count_reg_var-->
@@ -36,37 +37,37 @@ a:hover{ color: #FF0;}
     <!--flash-->
     <div class="flash">
         <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="100%" height="600" id="main" align="middle">
-          				<param name="movie" value="/tpl/xm_blcx4/main.swf" />
-          				<param name="quality" value="high" />
-          				<param name="bgcolor" value="#136685" />
-          				<param name="play" value="true" />
-          				<param name="loop" value="true" />
-          				<param name="wmode" value="transparent" />
-          				<param name="scale" value="showall" />
-          				<param name="menu" value="true" />
-          				<param name="devicefont" value="false" />
-          				<param name="salign" value="" />
-          				<param name="allowScriptAccess" value="sameDomain" />
-          				<!--[if !IE]>-->
-          				<object type="application/x-shockwave-flash" data="/tpl/xm_blcx4/main.swf" width="100%" height="600">
-          					<param name="movie" value="/tpl/xm_blcx4/main.swf" />
-          					<param name="quality" value="high" />
-          					<param name="bgcolor" value="#136685" />
-          					<param name="play" value="true" />
-          					<param name="loop" value="true" />
-          					<param name="wmode" value="transparent" />
-          					<param name="scale" value="showall" />
-          					<param name="menu" value="true" />
-          					<param name="devicefont" value="false" />
-          					<param name="salign" value="" />
-          					<param name="allowScriptAccess" value="sameDomain" />
-          				<!--<![endif]-->
-          					<a href="http://www.adobe.com/go/getflash">
-          						<img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="获得 Adobe Flash Player" />
-          					</a>
-          				<!--[if !IE]>-->
-          	</object>
-          	<!--<![endif]-->
+                  <param name="movie" value="/tpl/xm_blcx4/main.swf" />
+                  <param name="quality" value="high" />
+                  <param name="bgcolor" value="#136685" />
+                  <param name="play" value="true" />
+                  <param name="loop" value="true" />
+                  <param name="wmode" value="transparent" />
+                  <param name="scale" value="showall" />
+                  <param name="menu" value="true" />
+                  <param name="devicefont" value="false" />
+                  <param name="salign" value="" />
+                  <param name="allowScriptAccess" value="sameDomain" />
+                  <!--[if !IE]>-->
+                  <object type="application/x-shockwave-flash" data="/tpl/xm_blcx4/main.swf" width="100%" height="600">
+                    <param name="movie" value="/tpl/xm_blcx4/main.swf" />
+                    <param name="quality" value="high" />
+                    <param name="bgcolor" value="#136685" />
+                    <param name="play" value="true" />
+                    <param name="loop" value="true" />
+                    <param name="wmode" value="transparent" />
+                    <param name="scale" value="showall" />
+                    <param name="menu" value="true" />
+                    <param name="devicefont" value="false" />
+                    <param name="salign" value="" />
+                    <param name="allowScriptAccess" value="sameDomain" />
+                  <!--<![endif]-->
+                    <a href="http://www.adobe.com/go/getflash">
+                      <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="获得 Adobe Flash Player" />
+                    </a>
+                  <!--[if !IE]>-->
+            </object>
+            <!--<![endif]-->
           </object>
       </div>
       <!--/flash-->
@@ -89,7 +90,7 @@ a:hover{ color: #FF0;}
                 <div class="fm_ipt"><input id="relogin_pwd"   type="password" name="relogin_pwd"  class="text"  /></div>
                 <div class="fm_tip" id="p_info">两次输入的密码请保持一致！</div>
              </div>
-             <div class="fm_op"><input type="image" src="/tpl/xm_blcx4/an.gif" width="172" height="51" name="SubmitBtn" onclick="return checkForm(myform)" value="" id="submitbtn"/></div>
+             <div class="fm_op"><input type="image" src="/tpl/xm_blcx4/an.gif" class="ptlogin_register" width="172" height="51" name="SubmitBtn" onclick="return checkForm(myform)" value="" id="submitbtn"/><a href="#" target="_blank" class="ouser">老用户登录</a></div>
         </form>
     </div>
     <!--/regbox-->
@@ -136,7 +137,7 @@ attackInputEvent();
 
 
   function OpenDiv(a,b,c){
-  		document.getElementById('show').style.display="block";
+      document.getElementById('show').style.display="block";
   }
 </script>
 <div style="display:none">
