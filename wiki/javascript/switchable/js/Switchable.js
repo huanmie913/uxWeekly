@@ -124,7 +124,6 @@
 			}
 			for( var m=0,len = that.GLOBAL.bId.length;m<len;m++){
 				that.GLOBAL.bId[m].style.display = (m == i) ? "block" : "none";
-				console.log(i)
 			}
 			if( that.option.tabType == 1){
 				that.checkLoad(that.GLOBAL.tId[i],i);
