@@ -3,7 +3,6 @@
  * depend:js
  * author:QF
  * time: 12-05-18
- * update : 修复回调函数
 */
 
 (function(win,undefined){
