@@ -1,5 +1,5 @@
 /*
- * plugIn:Switchable(Tab切换+内容延迟加载)
+ * plugIn:Switchable
  * depend:js
  * author:QF
  * time: 12-05-18
