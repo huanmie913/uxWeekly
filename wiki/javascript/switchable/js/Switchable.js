@@ -91,7 +91,16 @@
 			_div.className = "sw_container";
 			_div.innerHTML = _textarea.value;
 			_tabContent.replaceChild(_div,_textarea);
-			//QF.IsFunction( that.option.callback ) && (that.option.callback)(n);
+		},
+		clearComment : function(nodeList){
+			var _nodeListChild = nodeList.children;
+			for( var i=0;i<_nodeListChild.length;i++){
+				if( _nodeListChild[i].nodeType!=1){
+					nodeList.removeChild(_nodeListChild[i]);
+				}
+			}
+			_nodeListChild = nodeList.children;
+			return _nodeListChild;
 		},
 		getIndex:function(node,obj){
 			var that=this;
@@ -115,6 +124,7 @@
 			}
 			for( var m=0,len = that.GLOBAL.bId.length;m<len;m++){
 				that.GLOBAL.bId[m].style.display = (m == i) ? "block" : "none";
+				console.log(i)
 			}
 			if( that.option.tabType == 1){
 				that.checkLoad(that.GLOBAL.tId[i],i);
@@ -143,15 +153,13 @@
             	}
             	_index = that.getIndex(_element,that.GLOBAL.tId);
             	that.trigger(_index);
-				
 				QF.preventDefault(_ev);
             });
-
 		},
 		init:function(){
 			var that = this;
-			that.GLOBAL.tId = QF.$(that.option.tabid).children;
-            that.GLOBAL.bId = QF.$(that.option.bid).children;
+			that.GLOBAL.tId = that.clearComment( QF.$(that.option.tabid) );			
+			that.GLOBAL.bId = that.clearComment( QF.$(that.option.bid) );
             that.doEvent();
 			return that;
 		}	
