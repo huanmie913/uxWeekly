@@ -1,21 +1,21 @@
 @charset "utf-8";
 /* CSS Document */
 
- /*���߾಼��*/
+/*负边距布局*/
 .col_2n .ly_main, .col_3n .ly_main{float:left;width:100%}
 .col_2n .ly_body{ margin-left:250px;}
 .col_2n .ly_lside{ float:left;width:240px;margin-left:-100%;}
 
-/*��ͨ����ʽ����*/
+ /*普通两栏式布局*/
 .col_2 .ly_lside{float:left;width:750px;}
 .col_2 .ly_rside{float:right;width:240px;}
 
-/*����ʽ���߾಼��*/
+/*三栏式负边距布局*/
 .col_3n .ly_body{ margin:0 210px 0 250px;}
 .col_3n .ly_lside{ float:left;margin-left:-100%;width:240px;}
 .col_3n .ly_rside{ float:left;width:200px;margin-left:-200px;}
 
-/*��ͨ����ʽ����*/
+/*普通三栏式布局*/
 .col_3 .ly_main{ float:left; width:540px; margin:0 10px;display: inline; }
 .col_3 .ly_lside{ float:left;width:240px; }
 .col_3 .ly_rside{ float:left;width:200px; }
