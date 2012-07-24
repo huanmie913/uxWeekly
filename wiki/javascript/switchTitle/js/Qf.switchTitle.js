@@ -26,7 +26,7 @@
 				setTimeout(function(){_fun();},1000);
 			};
 			TitleObj.create = function(){
-				if( TitleObj.tip == undefinded ){
+				if( TitleObj.tip == undefined ){
 					for(var j = TitleObj.title.length-1;j>=0;j--){
 						_space +=" ";
 					}
