@@ -13,3 +13,8 @@ Author:		情封
 .box_article dt{font-size:16px;}
 .box_article dd{ padding-left:2em;}
 .box_article a{color:#333;}
+
+.article{ line-height:2;}
+.article dt{font-weight:700}
+.article dd{}
+.article p{ text-indent:2em;}
