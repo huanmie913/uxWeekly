@@ -6,7 +6,7 @@ Date:		2012/08/01
 Author:		情封
 */
 
-
+body{background:#E0E0E0}
 .article_wrap{ width:980px;margin:60px auto 0;}
 
 .box_article{ line-height:2;}
@@ -18,3 +18,5 @@ Author:		情封
 .article dt{font-weight:700}
 .article dd{}
 .article p{ text-indent:2em;}
+
+.article_box{ background:#fff;border-radius:5px;box-shadow:0 2px 5px rgba(0,0,0,0.15);broder-bottom:2px solid #E2E2E9}
