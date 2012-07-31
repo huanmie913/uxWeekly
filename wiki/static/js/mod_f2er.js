@@ -114,7 +114,7 @@ mod_f2er={
 				return;	
 			}
 			 var _tpl='<div class="wrapper"><div class="site"><a href="http://www.ux265.net" title="web前端导航站">web前端导航站</a>';
-			     _tpl+=( index == true ) ? '':'<a href="/wiki/" title="返回首页">返回首页</a>';
+			     _tpl+=( index == true ) ? '':'<a href="/'+index+'/" title="返回首页">返回首页</a>';
 				 _tpl+='</div><div class="title">'+modName+'</div></div>';
 
             this._$(id).innerHTML=_tpl;
