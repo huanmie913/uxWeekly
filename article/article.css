@@ -1,0 +1,15 @@
+﻿@charset "utf-8";
+/* CSS Document 
+Use for:	www.f2er.net
+Version:	1.0
+Date:		2012/08/01
+Author:		情封
+*/
+
+
+.article_wrap{ width:980px;margin:0 auto;}
+
+.box_article{ line-height:2;}
+.box_article dt{font-size:16px;}
+.box_article dd{ padding-left:2em;}
+.box_article a{color:#333;}
