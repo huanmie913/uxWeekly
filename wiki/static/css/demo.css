@@ -40,11 +40,8 @@ a:hover{text-decoration:underline;}
 
 /*ie6 bug*/
 .wrapper{ width:1000px; margin:0 auto; text-align:left;}
-<<<<<<< HEAD
 .toolbar { background:rgba(0,0,0,0.5);height:50px; font-size:14px;line-height:50px; position:fixed; width:100%; top:0; left:0; overflow:hidden; z-index:100}
-=======
-.toolbar { /*background:url(../images/wiki_sprite.png);*/ background:rgba(0,0,0,0.5); height:50px; font-size:14px;line-height:50px; position:fixed; width:100%; top:0; left:0; overflow:hidden; z-index:100}
->>>>>>> 70360991eff9ae01299778dd6b2444669a6f873d
+
 .toolbar .site{ float:right;}
 .toolbar a{ color:#fff107; margin:0 10px; text-decoration:none;}
 .toolbar a:hover{ color:#fff}
