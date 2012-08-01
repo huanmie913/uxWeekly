@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5, h6 { font-size: 100%; }
 address,cite,dfn,em,var{font-style:normal;}
 
 /* global */
-body{ background:#fff; }
+body{ background:#e0e0e0; }
 .wrapper{ margin:0 auto;text-align:left;width:1000px; }
 td{ font-size:12px; line-height:160%;}
 .fl{ float:left }
@@ -37,9 +37,10 @@ a:hover{text-decoration:underline;}
 
 /* android*/
 .ooxx{ width:1000px; font-size:14px; line-height:2}
+
 /*ie6 bug*/
 .wrapper{ width:1000px; margin:0 auto; text-align:left;}
-.toolbar { background:url(../images/wiki_sprite.png); height:50px; font-size:14px;line-height:50px; position:fixed; width:100%; top:0; left:0; overflow:hidden; z-index:100}
+.toolbar { background:rgba(0,0,0,0.5);height:50px; font-size:14px;line-height:50px; position:fixed; width:100%; top:0; left:0; overflow:hidden; z-index:100}
 .toolbar .site{ float:right;}
 .toolbar a{ color:#fff107; margin:0 10px; text-decoration:none;}
 .toolbar a:hover{ color:#fff}
@@ -50,6 +51,8 @@ a:hover{text-decoration:underline;}
 .bottomBar a:hover{ color:#70A6DD}
 
 .demo_server{ position:relative;height:600px;}
+
+.wiki_box{ width:980px; margin:60px auto;background:#fff;border-radius:5px;box-shadow:0 2px 5px rgba(0,0,0,0.15);padding:10px;}
 
 
 

@@ -54,7 +54,8 @@ body{ background:url(../images/body.png) repeat;}
 
 /*sj_top*/
 .sj_top{ background:-webkit-gradient(linear, 0 0, 0 bottom, from(#fff), to(rgba(243, 243, 243, 1))); 
-		 height:63px;width:100%;border-bottom:1px solid #cecece;-webkit-box-shadow:-1px 0 -1px #fff inset; 
+		 height:63px;width:100%;border-bottom:1px solid #cecece;-webkit-box-shadow:-1px 0 -1px #fff inset;
+		 position: fixed;top:0;left:0; 
 		}
 .sj_top h1{ float:left; }
 .nav{ float:left; margin:12px 0 0 85px; }
@@ -63,7 +64,7 @@ body{ background:url(../images/body.png) repeat;}
 				-webkit-border-radius:20px;color:#fff;text-decoration: none;width:125px;height:38px;
 			}
 
-.sj_bannner{ background:url(../images/sj_bannner.png) no-repeat center top;height:270px;}
+.sj_bannner{ background:url(../images/sj_bannner.png) no-repeat center top;height:270px;margin-top:63px;}
 
 
 
