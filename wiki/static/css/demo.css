@@ -53,7 +53,9 @@ a:hover{text-decoration:underline;}
 
 .demo_server{ position:relative;height:600px;}
 
-.wiki_box{ width:980px; margin:60px auto;background:#fff;border-radius:5px;box-shadow:0 2px 5px rgba(0,0,0,0.15);padding:10px;}
+/*文章或示例页通用样式*/
+.wiki_box{ width:980px; margin:60px auto;background:#fff;border-radius:5px;box-shadow:0 2px 5px rgba(0,0,0,0.15);padding:10px; line-height:2;}
+.wiki_box p{ text-indent:2em;}
 
 
 
