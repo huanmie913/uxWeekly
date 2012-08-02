@@ -150,12 +150,12 @@ body{ background:url(../images/body.png) repeat;}
 .mask{ position:absolute;left:0;top:0;background:#000;opacity:0.5;width:100%;height:100%;z-index:13}
 
 /*sj_pop*/
-.sj_pop{z-index:15; position:fixed;width:854px;height:564px;left:50%;top:50%;margin:-285px 0 0 -430px;background:#fff;border:1px solid #ececec;-webkit-border-radius:5px;padding:3px;}
-.sj_pop .sj_ipop{ background:#f4f4f4;-webkit-border-radius:5px;height:490px;padding:30px 35px 45px; }
+.sj_pop{z-index:15; position:fixed;width:856px;height:564px;left:50%;top:50%;margin:-285px 0 0 -430px;background:#fff;border:1px solid #ececec;-webkit-border-radius:5px;padding:2px;}
+.sj_pop .sj_ipop{ background:#f4f4f4;-webkit-border-radius:5px;height:496px;padding:30px 35px 45px; }
 .sj_pop .hd h2{color:#333;font-size:20px;}
 .sj_pop .hd .info{color:#999; margin-top:5px;}
 .sj_pop .hd span{ margin-right:20px;}
-.sj_pop .bd{ background:#fff;border:1px solid #dedede;-webkit-border-radius:5px;margin-top:15px;padding:20px;height:400px;overflow-y:auto;overflow-x:hidden;}
+.sj_pop .bd{ background:#fff;border:1px solid #dedede;-webkit-border-radius:5px;margin-top:15px;padding:20px;height:406px;overflow-y:auto;overflow-x:hidden;}
 .sj_pop .bd h3{ color:#333;font-size:16px;padding-bottom:10px;border-bottom:1px solid #dedede}
 .sj_pop .content{ padding:10px 0;font-size:14px;line-height:2;}
 .sj_pop .close{ background:url(../images/close.png) no-repeat;width:20px;height:23px;display:block;position:absolute;right:20px;top:20px;cursor:pointer;}
