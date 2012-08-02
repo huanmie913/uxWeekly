@@ -59,7 +59,7 @@ body{ background:url(../images/body.png) repeat;}
 			}
 .scroll_box .scroll_bar{ position:absolute;left:0;top:0;height:6px;border:1px solid #2b88e9;
 				-webkit-border-radius:3px;overflow:hidden;
-				background:-webkit-linear-gradient(left, #64d1ff, #2e8ff0 100%);
+				background:-webkit-linear-gradient(top, #64d1ff, #2e8ff0 100%);
 				-webkit-box-shadow:1px 1px 1px #8fdeff inset;
 			}
 			
