@@ -157,6 +157,6 @@ body{ background:url(../images/body.png) repeat;}
 .sj_pop .bd{ background:#fff;border:1px solid #dedede;-webkit-border-radius:5px;margin-top:15px;padding:20px;height:400px;overflow-y:auto;overflow-x:hidden;}
 .sj_pop .bd h3{ color:#333;font-size:16px;padding-bottom:10px;border-bottom:1px solid #dedede}
 .sj_pop .content{ padding:10px 0;font-size:14px;line-height:2;}
-.sj_pop .close{ background:url(../images/close.png) no-repeat;width:20px;height:23px;display:block;position:absolute;right:20px;top:20px;}
+.sj_pop .close{ background:url(../images/close.png) no-repeat;width:20px;height:23px;display:block;position:absolute;right:20px;top:20px;cursor:pointer;}
 
 
