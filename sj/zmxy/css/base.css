@@ -147,7 +147,7 @@ body{ background:url(../images/body.png) repeat;}
 .clink a{ padding:0 10px;color:#787878;}
 .cr span{ margin:0 10px;}
 
-.mask{ position:absolute;left:0;top:0;background:#000;opacity:0.5;width:100%;height:100%}
+.mask{ position:absolute;left:0;top:0;background:#000;opacity:0.5;width:100%;height:100%;z-index:13}
 /*sj_pop*/
 .sj_pop{ position:fixed;width:854px;height:564px;left:50%;top:50%;margin:-285px 0 0 -430px;background:#fff;border:1px solid #ececec;-webkit-border-radius:5px;padding:3px;}
 .sj_pop .sj_ipop{ background:#f4f4f4;-webkit-border-radius:5px;height:490px;padding:30px 35px 45px; }
