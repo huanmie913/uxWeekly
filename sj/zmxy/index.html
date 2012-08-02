@@ -4,7 +4,7 @@
         <meta charset="utf-8"/>
         <title>造梦西游</title>
         <link href="css/base.css?t=120802" rel="stylesheet" />
-		<meta name="viewport" content="width=device-width; minimum-scale=1.0; maximum-scale=1.0;  initial-scale=1.0; user-scalable=false" />
+		<!--<meta name="viewport" content="width=device-width; minimum-scale=1.0; maximum-scale=1.0;  initial-scale=1.0; user-scalable=false" />-->
     </head>
     <body>
        <!--sj_top-->
@@ -13,7 +13,7 @@
                 <header>
                     <h1><a href="#"><img src="images/logo.png" width="114" height="57" alt="造梦西游"/></a></h1>
                     <nav class="nav">
-                        <a href="#">BOSS档案</a>
+                        <a href="#" >BOSS档案</a>
                         <a href="#">宠物大全</a>
                         <a href="#">精彩视频</a>
                         <a href="#">装备大全</a>
@@ -43,13 +43,13 @@
                         <div class="m_box">
                             <ul class="m_imglist m_sil clearfix">
                                 <li>
-                                    <a href="#">
-                                        <img src="images/tmp/12696.jpg" width="126" height="96">
+                                    <a href="#" data-m="pop" >
+                                        <img src="images/tmp/12696.jpg" width="126" height="96" >
                                         花豹圣者高有钱花豹圣者高有钱花豹圣者高有钱花豹圣者高有钱
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="#" data-m="pop">
                                         <img src="images/tmp/12696.jpg" width="126" height="96">
                                         花豹圣者高有钱
                                     </a>
@@ -67,7 +67,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="#" data-m="pop">
                                         <img src="images/tmp/12696.jpg" width="126" height="96">
                                         花豹圣者高有钱
                                     </a>
@@ -574,9 +574,9 @@
             </div>
        </footer>
        <!--/foot--> 
-	   <div class="mask"></div>
+	   <!--<div class="mask" id="j-mask"></div>-->
 	   <!--sj_pop-->
-	   <div class="sj_pop">
+	   <!--<div class="sj_pop">
 			<div class="sj_ipop">
 				<div class="hd">
 					<h2>造梦西游3宠物快速升级攻略 几级进化</h2>
@@ -623,8 +623,11 @@
 				</div>
 				<span class="close"></span>
 			</div>
-	   </div>
+	   </div>-->
 	   <!--/sj_pop-->
 		<script src="js/zmxy.js"></script>
+		<script>
+			ZMXY().initPop();
+		</script>
     </body>
 </html>
