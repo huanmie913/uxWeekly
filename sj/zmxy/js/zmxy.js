@@ -7,12 +7,26 @@
 (function(win,undefined){
 	var doc = win.document,
 		dbe = doc.body || doc.documentElement;
+
 	var QF = QF || {};
 	QF ={
 		$ : function(id){
 			return typeof id == "string" ? doc.getElementById(id) : id;
+		},
+		getCssProperty : function(element,attr){
+			if(element.style[attr]){
+				return element.style[attr];
+			}else if(element.currentStyle){
+				return element.currentStyle[attr];
+			}else if(document.defaultView && document.defaultView.getComputedStyle){
+				attr=attr.replace(/([A-Z])/g,'-$1').toLowerCase();
+				return document.defaultView.getComputedStyle(element,null).getPropertyValue(attr);
+			}else{
+				return null;
+			}
 		}
 	}
+
 	function ZMXY(){
 		this.option = {
 			maskID : 'j-mask',
@@ -89,6 +103,81 @@
 				
 			},false);
 		}
+	};
+
+	function Slide(){
+		this.option = {
+			containerID : 'j-sone',
+			scrollBarID : 'j-sbone',
+			ctag        : 'ul',
+			num         : 0
+		}
+		this.container = QF.$(this.option.containerID),
+		this.scrollBar = QF.$(this.option.scrollBarID).querySelectorAll('span')[0],
+		this.containerWidth = this.scrollBarWidth = 0;
+		if( ! (this instanceof arguments.callee) ){
+			return new arguments.callee();
+		}
 	}
+	Slide.prototype = {
+		setInit : function(){
+			var that = this;
+			var _containerChild = that.container.querySelectorAll(that.option.ctag);
+				this.containerWidth = parseInt(QF.getCssProperty(_containerChild[0],'width')),
+				_containerChildLenth = _containerChild.length;
+			that.container.style.width = (this.containerWidth*_containerChildLenth)+"px";
+			that.scrollBarWidth = that.scrollBar.style.width =( this.containerWidth / _containerChildLenth)+"px";
+			that.setScroll(that.option.num);
+		},
+		setScroll : function(i){
+			var that =this;
+			that.scrollBar.style.left = that.scrollBarWidth * i;
+			that.container.style.left = -that.containerWidth * i;
+		},
+		doEvent : function(){
+			var that = this;
+			var _spx = _epx =0;
+			var i = 0;
+			QF.$(this.option.containerID).addEventListener('touchstart',function(ev){
+				_spx = ev.touches[0].pageX;
+			},false);
+			QF.$(this.option.containerID).addEventListener('touchend',function(ev){
+				_epx = ev.touches[0].pageX;
+			},false);
+			QF.$(this.option.containerID).addEventListener('touchmove',function(ev){
+				//_mpx = ev.touches[0].pageX;
+				//向后
+				if( _epx - _spx >= 20 ){
+					doRight();
+				}
+				if( _spx - _epx >= 20 ){
+					doLeft();
+				} 
+
+			},false);
+
+			function doRight(){
+				i++;
+				if(i >= _containerChildLenth ){
+					return;
+				}
+				that.setScroll(i);
+			}
+			function doLeft(){
+				i--;
+				if(i <=0 ){
+					return;
+				}
+				that.setScroll(i);
+			}
+			
+		},
+		initSlide : function(){
+			var that = this;
+			that.setInit();
+		}
+	};
+
 	win.ZMXY = ZMXY;
+	win.Slide = Slide;
 })(window);

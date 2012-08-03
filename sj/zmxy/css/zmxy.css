@@ -44,8 +44,8 @@ body{ background:url(../images/body.png) repeat;}
 
 .m_imglist{ /*overflow:hidden;*/letter-spacing:-4px;word-spacing:-4px; }
 .m_imglist img{ -webkit-border-radius:5px;display: block; margin-bottom:5px; }
-.m_imglist li{ /*float:left;*/display:inline-block;font-size:14px;letter-spacing:normal;word-spacing:normal; line-height:24px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
-.m_imglist a{ color:#333;display:block;white-space: nowrap; }
+.m_imglist li{ /*float:left;*/display:inline-block;font-size:14px;letter-spacing:normal;word-spacing:normal; line-height:24px;white-space:nowrap;text-overflow:ellipsis;}
+.m_imglist a{ color:#333; }
 
 .m_txtlist{ padding-right:10px;}
 .m_txtlist li{ overflow:hidden;padding:12px 0;border-bottom:1px dotted #d1d1d1;font-size:14px;}
@@ -54,7 +54,7 @@ body{ background:url(../images/body.png) repeat;}
 .m_txtlist a:before{content: "·"; padding-right:5px;}
 
 /*滚动条*/
-.scroll_box{ height:8px;position:absolute;left:0;bottom:0;background:#f9fafb; margin-top:15px;
+.scroll_box{ height:8px;position:relative;background:#f9fafb; margin-top:15px;
 				-webkit-border-radius:5px;-webkit-box-shadow:-1px 1px 3px #d1d2d3 inset;
 			}
 .scroll_box .scroll_bar{ position:absolute;left:0;top:0;height:6px;border:1px solid #2b88e9;
@@ -62,7 +62,7 @@ body{ background:url(../images/body.png) repeat;}
 				background:-webkit-linear-gradient(top, #64d1ff, #2e8ff0 100%);
 				-webkit-box-shadow:1px 1px 1px #8fdeff inset;
 			}
-			
+
 ::-webkit-scrollbar{width: 8px;height: 8px;}
 ::-webkit-scrollbar-track-piece{ background-color: #f9fafb;-webkit-border-radius: 6px;-webkit-box-shadow:1px -1px 3px #d1d2d3 inset;}
 ::-webkit-scrollbar-thumb:vertical{height: 6px;background:-webkit-linear-gradient(left, #2e8ff0, #64d1ff 100%);
@@ -95,29 +95,19 @@ body{ background:url(../images/body.png) repeat;}
 
 .link{float:right;width:250px; margin-bottom:-10px;overflow:hidden;}
 .link li{ margin-bottom:10px;}
-.link a{ background-image:url(../images/link.png);font-size:26px; display:block; background-repeat:no-repeat;width:215px;padding:0px 0 0 35px;background-position: 0 0;height:71px;color:#333;line-height:70px;}
-.link .appstore{ background-position: 0 -71px;height:70px; color:#fff;}
+.link a{ background-image:url(../images/link.png);font-size:26px; display:block; background-repeat:no-repeat;width:215px;padding:8px 0 0 35px;}
+.link a{ background-position: 0 0;height:63px;color:#333;}
+.link .appstore{ background-position: 0 -71px;height:62px;color:#fff;}
 .link .appstore:active{ background-position: -250px -71px;}
 .link a:hover{ text-decoration: none;}
 .link a:active{ background-position: -250px 0}
 
 .link span{ background-image:url(../images/ico.png);background-repeat:no-repeat;display:inline-block;vertical-align: middle;margin-right:10px;}
-.appstore span{ background-position:-2px 0px;width:38px;height:48px;margin:-5px 25px 0 0;}
+.appstore span{ background-position:-5px 0px;width:35px;height:45px;margin-right:25px;}
 .wk span{ background-position:-50px -3px;width:54px;height:54px; }
 .ts span{ background-position:-109px -3px;width:54px;height:54px; }
 .bj span{ background-position:-167px -3px;width:54px;height:54px; }
 .ss span{ background-position:-225px -3px;width:54px;height:54px; }
-
-/*bx1*/
-.bx1 .sj_bd,.bx2 .sj_bd{ position: relative;height:320px;width:668px;overflow:hidden;}
-.bx1 .m_box,.bx2 .m_box{ position: absolute;left:0;top:0;height:320px;}
-.bx1 .m_box ul{ float:left;width:668px;}
-.bx1 .scroll_box{ width:668px;}
-
-.bx2 .sj_bd { width:938px;height:400px;}
-.bx2 .m_box ul{ float:left;width:938px;height:400px;}
-.bx2 .scroll_box{ width:938px;}
-
 
 .bx2 .m_imglist{ margin-right:-50px;color:#333;}
 .bx2 li{ padding-top:20px;width:168px;margin-right:25px;height:170px;}
@@ -125,7 +115,7 @@ body{ background:url(../images/body.png) repeat;}
 .bx2 li p{font-size:12px;}
 
 .m_sil li{ padding-top:20px; margin-right:7px;width:128px;height:130px;}
-.m_sil{ /*margin-right:-40px;*/}
+.m_sil{margin-right:-40px;}
 .m_sil img{ border:1px solid #fff;}
 
 .bx3 .m_box{ width:935px; height:170px;overflow-x:auto;overflow-y:hidden;}
@@ -169,5 +159,3 @@ body{ background:url(../images/body.png) repeat;}
 .sj_pop .bd h3{ color:#333;font-size:16px;padding-bottom:10px;border-bottom:1px solid #dedede}
 .sj_pop .content{ padding:10px 0;font-size:14px;line-height:2;}
 .sj_pop .close{ background:url(../images/close.png) no-repeat;width:20px;height:23px;display:block;position:absolute;right:20px;top:20px;cursor:pointer;}
-
-
