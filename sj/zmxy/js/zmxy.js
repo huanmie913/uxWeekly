@@ -114,7 +114,8 @@
 		}
 		this.container = QF.$(this.option.containerID),
 		this.scrollBar = QF.$(this.option.scrollBarID).querySelectorAll('span')[0],
-		this.containerWidth = this.scrollBarWidth = 0;
+		this.containerWidth = this.scrollBarWidth = this.containerLenth = 0;
+		 
 		if( ! (this instanceof arguments.callee) ){
 			return new arguments.callee();
 		}
@@ -123,10 +124,10 @@
 		setInit : function(){
 			var that = this;
 			var _containerChild = that.container.querySelectorAll(that.option.ctag);
-				this.containerWidth = parseInt(QF.getCssProperty(_containerChild[0],'width')),
-				_containerChildLenth = _containerChild.length;
-			that.container.style.width = (this.containerWidth*_containerChildLenth)+"px";
-			that.scrollBarWidth = that.scrollBar.style.width =( this.containerWidth / _containerChildLenth)+"px";
+			that.containerWidth = parseInt(QF.getCssProperty(_containerChild[0],'width'));
+			that.containerLenth = _containerChild.length;
+			that.container.style.width = (that.containerWidth*that.containerLenth)+"px";
+			that.scrollBarWidth = that.scrollBar.style.width =( that.containerWidth / that.containerLenth)+"px";
 			that.setScroll(that.option.num);
 		},
 		setScroll : function(i){
@@ -140,6 +141,8 @@
 			var i = 0;
 			QF.$(this.option.containerID).addEventListener('touchstart',function(ev){
 				_spx = ev.touches[0].pageX;
+				//_spx = ev.pageX;
+				//console.log('xx');
 			},false);
 			QF.$(this.option.containerID).addEventListener('touchend',function(ev){
 				_epx = ev.touches[0].pageX;
@@ -158,7 +161,7 @@
 
 			function doRight(){
 				i++;
-				if(i >= _containerChildLenth ){
+				if(i >= that.containerLenth ){
 					return;
 				}
 				that.setScroll(i);
@@ -175,6 +178,7 @@
 		initSlide : function(){
 			var that = this;
 			that.setInit();
+			that.doEvent();
 		}
 	};
 
