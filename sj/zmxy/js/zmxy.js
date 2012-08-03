@@ -110,7 +110,7 @@
 			containerID : 'j-sone',
 			scrollBarID : 'j-sbone',
 			ctag        : 'ul',
-			num         : 0
+			num         : 1
 		}
 		this.container = QF.$(this.option.containerID),
 		this.scrollBar = QF.$(this.option.scrollBarID).querySelectorAll('span')[0],
@@ -127,13 +127,13 @@
 			that.containerWidth = parseInt(QF.getCssProperty(_containerChild[0],'width'));
 			that.containerLenth = _containerChild.length;
 			that.container.style.width = (that.containerWidth*that.containerLenth)+"px";
-			that.scrollBarWidth = that.scrollBar.style.width =( that.containerWidth / that.containerLenth)+"px";
+			that.scrollBarWidth = that.scrollBar.style.width =( (that.containerWidth-2) / that.containerLenth)-2+"px";
 			that.setScroll(that.option.num);
 		},
 		setScroll : function(i){
 			var that =this;
-			that.scrollBar.style.left = that.scrollBarWidth * i;
-			that.container.style.left = -that.containerWidth * i;
+			that.scrollBar.style.left = ( (parseInt(that.scrollBarWidth)+2) * i)+"px";
+			that.container.style.left = (-that.containerWidth * i)+"px";
 		},
 		doEvent : function(){
 			var that = this;
@@ -141,8 +141,7 @@
 			var i = 0;
 			QF.$(this.option.containerID).addEventListener('touchstart',function(ev){
 				_spx = ev.touches[0].pageX;
-				//_spx = ev.pageX;
-				//console.log('xx');
+				ev.stopPropagation();
 			},false);
 			QF.$(this.option.containerID).addEventListener('touchend',function(ev){
 				_epx = ev.touches[0].pageX;

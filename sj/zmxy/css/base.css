@@ -112,7 +112,7 @@ body{ background:url(../images/body.png) repeat;}
 .bx1 .sj_bd,.bx2 .sj_bd{ position: relative;height:320px;width:668px;overflow:hidden;}
 .bx1 .m_box,.bx2 .m_box{ position: absolute;left:0;top:0;height:320px;}
 .bx1 .m_box ul{ float:left;width:668px;}
-.bx1 .scroll_box{ width:668px;}
+.bx1 .scroll_box{ width:666px;}
 
 .bx2 .sj_bd { width:938px;height:400px;}
 .bx2 .m_box ul{ float:left;width:938px;height:400px;}
