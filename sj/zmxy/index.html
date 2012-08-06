@@ -878,7 +878,6 @@
        </footer>
        <!--/foot--> 
 		<script src="js/zmxy.js"></script>
-		<script src="js/touchslider.min.js"></script>
 		<script>
 			ZMXY().initPop();
 			var initNum = 0; //初始
@@ -890,9 +889,10 @@
 					if( n == a){
 						var _imglist = _lilist[n].getElementsByTagName('img');
 						for( var x =0,_length = _imglist.length;x<_length;x++){
-							if(_imglist[x].getAttribute('data-src')){
-								_imglist[x].src = _imglist[x].getAttribute('data-src');
-								_imglist[x].removeAttribute('data-src');
+							var b = _imglist[x];
+							if(b.getAttribute('data-src')){
+								b.src = b.getAttribute('data-src');
+								b.removeAttribute('data-src');
 							}
 						}
 					}	
