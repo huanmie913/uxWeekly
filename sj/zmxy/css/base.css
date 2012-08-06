@@ -115,24 +115,15 @@ body{ background:url(../images/body.png) repeat;}
 
 /*bx1*/
 .bx1 .m_box,.bx2 .m_box{ position: relative;height:320px;width:668px;overflow:hidden;}
-/*.bx1 .m_box,.bx2 .m_box{ position: absolute;left:0;top:0;height:320px;}*/
-/*.bx1 .m_box ul{ float:left;width:668px;}
-.bx1 .scroll_box{ width:666px;}*/
 
 .bx2 .m_box{ width:938px;height:400px;}
 .bx4 .m_box { width:938px;height:320px;}
-/*.bx2 .m_box ul{ float:left;width:938px;height:400px;}
-.bx2 .scroll_box{ width:938px;}*/
 
 
 .bx2 .m_imglist{ margin-right:-50px;color:#333;}
 /*.bx2 li{ padding-top:20px;width:168px;margin-right:25px;height:170px;}*/
 .bx2 .m_imglist img{border:1px solid #d1d1d1;}
 .bx2 li p{font-size:12px;}
-
-/*.m_sil li{ padding-top:20px; margin-right:7px;width:128px;height:130px;}
-.m_sil{ margin-right:-40px;}
-/*.m_sil img{ border:1px solid #fff;}*/
 
 .bx3 .m_box{ width:935px; height:170px;overflow-x:auto;overflow-y:hidden;}
 .bx3 .m_sil{ white-space:nowrap;}

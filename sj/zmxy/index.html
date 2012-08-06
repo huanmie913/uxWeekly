@@ -794,34 +794,18 @@
 		<script src="js/touchslider.min.js"></script>
 		<script>
 			ZMXY().initPop();
-			var po = pt = phtree = pfour =  0;
-			new TouchSlider({id:'j-sone','auto':-1,fx:'ease-out',direction:'left',speed:600,timeout:5000,'after':function(index){
-				var as=document.getElementById('j-scroll-1').getElementsByTagName('li');
-				if(typeof po != 'undeinfed') as[po].className='';
-				as[index].className='current';
-				po=index;
-			}});
-			new TouchSlider({id:'j-stwo','auto':-1,fx:'ease-out',direction:'left',speed:600,timeout:5000,'after':function(index){
-				var as=document.getElementById('j-scroll-2').getElementsByTagName('li');
-				if(typeof pt != 'undeinfed') as[pt].className='';
-				as[index].className='current';
-				pt=index;
-			}});
-			new TouchSlider({id:'j-sthree','auto':-1,fx:'ease-out',direction:'left',speed:600,timeout:5000,'after':function(index){
-				var as=document.getElementById('j-scroll-3').getElementsByTagName('li');
-				if(typeof phtree != 'undeinfed') as[phtree].className='';
-				as[index].className='current';
-				phtree=index;
-			}});
-			new TouchSlider({id:'j-sfour','auto':-1,fx:'ease-out',direction:'left',speed:600,timeout:5000,'after':function(index){
-				var as=document.getElementById('j-scroll-4').getElementsByTagName('li');
-				if(typeof pfour != 'undeinfed') as[pfour].className='';
-				as[index].className='current';
-				pfour=index;
-			}});
-
-
-            //Slide().initSlide();
+			var module = ['one','two','three','four'];
+			for( var i = 0,len = module.length;i <len;i++){
+				(function (m){
+					new TouchSlider({id:'j-s'+module[i],'auto':-1,fx:'ease-out',direction:'left',speed:600,timeout:5000,'after':function(index){
+						var as=document.getElementById('j-scroll-'+(m+1)).getElementsByTagName('li');
+						as[index].className='current';
+						for( var n = 0,_len = as.length;n<_len;n++){
+							as[n].className = ( n == index) ? 'current' : "";
+						}
+					}});
+				})(i);
+			}
 		</script>
     </body>
 </html>
