@@ -100,7 +100,7 @@ body{ background:url(../images/body.png) repeat;}
 
 .link{float:right;width:250px; margin-bottom:-10px;overflow:hidden;}
 .link li{ margin-bottom:10px;}
-.link a{ background-image:url(../images/link.png);font-size:26px; display:block; background-repeat:no-repeat;width:215px;padding:0px 0 0 35px;background-position: 0 0;height:71px;color:#333;line-height:70px;}
+.link a{ background-image:url(../images/link.png);font-size:26px; display:block; background-repeat:no-repeat;width:215px;padding:0px 0 0 35px;background-position: 0 0;height:71px;color:#333;line-height:70px;text-shadow:0px 1px 1px #fff;}
 .link .appstore{ background-position: 0 -71px;height:70px; color:#fff;}
 .link .appstore:active{ background-position: -250px -71px;}
 .link a:hover{ text-decoration: none;}
@@ -121,7 +121,6 @@ body{ background:url(../images/body.png) repeat;}
 
 
 .bx2 .m_imglist{ margin-right:-50px;color:#333;}
-/*.bx2 li{ padding-top:20px;width:168px;margin-right:25px;height:170px;}*/
 .bx2 .m_imglist img{border:1px solid #d1d1d1;}
 .bx2 li p{font-size:12px;}
 
