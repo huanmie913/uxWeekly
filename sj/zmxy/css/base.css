@@ -44,8 +44,8 @@ body{ background:url(../images/body.png) repeat;}
 
 .m_imglist{ /*overflow:hidden;*/letter-spacing:-4px;word-spacing:-4px; }
 .m_imglist img{ -webkit-border-radius:5px;display: block; margin-bottom:5px; }
-.m_imglist li{ /*float:left;*/display:inline-block;font-size:14px;letter-spacing:normal;word-spacing:normal; line-height:24px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
-.m_imglist a{ color:#333;display:block;white-space: nowrap; }
+/*.m_imglist li{ display:inline-block;font-size:14px;letter-spacing:normal;word-spacing:normal; line-height:24px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+.m_imglist a{ color:#333;display:block;white-space: nowrap; }*/
 
 .m_txtlist{ padding-right:10px;}
 .m_txtlist li{ overflow:hidden;padding:12px 0;border-bottom:1px dotted #d1d1d1;font-size:14px;}
@@ -53,15 +53,13 @@ body{ background:url(../images/body.png) repeat;}
 .m_txtlist a{color:#333;display: block;overflow: hidden;text-overflow:ellipsis;white-space:nowrap;}
 .m_txtlist a:before{content: "·"; padding-right:5px;}
 
-/*滚动条*/
-.scroll_box{ height:8px;position:absolute;left:0;bottom:0;background:#f9fafb; margin-top:15px;
-				-webkit-border-radius:5px;-webkit-box-shadow:-1px 1px 3px #d1d2d3 inset;
-			}
-.scroll_box .scroll_bar{ position:absolute;left:0;top:0;height:6px;border:1px solid #2b88e9;
-				-webkit-border-radius:3px;overflow:hidden;
-				background:-webkit-linear-gradient(top, #64d1ff, #2e8ff0 100%);
-				-webkit-box-shadow:1px 1px 1px #8fdeff inset;
-			}
+/*滚动条*/			
+.scroll_bar{ text-align:center; font-size:0;letter-spacing:-4px; /*position:absolute;left:0;bottom:0*/}
+.scroll_box li{display:inline-block;vertical-align:middle;width:13px;height:13px;overflow:hidden;margin-left:15px;
+				background:-webkit-linear-gradient(top, #c2c2c2, #c6c6c6 100%);-webkit-border-radius:13px;
+				}
+.scroll_box li.current{background:#399eee;}
+				
 			
 ::-webkit-scrollbar{width: 8px;height: 8px;}
 ::-webkit-scrollbar-track-piece{ background-color: #f9fafb;-webkit-border-radius: 6px;-webkit-box-shadow:1px -1px 3px #d1d2d3 inset;}
@@ -73,8 +71,15 @@ body{ background:url(../images/body.png) repeat;}
 									-webkit-border-radius: 6px;-webkit-box-shadow:1px 1px 1px #8fdeff inset;
 									border:1px solid #2b88e9;
 									}
+	
+	
+/*m_item*/
+.m_item{ padding-top:20px; float:left;font-size:14px;letter-spacing:normal;word-spacing:normal; line-height:24px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+.m_item a{ color:#333;display:block;white-space: nowrap;}
 
-
+.bx1 .m_item,.bx3 .m_item,.bx4 .m_item{width:128px;height:130px; margin-right:5px;}
+.bx2 .m_item{width:168px;height:170px; margin-right:19px;}
+									
 /*sj_top*/
 .sj_top{ background:-webkit-linear-gradient(top, #fff, #f3f3f3 100%);
 		 height:63px;width:100%;border-bottom:1px solid #cecece;-webkit-box-shadow:-1px 0 -1px #fff inset;
@@ -109,24 +114,25 @@ body{ background:url(../images/body.png) repeat;}
 .ss span{ background-position:-225px -3px;width:54px;height:54px; }
 
 /*bx1*/
-.bx1 .sj_bd,.bx2 .sj_bd{ position: relative;height:320px;width:668px;overflow:hidden;}
-.bx1 .m_box,.bx2 .m_box{ position: absolute;left:0;top:0;height:320px;}
-.bx1 .m_box ul{ float:left;width:668px;}
-.bx1 .scroll_box{ width:666px;}
+.bx1 .m_box,.bx2 .m_box{ position: relative;height:320px;width:668px;overflow:hidden;}
+/*.bx1 .m_box,.bx2 .m_box{ position: absolute;left:0;top:0;height:320px;}*/
+/*.bx1 .m_box ul{ float:left;width:668px;}
+.bx1 .scroll_box{ width:666px;}*/
 
-.bx2 .sj_bd { width:938px;height:400px;}
-.bx2 .m_box ul{ float:left;width:938px;height:400px;}
-.bx2 .scroll_box{ width:938px;}
+.bx2 .m_box{ width:938px;height:400px;}
+.bx4 .m_box { width:938px;height:320px;}
+/*.bx2 .m_box ul{ float:left;width:938px;height:400px;}
+.bx2 .scroll_box{ width:938px;}*/
 
 
 .bx2 .m_imglist{ margin-right:-50px;color:#333;}
-.bx2 li{ padding-top:20px;width:168px;margin-right:25px;height:170px;}
+/*.bx2 li{ padding-top:20px;width:168px;margin-right:25px;height:170px;}*/
 .bx2 .m_imglist img{border:1px solid #d1d1d1;}
 .bx2 li p{font-size:12px;}
 
-.m_sil li{ padding-top:20px; margin-right:7px;width:128px;height:130px;}
-.m_sil{ /*margin-right:-40px;*/}
-.m_sil img{ border:1px solid #fff;}
+/*.m_sil li{ padding-top:20px; margin-right:7px;width:128px;height:130px;}
+.m_sil{ margin-right:-40px;}
+/*.m_sil img{ border:1px solid #fff;}*/
 
 .bx3 .m_box{ width:935px; height:170px;overflow-x:auto;overflow-y:hidden;}
 .bx3 .m_sil{ white-space:nowrap;}
