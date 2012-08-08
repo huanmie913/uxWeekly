@@ -6,7 +6,10 @@ window.addEventListener('load',function(){
      setTimeout(function(){
           window.scrollTo(0,1);
      },100);
-},false);
+});
+window.addEventListener('devicemotion',function(ev){
+     ev.preventDefault();
+});
 
 /*
  * TouchSlider v1.0.4
