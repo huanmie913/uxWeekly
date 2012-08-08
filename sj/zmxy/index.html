@@ -7,8 +7,16 @@
 		<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="viewport" content="width=device-width; minimum-scale=1.0; maximum-scale=1.0;  initial-scale=1.0; user-scalable=no" />
-		<script src="js/smoothscroll.js"></script>
+		<!--<script src="js/smoothscroll.js"></script>-->
 		<script src="js/iscroll.js"></script>
+		<script>
+			var myScroll;
+			function loaded() {
+				myScroll = new iScroll('j-wrapper');
+			}
+			document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+			document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
+		</script>
     </head>
     <body>
        <!--sj_top-->
@@ -1649,12 +1657,7 @@
        <!--/foot--> 
 		<script src="js/zmxy.js"></script>
 		<script>
-			var myScroll;
-			function loaded() {
-				myScroll = new iScroll('j-wrapper');
-			}
-			document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-			document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
+			
 			tabSwitch();
 			ZMXY().initPop();
 			var initNum = 0; //初始
