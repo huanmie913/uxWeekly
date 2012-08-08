@@ -1,8 +1,13 @@
-﻿window.addEventListener('load',function(){
+﻿/*
+ * zmxy.js
+ * 2012.08.07
+ */
+window.addEventListener('load',function(){
      setTimeout(function(){
           window.scrollTo(0,1);
-     },0)
+     },100);
 },false);
+
 /*
  * TouchSlider v1.0.4
  * By qiqiboy, http://www.qiqiboy.com, http://weibo.com/qiqiboy, 2012/01/11
