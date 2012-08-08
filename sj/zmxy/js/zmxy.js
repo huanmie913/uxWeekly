@@ -307,10 +307,10 @@ eval(function(B,D,A,G,E,F){function C(A){return A<62?String.fromCharCode(A+=A<26
 			});
 			_tabObj.addEventListener('touchstart',function(ev){
 				that.touchClick(ev);
-				this.className = 'm_tab tabactive';
+				//this.className = 'm_tab tabactive';
 			});
-			_tabObj.addEventListener('touchcancel',function(ev){
-				this.className = 'm_tab';
+			_tabObj.addEventListener('touchend',function(ev){
+				this.className = 'm_tab tabactive';
 			});
 			
 		}
