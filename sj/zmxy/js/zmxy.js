@@ -308,7 +308,7 @@ eval(function(B,D,A,G,E,F){function C(A){return A<62?String.fromCharCode(A+=A<26
 				that.touchClick(ev);
 				this.className = 'm_tab tabactive';
 			});
-			QF.$(that.setting.tabID).addEventListener('toucancel',function(ev){
+			QF.$(that.setting.tabID).addEventListener('touchend',function(ev){
 				this.className = 'm_tab';
 			});
 			
