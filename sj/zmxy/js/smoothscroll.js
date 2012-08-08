@@ -27,7 +27,12 @@ var ss = {
       }
     }
   },
-
+  currentTarget : function(obj){
+	var _children = obj.parentNode.children;
+	for(var i=0,len = _children.length;i<len;i++){
+		obj.className = (_children[i].id == obj.id) ? 'current' : '';
+	}
+  },
   smoothScroll: function(e) {
     // This is an event handler; get the clicked on element,
     // in a cross-browser fashion
@@ -49,6 +54,7 @@ var ss = {
     // Find the <a name> tag corresponding to this href
     // First strip off the hash (first character)
     anchor = target.hash.substr(1);
+	ss.currentTarget(document.getElementById(anchor));
     // Now loop all A tags until we find one with that name
     var allLinks = document.getElementsByTagName('a');
     var destinationLink = null;
