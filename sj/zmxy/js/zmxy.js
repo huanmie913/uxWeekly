@@ -293,7 +293,7 @@ eval(function(B,D,A,G,E,F){function C(A){return A<62?String.fromCharCode(A+=A<26
 		init : function(){
 			var that = this;
 			that.content( that.setting.num );
-			QF.$(that.setting.tabID).addEventListener('touchstart,click',function(ev){
+			QF.$(that.setting.tabID).addEventListener('touchstart',function(ev){
 				
 				var _target = ev.target;
 				var _children = QF.$(that.setting.tabID).getElementsByTagName('li');
