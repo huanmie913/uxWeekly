@@ -55,6 +55,7 @@ var ss = {
     // First strip off the hash (first character)
     anchor = target.hash.substr(1);
 	ss.currentTarget(document.getElementById(anchor));
+	
     // Now loop all A tags until we find one with that name
     var allLinks = document.getElementsByTagName('a');
     var destinationLink = null;
