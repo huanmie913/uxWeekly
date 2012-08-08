@@ -100,10 +100,11 @@ body{ background:url(../images/body.png) repeat;}
 .link{float:right;width:250px; margin-bottom:-10px;overflow:hidden;}
 .link li{ margin-bottom:10px;}
 .link a{ background-image:url(../images/link.png);font-size:26px; display:block; background-repeat:no-repeat;width:215px;padding:0px 0 0 35px;background-position: 0 0;height:71px;color:#333;line-height:70px;}
+.link a:active{-webkit-user-select: none;-webkit-tap-highlight-color:rgba(255,255,255,0);}
 .link .appstore{ background-position: 0 -71px;height:70px; color:#fff;}
 .link .appstore:active{ background-position: -250px -71px;}
 .link a:hover{ text-decoration: none;}
-.link a:active{ background-position: -250px 0}
+.link a:active{ background-position: -250px 0;}
 
 .link span{ background-image:url(../images/ico.png);background-repeat:no-repeat;display:inline-block;vertical-align: middle;margin-right:10px;}
 .appstore span{ background-position:-2px 0px;width:38px;height:48px;margin:-5px 25px 0 0;}
@@ -129,6 +130,7 @@ body{ background:url(../images/body.png) repeat;}
 
 .bx4 .sj_hd{ border-bottom:none; padding-bottom:0;}
 .m_tab{ float: left; margin:-5px 0 0 20px; background:#f9fafb; width:590px;height:30px;-webkit-border-radius:30px;border-width:1px;boder-style:solid;border-color:#d3d4d5 #e0e1e2 #eeeff0 #e2e3e4;-webkit-box-shadow:1px 1px 3px #d3d4d5 inset;padding:5px;}
+.m_tab:active{-webkit-user-select: none;-webkit-tap-highlight-color:rgba(255,255,255,0);}
 .m_tab li{float:left;color:#333;font-size:16px; line-height: 28px;padding:0 23px;cursor:pointer;}
 .m_tab li.current{ height:28px;border:1px solid #d6d6d6;display:block;-webkit-border-radius:30px;
 						background:-webkit-gradient(linear,0 0,0 bottom,from(#45b2f3),to(#2d8bea));color:#fff
