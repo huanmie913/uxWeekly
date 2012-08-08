@@ -27,10 +27,11 @@ var ss = {
       }
     }
   },
+  //nav current add by qf
   currentTarget : function(obj){
-	var _children = obj.parentNode.children;
+	var _children = document.getElementById("j-nav").getElementsByTagName('a');
 	for(var i=0,len = _children.length;i<len;i++){
-		obj.className = (_children[i].id == obj.id) ? 'current' : '';
+		_children[i].className = (_children[i].href.split('#')[1] == obj) ? 'current' : '';
 	}
   },
   smoothScroll: function(e) {
@@ -54,7 +55,7 @@ var ss = {
     // Find the <a name> tag corresponding to this href
     // First strip off the hash (first character)
     anchor = target.hash.substr(1);
-	ss.currentTarget(document.getElementById(anchor));
+	ss.currentTarget(anchor);
 	
     // Now loop all A tags until we find one with that name
     var allLinks = document.getElementsByTagName('a');
