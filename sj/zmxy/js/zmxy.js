@@ -293,6 +293,9 @@ eval(function(B,D,A,G,E,F){function C(A){return A<62?String.fromCharCode(A+=A<26
 		touchClick : function(ev){
 			var that = this;
 			var _target = ev.target;
+			if(_target.id == that.option.tabID){
+				return;
+			}
 			var _children = QF.$(that.setting.tabID).getElementsByTagName('li');
 			var _index = that.index(_target,_children);
 			that.trigger(_index);
