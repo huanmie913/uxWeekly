@@ -95,7 +95,7 @@ eval(function(B,D,A,G,E,F){function C(A){return A<62?String.fromCharCode(A+=A<26
 
 ~(function(win,undefined){
 	var doc = win.document,
-		dbe = doc.body || doc.documentElement;
+		dbe = doc.documentElement;
 
 	var QF = QF || {};
 	QF ={
@@ -113,67 +113,90 @@ eval(function(B,D,A,G,E,F){function C(A){return A<62?String.fromCharCode(A+=A<26
 			}else{
 				return null;
 			}
+		},
+		extend : function(destination,sourece){
+			for( var prop in sourece){
+				if( sourece.hasOwnProperty(prop) ){
+					destination[prop] = sourece[prop];
+				}
+			}
+			return destination;
 		}
 	}
 
-	function ZMXY(){
+	function ZMXY(ctg){
 		this.option = {
 			maskID      : 'j-mask',
 			dataPro     : 'data-m',
-			popID       : 'j-pop',
-			articleHtml : function(){}
+			popID       : 'j-pop'
 		}
+		this.setting = QF.extend(this.option,ctg);
 		if(!(this instanceof arguments.callee)){
-			return new arguments.callee();
+			return new arguments.callee(ctg);
 		}
 	}
 	ZMXY.prototype = {
 		createMask : function(){
 			var that = this,_mkObj = null;
-			var _height = dbe.clientHeight > dbe.scrollHeight ? dbe.clientHeight : dbe.scrollHeight + dbe.scrollTop;
-			if( !QF.$(that.option.maskID) ){
+			var _height = (dbe.clientHeight > dbe.scrollHeight ? dbe.clientHeight : dbe.scrollHeight);
+			if( !QF.$(that.setting.maskID) ){
 				var _mkDIV = doc.createElement('div');
 				_mkDIV.className = "mask";
-				_mkDIV.id = that.option.maskID;
+				_mkDIV.id = that.setting.maskID;
+				_mkDIV.innerHTML = '<span class="close" id="j-close"></span>';
 				doc.body.appendChild(_mkDIV);	
 			}
-			_mkObj = QF.$(that.option.maskID);
+			_mkObj = QF.$(that.setting.maskID);
 			_mkObj.style.display = "block";
 			_mkObj.style.height = _height+"px";
 		},
-		createPop : function(){
-			var that = this;
+		ajaxContent : function(aid){
+			var that = this,_contentObj = {};
+			f2er.doAjax('GET','js/'+aid+'.js',true,function(txt){
+				_contentObj = txt;
+				that.createPop(_contentObj);
+			});
+		},
+		createPop : function(ajaxObj){
+			var that = this,_html = '';
 			var _popDiv = doc.createElement('div');
 			_popDiv.className = 'sj_pop';
-			_popDiv.id = that.option.popID;
-			if({}.toString.call(that.option.articleHtml) == '[Object function]'){
-				_popDiv.innerHTML = (that.option.articleHtml)();
-			}
-			/*var _html = '<div class="sj_ipop"><div class="hd">';
-				_html += '	<h2>造梦西游3宠物快速升级攻略 几级进化</h2>';
-				_html += '	<div class="info">';
-				_html += '		<span>作者：4399-灵</span><span>来源：4399.com</span><span>时间：12-07-30</span>';
-				_html += '	</div></div>';
-				_html += '<div class="bd">';
-				_html += '	<h3>造梦西游3宠物快速升级攻略 造梦西游3宠物几级进化？造梦西游3宠物怎么快速升级？</h3>';
-				_html += '	<div class="content">';
-							//填写内容
-				_html += '	</div></div><span class="close" id="j-close"></span></div>';*/
-			
+			_popDiv.id = that.setting.popID;
+			_html += '<div class="sj_ipop"><div class="hd">';
+			_html += '	<h2>'+ajaxObj.title+'</h2>';
+			_html += '	<div class="info">';
+			_html += '		<span>作者：'+ajaxObj.write+'</span><span>来源：4399.com</span><span>时间：'+ajaxObj.pubdate+'</span>';
+			_html += '	</div></div>';
+			_html += '<div class="bd">';
+			_html += '	<div class="content">';	
+			_html +=  ajaxObj.body;
+			_html += '	</div></div></div>';
+			_popDiv.innerHTML = _html;
 			doc.body.appendChild(_popDiv);
-			
-			QF.$('j-close').addEventListener('click',function(e){
-				that.closePop(this);
-				e.stopPropagation();
-			})
+			that.closePop(that.setting.popID);
 		},
-		closePop : function(closeObj){
+		createVideo : function(vsrc){
 			var that = this;
-			if( QF.$(that.option.popID)){
-				QF.$(that.option.maskID).style.display = 'none';
-				doc.body.removeChild(QF.$(that.option.popID));
-				closeObj = null;
-			}
+			var _videoDiv = doc.createElement('div');
+			_videoDiv.id = 'j-video';
+			_videoDiv.className = 'sj_video';
+			var _html ='<video width="100%" height="100%" controls="controls">'
+			_html +='	<source src="'+vsrc+'" type="video/mp4" />';
+			_html +='   <source src="'+vsrc+'" type="video/ogg" />';
+			_html +='</video>';
+			_videoDiv.innerHTML = _html;
+			doc.body.appendChild(_videoDiv);
+			that.closePop('j-video');
+		},
+		closePop : function(layoutID){
+			var that = this;
+			QF.$('j-close').addEventListener('click',function(e){
+				if( QF.$(layoutID)){
+					doc.body.removeChild(QF.$(layoutID));
+				}
+				QF.$(that.setting.maskID).style.display = 'none';
+				e.stopPropagation();
+			});
 		},
 		initPop : function(){
 			var that = this;
@@ -186,30 +209,48 @@ eval(function(B,D,A,G,E,F){function C(A){return A<62?String.fromCharCode(A+=A<26
 					}else{
 						_node = _target;
 					}
-					if( !_node.getAttribute(that.option.dataPro) ){
+					if( !_node.getAttribute(that.setting.dataPro) ){
 						return;
 					}
+					var _type = _node.getAttribute(that.setting.dataPro);
 					that.createMask();
-					that.createPop();
+					switch(_type){
+						case 'pop':
+							var _id = _node.getAttribute('data-id');
+							if(!_id){
+								return;
+							}
+							that.ajaxContent(_id);
+							break;
+						case 'video':
+							var _src = _node.getAttribute('data-v');
+							that.createVideo(_src);
+							break;
+					}
+					
 					e.stopPropagation();
+					e.preventDefault();
 				}
 			},false);
 		}
 	};
 	
-	/*tabAjax*/
-	function tabAjax(){
+	/*tabSwitch*/
+	function tabSwitch(ctg){
 		this.option = {
 			tabID : 'j-tab',
-			contentID : 'j_list',
-			slideID   : 'j-scroll-4'
+			contentID : 'j-slist',
+			slideID   : 'j-scroll-4',
+			num       : 0,
+			callback  : function(){}
 		}
+		this.setting = QF.extend(this.option,ctg);
 		if( !( this instanceof arguments.callee)){
-			return new arguments.callee();
+			return new arguments.callee(ctg);
 		}
 		this.init();
 	}
-	tabAjax.prototype = {
+	tabSwitch.prototype = {
 		index : function(o,objArray){
 			for( var oi = 0,len = objArray.length;oi<len;oi++){
 				if( o == objArray[oi] ){
@@ -217,27 +258,42 @@ eval(function(B,D,A,G,E,F){function C(A){return A<62?String.fromCharCode(A+=A<26
 				}
 			}
 		},
-		content : function(href){
+		content : function(index){
 			var that = this;
-			win.f2er.doAjax('GET',href,true,function(txt){
-				QF.$(that.option.contentID).innerHTML = txt;
-			});
+			var flag = false;
+			that.trigger(index);
+			if( flag == false){
+				initImg('j-sfour-'+index,that.setting.num);//初始化
+				new TouchSlider({id:'j-sfour-'+index,'auto':-1,fx:'ease-out',direction:'left',speed:600,timeout:5000,'after':function(n){
+					slideIndex('j-scroll-4-'+index,n);
+					initImg('j-sfour-'+index,n);
+				}});
+				flag = true;
+			}
+		},
+		trigger : function(num){
+			var that = this;
+			var _children = QF.$(that.setting.tabID).getElementsByTagName('li');
+			var _contentChild = QF.$(that.setting.contentID).querySelectorAll('.sj_container');
+			for( var m = 0,len = _children.length;m<len;m++){
+				_children[m].className = (num == m) ? "current" : "";
+			}
+			for( var n = 0,_len = _contentChild.length;n<_len;n++){
+				_contentChild[n].style.display = (num == n) ? "block" : "none";
+			}
 		},
 		init : function(){
 			var that = this;
-			QF.$(that.option.tabID).addEventListener('click',function(ev){
+			that.content( that.setting.num );
+			QF.$(that.setting.tabID).addEventListener('click',function(ev){
 				var _target = ev.target;
-				var _dataSrc = _target.getAttribute('data-href');
-				var _children = this.getElementsByTagName('li');
+				var _children = QF.$(that.setting.tabID).getElementsByTagName('li');
 				var _index = that.index(_target,_children);
-				for( var oi = 0,len = _children.length;oi<len;oi++){
-					_children[_index].className == (_index == oi) ? 'current' : "";
-				}
-				that.content(_dataSrc);
-			},false)
+				that.trigger(_index);
+				that.content(_index);
+			},false);
 		}
 	}
-	
 	win.ZMXY = ZMXY;
-	win.tabAjax = tabAjax;
+	win.tabSwitch = tabSwitch;
 })(window);
