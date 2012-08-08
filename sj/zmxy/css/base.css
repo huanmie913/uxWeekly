@@ -154,7 +154,7 @@ body{ background:url(../images/body.png) repeat;}
 .cr span{ margin:0 10px;}
 
 .mask{ position:absolute;left:0;top:0;background:rgba(0,0,0,0.5);width:100%;height:100%;z-index:13;dislay:none;}
-.mask .close{ background:url(../images/close.png) no-repeat;width:70px;height:70px;display:block;position:fixed;right:20px;top:20px;cursor:pointer;}
+.mask .close{ background:url(../images/close.png) no-repeat;width:54px;height:54px;display:block;position:fixed;right:20px;top:20px;cursor:pointer;}
 /*sj_pop*/
 .sj_pop{z-index:15; position:fixed;width:856px;height:564px;left:50%;top:50%;margin:-285px 0 0 -430px;background:#fff;border:1px solid #ececec;-webkit-border-radius:5px;padding:2px;}
 .sj_pop .sj_ipop{ background:#f4f4f4;-webkit-border-radius:5px;height:489px;padding:30px 35px 45px; }
