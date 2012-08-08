@@ -294,7 +294,7 @@ eval(function(B,D,A,G,E,F){function C(A){return A<62?String.fromCharCode(A+=A<26
 			var that = this;
 			that.content( that.setting.num );
 			QF.$(that.setting.tabID).addEventListener('touchstart,click',function(ev){
-				this.className = 'm_tab';
+				
 				var _target = ev.target;
 				var _children = QF.$(that.setting.tabID).getElementsByTagName('li');
 				var _index = that.index(_target,_children);
@@ -303,6 +303,9 @@ eval(function(B,D,A,G,E,F){function C(A){return A<62?String.fromCharCode(A+=A<26
 			},false);
 			QF.$(that.setting.tabID).addEventListener('touchend',function(ev){
 				this.className = 'm_tab tabactive';
+			},false);
+			QF.$(that.setting.tabID).addEventListener('touchend',function(ev){
+				this.className = 'm_tab';
 			},false);
 			
 		}
