@@ -301,14 +301,15 @@ eval(function(B,D,A,G,E,F){function C(A){return A<62?String.fromCharCode(A+=A<26
 		init : function(){
 			var that = this;
 			that.content( that.setting.num );
-			QF.$(that.setting.tabID).addEventListener('click',function(ev){
+			var _tabObj = QF.$(that.setting.tabID);
+			_tabObj.addEventListener('click',function(ev){
 				that.touchClick(ev);
 			});
-			QF.$(that.setting.tabID).addEventListener('touchstart',function(ev){
+			_tabObj.addEventListener('touchstart',function(ev){
 				that.touchClick(ev);
 				this.className = 'm_tab tabactive';
 			});
-			QF.$(that.setting.tabID).addEventListener('touchend',function(ev){
+			_tabObj.addEventListener('touchend',function(ev){
 				this.className = 'm_tab';
 			});
 			
