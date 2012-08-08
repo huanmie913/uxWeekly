@@ -239,7 +239,7 @@ eval(function(B,D,A,G,E,F){function C(A){return A<62?String.fromCharCode(A+=A<26
 					e.stopPropagation();
 					e.preventDefault();
 				}
-			},false);
+			});
 		}
 	};
 	
@@ -299,13 +299,13 @@ eval(function(B,D,A,G,E,F){function C(A){return A<62?String.fromCharCode(A+=A<26
 				var _index = that.index(_target,_children);
 				that.trigger(_index);
 				that.content(_index);
-			},false);
+			});
 			QF.$(that.setting.tabID).addEventListener('touchstart',function(ev){
 				this.className = 'm_tab tabactive';
-			},false);
+			});
 			QF.$(that.setting.tabID).addEventListener('touchend',function(ev){
 				this.className = 'm_tab';
-			},false);
+			});
 			
 		}
 	}
