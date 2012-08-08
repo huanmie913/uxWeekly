@@ -22,7 +22,7 @@ address,cite,dfn,em,var{font-style:normal;}
 input::-moz-focus-inner,button::-moz-focus-inner{ border:0;padding:0}
 
 /* global */
-body{ background:#fff;-webkit-text-size-adjust:100%; }
+body{ background:#fff;}
 .wrapper{ margin:0 auto;text-align:left;width:1000px; }
 td{ font-size:12px; line-height:160%;}
 .left{ float:left }
@@ -170,6 +170,6 @@ a:active{-webkit-user-select: none;-webkit-tap-highlight-color:rgba(255,255,255,
 .sj_video{ position:fixed;left:50%;top:50%;z-index:15;width:800px;height:600px;margin:-300px 0 0 -400px;}
 
 @media screen and (max-device-width: 1024px) and (orientation: landscape){
-	
+	img{ width:100%;height:auto;}
 }
 
