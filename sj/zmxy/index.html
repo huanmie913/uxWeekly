@@ -477,21 +477,21 @@
                 <div class="sj_box bx4">
                     <div class="sj_hd clearfix">
                         <h2>装备大全</h2>
-                        <ul class="m_tab">
-                            <li class="current"><span>全部</span></li>
-                            <li><span>武器</span></li>
-                            <li><span>防具</span></li>
-                            <li><span>饰品</span></li>
-                            <li><span>法宝</span></li>
-                            <li><span>道具</span></li>
-                            <li><span>宠物装备</span></li>
+                        <ul class="m_tab" id="j-tab">
+                            <li data-href = 'ajax/a1.html'>全部</li>
+                            <li data-href = 'ajax/a2.html'>武器</li>
+                            <li data-href = 'ajax/a3.html'>防具</li>
+                            <li data-href = 'ajax/a4.html'>饰品</li>
+                            <li data-href = 'ajax/a5.html'>法宝</li>
+                            <li data-href = 'ajax/a6.html'>道具</li>
+                            <li data-href = 'ajax/a7.html'>宠物装备</li>
                         </ul>
                     </div>
                     <div class="sj_bd">
                         <!--m_box-->
                         <div class="m_box" id="j-sfour">
-                            <ul class="m_imglist m_sil clearfix">
-                                <li>
+                            <ul class="m_imglist m_sil clearfix" id="j_list">
+                                <!--<li>
                                     <div class="m_item">
 										<a href="#">
 											<img data-src="images/tmp/12696.jpg" width="126" height="96">
@@ -748,7 +748,7 @@
 											花豹圣者高有钱
 										</a>
 									</div>
-                                </li>
+                                </li>-->
                             </ul>
                         </div>
                         <!--/m_box-->
@@ -879,6 +879,7 @@
        <!--/foot--> 
 		<script src="js/zmxy.js"></script>
 		<script>
+			tabAjax();
 			ZMXY().initPop();
 			var initNum = 0; //初始
 			var module = ['one','two','three','four'];
@@ -899,15 +900,19 @@
 				}
 			};
 			
+			function slideIndex(objID,index){
+				var as=document.getElementById(objID).getElementsByTagName('li');
+				as[index].className='current';
+				for( var n = 0,_len = as.length;n<_len;n++){
+					as[n].className = ( n == index) ? 'current' : "";
+				};
+			};
+			
 			for( var i = 0,len = module.length;i <len;i++){
 				(function (m){
 					initImg('j-s'+module[m],initNum); //初始化
 					new TouchSlider({id:'j-s'+module[i],'auto':-1,fx:'ease-out',direction:'left',speed:600,timeout:5000,'after':function(index){
-						var as=document.getElementById('j-scroll-'+(m+1)).getElementsByTagName('li');
-						as[index].className='current';
-						for( var n = 0,_len = as.length;n<_len;n++){
-							as[n].className = ( n == index) ? 'current' : "";
-						};
+						slideIndex('j-scroll-'+(m+1),index);
 						initImg('j-s'+module[m],index);
 					}});
 				})(i);
