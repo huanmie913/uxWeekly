@@ -182,7 +182,7 @@ eval(function(B,D,A,G,E,F){function C(A){return A<62?String.fromCharCode(A+=A<26
 			_videoDiv.className = 'sj_video';
 			var _html ='<video width="100%" height="100%" controls="controls">'
 			_html +='	<source src="'+vsrc+'" type="video/mp4" />';
-			_html +='   <source src="'+vsrc+'" type="video/ogg" />';
+			//_html +='   <source src="'+vsrc+'" type="video/ogg" />';
 			_html +='</video>';
 			_videoDiv.innerHTML = _html;
 			doc.body.appendChild(_videoDiv);
