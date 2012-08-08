@@ -39,8 +39,7 @@ body{ background:url(../images/body.png) repeat;}
 .sj_wrap{ width:980px;margin:0 auto;text-align:left;}
 .mt_1{ margin-top:20px;}
 
-@media screen and (max-device-width: 1024px) and (orientation: landscape){
-	.sj_box{ border:1px solid #dedede;-webkit-border-radius:5px; padding:15px 20px;background:#fff;}
+.sj_box{ border:1px solid #dedede;-webkit-border-radius:5px; padding:15px 20px;background:#fff;}
 .sj_box .sj_hd{ border-bottom:1px solid #e0e0e0;padding-bottom:10px;}
 .sj_box .sj_hd h2{ font-size:18px;color:#333;font-weight:400; float:left;}
 
@@ -167,5 +166,8 @@ body{ background:url(../images/body.png) repeat;}
 
 
 .sj_video{ position:fixed;left:50%;top:50%;z-index:15;width:800px;height:600px;margin:-300px 0 0 -400px;}
+
+@media screen and (max-device-width: 1024px) and (orientation: landscape){
+	
 }
 
