@@ -8,6 +8,7 @@
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="viewport" content="width=device-width; minimum-scale=1.0; maximum-scale=1.0;  initial-scale=1.0; user-scalable=no" />
 		<script src="js/smoothscroll.js"></script>
+		<script src="js/iscroll.js"></script>
     </head>
     <body>
        <!--sj_top-->
@@ -27,6 +28,8 @@
             </div>
        </div>
        <!--/sj_top-->
+	   <div class="sj_wrapper" id="j-wrapper">
+			<div id="scroller" class="sj_scroller">
        <!--sj_bannner-->
        <div class="sj_bannner">
             <div class="sj_wrap">
@@ -34,7 +37,7 @@
             </div>
        </div>
        <!--/sj_bannner-->
-       <div class="sj_wrap">
+       <div class="sj_wrap" id="">
 			<a name="boss"></a>
            <!--sj_r1-->
            <div class="sj_r1 mt_1">
@@ -1632,8 +1635,10 @@
                 </div>
            </div>
            <!--/sj_r4-->
+		   </div>
         </div>
         <!--/sj_wrap-->
+		</div>
        <!--foot-->
        <footer class="foot mt_1">
             <div class="sj_wrap">
@@ -1644,6 +1649,12 @@
        <!--/foot--> 
 		<script src="js/zmxy.js"></script>
 		<script>
+			var myScroll;
+			function loaded() {
+				myScroll = new iScroll('j-wrapper');
+			}
+			document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+			document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
 			tabSwitch();
 			ZMXY().initPop();
 			var initNum = 0; //初始
