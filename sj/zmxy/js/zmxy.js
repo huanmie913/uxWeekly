@@ -307,7 +307,6 @@ eval(function(B,D,A,G,E,F){function C(A){return A<62?String.fromCharCode(A+=A<26
 			});
 			_tabObj.addEventListener('touchstart',function(ev){
 				that.touchClick(ev);
-				//this.className = 'm_tab tabactive';
 			});
 			_tabObj.addEventListener('touchend',function(ev){
 				this.className = 'm_tab tabactive';
