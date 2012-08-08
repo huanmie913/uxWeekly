@@ -24,7 +24,6 @@ var ss = {
         // then attach the smoothScroll function as an onclick
         // event handler
         ss.addEvent(lnk,'click',ss.smoothScroll);
-		ss.addEvent(lnk,'touchstart',ss.smoothScroll);
       }
     }
   },
