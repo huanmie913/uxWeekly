@@ -290,17 +290,22 @@ eval(function(B,D,A,G,E,F){function C(A){return A<62?String.fromCharCode(A+=A<26
 				_contentChild[n].style.display = (num == n) ? "block" : "none";
 			}
 		},
+		touchClick : function(ev){
+			var that = this;
+			var _target = ev.target;
+			var _children = QF.$(that.setting.tabID).getElementsByTagName('li');
+			var _index = that.index(_target,_children);
+			that.trigger(_index);
+			that.content(_index);
+		},
 		init : function(){
 			var that = this;
 			that.content( that.setting.num );
 			QF.$(that.setting.tabID).addEventListener('click',function(ev){
-				var _target = ev.target;
-				var _children = QF.$(that.setting.tabID).getElementsByTagName('li');
-				var _index = that.index(_target,_children);
-				that.trigger(_index);
-				that.content(_index);
+				that.touchClick(ev);
 			});
 			QF.$(that.setting.tabID).addEventListener('touchstart',function(ev){
+				that.touchClick(ev);
 				this.className = 'm_tab tabactive';
 			});
 			QF.$(that.setting.tabID).addEventListener('toucancel',function(ev){
