@@ -7,9 +7,7 @@ window.addEventListener('load',function(){
           window.scrollTo(0,1);
      },100);
 });
-window.addEventListener('orientationchange',function(ev){
-     ev.preventDefault();
-});
+
 
 /*
  * TouchSlider v1.0.4
