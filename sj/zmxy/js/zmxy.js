@@ -7,7 +7,7 @@ window.addEventListener('load',function(){
           window.scrollTo(0,1);
      },100);
 });
-window.addEventListener('devicemotion',function(ev){
+window.addEventListener('orientationchange',function(ev){
      ev.preventDefault();
 });
 
