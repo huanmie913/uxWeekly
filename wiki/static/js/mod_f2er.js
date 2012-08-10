@@ -206,6 +206,7 @@ mod_f2er={
 			return jsrout;
 		})(),
 		append : function(){
+			_wrapper =  document.getElementsByClassName('wiki_content')[0];
 			var _loadingDiv = document.createElement('div');
 				_loadingDiv.className =  'loading';
 				_loadingDiv.id = "js-loading";
