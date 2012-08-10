@@ -223,9 +223,8 @@ mod_f2er={
 					Ajax.doAjax("GET",rout,true,"",function(txt){
 						_wrapper.innerHTML = txt;
 						that.doJS( rout );
-						_wrapper.removeChild(that.$('js-loading'));
+						_wrapper.removeChild(that._$('js-loading'));
 					},"");
-					
 				}
 
 			_pid.onclick = function( evt ){
