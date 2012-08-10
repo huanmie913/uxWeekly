@@ -250,5 +250,18 @@ mod_f2er={
 			}else{
 				that.Rout(_hash,getData(_hash));
 			}
+		},
+		switchSlide : function(){
+			var _flag = false;
+			this._$("switch").onclick = function(){
+				this._$("js-content").style.marginLeft = 0;
+				this._$("aside_item").style.width = 0;
+				_flag = true;
+			}else{
+				this._$("js-content").style.marginLeft = "250px";
+				this._$("aside_item").style.width = "250px";
+				_flag = false;
+			}
 		}
+		
 	};
