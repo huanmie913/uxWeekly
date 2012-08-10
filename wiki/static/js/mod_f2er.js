@@ -253,7 +253,7 @@ mod_f2er={
 		},
 		switchSlide : function(){
 			var _flag = false;
-			this._$("switch").onclick = function(){
+			this._$("js-switch").onclick = function(){
 				if(!_flag){
 					this._$("js-content").style.marginLeft = 0;
 					this._$("aside_item").style.width = 0;
