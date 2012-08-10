@@ -205,6 +205,12 @@ mod_f2er={
 			jsrout.start();
 			return jsrout;
 		})(),
+		append : function(){
+			var _loadingDiv = document.createElement('div');
+				_loadingDiv.className =  'loading';
+				_loadingDiv.id = "js-loading";
+				_wrapper.appendChild(_loadingDiv);
+		},
 		loadPage:function( id ){
 			var that = this;
 			var _pid = this._$( id ),
@@ -217,7 +223,9 @@ mod_f2er={
 					Ajax.doAjax("GET",rout,true,"",function(txt){
 						_wrapper.innerHTML = txt;
 						that.doJS( rout );
+						_wrapper.removeChild(that.$('js-loading'));
 					},"");
+					
 				}
 
 			_pid.onclick = function( evt ){
@@ -238,10 +246,10 @@ mod_f2er={
 				}
 				_target.className="on";
 				var _dataSource=_target.getAttribute('data-source');
-				
+				that.append();
 				//获取数据
 				getData(_dataSource);
-				window.location.href="#/"+_dataSource;
+				window.location.href="!#/"+_dataSource;
 			}
 			//直接输入url
 			var _hash = location.hash.substr(2);
