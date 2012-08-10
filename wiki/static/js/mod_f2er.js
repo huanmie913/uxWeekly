@@ -253,14 +253,19 @@ mod_f2er={
 		},
 		switchSlide : function(){
 			var _flag = false,that = this;
+			var _jscontent = that._$("js-content"),
+				_asitem = that._$("aside_item"),
+				_jsitem = that._$("js-item");
 			that._$("js-switch").onclick = function(){
 				if(!_flag){
-					that._$("js-content").style.marginLeft = 0;
-					that._$("aside_item").style.width = 0;
+					_jscontent.style.marginLeft = 0;
+					_asitem.style.width = 0;
+					_jsitem.style.display = "none";
 					_flag = true;
 				}else{
-					that._$("js-content").style.marginLeft = "250px";
-					that._$("aside_item").style.width = "250px";
+					_jscontent.style.marginLeft = "250px";
+					_asitem.style.width = "250px";
+					_jsitem.style.display = "block";
 					_flag = false;
 				}
 			}
