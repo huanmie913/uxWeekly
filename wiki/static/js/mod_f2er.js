@@ -221,9 +221,10 @@ mod_f2er={
 				
 			function getData( rout){
 					Ajax.doAjax("GET",rout,true,"",function(txt){
+						_wrapper.removeChild(that._$('js-loading'));
 						_wrapper.innerHTML = txt;
 						that.doJS( rout );
-						_wrapper.removeChild(that._$('js-loading'));
+						
 					},"");
 				}
 
