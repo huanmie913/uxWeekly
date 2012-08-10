@@ -250,7 +250,7 @@ mod_f2er={
 				that.append();
 				//获取数据
 				getData(_dataSource);
-				window.location.href="!#/"+_dataSource;
+				window.location.href="#/"+_dataSource;
 			}
 			//直接输入url
 			var _hash = location.hash.substr(2);
