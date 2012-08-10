@@ -47,7 +47,7 @@ a:hover{text-decoration:underline;}
 .toolbar a:hover{ color:#fff}
 .toolbar .title{ float:left; font-size:20px; font-family:Arial, Helvetica, sans-serif; color:#fff107}
 
-.bottomBar{ border-top:1px dashed #ccc; padding:15px 0; width:100%; text-align:center; line-height:2; color:#333}
+.bottomBar{ border-top:1px dashed #ccc; padding:15px 0; width:100%; text-align:center; line-height:2; color:#333;font-size:12px;}
 .bottomBar a{ color:#666; margin-left: 10px;}
 .bottomBar a:hover{ color:#70A6DD}
 
