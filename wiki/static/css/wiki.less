@@ -128,8 +128,9 @@ html{ background:#FAFAFA}
 	strong{font-weight:700;color:#f00}
 }
 
-.switch{ width:20px;height:100%; position:absolute;right:-20px;top:0;background:#fff;cursor:pointer; -webkit-box-shadow:10px 0 10px 0 rgba(0,0,0,0.1);
-	span{ background:url("@{imgbase}switch.png") no-repeat;display:block;width:16px;height:85px; position:absolute;left:2px;top:300px;
+.switch{ width:20px;height:100%; position:absolute;right:-20px;top:0;background:#fff;cursor:pointer;
+		&:hover{background:righa(8,172,229,0.5)};
+	span{ background:url("@{imgbase}switch.png") no-repeat;display:block;width:16px;height:85px; position:fixed;left:2px;top:300px;
 		&.close{ background-position:0 0;}
 		&.open { background-position:0 -85px;}
 	}
