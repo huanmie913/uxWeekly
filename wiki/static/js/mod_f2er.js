@@ -256,16 +256,19 @@ mod_f2er={
 			var _jscontent = that._$("js-content"),
 				_asitem = that._$("aside_item"),
 				_jsitem = that._$("js-item");
+				_span = that._$("js-switch").getElementsByTagName('span')[0];
 			that._$("js-switch").onclick = function(){
 				if(!_flag){
 					_jscontent.style.marginLeft = 0;
 					_asitem.style.width = 0;
 					_jsitem.style.display = "none";
+					_span.className = "open";
 					_flag = true;
 				}else{
 					_jscontent.style.marginLeft = "250px";
 					_asitem.style.width = "250px";
 					_jsitem.style.display = "block";
+					_span.className = "close";
 					_flag = false;
 				}
 			}
