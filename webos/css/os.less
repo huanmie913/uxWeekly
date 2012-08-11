@@ -59,6 +59,28 @@ html,body{ overflow:hidden;height:100%;width:100%;}
             img{ -webkit-border-radius:10px;border-radius:10px;}
         }
     }
+    &:after{
+        border-width:24px;
+        border-style:solid;
+        content:"";
+        height:0;
+        width:0;
+        position:absolute;
+        right:-48px;
+        top:0;
+        border-color:transparent transparent rgba(160, 156, 156, 0.75) rgba(160, 156, 156, 0.75)
+    }
+    &:before{
+        border-width:24px;
+        border-style:solid;
+        content:"";
+        height:0;
+        width:0;
+        position:absolute;
+        left:-48px;
+        top:0;
+        border-color: transparent rgba(160, 156, 156, 0.75) rgba(160, 156, 156, 0.75) transparent;
+    }
 }
 
 
