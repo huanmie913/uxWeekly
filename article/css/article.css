@@ -22,12 +22,17 @@ body{background:#ededed}
 .ar_header span{ margin-right:50px;}
 .ar_header .source{float:right;color:#999}
 
-.ar_content{ line-height:24px; padding:20px 10px;position:absolute;left:20px;top:60px;right:20px;bottom:20px;overflow-y:auto;}
+.ar_content{ line-height:24px; padding:20px 10px;position:absolute;left:20px;top:60px;right:0px;bottom:20px;overflow-y:auto;}
 .ar_content dt{ font-size:16px;}
 .ar_content dd{ padding-left:2em; }
 .ar_content a{color:#333;display:block;}
 
 .bottomBar{position:fixed;bottom:0;left:0}
+
+::-webkit-scrollbar {width: 10px; }
+::-webkit-scrollbar-track {background-color:rgba(0,0,0,.05);box-shadow:inset 1px 0 0 rgba(0,0,0,.1);border-radius: 5px; }
+::-webkit-scrollbar-thumb {background: rgba(0,0,0,0.15);-webkit-box-shadow: inset 1px 1px 0 rgba(0,0,0,0.1);border-radius: 5px; }
+
 
 
 
