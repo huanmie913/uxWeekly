@@ -92,7 +92,6 @@ Article.sidebar = {
 		var _sideDiv = document.createElement('div');
 			_sideDiv.className = "ar_item";
 			_sideDiv.setAttribute("data-id",obj.id);
-			//_sideDiv.setAttribute("data-action","Article.sidebar.ajaxRender");
 		var _html = '<h2>'+_ocontent.title+'</h2>';
 		_html +=	'<div class="info">';
 		_html +=		'<span class="name">'+_ocontent.author+'</span>';
@@ -129,6 +128,12 @@ Article.sidebar = {
 			}	
 		}
 	},
+	createLoading : function(){
+		var loading = document.createElement('div');
+		loading.className = "loading";
+		loading.id = "loading";
+		document.getElementById('js-content').appendChild(loading);
+	},
 	clickAjax : function(data){
 		var that = this;
 		document.getElementById('js-side').onclick = function(e){
@@ -139,16 +144,15 @@ Article.sidebar = {
 				return;
 			}
 			var idPro = _parent.getAttribute('data-id');
-				//actionPro = _parent.getAttribute('data-action');
 			var index = that.index(idPro,data);
 			var _url = data[index]['content']['ajaxcontent']['ajaxSource'];
 			var _html = that.ajaxRender(data,index);
-			//alert(_html);
+			that.createLoading();
 			Ajax.doAjax("GET",_url,true,function(txt){
-
 				_html += '<div class="ar_content">';
 				_html += txt;
 				_html +='</div>';
+				document.getElementById('js-content').removeChild(document.getElementById('loading'));
 				document.getElementById('js-content').innerHTML = _html;
 			});
 			e.stopPropagation();
