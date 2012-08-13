@@ -138,10 +138,13 @@ Article.sidebar = {
 		var that = this;
 		document.getElementById('js-side').onclick = function(e){
 			var _target = e.target;
+
+
 			var _parent = that.getParent(_target);
 			
 			if(_parent.className !="ar_item"){
-				return;
+				_parent = that.getParent(_parent);
+				//return;
 			}
 			var idPro = _parent.getAttribute('data-id');
 			var index = that.index(idPro,data);
