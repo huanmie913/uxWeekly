@@ -147,6 +147,11 @@ Article.sidebar = {
 			var index = that.index(idPro,data);
 			var _url = data[index]['content']['ajaxcontent']['ajaxSource'];
 			var _html = that.ajaxRender(data,index);
+			var _tagName = document.getElementById('js-side').querySelectAll('ar_item');
+			for(var ci = data.length-1;ci>=0;ci--){
+				_tagName[ci].className = (ci==index) ? " current" : "";
+			}
+
 			that.createLoading();
 			Ajax.doAjax("GET",_url,true,function(txt){
 				_html += '<div class="ar_content">';
@@ -155,6 +160,7 @@ Article.sidebar = {
 				document.getElementById('js-content').removeChild(document.getElementById('js-loading'));
 				document.getElementById('js-content').innerHTML = _html;
 			});
+			window.location.href="!#/"+idPro;
 			e.stopPropagation();
 		}
 	},
