@@ -24,7 +24,7 @@ var articleDataArray = [
 		  "from" : "http://www.ux265.net",
 		  "url" : "http://www.google.com",
 		  "time" : "2012-08-15",
-		  "author" : "自玉伯也叫射雕",
+		  "author" : "玉伯也叫射雕",
 		  "title" : "日常工作与新技术",
 		  "ajaxcontent" : {
 				"ajaxFlag" : true,
