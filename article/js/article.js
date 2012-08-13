@@ -131,7 +131,7 @@ Article.sidebar = {
 	createLoading : function(){
 		var loading = document.createElement('div');
 		loading.className = "loading";
-		loading.id = "loading";
+		loading.id = "js-loading";
 		document.getElementById('js-content').appendChild(loading);
 	},
 	clickAjax : function(data){
@@ -152,7 +152,7 @@ Article.sidebar = {
 				_html += '<div class="ar_content">';
 				_html += txt;
 				_html +='</div>';
-				document.getElementById('js-content').removeChild(document.getElementById('loading'));
+				document.getElementById('js-content').removeChild(document.getElementById('js-loading'));
 				document.getElementById('js-content').innerHTML = _html;
 			});
 			e.stopPropagation();
