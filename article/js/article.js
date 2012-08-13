@@ -149,7 +149,7 @@ Article.sidebar = {
 			var _html = that.ajaxRender(data,index);
 			var _tagName = document.getElementById('js-side').querySelectorAll('.ar_item');
 			for(var ci = data.length-1;ci>=0;ci--){
-				_tagName[ci].className += (ci==index) ? " current" : "";
+				_tagName[ci].className = (ci==index) ? "ar_item current" : "ar_item";
 			}
 
 			that.createLoading();
