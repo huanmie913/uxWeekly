@@ -5,7 +5,7 @@ Version:	1.0
 Date:		2012/08/013
 Author:		情封
 */
-body{background:#ededed}
+body{background:#ededed;font:500 14px/1.8 'Hiragino Sans GB', sans-serif;}
 
 .article_wrap{ margin:80px 15% 20px 0;}
 .article_main{ position:absolute;left:300px;top:80px;bottom:60px;width:60%; padding:10px 20px;border-width:1px;border-color:#99b611 #e9e8df #e9e8df #e9e8df;border-style:solid;background:#fff;}
