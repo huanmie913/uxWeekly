@@ -79,102 +79,27 @@
            <p style="font-size: 1.2em;color: red;" class="text-node ellipsis">ni q 国Qni q 国Qni q 国Qni q 国Qni q 国Qni q 国Qni q 国Q</p>
            <p class="text-node ellipsis">n i q 国 Qn i q 国Qni q 国 Q ni q 国 Qni q 国Q ni q 国Qni q 国Q</p>
        </div>
+	   <br/>
+	   <h2>三：解决方案</h2>
+	   <p>参考文档:<a href="http://www.w3help.org/zh-cn/causes/RT3005#description"/>'text-overflow:ellipsis' 会引起兼容性问题</a></p>
   </div>
- <!--/demo_box-->
-   <script>
-        (function(win,undefined){
-            var browser = ({
-               init : function(){
-                   var s, ua = navigator.userAgent.toLowerCase();
-                   ( s = ua.match(/msie([\d.]+)/))? this.set('ie',(s[1])):
-                   ( s = ua.match(/firefox\/([\d.]+)/)) ? this.set('firefox',(s[1])):
-                   ( s = ua.match(/chrome\/([\d.]+)/)) ? this.set('chrome',(s[1])) :
-                   ( s = ua.match(/opera.([\d.]+)/)) ? this.set("opera",(s[1])) :
-                   ( s = ua.match(/version\/([\d.]+).*safari/)) ? this.set("safari",(s[1])) : 0;
-                   return this;
-               },
-               set : function(name,version){
-                   this.name = name;
-                   this.version = version;
-                   this[name] = version;
-               }
-            }).init();
-            var isSupportCss = {
-                privatePrefixs : {
-                    "ie" : "Ms",
-                    "firefox" : "Moz",
-                    "opera" : "O",
-                    "chrome" : "Webkit",
-                    "safari" : "Webkit"
-                },
-                getPrivatePrefix : function(){
-                   return this.privatePrefixs[browser.name];
-                },
-                isSupport : function(property, checkPrivate, value){
-                    var element = document.createElement('div');
-                    if(property in element.style){
-                        element.style[property] = value;
-                        return element.style[property] === value;
-                    }else if(checkPrivate){
-                        var firstChar = property.charAt(0).toUpperCase();
-                        property = this.getPrivatePrefix() + firstChar + property.substr(1);
-                        return  this.isSupport(property,false,value);
-                    }else{
-                        return false;
-                    }
-                }
-            };
-            var ellipsis = function(element){
-                var limitWidth = element.clientWidth;
-                var ellipsisText = "...";
-                var temp = element.cloneNode(true);
-                temp.id = "checkTextLengthNode";
-                temp.className+=" check-text-length-node";
-                element.parentNode.appendChild(temp);
-                var realWidth = temp.clientWidth;
-                if(realWidth <= limitWidth){
-                    return;
-                }
-                temp.innerHTML = ellipsisText;
-                var elliWidth = temp.clientWidth;
-
-                var str = element.innerHTML;
-                str = str.replace(/\s+/g,' ');
-                var s,totalWidth =0;
-                for(var i= 0,len = str.length;i<len;i++){
-                    s = str.charAt(i);
-                    temp.innerHTML = ( s === ' ' ? ' ' : s );
-                    totalWidth += temp.clientWidth;
-                    if( totalWidth+elliWidth > limitWidth ){
-                        str = str.substr(0,i);
-                        break;
-                    }
-                }
-                element.innerHTML = str + ellipsisText;
-                temp.parentNode.removeChild(temp);
-            }
-            win.isSupportCss = isSupportCss;
-            win.ellipsis = ellipsis;
-        })(window);
-
-
-
-        window.onload = function(){
-            if(isSupportCss.isSupport('textOverflow', true, 'ellipsis')){
-                return;
-            }
-            var ps = document.body.getElementsByTagName('p');
-            for(var i = 0, len = ps.length; i < len; i++){
-                if(ps[i].className.indexOf('ellipsis') > -1)
-                    ellipsis(ps[i]);
-            }
-        }
-   </script>
-   <footer class="bottomBar" id="bottomBar"></footer>
+ <!--/demo_box-->   
+<footer class="bottomBar" id="bottomBar"></footer>
 <script src="/wiki/static/js/mod_f2er.js" type="text/javascript"></script>
 <script type="text/javascript">
 mod_f2er.topBar('css3--text-overflow','toolbar');
 mod_f2er.bottomBar('bottomBar');
+ window.onload = function(){
+	if(isSupportCss.isSupport('textOverflow', true, 'ellipsis')){
+        return;
+    }
+    var ps = document.body.getElementsByTagName('p');
+		for(var i = 0, len = ps.length; i < len; i++){
+            if(ps[i].className.indexOf('ellipsis') > -1){
+              ellipsis(ps[i]);
+			}
+        }
+    }
 </script>
 </body>
 </html>
