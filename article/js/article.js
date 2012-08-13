@@ -92,7 +92,7 @@ Article.sidebar = {
 		var _sideDiv = document.createElement('div');
 			_sideDiv.className = "ar_item";
 			_sideDiv.setAttribute("data-id",obj.id);
-			_sideDiv.setAttribute("data-action","Article.sidebar.ajaxRender");
+			//_sideDiv.setAttribute("data-action","Article.sidebar.ajaxRender");
 		var _html = '<h2>'+_ocontent.title+'</h2>';
 		_html +=	'<div class="info">';
 		_html +=		'<span class="name">'+_ocontent.author+'</span>';
@@ -108,47 +108,57 @@ Article.sidebar = {
 	},
 	ajaxRender : function(data,n){
 		var _content = data[n]['content'];
-		var _from = _content.from,
+		 var _from = _content.from,
 			_author = _content.author,
-			_source = _content.source;
+			_source = _content.url;
 		var _html = '<header class="ar_header">';
-		_html += '    <a class="source" href="'+_source+'">查看原文</a>';
-		_html += '		<div class="info"><span>来源:'+_from+'</span><span>作者:'_author'</span></a>';
-		_html += '	</header>';
+			_html += '    <a class="source" href="'+_source+'">查看原文</a>';
+			_html += '<div class="info"><span>来源:'+_from+'</span><span>作者:'+_author+'</span></div>';
+			_html += '	</header>';
 		return _html;
-		//document.getElementById('js-content').innerHTML = _html;
 	},
 	getParent : function(element){
 		var _parent=element.parentNode;
 		return _parent && _parent.nodeType!=11 ? _parent : null;
 	},
+	index : function(num,data){
+		for(var ai = data.length-1;ai>=0;ai--){
+			var _id = data[ai].id;
+			if( _id == num ){
+				return ai;
+			}	
+		}
+	},
 	clickAjax : function(data){
 		var that = this;
 		document.getElementById('js-side').onclick = function(e){
-			var _target = e.targket;
+			var _target = e.target;
 			var _parent = that.getParent(_target);
+			
 			if(_parent.className !="ar_item"){
 				return;
 			}
-			var idPro = _parent.getAttribute('data-id'),
-				actionPro = _parent.getAttribute('data-action');
-			for(var ai = data.length-1;ai>=0;ai--){
-				var _id = data[ai].id;
-				if( _id != idPro ){
-					break;
-				}
-				Ajax.doAjax("GET",data[ai]['ajaxcontent']['ajaxSource'],true,function(txt){
-					actionPro(ai);
-				});
-			}
-			
+			var idPro = _parent.getAttribute('data-id');
+				//actionPro = _parent.getAttribute('data-action');
+			var index = that.index(idPro,data);
+			var _url = data[index]['content']['ajaxcontent']['ajaxSource'];
+			var _html = that.ajaxRender(data,index);
+			//alert(_html);
+			Ajax.doAjax("GET",_url,true,function(txt){
+
+				_html += '<div class="ar_content">';
+				_html += txt;
+				_html +='</div>';
+				document.getElementById('js-content').innerHTML = _html;
+			});
+			e.stopPropagation();
 		}
 	},
 	init : function(articleData){
 		this.sideRender(articleData);
 		this.clickAjax(articleData);
 	}
-}
+};
 
 
 
