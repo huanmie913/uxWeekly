@@ -160,7 +160,7 @@ Article.sidebar = {
 				document.getElementById('js-content').removeChild(document.getElementById('js-loading'));
 				document.getElementById('js-content').innerHTML = _html;
 			});
-			window.location.href="#id="+idPro;
+			//window.location.href="#id="+idPro;
 			e.stopPropagation();
 		}
 	},
