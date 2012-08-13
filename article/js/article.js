@@ -111,7 +111,7 @@ Article.sidebar = {
 			_author = _content.author,
 			_source = _content.url;
 		var _html = '<header class="ar_header">';
-			_html += '    <a class="source" href="'+_source+'">查看原文</a>';
+			//_html += '    <a class="source" href="'+_source+'">查看原文</a>';
 			_html += '<div class="info"><span>来源:'+_from+'</span><span>作者:'+_author+'</span></div>';
 			_html += '	</header>';
 		return _html;
