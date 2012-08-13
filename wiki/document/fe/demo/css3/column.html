@@ -51,7 +51,7 @@
             -moz-box-sizing:border-box;
             -webkit-box-sizing:border-box;
         }
-        .pp_box{
+        .vertical_box{
             display:-moz-box;
             display:-webkit-box;
             -moz-box-orient:vertical;
@@ -59,10 +59,20 @@
             width:500px;
             height:300px;
             border:5px solid #000;
-            /*-moz-box-orient:horizontal;
-            -webkit-box-orient:horizontal;*/
-
         }
+		
+		.horizontal_box{
+			display:-moz-box;
+            display:-webkit-box;
+            -moz-box-orient:vertical;
+            -webkit-box-orient:vertical;
+            width:500px;
+            height:300px;
+            border:5px solid #000;
+			-moz-box-orient:horizontal;
+            -webkit-box-orient:horizontal;
+		}
+		
        .a{ background:#ddd;
             -moz-box-flex:2;
            -webkit-box-flex:2;
@@ -145,11 +155,21 @@
 			</ul>
 		</div>
 	</div>
-	<div class="pp_box">
+	<!--垂直-->
+	<h2>二：垂直显示</h2>
+	<div class="vertical_box">
 		<div class="a">我是左侧</div>
 		<div class="b">我是中间</div>
 		<div class="c">我是右侧</div>
 	</div>
+	<h2>三：水平显示</h2>
+	<div class="horizontal_box">
+		<div class="a">我是左侧</div>
+		<div class="b">我是中间</div>
+		<div class="c">我是右侧</div>
+	</div>
+	<br/>
+	<h2>三：水平垂直居中</h2>
 	<div class="ox_box">
 		我是居中显示
 	</div>
