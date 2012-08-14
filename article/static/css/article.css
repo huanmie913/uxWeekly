@@ -29,7 +29,7 @@ body{background:#ededed;font:500 14px/1.8 'Hiragino Sans GB', sans-serif;}
 
 .bottomBar{position:fixed;bottom:0;left:0}
 
-.loading{ background:url("static/images/ajax-loader.gif") no-repeat center center;width:64px;height:64px;position:absolute;left:50%;top:50%;margin:-32px 0 0 -32px;}
+.loading{ background:url("images/ajax-loader.gif") no-repeat center center;width:64px;height:64px;position:absolute;left:50%;top:50%;margin:-32px 0 0 -32px;}
 
 .history{ line-height:24px;}
 
