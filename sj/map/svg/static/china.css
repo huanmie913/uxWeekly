@@ -1,0 +1,64 @@
+/*
+ * 游戏指数
+*/
+
+*{ margin:0;padding:0; font-size:12px; line-height:18px;}
+body{ background:#35363a;}
+table{ border-collapse: collapse; border-spacing: 0;}
+li{ list-style:none;}
+.gameBox{ position: absolute;left:50%;top:50%;margin:-364px 0 0 -500px;width:1000px; height:700px;}
+
+#j_total{ 
+        position:absolute;
+        left:820px;
+        top:20px;
+        color:#ff9933;
+        font-size:24px;
+        font-family: microsoft YaHei;
+    }
+/*动画*/
+@-webkit-keyframes showPop{
+    0%{ background:#000;opacity:0;font-size:2px;}
+    25%{ background:#000;opacity:0.4;font-size:6px;}
+    50%{ background:#000;opacity:0.6;font-size:8px;}
+    75%{ background:#000;opacity:0.8;font-size:10px;}
+    100%{ background:#000;opacity:1;font-size:12px;}
+}
+
+@-webkit-keyframes hidePop{
+    0%{ background:#000;opacity:1;font-size:12px;}
+    25%{ background:#000;opacity:0.8;font-size:10px;}
+    50%{ background:#000;opacity:0.6;font-size:8px;}
+    75%{ background:#000;opacity:0.4;font-size:6px;}
+    100%{ background:#000;opacity:0;font-size:0px;}
+}
+
+/*提示框*/
+.indexPop{
+    font-family:microsoft YaHei;
+    position:absolute;
+    padding:5px;
+    background:#000;
+    border:3px solid #fff;
+    color:#fff;
+    text-align:center;
+    -webkit-border-radius:100px;
+    text-align:center;
+    -webkit-transform-origin:center center;
+}
+
+.showPop{
+    width:80px;
+    height:80px;
+    -webkit-animation:showPop linear 1s;
+    
+}
+
+.hidePop{
+    width:0;
+    height:0;
+    font-size:0;
+    line-height:0;
+    -webkit-animation:hidePop linear 1s;
+}
+.indexPop img{ -webkit-border-radius:30px;vertical-align: top;display:block;margin:0 auto;}
