@@ -20,8 +20,9 @@
 			<dd>文章采用ajax读取</dd>
 		</dl>	
 	</div>
-	<div class="article_side" id="js-side">
-		
+	<div class="article_side" id="js-side"></div>
+	<div class="article_toolbar">
+		<span class="fullscreen" title="全屏" id="js-fullscreen"></span>
 	</div>
 </div>
 <!--article_wrap-->
@@ -33,6 +34,7 @@
 mod_f2er.topBar('阅读','toolbar',true);
 mod_f2er.bottomBar('bottomBar');
 Article.sidebar.init(articleDataArray);
+Article.fullScreen.init();
 </script>
 </body>
 </html>

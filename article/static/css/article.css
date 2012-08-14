@@ -37,6 +37,9 @@ body{background:#ededed;font:500 14px/1.8 'Hiragino Sans GB', sans-serif;}
 ::-webkit-scrollbar-track {background-color:rgba(0,0,0,.05);box-shadow:inset 1px 0 0 rgba(0,0,0,.1);border-radius: 5px; }
 ::-webkit-scrollbar-thumb {background: rgba(0,0,0,0.15);-webkit-box-shadow: inset 1px 1px 0 rgba(0,0,0,0.1);border-radius: 5px; }
 
+.article_toolbar{ position:fixed;right:0;top:80px;bottom:60px;background:#CBCFCF;width:35px; padding:10px 8px;}
+.article_toolbar .fullscreen{ background:url(../images/fullscreen.png) no-repeat;display:block;width:35px;height:35px;}
+
 
 
 
