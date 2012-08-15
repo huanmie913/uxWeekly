@@ -238,6 +238,17 @@ eval(function(B,D,A,G,E,F){function C(A){return A<62?String.fromCharCode(A+=A<26
 					e.preventDefault();
 				}
 			});
+			
+			window.addEventListener("orientationchange ",function(){
+				//重新计算
+				if(QF.$(that.setting.maskID)){
+					var _height = (dbe.clientHeight > dbe.scrollHeight ? dbe.clientHeight : dbe.scrollHeight),
+						_width = (dbe.clientWidth > dbe.scrollWidth ? dbe.clientWidth : dbe.scrollWidth);
+					var _obj = QF.$(that.setting.maskID);
+					_obj.style.height = _height+"px";
+					_obj.style.height = _width+"px";
+				}
+			})
 		}
 	};
 	
