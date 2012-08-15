@@ -12,7 +12,7 @@ body{background:#ededed;font:500 14px/1.8 'Hiragino Sans GB', sans-serif;}
 .article_side{ width:298px;border:1px solid #ddd;background:#e2dfdf;position:absolute;left:0;top:120px;bottom:60px;}
 
 .ar_item{ border-top:1px solid #efebeb;border-bottom:1px solid #ddd;margin-top:-1px;cursor:pointer;}
-.ar_item h2{font-weight:400;font-size:14px;line-height:2;margin-bottom:10px; color:#383b29;padding:15px 10px;}
+.ar_item h2{font-weight:400;font-size:14px;line-height:2;margin-bottom:10px; color:#383b29;padding:15px 10px 0 10px;}
 .ar_item .info{font-size:12px;padding:0 10px 15px;}
 .ar_item .name{ color:#000;}
 .ar_item time{ color:#aaa; margin-left:50px;}
