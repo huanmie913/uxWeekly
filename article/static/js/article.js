@@ -150,10 +150,10 @@ Article.sidebar = {
 			var index = that.index(idPro,data);
 			var _url = data[index]['content']['ajaxcontent']['ajaxSource'];
 			var _html = that.ajaxRender(data,index);
-			/*var _tagName = document.getElementById('js-side').querySelectorAll('.ar_item');
+			var _tagName = document.getElementById('js-side').querySelectorAll('.ar_item');
 			for(var ci = data.length-1;ci>=0;ci--){
 				_tagName[ci].className = (ci==index) ? "ar_item current" : "ar_item";
-			}*/
+			}
 
 			that.createLoading();
 			Ajax.doAjax("GET",_url,true,function(txt){
@@ -163,7 +163,7 @@ Article.sidebar = {
 				document.getElementById('js-content').removeChild(document.getElementById('js-loading'));
 				document.getElementById('js-content').innerHTML = _html;
 			});
-			//window.location.href="#id="+idPro;
+			window.location.href="#"+idPro;
 			e.stopPropagation();
 		}
 	},
