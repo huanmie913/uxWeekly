@@ -239,15 +239,33 @@ eval(function(B,D,A,G,E,F){function C(A){return A<62?String.fromCharCode(A+=A<26
 				}
 			});
 			
-			window.addEventListener("orientationchange ",function(){
+			window.addEventListener("orientationchange",function(){
 				//重新计算
 				if(QF.$(that.setting.maskID)){
 					var _height = (dbe.clientHeight > dbe.scrollHeight ? dbe.clientHeight : dbe.scrollHeight),
 						_width = (dbe.clientWidth > dbe.scrollWidth ? dbe.clientWidth : dbe.scrollWidth);
 					var _obj = QF.$(that.setting.maskID);
 					_obj.style.height = _height+"px";
-					_obj.style.height = _width+"px";
+					_obj.style.width = _width+"px";
 				}
+				
+				var orientation = window.orientation;
+				if(QF.$('j-pop')){
+					var _pop = QF.$('j-pop');
+					switch(orientation){
+						case 0:
+						case 180:
+							_pop.style.width = "700px";
+							_pop.style.margin = "-285px 0 0 -350px";
+							break;
+						case 90:
+						case -90:
+							_pop.style.width = "856px";
+							_pop.style.margin = "-285px 0 0 -430px";
+							break;
+					}
+				}
+				
 			})
 		}
 	};
