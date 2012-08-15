@@ -173,5 +173,24 @@ Article.sidebar = {
 	}
 };
 
+Article.fullScreen = {
+	setFullScreen : function(){
+		document.getElementById('js-fullscreen').onclick = function(e){
+			document.getElementById('js-content').webkitRequestFullScreen();
+			e.stopPropagation();
+		}
+	},
+	exitFullScreen : function(){
+		document.onclick = function(){
+           document.webkitCancelFullScreen();
+       }
+	},
+	init : function(){
+		this.setFullScreen();
+		this.exitFullScreen();
+	}
+}
+
+
 
 
