@@ -211,7 +211,7 @@ a:active{-webkit-user-select: none;-webkit-tap-highlight-color:rgba(255,255,255,
 	.link{overflow:hidden;margin-right:-20px;}
 	.link li{float:left;background-size:100px 100px;margin:10px 0 0 5px;}
 	
-	.bx1,.bx2,.bx5,.bx3,.bx4,.bx6{ width:720px; margin:0 auto;}
+	.bx1,.bx2,.bx5,.bx3,.bx4,.bx6{ width:710px; margin:0 auto;}
 	.bx2 .m_item{ width:113px;height:130px;}
 	.bx4 .m_box { width:700px;}
 	.bx4 .m_item{width:95px;margin-right:5px;}
