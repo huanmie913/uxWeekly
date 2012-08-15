@@ -101,7 +101,7 @@ Article.sidebar = {
 		document.getElementById('js-side').appendChild(_sideDiv);
 	},
 	sideRender : function(data){
-		for(var ai = data.length-1;ai>=0;ai--){
+		for(var ai = 0;ai<data.length;ai++){
 			this.tpl( data[ai] );
 		}
 	},
