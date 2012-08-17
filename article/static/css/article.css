@@ -9,10 +9,10 @@ body{background:#ededed;font:500 14px/1.8 'Hiragino Sans GB', sans-serif;}
 
 .article_wrap{ margin:80px 15% 20px 0;}
 .article_main{ position:absolute;left:300px;top:80px;bottom:60px;width:60%; padding:10px 20px;border-width:1px;border-color:#99b611 #e9e8df #e9e8df #e9e8df;border-style:solid;background:#fff;}
-.article_side{ width:298px;border:1px solid #ddd;background:#e2dfdf;position:absolute;left:0;top:120px;bottom:60px;}
+.article_side{ width:298px;border:1px solid #ddd;background:#e2dfdf;position:absolute;left:0;top:120px;bottom:60px;overflow-x:hidden;overflow-y:auto;}
 
 .ar_item{ border-top:1px solid #efebeb;border-bottom:1px solid #ddd;margin-top:-1px;cursor:pointer;border-left:2px solid #e2dfdf}
-.ar_item h2{font-weight:400;font-size:14px;line-height:2;margin-bottom:10px; color:#383b29;padding:15px 10px 0 10px;}
+.ar_item h2{font-weight:400;font-size:14px;line-height:22px;margin-bottom:10px; color:#383b29;padding:15px 10px 0 10px;}
 .ar_item .info{font-size:12px;padding:0 10px 15px;}
 .ar_item .name{ color:#000;}
 .ar_item time{ color:#aaa; margin-left:50px;}
