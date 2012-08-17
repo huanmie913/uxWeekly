@@ -5,6 +5,76 @@
 */
 var articleDataArray = [
 	{
+		"id":808,
+		"content" : {
+		  "from" : "",
+		  "url" : "http://www.ux265.net/",
+		  "time" : "2012-08-17",
+		  "author" : "褪墨",
+		  "title" : "【转】怎样成长为一个优秀的 Web 前端开发工程师？",
+		  "ajaxcontent" : {
+				"ajaxFlag" : true,
+				"ajaxSource" : "/article/201208/fe.html"
+		  }
+		}
+	},
+	{
+		"id":807,
+		"content" : {
+		  "from" : "",
+		  "url" : "http://www.ux265.net/",
+		  "time" : "2012-08-17",
+		  "author" : "褪墨",
+		  "title" : "【转】你的问题不是缺少动力",
+		  "ajaxcontent" : {
+				"ajaxFlag" : true,
+				"ajaxSource" : "/article/201208/programe.html"
+		  }
+		}
+	},
+	{
+		"id":806,
+		"content" : {
+		  "from" : "",
+		  "url" : "http://www.ux265.net/",
+		  "time" : "2012-08-17",
+		  "author" : "情封",
+		  "title" : "给IT新人的15个建议：苦逼程序员的辛酸反省与总结",
+		  "ajaxcontent" : {
+				"ajaxFlag" : true,
+				"ajaxSource" : "/article/201208/it.html"
+		  }
+		}
+	},
+	{
+		"id":805,
+		"content" : {
+		  "from" : "http://coolshell.cn/articles/8031.html",
+		  "url" : "http://www.huxiu.com/portal.php?mod=view&aid=1344",
+		  "time" : "2012-08-17",
+		  "author" : "脱不花妹妹",
+		  "title" : "尊严的来处",
+		  "ajaxcontent" : {
+				"ajaxFlag" : true,
+				"ajaxSource" : "/article/201208/zunyan.html"
+		  }
+		}
+	},
+	{
+		"id":804,
+		"content" : {
+		  "from" : "http://coolshell.cn/articles/8031.html",
+		  "url" : "http://meditic.com/degrading-for-success/",
+		  "time" : "2012-08-17",
+		  "author" : "meditic",
+		  "title" : "降级论",
+		  "ajaxcontent" : {
+				"ajaxFlag" : true,
+				"ajaxSource" : "/article/201208/jiangji.html"
+		  }
+		}
+	},
+	{
 		"id":803,
 		"content" : {
 		  "from" : "http://coolshell.cn/articles/8031.html",
