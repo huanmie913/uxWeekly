@@ -10,11 +10,11 @@ var articleDataArray = [
 		  "from" : "",
 		  "url" : "http://www.ux265.net/",
 		  "time" : "2012-08-17",
-		  "author" : "褪墨",
+		  "author" : "无",
 		  "title" : "【转】怎样成长为一个优秀的 Web 前端开发工程师？",
 		  "ajaxcontent" : {
 				"ajaxFlag" : true,
-				"ajaxSource" : "/article/201208/fe.html"
+				"ajaxSource" : "/article/201208/808.html"
 		  }
 		}
 	},
@@ -28,7 +28,7 @@ var articleDataArray = [
 		  "title" : "【转】你的问题不是缺少动力",
 		  "ajaxcontent" : {
 				"ajaxFlag" : true,
-				"ajaxSource" : "/article/201208/programe.html"
+				"ajaxSource" : "/article/201208/807.html"
 		  }
 		}
 	},
@@ -38,11 +38,11 @@ var articleDataArray = [
 		  "from" : "",
 		  "url" : "http://www.ux265.net/",
 		  "time" : "2012-08-17",
-		  "author" : "情封",
+		  "author" : "无",
 		  "title" : "给IT新人的15个建议：苦逼程序员的辛酸反省与总结",
 		  "ajaxcontent" : {
 				"ajaxFlag" : true,
-				"ajaxSource" : "/article/201208/it.html"
+				"ajaxSource" : "/article/201208/806.html"
 		  }
 		}
 	},
@@ -53,10 +53,10 @@ var articleDataArray = [
 		  "url" : "http://www.huxiu.com/portal.php?mod=view&aid=1344",
 		  "time" : "2012-08-17",
 		  "author" : "脱不花妹妹",
-		  "title" : "尊严的来处",
+		  "title" : "【转】尊严的来处",
 		  "ajaxcontent" : {
 				"ajaxFlag" : true,
-				"ajaxSource" : "/article/201208/zunyan.html"
+				"ajaxSource" : "/article/201208/805.html"
 		  }
 		}
 	},
