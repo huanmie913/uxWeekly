@@ -28,7 +28,7 @@ body{background:#ededed;font:500 14px/1.8 'Hiragino Sans GB', sans-serif;}
 .ar_content p{ margin-bottom:10px;}
 .ar_content dt{ font-size:16px;}
 .ar_content dd{ padding-left:2em; }
-.ar_content a{color:#333;display:block;}
+.ar_content a{color:#333;}
 
 .bottomBar{position:fixed;bottom:0;left:0}
 
