@@ -94,7 +94,7 @@ Article.sidebar = {
 			_sideDiv.setAttribute("data-id",obj.id);
 		var _html = '<h2>'+_ocontent.title+'</h2>';
 		_html +=	'<div class="info">';
-		_html +=		'<span class="name">'+_ocontent.author+'</span>';
+		_html +=		'<span class="name"><img src="'+_ocontent.avatar+'"/>'+_ocontent.author+'</span>';
 		_html +=		'<time>'+_ocontent.time+'</time>';
 		_html +=	'</div>';
 		_sideDiv.innerHTML = _html;
@@ -163,15 +163,19 @@ Article.sidebar = {
 			for(var ci = data.length-1;ci>=0;ci--){
 				_tagName[ci].className = (ci==index) ? "ar_item current" : "ar_item";
 			}
-
-			that.createLoading();
-			Ajax.doAjax("GET",_url,true,function(txt){
-				_html += '<div class="ar_content">';
-				_html += txt;
-				_html +='</div>';
-				document.getElementById('js-content').removeChild(document.getElementById('js-loading'));
-				document.getElementById('js-content').innerHTML = _html;
-			});
+			if(data[index]['content']['ajaxcontent']['ajaxFlag']){
+				that.createLoading();
+				Ajax.doAjax("GET",_url,true,function(txt){
+					_html += '<div class="ar_content">';
+					_html += txt;
+					_html +='</div>';
+					document.getElementById('js-content').removeChild(document.getElementById('js-loading'));
+					document.getElementById('js-content').innerHTML = _html;
+				});
+			}else{
+				window.open("/article/page/"+idPro+".html");
+				//window.location.href = "/article/page/"+idPro+".html";
+			}
 			window.location.href="#"+idPro;
 		}
 	},
