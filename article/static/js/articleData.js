@@ -70,7 +70,7 @@ var articleDataArray = [
 		  "title" : "降级论",
 		  "ajaxcontent" : {
 				"ajaxFlag" : true,
-				"ajaxSource" : "/article/201208/jiangji.html"
+				"ajaxSource" : "/article/201208/804.html"
 		  }
 		}
 	},

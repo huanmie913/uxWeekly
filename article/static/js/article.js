@@ -137,17 +137,26 @@ Article.sidebar = {
 	clickAjax : function(data){
 		var that = this;
 		document.getElementById('js-side').onclick = function(e){
-			var _target = e.target;
-
-
-			var _parent = that.getParent(_target);
+			e.stopPropagation();
+			var _target = e.target,_element = null;
 			
-			if(_parent.className !="ar_item"){
-				_parent = that.getParent(_parent);
-				//return;
+			if(_target.className == "ar_item"){
+				_element = _target;
+			}else{
+				var _parent = that.getParent(_target);
+				if(_parent.className == "ar_item"){
+					_element = _parent;
+				}
+				if(_parent.className !="ar_item"){
+					_element = that.getParent(_parent);
+				}
 			}
-			var idPro = _parent.getAttribute('data-id');
+			
+			var idPro = _element.getAttribute('data-id');
 			var index = that.index(idPro,data);
+			if( index == undefined){
+				return;
+			}
 			var _url = data[index]['content']['ajaxcontent']['ajaxSource'];
 			var _html = that.ajaxRender(data,index);
 			var _tagName = document.getElementById('js-side').querySelectorAll('.ar_item');
@@ -164,7 +173,6 @@ Article.sidebar = {
 				document.getElementById('js-content').innerHTML = _html;
 			});
 			window.location.href="#"+idPro;
-			e.stopPropagation();
 		}
 	},
 	init : function(articleData){
