@@ -94,7 +94,7 @@ Article.sidebar = {
 			_sideDiv.setAttribute("data-id",obj.id);
 		var _html = '<h2>'+_ocontent.title+'</h2>';
 		_html +=	'<div class="info">';
-		_html +=		'<span class="name">'+_ocontent.author+'</span>';
+		_html +=		'<span class="name"><img src="'+_ocontent.avatar+'"/>'+_ocontent.author+'</span>';
 		_html +=		'<time>'+_ocontent.time+'</time>';
 		_html +=	'</div>';
 		_sideDiv.innerHTML = _html;
@@ -137,34 +137,46 @@ Article.sidebar = {
 	clickAjax : function(data){
 		var that = this;
 		document.getElementById('js-side').onclick = function(e){
-			var _target = e.target;
-
-
-			var _parent = that.getParent(_target);
+			e.stopPropagation();
+			var _target = e.target,_element = null;
 			
-			if(_parent.className !="ar_item"){
-				_parent = that.getParent(_parent);
-				//return;
+			if(_target.className == "ar_item"){
+				_element = _target;
+			}else{
+				var _parent = that.getParent(_target);
+				if(_parent.className == "ar_item"){
+					_element = _parent;
+				}
+				if(_parent.className !="ar_item"){
+					_element = that.getParent(_parent);
+				}
 			}
-			var idPro = _parent.getAttribute('data-id');
+			
+			var idPro = _element.getAttribute('data-id');
 			var index = that.index(idPro,data);
+			if( index == undefined){
+				return;
+			}
 			var _url = data[index]['content']['ajaxcontent']['ajaxSource'];
 			var _html = that.ajaxRender(data,index);
 			var _tagName = document.getElementById('js-side').querySelectorAll('.ar_item');
 			for(var ci = data.length-1;ci>=0;ci--){
 				_tagName[ci].className = (ci==index) ? "ar_item current" : "ar_item";
 			}
-
-			that.createLoading();
-			Ajax.doAjax("GET",_url,true,function(txt){
-				_html += '<div class="ar_content">';
-				_html += txt;
-				_html +='</div>';
-				document.getElementById('js-content').removeChild(document.getElementById('js-loading'));
-				document.getElementById('js-content').innerHTML = _html;
-			});
+			if(data[index]['content']['ajaxcontent']['ajaxFlag']){
+				that.createLoading();
+				Ajax.doAjax("GET",_url,true,function(txt){
+					_html += '<div class="ar_content">';
+					_html += txt;
+					_html +='</div>';
+					document.getElementById('js-content').removeChild(document.getElementById('js-loading'));
+					document.getElementById('js-content').innerHTML = _html;
+				});
+			}else{
+				window.open("/article/page/"+idPro+".html");
+				//window.location.href = "/article/page/"+idPro+".html";
+			}
 			window.location.href="#"+idPro;
-			e.stopPropagation();
 		}
 	},
 	init : function(articleData){
