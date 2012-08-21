@@ -233,7 +233,6 @@ eval(function(B,D,A,G,E,F){function C(A){return A<62?String.fromCharCode(A+=A<26
 							that.createVideo(_src);
 							break;
 					}
-					
 					e.stopPropagation();
 					e.preventDefault();
 				}
