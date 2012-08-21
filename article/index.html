@@ -5,7 +5,13 @@
     <title>每日推送</title>
 	<link href="../wiki/static/css/demo.css" rel="stylesheet" type="text/css"/>
     <link href="static/css/article.css" rel="stylesheet"/>
-	<!--<base target="_blank"/>-->
+	<script>
+		if( (navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) ){
+			 if( document.cookie.indexOf("iphone_redirect=false") == -1 ){
+				  window.location = "http://www.4399ued.com/article/m.html";
+			 }
+		}
+	</script>
 </head>
 <body>
 <div class="toolbar" id="toolbar"></div>
