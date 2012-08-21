@@ -49,11 +49,11 @@ new iChart.LineBasic2D({
 		},
 		listeners:{
 			parseTipText:function(d,t,i){
-				return data_task[i][d.name];
+				return '<strong class="name">'+d.name+"</strong>" + "<br/>"+data_task[i][d.name];
 			}
 		},
 		coordinate:{
-			width:640,
+			width:800,
 			height:460,
 			axis:{
 				color:'#9f9f9f',
