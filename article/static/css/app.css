@@ -5,6 +5,29 @@ Version:	1.0
 Date:		2012/08/21
 Author:		情封
 */
+/* CSS reset */
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{ padding: 0; margin: 0; }
+table { border-collapse: collapse; border-spacing: 0; }
+del, ins { text-decoration: none }
+fieldset, img { border: 0; }
+body,button,input,select,textarea{ font:font:500 14px/1.8 'Hiragino Sans GB', sans-serif;}
+input,select,img{ vertical-align:middle}
+input,select{ outline:none}
+ul,ol{ list-style:none }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+address,cite,dfn,em,var{font-style:normal;}
+
+/* global */
+body{ background:#e0e0e0; }
+td{ font-size:12px; line-height:160%;}
+.fl{ float:left }
+.fr{ float:right }
+a{text-decoration:none;}
+a:hover{text-decoration:underline;}
+.txthide{ text-indent:-999em;overflow:hidden; line-height:0; font-size:0}
+.clearfix:after{ content:""; height:0; visibility:hidden; display:block; clear:both;}
+.clearfix{ zoom:1;}
+.clear{ clear:both }
 body{background:#e8e7e7;font:500 14px/1.8 'Hiragino Sans GB', sans-serif;}
 
 .m_header{ background:#cfcfcf url(../images/m_header.png) repeat-x;height:36px;border-bottom:1px solid #fff;text-align:center;padding-top:10px;position:fixed;left:0;top:0;width:100%}
@@ -13,7 +36,7 @@ body{background:#e8e7e7;font:500 14px/1.8 'Hiragino Sans GB', sans-serif;}
 .m_box{ border-top:1px solid #bdbbbb; margin-top:47px;}
 
 .m_blist{overflow:hidden;}
-.m_blist li{ padding:10px 20px;border-bottom:1px solid #cfcfcf;border-top:1px solid #f1f1f1;font-size:14px;border-left:2px solid #bdbbbb}
+.m_blist li{ padding:10px 1%;border-bottom:1px solid #cfcfcf;border-top:1px solid #f1f1f1;font-size:14px;border-left:2px solid #bdbbbb}
 .m_blist li.current{ border-left:2px solid #8a770f}
 .m_blist img{ -webkit-border-radius:24px;vertical-align:text-bottom;}
 .m_blist address{display:inline-block;color:#010101;margin-left:10px;}
@@ -23,7 +46,7 @@ body{background:#e8e7e7;font:500 14px/1.8 'Hiragino Sans GB', sans-serif;}
 footer{padding:10px 0;text-align:center;}
 footer address{display:inline-block;}
 
-.m_article{ position:fixed;left:0;top:47px;background:#fff;width:100%;height:100%;}
+.m_article{ position:fixed;left:0;top:47px;background:#fff;width:100%;height:100%;display:none;}
 .m_article .m_arcontent{ padding:10px;}
 .m_close{background:url(../images/close.png) no-repeat;width:26px;height:26px;display:block;position:absolute;right:10px;top:-37px;z-index:10}
 
