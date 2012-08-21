@@ -4,41 +4,6 @@
  * time   : 2012-08-20 
 */
 
-var timeData = [
-	{
-   		name : '小芳',
-   		value:[6,6],
-   		color:'#1f7e92',
-   		linewidth:1
-   	},
-	{
-   		name : '俊GG',
-   		value:[5,7],
-   		color:'#f00',
-   		linewidth:1
-   	},
-	{
-   		name : '小郭',
-   		value:[5,5],
-   		color:'#1c9f1c',
-   		linewidth:1
-   	},
-	{
-   		name : '雪莲',
-   		value:[8,7],
-   		color:'#251c9f',
-   		linewidth:1
-   	},
-	{
-   		name : '情封',
-   		value:[5,6],
-   		color:'#05ad74',
-   		linewidth:1
-   	}
-  ];
-
-var data_labels = ["星期一","星期二","星期三","星期四","星期五","星期六","星期日"];
-
 var data_task = [
 	{
 		'小芳':"1）我的游戏店页面（2h）<br/> 2）帐号管理页面（3h） <br/> 3）看game.taobao.com（1h）",
