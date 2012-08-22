@@ -13,55 +13,21 @@
 <body>
 <div class="m_header">
 	<img src="static/images/m_logo.png"/>
+	<span class="m_close" id="js-close"></span>
 </div>
 <div class="m_box">
-	<ul class="m_blist">
-		<li>
-			<div class="info"><img src="static/images/avatar.png"/> <address>情封</address> <time>2012-08-17</time></div>
-			<h2>【转】怎样成长为一个优秀的 Web 前端开发工程师？</h2>
-		</li>
-		<li>
-			<div class="info"><img src="static/images/avatar.png"/> <address>情封</address> <time>2012-08-17</time></div>
-			<h2>【转】怎样成长为一个优秀的 Web 前端开发工程师？</h2>
-		</li>
-		<li>
-			<div class="info"><img src="static/images/avatar.png"/> <address>情封</address> <time>2012-08-17</time></div>
-			<h2>【转】怎样成长为一个优秀的 Web 前端开发工程师？</h2>
-		</li>
-		<li>
-			<div class="info"><img src="static/images/avatar.png"/> <address>情封</address> <time>2012-08-17</time></div>
-			<h2>【转】怎样成长为一个优秀的 Web 前端开发工程师？</h2>
-		</li>
-		<li>
-			<div class="info"><img src="static/images/avatar.png"/> <address>情封</address> <time>2012-08-17</time></div>
-			<h2>【转】怎样成长为一个优秀的 Web 前端开发工程师？</h2>
-		</li>
-		<li>
-			<div class="info"><img src="static/images/avatar.png"/> <address>情封</address> <time>2012-08-17</time></div>
-			<h2>【转】怎样成长为一个优秀的 Web 前端开发工程师？</h2>
-		</li>
-	</ul>
+	<ul class="m_blist" id="js-blist"></ul>
 </div>
 <footer>&copy;2012 之阅 <address>&copy;情封</address></footer>
-<div class="m_article">
-	<div class="m_arcontent">
-		<p>几天前，我的一位朋友，拜伦给我发来了一封邮件，“皮特，在过去的五年我不经常锻炼。现在我正努力回归健身馆，增强体质。我意识到在我寻求思想、身体和精神的平衡过程中，身体健康被忽略了。现在，我需要锻炼身体了，但是我很难找到健身的动力，有什么好的建议吗？”
-
-	这是一个很常见的，很多人在制定计划时也面临的典型问题。
-
-	你应该事先了解一些关于拜伦的细节：他最近开始经商并且经常自费参加培训项目来提升自己的能力。所以拜伦并不是缺少动力，而是他认为自己没有参加锻炼的动力。
-
-	但是，拜伦错了。他在邮件中写到“我要锻炼身体”。事实上他有健身的积极性，不然他是不会给我发邮件的。显然他很在意健身这件事，而当你在意一件事时，你已经寻到动力。
-
-	其实，拜伦面对的问题并不是没有动力，而是如何坚持。
-
-	重点是，只要拜伦一直认为他需要解决的是缺少积极性的问题，那么他会一直在错误的方向上寻求不可能是正确的解决方法。他会试着让自己兴奋起来。他会提醒自己保持体形至关重要。也许他会想象自己瘦身后所吸引的异性，或是瘦身后寿命所能增加的年头。
-
-	每当他试图激励自己都只会徒增自己压力和愧疚感，因为这样做只能加深动机和坚持过程的间隔，加大他对于健身的迫切希望和没有实现这个目标的的事实间的差距（参考适应不良型完美主义）。我们一直抱有这样一种观念，即只要我们足够重视一件事，我们就会成功的完成。但是这种认识并不准确。
-
-	动力存在于大脑中，而坚持存在于实践中。动力是空想的，而坚持是实际的。事实上，积极性问题的解决方法与毅力问题的解决方法完全相反。大脑是动力的实质，但正是因为坚持，大脑才能付诸实践行动。</p>
-	</div>
-	<span class="m_close"></span>
+<div class="m_article" id="js-article">
+	<div class="m_arcontent" id="js-article-content"></div>
+	
 </div>
+<script src = "static/js/ajax.js"></script>
+<script src = "static/js/articleData.js"></script>
+<script src = "static/js/app.js"></script>
+<script>
+	APP.init(articleDataArray);
+</script>
 </body>
 </html>
