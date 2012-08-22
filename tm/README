@@ -5,51 +5,19 @@
 */
 
 数据表tb_tm设计
-<table>
- <tr>
-	<td>id</td>
-	<td>序号</td>
- </tr>
- <tr>
-	<td>nickName</td>
-	<td>昵称</td>
- </tr>
- <tr> 
-	<td>totalTime</td>
-    <td>总时间</td>	
- </tr>
- <tr>
-    <td>weekTime</td>
-	<td>周时间</td>
- </tr>
- <tr>
-    <td>group</td>
-	<td>分类</td>
- </tr>
- <tr>
-	<td>content</td>
-	<td>内容</td>
- </tr>
-</table>
+id : 序号
+nickName : 昵称
+totalTime : 总时间
+weekTime  : 周时间
+group     : 分组
+content   ：内容
+
 
 数据表tb_week设计
-<table>
- <tr>
-	<td>id</td>
-	<td>序号</td>
- </tr>
- <tr>
-	<td>yearTime</td>
-	<td>年度</td>
- </tr>
- <tr>
-	<td>beginTime</td>
-	<td>开始日期</td>
- </tr>
-  <tr>
-	<td>endTime</td>
-	<td>结束日期</td>
- </tr>
-</table>
+id   : 序号
+yearTime : 年度
+beginTime : 开始日期
+endTime   : 结束日期
+
 
 	   
