@@ -6,23 +6,30 @@
 
 var Article = Article || {};
 Article.sidebar = {
+	CONFIG : {
+		sideID : 'js-side', /*左侧ID*/
+		targetClass : 'ar_item' /*目标对象类名*/
+	},
 	tpl : function(obj){
-		var _ocontent = obj["content"];
-		var _sideDiv = document.createElement('div');
-			_sideDiv.className = "ar_item";
-			_sideDiv.setAttribute("data-id",obj.id);
+		var that = this,
+			_ocontent = obj["content"],
+			_sideDiv = document.createElement('div');
+		_sideDiv.className = that.CONFIG.targetClass;
+		_sideDiv.setAttribute("data-id",obj.id);
 		var _html = '<h2>'+_ocontent.title+'</h2>';
 		_html +=	'<div class="info">';
 		_html +=		'<span class="name"><img src="'+_ocontent.avatar+'"/>'+_ocontent.author+'</span>';
 		_html +=		'<time>'+_ocontent.time+'</time>';
 		_html +=	'</div>';
 		_sideDiv.innerHTML = _html;
-		document.getElementById('js-side').appendChild(_sideDiv);
+		return _sideDiv;
 	},
 	sideRender : function(data){
+		var _flagment = document.createDocumentFragment();
 		for(var ai = 0;ai<data.length;ai++){
-			this.tpl( data[ai] );
+			_flagment.appendChild(this.tpl( data[ai] ));
 		}
+		document.getElementById( that.CONFIG.sideID ).appendChild(_sideDiv);
 	},
 	ajaxRender : function(data,n){
 		var _content = data[n]['content'];
@@ -56,16 +63,16 @@ Article.sidebar = {
 	clickAjax : function(data){
 		var that = this,
 			_jsContent = document.getElementById('js-content');
-		document.getElementById('js-side').onclick = function(e){
+		document.getElementById( that.CONFIG.sideID ).addEventListener('click',function(e){
 			e.stopPropagation();
 			var _target = e.target,_element = null;
 			
 			var _targetClass = _target.className;
-			if( _targetClass == "ar_item"){
+			if( _targetClass == that.CONFIG.targetClass ){
 				_element = _target;
 			}else{
 				var _parent = that.getParent(_target);
-				if( _targetClass == "ar_item"){
+				if( _targetClass == that.CONFIG.targetClass ){
 					_element = _parent;
 				}else{
 					_element = that.getParent(_parent);
@@ -77,11 +84,12 @@ Article.sidebar = {
 			if( index == undefined){
 				return;
 			}
+			
 			var _url = data[index]['content']['ajaxcontent']['ajaxSource'];
 			var _html = that.ajaxRender(data,index);
-			var _tagName = document.getElementById('js-side').querySelectorAll('.ar_item');
+			var _tagName = document.getElementById( that.CONFIG.sideID ).querySelectorAll(that.CONFIG.targetClass);
 			for(var ci = data.length-1;ci>=0;ci--){
-				_tagName[ci].className = (ci==index) ? "ar_item current" : "ar_item";
+				_tagName[ci].className = (ci==index) ? that.CONFIG.targetClass+" current" : that.CONFIG.targetClass ;
 			}
 			if(data[index]['content']['ajaxcontent']['ajaxFlag']){
 				that.createLoading();
@@ -96,7 +104,8 @@ Article.sidebar = {
 				window.open("/article/page/"+idPro+".html");
 			}
 			window.location.href="#"+idPro;
-		}
+			
+		},false);
 	},
 	init : function(articleData){
 		this.sideRender(articleData);
