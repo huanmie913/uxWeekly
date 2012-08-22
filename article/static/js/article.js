@@ -54,19 +54,20 @@ Article.sidebar = {
 		document.getElementById('js-content').appendChild(loading);
 	},
 	clickAjax : function(data){
-		var that = this;
+		var that = this,
+			_jsContent = document.getElementById('js-content');
 		document.getElementById('js-side').onclick = function(e){
 			e.stopPropagation();
 			var _target = e.target,_element = null;
 			
-			if(_target.className == "ar_item"){
+			var _targetClass = _target.className;
+			if( _targetClass == "ar_item"){
 				_element = _target;
 			}else{
 				var _parent = that.getParent(_target);
-				if(_parent.className == "ar_item"){
+				if( _targetClass == "ar_item"){
 					_element = _parent;
-				}
-				if(_parent.className !="ar_item"){
+				}else{
 					_element = that.getParent(_parent);
 				}
 			}
@@ -88,12 +89,11 @@ Article.sidebar = {
 					_html += '<div class="ar_content">';
 					_html += txt;
 					_html +='</div>';
-					document.getElementById('js-content').removeChild(document.getElementById('js-loading'));
-					document.getElementById('js-content').innerHTML = _html;
+					_jsContent.removeChild(document.getElementById('js-loading'));
+					_jsContent.innerHTML = _html;
 				});
 			}else{
 				window.open("/article/page/"+idPro+".html");
-				//window.location.href = "/article/page/"+idPro+".html";
 			}
 			window.location.href="#"+idPro;
 		}
