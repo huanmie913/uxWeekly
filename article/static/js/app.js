@@ -63,8 +63,8 @@
 				if( index == undefined){
 					return;
 				}
-				//var _url = 'douwa/'+data[index]['content']['ajaxcontent']['ajaxSource'];
-				var _url = 'http://my.4399.com/douwa/article/201208/804.html';
+				var _url = data[index]['content']['ajaxcontent']['ajaxSource'];
+				//var _url = 'http://my.4399.com/douwa/article/201208/804.html';
 				var _tagName = document.getElementById('js-blist').querySelectorAll('li');
 				for(var ci = data.length-1;ci>=0;ci--){
 					_tagName[ci].className = (ci==index) ? "current" : "";
