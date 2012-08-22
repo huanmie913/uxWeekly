@@ -27,9 +27,9 @@ Article.sidebar = {
 	sideRender : function(data){
 		var that = this,_flagment = document.createDocumentFragment();
 		for(var ai = 0;ai<data.length;ai++){
-			_flagment.appendChild(this.tpl( data[ai] ));
+			_flagment.appendChild(that.tpl( data[ai] ));
 		}
-		document.getElementById( that.CONFIG.sideID ).appendChild(_sideDiv);
+		document.getElementById( that.CONFIG.sideID ).appendChild(_flagment);
 	},
 	ajaxRender : function(data,n){
 		var _content = data[n]['content'];
