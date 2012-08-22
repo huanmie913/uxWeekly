@@ -89,7 +89,7 @@ Article.sidebar = {
 			var _html = that.ajaxRender(data,index);
 			var _tagName = document.getElementById( that.CONFIG.sideID ).querySelectorAll(that.CONFIG.targetClass);
 			for(var ci = data.length-1;ci>=0;ci--){
-				_tagName[ci].className = (ci==index) ? (that.CONFIG.targetClass+" current") : that.CONFIG.targetClass ;
+				_tagName[ci].className = (ci==index) ? "ar_item current" : that.CONFIG.targetClass ;
 			}
 			if(data[index]['content']['ajaxcontent']['ajaxFlag']){
 				that.createLoading();
