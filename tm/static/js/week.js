@@ -7,7 +7,7 @@ var data_labels = ["星期一","星期二","星期三","星期四","星期五","
 var timeData = [
 	{
    		name : '小芳',
-   		value:[6,6],
+   		value:[6,6，6.5],
    		color:'#1f7e92',
    		linewidth:1
    	},
@@ -31,7 +31,7 @@ var timeData = [
    	},
 	{
    		name : '情封',
-   		value:[5,6],
+   		value:[5,6,5.7],
    		color:'#05ad74',
    		linewidth:1
    	}
