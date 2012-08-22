@@ -25,7 +25,7 @@ Article.sidebar = {
 		return _sideDiv;
 	},
 	sideRender : function(data){
-		var _flagment = document.createDocumentFragment();
+		var that = this,_flagment = document.createDocumentFragment();
 		for(var ai = 0;ai<data.length;ai++){
 			_flagment.appendChild(this.tpl( data[ai] ));
 		}
@@ -104,7 +104,6 @@ Article.sidebar = {
 				window.open("/article/page/"+idPro+".html");
 			}
 			window.location.href="#"+idPro;
-			
 		},false);
 	},
 	init : function(articleData){
