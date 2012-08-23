@@ -121,6 +121,5 @@ eval(function(B,D,A,G,E,F){function C(A){return A<62?String.fromCharCode(A+=A<26
 			
 		}
 	}
-	win.ZMXY = ZMXY;
 	win.tabSwitch = tabSwitch;
 })(window);
