@@ -147,7 +147,7 @@ var articleDataArray = [
 		  "url" : "http://www.google.com",
 		  "time" : "2012-08-15",
 		  "author" : "玉伯也叫射雕",
-		  "avatar" : "/article/static/images/avatar.png",
+		  "avatar" : "http://tp3.sinaimg.cn/1748374882/50/5611315601/1",
 		  "title" : "日常工作与新技术",
 		  "ajaxcontent" : {
 				"ajaxFlag" : true,
@@ -162,7 +162,7 @@ var articleDataArray = [
 		  "url" : "http://hi.baidu.com/lijing00333/item/1c28309d8b46c7d41e427118",
 		  "time" : "2012-08-09",
 		  "author" : "拔赤",
-		  "avatar" : "/article/static/images/avatar.png",
+		  "avatar" : "http://tp4.sinaimg.cn/1700082927/50/5611238573/1",
 		  "title" : "前端开发--十日谈",
 		  "ajaxcontent" : {
 				"ajaxFlag" : true,
