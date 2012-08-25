@@ -5,6 +5,21 @@
 */
 var articleDataArray = [
 	{
+		"id":811,
+		"content" : {
+		  "from" : "",
+		  "url" : "http://home.wangjianshuo.com/cn/20120822_chackercc.htm",
+		  "time" : "2012-08-25",
+		  "author" : "王建硕",
+		  "avatar" : "http://tp3.sinaimg.cn/1682912122/50/1279886810/1",
+		  "title" : "动手好奇反叛的Hacker精神",
+		  "ajaxcontent" : {
+				"ajaxFlag" : true,
+				"ajaxSource" : "/article/201208/811.html"
+		  }
+		}
+	},
+	{
 		"id":810,
 		"content" : {
 		  "from" : "",
