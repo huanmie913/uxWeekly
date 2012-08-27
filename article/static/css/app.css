@@ -30,6 +30,17 @@ a:hover{text-decoration:underline;}
 .clear{ clear:both }
 body{background:#e8e7e7;font:500 14px/1.8 'Hiragino Sans GB', sans-serif;}
 
+::-webkit-scrollbar{width: 8px;height: 8px;}
+::-webkit-scrollbar-track-piece{ background-color: #f9fafb;-webkit-border-radius: 6px;-webkit-box-shadow:1px -1px 3px #d1d2d3 inset;}
+::-webkit-scrollbar-thumb:vertical{height: 6px;background:-webkit-linear-gradient(left, #2e8ff0, #64d1ff 100%);
+									-webkit-border-radius: 6px;-webkit-box-shadow:1px 1px 1px #8fdeff inset;
+									border:1px solid #2b88e9;
+									}
+::-webkit-scrollbar-thumb:horizontal{height: 6px;background:-webkit-linear-gradient(top, #64d1ff, #2e8ff0 100%);
+									-webkit-border-radius: 6px;-webkit-box-shadow:1px 1px 1px #8fdeff inset;
+									border:1px solid #2b88e9;
+									}
+
 .m_header{ background:#cfcfcf url(../images/m_header.png) repeat-x;height:36px;border-bottom:1px solid #fff;text-align:center;padding-top:10px;position:absolute;left:0;top:0;width:100%;z-index:2;}
 	.m_header img{width:84px;height:29px;}
 .wrapper{ position:absolute;top:47px;bottom:44px;left:0;width:100%;overflow-y:auto;z-index:1}
