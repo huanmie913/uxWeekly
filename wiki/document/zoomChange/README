@@ -1,8 +1,0 @@
-/*
- * add by: 情封
- * time: 2012-04-17 
-*/
-目的：解决IE内核放大数倍后出现的Bug
-解决方案：目前还没有比较完美的解决此Bug,只能用提示的方式告诉用户，页面处在什么状态下(目前QZone采用的方式)。
-参考地址:http://stackoverflow.com/questions/1713771/how-to-detect-page-zoom-level-in-all-modern-browsers
-	   
