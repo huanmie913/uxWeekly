@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*=========================弹窗=============================*/
+.mod_popbox{ zoom:1;}
+.mod_popbox .pop_content{position:relative; right:3px; top:-3px; }
+.mod_popbox .pop_shadow{ background:url(../image/pop_shdaow.png) repeat; zoom:1;}
+.mod_popbox .pop_inner{ background:#fff;border:1px solid #cfe0ed; zoom:1; overflow:hidden}
+
+/*pop_tbox*/
+.mod_popbox .pop_tbox{}
+.mod_popbox .pop_tbox .hd{ background:url(../image/pop_sprite.png) repeat-x 0 -31px; height:40px; border-bottom:1px solid #e3edf5; line-height:40px; padding:0 10px; color:#1c8ed3; font-size:14px; position:relative; font-weight:700;}
+.mod_popbox .pop_tbox .hd a{ position:absolute; right:10px; top:15px; background:url(../image/pop_sprite.png) no-repeat 0 -71px; width:10px; height:10px; display:block; text-indent:-999em; overflow:hidden; cursor:pointer;}
+.mod_popbox .pop_tbox .hd a:hover{ background-position:-10px -71px;}
+.mod_popbox .pop_tbox .bd{ padding:10px; zoom:1}

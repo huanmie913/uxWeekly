@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Map</title>
+    <meta charset="utf-8"/>
+    <link href="china.css" rel="stylesheet"/>
+	<script src="jquery.min.js"></script>
+	<script src="raphael.js"></script>
+	<script>
+		//预留作为初始化打开显示的省份
+		var current = null;
+	</script>
+</head>
+<body>
+    <!--gameMap-->
+    <div class="gameBox">
+        <div id="gameMap">
+            <span id="j_total"></span>
+        </div>
+    </div>
+    <!--/gameMap-->
+    <!--/gameList-->
+    <script src="game.js"></script>
+	<script src="chinamap.js"></script>
+    <script>
+        QF.ajax.doAjax("GET","/provinceWeight",true,"",function(text){
+            gameIndex.initArea(JSON.parse(text));
+        });
+
+        function getGameData(){
+            QF.ajax.doAjax("GET","/show4399",true,"",function(text){
+                if(text == 'null'){
+                    return;
+                }else{
+                    gameIndex.initPop(JSON.parse(text));
+                }
+            });
+            setTimeout(arguments.callee,50); 
+        }
+        getGameData();
+        gameIndex.initNum();
+    </script>
+</body>
+</html>

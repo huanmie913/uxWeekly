@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*ui_imgText*/
+.ui_imgText{ padding:0 0 0 116px; zoom:1; line-height:20px;}
+.ui_imgText .img{ float:left;width:106px; margin:0 0 0 -116px;display:inline;}
+.ui_imgText .title{ margin-bottom:10px;}
+.ui_imgText .title a{ color:#F49B00;}
+.ui_imgText .text{ color:#666;}

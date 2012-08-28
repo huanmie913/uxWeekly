@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>IE6绝对定位元素1像素偏移BUG</title>
+<style>
+h2,p{ margin:0; line-height:2;}
+h2{ font-size:14px; color:#f16868;}
+h2 span{ color:#333;}
+.father-box{ background:#ff385d; color:#fff; width:599px; height:399px; position:relative;}
+.child-box{ background:#42b7e3; width:200px; height:200px; position:absolute; bottom:0; right:0;}
+</style>
+</head>
+<body>
+  <h2>问题描述：</h2>
+  <p>当一个绝对定位元素的父框的宽度或高度为奇数时，该绝对定位元素的bottom与right值会发生一像素的偏差。</p>
+  <h2>demo:</h2>
+  <div class="father-box">
+  	&nbsp;position:relative;</br>&nbsp;width:599px;</br>&nbsp;height:399px;
+  	<div class="child-box">
+  	&nbsp;position:absolute;</br>&nbsp;bottom:0</br>&nbsp;right:0
+  	</div>
+  </div>
+  <h2>IE6下效果<span>（bottom与right产生1像素偏差）</span></h2>
+  <img src="ie6-demo.jpg" width="600" height="400" alt="ie6-demo" />
+  <h2>解决方法：</h2>
+  <p>1.将父框的width与height设置为偶数。</br>2.子元素用left与top定位。</p>
+</body>
+</html>

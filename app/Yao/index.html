@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>桌游助手Beta</title>
+	<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0;minimum-scale=1.0, maximum-scale=1.0; user-scalable=no" />
+	<!--设置开始页面图片-->
+	<link rel="apple-touch-startup-image" href="startup.png" />
+	<!--在设置书签的时候可以显示好看的图标-->
+	<link rel="apple-touch-icon" href="iphon_tetris_icon.png"/> 
+	<link href="css/yao.css" rel="stylesheet"/>
+</head>
+<body>
+
+<div id="mod_QF">
+<div class="mod_tip" id="J_tip"></div>
+<!--mod_yao-->
+<div class="mod_yao">
+    <!--yao-->
+    <div class="yao">
+        <div class="mod_area" id="J_area"></div>
+        <div class="control">
+            <div class="num_box">
+				<span class="subtraction" id="J_subtraction">-</span>
+				<span class="num"><span  id="J_num" class="n">1</span></span>
+				<span class="add" id="J_add">+</span>
+			</div>
+            <input type="button" value="摇起来" class="button" id="J_button"/>
+        </div>
+    </div>
+    <!--/yao-->
+</div>
+<!--/mod_yao-->
+</div>
+
+<script src="js/QF_yao.js"></script>
+<script>
+var imgArray = [
+				"images/pointer/1.png",	
+				"images/pointer/2.png",	
+				"images/pointer/3.png",	
+				"images/pointer/4.png",	
+				"images/pointer/5.png",	
+				"images/pointer/6.png",	
+			   ]
+for( var i=0,len=imgArray.length;i<len;i++){
+	var _img = new Image();
+	_img.src = imgArray[i];
+}
+
+Yao({ container:"J_area",
+	  num:3,
+	  cn:"s",
+	  subtraBtn:"J_subtraction",
+	  addBtn : "J_add",
+	  numID : "J_num",
+	  maxNum : 6,
+	  yaoBtn : "J_button"
+	});
+</script>
+</body>
+</html>

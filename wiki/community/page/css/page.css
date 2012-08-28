@@ -1,0 +1,28 @@
+﻿
+/*mod_page*/
+.mod_page {line-height:31px; height:31px; margin-top:20px; font-size:12px;}
+.mod_tnum{ float:right; color:#999; }
+.mod_pnum{ float:right;margin:0 10px; display:inline}
+.mod_pnum li{ float:left}
+.mod_pnum a,.mod_pnum span{ float:left; background-image:url(../image/m_banner.png); background-repeat:no-repeat;  text-align:center; height:31px; display:block; color:#000}
+.mod_pnum a:hover{ color:#1C8ED3}
+.mod_pnum .cur a{ background-position:0 -598px;background-repeat:repeat-x; color:#1c8ed3;padding:0 15px;}
+.mod_pnum a{ background-position:0 -567px; background-repeat:repeat-x;padding:0 15px; border-right:1px solid #c8d9ea}
+.mod_pnum .mod_first,.mod_pnum .dis_first,.mod_pnum .dis_last{ background-position:0 -131px; width:51px; padding:0}
+.mod_pnum .mod_last{ background-position:-87px -131px; width:50px; padding:0;border-right:none;}
+.mod_pnum .dis_first{ background-position:0 -193px; color:#ccc;}
+.mod_pnum .dis_last{ background-position:-51px -193px; width:50px; color:#ccc;border-right:none; }
+.mod_go{ background:url(../image/m_banner.png) no-repeat -39px -162px; width:65px; height:27px; padding:2px; overflow:hidden; float:right; }
+.mod_go .mod_ptxt{ width:25px; height:22px; line-height:22px; padding:2px 3px; background:none; border:none; vertical-align:top; text-align:center}
+.mod_go .btn_go{ background-position:-33px 0; width:30px; height:26px; border:none; background:none;vertical-align:top; cursor:pointer}
+
+
+/*mod_simpage*/
+.mod_simpage{ width:350px; margin:50px auto 0; font-size:12px;}
+.mod_simpage a,.mod_simpage ul,.mod_simpage li{ float:left;display:inline;}
+.mod_simpage a{ background-image:url(../image/os_sprite.png); background-position:no-repeat; text-align:center; color:#5ea8e2; height:20px; line-height:20px;margin:0 5px;}
+.mod_simpage .first,.mod_simpage .last{ background-position:0 -457px; width:42px;}
+.mod_simpage .pre,.mod_simpage .next{ background-position:-42px -457px; width:20px; text-indent:-999em; overflow:hidden;}
+.mod_simpage .next{ background-position:-82px -457px;}
+.mod_simpage li a{background-position:-62px -457px; width:20px;}
+.mod_simpage .on a{ background:none;color:#f68006; font-weight:700}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>my社区模板页</title>
+	<meta name="author" content="情封 2012-08-17"/>
+	<link href="http://s4.img4399.com/m/style/global_ue.css?1" rel="stylesheet" />
+    <link href="css/template.css" rel="stylesheet" />
+</head>
+<body>
+<!--js_top-->
+<div id="js_top"></div>
+<!--/js_top-->
+<script type="text/javascript">
+if (top.location != location) {
+	top.location.href = location.href;
+}
+</script>
+<!--page_bg-->
+<div class="page_bg">
+    <div class="page_wrapper">
+        <div class="mod_container clearfix">
+            <div class="aside left" id="js-sidebar"></div>
+            <div class="section right">
+                右侧
+            </div>
+        </div>
+    </div>
+</div>
+<!--/page_bg-->
+<!--js_bottom-->
+<div id="js_bottom"></div>
+<!--/js_bottom-->
+<script src="js/template.js"></script>
+<script>
+	f2er.top('js_top').bottom('js_bottom').sidebar('js-sidebar');
+</script>
+</body>
+</html>
