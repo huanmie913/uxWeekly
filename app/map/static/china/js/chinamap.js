@@ -138,7 +138,7 @@ $(document).ready(function() {
 				setTimeout(arguments.callee,50); 
 			}
 			getGameData();
-			gameIndex.initNum();
+			
 		})(china[state]['path'], state);
 	}
 });

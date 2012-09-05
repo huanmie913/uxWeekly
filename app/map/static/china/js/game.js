@@ -94,6 +94,7 @@
     var _opacity = 100;
     var gameIndex = {};
     var _idNum = 0;
+	var sflag = 0; // 1表示清除本地缓存，0表示不清除
     gameIndex.$ = function(id){
         return typeof id == "string" ? doc.getElementById(id) : id; 
     };
@@ -267,12 +268,19 @@
                 },
                 set : function(key,value){
                     win.localStorage.setItem(key,value);
-                }
+                },
+				clear : function(key){
+					win.localStorage.removeItem(key);
+				}
             };
-            updateNum.init = function(){ 
+            updateNum.init = function(){
+				if( sflag == 1 ){
+					updateNum.localstorage.clear('upnum');
+					sflag = 0;
+				}
 				_num = parseInt(updateNum.localstorage.get('upnum')) || _initNum;
                 setInterval(function(){
-                    var _randNum = Math.floor(Math.random()*500+1);
+                    var _randNum = Math.floor(Math.random()*1000+1);
                     _num += _randNum;
                     gameIndex.$("j_total").innerHTML = updateNum.numFormat(_num);
 					updateNum.localstorage.set('upnum',_num);
