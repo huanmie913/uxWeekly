@@ -5,6 +5,21 @@
 */
 var articleDataArray = [
 	{
+		"id":901,
+		"content" : {
+		  "from" : "",
+		  "url" : "http://www.programmer.com.cn/13382/",
+		  "time" : "2012-09-07",
+		  "author" : "梁景波",
+		  "avatar" : "/article/static/images/avatar.png",
+		  "title" : "从技术到管理：思维转变是关键",
+		  "ajaxcontent" : {
+				"ajaxFlag" : true,
+				"ajaxSource" : "/article/201209/901.html"
+		  }
+		}
+	},
+	{
 		"id":811,
 		"content" : {
 		  "from" : "",
@@ -71,7 +86,6 @@ var articleDataArray = [
 		  "url" : "http://www.ux265.net/",
 		  "time" : "2012-08-17",
 		  "author" : "褪墨",
-		  "avatar" : "/article/static/images/avatar.png",
 		  "avatar" : "/article/static/images/avatar.png",
 		  "title" : "【转】你的问题不是缺少动力",
 		  "ajaxcontent" : {
