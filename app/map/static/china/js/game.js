@@ -1,4 +1,4 @@
-/*
+﻿/*
  * time : 2012-09-04
  * author : 情封
 */
@@ -280,7 +280,7 @@
 				}
 				_num = parseInt(updateNum.localstorage.get('upnum')) || _initNum;
                 setInterval(function(){
-                    var _randNum = Math.floor(Math.random()*1000+1);
+                    var _randNum = Math.floor(Math.random()*10+1);
                     _num += _randNum;
                     gameIndex.$("j_total").innerHTML = updateNum.numFormat(_num);
 					updateNum.localstorage.set('upnum',_num);
