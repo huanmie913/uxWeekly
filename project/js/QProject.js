@@ -114,6 +114,21 @@ QProjectList.sidebar = {
 	}
 };
 
+QProjectList.updateList = {
+	List : function(){},
+	init : function(){
+		document.getElementById('js-update').onclick = function(){
+			this.style.right = "170px";
+			document.getElementById('js-ulist').style.right = 0;
+		}
+		document.body.onclick = function(e){
+			e.stopPropagation();
+			document.getElementById('js-update').style.right = "170px";
+			document.getElementById('js-ulist').style.right = "-170px";
+		}
+	}
+}
+
 
 
 
