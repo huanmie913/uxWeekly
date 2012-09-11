@@ -8,9 +8,15 @@
 id : 序号
 nickName : 昵称
 totalTime : 总时间
-weekTime  : 周时间
-group     : 分组
-content   ：内容
+dateTime  : 日期
+mgroup     : 分组
+mcontent   ：内容
+
+数据表tb_person设计
+id   : 序号
+avatar : 新浪微博头像  
+group : 开始日期
+endTime   : 结束日期
 
 
 数据表tb_week设计
