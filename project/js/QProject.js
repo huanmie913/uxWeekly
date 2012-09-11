@@ -50,6 +50,14 @@ QProjectList.sidebar = {
 			}	
 		}
 	},
+	mask : function(){
+		var _scrollHeight = document.documentElement.scrollHeight;
+		var _mask = document.createElement('div');
+		_mask.id = "js-mask";
+		_mask.className = 'mask';
+		_mask.style.height = _scrollHeight + "px"';
+		document.body.appendChild(_mask);
+	},
 	/*createLoading : function(){
 		var loading = document.createElement('div');
 		loading.className = "loading";
@@ -67,6 +75,9 @@ QProjectList.sidebar = {
 		}
 		document.getElementById('js-closed').onclick = function(){
 			document.getElementById(id).style.display = "none";
+			if(document.getElementById('js-mask')){
+				document.getElementById('js-mask').style.display = "none";
+			}
 			flag = false;
 		}
 	},
@@ -93,6 +104,11 @@ QProjectList.sidebar = {
 			var index = that.index(idPro,data);
 			if( index == undefined){
 				return;
+			}
+			if(!document.getElementById('js-mask')){
+				that.mask();
+			}else{
+				document.getElementById('js-mask').style.display = "block";
 			}
 			that.Dialog("js-prodialog");
 			var _url = data[index]['content']['ajaxcontent']['ajaxSource'];
