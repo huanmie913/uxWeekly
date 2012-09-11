@@ -11,13 +11,13 @@ QProjectList.sidebar = {
 		var _sideDiv = document.createElement('div');
 			_sideDiv.className = "pro_box";
 			_sideDiv.setAttribute("data-id",obj.id);
-		var _html = ' <div class="img_cover"></div> ';
-			_html += '<h2>4399中国区用户分布图</h2>';
+		var _html = ' <div class="img_cover"><img src="'+_ocontent.imgCover+'"</div> ';
+			_html += '<h2>'+_ocontent.title+'</h2>';
 			_html += ' <ul class="desc"> ';
-			_html += '	<li>创建时间:2012-09-21</li> ';
-			_html += '	<li>项目状态:<span class="s_ing">进行中</span></li>';
+			_html += '	<li>创建时间:'+_ocontent.createTime+'</li> ';
+			_html += '	<li>项目状态:<span class="s_ing">'+_ocontent.state+'</span></li>';
 			_html += '</ul>';
-			_html += '<a href="#" class="a_site">立即体验&gt;&gt;</a>';	
+			_html += '<a href="'+_ocontent.url+'" class="a_site">立即体验&gt;&gt;</a>';	
 
 		_sideDiv.innerHTML = _html;
 		document.getElementById('js-plist').appendChild(_sideDiv);
