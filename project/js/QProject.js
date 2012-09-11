@@ -55,7 +55,7 @@ QProjectList.sidebar = {
 		var _mask = document.createElement('div');
 		_mask.id = "js-mask";
 		_mask.className = 'mask';
-		_mask.style.height = _scrollHeight + "px"';
+		_mask.style.height = _scrollHeight + "px";
 		document.body.appendChild(_mask);
 	},
 	/*createLoading : function(){
