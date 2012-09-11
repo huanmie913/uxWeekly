@@ -118,7 +118,7 @@ QProjectList.updateList = {
 	bodyEvent : function(){
 		document.body.onclick = function(e){
 			e.stopPropagation();
-			document.getElementById('js-update').style.right = "170px";
+			document.getElementById('js-update').style.right = "0";
 			document.getElementById('js-ulist').style.right = "-170px";
 		}
 	},
