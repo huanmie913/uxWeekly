@@ -123,7 +123,7 @@ QProjectList.updateList = {
 		}
 	},
 	targetEvent : function(){
-		document.getElementById('js-update').onclick = function(){
+		document.getElementById('js-update').onclick = function(e){
 			e.stopPropagation();
 			this.style.right = "170px";
 			document.getElementById('js-ulist').style.right = 0;
