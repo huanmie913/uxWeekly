@@ -50,12 +50,12 @@ QProjectList.sidebar = {
 			}	
 		}
 	},
-	createLoading : function(){
+	/*createLoading : function(){
 		var loading = document.createElement('div');
 		loading.className = "loading";
 		loading.id = "js-loading";
 		document.getElementById('js-content').appendChild(loading);
-	},
+	},*/
 	Dialog : function(id){
 		var flag = false;
 		if( flag == false ){
@@ -73,7 +73,7 @@ QProjectList.sidebar = {
 	clickAjax : function(data){
 		var that = this;
 		document.getElementById('js-plist').onclick = function(e){
-			that.Dialog("js-prodialog");
+			
 			e.stopPropagation();
 			var _target = e.target,_element = null;
 			
@@ -94,26 +94,17 @@ QProjectList.sidebar = {
 			if( index == undefined){
 				return;
 			}
+			that.Dialog("js-prodialog");
 			var _url = data[index]['content']['ajaxcontent']['ajaxSource'];
 			//var _html = that.ajaxRender(data,index);
 			var _tagName = document.getElementById('js-plist').querySelectorAll('.pro_box');
 			for(var ci = data.length-1;ci>=0;ci--){
 				_tagName[ci].className = (ci==index) ? "pro_box current" : "pro_box";
 			}
-			//if(data[index]['content']['ajaxcontent']['ajaxFlag']){
 				//that.createLoading();
 				Ajax.doAjax("GET",_url,true,function(txt){
-					//_html += '<div class="ar_content">';
-					//_html += txt;
-					//_html +='</div>';
-					//document.getElementById('js-dialog').innerHTML = 
-					//document.getElementById('js-content').removeChild(document.getElementById('js-loading'));
 					document.getElementById('js-dialog').innerHTML = txt;
 				});
-			//}else{
-				//window.open("/article/page/"+idPro+".html");
-				//window.location.href = "/article/page/"+idPro+".html";
-			//}
 			window.location.href="#"+idPro;
 		}
 	},
