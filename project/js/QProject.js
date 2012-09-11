@@ -27,17 +27,6 @@ QProjectList.sidebar = {
 			this.tpl( data[ai] );
 		}
 	},
-	/*ajaxRender : function(data,n){
-		var _content = data[n]['content'];
-		 var _from = _content.from,
-			_author = _content.author,
-			_source = _content.url;
-		var _html = '<header class="ar_header">';
-			_html += '    <a class="source" href="'+_source+'" target="_blank">查看原文</a>';
-			_html += '<div class="info"><span>作者:'+_author+'</span></div>';
-			_html += '	</header>';
-		return _html;
-	},*/
 	getParent : function(element){
 		var _parent=element.parentNode;
 		return _parent && _parent.nodeType!=11 ? _parent : null;
@@ -69,11 +58,9 @@ QProjectList.sidebar = {
 		if( flag == false ){
 			document.getElementById(id).style.display  = "block";
 			flag = true;
-		}else{
-			document.getElementById(id).style.display  = "none";
-			flag = false;
 		}
-		document.getElementById('js-closed').onclick = function(){
+		document.getElementById('js-closed').onclick = function(e){
+			e.stopPropagation();
 			document.getElementById(id).style.display = "none";
 			if(document.getElementById('js-mask')){
 				document.getElementById('js-mask').style.display = "none";
@@ -85,7 +72,7 @@ QProjectList.sidebar = {
 		var that = this;
 		document.getElementById('js-plist').onclick = function(e){
 			
-			e.stopPropagation();
+			//e.stopPropagation();
 			var _target = e.target,_element = null;
 			
 			if(_target.className == "pro_box"){
@@ -105,6 +92,7 @@ QProjectList.sidebar = {
 			if( index == undefined){
 				return;
 			}
+			
 			if(!document.getElementById('js-mask')){
 				that.mask();
 			}else{
@@ -113,10 +101,10 @@ QProjectList.sidebar = {
 			that.Dialog("js-prodialog");
 			var _url = data[index]['content']['ajaxcontent']['ajaxSource'];
 			//var _html = that.ajaxRender(data,index);
-			var _tagName = document.getElementById('js-plist').querySelectorAll('.pro_box');
+			/*var _tagName = document.getElementById('js-plist').querySelectorAll('.pro_box');
 			for(var ci = data.length-1;ci>=0;ci--){
 				_tagName[ci].className = (ci==index) ? "pro_box current" : "pro_box";
-			}
+			}*/
 				//that.createLoading();
 				Ajax.doAjax("GET",_url,true,function(txt){
 					document.getElementById('js-dialog').innerHTML = txt;
@@ -127,12 +115,18 @@ QProjectList.sidebar = {
 	init : function(articleData){
 		this.sideRender(articleData);
 		this.clickAjax(articleData);
+		window.onresize = function(){
+			var _scrollHeight = document.documentElement.scrollHeight;
+			if( document.getElementById('js-mask')){
+				document.getElementById('js-mask').style.height = _scrollHeight +"px";
+			}
+		}
 	}
 };
 
 QProjectList.updateList = {
 	bodyEvent : function(){
-		document.body.onclick = function(e){
+		document.onclick = function(e){
 			e.stopPropagation();
 			document.getElementById('js-update').style.right = "0";
 			document.getElementById('js-ulist').style.right = "-170px";
@@ -140,15 +134,15 @@ QProjectList.updateList = {
 	},
 	targetEvent : function(){
 		document.getElementById('js-update').onclick = function(e){
-			e.stopPropagation();
-			this.style.right = "170px";
+			document.getElementById('js-update').style.right = "170px";
 			document.getElementById('js-ulist').style.right = 0;
+			e.stopPropagation();
 		}
 	},
 	init : function(){
 		var that = this;
-		that.bodyEvent();
 		that.targetEvent();
+		that.bodyEvent();
 	}
 }
 
