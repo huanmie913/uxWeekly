@@ -9,8 +9,20 @@ Author:	f2er
 @import "../wiki/static/css/QCss.css";
 body{ background:#f5f5f5;}
 .wrapper{ width:1000px;margin:0 auto;text-align:left;}
-.topbar{height:48px;background:#000;border-bottom:2px solid #ff8500;
-	
+.topbar{height:48px;background:#000;border-bottom:2px solid #ff8500;}
+.container{ padding:30px 0;}
+.pro_box{ width:225px;height:150px;float:left;border:1px solid #cbcbcb;-webkit-box-shadow:3px 3px 3px #e1e0e0;padding:20px 20px 20px 185px;margin:0 120px 40px 0 0;
+	&:hover{
+		border:1px solid #ff8500;-webkit-box-shadow:#ff8500;
+	}
+	.img_cover{float:left;width:145px;margin-left:-165px;display:inline;height:135px;-webkit-box-shadow:2px 2px 3px #c6c2c2}
+	h2{color:#666;font-size:18px;margin-bottom:30px;}
+	.desc{ line-height:24px;color:#bbbab8;
+		.s_ing{ color:#cb0b0b}
+	}
+	.a_site{ position:absolute;right:20px;bottom:10px;padding:3px 5px;color:#696765;font-size:14px;
+		&:hover{ background:#ff8500;color:#fff;}
+	}
 }
 
 
