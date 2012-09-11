@@ -107,8 +107,8 @@ QProjectList.sidebar = {
 					//_html += txt;
 					//_html +='</div>';
 					//document.getElementById('js-dialog').innerHTML = 
-					document.getElementById('js-content').removeChild(document.getElementById('js-loading'));
-					document.getElementById('js-content').innerHTML = txt;
+					//document.getElementById('js-content').removeChild(document.getElementById('js-loading'));
+					document.getElementById('js-dialog').innerHTML = txt;
 				});
 			//}else{
 				//window.open("/article/page/"+idPro+".html");

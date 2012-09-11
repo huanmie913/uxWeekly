@@ -8,7 +8,7 @@ var projectData = [
 		"id":001,
 		"content" : {
 		  "url" : "http://www.4399ued.com/webos/",
-		  "imgCover" : "http://d.hiphotos.baidu.com/space/pic/item/c2cec3fdfc0392455d20968e8794a4c27c1e259d.jpg",
+		  "imgCover" : "http://img1.gtimg.com/ent/pics/hv1/205/153/1139/74102695.jpg",
 		  "createTime" : "2012-08-25",
 		  "title" : "4399中国区用户分布图",
 		  "state" : "进行中",
