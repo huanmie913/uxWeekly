@@ -13,7 +13,7 @@ var projectData = [
 		  "title" : "4399中国区用户分布图",
 		  "state" : "进行中",
 		  "ajaxcontent" : {
-				"ajaxSource" : "/introduction/001.html"
+				"ajaxSource" : "introduction/001.html"
 		  }
 		}
 	}
