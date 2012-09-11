@@ -38,22 +38,61 @@
     <!--调用说明-->
     <div class="bd">
         <dl class="dllist">
-			<dt>一：站内FLASH  尺寸(单位：像素) 如图一</dt>
-			<dd>1）FLASH大小：1000*600</dd>
-			<dd>2）登录注册框: 404*349</dd>
-			<dd>3）4399用户注册，4399用户登录按钮大小：145*36</dd>
-			<dd>4）<strong>开始游戏、4399用户注册、4399用户登录按钮</strong>，大小为145*36。另4399用户注册、4399用户登录有两种状态。</dd>
-			<dd>5）各字段名（用户名、密码、确认密码）、文本框边框颜色、文本提示颜色需与背景色搭配</dd>
-			<dd>6）	注意：FLASH出现遮罩后，背景不能点击。</dd>
-			<dd><img src="document/design/1.png" width="403" height="349" alt="站内flash" />如图一</dd>
+			<dt>一：站内Flash广告 （交接人：俊超、国宝）</dt>
+			<dd>1：Flash尺寸：1000*600像素；</dd>
+			<dd>2：文件大小：≤400kb</dd>
+			<dd>3：Flash文件cpu占用不能超过30%；</dd>
+			<dd>4：整个Flash广告由bg.swf、js.swf、top.swf、sound.swf等文件用main文件加载而成；
+				<img src="document/design/3.png" width="554" height="107" alt="flash文件" />
+				<ul class="txtlist">
+					<li>1）bg.swf是Flash广告页里的背景图；</li>
+					<li>2）Js.swf是Flash广告页里重要文件，包括：人物动作、诱惑文字、按钮等；</li>
+					<li>3）Top.swf是Flash广告页里顶部的一些标志：包括：logo、文字、装饰等；</li>
+					<li>4）Sound.swf是Flash广告页里的音乐文件；</li>
+				</ul>
+			</dd>
+			<dd>5：用ps定做注册登录框（psd文件直接给国宝，Flash不加注册框弹窗），如下图：
+				<img src="document/design/1.png" width="403" height="349" alt="站内flash" />
+				<ul class="txtlist">
+					<li>1）注册登录框大小: <span class="emhasis">404*349像素</span>；</li>
+					<li>2）4399用户注册、4399用户登录、开始游戏按钮大小：145*36像素；
+						<p>注：4399用户注册、4399用户登录有<span class="emhasis">两种状态</span>；</p>
+					</li>
+					<li>3）各字段名（<span class="emhasis">用户名、密码、确认密码</span>）、文本框边框颜色、文本提示颜色需与背景色搭配。</li>
+					<li>4）边框要整齐，不要投影样式；</li>
+				</ul>
+			</dd>
 		</dl>
-		<dl class="dllist mt">
-			<dt>二：站外广告FLASH  尺寸(单位：像素) 如图二</dt>
-			<dd>1）FLASH大小：1000*600</dd>
-			<dd>2）弹窗最小尺寸：490*200。另需包括标题</dd>
-			<dd>3）文本提示、老用户登录、输入框颜色需与背景色搭配</dd>
-			<dd>4）定做<strong>进入游戏</strong>按钮</dd>
-			<dd><img src="document/design/2.png" width="520" height="327" alt="站外flash" />如图二</dd>
+		<dl class="dllist">
+			<dt>二：站外Flash广告（交接人：荣宗、国宝）</dt>
+			<dd>1：Flash尺寸：1000*600像素；</dd>
+			<dd>2：文件大小：≤400kb</dd>
+			<dd>3：Flash文件cpu占用不能超过30%；</dd>
+			<dd>4：整个Flash广告由bg.swf、js.swf、top.swf、sound.swf等文件用main文件加载而成；
+				<img src="document/design/3.png" width="554" height="107" alt="flash文件" />
+				<ul class="txtlist">
+					<li>1）bg.swf是Flash广告页里的背景图；</li>
+					<li>2）Js.swf是Flash广告页里重要文件，包括：人物动作、诱惑文字、按钮等；</li>
+					<li>3）Top.swf是Flash广告页里顶部的一些标志：包括：logo、文字、装饰等；</li>
+					<li>4）Sound.swf是Flash广告页里的音乐文件；</li>
+				</ul>
+			</dd>
+			<dd>5：用ps定做注册登录框（弹窗要加在Flash文件里），如下图：
+				<img src="document/design/2.png" width="403" height="349" alt="站内flash" />
+				<ul class="txtlist">
+					<li>1）注册框大小: <span class="emhasis">490*300像素</span>；</li>
+					<li>2）头部文字要有吸引力，内容文字：账号、登录密码、确认密码 </li>
+					<li>3）ps定做按钮（<span class="emhasis">按钮psd文件直接给国宝</span>）</li>
+				</ul>
+			</dd>
+			<dd>6：注意
+				<ul>
+					<li>1）弹窗跳转，Flash出现遮罩后，背景不能点击。</li>
+					<li>2）确保每个按钮链接正常；。</li>
+					<li>3）弹窗后记得加链接getURL("javascript:OpenDiv(331,413)"); </li>
+					<li>4）如果是破解的Flash，要注意版权问题；</li>
+				</ul>
+			</dd>
 		</dl>
     </div>
 </div>
@@ -164,8 +203,8 @@
     <!--调用说明-->
     <div class="bd">
         <ol class="txtlist">
+			<li>12-09-11 更新网页游戏flash广告尺寸规范 <span class="name">by 周培青</span></li>
 			<li>12-08-30 新增群组背景、banner设计规范</li>
-			<li>12-08-02 新增网页游戏flash广告尺寸规范</li>
 			<li>12-05-12 网页游戏专题页工作流程优化模式 <span class="name">by 情封</span></li>
 			<li>12-05-04 创建群组banner,图标设计规格 数据来自运营 <span class="name">by 情封</span></li>
 			<li>12-01-19 新增android4.0设计规范 <span>by 情封</span></li>
