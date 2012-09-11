@@ -101,7 +101,7 @@ QProjectList.sidebar = {
 				_tagName[ci].className = (ci==index) ? "pro_box current" : "pro_box";
 			}
 			//if(data[index]['content']['ajaxcontent']['ajaxFlag']){
-				that.createLoading();
+				//that.createLoading();
 				Ajax.doAjax("GET",_url,true,function(txt){
 					//_html += '<div class="ar_content">';
 					//_html += txt;
