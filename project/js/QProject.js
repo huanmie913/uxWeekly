@@ -11,7 +11,7 @@ QProjectList.sidebar = {
 		var _sideDiv = document.createElement('div');
 			_sideDiv.className = "pro_box";
 			_sideDiv.setAttribute("data-id",obj.id);
-		var _html = ' <div class="img_cover"><img src="'+_ocontent.imgCover+'"</div> ';
+		var _html = ' <div class="img_cover"><img src="'+_ocontent.imgCover+'"/></div> ';
 			_html += '<h2>'+_ocontent.title+'</h2>';
 			_html += ' <ul class="desc"> ';
 			_html += '	<li>创建时间:'+_ocontent.createTime+'</li> ';
