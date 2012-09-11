@@ -115,17 +115,24 @@ QProjectList.sidebar = {
 };
 
 QProjectList.updateList = {
-	List : function(){},
-	init : function(){
-		document.getElementById('js-update').onclick = function(){
-			this.style.right = "170px";
-			document.getElementById('js-ulist').style.right = 0;
-		}
+	bodyEvent : function(){
 		document.body.onclick = function(e){
 			e.stopPropagation();
 			document.getElementById('js-update').style.right = "170px";
 			document.getElementById('js-ulist').style.right = "-170px";
 		}
+	},
+	targetEvent : function(){
+		document.getElementById('js-update').onclick = function(){
+			this.style.right = "170px";
+			document.getElementById('js-ulist').style.right = 0;
+		}
+	},
+	init : function(){
+		var that = this;
+		that.bodyEvent();
+		that.targetEvent();
+		
 	}
 }
 
