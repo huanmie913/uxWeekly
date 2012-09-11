@@ -15,7 +15,7 @@ QProjectList.sidebar = {
 			_html += '<h2>'+_ocontent.title+'</h2>';
 			_html += ' <ul class="desc"> ';
 			_html += '	<li>创建时间:'+_ocontent.createTime+'</li> ';
-			_html += '	<li>项目状态:<span class="s_ing">'+_ocontent.state+'</span></li>';
+			_html += '	<li>项目状态:'+_ocontent.state+'</li>';
 			_html += '</ul>';
 			_html += '<a href="'+_ocontent.url+'" class="a_site">立即体验&gt;&gt;</a>';	
 
