@@ -34,7 +34,7 @@ var projectData = [
 		"id":3,
 		"content" : {
 		  "url" : "http://www.4399ued.com/article/",
-		  "imgCover" : "js/project/3.png",
+		  "imgCover" : "imaegs/project/3.png",
 		  "createTime" : "2012-08-13",
 		  "title" : "之阅",
 		  "state" : "进行中",
