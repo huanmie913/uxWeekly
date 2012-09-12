@@ -8,7 +8,7 @@ var projectData = [
 		"id":1,
 		"content" : {
 		  "url" : "http://www.4399ued.com/wiki/",
-		  "imgCover" : "http://img1.gtimg.com/ent/pics/hv1/205/153/1139/74102695.jpg",
+		  "imgCover" : "images/project/0.png",
 		  "createTime" : "2011-12-25",
 		  "title" : "4399UED WIKI",
 		  "state" : "进行中",
@@ -21,7 +21,7 @@ var projectData = [
 		"id":2,
 		"content" : {
 		  "url" : "http://www.4399ued.com/china/",
-		  "imgCover" : "http://img1.gtimg.com/ent/pics/hv1/205/153/1139/74102695.jpg",
+		  "imgCover" : "images/project/0.png",
 		  "createTime" : "2011-07-24",
 		  "title" : "4399中国区用户分布图",
 		  "state" : "进行中",
@@ -47,7 +47,7 @@ var projectData = [
 		"id":4,
 		"content" : {
 		  "url" : "http://www.4399ued.com/webos/",
-		  "imgCover" : "http://img1.gtimg.com/ent/pics/hv1/205/153/1139/74102695.jpg",
+		  "imgCover" : "images/project/0.png",
 		  "createTime" : "2012-08-20",
 		  "title" : "webos",
 		  "state" : "进行中",
@@ -60,7 +60,7 @@ var projectData = [
 		"id":5,
 		"content" : {
 		  "url" : "http://www.4399ued.com/tm/",
-		  "imgCover" : "http://img1.gtimg.com/ent/pics/hv1/205/153/1139/74102695.jpg",
+		  "imgCover" : "images/project/0.png",
 		  "createTime" : "2012-09-01",
 		  "title" : "日报管理",
 		  "state" : "进行中",
