@@ -20,13 +20,13 @@ var projectData = [
 	{
 		"id":2,
 		"content" : {
-		  "url" : "http://www.4399ued.com/webos/",
+		  "url" : "http://www.4399ued.com/china/",
 		  "imgCover" : "http://img1.gtimg.com/ent/pics/hv1/205/153/1139/74102695.jpg",
 		  "createTime" : "2011-07-24",
 		  "title" : "4399中国区用户分布图",
 		  "state" : "进行中",
 		  "ajaxcontent" : {
-				"ajaxSource" : "introduction/001.html"
+				"ajaxSource" : "introduction/002.html"
 		  }
 		}
 	},
