@@ -55,5 +55,18 @@ var projectData = [
 				"ajaxSource" : "introduction/004.html"
 		  }
 		}
+	},
+	{
+		"id":5,
+		"content" : {
+		  "url" : "http://www.4399ued.com/tm/",
+		  "imgCover" : "http://img1.gtimg.com/ent/pics/hv1/205/153/1139/74102695.jpg",
+		  "createTime" : "2012-09-01",
+		  "title" : "日报管理",
+		  "state" : "进行中",
+		  "ajaxcontent" : {
+				"ajaxSource" : "introduction/005.html"
+		  }
+		}
 	}
 ]
