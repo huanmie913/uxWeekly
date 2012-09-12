@@ -47,12 +47,12 @@ QProjectList.sidebar = {
 		_mask.style.height = _scrollHeight + "px";
 		document.body.appendChild(_mask);
 	},
-	/*createLoading : function(){
+	createLoading : function(){
 		var loading = document.createElement('div');
 		loading.className = "loading";
 		loading.id = "js-loading";
-		document.getElementById('js-content').appendChild(loading);
-	},*/
+		document.getElementById('js-prodialog').appendChild(loading);
+	},
 	Dialog : function(id){
 		var flag = false;
 		if( flag == false ){
@@ -105,8 +105,9 @@ QProjectList.sidebar = {
 			for(var ci = data.length-1;ci>=0;ci--){
 				_tagName[ci].className = (ci==index) ? "pro_box current" : "pro_box";
 			}*/
-				//that.createLoading();
+				that.createLoading();
 				Ajax.doAjax("GET",_url,true,function(txt){
+					document.getElementById('js-prodialog').removeChild(document.getElementById('js-loading'));
 					document.getElementById('js-dialog').innerHTML = txt;
 				});
 			window.location.href="#"+idPro;
