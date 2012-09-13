@@ -14,17 +14,21 @@ body{  background:url(images/bg.png) repeat;}
 table{ border-collapse: collapse; border-spacing: 0;}
 li{ list-style:none;}
 .gameBox{ position:relative;}
-#gameMap{background:url(images/china.png) no-repeat;width:3840px;height:2160px;}
-#j_total{ 
+
+/*gameMap*/
+#gameMap{background:url(images/china.png) no-repeat;width:3840px;height:2160px; /*margin:120px auto 0;*/}
+.total{ 
         position:absolute;
-        left:200px;
-        top:0;
-        color:#ff9933;
-        font-size:56px;
-        font-family: Vani;
-		font-style:italic;
-		background:url(images/totalnum.png) no-repeat;width:406px;height:231px;padding-top:300px;text-align:center;
+        left:1650px;top:140px;
+        color:#0090ff;
+        font-size:64px;
+		font-family: microsoft YaHei;
+		width:1000px;
+		letter-spacing:10px; text-shadow:5px 5px 6px #000;
+		/*background:url(images/totalnum.png) no-repeat;width:406px;height:231px;padding-top:300px;text-align:center;*/
     }
+#j_total{/*font-family: Vani;*/position:absolute;
+        left:100px;top:270px;font-size:151px;color:#0090ff;font-family: microsoft YaHei;text-shadow:5px 5px 6px #000;}
 
 .index{ 
         position:absolute;
@@ -35,9 +39,10 @@ li{ list-style:none;}
 /*动画*/
 @-webkit-keyframes showPop{
     0%{ opacity:0;font-size:2px;}
-    25%{ opacity:0.4;font-size:6px;}
-    50%{ opacity:0.6;font-size:8px;}
-    75%{ opacity:0.8;font-size:10px;}
+    20%{ opacity:0.2;font-size:4px;}
+    40%{ opacity:0.4;font-size:6px;}
+    60%{ opacity:0.6;font-size:8px;}
+	80%{ opacity:0.8;font-size:10px;}
     100%{ opacity:1;font-size:12px;}
 }
 
@@ -68,7 +73,7 @@ li{ list-style:none;}
 .showPop{
     width:100px;
     height:100px;
-    -webkit-animation:showPop linear 1s;
+    -webkit-animation:showPop linear 0.5s;
     
 }
 
@@ -81,4 +86,4 @@ li{ list-style:none;}
 }
 .indexPop img{ -webkit-border-radius:64px;vertical-align: top;display:block;margin:0 auto;width:64px;height:64px;}
 .indexPop .imgName{text-overflow: ellipsis;display:block;white-space:nowrap;overflow:hidden;width:96px;text-align:center;}
-.ssjjco{color:#47aba1;font-size:65px;position:absolute;left:1600px;top:100px;font-family: microsoft YaHei;width:1000px;display:block;letter-spacing:10px;font-weight:700; text-shadow:5px 5px 6px #000;}
+.ssjjco{color:#0090ff;font-size:57px;position:absolute;left:100px;top:100px;font-family: microsoft YaHei;width:2000px;display:block;letter-spacing:6px; text-shadow:5px 5px 6px #000;background:url(images/dq.png) no-repeat;padding:30px 0 50px 90px;}

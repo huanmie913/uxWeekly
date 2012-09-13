@@ -89,7 +89,7 @@
 
 (function(win,undefined){
     var doc = win.document;
-    var _initNum = 267342912;
+    var _initNum = 367342912;
     var _timer = 2000;
     var _opacity = 100;
     var gameIndex = {};
@@ -177,7 +177,7 @@
 						 _opacity = 1;
 			   }
 			   //pathObj.animate({fill: "#000", stroke: "#000"}, 500);
-			   st.animate({fill: st.color, stroke: "#fdb913",opacity:_opacity}, 500);
+			   st.animate({fill: st.color, stroke: "#f37021",opacity:_opacity}, 500);
 			   st.toFront();
 			   R.safari();
 			}			
