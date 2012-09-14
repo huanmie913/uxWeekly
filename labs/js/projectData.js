@@ -20,8 +20,8 @@ var projectData = [
 	{
 		"id":2,
 		"content" : {
-		  "url" : "http://www.4399ued.com/china/",
-		  "imgCover" : "images/project/0.png",
+		  "url" : "http://192.168.50.104:8085/static/china/china.html",
+		  "imgCover" : "images/project/2.png",
 		  "createTime" : "2011-07-24",
 		  "title" : "4399中国区用户分布图",
 		  "state" : "进行中",
