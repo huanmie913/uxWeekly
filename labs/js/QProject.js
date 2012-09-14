@@ -89,7 +89,7 @@ QProjectList.sidebar = {
 			
 			var idPro = _element.getAttribute('data-id');
 			var index = that.index(idPro,data);
-			if( index == undefined){
+			if( index == undefined || _element.nodeName.toLowerCase() == 'a'){
 				return;
 			}
 			
@@ -110,7 +110,7 @@ QProjectList.sidebar = {
 					document.getElementById('js-prodialog').removeChild(document.getElementById('js-loading'));
 					document.getElementById('js-dialog').innerHTML = txt;
 				});
-			window.location.href="#"+idPro;
+			window.location.href="!#"+idPro;
 		}
 	},
 	init : function(articleData){
