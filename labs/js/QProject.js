@@ -89,7 +89,7 @@ QProjectList.sidebar = {
 			
 			var idPro = _element.getAttribute('data-id');
 			var index = that.index(idPro,data);
-			if( index == undefined || _element.nodeName.toLowerCase() == 'a'){
+			if( index == undefined){
 				return;
 			}
 			
