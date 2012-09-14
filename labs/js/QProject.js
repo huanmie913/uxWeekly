@@ -7,15 +7,23 @@
 var QProjectList = QProjectList || {};
 QProjectList.sidebar = {
 	tpl : function(obj){
-		var _ocontent = obj["content"];
+		var _ocontent = obj["content"],_state = "";
 		var _sideDiv = document.createElement('div');
 			_sideDiv.className = "pro_box";
 			_sideDiv.setAttribute("data-id",obj.id);
+		switch(_ocontent.scolor){
+			case "s_ing":
+				_state = '<span class="s_ing">'+_ocontent.state+'</span>';
+				break;
+			case "s_stop":
+				_state = '<span class="s_stop">'+_ocontent.state+'</span>';
+				break;
+		}
 		var _html = ' <div class="img_cover"><img src="'+_ocontent.imgCover+'"/></div> ';
 			_html += '<h2>'+_ocontent.title+'</h2>';
 			_html += ' <ul class="desc"> ';
 			_html += '	<li>创建时间:'+_ocontent.createTime+'</li> ';
-			_html += '	<li>项目状态:'+_ocontent.state+'</li>';
+			_html += '	<li>项目状态:'+_state+'</li>';
 			_html += '</ul>';
 			_html += '<a href="'+_ocontent.url+'" class="a_site">立即体验&gt;&gt;</a>';	
 
