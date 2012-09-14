@@ -74,43 +74,46 @@ QProjectList.sidebar = {
 			
 			//e.stopPropagation();
 			var _target = e.target,_element = null;
+			if(_target.nodeName.toLowerCase()!='a'){
+				
 			
-			if(_target.className == "pro_box"){
-				_element = _target;
-			}else{
-				var _parent = that.getParent(_target);
-				if(_parent.className == "pro_box"){
-					_element = _parent;
+				if(_target.className == "pro_box"){
+					_element = _target;
+				}else{
+					var _parent = that.getParent(_target);
+					if(_parent.className == "pro_box"){
+						_element = _parent;
+					}
+					if(_parent.className !="pro_box"){
+						_element = that.getParent(_parent);
+					}
 				}
-				if(_parent.className !="pro_box"){
-					_element = that.getParent(_parent);
+				
+				var idPro = _element.getAttribute('data-id');
+				var index = that.index(idPro,data);
+				if( index == undefined){
+					return;
 				}
+				
+				if(!document.getElementById('js-mask')){
+					that.mask();
+				}else{
+					document.getElementById('js-mask').style.display = "block";
+				}
+				that.Dialog("js-prodialog");
+				var _url = data[index]['content']['ajaxcontent']['ajaxSource'];
+				//var _html = that.ajaxRender(data,index);
+				/*var _tagName = document.getElementById('js-plist').querySelectorAll('.pro_box');
+				for(var ci = data.length-1;ci>=0;ci--){
+					_tagName[ci].className = (ci==index) ? "pro_box current" : "pro_box";
+				}*/
+					that.createLoading();
+					Ajax.doAjax("GET",_url,true,function(txt){
+						document.getElementById('js-prodialog').removeChild(document.getElementById('js-loading'));
+						document.getElementById('js-dialog').innerHTML = txt;
+					});
+				window.location.href="#"+idPro;
 			}
-			
-			var idPro = _element.getAttribute('data-id');
-			var index = that.index(idPro,data);
-			if( index == undefined){
-				return;
-			}
-			
-			if(!document.getElementById('js-mask')){
-				that.mask();
-			}else{
-				document.getElementById('js-mask').style.display = "block";
-			}
-			that.Dialog("js-prodialog");
-			var _url = data[index]['content']['ajaxcontent']['ajaxSource'];
-			//var _html = that.ajaxRender(data,index);
-			/*var _tagName = document.getElementById('js-plist').querySelectorAll('.pro_box');
-			for(var ci = data.length-1;ci>=0;ci--){
-				_tagName[ci].className = (ci==index) ? "pro_box current" : "pro_box";
-			}*/
-				that.createLoading();
-				Ajax.doAjax("GET",_url,true,function(txt){
-					document.getElementById('js-prodialog').removeChild(document.getElementById('js-loading'));
-					document.getElementById('js-dialog').innerHTML = txt;
-				});
-			window.location.href="#"+idPro;
 		}
 	},
 	init : function(articleData){
