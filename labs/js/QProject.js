@@ -110,7 +110,7 @@ QProjectList.sidebar = {
 					document.getElementById('js-prodialog').removeChild(document.getElementById('js-loading'));
 					document.getElementById('js-dialog').innerHTML = txt;
 				});
-			window.location.href="!#"+idPro;
+			window.location.href="#"+idPro;
 		}
 	},
 	init : function(articleData){
