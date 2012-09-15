@@ -8,7 +8,7 @@ var projectData = [
 		"id":1,
 		"content" : {
 		  "url" : "http://www.4399ued.com/wiki/",
-		  "imgCover" : "images/project/0.png",
+		  "imgCover" : "images/project/1.png",
 		  "createTime" : "2011-12-25",
 		  "title" : "4399UED WIKI",
 		  "scolor" : "s_ing",
