@@ -151,7 +151,9 @@
     <?php }?>
      <?php
         if($resNum <=0){?>
-          document.getElementById('j-visual').innerHTML = '<?php echo $nodata ?>';
+          if( document.getElementById('j-visual')){
+                document.getElementById('j-visual').innerHTML = '<?php echo $nodata ?>';
+          }
      <?php   }else if( !empty($_POST['BeginMonthTime']) && !empty($_POST['EndMonthTime']) ){ ?>
         var uid = <?php echo $uid ?>;
         var timeData = eval('('+'<?echo $timeData;?>'+')');
