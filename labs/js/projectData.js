@@ -80,7 +80,7 @@ var projectData = [
 		  "url" : "http://www.4399ued.com/app/bobingGame/bobing.html",
 		  "imgCover" : "images/project/0.png",
 		  "createTime" : "2012-09-17",
-		  "title" : "薄饼",
+		  "title" : "中秋博饼",
 		  "scolor" : "s_ing",
 		  "state" : "进行中",
 		  "ajaxcontent" : {
