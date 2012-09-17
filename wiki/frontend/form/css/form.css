@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*ui_form*/
+.ui_form{ font-family:Arial,"Microsoft YaHei",Helvetica,sans-serif;}
+.ui_form legend{ font-size:0; line-height:0;}
+.ui_form .validate_ok,.ui_form .validate_error,.ui_form .ri,.ui_form .ci,.ui_form .select{ display:inline-block;*zoom:1;*display:inline;vertical-align:middle;}
+.ui_form .ipt_txt,.ui_form textarea{-moz-transition: border 0.2s linear 0s, -moz-box-shadow 0.2s linear 0s;-webkit-transition: border 0.2s linear 0s, -webkit-box-shadow 0.2s linear 0s;}
+.ui_form .ui_item{ padding:0 0 20px 120px; overflow:hidden; zoom:1;}
+.ui_form .label{ float:left;width:110px;text-align:right; height:30px; line-height:30px; margin-left:-120px;display:inline;font-size:14px;}
+.ui_form .ipt_txt{ border:1px solid #cfcfcf; border-radius:5px;outline:none;padding:5px 3px;}
+.ui_form .ri,.ui_form .ci{  margin:6px 10px 0 0;overflow:hidden; }
+.ui_form .ri input,.ui_form .ci input{ font-size:0; line-height:0; margin:0 2px 0 0;width:14px;height:14px;}
+.ui_form .btn{ background:url(../images/btn.png) no-repeat; width:74px; height:28px;line-height:28px;text-align:center;color:#fff; border:none;cursor:pointer;}
+.ui_form .a_forget{ color:#333;margin:0 0 0 10px;}
+.ui_form .select{ border:1px solid #cfcfcf;border-radius:5px;}
+.ui_form .select select{ border:none;background:none; margin:3px;height:22px; line-height:18px; padding:2px 0}
+.ui_form textarea{ border:1px solid #cfcfcf;border-radius:5px; padding:5px; resize:none;outline:none;}
+.ui_form textarea:focus,.ui_form .ipt_txt:focus{ border:1px solid #ED5816; outline:none;box-shadow:0 0 7px rgba(237,88,22,0.8);}
+.ui_form .validate_ok,.ui_form .validate_error{ margin-left:5px;}
+.ui_form .validate_ok{ color:#19cb3f;}
+.ui_form .validate_error{ color:#f00;}

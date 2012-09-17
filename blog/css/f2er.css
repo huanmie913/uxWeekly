@@ -1,0 +1,61 @@
+﻿@charset "utf-8";
+/* CSS Document 
+Use for:	www.f2er.net
+Version:	1.0
+Date:		2012/05/14
+Author:		情封
+*/
+
+/* CSS reset */
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{ padding: 0; margin: 0; }
+table { border-collapse: collapse; border-spacing: 0; }
+del, ins { text-decoration: none }
+fieldset, img { border: 0; }
+body,button,input,select,textarea{font:12px/1.5 tahoma,arial,\5b8b\4f53;}
+input,select,img{ vertical-align:middle}
+input,select{ outline:none}
+li{ list-style:none }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+address,cite,dfn,em,var{font-style:normal;}
+legend{ display:none}
+
+/* global */
+body{ background:#fff; font:12px/1.8; }
+.wrapper{ margin:0 auto;text-align:left;width:1000px; }
+td{ font-size:12px; line-height:160%;}
+.left{ float:left }
+.right{ float:right }
+a{text-decoration:none;}
+a:hover{text-decoration:underline;}
+.txthide{ text-indent:-999em;overflow:hidden; line-height:0; font-size:0}
+.clearfix:after{ content:""; height:0; visibility:hidden; display:block; clear:both;}
+.clearfix{ zoom:1;}
+.clear{ clear:both }
+
+
+
+body{ background:#edf0f3; font-family:"microsoft YaHei";}
+.full_bg{ background:url(../../blog/images/full_bg.jpg) no-repeat center top;height:805px;}
+.bg{ background:url(../../blog/images/bg.jpg) no-repeat center top;height:805px;}
+
+.qf_footer{ background:#edf0f3; padding:30px 0; font-size:14px; zoom:1;text-align:center; line-height:2;}
+.qf_footer p{ text-align:center;}
+
+.header{ padding-top:46px;height:99px;}
+.header h1{ margin-left:13px;display:inline;}
+.nav{ margin-top:15px;display:inline;}
+.nav li{ float:left;font-size:14px; padding:2px 4px; margin:0 5px;display:inline;}
+.nav a{ color:#fff;padding:0 10px;}
+.nav a:hover{ text-decoration:none; background:#194f67;-moz-border-radius:5px;}
+
+.banner{ background:url(../../blog/images/banner.jpg) no-repeat;height:429px;}
+
+.qf_box{ padding:25px 0; margin-right:-50px;overflow:hidden;}
+
+.m_box{ width:298px;float:left; margin-right:50px;display:inline;}
+.m_box .m_hd{ background:url(../../blog/images/title.png); width:278px; font-size:14px;color:#333; line-height:30px;height:30px; padding:0 10px 7px;}
+.m_box .m_bd{ padding:10px 0;}
+
+.q_list{ line-height:2;font-size:14px;white-space:nowrap;overflow:hidden;}
+.q_list a{ color:#fff;}
+.q_list a:hover{ text-decoration:none; color:#bec416;}

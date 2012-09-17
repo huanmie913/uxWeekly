@@ -1,0 +1,32 @@
+/*
+ * To: 4399网页游戏广告页注意事项
+ * author: f2er( 情封 )
+ * Time: 12-07-13
+*/
+
+一：换肤
+   只要更改相应的图片资源的目录即可.( 如/tpl/xm_blcx2/images/skin_2 )
+   
+二：必须要添加代码:
+    1）<!--count_reg_var--> （head内）
+	2）<!--quit_pop_script--> (flash代码前)
+	3) <div style="display:none">
+		<!--statist_script-->
+		<!--cnzz_statist-->
+	   </div>
+	   （页面底部的统计代码）
+
+三：游戏接口
+    1）注册模块：
+	   <input type="hidden" name='game_src' value="_blcx" > ==>  value值改成相应游戏名称,以下划线开头:_+"游戏名称";
+	
+	2）登录模块:
+	   <input type="hidden" name="game" value="blcx"/>  ==>  value值改成相应游戏名称
+
+四：更换标题
+    1）在title标签中定义默认页面标题。
+    2）在 gameAD.animateTitle(_title,"我欲成仙,必先飞天")方法中; 把第二个参数更改为交替变换的标题。
+	
+	
+xm_blcx2:站内广告页(登录注册)
+xm_blcx4:站外广告页(登录)

@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*ui_list*/
+.ui_list{}
+.ui_list li{ border-bottom:1px dotted #F9BFBB; padding:3px 0; height:16px; color:#A2471B;}
+.ui_list span{ float:right;}
+.ui_list a{ color:#A2471B; white-space:nowrap;width:80%; overflow: hidden;display:block;}
+.ui_list a:hover{ color:#f00;}
+
+/*ui_table*/
+.ui_table{ width:100%;}
+.ui_table td{ padding:3px 0;color:#A2471B;border-bottom:1px dotted #F9BFBB; }
+.ui_table a{ width:80%; display:block; white-space:nowrap; overflow:hidden; color:#A2471B;}
+.ui_table a:hover{color:#f00;};

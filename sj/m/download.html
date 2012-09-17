@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>4399手机游戏</title>
+		<meta content="width=device-width; initial-scale=1; minimum-scale=1.0; maximum-scale=1.0" name="viewport" />
+		<link href="css/mobile.css" style="text/css" rel="stylesheet"/>
+	</head>
+	<body>
+		<!--m_bar-->
+		<div class="m_bar">
+			<div class="m_login">
+				<a href="#">4399帐号注册</a><a href="#">注册</a>
+			</div>
+			<a href="#" class="logo"></a>
+		</div>
+		<!--/m_bar-->
+		<!--m_main-->
+		<div class="m_detail">
+			<!--m_ginfo-->
+			<div class="m_ginfo">
+				<a href="#" class="img"><img src="images/5757.png" class="replace-2x" alt=""/></a>
+				<h2>豆娃连连看</h2>
+				<div class="star"><span class="degree" style="width:50%"></span></div>
+				<ul class="parameter">
+					<li>大小：10MB</li>
+					<li>类型：家庭游戏</li>
+					<li>系统要求：与iphone 3GS、iphone4、iphone 4S</li>
+				</ul>
+				<a href="#" class="ditunes">iTunes下载</a>
+			</div>
+			<!--/m_ginfo-->
+			<!--m_imgview-->
+			<div class="m_imgview">
+				<div class="view">
+					<ul class="m_imglist clearfix">
+						<li><img src="images/190125.jpg" alt=""></li>
+						<li><img src="images/190125.jpg" alt=""></li>
+						<li><img src="images/190125.jpg" alt=""></li>
+					</ul>
+				</div>
+				<ul class="num">
+					<li class="cur">1</li>
+					<li>2</li>
+					<li>3</li>
+				</ul>
+			</div>
+			<!--/m_imgview-->
+			<!--m_desc-->
+			<div class="m_desc">
+				当乐网获得PunchBox的正版授权，赶快享受免费正版的《捕鱼达人》吧！
+捕鱼达人（Fishing Joy）是一款最近比较火爆的游戏，虽然在Android平台上已经出现了若干个版本的类似游戏（皆号称自己叫做捕鱼达人），不过实际上在iOS平台上，这款游戏的开发商是国内的一家厂商PunchBox。
+捕鱼达人(英文Fishing Joy)是一款深海捕鱼游戏。玩家在游戏中用网可捕捉到多达11种鱼类,从观赏鱼到大型鱼,甚至包括鲨鱼!当你成功捕获时,这些鱼同时也会化为数不尽的金币滚滚而来,堆满你的船舱,这将是一次新奇有趣的探宝之旅!
+简单操作、金币滚滚 游戏中有不同的鱼群,回报的金币数也不尽相同。只要对准屏幕上的鱼群点击,就会发射出网来捕捉,玩家将体验到前所未有的爽快感。更有前所未有的独创攻击,可使用激光或者全屏撒网,让捕捉的鱼数加倍,金币加倍。
+			</div>
+			<!--/m_desc-->
+		</div>
+		<!--/m_main-->
+		<!--m_footer-->
+		<div class="m_footer">
+			<p>Copyright &copy; 2004 - 2011 4399.com All Rights Reserved. </p>
+			<p>厦门游家网络有限公司 版权所有</p>
+			<p>ICP证：闽B2-20040099</p>
+		</div>
+		<!--/m_footer-->
+		<script>
+			(function(win,undefined){
+				var doc = win.document;
+				function ipadImg(){
+					var _imgArr = doc.getElementsByClassName('replace-2x');
+					for(var i=0,len = _imgArr.length;i<len;i++){
+						var _img = _imgArr[i];
+						if(window.getComputedStyle(_img , null)['fontSize']=="1px"){
+							var _src = _img.src;
+							_src = _src.replace('.png','@2x.png');
+							_img.src = _src;
+						}
+					}
+				}
+				win.ipadImg = ipadImg;
+			})(window);
+			window.onload = ipadImg;
+		</script>		
+</body>
+</html>

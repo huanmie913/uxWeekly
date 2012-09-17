@@ -1,0 +1,161 @@
+﻿/*
+ * to: 桌游助手beta
+ * author :f2er
+ * time : 2012-02-18
+*/
+@charset "utf-8";
+html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6{ margin: 0; padding:0;}
+
+img{
+	max-width: 100%;
+	height : auto;
+}
+body{
+		-webkit-text-size-adjust:none;/*禁用自动字体调整*/
+		width:100%;
+		height:100%;
+		
+	}
+.mod_tip{
+		position:absolute;
+		left:0;
+		top:20px;
+		width:100%;
+		height:24px;
+		text-align:center;
+		line-height:24px;
+		background:rgba(0,0,0,0.9);
+		display:none;
+		color:#f00;
+	}
+
+/*iphone(profile,竖屏)*/
+@media screen and ( max-device-width:320px){
+	#mod_QF{
+		width:320px;
+		height:480px;
+		background: url(../images/bg.png) no-repeat;
+		-webkit-background-size:contain;
+		position:relative;
+	}
+	
+	.mod_yao{
+		padding:28% 10% 0 10%;
+	}
+	.mod_area{
+		min-width:260px;
+		min-height:300px;
+		width:70%;
+		height:60%;
+		position:relative;
+		-webkit-background-size:contain;
+	}
+	.control{
+		margin-top:30px;
+	}
+	.button,.buttonActive{
+		border: none;
+		text-indent: -999em; 
+		overflow: hidden; 
+		position: absolute;
+		left:80%;
+		top:415px;
+		background-image: url(../images/btn.png);
+		background-repeat: no-repeat;
+		width:62px;
+		height:63px;
+		margin-left: -20px;
+		/*-webkit-background-size:contain;*/
+		-webkit-tap-highlight-color:rgba(255,255,255,0);
+		-webkit-user-select: none;
+	}
+	.button{ background-position:0 0;}
+	.buttonActive{ background-position:-62px 0;}
+	
+	.s{ 
+		width : 50px;
+		height : 50px;
+		/*background: url(../images/pointer.png) no-repeat;*/
+		background:#e1480c;
+		border:1px soid #bb3400;
+		position: absolute;
+		-webkit-background-size:contain;
+		-webkit-border-radius:5px;
+		-webkit-box-shadow: 2px 3px 0 rgba(232,230,202,0.9);
+		/*-webkit-transform: rotate(40deg);*/
+	}
+	.s1{
+		-webkit-transform: rotate(15deg);
+	}
+	.s2{
+		-webkit-transform: rotate(40deg);
+	}
+	.s3{
+		-webkit-transform: rotate(55deg);
+	}
+	.s4{
+		-webkit-transform: rotate(35deg);
+	}
+	.s5{
+		-webkit-transform: rotate(65deg);
+	}
+	.s6{
+		-webkit-transform: rotate(75deg);
+	}
+	.s .is{ 
+		margin:4px 0 0 5px; 
+	}
+	.s img{ 
+		width:40px; 
+		height:40px;
+		-webkit-background-size:contain; 
+	}
+	.num_box{ 
+		position:absolute; 
+		left:25px; 
+		top:413px; 
+		width:280px; 
+		height:30px;
+	}
+	.subtraction,.add,.num,.subtractionActive,.addActive{ 
+		display:inline-block; 
+		vertical-align:middle; 
+		background-image:url(../images/num.png); 
+		background-repeat:no-repeat; 
+		height:57px; 
+		line-height:57px; 
+		font-size:26px; 
+		font-weight:700; 
+		color:#fff;
+		-webkit-tap-highlight-color:rgba(255,255,255,0);
+		-webkit-user-select: none;
+	}
+	
+	.subtraction{ 
+		background-position: 0 0; 
+		width:50px; 
+		font-size:0; 
+	}
+	.add{ 
+		background-position: -135px 0; 
+		width:50px;
+		font-size:0 
+	}
+	.subtractionActive{
+		background-position:0 -60px;
+	}
+	.addActive{
+		background-position:-135px -60px;
+	}
+	.num{ 
+		background-position: -65px 0; 
+		width:54px; 
+		text-align:center;
+		height:59px;
+	}
+	.n{ 
+		display:block;
+		-webkit-text-shadow:-2px -2px rgba(177, 121, 62, 0.5) 
+	}
+}
+

@@ -1,0 +1,49 @@
+/*
+ * 游戏指数
+ * time : 2012-09-04
+ * author : 情封
+*/
+@font-face {
+   font-family: 'Vani';
+    url('Vani.ttf') format('truetype');
+   font-weight: normal;
+   /*font-style: normal;*/
+}
+*{ margin:0;padding:0; font-size:12px; line-height:18px;}
+body{  background:url(images/bg.png) repeat;}
+table{ border-collapse: collapse; border-spacing: 0;}
+li{ list-style:none;}
+.gameBox{ position:relative;}
+
+/*地图*/
+#gameMap{background:url(images/china.png) no-repeat;width:3800px;height:1940px; margin-left:0 auto;}
+
+/*概况*/
+.title{ position:absolute;left:1650px;top:140px;color:#0090ff;font-size:64px;font-family: microsoft YaHei;width:1000px;letter-spacing:10px; text-shadow:5px 5px 6px #000;}
+
+#j_total{position:absolute;left:100px;top:270px;font-size:151px;color:#0090ff;font-family: microsoft YaHei;text-shadow:5px 5px 6px #000;}
+
+/*用户注册量指数*/
+.index{ position:absolute;left:200px;bottom:80px;background:url(images/index.png) no-repeat;width:692px;height:42px;}
+
+/*动画*/
+@-webkit-keyframes showPop{
+    0%{ opacity:0;font-size:2px;}
+    20%{ opacity:0.2;font-size:4px;}
+    40%{ opacity:0.4;font-size:6px;}
+    60%{ opacity:0.6;font-size:8px;}
+	80%{ opacity:0.8;font-size:10px;}
+    100%{ opacity:1;font-size:12px;}
+}
+
+
+/*提示框*/
+.indexPop{font-family:microsoft YaHei;position:absolute;padding:5px;background:-webkit-linear-gradient(top,#666,#000);border:3px solid #fff;box-shadow:0 0 10px #000;color:#fff;text-align:center;-webkit-border-radius:100px;text-align:center;-webkit-transform-origin:center center;}
+
+.showPop{ width:100px;height:100px;-webkit-animation:showPop linear 0.5s;}
+
+.hidePop{ width:0;height:0;font-size:0;line-height:0;-webkit-animation:hidePop linear 1s;}
+
+.indexPop img{ -webkit-border-radius:64px;vertical-align: top;display:block;margin:0 auto;width:64px;height:64px;}
+.indexPop .imgName{text-overflow: ellipsis;display:block;white-space:nowrap;overflow:hidden;width:96px;text-align:center;}
+.ssjjco{color:#0090ff;font-size:57px;position:absolute;left:100px;top:100px;font-family: microsoft YaHei;width:2000px;display:block;letter-spacing:6px; text-shadow:5px 5px 6px #000;background:url(images/dq.png) no-repeat;padding:30px 0 50px 90px;}

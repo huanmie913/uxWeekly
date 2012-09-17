@@ -1,0 +1,16 @@
+CACHE MANIFEST
+#version 2.0
+js/smoothscroll.js
+js/touchslider.min.js
+js/zmxy.js
+css/base.css
+images/banner.jpg
+images/body.png
+images/close.png
+images/ico.png
+images/link.png
+images/logo.png
+images/sj_bannner.png
+NETWORK:
+CACHE:
+FALLBACK:

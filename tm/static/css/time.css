@@ -1,0 +1,19 @@
+﻿@charset "utf-8";
+/* CSS Document 
+Use for:	www.f2er.net
+Version:	1.0
+Date:		2012/08/013
+Author:		情封
+*/
+body{background:#ededed;font:500 14px/1.8 'Hiragino Sans GB', sans-serif;}
+
+.article_wrap{ margin:80px 0 20px 200px;; width:1000px;}
+
+.name{color:#f00;}
+
+.date_order{position:fixed;left:0;top:100px;background:#F4F2F2;border:1px solid #ddd;width:138px;padding:10px;}
+.date_order dl{ margin-top:5px;line-height:22px;}
+.date_order dt{ cursor:pointer;}
+.date_order dd{ padding-left:10px;cursor:pointer;}
+.date_order dd.current{font-weight:700; color:#0C763E}
+.date_order dd.none{display:none;}

@@ -1,0 +1,58 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>4399UED Labs</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="nofollow"> 
+<link href="css/project.less" rel="stylesheet/less" type="text/less"/>
+<script type="text/javascript" src="../wiki/static/js/less-1.1.3.min.js"></script>
+<base target="_blank" />
+</head>
+<body>
+	<div class="container">
+		<div class="main">
+			<header class="topbar">
+				<div class="wrapper">
+					<a href="#"><img src="images/project-logo.png" width="186" height="48" alt="UED Labs"/></a>
+				</div>
+			</header>
+			<!--wrapper-->
+			<div class="wrapper">
+				<!--box_list-->
+				<div class="box_list clearfix" id="js-plist"></div>
+				<!--/box_list-->
+			</div>
+			<!--/wrapper-->
+		</div>
+	</div>
+	<!--pro_dialog-->
+	<div class="pro_dialog" id="js-prodialog">
+		<!--pro_dbox-->
+		<div class="pro_dbox" id="js-dialog"></div>
+		<!--/pro_dbox-->
+		<span class="closed" id="js-closed"></span>
+	</div>
+	<!--/pro_dialog-->
+	<!--update_box-->
+	<div class="update_box ani" id="js-update">更新日志
+		
+	</div>
+	<!--/update_box-->
+	<div class="update_list ani" id="js-ulist">
+		<dl>
+			<dt>2012/09/11</dt>
+			<dd>创建项目</dd>
+		</dl>
+	</div>
+	<footer class="footer">&copy;2012 4399UED </footer>
+<script src = "js/ajax.js"></script>
+<script src = "js/projectData.js"></script>
+<script src = "js/QProject.js"></script>
+<script>
+QProjectList.sidebar.init(projectData);
+QProjectList.updateList.init();
+</script>
+</body>
+</html>
