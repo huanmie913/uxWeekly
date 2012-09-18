@@ -5,6 +5,21 @@
 */
 var articleDataArray = [
 	{
+		"id":902,
+		"content" : {
+		  "from" : "",
+		  "url" : "http://udc.weibo.com/2012/06/%E6%A8%A1%E5%9D%97%E5%8C%96%E2%80%94%E2%80%94%E9%AB%98%E6%95%88%E9%87%8D%E6%9E%84/",
+		  "time" : "2012-09-18",
+		  "author" : "燃烧的拖把",
+		  "avatar" : "http://tp1.sinaimg.cn/1747132320/50/5604906446/1",
+		  "title" : "模块化——高效重构",
+		  "ajaxcontent" : {
+				"ajaxFlag" : true,
+				"ajaxSource" : "/article/201209/902.html"
+		  }
+		}
+	},
+	{
 		"id":901,
 		"content" : {
 		  "from" : "",
