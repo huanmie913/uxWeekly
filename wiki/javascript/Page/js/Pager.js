@@ -114,17 +114,16 @@
                     btnRight.style.display = "block";
                 }
                 if( that.index<=0 ){
-                        btnLeft.style.display = "none";
-                        btnRight.style.display = "block";
+                    btnLeft.style.display = "none";
+                    btnRight.style.display = "block";
                         // return;
-                    }
-                    if( that.index>=that.pnum-1 ){
-                        btnRight.style.display = "none";
-                        btnLeft.style.display = "block";
-                        //return;
-                    }
-
                 }
+                if( that.index>=that.pnum-1 ){
+                    btnRight.style.display = "none";
+                    btnLeft.style.display = "block";
+                        //return;
+                }
+            }
         },
         numClass : function(pchildren){
             var that = this;
@@ -154,6 +153,7 @@
                 }
                 that.goPage(that.index);
                 that.numClass(_pchildren);
+                that.btnStatus();
             });
             QF.addEvent(btnRight,'click',function(){
                 ++that.index;
@@ -164,8 +164,9 @@
                 }
                 that.goPage(that.index);
                 that.numClass(_pchildren);
+                that.btnStatus();
             });
-            that.btnStatus();
+
         },
 
         numEvent : function(_pTarget){
