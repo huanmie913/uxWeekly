@@ -73,11 +73,12 @@
 			bid        : 'j-qlist',
 			pid        : 'j_qpage',
 			curClass   : 'cur',
-            /*btn        : {
+            btn        : {
                btnLeft : 'j-lb',
-              btnRight : 'j-rb'
-            },*/
-            btn : null,
+              btnRight : 'j-rb',
+          disbaleClass : "_disbale"
+            },
+            //btn : null,
 			Initnum    : 0, // 初始化
 			eventType  : "click"
 		}
