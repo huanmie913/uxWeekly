@@ -23,13 +23,16 @@ Update:
 .q_list a:hover{ color:#01b4ff;}
 /*.q_list{ overflow:hidden;height:344px;}  */
 
-.q_list li{ border-bottom:1px dashed #bcbcbc;zoom:1;overflow:hidden;/*margin-top:-1px;*/height:39px;line-height: 39px;  }
+.q_list li{ /*border-bottom:1px dashed #bcbcbc;*/zoom:1;overflow:hidden;/*margin-top:-1px;*/height:39px;line-height: 39px;  }
+.q_list li:nth-child(odd){ background:#f0eabd}
+.q_list li:nth-child(even) { background:#f0c878}
 .q_list .nr{ float:right;color:#9c9c9c;line-height:39px;overflow:hidden;}
 .q_list .nr em{ color:#01b4ff;font-weight:700;}
 .tt{ color:#ff7800;}
 /*q_page*/
-.btn_left,.btn_right{width:20px;height:20px;background:#f00;margin:10px 10px 0;text-align:center;cursor:pointer;}
-.q_page,.btn_left,.btn_right{float:right;}
+.btn_left,.btn_right,.btn_left_disable,.btn_right_disable{width:20px;height:20px;background:#f00;margin:10px 10px 0;text-align:center;cursor:pointer;}
+.btn_left_disable,.btn_right_disable{background:#ddd;cursor: default;}
+.q_page,.btn_left,.btn_right,.btn_left_disable,.btn_right_disable{float:right;}
 .q_page{ text-align:right; margin-top:10px;letter-spacing:-4px;word-spacing:-4px;font-size:0;}
 .q_page li{text-align:center;line-height:17px; width:17px;height:17px;display:inline-block;*display:inline;zoom:1;letter-spacing:normal;word-spacing:normal;font-size:12px;background:#d4d4d4;vertical-align: middle;margin-left:10px;color:#fff;cursor:pointer;}
 .q_page .cur{ background:#389ce4;}

@@ -5,6 +5,21 @@
 */
 var articleDataArray = [
 	{
+		"id":1001,
+		"content" : {
+		  "from" : "",
+		  "url" : "http://tech.weibo.com/archives/2103",
+		  "time" : "2012-10-16",
+		  "author" : "于 海涛",
+		  "avatar" : "/article/static/images/avatar.png",
+		  "title" : "攻城师的沟通修炼",
+		  "ajaxcontent" : {
+				"ajaxFlag" : true,
+				"ajaxSource" : "/article/201210/1001.html"
+		  }
+		}
+	},
+	{
 		"id":902,
 		"content" : {
 		  "from" : "",

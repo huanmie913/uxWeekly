@@ -75,8 +75,10 @@
 			curClass   : 'cur',
             btn        : {
                btnLeft : 'j-lb',
-              btnRight : 'j-rb'
+              btnRight : 'j-rb',
+          disbaleClass : "_disbale"
             },
+            //btn : null,
 			Initnum    : 0, // 初始化
 			eventType  : "click"
 		}
@@ -116,12 +118,10 @@
                 if( that.index<=0 ){
                     btnLeft.style.display = "none";
                     btnRight.style.display = "block";
-                        // return;
                 }
                 if( that.index>=that.pnum-1 ){
                     btnRight.style.display = "none";
                     btnLeft.style.display = "block";
-                        //return;
                 }
             }
         },
@@ -138,37 +138,56 @@
                 _sHeight =  parseInt(QF.getStyle(_pchildren[0],'height'));
             _bTarget.style.marginTop =  -(n)*( that.opt.maxNum * _sHeight )+"px";
         },
-        btnEvent : function(){
+        leftClick : function(){
             var that = this,
-            _pTarget = QF.$( that.option.pid);
-            var _pchildren = _pTarget.children;
+                _pTarget = QF.$( that.option.pid),
+                _pchildren = _pTarget.children;
+            --that.index;
+            if(that.index<=0){
+                that.index =0;
+            }
+            that.goPage(that.index);
+            that.numClass(_pchildren);
+            that.btnStatus();
+        },
+        rightClick : function(){
+            var that = this,
+                _pTarget = QF.$( that.option.pid),
+                _pchildren = _pTarget.children;
+            ++that.index;
+            if(that.index>=that.pnum-1){
+                that.index = that.pnum-1;
+            }
+            that.goPage(that.index);
+            that.numClass(_pchildren);
+            that.btnStatus();
+        },
+        btnEvent : function(){
+            var that = this;
             var btnLeft = QF.$( that.option.btn.btnLeft ),
                 btnRight = QF.$( that.option.btn.btnRight );
             QF.addEvent(btnLeft,'click',function(){
-                --that.index;
-                if(that.index<=0){
-                      btnLeft.style.display = "none";
-                      btnRight.style.display = "block";
-                      that.index =0;
-                }
-                that.goPage(that.index);
-                that.numClass(_pchildren);
-                that.btnStatus();
+                that.leftClick();
             });
             QF.addEvent(btnRight,'click',function(){
-                ++that.index;
-                if(that.index>=that.pnum-1){
-                    btnRight.style.display = "none";
-                    btnLeft.style.display = "block";
-                    that.index = that.pnum-1;
-                }
-                that.goPage(that.index);
-                that.numClass(_pchildren);
-                that.btnStatus();
+                that.rightClick();
             });
-
         },
-
+        keyEvent : function(e){
+           var that = this,
+               _ev = QF.getEvent(e),
+               _codeEvent = _ev.keyCode;
+           switch(_codeEvent){
+               //右键
+               case 39:
+                    that.rightClick();
+                    break;
+                //左键
+               case 37:
+                    that.leftClick();
+                    break;
+           }
+        },
         numEvent : function(_pTarget){
            var that = this;
            var _pchildren = _pTarget.children;
@@ -205,8 +224,10 @@
             if( that.option.btn != null ){
                 that.btnEvent();
             }
+            QF.addEvent(document,"keydown",function(e){
+                that.keyEvent(e);
+            });
 		}
-
 	}
 	win.Page = Page;
 })(window);
