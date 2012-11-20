@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document 
+Use for:	文字列表
+Version:	1.0
+Date:		2012/11/01
+Author:		情封
+*/
+
+/*ks_textlist*/
+.ks_textlist{ font-size:12px;line-height:2}
+.ks_textlist li{ overflow:hidden;}
+.ks_textlist .ks_r{ float:right;}
+.ks_textlist a{ display:block;white-space:nowrap;color:#1E50A2;}
+.ks_textlist a:hover{ color:#BA2636}
+
+
+
+
+
+
+
+
+
+
+
+

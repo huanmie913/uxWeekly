@@ -1,0 +1,76 @@
+@charset "utf-8";
+/* CSS Document
+Use for: about
+Version: 2.0
+Date:	2012-10-09
+Author:	f2er
+*/
+@import "../../css/KS.css";
+@import "../css/ux.less";
+@import "../../css/ks_imglist.css";
+@imgurl:"../images/common/";
+@num : 10px;
+
+
+.ux_content{background:#fff;padding:20px 50px;width:700px;zoom:1;
+  h2{ color:#967615;font-size:32px;font-family: "microsoft yahei"}
+}
+
+.mod_row_o{
+    border-bottom:2px solid #0066cc;
+    padding-bottom:@num*2;
+    h3{ font-size:26px;font-family: "microsoft yahei";
+      a{ color:#0066cc;text-decoration: none;
+		&:hover{
+			
+			color:#066f26;
+		}
+	  }
+    }
+    .mod_con{ padding:10px 0 10px 270px;zoom:1;overflow:hidden;zoom:1;font-size:14px;line-height:24px;
+      .mod_img{ float:left;width:260px;margin-left:-270px;display:inline;}
+      .mod_summary{ height:125px;overflow: hidden;}
+      .mod_view{ display:block;width:100px;height:28px;line-height: 28px;text-align:center;color:#fff;background: #0066cc;font-size:12px;text-decoration:none;}
+    }
+}
+
+.mod_row_t{padding-top:@num*2;overflow:hidden;font-size: 12px;}
+.mod_o{ float:left;width:320px;line-height:24px;
+  h3{ font-size:14px;margin-bottom:@num;
+    a{ color:#0066cc;text-decoration:none;
+		&:hover{
+			color:#066f26;text-decoration:none;
+		}
+	}
+  }
+}
+.mod_t{ float:right;width:325px;}
+.mod_q{ overflow:hidden;padding-bottom:20px;
+    dt{ font-size:14px;margin-bottom:@num;font-weight:700;
+      a{ color:#0066cc;text-decoration:none;
+		&:hover{ color:#066f26;text-decoration:none;}
+	  }
+    }
+    .mod_img{ float:left;margin-right:10px;display:inline;}
+    .mod_text{ float:right;width:235px;}
+}
+
+.mod_three{ margin-top:@num*2;}
+.ks_imglist{
+    margin-right:-20px;overflow:hidden;zoom:1;
+    li{ width:224px;margin-right:15px;
+      a{ display:block;position: relative;
+		&:hover{
+			span{
+				color:#066f26;
+			}
+		}
+        img{ display: block;}
+        span{ position: absolute;height:40px;line-height:40px;left:0;bottom:10px;width:100%;font-size:14px;background:rgba(0,0,0,0.5);color:#fff;display:block;text-overflow: ellipsis;white-space:nowrap;overflow:hidden;}
+      }
+    }
+
+}
+
+
+

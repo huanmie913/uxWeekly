@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>UX火花</title>
+    <link href="css/index.less" rel="stylesheet/less" type="text/less"/>
+    <script type="text/javascript" src="js/less-1.3.0.min.js"></script>
+	<base target="_blank"/>
+</head>
+<body>
+    <!--ux_wrapper-->
+    <div class="ux_wrapper">
+        <!--ux_head-->
+        <div class="ux_head" id="j-head"></div>
+        <!--/ux_head-->
+        <!--ux_main-->
+        <div class="ux_main">
+            <h2>Content</h2>
+            <!--ux_content-->
+            <div class="ux_content">
+                <!--ks_textlist-->
+                <ul class="ks_textlist" id="j-topic"></ul>
+                <!--/ks_textlist-->
+            </div>
+            <!--/ux_content-->
+        </div>
+        <!--/ux_main-->
+        <script id="ux-template" type="text/x-handlebars-template">
+            {{#each topic}}
+            <li>
+                <span class="ks_r">{{time}}</span>
+                <a href="http://localhost/ued/ux/content/{{id}}/" title="{{title}}"><span>{{num}}</span>{{title}}</a>
+            </li>
+            {{/each}}
+        </script>
+        <!--ux_footer-->
+        <div id="j-footer"></div>
+    </div>
+    <!--ux_wrapper-->
+    <script src="js/ux.js"></script>
+    <script src="js/handlebars-1.0.rc.1.js"></script>
+    <script type="text/javascript" src="js/uxlist.js"></script>
+    <script>
+       KS.Head('j-head');
+        KS.Foot('j-footer');
+        var source = document.getElementById("ux-template").innerHTML;
+        var template = Handlebars.compile(source);
+        var html =  template(uxData);
+        document.getElementById("j-topic").innerHTML = html;
+    </script>
+</body>
+</html>

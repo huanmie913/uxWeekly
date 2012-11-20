@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document 
+Use for:	图片列表
+Version:	1.0
+Date:		2012/10/31
+Author:		情封
+*/
+
+/*wg_imgscroll*/
+.ks_imglist{ font-size:12px;}
+.ks_imglist li{ float:left;line-height:2;text-align:center;display:inline;white-space:nowrap;width:120px; margin-right:10px;}
+.ks_imglist .ks_img_bg{ background:url(../images/demo/img_cover.png) no-repeat;width:108px;height:110px;}
+.ks_imglist .ks_name{ display:block;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+
+
+
+
+
+
+
+
+
+
+
+
