@@ -40,7 +40,7 @@
 
                     '</div>'+
                     '<div class="ux_site">本站链接均来自于互联网，有兴趣参与的童鞋请联系 <span>@情封</span><span>@鬼懿</span>'+
-					'<scr'+'ipt type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd19e0ade259c89f350a75fb8e02cf042' type="text/javascript"%3E%3C/script%3E"));</script>'
+					'<scr'+'ipt type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src=\'" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd19e0ade259c89f350a75fb8e02cf042\' type="text/javascript"%3E%3C/script%3E"));</script>'
                     '</div>';
         $(id).innerHTML = _html;
     }
