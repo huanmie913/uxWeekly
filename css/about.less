@@ -1,0 +1,37 @@
+@charset "utf-8";
+/* CSS Document
+Use for: about
+Version: 2.0
+Date:	2012-10-09
+Author:	f2er
+*/
+@import "css/KS.css";
+@import "ux.less";
+
+/*about*/
+.ux_member{background:#fff;padding:50px;zoom:1;}
+.mod_about{
+	h2{ color:#333;font-size:16px;font-family:"Georgia";margin-bottom:15px;}
+	p{ line-height:24px;font-size:14px;text-indent:2em;}
+}
+
+.mod_member{ margin-top:5*@num;
+	h2{ color:#333;font-size:16px;font-family:"Georgia";margin-bottom:15px;}
+}
+
+.mod_mlist{ overflow:hidden;zoom:1;margin-right:-20px;
+	li{ float:left;width:120px;position:relative;height:120px;margin-right:24px;margin-bottom:20px;
+		&:hover{
+			dl{ display:block;}
+		}
+		dl{ position:absolute;left:0;top:0;background:rgba(0,0,0,0.5);color:#fff;width:100px;height:100px;padding:10px;display:none;
+			dt{ margin-bottom:20px;}
+			dd{ font-size:12px;}
+		}
+	}
+}
+
+
+
+
+

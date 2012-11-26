@@ -26,12 +26,23 @@ html,body{ background: #ededed;}
   .xm_fe{ float:right;width:90px;text-align:center;color:#fff;font-size:12px;
     img{ display: block;margin:0 auto 5px;}
   }
+ 
   .ued{ float:left;background: url("@{imgurl}ued.png") no-repeat;width:98px;height:58px;margin:@num 0 0 -110px;display:inline;text-indent:-1024em;}
 }
 
 .ux_site{ background: #e09348;height:24px;line-height: 24px;color:#333;text-align:center;font-size:12px;
-  span{ color:#fff;margin-right:@num/2;}
+  a{ color:#fff;margin-right:@num/2;
+	&:hover{ color:#d7c53d;}
+  }
 }
+.ux_about{
+	a{ color:#fff;
+		&:hover{ color:#d7c53d}
+		&.about{ color:#d7c53d;}
+	}
+}
+
+
 
 
 
