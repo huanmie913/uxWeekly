@@ -30,7 +30,7 @@
         }
         var _html = '<div class="ux_footer">'+
            
-                    '<div><a  href="http://demo.4399ued.com/ued/ux/index.html"   class="ued"></a></div>'+
+                    //'<div><a  href="http://demo.4399ued.com/ued/ux/index.html"   class="ued"></a></div>'+
                     '<dl class="ux_about">'+
                         '<dt>关于前端周刊</dt>'+
                         '<dd>前端周刊，是一份用以收集和分享UX资源、业界观点、创新与前瞻的分享列表，竭诚欢迎有兴趣的同学共同参与组织与供稿。</dd>'+
