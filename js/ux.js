@@ -38,7 +38,7 @@
                     '</dl>'+
 
                     '</div>'+
-                    '<div class="ux_site">本站链接均来自于互联网，有兴趣参与的童鞋请联系 <a target="_self" href="mailto:uezheng@gmail.com">@情封</span>'+
+                    '<div class="ux_site">本站链接均来自于互联网，有兴趣参与的童鞋请联系 <a target="_self" href="http://weibo.com/f2er/profile?rightmod=1&wvr=5&mod=personinfo">@情封</a><a target="_self" href="http://weibo.com/u/1853686853">@鬼懿</a>'+
                     '</div>';
         $(id).innerHTML = _html;
     }
