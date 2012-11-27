@@ -34,7 +34,7 @@
                     '<dl class="ux_about">'+
                         '<dt>关于前端周刊</dt>'+
                         '<dd>前端周刊，是一份用以收集和分享UX资源、业界观点、创新与前瞻的分享列表，竭诚欢迎有兴趣的同学共同参与组织与供稿。</dd>'+
-                        '<dd>前端周刊小组成员:<a href="http://uxweekly.f2er.net/about.html" class="about">快～快点我</a></dd>'+
+                        '<dd class="member">前端周刊小组成员:<a href="http://uxweekly.f2er.net/about.html" class="about">快～快点我</a></dd>'+
                     '</dl>'+
 
                     '</div>'+
