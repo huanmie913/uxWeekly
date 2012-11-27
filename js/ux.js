@@ -32,13 +32,13 @@
            
                     '<div><a  href="http://demo.4399ued.com/ued/ux/index.html"   class="ued"></a></div>'+
                     '<dl class="ux_about">'+
-                        '<dt>关于4399UED周刊</dt>'+
-                        '<dd>4399UED周刊，是一份用以收集和分享UX资源、业界观点、创新与前瞻的分享列表，竭诚欢迎有兴趣的同学共同参与组织与供稿。</dd>'+
-                        '<dd>UED周刊小组成员:<a href="http://demo.4399ued.com/ued/ux/about.html" class="about">快～快点我</a></dd>'+
+                        '<dt>关于前端周刊</dt>'+
+                        '<dd>前端周刊，是一份用以收集和分享UX资源、业界观点、创新与前瞻的分享列表，竭诚欢迎有兴趣的同学共同参与组织与供稿。</dd>'+
+                        '<dd>前端周刊小组成员:<a href="http://uxweekly.f2er.net/about.html" class="about">快～快点我</a></dd>'+
                     '</dl>'+
 
                     '</div>'+
-                    '<div class="ux_site">本站链接均来自于互联网，有兴趣参与的童鞋请联系 <a target="_self" href="mailto:zhengguobao@4399.com">@情封</span>'+
+                    '<div class="ux_site">本站链接均来自于互联网，有兴趣参与的童鞋请联系 <a target="_self" href="mailto:uezheng@gmail.com">@情封</span>'+
                     '</div>';
         $(id).innerHTML = _html;
     }
