@@ -20,7 +20,7 @@
         if( !isObject($(id)) ){
             return;
         }
-        var _html = '<a href="http://demo.4399ued.com/ued/ux/" title="返回首页">返回首页</a>';
+        var _html = '<a href="http://uxweekly.f2er.net/" title="返回首页">返回首页</a>';
         $(id).innerHTML = _html;
     }
 
