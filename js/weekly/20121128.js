@@ -9,7 +9,7 @@
 var ux_content = {
     "topic":"设计视觉，前端开发你怎么看？",
     "topic_one" :{
-        "topic_title" : "",
+        "topic_title" : "以互联网产品为核心的服务设计",
         "topic_img_url" : "../../content/20121128/6.png",
         "topic_url":"http://ued.baidu.com/?p=3721",
         "topic_summary":"[核心提示]服务设计不仅追求更为完善产品设计，也要求设计人员具备大局观、统筹力、创造力和跨界性。以提升产品本身的设计为起点，逐步扩大对设计全局的思考，让体验设计更加完整，从而产生更大的价值。"
@@ -49,7 +49,7 @@ var ux_content = {
             "topic_url" : "http://www.woshipm.com/operate/11234.html"
         },
         {
-            "topic_title":"信息架构与用户体验",
+            "topic_title":"【交互】信息架构与用户体验有什么不同",
             "topic_img_url":"../../content/20121128/3.png",
             "topic_url" : "http://isux.tencent.com/%E4%BF%A1%E6%81%AF%E6%9E%B6%E6%9E%84%E4%B8%8E%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C%E8%AE%BE%E8%AE%A1%E6%9C%89%E4%BD%95%E4%B8%8D%E4%B8%80%E6%A0%B7%EF%BC%9F.html"
         }
